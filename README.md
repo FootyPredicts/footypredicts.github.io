@@ -9,8 +9,7 @@ Every morning GitHub Actions (`.github/workflows/update-predictions.yml`):
 1. `python -m pipeline.run` – for each league, downloads new data from API-Football into
    `data/<league>/` and writes predictions to `data/site/<league>.json`.
    Each league only uses its own data.
-2. `python check_predictions.py` – scores every prediction published before kick-off (from git history) → `data/track_record/`.
-3. `python build_site.py` – builds `docs/` (front page, one page per league, How we did page).
+2. `python build_site.py` – builds `docs/` (front page and one page per league).
 4. Saves the new data to the repo and publishes the site.
 
 Odds: best price per selection across bookmakers (`/odds?fixture=`), shown as clickable prices that build a bet slip (kept in the visitor's browser only).

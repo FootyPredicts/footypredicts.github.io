@@ -15,6 +15,9 @@ from datetime import datetime, timezone
 from html import escape
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# The "How we did" page is PRIVATE: it is only built when you run locally with SHOW_TRACK_RECORD=1.
+# The public site (built by GitHub) never includes it.
+SHOW_TRACK_RECORD = os.environ.get("SHOW_TRACK_RECORD") == "1"
 SITE_DATA = os.path.join(BASE_DIR, "data", "site")
 OUT_DIR = os.path.join(BASE_DIR, "docs")
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
@@ -475,7 +478,8 @@ def league_nav(leagues, current, prefix):
     for d in leagues:
         on = " on" if current == d["league"] else ""
         links.append(f'<a href="{prefix}{d["league"]}/" class="lg{on}">{esc(d["name"])}</a>')
-    links.append(f'<a href="{prefix}track-record/" class="lg lg-tr{" on" if current == "track-record" else ""}">How we did</a>')
+    if SHOW_TRACK_RECORD:
+        links.append(f'<a href="{prefix}track-record/" class="lg lg-tr{" on" if current == "track-record" else ""}">How we did</a>')
     return '<nav class="leagues" aria-label="Leagues">' + "".join(links) + "</nav>"
 
 
@@ -576,7 +580,7 @@ def responsible_page(leagues):
         </ul></section>
       <section class="block"><h3>How this site is funded</h3>
         <p>Where we link to a bookmaker, the link may be an <b>affiliate link</b>: if you sign up through it, we may earn a commission.
-        Links do not change our predictions, and the track record page shows how every published prediction turned out.</p></section>"""
+        Links do not change our predictions.</p></section>"""
     return page("Responsible gambling – FootyPredicts",
                 "Help with gambling, how FootyPredicts is funded, and an 18+ reminder.",
                 league_nav(leagues, None, "../"), "Responsible gambling", "", body, "../")
@@ -643,9 +647,10 @@ def build():
                 "", "".join(sections), "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
-    os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
-    with open(os.path.join(OUT_DIR, "track-record", "index.html"), "w", encoding="utf-8") as fh:
-        fh.write(track_record_page(leagues, upd))
+    if SHOW_TRACK_RECORD:
+        os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
+        with open(os.path.join(OUT_DIR, "track-record", "index.html"), "w", encoding="utf-8") as fh:
+            fh.write(track_record_page(leagues, upd))
     os.makedirs(os.path.join(OUT_DIR, "responsible-gambling"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "responsible-gambling", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(responsible_page(leagues))

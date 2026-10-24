@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 0     # full history: the track record reads past published predictions
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
         with:
@@ -54,10 +54,6 @@ jobs:
             echo "::error title=Pipeline failed::$(tail -n 25 pipeline.log | tr '\n' '|' | cut -c1-3500)"
             exit 1
           }
-
-      - name: Update track record
-        if: always()
-        run: python check_predictions.py || echo "::warning::Track record update failed"
 
       - name: Build website
         if: always()

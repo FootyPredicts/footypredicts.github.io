@@ -1,0 +1,14 @@
+# secrets
+.env
+config.py
+*.pem
+*.crt
+# python junk
+__pycache__/
+*.pyc
+*.log
+# too big for GitHub (>100 MB) - keep these on your own computer
+merged_player_fixture_data.csv
+prem_model.joblib
+!pipeline/config.py
+scanner/scan_*.csv
