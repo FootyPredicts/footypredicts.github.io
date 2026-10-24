@@ -15,8 +15,8 @@ from datetime import datetime, timezone
 from html import escape
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# The "How we did" page is PRIVATE: it is only built when you run locally with SHOW_TRACK_RECORD=1.
-# The public site (built by GitHub) never includes it.
+# The public "How we did" page lists each match with a tick or cross but shows NO accuracy percentages or totals.
+# Run locally with SHOW_TRACK_RECORD=1 to build the full version (percentages, markets, leagues) for yourself only.
 SHOW_TRACK_RECORD = os.environ.get("SHOW_TRACK_RECORD") == "1"
 SITE_DATA = os.path.join(BASE_DIR, "data", "site")
 OUT_DIR = os.path.join(BASE_DIR, "docs")
@@ -478,22 +478,26 @@ def league_nav(leagues, current, prefix):
     for d in leagues:
         on = " on" if current == d["league"] else ""
         links.append(f'<a href="{prefix}{d["league"]}/" class="lg{on}">{esc(d["name"])}</a>')
-    if SHOW_TRACK_RECORD:
-        links.append(f'<a href="{prefix}track-record/" class="lg lg-tr{" on" if current == "track-record" else ""}">How we did</a>')
+    links.append(f'<a href="{prefix}track-record/" class="lg lg-tr{" on" if current == "track-record" else ""}">How we did</a>')
     return '<nav class="leagues" aria-label="Leagues">' + "".join(links) + "</nav>"
 
 
 def track_record_page(leagues, upd):
     tr = os.path.join(BASE_DIR, "data", "track_record")
     try:
-        with open(os.path.join(tr, "summary.json"), encoding="utf-8") as fh:
-            summary = json.load(fh)
         with open(os.path.join(tr, "matches.json"), encoding="utf-8") as fh:
             matches = json.load(fh)
     except (FileNotFoundError, ValueError):
-        summary, matches = {"overall": {"matches": 0}, "leagues": {}}, []
+        matches = []
+    summary = {"overall": {"matches": 0}, "leagues": {}}
+    if SHOW_TRACK_RECORD:       # totals and percentages: private, only when you build it on your own computer
+        try:
+            with open(os.path.join(tr, "summary.json"), encoding="utf-8") as fh:
+                summary = json.load(fh)
+        except (FileNotFoundError, ValueError):
+            pass
     o = summary["overall"]
-    n = o.get("matches", 0)
+    n = len(matches)
 
     def rate(a, b):
         return f"{a} of {b} <small>({100 * a / b:.0f}%)</small>" if b else "—"
@@ -503,33 +507,36 @@ def track_record_page(leagues, upd):
     else:
         first = min(m["kickoff"] for m in matches)[:10]
         since = datetime.fromisoformat(first).strftime("%d %b %Y")
-        hero = f"""
+        private = ""
+        if SHOW_TRACK_RECORD:
+            hero = f"""
       <section class="tr-hero">
         <div class="tr-big"><b>{100 * o['result_correct'] / n:.0f}%</b><span>of match results called right<br>{o['result_correct']} of {n} matches since {since}</span></div>
         <p class="tr-calib">Our picks carried an average chance of <b>{o['avg_pick_pct']:.0f}%</b>. Over many games a well-calibrated model lands close to that figure; good weeks and bad weeks even out.</p>
       </section>"""
-        mk = [
-            ("Over 2.5 goals", o.get("over25_expected"), o.get("over25_happened"), rate(o.get("over25_correct", 0), n), n),
-            ("Both teams to score", o.get("btts_expected"), o.get("btts_happened"), rate(o.get("btts_correct", 0), n), n),
-            ("Over 4.5 cards", o.get("cards5_expected"), o.get("cards5_happened"), rate(o.get("cards5_correct", 0), o.get("cards_matches", 0)), o.get("cards_matches", 0)),
-            *([("Cards per match <small>(average)</small>", o["cards_exp_avg"], o["cards_actual_avg"],
-                f"typical miss ±{o['cards_mae']:.1f}", None)] if o.get("cards_exp_avg") is not None else []),
-            ("Players to score", o.get("scorers_expected"), o.get("scorers_hits"), f"{o.get('scorers_picks', 0)} picks", None),
-            ("Players to be booked", o.get("bookings_expected"), o.get("bookings_hits"), f"{o.get('bookings_picks', 0)} picks", None),
-        ]
-        mk_rows = "".join(f"<tr><th>{a}</th><td>{b}</td><td>{c}</td><td>{d}</td></tr>" for a, b, c, d, _ in mk)
-        markets = f"""
+            mk = [
+                ("Over 2.5 goals", o.get("over25_expected"), o.get("over25_happened"), rate(o.get("over25_correct", 0), n), n),
+                ("Both teams to score", o.get("btts_expected"), o.get("btts_happened"), rate(o.get("btts_correct", 0), n), n),
+                ("Over 4.5 cards", o.get("cards5_expected"), o.get("cards5_happened"), rate(o.get("cards5_correct", 0), o.get("cards_matches", 0)), o.get("cards_matches", 0)),
+                *([("Cards per match <small>(average)</small>", o["cards_exp_avg"], o["cards_actual_avg"],
+                    f"typical miss ±{o['cards_mae']:.1f}", None)] if o.get("cards_exp_avg") is not None else []),
+                ("Players to score", o.get("scorers_expected"), o.get("scorers_hits"), f"{o.get('scorers_picks', 0)} picks", None),
+                ("Players to be booked", o.get("bookings_expected"), o.get("bookings_hits"), f"{o.get('bookings_picks', 0)} picks", None),
+            ]
+            mk_rows = "".join(f"<tr><th>{a}</th><td>{b}</td><td>{c}</td><td>{d}</td></tr>" for a, b, c, d, _ in mk)
+            markets = f"""
       <section class="block"><h3>Markets <span class="sub">how often it happened v how often the model expected it</span></h3>
         <table class="tr-table"><tr><th></th><td>Model expected</td><td>Happened</td><td>Calls right</td></tr>{mk_rows}</table></section>"""
-        lg_rows = "".join(
-            f"<tr><th><a href='../{k}/'>{esc(v['name'])}</a></th><td>{v['matches']}</td><td>{rate(v['result_correct'], v['matches'])}</td>"
-            f"<td>{v['scorers_hits']} of {v['scorers_picks']}</td></tr>"
-            for k, v in sorted(summary["leagues"].items(), key=lambda kv: LEAGUE_ORDER.index(kv[0]) if kv[0] in LEAGUE_ORDER else 99))
-        by_league = f"""
+            lg_rows = "".join(
+                f"<tr><th><a href='../{k}/'>{esc(v['name'])}</a></th><td>{v['matches']}</td><td>{rate(v['result_correct'], v['matches'])}</td>"
+                f"<td>{v['scorers_hits']} of {v['scorers_picks']}</td></tr>"
+                for k, v in sorted(summary["leagues"].items(), key=lambda kv: LEAGUE_ORDER.index(kv[0]) if kv[0] in LEAGUE_ORDER else 99))
+            by_league = f"""
       <section class="block"><h3>By league</h3>
         <table class="tr-table"><tr><th></th><td>Matches</td><td>Results right</td><td>Scorer picks</td></tr>{lg_rows}</table></section>"""
+            private = hero + markets + by_league
         mrows = []
-        for m in matches[:60]:
+        for m in matches[:60 if SHOW_TRACK_RECORD else 200]:
             d = datetime.fromisoformat(m["kickoff"][:19]).strftime("%d %b")
             mark = '<span class="ok">✓</span>' if m["correct"] else '<span class="no">✗</span>'
             pick = "Draw" if m["pick"] == "Draw" else (m["home"] if m["pick"] == "Home" else m["away"])
@@ -538,9 +545,9 @@ def track_record_page(leagues, upd):
               <td class="tr-m">{esc(m['home'])} <b>{m['score']}</b> {esc(m['away'])}</td>
               <td>{esc(short(pick))} {m['pick_pct']:.0f}% {mark}</td><td class="tr-sc">{sc}</td></tr>""")
         recent = f"""
-      <section class="block"><h3>Every match <span class="sub">most likely result we published, and scorer picks (bold = scored)</span></h3>
+      <section class="block"><h3>Every match <span class="sub">our pick and the result (&#10003; right, &#10007; wrong), with scorer picks (bold = scored)</span></h3>
         <div class="tr-scroll"><table class="tr-list">{''.join(mrows)}</table></div></section>"""
-        body = hero + markets + by_league + recent
+        body = private + recent
     body += """
       <section class="block tr-method"><h3>How this is checked</h3>
         <p>Only predictions published before kick-off count, and each match uses the last version published before it started.
@@ -548,9 +555,9 @@ def track_record_page(leagues, upd):
         Results, scorers and bookings come from API-Football and are checked automatically each morning.</p>
         <p><b>Model change, 23 Oct 2026:</b> predictions now take injuries and suspensions into account, flag teams with little recent league history,
         and call a close match a draw when there is a warning sign (low data, or the bookmakers disagree). Matches before this date used the earlier model.</p></section>"""
-    return page("How we did – FootyPredicts track record",
-                "Every published prediction checked against the result: match results, goals markets, cards and players.",
-                league_nav(leagues, "track-record", "../"), f"Track record · updated {upd}", "", body, "../")
+    return page("How we did – FootyPredicts",
+                "Our published picks next to the results.",
+                league_nav(leagues, "track-record", "../"), f"Results · updated {upd}", "", body, "../")
 
 
 def affiliate_config():
@@ -580,7 +587,7 @@ def responsible_page(leagues):
         </ul></section>
       <section class="block"><h3>How this site is funded</h3>
         <p>Where we link to a bookmaker, the link may be an <b>affiliate link</b>: if you sign up through it, we may earn a commission.
-        Links do not change our predictions.</p></section>"""
+        Links do not change our predictions, and the results page shows how our picks turned out.</p></section>"""
     return page("Responsible gambling – FootyPredicts",
                 "Help with gambling, how FootyPredicts is funded, and an 18+ reminder.",
                 league_nav(leagues, None, "../"), "Responsible gambling", "", body, "../")
@@ -647,10 +654,9 @@ def build():
                 "", "".join(sections), "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
-    if SHOW_TRACK_RECORD:
-        os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
-        with open(os.path.join(OUT_DIR, "track-record", "index.html"), "w", encoding="utf-8") as fh:
-            fh.write(track_record_page(leagues, upd))
+    os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
+    with open(os.path.join(OUT_DIR, "track-record", "index.html"), "w", encoding="utf-8") as fh:
+        fh.write(track_record_page(leagues, upd))
     os.makedirs(os.path.join(OUT_DIR, "responsible-gambling"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "responsible-gambling", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(responsible_page(leagues))

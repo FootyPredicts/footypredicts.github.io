@@ -55,6 +55,10 @@ jobs:
             exit 1
           }
 
+      - name: Update results page data
+        if: always()
+        run: python check_predictions.py || echo "::warning::Results update failed"
+
       - name: Build website
         if: always()
         run: python build_site.py
