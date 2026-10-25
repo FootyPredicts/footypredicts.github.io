@@ -550,11 +550,8 @@ def track_record_page(leagues, upd):
         body = private + recent
     body += """
       <section class="block tr-method"><h3>How this is checked</h3>
-        <p>Only predictions published before kick-off count, and each match uses the last version published before it started.
-        Every prediction is saved in the site's public history, so nothing can be changed afterwards.
-        Results, scorers and bookings come from API-Football and are checked automatically each morning.</p>
-        <p><b>Model change, 23 Oct 2026:</b> predictions now take injuries and suspensions into account, flag teams with little recent league history,
-        and call a close match a draw when there is a warning sign (low data, or the bookmakers disagree). Matches before this date used the earlier model.</p></section>"""
+        <p>Only predictions published before kick-off count, and they can't be changed afterwards. Results are checked automatically each morning.</p>
+        <p><b>Model update, 23 Oct 2026:</b> predictions now factor in injuries and suspensions, and flag close or thin-data matches. Earlier matches used the previous model.</p></section>"""
     return page("How we did – FootyPredicts",
                 "Our published picks next to the results.",
                 league_nav(leagues, "track-record", "../"), f"Results · updated {upd}", "", body, "../")
