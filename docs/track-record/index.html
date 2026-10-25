@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How we did – FootyPredicts</title>
 <meta name="description" content="Our published picks next to the results.">
+<link rel="canonical" href="https://footypredicts.github.io/track-record/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="FootyPredicts">
+<meta property="og:title" content="How we did – FootyPredicts"><meta property="og:description" content="Our published picks next to the results.">
+<meta property="og:url" content="https://footypredicts.github.io/track-record/"><meta property="og:image" content="https://footypredicts.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How we did – FootyPredicts">
+<meta name="twitter:description" content="Our published picks next to the results."><meta name="twitter:image" content="https://footypredicts.github.io/og.png">
+<meta name="theme-color" content="#0f3d2e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -165,6 +172,24 @@ button.sel.na { opacity:.45; cursor:not-allowed; }
 .vm th:first-child { max-width:200px; }
 .vm td { font:700 20px/1 "Barlow Condensed",sans-serif; }
 .vm-note { margin:10px 0 0; font-size:15px; color:var(--ink); }
+/* results cards */
+.rc-list { display:grid; gap:14px; }
+.rc { background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:14px 16px; box-shadow:0 8px 16px -10px rgba(15,61,46,.25); }
+.rc-top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; font-size:13px; color:var(--muted); }
+.rc-pick b { color:var(--ink); }
+.rc .ok { color:#1b7a46; font-weight:700; } .rc .no { color:#b3261e; font-weight:700; }
+.rc-score { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin:10px 0 8px; font:700 22px/1.1 "Barlow Condensed",sans-serif; }
+.rc-score .t:first-child { text-align:right; } .rc-score b { font-size:34px; background:#f1f4f0; border-radius:10px; padding:2px 12px; }
+.rc-cols { display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; border-top:1px solid var(--line); padding-top:8px; }
+.rc-cols h4 { margin:6px 0 3px; font:700 12px/1 Barlow,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.rc-cols ul { list-style:none; margin:0; padding:0; font-size:14px; }
+.rc-cols li { display:flex; gap:6px; align-items:baseline; padding:2px 4px; border-radius:6px; }
+.rc-cols li.hit { background:linear-gradient(180deg,#fff7c9,#f6e27a); font-weight:700; }
+.rc-cols .min { min-width:30px; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rc-cols .none { color:var(--muted); }
+.card { display:inline-block; width:9px; height:13px; border-radius:2px; flex:none; transform:translateY(2px); }
+.card.yellow { background:#f6d33b; border:1px solid #c9a227; } .card.red { background:#d3262b; border:1px solid #8f1318; }
+@media (max-width:520px) { .rc-score { font-size:18px; } .rc-score b { font-size:28px; } }
 /* depth + football decoration */
 .bk { width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 8px 16px -10px rgba(15,61,46,.3); }
 .bk th, .bk td { padding:10px 12px; border-top:1px solid var(--line); text-align:center; }
@@ -410,86 +435,320 @@ a.chip { text-decoration:none; }
   </div>
 </header>
 <main>
-      <section class="block"><h3>Every match <span class="sub">our pick and the result (&#10003; right, &#10007; wrong), with scorer picks (bold = scored)</span></h3>
-        <div class="tr-scroll"><table class="tr-list"><tr><td class="pm-date">24 Oct</td><td>La Liga</td>
-              <td class="tr-m">Atletico Madrid <b>1-0</b> Deportivo La Coruna</td>
-              <td>Atletico Madrid 68% <span class="ok">✓</span></td><td class="tr-sc">J. David, Álex Baena, Luismi Cruz, Peke</td></tr><tr><td class="pm-date">24 Oct</td><td>Serie A</td>
-              <td class="tr-m">Lazio <b>2-1</b> Parma</td>
-              <td>Lazio 58% <span class="ok">✓</span></td><td class="tr-sc">M. Zaccagni, T. Noslin, D. Romero, E. Touré</td></tr><tr><td class="pm-date">24 Oct</td><td>Ligue 1</td>
-              <td class="tr-m">Lens <b>2-1</b> Paris FC</td>
-              <td>Lens 42% <span class="ok">✓</span></td><td class="tr-sc"><b>F. Thauvin</b>, F. Ivanović, L. Sinayoko, M. Lopez</td></tr><tr><td class="pm-date">24 Oct</td><td>Premier League</td>
-              <td class="tr-m">Chelsea <b>0-2</b> Tottenham</td>
-              <td>Chelsea 57% <span class="no">✗</span></td><td class="tr-sc">João Pedro, M. Rogers, Omar Marmoush, D. Solanke</td></tr><tr><td class="pm-date">24 Oct</td><td>La Liga</td>
-              <td class="tr-m">Valencia <b>1-2</b> Villarreal</td>
-              <td>Villarreal 39% <span class="ok">✓</span></td><td class="tr-sc">David Otorbi, Luis Rioja, <b>G. Mikautadze</b>, P. Gueye</td></tr><tr><td class="pm-date">24 Oct</td><td>Bundesliga</td>
-              <td class="tr-m">Borussia Dortmund <b>1-0</b> Eintracht Frankfurt</td>
-              <td>Borussia Dortmund 69% <span class="ok">✓</span></td><td class="tr-sc">S. Guirassy, F. Nmecha, Y. Ebnoutalib, J. Burkardt</td></tr><tr><td class="pm-date">24 Oct</td><td>Serie A</td>
-              <td class="tr-m">Napoli <b>3-3</b> AS Roma</td>
-              <td>Draw 34% <span class="ok">✓</span></td><td class="tr-sc">R. Højlund, K. De Bruyne, D. Malen, <b>M. Soulé</b></td></tr><tr><td class="pm-date">24 Oct</td><td>La Liga</td>
-              <td class="tr-m">Racing Santander <b>2-1</b> Espanyol</td>
-              <td>Espanyol 40% <span class="no">✗</span></td><td class="tr-sc"><b>M. Zabiri</b>, Andrés Martín, Roberto Fernández, Bryan Zaragoza</td></tr><tr><td class="pm-date">24 Oct</td><td>Premier League</td>
-              <td class="tr-m">Arsenal <b>2-0</b> Everton</td>
-              <td>Arsenal 58% <span class="ok">✓</span></td><td class="tr-sc">B. Saka, K. Havertz, T. Barry, K. Dewsbury-Hall</td></tr><tr><td class="pm-date">24 Oct</td><td>Premier League</td>
-              <td class="tr-m">Coventry <b>0-1</b> Fulham</td>
-              <td>Fulham 41% <span class="ok">✓</span></td><td class="tr-sc">S. Cherif, J. Rudoni, Joshua King, Gonzalo García</td></tr><tr><td class="pm-date">24 Oct</td><td>Bundesliga</td>
-              <td class="tr-m">FSV Mainz 05 <b>2-3</b> Werder Bremen</td>
-              <td>FSV Mainz 05 54% <span class="no">✗</span></td><td class="tr-sc">P. Tietz, S. Becker, <b>N. Füllkrug</b>, M. Grüll</td></tr><tr><td class="pm-date">24 Oct</td><td>Bundesliga</td>
-              <td class="tr-m">FC Augsburg <b>1-1</b> Union Berlin</td>
-              <td>FC Augsburg 55% <span class="no">✗</span></td><td class="tr-sc">M. Gregoritsch, R. Fellhauer, M. LjubiÄiÄ, E. Latte Lath</td></tr><tr><td class="pm-date">24 Oct</td><td>Bundesliga</td>
-              <td class="tr-m">RB Leipzig <b>4-0</b> SV Elversberg</td>
-              <td>RB Leipzig 57% <span class="ok">✓</span></td><td class="tr-sc">C. Nkunku, A. Nusa, L. Petkov, D. Mokwa</td></tr><tr><td class="pm-date">24 Oct</td><td>Bundesliga</td>
-              <td class="tr-m">SC Paderborn 07 <b>1-0</b> Hamburger SV</td>
-              <td>SC Paderborn 07 41% <span class="ok">✓</span></td><td class="tr-sc">S. Marino, S. Tigges, Y. Poulsen, A. Grønbæk</td></tr><tr><td class="pm-date">24 Oct</td><td>Bundesliga</td>
-              <td class="tr-m">1. FC Köln <b>0-0</b> FC Schalke 04</td>
-              <td>Draw 39% <span class="ok">✓</span></td><td class="tr-sc">S. El Mala, M. Bülter, A. Aouchiche, J. Adamu</td></tr><tr><td class="pm-date">24 Oct</td><td>Serie A</td>
-              <td class="tr-m">Cagliari <b>0-2</b> Bologna</td>
-              <td>Draw 33% <span class="no">✗</span></td><td class="tr-sc">D. Maldini, P. Mendy, <b>F. Bernardeschi</b>, J. Enem</td></tr><tr><td class="pm-date">24 Oct</td><td>Serie A</td>
-              <td class="tr-m">Como <b>2-0</b> Sassuolo</td>
-              <td>Como 51% <span class="ok">✓</span></td><td class="tr-sc"><b>T. Douvikas</b>, N. Paz, D. Berardi, S. Esposito</td></tr><tr><td class="pm-date">24 Oct</td><td>La Liga</td>
-              <td class="tr-m">Rayo Vallecano <b>0-3</b> Elche</td>
-              <td>Rayo Vallecano 46% <span class="no">✗</span></td><td class="tr-sc">Sergio Camello, Álvaro García, <b>Fer Niño</b>, A. Osorio</td></tr><tr><td class="pm-date">24 Oct</td><td>Premier League</td>
-              <td class="tr-m">Aston Villa <b>2-1</b> Manchester City</td>
-              <td>Man City 50% <span class="no">✗</span></td><td class="tr-sc"><b>N. Jackson</b>, J. Manzambi, <b>E. Haaland</b>, R. Cherki</td></tr><tr><td class="pm-date">23 Oct</td><td>Premier League</td>
-              <td class="tr-m">Ipswich <b>1-1</b> Nottingham Forest</td>
-              <td>Nottingham Forest 42% <span class="no">✗</span></td><td class="tr-sc">Emersonn, L. Davis, D. Ndoye, M. Gibbs-White</td></tr><tr><td class="pm-date">23 Oct</td><td>La Liga</td>
-              <td class="tr-m">Alaves <b>1-1</b> Malaga</td>
-              <td>Alaves 70% <span class="no">✗</span></td><td class="tr-sc">L. Boyé, M. Díaz, <b>Adrián Niño Heredia</b>, Chupe</td></tr><tr><td class="pm-date">23 Oct</td><td>Serie A</td>
-              <td class="tr-m">Torino <b>3-2</b> Monza</td>
-              <td>Torino 49% <span class="ok">✓</span></td><td class="tr-sc">C. Adams, G. Simeone, <b>Gustavo Varela</b>, Jay Robinson</td></tr><tr><td class="pm-date">23 Oct</td><td>Ligue 1</td>
-              <td class="tr-m">Stade Brestois 29 <b>1-2</b> Nice</td>
-              <td>Stade Brestois 44% <span class="no">✗</span></td><td class="tr-sc">K. Doumbia, <b>L. Ajorque</b>, <b>E. Wahi</b>, M. Amoura</td></tr><tr><td class="pm-date">23 Oct</td><td>Bundesliga</td>
-              <td class="tr-m">VfB Stuttgart <b>2-3</b> Borussia Mönchengladbach</td>
-              <td>VfB Stuttgart 73% <span class="no">✗</span></td><td class="tr-sc"><b>E. Demirović</b>, D. Undav, H. Bolin, F. Neuhaus</td></tr><tr><td class="pm-date">21 Oct</td><td>La Liga</td>
-              <td class="tr-m">Levante <b>3-1</b> Athletic Club</td>
-              <td>Levante 40% <span class="ok">✓</span></td><td class="tr-sc">Iván Romero, <b>Brugui</b>, Robert Navarro, Oihan Sancet</td></tr><tr><td class="pm-date">19 Oct</td><td>Premier League</td>
-              <td class="tr-m">Tottenham <b>3-1</b> Coventry</td>
-              <td>Tottenham 43% <span class="ok">✓</span></td><td class="tr-sc">D. Solanke, <b>Omar Marmoush</b>, T. Awoniyi, <b>J. Rudoni</b></td></tr><tr><td class="pm-date">19 Oct</td><td>La Liga</td>
-              <td class="tr-m">Getafe <b>1-1</b> Rayo Vallecano</td>
-              <td>Draw 37% <span class="ok">✓</span></td><td class="tr-sc">Iván Azón, E. Ünal, Sergio Camello, <b>Álvaro García</b></td></tr><tr><td class="pm-date">19 Oct</td><td>Serie A</td>
-              <td class="tr-m">Parma <b>0-3</b> Torino</td>
-              <td>Torino 37% <span class="ok">✓</span></td><td class="tr-sc">D. Romero, E. Touré, <b>C. Adams</b>, R. Mandragora</td></tr><tr><td class="pm-date">19 Oct</td><td>Serie A</td>
-              <td class="tr-m">Monza <b>4-0</b> Cagliari</td>
-              <td>Cagliari 49% <span class="no">✗</span></td><td class="tr-sc"><b>Gustavo Varela</b>, A. Colpani, D. Maldini, P. Mendy</td></tr><tr><td class="pm-date">18 Oct</td><td>La Liga</td>
-              <td class="tr-m">Real Madrid <b>4-1</b> Sevilla</td>
-              <td>Real Madrid 75% <span class="ok">✓</span></td><td class="tr-sc"><b>Kylian Mbappé</b>, J. Bellingham, Peque Fernández, Félix Correia</td></tr><tr><td class="pm-date">18 Oct</td><td>Serie A</td>
-              <td class="tr-m">Juventus <b>0-3</b> Lazio</td>
-              <td>Juventus 48% <span class="no">✗</span></td><td class="tr-sc">R. Kolo Muani, N. González, M. Zaccagni, T. Noslin</td></tr><tr><td class="pm-date">18 Oct</td><td>Ligue 1</td>
-              <td class="tr-m">Lyon <b>2-1</b> Nice</td>
-              <td>Lyon 62% <span class="ok">✓</span></td><td class="tr-sc">E. Nuamah, L. Openda, M. Amoura, <b>E. Wahi</b></td></tr><tr><td class="pm-date">18 Oct</td><td>La Liga</td>
-              <td class="tr-m">Malaga <b>2-5</b> Real Sociedad</td>
-              <td>Real Sociedad 48% <span class="ok">✓</span></td><td class="tr-sc">Chupe, <b>Adrián Niño Heredia</b>, L. Sučić, Barrenetxea</td></tr><tr><td class="pm-date">18 Oct</td><td>Serie A</td>
-              <td class="tr-m">AC Milan <b>3-2</b> Atalanta</td>
-              <td>AC Milan 38% <span class="ok">✓</span></td><td class="tr-sc">Diego Moreira, <b>Gonçalo Ramos</b>, <b>N. Krstović</b>, J. Rowe</td></tr><tr><td class="pm-date">18 Oct</td><td>Premier League</td>
-              <td class="tr-m">Nottingham Forest <b>0-1</b> Arsenal</td>
-              <td>Arsenal 52% <span class="ok">✓</span></td><td class="tr-sc">D. Ndoye, M. Gibbs-White, B. Saka, K. Havertz</td></tr><tr><td class="pm-date">18 Oct</td><td>Bundesliga</td>
-              <td class="tr-m">Borussia Mönchengladbach <b>1-2</b> 1899 Hoffenheim</td>
-              <td>Borussia Mönchengladbach 38% <span class="no">✗</span></td><td class="tr-sc">H. Bolin, I. Lidberg, A. Hložek, T. Lemperle</td></tr><tr><td class="pm-date">18 Oct</td><td>Ligue 1</td>
-              <td class="tr-m">Lorient <b>1-0</b> Monaco</td>
-              <td>Monaco 40% <span class="no">✗</span></td><td class="tr-sc">J. Makengo, M. Kone, Paris Josua  Brunner, M. Abline</td></tr><tr><td class="pm-date">18 Oct</td><td>Ligue 1</td>
-              <td class="tr-m">Le Havre <b>1-3</b> Auxerre</td>
-              <td>Le Havre 37% <span class="no">✗</span></td><td class="tr-sc">M. Samatta, J. Maja, C. Archer, <b>D. Namaso</b></td></tr><tr><td class="pm-date">18 Oct</td><td>Ligue 1</td>
-              <td class="tr-m">Paris FC <b>4-3</b> Rennes</td>
-              <td>Paris FC 44% <span class="ok">✓</span></td><td class="tr-sc"><b>L. Sinayoko</b>, I. Kebbal, <b>E. Lepaul</b>, A. Thomasson</td></tr></table></div></section>
+      <section class="block"><h3>Every match <span class="sub">goals and cards for each side; highlighted = one of our player picks</span></h3>
+        <div class="rc-list">
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Atletico Madrid</b> 68% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Atletico Madrid</span><b>1-0</b><span class="t">Deportivo La Coruna</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">48&prime;</span><span class="ico">&#9917;</span>Julián Álvarez</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">26&prime;</span><span class="card yellow"></span>Marc Pubill</li><li class=""><span class="min">85&prime;</span><span class="card yellow"></span>Alexander Sørloth</li><li class=""><span class="min">86&prime;</span><span class="card yellow"></span>Alejandro Baena Rodríguez</li><li class=""><span class="min">87&prime;</span><span class="card yellow"></span>Giuliano Simeone Baldini</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">75&prime;</span><span class="card yellow"></span>Yeremay Hernández</li><li class=""><span class="min">79&prime;</span><span class="card yellow"></span>Giacomo Quagliata</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Serie A</span><span class="rc-pick">Our pick: <b>Lazio</b> 58% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Lazio</span><b>2-1</b><span class="t">Parma</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">50&prime;</span><span class="ico">&#9917;</span>Kenneth Taylor</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">30&prime;</span><span class="card yellow"></span>Oliver Provstgaard</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">90&prime;</span><span class="ico">&#9917;</span>Simone Lontani</li></ul><h4>Cards</h4><ul><li class=""><span class="min">38&prime;</span><span class="card yellow"></span>Vincent Sierro</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Ligue 1</span><span class="rc-pick">Our pick: <b>Lens</b> 42% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Lens</span><b>2-1</b><span class="t">Paris FC</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">63&prime;</span><span class="ico">&#9917;</span>Florian Thauvin</li><li class=""><span class="min">83&prime;</span><span class="ico">&#9917;</span>Thorgan Hazard</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">51&prime;</span><span class="card yellow"></span>Florian Thauvin</li><li class=""><span class="min">74&prime;</span><span class="card yellow"></span>Samson Baidoo</li><li class=""><span class="min">89&prime;</span><span class="card yellow"></span>Michał Skóraś</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Y. Cahuzac</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">45&prime;</span><span class="ico">&#9917;</span>Luca Koleosho</li></ul><h4>Cards</h4><ul><li class=""><span class="min">28&prime;</span><span class="card yellow"></span>Moustapha Mbow</li><li class=""><span class="min">29&prime;</span><span class="card yellow"></span>Pierre Lees Melou</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Otavio</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Premier League</span><span class="rc-pick">Our pick: <b>Chelsea</b> 57% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Chelsea</span><b>0-2</b><span class="t">Tottenham</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">71&prime;</span><span class="card yellow"></span>Cole Palmer</li><li class=""><span class="min">79&prime;</span><span class="card yellow"></span>Pedro Neto</li><li class="hit"><span class="min">80&prime;</span><span class="card red"></span>Cole Palmer</li><li class="hit"><span class="min">90&prime;</span><span class="card yellow"></span>Morgan Rogers</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">87&prime;</span><span class="ico">&#9917;</span>Mathys Tel</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">67&prime;</span><span class="card yellow"></span>Conor Gallagher</li><li class=""><span class="min">71&prime;</span><span class="card yellow"></span>Micky van de Ven</li><li class=""><span class="min">71&prime;</span><span class="card yellow"></span>Mateus Fernandes</li><li class=""><span class="min">72&prime;</span><span class="card yellow"></span>Roberto De Zerbi</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Villarreal</b> 39% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Valencia</span><b>1-2</b><span class="t">Villarreal</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">38&prime;</span><span class="ico">&#9917;</span>José Luis García Vayá</li></ul><h4>Cards</h4><ul><li class=""><span class="min">34&prime;</span><span class="card yellow"></span>Daniel Raba Antolín</li><li class=""><span class="min">60&prime;</span><span class="card yellow"></span>Pablo Maffeo</li><li class="hit"><span class="min">62&prime;</span><span class="card yellow"></span>Guido Rodríguez</li><li class=""><span class="min">89&prime;</span><span class="card yellow"></span>Harvey Elliott</li><li class=""><span class="min">89&prime;</span><span class="card red"></span>Harvey Elliott</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">69&prime;</span><span class="ico">&#9917;</span>Alex Freeman</li><li class="hit"><span class="min">90&prime;</span><span class="ico">&#9917;</span>Georges Mikautadze</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">37&prime;</span><span class="card yellow"></span>Renato Veiga</li><li class=""><span class="min">43&prime;</span><span class="card yellow"></span>Ayoze Pérez</li><li class=""><span class="min">59&prime;</span><span class="card yellow"></span>Tajon Buchanan</li><li class=""><span class="min">79&prime;</span><span class="card red"></span>Pape Gueye</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Bundesliga</span><span class="rc-pick">Our pick: <b>Borussia Dortmund</b> 69% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Borussia Dortmund</span><b>1-0</b><span class="t">Eintracht Frankfurt</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">80&prime;</span><span class="ico">&#9917;</span>Maximilian Beier</li></ul><h4>Cards</h4><ul><li class="none">–</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">58&prime;</span><span class="card yellow"></span>Nnamdi Collins</li><li class=""><span class="min">63&prime;</span><span class="card yellow"></span>Farès Chaïbi</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Serie A</span><span class="rc-pick">Our pick: <b>Draw</b> 34% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Napoli</span><b>3-3</b><span class="t">AS Roma</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">28&prime;</span><span class="ico">&#9917;</span>Frank Anguissa</li><li class=""><span class="min">48&prime;</span><span class="ico">&#9917;</span>Scott McTominay</li><li class=""><span class="min">83&prime;</span><span class="ico">&#9917;</span>Scott McTominay</li></ul><h4>Cards</h4><ul><li class=""><span class="min">4&prime;</span><span class="card yellow"></span>Rafael Marin Zamora</li><li class=""><span class="min">90&prime;</span><span class="card red"></span>Massimiliano Allegri</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">69&prime;</span><span class="ico">&#9917;</span>Matias Soule</li><li class=""><span class="min">74&prime;</span><span class="ico">&#9917;</span>Leonardo Balerdi</li><li class=""><span class="min">89&prime;</span><span class="ico">&#9917;</span>Leonardo Balerdi</li></ul><h4>Cards</h4><ul><li class=""><span class="min">30&prime;</span><span class="card yellow"></span>Bryan Cristante</li><li class=""><span class="min">45&prime;</span><span class="card yellow"></span>Devyne Rensch</li><li class=""><span class="min">61&prime;</span><span class="card yellow"></span>Leonardo Balerdi</li><li class=""><span class="min">86&prime;</span><span class="card yellow"></span>Marten de Roon</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Espanyol</b> 40% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Racing Santander</span><b>2-1</b><span class="t">Espanyol</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">69&prime;</span><span class="ico">&#9917;</span>Jeanuël Belocian</li><li class="hit"><span class="min">84&prime;</span><span class="ico">&#9917;</span>Yassir Zabiri</li></ul><h4>Cards</h4><ul><li class=""><span class="min">8&prime;</span><span class="card yellow"></span>Iñigo Vicente</li><li class=""><span class="min">67&prime;</span><span class="card yellow"></span>Pablo Ramon Parra</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Jorge Salinas Viadero</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">62&prime;</span><span class="ico">&#9917;</span>Eduardo Expósito Jaén</li></ul><h4>Cards</h4><ul><li class=""><span class="min">17&prime;</span><span class="card yellow"></span>Pol Lozano</li><li class=""><span class="min">43&prime;</span><span class="card yellow"></span>José Manuel González Álvarez</li><li class=""><span class="min">70&prime;</span><span class="card yellow"></span>Urko Gonzalez</li><li class=""><span class="min">89&prime;</span><span class="card yellow"></span>Javi Puado</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Eduardo Expósito Jaén</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Premier League</span><span class="rc-pick">Our pick: <b>Arsenal</b> 58% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Arsenal</span><b>2-0</b><span class="t">Everton</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">7&prime;</span><span class="ico">&#9917;</span>Ezri Konsa </li><li class=""><span class="min">68&prime;</span><span class="ico">&#9917;</span>Gabriel dos Santos Magalhães</li></ul><h4>Cards</h4><ul><li class=""><span class="min">58&prime;</span><span class="card yellow"></span>Myles Lewis-Skelly</li><li class=""><span class="min">64&prime;</span><span class="card yellow"></span>Mikel Arteta Amatriain</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">45&prime;</span><span class="card yellow"></span>Vitaliy Mykolenko</li><li class="hit"><span class="min">66&prime;</span><span class="card yellow"></span>James Garner</li><li class=""><span class="min">79&prime;</span><span class="card yellow"></span>James Tarkowski</li><li class=""><span class="min">79&prime;</span><span class="card yellow"></span>David William Moyes</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Premier League</span><span class="rc-pick">Our pick: <b>Fulham</b> 41% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Coventry</span><b>0-1</b><span class="t">Fulham</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class="none">–</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">80&prime;</span><span class="ico">&#9917;</span>Oscar Bobb</li></ul><h4>Cards</h4><ul><li class=""><span class="min">36&prime;</span><span class="card yellow"></span>Shea Charles</li><li class=""><span class="min">82&prime;</span><span class="card yellow"></span>Antonee Robinson</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Bundesliga</span><span class="rc-pick">Our pick: <b>FSV Mainz 05</b> 54% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">FSV Mainz 05</span><b>2-3</b><span class="t">Werder Bremen</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">33&prime;</span><span class="ico">&#9917;</span>Anthony Caci</li><li class=""><span class="min">63&prime;</span><span class="ico">&#9917;</span>Lee Jae-Sung</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">69&prime;</span><span class="card yellow"></span>Phillipp Mwene</li><li class=""><span class="min">88&prime;</span><span class="card yellow"></span>Benedict Hollerbach</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Alexander Schwolow</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">7&prime;</span><span class="ico">&#9917;</span>Niclas Füllkrug</li><li class="hit"><span class="min">25&prime;</span><span class="ico">&#9917;</span>Niclas Füllkrug</li><li class=""><span class="min">61&prime;</span><span class="ico">&#9917;</span>Ludovit Reis</li></ul><h4>Cards</h4><ul><li class=""><span class="min">38&prime;</span><span class="card yellow"></span>Ludovit Reis</li><li class=""><span class="min">89&prime;</span><span class="card yellow"></span>Marco Grüll</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Bundesliga</span><span class="rc-pick">Our pick: <b>FC Augsburg</b> 55% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">FC Augsburg</span><b>1-1</b><span class="t">Union Berlin</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">71&prime;</span><span class="ico">&#9917;</span>Han-Noah Massengo</li></ul><h4>Cards</h4><ul><li class=""><span class="min">63&prime;</span><span class="card red"></span>Juma Bah</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">74&prime;</span><span class="ico">&#9917;</span>Janik Haberer</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">19&prime;</span><span class="card red"></span>Felix Uduokhai</li><li class=""><span class="min">31&prime;</span><span class="card yellow"></span>Janik Haberer</li><li class=""><span class="min">36&prime;</span><span class="card yellow"></span>Leopold Querfeld</li><li class=""><span class="min">77&prime;</span><span class="card yellow"></span>Mekhi Gray</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Bundesliga</span><span class="rc-pick">Our pick: <b>RB Leipzig</b> 57% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">RB Leipzig</span><b>4-0</b><span class="t">SV Elversberg</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">48&prime;</span><span class="ico">&#9917;</span>Tidiam Gomis</li><li class=""><span class="min">66&prime;</span><span class="ico">&#9917;</span>Rômulo José Cardoso da Cruz</li><li class=""><span class="min">84&prime;</span><span class="ico">&#9917;</span>Christoph Baumgartner</li><li class=""><span class="min">90&prime;</span><span class="ico">&#9917;</span>Rômulo José Cardoso da Cruz</li></ul><h4>Cards</h4><ul><li class=""><span class="min">59&prime;</span><span class="card yellow"></span>Rocco Reitz</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">74&prime;</span><span class="card yellow"></span>Lasse Günther</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Bundesliga</span><span class="rc-pick">Our pick: <b>SC Paderborn 07</b> 41% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">SC Paderborn 07</span><b>1-0</b><span class="t">Hamburger SV</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">88&prime;</span><span class="ico">&#9917;</span>Rayan Philippe</li></ul><h4>Cards</h4><ul><li class=""><span class="min">58&prime;</span><span class="card yellow"></span>Jano ter Horst</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">53&prime;</span><span class="card yellow"></span>Shafiq Nandja</li><li class="hit"><span class="min">87&prime;</span><span class="card yellow"></span>Albert Sambi Lokonga</li><li class=""><span class="min">89&prime;</span><span class="card yellow"></span>Merlin Polzin</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Bundesliga</span><span class="rc-pick">Our pick: <b>Draw</b> 39% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">1. FC Köln</span><b>0-0</b><span class="t">FC Schalke 04</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">45&prime;</span><span class="card yellow"></span>Tom Krauß</li><li class=""><span class="min">81&prime;</span><span class="card yellow"></span>Luka Lochoshvili</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">71&prime;</span><span class="card yellow"></span>Junior Dina Ebimbe</li><li class=""><span class="min">83&prime;</span><span class="card yellow"></span>Vitalie Becker</li><li class="hit"><span class="min">89&prime;</span><span class="card yellow"></span>Hasan Kuruçay</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Serie A</span><span class="rc-pick">Our pick: <b>Draw</b> 33% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Cagliari</span><b>0-2</b><span class="t">Bologna</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">38&prime;</span><span class="card yellow"></span>Zé Pedro</li><li class=""><span class="min">55&prime;</span><span class="card yellow"></span>Roberto Gagliardini</li><li class="hit"><span class="min">77&prime;</span><span class="card yellow"></span>Alessandro Deiola</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">57&prime;</span><span class="ico">&#9917;</span>Nicolo Casale</li><li class="hit"><span class="min">80&prime;</span><span class="ico">&#9917;</span>Federico Bernardeschi</li></ul><h4>Cards</h4><ul><li class=""><span class="min">32&prime;</span><span class="card yellow"></span>Federico Bernardeschi</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Serie A</span><span class="rc-pick">Our pick: <b>Como</b> 51% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Como</span><b>2-0</b><span class="t">Sassuolo</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">49&prime;</span><span class="ico">&#9917;</span>Anastasios Douvikas</li><li class="hit"><span class="min">60&prime;</span><span class="ico">&#9917;</span>Anastasios Douvikas</li></ul><h4>Cards</h4><ul><li class=""><span class="min">65&prime;</span><span class="card yellow"></span>Yan Couto</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Luis Milla</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">63&prime;</span><span class="card yellow"></span>Domenico Berardi</li><li class=""><span class="min">87&prime;</span><span class="card yellow"></span>Ignace Van der Brempt</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Rayo Vallecano</b> 46% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Rayo Vallecano</span><b>0-3</b><span class="t">Elche</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">35&prime;</span><span class="card yellow"></span>Pathé Ciss</li><li class=""><span class="min">54&prime;</span><span class="card yellow"></span>Adrià Pedrosa</li><li class=""><span class="min">81&prime;</span><span class="card yellow"></span>Álvaro García</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">23&prime;</span><span class="ico">&#9917;</span>Federico Redondo Solari</li><li class=""><span class="min">36&prime;</span><span class="ico">&#9917;</span>Fernando Niño Rodríguez</li><li class=""><span class="min">68&prime;</span><span class="ico">&#9917;</span>Germán Valera</li></ul><h4>Cards</h4><ul><li class=""><span class="min">10&prime;</span><span class="card yellow"></span>Javier Morcillo Rodrigálvarez</li><li class="hit"><span class="min">30&prime;</span><span class="card yellow"></span>Gonzalo Villar</li><li class=""><span class="min">30&prime;</span><span class="card yellow"></span>Federico Redondo Solari</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sat 24 Oct · Premier League</span><span class="rc-pick">Our pick: <b>Man City</b> 50% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Aston Villa</span><b>2-1</b><span class="t">Manchester City</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">6&prime;</span><span class="ico">&#9917;</span>Nicolas Jackson</li><li class="hit"><span class="min">60&prime;</span><span class="ico">&#9917;</span>Nicolas Jackson</li></ul><h4>Cards</h4><ul><li class=""><span class="min">54&prime;</span><span class="card yellow"></span>Johan Manzambi</li><li class="hit"><span class="min">55&prime;</span><span class="card yellow"></span>Matty Cash</li><li class=""><span class="min">83&prime;</span><span class="card yellow"></span>Brian Madjo</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Emiliano Buendía</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">52&prime;</span><span class="ico">&#9917;</span>Erling Haaland</li></ul><h4>Cards</h4><ul><li class=""><span class="min">32&prime;</span><span class="card yellow"></span>Marc Guehi</li><li class=""><span class="min">38&prime;</span><span class="card yellow"></span>Rayan Cherki</li><li class=""><span class="min">74&prime;</span><span class="card yellow"></span>Elliot Anderson</li><li class=""><span class="min">76&prime;</span><span class="card yellow"></span>Ryan McAidoo</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Fri 23 Oct · Premier League</span><span class="rc-pick">Our pick: <b>Nottingham Forest</b> 42% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Ipswich</span><b>1-1</b><span class="t">Nottingham Forest</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">41&prime;</span><span class="ico">&#9917;</span>Julio Enciso</li></ul><h4>Cards</h4><ul><li class=""><span class="min">51&prime;</span><span class="card yellow"></span>Issa Diop</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">13&prime;</span><span class="ico">&#9917;</span>Neco Williams</li></ul><h4>Cards</h4><ul><li class=""><span class="min">54&prime;</span><span class="card yellow"></span>Murillo Santiago</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Fri 23 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Alaves</b> 70% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Alaves</span><b>1-1</b><span class="t">Malaga</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">89&prime;</span><span class="ico">&#9917;</span>Aitor Mañas</li></ul><h4>Cards</h4><ul><li class=""><span class="min">39&prime;</span><span class="card yellow"></span>Lucas Boyé</li><li class=""><span class="min">67&prime;</span><span class="card yellow"></span>Nahuel Tenaglia</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">44&prime;</span><span class="ico">&#9917;</span>Adrian Nino</li></ul><h4>Cards</h4><ul><li class=""><span class="min">84&prime;</span><span class="card yellow"></span>Carlos Dotor</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Juan Francisco Funes Arjona</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Fri 23 Oct · Serie A</span><span class="rc-pick">Our pick: <b>Torino</b> 49% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Torino</span><b>3-2</b><span class="t">Monza</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">39&prime;</span><span class="ico">&#9917;</span>Kian Fitz-Jim</li><li class=""><span class="min">61&prime;</span><span class="ico">&#9917;</span>Rafik Belghali</li><li class=""><span class="min">72&prime;</span><span class="ico">&#9917;</span>Nikola Vlašić</li></ul><h4>Cards</h4><ul><li class=""><span class="min">34&prime;</span><span class="card yellow"></span>Ardian Ismajli</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">47&prime;</span><span class="ico">&#9917;</span>Gustavo Varela</li></ul><h4>Cards</h4><ul><li class="none">–</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Fri 23 Oct · Ligue 1</span><span class="rc-pick">Our pick: <b>Stade Brestois</b> 44% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Stade Brestois 29</span><b>1-2</b><span class="t">Nice</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">15&prime;</span><span class="ico">&#9917;</span>Ludovic Ajorque</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">62&prime;</span><span class="card yellow"></span>Kamory Doumbia</li><li class=""><span class="min">64&prime;</span><span class="card yellow"></span>Ludovic Ajorque</li><li class="hit"><span class="min">71&prime;</span><span class="card yellow"></span>Bradley Locko</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">61&prime;</span><span class="ico">&#9917;</span>Sepe Elye Wahi</li><li class=""><span class="min">83&prime;</span><span class="ico">&#9917;</span>Sofiane Diop</li></ul><h4>Cards</h4><ul><li class=""><span class="min">58&prime;</span><span class="card yellow"></span>Hamza Koutoune</li><li class=""><span class="min">68&prime;</span><span class="card yellow"></span>Sepe Elye Wahi</li><li class=""><span class="min">85&prime;</span><span class="card yellow"></span>Yehvann Diouf</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Niels Nkounkou</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Olivier Pantaloni</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Isak Jansson</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Fri 23 Oct · Bundesliga</span><span class="rc-pick">Our pick: <b>VfB Stuttgart</b> 73% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">VfB Stuttgart</span><b>2-3</b><span class="t">Borussia Mönchengladbach</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">5&prime;</span><span class="ico">&#9917;</span>Ermedin Demirović</li><li class="hit"><span class="min">83&prime;</span><span class="ico">&#9917;</span>Ermedin Demirović</li></ul><h4>Cards</h4><ul><li class=""><span class="min">44&prime;</span><span class="card yellow"></span>Leo Sauer</li><li class=""><span class="min">45&prime;</span><span class="card yellow"></span>Atakan Karazor</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">38&prime;</span><span class="ico">&#9917;</span>Joe Scally</li><li class=""><span class="min">51&prime;</span><span class="ico">&#9917;</span>Shuto Machino</li><li class=""><span class="min">66&prime;</span><span class="ico">&#9917;</span>Wael Mohya</li></ul><h4>Cards</h4><ul><li class=""><span class="min">45&prime;</span><span class="card yellow"></span>Florian Neuhaus</li><li class=""><span class="min">53&prime;</span><span class="card yellow"></span>Zento Uno</li><li class=""><span class="min">54&prime;</span><span class="card yellow"></span>Joe Scally</li><li class=""><span class="min">79&prime;</span><span class="card yellow"></span>Lukas Ullrich</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Wed 21 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Levante</b> 40% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Levante</span><b>3-1</b><span class="t">Athletic Club</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">20&prime;</span><span class="ico">&#9917;</span>Roger Brugué</li><li class=""><span class="min">22&prime;</span><span class="ico">&#9917;</span>Roger Brugué</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">67&prime;</span><span class="card yellow"></span>Aïssa Mandi</li><li class=""><span class="min">77&prime;</span><span class="card yellow"></span>Karl Etta Eyong</li><li class=""><span class="min">80&prime;</span><span class="card yellow"></span>Jeremy Toljan</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">67&prime;</span><span class="ico">&#9917;</span>Alex Berenguer</li></ul><h4>Cards</h4><ul><li class=""><span class="min">73&prime;</span><span class="card red"></span>Aymeric Laporte</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Yuri Berchiche</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Mon 19 Oct · Premier League</span><span class="rc-pick">Our pick: <b>Tottenham</b> 43% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Tottenham</span><b>3-1</b><span class="t">Coventry</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">14&prime;</span><span class="ico">&#9917;</span>James Maddison</li><li class="hit"><span class="min">58&prime;</span><span class="ico">&#9917;</span>Omar Marmoush</li><li class=""><span class="min">90&prime;</span><span class="ico">&#9917;</span>Ben Davies</li></ul><h4>Cards</h4><ul><li class=""><span class="min">22&prime;</span><span class="card yellow"></span>Dominic Solanke</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">49&prime;</span><span class="ico">&#9917;</span>Jack Rudoni</li></ul><h4>Cards</h4><ul><li class=""><span class="min">20&prime;</span><span class="card yellow"></span>Caleb Yirenkyi</li><li class=""><span class="min">45&prime;</span><span class="card yellow"></span>Jay Dasilva</li><li class=""><span class="min">64&prime;</span><span class="card yellow"></span>Jack Rudoni</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Mon 19 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Draw</b> 37% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Getafe</span><b>1-1</b><span class="t">Rayo Vallecano</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">56&prime;</span><span class="ico">&#9917;</span>Martin Satriano</li></ul><h4>Cards</h4><ul><li class=""><span class="min">1&prime;</span><span class="card yellow"></span>Kiko Femenia</li><li class=""><span class="min">16&prime;</span><span class="card yellow"></span>Dakonam Ortega Djené</li><li class=""><span class="min">28&prime;</span><span class="card red"></span>Dakonam Ortega Djené</li><li class=""><span class="min">51&prime;</span><span class="card yellow"></span>Francho Serrano Gracia</li><li class=""><span class="min">79&prime;</span><span class="card yellow"></span>Daniel Carvajal</li><li class=""><span class="min">84&prime;</span><span class="card yellow"></span>Enes Ünal</li><li class=""><span class="min">87&prime;</span><span class="card yellow"></span>Nemanja Gudelj</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">11&prime;</span><span class="ico">&#9917;</span>Álvaro García</li></ul><h4>Cards</h4><ul><li class=""><span class="min">45&prime;</span><span class="card yellow"></span>Ivan Balliu</li><li class="hit"><span class="min">69&prime;</span><span class="card yellow"></span>Pathé Ciss</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Sergio Camello</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Mon 19 Oct · Serie A</span><span class="rc-pick">Our pick: <b>Torino</b> 37% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Parma</span><b>0-3</b><span class="t">Torino</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">28&prime;</span><span class="card yellow"></span>Diego Carlos</li><li class=""><span class="min">54&prime;</span><span class="card yellow"></span>Sascha Britschgi</li><li class="hit"><span class="min">90&prime;</span><span class="card yellow"></span>Mariano Troilo</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">4&prime;</span><span class="ico">&#9917;</span>Giovanni Simeone</li><li class="hit"><span class="min">24&prime;</span><span class="ico">&#9917;</span>Che Adams</li><li class=""><span class="min">69&prime;</span><span class="ico">&#9917;</span>Giovanni Simeone</li></ul><h4>Cards</h4><ul><li class=""><span class="min">37&prime;</span><span class="card yellow"></span>Ardian Ismajli</li><li class=""><span class="min">75&prime;</span><span class="card yellow"></span>Pietro Comuzzo</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Mon 19 Oct · Serie A</span><span class="rc-pick">Our pick: <b>Cagliari</b> 49% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Monza</span><b>4-0</b><span class="t">Cagliari</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">39&prime;</span><span class="ico">&#9917;</span>Eddy Kouadio</li><li class="hit"><span class="min">47&prime;</span><span class="ico">&#9917;</span>Gustavo Varela</li><li class=""><span class="min">66&prime;</span><span class="ico">&#9917;</span>Jay Robinson</li><li class="hit"><span class="min">79&prime;</span><span class="ico">&#9917;</span>Gustavo Varela</li></ul><h4>Cards</h4><ul><li class=""><span class="min">82&prime;</span><span class="card yellow"></span>Samuele Birindelli</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">76&prime;</span><span class="card yellow"></span>Harry Winks</li><li class=""><span class="min">82&prime;</span><span class="card yellow"></span>Alieu Fadera</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Real Madrid</b> 75% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Real Madrid</span><b>4-1</b><span class="t">Sevilla</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">30&prime;</span><span class="ico">&#9917;</span>Arda Güler</li><li class="hit"><span class="min">37&prime;</span><span class="ico">&#9917;</span>Kylian Mbappé</li><li class="hit"><span class="min">63&prime;</span><span class="ico">&#9917;</span>Kylian Mbappé</li><li class=""><span class="min">82&prime;</span><span class="ico">&#9917;</span>Yan Diomande</li></ul><h4>Cards</h4><ul><li class=""><span class="min">23&prime;</span><span class="card yellow"></span>Dean Huijsen</li><li class=""><span class="min">73&prime;</span><span class="card yellow"></span>Marc Cucurella</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">80&prime;</span><span class="ico">&#9917;</span>Manuel Bueno Sebastián</li></ul><h4>Cards</h4><ul><li class=""><span class="min">23&prime;</span><span class="card yellow"></span>Felix Correia</li><li class=""><span class="min">69&prime;</span><span class="card yellow"></span>Juan Antonio Iglesias Sánchez</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · Serie A</span><span class="rc-pick">Our pick: <b>Juventus</b> 48% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Juventus</span><b>0-3</b><span class="t">Lazio</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class="none">–</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">37&prime;</span><span class="ico">&#9917;</span>Oliver Provstgaard</li><li class=""><span class="min">66&prime;</span><span class="ico">&#9917;</span>Gustav Isaksen</li><li class=""><span class="min">89&prime;</span><span class="ico">&#9917;</span>Fisayo Dele-Bashiru</li></ul><h4>Cards</h4><ul><li class=""><span class="min">41&prime;</span><span class="card yellow"></span>Kenneth Taylor</li><li class="hit"><span class="min">48&prime;</span><span class="card yellow"></span>Mattia Zaccagni</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · Ligue 1</span><span class="rc-pick">Our pick: <b>Lyon</b> 62% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Lyon</span><b>2-1</b><span class="t">Nice</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">32&prime;</span><span class="ico">&#9917;</span>Pavel Šulc</li><li class=""><span class="min">36&prime;</span><span class="ico">&#9917;</span>Tanner Tessmann</li></ul><h4>Cards</h4><ul><li class=""><span class="min">70&prime;</span><span class="card red"></span>Keito Nakamura</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">18&prime;</span><span class="ico">&#9917;</span>Sepe Elye Wahi</li></ul><h4>Cards</h4><ul><li class=""><span class="min">10&prime;</span><span class="card yellow"></span>Niels Nkounkou</li><li class=""><span class="min">48&prime;</span><span class="card yellow"></span>Mohamed Abdelmoneim</li><li class=""><span class="min">65&prime;</span><span class="card yellow"></span>Mohamed Amoura</li><li class=""><span class="min">90&prime;</span><span class="card yellow"></span>Sepe Elye Wahi</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · La Liga</span><span class="rc-pick">Our pick: <b>Real Sociedad</b> 48% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Malaga</span><b>2-5</b><span class="t">Real Sociedad</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">54&prime;</span><span class="ico">&#9917;</span>Adrian Nino</li><li class=""><span class="min">66&prime;</span><span class="ico">&#9917;</span>Pablo Martínez Andrés</li></ul><h4>Cards</h4><ul><li class="none">–</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">3&prime;</span><span class="ico">&#9917;</span>Takefusa Kubo</li><li class=""><span class="min">26&prime;</span><span class="ico">&#9917;</span>Orri Steinn Óskarsson</li><li class=""><span class="min">59&prime;</span><span class="ico">&#9917;</span>Mikel Oyarzabal</li><li class=""><span class="min">67&prime;</span><span class="ico">&#9917;</span>Mikel Oyarzabal</li><li class=""><span class="min">73&prime;</span><span class="ico">&#9917;</span>Gonçalo Guedes</li></ul><h4>Cards</h4><ul><li class=""><span class="min">37&prime;</span><span class="card yellow"></span>Jon Martin</li><li class=""><span class="min">62&prime;</span><span class="card yellow"></span>Mamadou Sarr</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · Serie A</span><span class="rc-pick">Our pick: <b>AC Milan</b> 38% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">AC Milan</span><b>3-2</b><span class="t">Atalanta</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">24&prime;</span><span class="ico">&#9917;</span>Gonçalo Ramos</li><li class=""><span class="min">43&prime;</span><span class="ico">&#9917;</span>Adrien Rabiot</li><li class=""><span class="min">57&prime;</span><span class="ico">&#9917;</span>Mario Gila</li></ul><h4>Cards</h4><ul><li class=""><span class="min">41&prime;</span><span class="card yellow"></span>Adrien Rabiot</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">66&prime;</span><span class="ico">&#9917;</span>Gianluca Gaetano</li><li class="hit"><span class="min">81&prime;</span><span class="ico">&#9917;</span>Nikola Krstović</li></ul><h4>Cards</h4><ul><li class=""><span class="min">68&prime;</span><span class="card yellow"></span>Éderson José dos Santos</li><li class=""><span class="min">78&prime;</span><span class="card yellow"></span>Relja Obric</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · Premier League</span><span class="rc-pick">Our pick: <b>Arsenal</b> 52% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Nottingham Forest</span><b>0-1</b><span class="t">Arsenal</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">17&prime;</span><span class="card yellow"></span>Neco Williams</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">80&prime;</span><span class="ico">&#9917;</span>Noni Madueke</li></ul><h4>Cards</h4><ul><li class=""><span class="min">53&prime;</span><span class="card yellow"></span>Noni Madueke</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · Bundesliga</span><span class="rc-pick">Our pick: <b>Borussia Mönchengladbach</b> 38% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Borussia Mönchengladbach</span><b>1-2</b><span class="t">1899 Hoffenheim</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">49&prime;</span><span class="ico">&#9917;</span>Wael Mohya</li></ul><h4>Cards</h4><ul><li class="hit"><span class="min">45&prime;</span><span class="card yellow"></span>Kevin Diks</li><li class=""><span class="min">89&prime;</span><span class="card yellow"></span>Shuto Machino</li><li class=""><span class="min">89&prime;</span><span class="card yellow"></span>Robin Hack</li></ul></div>
+            <div><h4>Goals</h4><ul><li class=""><span class="min">11&prime;</span><span class="ico">&#9917;</span>Bambasé Conté</li><li class=""><span class="min">54&prime;</span><span class="ico">&#9917;</span>Alexander Prass</li></ul><h4>Cards</h4><ul><li class=""><span class="min">45&prime;</span><span class="card yellow"></span>Fisnik Asllani</li><li class=""><span class="min">89&prime;</span><span class="card yellow"></span>Alexander Prass</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · Ligue 1</span><span class="rc-pick">Our pick: <b>Monaco</b> 40% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Lorient</span><b>1-0</b><span class="t">Monaco</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">61&prime;</span><span class="ico">&#9917;</span>Noah Cadiou</li></ul><h4>Cards</h4><ul><li class=""><span class="min">66&prime;</span><span class="card yellow"></span>Noah Cadiou</li><li class="hit"><span class="min">76&prime;</span><span class="card yellow"></span>Arsène Kouassi</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="none">–</li></ul><h4>Cards</h4><ul><li class=""><span class="min">57&prime;</span><span class="card yellow"></span>Mohammed Salisu</li><li class=""><span class="min">60&prime;</span><span class="card yellow"></span>Denis Zakaria</li><li class=""><span class="min">60&prime;</span><span class="card yellow"></span>Flavio Nazinho</li><li class=""><span class="min">80&prime;</span><span class="card yellow"></span>Christian Mawissa</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · Ligue 1</span><span class="rc-pick">Our pick: <b>Le Havre</b> 37% <span class="no">&#10007; wrong</span></span></div>
+          <div class="rc-score"><span class="t">Le Havre</span><b>1-3</b><span class="t">Auxerre</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">66&prime;</span><span class="ico">&#9917;</span>Rayan Fofana</li></ul><h4>Cards</h4><ul><li class=""><span class="min">54&prime;</span><span class="card yellow"></span>M. Ndiaye</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">40&prime;</span><span class="ico">&#9917;</span>Danny Namaso</li><li class="hit"><span class="min">61&prime;</span><span class="ico">&#9917;</span>Danny Namaso</li><li class=""><span class="min">80&prime;</span><span class="ico">&#9917;</span>Romain Faivre</li></ul><h4>Cards</h4><ul><li class=""><span class="min">43&prime;</span><span class="card yellow"></span>Clément Akpa</li><li class=""><span class="min">50&prime;</span><span class="card yellow"></span>Naouirou Ahamada</li></ul></div>
+          </div>
+        </article>
+        <article class="rc">
+          <div class="rc-top"><span>Sun 18 Oct · Ligue 1</span><span class="rc-pick">Our pick: <b>Paris FC</b> 44% <span class="ok">&#10003; right</span></span></div>
+          <div class="rc-score"><span class="t">Paris FC</span><b>4-3</b><span class="t">Rennes</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul><li class=""><span class="min">14&prime;</span><span class="ico">&#9917;</span>Maxime López</li><li class=""><span class="min">45&prime;</span><span class="ico">&#9917;</span>Maxime López</li><li class="hit"><span class="min">76&prime;</span><span class="ico">&#9917;</span>Lassine Sinayoko</li><li class="hit"><span class="min">90&prime;</span><span class="ico">&#9917;</span>Lassine Sinayoko</li></ul><h4>Cards</h4><ul><li class=""><span class="min">42&prime;</span><span class="card yellow"></span>Samir Chergui</li><li class=""><span class="min">67&prime;</span><span class="card yellow"></span>Ilan Kebbal</li><li class="hit"><span class="min">90&prime;</span><span class="card yellow"></span>Hamari Traore</li></ul></div>
+            <div><h4>Goals</h4><ul><li class="hit"><span class="min">29&prime;</span><span class="ico">&#9917;</span>Esteban Lepaul</li><li class="hit"><span class="min">74&prime;</span><span class="ico">&#9917;</span>Esteban Lepaul</li><li class="hit"><span class="min">88&prime;</span><span class="ico">&#9917;</span>Esteban Lepaul</li></ul><h4>Cards</h4><ul><li class=""><span class="min">23&prime;</span><span class="card yellow"></span>Przemysław Frankowski</li><li class=""><span class="min">32&prime;</span><span class="card yellow"></span>Djaoui Cissé</li><li class="hit"><span class="min">36&prime;</span><span class="card yellow"></span>Adrien Thomasson</li><li class=""><span class="min">36&prime;</span><span class="card yellow"></span>Anthony Rouault</li></ul></div>
+          </div>
+        </article></div></section>
       <section class="block tr-method"><h3>How this is checked</h3>
         <p>Only predictions published before kick-off count, and they can't be changed afterwards. Results are checked automatically each morning.</p>
         <p><b>Model update, 23 Oct 2026:</b> predictions now factor in injuries and suspensions, and flag close or thin-data matches. Earlier matches used the previous model.</p></section>

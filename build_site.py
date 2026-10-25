@@ -10,6 +10,8 @@ Pages:
   docs/<league>/index.html   one page per league, one panel per match
 """
 import json
+import re
+import unicodedata
 import os
 from datetime import datetime, timezone
 from html import escape
@@ -20,6 +22,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SHOW_TRACK_RECORD = os.environ.get("SHOW_TRACK_RECORD") == "1"
 SITE_DATA = os.path.join(BASE_DIR, "data", "site")
 OUT_DIR = os.path.join(BASE_DIR, "docs")
+# Public address of the site (used for sharing previews and the sitemap). Change if you buy a domain.
+SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.github.io/").rstrip("/") + "/"
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
 
@@ -535,18 +539,45 @@ def track_record_page(leagues, upd):
       <section class="block"><h3>By league</h3>
         <table class="tr-table"><tr><th></th><td>Matches</td><td>Results right</td><td>Scorer picks</td></tr>{lg_rows}</table></section>"""
             private = hero + markets + by_league
+        def surname(x):
+            w = [t for t in re.sub(r"[^a-z ]", " ", unicodedata.normalize("NFKD", str(x)).encode("ascii", "ignore").decode().lower()).split() if len(t) > 1]
+            return w[-1] if w else ""
+
+        def goals_col(m, team):
+            picked = {surname(x["name"]) for x in m.get("scorers", []) if x["team"] == team}
+            items = [g for g in m.get("goal_events", []) if g["team"] == team]
+            if not items:
+                return '<li class="none">–</li>'
+            return "".join(
+                f'<li class="{"hit" if surname(g["name"]) in picked else ""}"><span class="min">{g.get("minute") or ""}{"&prime;" if g.get("minute") else ""}</span>'
+                f'<span class="ico">&#9917;</span>{esc(g["name"])}</li>' for g in items)
+
+        def cards_col(m, team):
+            picked = {surname(x["name"]) for x in m.get("bookings", []) if x["team"] == team}
+            items = [c for c in m.get("card_events", []) if c["team"] == team]
+            if not items:
+                return '<li class="none">–</li>'
+            return "".join(
+                f'<li class="{"hit" if surname(c["name"]) in picked else ""}"><span class="min">{c.get("minute") or ""}{"&prime;" if c.get("minute") else ""}</span>'
+                f'<span class="card {"red" if c["card"] == "Red" else "yellow"}"></span>{esc(c["name"])}</li>' for c in items)
+
         mrows = []
         for m in matches[:60 if SHOW_TRACK_RECORD else 200]:
-            d = datetime.fromisoformat(m["kickoff"][:19]).strftime("%d %b")
-            mark = '<span class="ok">✓</span>' if m["correct"] else '<span class="no">✗</span>'
+            d = datetime.fromisoformat(m["kickoff"][:19]).strftime("%a %d %b")
+            mark = '<span class="ok">&#10003; right</span>' if m["correct"] else '<span class="no">&#10007; wrong</span>'
             pick = "Draw" if m["pick"] == "Draw" else (m["home"] if m["pick"] == "Home" else m["away"])
-            sc = ", ".join(("<b>" if x["hit"] else "") + esc(x["name"]) + ("</b>" if x["hit"] else "") for x in m["scorers"])
-            mrows.append(f"""<tr><td class="pm-date">{d}</td><td>{esc(m['league_name'])}</td>
-              <td class="tr-m">{esc(m['home'])} <b>{m['score']}</b> {esc(m['away'])}</td>
-              <td>{esc(short(pick))} {m['pick_pct']:.0f}% {mark}</td><td class="tr-sc">{sc}</td></tr>""")
+            mrows.append(f"""
+        <article class="rc">
+          <div class="rc-top"><span>{d} · {esc(m['league_name'])}</span><span class="rc-pick">Our pick: <b>{esc(short(pick))}</b> {m['pick_pct']:.0f}% {mark}</span></div>
+          <div class="rc-score"><span class="t">{esc(m['home'])}</span><b>{m['score']}</b><span class="t">{esc(m['away'])}</span></div>
+          <div class="rc-cols">
+            <div><h4>Goals</h4><ul>{goals_col(m, m['home'])}</ul><h4>Cards</h4><ul>{cards_col(m, m['home'])}</ul></div>
+            <div><h4>Goals</h4><ul>{goals_col(m, m['away'])}</ul><h4>Cards</h4><ul>{cards_col(m, m['away'])}</ul></div>
+          </div>
+        </article>""")
         recent = f"""
-      <section class="block"><h3>Every match <span class="sub">our pick and the result (&#10003; right, &#10007; wrong), with scorer picks (bold = scored)</span></h3>
-        <div class="tr-scroll"><table class="tr-list">{''.join(mrows)}</table></div></section>"""
+      <section class="block"><h3>Every match <span class="sub">goals and cards for each side; highlighted = one of our player picks</span></h3>
+        <div class="rc-list">{''.join(mrows)}</div></section>"""
         body = private + recent
     body += """
       <section class="block tr-method"><h3>How this is checked</h3>
@@ -554,7 +585,7 @@ def track_record_page(leagues, upd):
         <p><b>Model update, 23 Oct 2026:</b> predictions now factor in injuries and suspensions, and flag close or thin-data matches. Earlier matches used the previous model.</p></section>"""
     return page("How we did – FootyPredicts",
                 "Our published picks next to the results.",
-                league_nav(leagues, "track-record", "../"), f"Results · updated {upd}", "", body, "../")
+                league_nav(leagues, "track-record", "../"), f"Results · updated {upd}", "", body, "../", "track-record/")
 
 
 def affiliate_config():
@@ -587,14 +618,25 @@ def responsible_page(leagues):
         Links do not change our predictions, and the results page shows how our picks turned out.</p></section>"""
     return page("Responsible gambling – FootyPredicts",
                 "Help with gambling, how FootyPredicts is funded, and an 18+ reminder.",
-                league_nav(leagues, None, "../"), "Responsible gambling", "", body, "../")
+                league_nav(leagues, None, "../"), "Responsible gambling", "", body, "../", "responsible-gambling/")
 
 
-def page(title, desc, nav, sub, chips, body, prefix):
+def head_tags(title, desc, path):
+    url = SITE_URL + path
+    return (f'<link rel="canonical" href="{url}">\n'
+            f'<meta property="og:type" content="website"><meta property="og:site_name" content="FootyPredicts">\n'
+            f'<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">\n'
+            f'<meta property="og:url" content="{url}"><meta property="og:image" content="{SITE_URL}og.png">\n'
+            f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{title}">\n'
+            f'<meta name="twitter:description" content="{desc}"><meta name="twitter:image" content="{SITE_URL}og.png">\n'
+            f'<meta name="theme-color" content="#0f3d2e">')
+
+
+def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = PAGE.format(title=esc(title), desc=esc(desc), nav=nav, sub=sub, chips=chips, body=body,
                        css=CSS, extra_css=EXTRA_CSS, prefix=prefix)
     html = html.replace("{prefix}", prefix)
-    html = html.replace("__DECOR__", DECOR_DEFS)
+    html = html.replace("__DECOR__", DECOR_DEFS).replace("__HEAD__", head_tags(esc(title), esc(desc), path))
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
 
@@ -621,7 +663,7 @@ def build():
                     f"{d['name']} match predictions: result chances, goals, cards and players for every fixture.",
                     league_nav(leagues, d["league"], "../"), sub,
                     '<nav class="chips" role="tablist" aria-label="Fixtures">' + "".join(chip(f, i) for i, f in enumerate(fx)) + "</nav>",
-                    "".join(render_match(f, i) for i, f in enumerate(fx)), "../")
+                    "".join(render_match(f, i) for i, f in enumerate(fx)), "../", d["league"] + "/")
         os.makedirs(os.path.join(OUT_DIR, d["league"]), exist_ok=True)
         with open(os.path.join(OUT_DIR, d["league"], "index.html"), "w", encoding="utf-8") as fh:
             fh.write(html)
@@ -648,7 +690,7 @@ def build():
     html = page("FootyPredicts – football predictions for Europe's top leagues",
                 "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A and Ligue 1.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues · updated {upd}",
-                "", "".join(sections), "")
+                "", "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
     os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
@@ -657,6 +699,14 @@ def build():
     os.makedirs(os.path.join(OUT_DIR, "responsible-gambling"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "responsible-gambling", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(responsible_page(leagues))
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    paths = [""] + [d["league"] + "/" for d in leagues] + ["track-record/", "responsible-gambling/"]
+    with open(os.path.join(OUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as fh:
+        fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                 + "".join(f"  <url><loc>{SITE_URL}{x}</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq></url>\n" for x in paths)
+                 + "</urlset>\n")
+    with open(os.path.join(OUT_DIR, "robots.txt"), "w", encoding="utf-8") as fh:
+        fh.write(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
     open(os.path.join(OUT_DIR, ".nojekyll"), "w").close()
     print(f"Built site: {len(leagues)} leagues, {sum(len(d['fixtures']) for d in leagues)} fixtures")
 
@@ -820,6 +870,24 @@ EXTRA_CSS = r"""
 .vm th:first-child { max-width:200px; }
 .vm td { font:700 20px/1 "Barlow Condensed",sans-serif; }
 .vm-note { margin:10px 0 0; font-size:15px; color:var(--ink); }
+/* results cards */
+.rc-list { display:grid; gap:14px; }
+.rc { background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:14px 16px; box-shadow:0 8px 16px -10px rgba(15,61,46,.25); }
+.rc-top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; font-size:13px; color:var(--muted); }
+.rc-pick b { color:var(--ink); }
+.rc .ok { color:#1b7a46; font-weight:700; } .rc .no { color:#b3261e; font-weight:700; }
+.rc-score { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin:10px 0 8px; font:700 22px/1.1 "Barlow Condensed",sans-serif; }
+.rc-score .t:first-child { text-align:right; } .rc-score b { font-size:34px; background:#f1f4f0; border-radius:10px; padding:2px 12px; }
+.rc-cols { display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; border-top:1px solid var(--line); padding-top:8px; }
+.rc-cols h4 { margin:6px 0 3px; font:700 12px/1 Barlow,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.rc-cols ul { list-style:none; margin:0; padding:0; font-size:14px; }
+.rc-cols li { display:flex; gap:6px; align-items:baseline; padding:2px 4px; border-radius:6px; }
+.rc-cols li.hit { background:linear-gradient(180deg,#fff7c9,#f6e27a); font-weight:700; }
+.rc-cols .min { min-width:30px; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rc-cols .none { color:var(--muted); }
+.card { display:inline-block; width:9px; height:13px; border-radius:2px; flex:none; transform:translateY(2px); }
+.card.yellow { background:#f6d33b; border:1px solid #c9a227; } .card.red { background:#d3262b; border:1px solid #8f1318; }
+@media (max-width:520px) { .rc-score { font-size:18px; } .rc-score b { font-size:28px; } }
 /* depth + football decoration */
 .bk { width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 8px 16px -10px rgba(15,61,46,.3); }
 .bk th, .bk td { padding:10px 12px; border-top:1px solid var(--line); text-align:center; }
@@ -1014,6 +1082,7 @@ PAGE = r"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+__HEAD__
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">

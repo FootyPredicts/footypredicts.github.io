@@ -65,6 +65,18 @@ def published_predictions():
     return best
 
 
+def event_lists(ev):
+    """Who actually scored and who was carded (for the results page)."""
+    if not ev:
+        return {"goal_events": [], "card_events": []}
+    return {
+        "goal_events": [{"name": g["name"], "team": g["team"], "minute": g.get("minute")} for g in ev.get("goals", [])],
+        "card_events": [{"name": c["name"], "team": c["team"], "minute": c.get("minute"),
+                         "card": "Red" if "red" in str(c.get("card", "")).lower() and "yellow" not in str(c.get("card", "")).lower() else "Yellow"}
+                        for c in ev.get("cards", [])],
+    }
+
+
 def score_match(lg, name, when, f, result, events, stats, ids_by_name):
     hg, ag = result["hg"], result["ag"]
     actual = "Home" if hg > ag else "Away" if ag > hg else "Draw"
@@ -99,6 +111,7 @@ def score_match(lg, name, when, f, result, events, stats, ids_by_name):
         "btts_p": f["btts"], "btts": hg > 0 and ag > 0,
         "cards5_p": f["cards5"], "cards": cards, "cards_exp": (f.get("cards") or {}).get("exp"),
         "scorers": players("goals"), "bookings": players("cards"),
+        **event_lists(ev),
     }
 
 
@@ -164,6 +177,14 @@ def main():
     # keep rows already scored earlier (e.g. when the git history was restarted in a new repository)
     seen = {r["id"] for r in rows}
     rows += [r for r in load(os.path.join(OUT, "matches.json"), []) if r.get("id") not in seen]
+    # rows scored earlier may lack the goal/card lists: fill them in from the saved match events
+    ev_cache = {}
+    for r in rows:
+        if "goal_events" not in r:
+            lg = r["league"]
+            if lg not in ev_cache:
+                ev_cache[lg] = load(os.path.join(BASE, "data", lg, "match_events.json"), {})
+            r.update(event_lists(ev_cache[lg].get(str(r["id"]))))
     rows.sort(key=lambda r: r["kickoff"], reverse=True)
     by = defaultdict(list)
     for r in rows:
