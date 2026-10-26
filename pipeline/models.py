@@ -304,8 +304,10 @@ def attach_odds(fx, m, books=None):
 
 # ---------------------------------------------------------------- injuries, thin data, market
 
-# These weights are judgement calls, not fitted values (there is no history of injuries to fit them on).
-INJURY_ATT_WEIGHT = 0.7    # losing X% of a team's expected goals cuts its goals by 0.7 * X%
+# Checked against ~1,850 matches with historical injury lists (Oct 2026): the attacking effect did not
+# improve predictions (it got worse as it was scaled up), the defensive one was neutral to slightly
+# positive. The attacking weight was therefore cut from 0.7 to 0.35 until more data is in.
+INJURY_ATT_WEIGHT = 0.35   # losing X% of a team's expected goals cuts its goals by 0.35 * X%
 INJURY_ATT_CAP = 0.30
 DEF_PENALTY = {"Defender": 0.04, "Goalkeeper": 0.07}   # opponent scores this much more per missing regular
 DEF_CAP = 0.15
