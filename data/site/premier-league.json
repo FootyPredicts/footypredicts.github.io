@@ -3,2099 +3,9 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-10-25T10:15:44.499400+00:00",
- "matches_used": 835,
+ "updated": "2026-10-26T09:58:43.009447+00:00",
+ "matches_used": 840,
  "fixtures": [
-  {
-   "id": 1557445,
-   "kickoff": "2026-10-25T14:00:00",
-   "round": "Regular Season - 8",
-   "home": "Manchester United",
-   "away": "Bournemouth",
-   "referee": "J. Gillett",
-   "ref_cards": 3.98,
-   "ref_games": 43,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 42.4,
-    "draw": 26.9,
-    "away": 30.7
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 10.6,
-     "defence_hit_pct": 6.0,
-     "key_out": [
-      "L. Shaw",
-      "Lisandro Martínez",
-      "M. Rashford"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 6.7,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 43.4,
-   "draw_pct": 26.6,
-   "away_pct": 30.0,
-   "xg_home": 1.57,
-   "xg_away": 1.27,
-   "over25": 54.2,
-   "btts": 58.0,
-   "cards5": 38.7,
-   "cards": {
-    "exp": 4.09,
-    "home": 1.79,
-    "away": 2.3,
-    "over": {
-     "2.5": 74.7,
-     "3.5": 56.5,
-     "4.5": 38.7,
-     "5.5": 24.2,
-     "6.5": 13.9
-    }
-   },
-   "form": {
-    "home": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 33.33333333333333,
-     "btts": 66.66666666666666
-    },
-    "away": {
-     "played": 3,
-     "win": 0.0,
-     "over25": 100.0,
-     "btts": 100.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 48.286921088710386,
-     "sh": 64.95890423752248,
-     "any": 81.87917049696944
-    },
-    "away": {
-     "fh": 44.221616480700156,
-     "sh": 54.823565448928726,
-     "any": 74.80131507575798
-    },
-    "match_fh": 71.15528051522271,
-    "match_sh": 84.16968230688613
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 20589,
-       "name": "B. Mbeumo",
-       "p": 40.0,
-       "price": {
-        "odd": 2.88,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.88
-        }
-       }
-      },
-      {
-       "id": 1485,
-       "name": "Bruno Fernandes",
-       "p": 30.9,
-       "price": {
-        "odd": 3.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 1485,
-       "name": "Bruno Fernandes",
-       "p": 21.0,
-       "price": null
-      },
-      {
-       "id": 2935,
-       "name": "H. Maguire",
-       "p": 21.0,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 2935,
-      "name": "H. Maguire",
-      "sot": 2
-     }
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 19245,
-       "name": "M. Tavernier",
-       "p": 27.9,
-       "price": {
-        "odd": 3.6,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.6
-        }
-       }
-      },
-      {
-       "id": 152856,
-       "name": "Evanilson",
-       "p": 21.3,
-       "price": {
-        "odd": 2.88,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.88
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 331832,
-       "name": "António Silva",
-       "p": 27.6,
-       "price": null
-      },
-      {
-       "id": 18869,
-       "name": "A. Smith",
-       "p": 27.2,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 331832,
-      "name": "António Silva",
-      "sot": 2
-     }
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 382452,
-      "name": "P. Dorgu",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury"
-     },
-     {
-      "id": 284322,
-      "name": "K. Mainoo",
-      "type": "Missing Fixture",
-      "reason": "Injury"
-     },
-     {
-      "id": 115589,
-      "name": "B. Sesko",
-      "type": "Missing Fixture",
-      "reason": "Leg Injury"
-     },
-     {
-      "id": 891,
-      "name": "L. Shaw",
-      "type": "Missing Fixture",
-      "reason": "Injury"
-     },
-     {
-      "id": 51494,
-      "name": "M. Ugarte",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 2467,
-      "name": "L. Martinez",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 909,
-      "name": "M. Rashford",
-      "type": "Questionable",
-      "reason": "Hip Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 51051,
-      "name": "J. Araujo",
-      "type": "Missing Fixture",
-      "reason": "Thigh Injury"
-     },
-     {
-      "id": 304853,
-      "name": "A. Scott",
-      "type": "Missing Fixture",
-      "reason": "Thigh Injury"
-     },
-     {
-      "id": 361485,
-      "name": "A. Toth",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 368030,
-      "name": "E. J. Kroupi",
-      "type": "Questionable",
-      "reason": "Foot Injury"
-     },
-     {
-      "id": 412719,
-      "name": "V. Milosavljevic",
-      "type": "Questionable",
-      "reason": "Lacking Match Fitness"
-     }
-    ]
-   },
-   "previous": [
-    {
-     "date": "20/03/2026",
-     "home": "Bournemouth",
-     "away": "Manchester United",
-     "hg": 2,
-     "ag": 2
-    },
-    {
-     "date": "15/12/2025",
-     "home": "Manchester United",
-     "away": "Bournemouth",
-     "hg": 4,
-     "ag": 4
-    },
-    {
-     "date": "27/04/2025",
-     "home": "Bournemouth",
-     "away": "Manchester United",
-     "hg": 1,
-     "ag": 1
-    },
-    {
-     "date": "22/12/2024",
-     "home": "Manchester United",
-     "away": "Bournemouth",
-     "hg": 0,
-     "ag": 3
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 2.3,
-     "bookie": "Pinnacle",
-     "books": {
-      "William Hill": 2.25,
-      "Bet365": 2.25,
-      "Betfair": 2.25,
-      "BetVictor": 2.15
-     }
-    },
-    "draw": {
-     "odd": 3.74,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.4,
-      "Bet365": 3.5,
-      "Betfair": 3.5,
-      "BetVictor": 3.6
-     }
-    },
-    "away": {
-     "odd": 3.2,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 3.0,
-      "Bet365": 3.1,
-      "Betfair": 3.2,
-      "BetVictor": 3.0
-     }
-    },
-    "over25": {
-     "odd": 1.71,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 1.67,
-      "Betfair": 1.62,
-      "BetVictor": 1.62
-     }
-    },
-    "under25": {
-     "odd": 2.33,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 2.2,
-      "Betfair": 2.2,
-      "BetVictor": 2.12
-     }
-    },
-    "btts_yes": {
-     "odd": 1.55,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 1.55,
-      "Bet365": 1.53,
-      "Betfair": 1.53,
-      "BetVictor": 1.5
-     }
-    },
-    "btts_no": {
-     "odd": 2.5,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 2.38,
-      "Bet365": 2.38,
-      "Betfair": 2.5,
-      "BetVictor": 2.38
-     }
-    },
-    "cards_over45": {
-     "odd": 2.2,
-     "bookie": "Bet365",
-     "books": {
-      "Bet365": 2.2
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.21,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 4.15,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.67,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 1.67
-       }
-      },
-      "under": {
-       "odd": 2.56,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.1
-       }
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 2.2,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 2.2
-       }
-      },
-      "under": {
-       "odd": 1.82,
-       "bookie": "Betano",
-       "books": {
-        "Bet365": 1.62
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 2.75,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.42,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 4.05,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.22,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
-  {
-   "id": 1557444,
-   "kickoff": "2026-10-25T14:00:00",
-   "round": "Regular Season - 8",
-   "home": "Liverpool",
-   "away": "Brighton",
-   "referee": "S. Barrott",
-   "ref_cards": 4.16,
-   "ref_games": 51,
-   "pick": "Away",
-   "model_pick": "Away",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 44.7,
-    "draw": 25.2,
-    "away": 30.2
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 13.8,
-     "defence_hit_pct": 0.0,
-     "key_out": [
-      "D. Szoboszlai",
-      "Víctor Muñoz"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 0.3,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 32.5,
-   "draw_pct": 26.5,
-   "away_pct": 41.0,
-   "xg_home": 1.35,
-   "xg_away": 1.54,
-   "over25": 55.4,
-   "btts": 59.3,
-   "cards5": 38.2,
-   "cards": {
-    "exp": 4.06,
-    "home": 1.82,
-    "away": 2.24,
-    "over": {
-     "2.5": 74.3,
-     "3.5": 56.0,
-     "4.5": 38.2,
-     "5.5": 23.7,
-     "6.5": 13.6
-    }
-   },
-   "form": {
-    "home": {
-     "played": 3,
-     "win": 0.0,
-     "over25": 66.66666666666666,
-     "btts": 33.33333333333333
-    },
-    "away": {
-     "played": 3,
-     "win": 66.66666666666666,
-     "over25": 66.66666666666666,
-     "btts": 33.33333333333333
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 45.41469100160342,
-     "sh": 53.5859312812393,
-     "any": 74.66473717113634
-    },
-    "away": {
-     "fh": 47.156625080890194,
-     "sh": 60.32005637543523,
-     "any": 79.03177862277984
-    },
-    "match_fh": 71.15528051522271,
-    "match_sh": 81.582923698529
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 2864,
-       "name": "A. Isak",
-       "p": 30.4,
-       "price": {
-        "odd": 2.25,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.25
-        }
-       }
-      },
-      {
-       "id": 338751,
-       "name": "Víctor Muñoz",
-       "p": 16.3,
-       "price": {
-        "odd": 4.33,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.33
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 290,
-       "name": "V. van Dijk",
-       "p": 21.7,
-       "price": null
-      },
-      {
-       "id": 367636,
-       "name": "J. Jacquet",
-       "p": 21.3,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 290,
-      "name": "V. van Dijk",
-      "sot": 1
-     }
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 392482,
-       "name": "C. Kostoulas",
-       "p": 20.9,
-       "price": {
-        "odd": 2.6,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.6
-        }
-       }
-      },
-      {
-       "id": 18970,
-       "name": "P. Groß",
-       "p": 15.1,
-       "price": null
-      }
-     ],
-     "bookings": [
-      {
-       "id": 18970,
-       "name": "P. Groß",
-       "p": 28.2,
-       "price": null
-      },
-      {
-       "id": 22160,
-       "name": "O. Boscagli",
-       "p": 21.2,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 387521,
-      "name": "L. Vušković",
-      "sot": 2
-     }
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 180317,
-      "name": "C. Bradley",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 174565,
-      "name": "H. Ekitike",
-      "type": "Missing Fixture",
-      "reason": "Achilles Tendon Injury"
-     },
-     {
-      "id": 152654,
-      "name": "J. Frimpong",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 409047,
-      "name": "G. Leoni",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 407032,
-      "name": "A. Nallo",
-      "type": "Missing Fixture",
-      "reason": "Leg Injury"
-     },
-     {
-      "id": 1096,
-      "name": "D. Szoboszlai",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 338751,
-      "name": "V. Munoz",
-      "type": "Questionable",
-      "reason": "Knee Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 282637,
-      "name": "F. Azeez",
-      "type": "Missing Fixture",
-      "reason": "Abdominal strain"
-     },
-     {
-      "id": 129643,
-      "name": "E. Ferguson",
-      "type": "Missing Fixture",
-      "reason": "Ankle Injury"
-     },
-     {
-      "id": 383685,
-      "name": "Y. Minteh",
-      "type": "Missing Fixture",
-      "reason": "Injury"
-     },
-     {
-      "id": 106835,
-      "name": "K. Mitoma",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury"
-     },
-     {
-      "id": 343311,
-      "name": "S. Tzimas",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 92993,
-      "name": "M. Wieffer",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 524411,
-      "name": "Z. Yohanna",
-      "type": "Missing Fixture",
-      "reason": "Injury"
-     },
-     {
-      "id": 64003,
-      "name": "P. Struijk",
-      "type": "Questionable",
-      "reason": "Rest"
-     }
-    ]
-   },
-   "previous": [
-    {
-     "date": "21/03/2026",
-     "home": "Brighton",
-     "away": "Liverpool",
-     "hg": 2,
-     "ag": 1
-    },
-    {
-     "date": "13/12/2025",
-     "home": "Liverpool",
-     "away": "Brighton",
-     "hg": 2,
-     "ag": 0
-    },
-    {
-     "date": "19/05/2025",
-     "home": "Brighton",
-     "away": "Liverpool",
-     "hg": 3,
-     "ag": 2
-    },
-    {
-     "date": "02/11/2024",
-     "home": "Liverpool",
-     "away": "Brighton",
-     "hg": 2,
-     "ag": 1
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 2.17,
-     "bookie": "Pinnacle",
-     "books": {
-      "William Hill": 2.1,
-      "Bet365": 2.15,
-      "Betfair": 2.15,
-      "BetVictor": 2.05
-     }
-    },
-    "draw": {
-     "odd": 4.04,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.7,
-      "Bet365": 3.75,
-      "Betfair": 3.8,
-      "BetVictor": 3.75
-     }
-    },
-    "away": {
-     "odd": 3.29,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.1,
-      "Bet365": 3.1,
-      "Betfair": 3.2,
-      "BetVictor": 3.1
-     }
-    },
-    "over25": {
-     "odd": 1.6,
-     "bookie": "Betano",
-     "books": {
-      "Bet365": 1.57,
-      "Betfair": 1.53,
-      "BetVictor": 1.52
-     }
-    },
-    "under25": {
-     "odd": 2.5,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 2.38,
-      "Betfair": 2.38,
-      "BetVictor": 2.32
-     }
-    },
-    "btts_yes": {
-     "odd": 1.5,
-     "bookie": "Bet365",
-     "books": {
-      "William Hill": 1.44,
-      "Bet365": 1.5,
-      "Betfair": 1.5,
-      "BetVictor": 1.44
-     }
-    },
-    "btts_no": {
-     "odd": 2.63,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 2.5,
-      "Bet365": 2.5,
-      "Betfair": 2.63,
-      "BetVictor": 2.55
-     }
-    },
-    "cards_over45": {
-     "odd": 2.24,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 2.2
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.26,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.6,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.6,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 2.4,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 2.24,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.2
-       }
-      },
-      "under": {
-       "odd": 1.65,
-       "bookie": "Betano",
-       "books": {
-        "Bet365": 1.62
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 3.1,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.33,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 4.65,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.17,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
-  {
-   "id": 1557441,
-   "kickoff": "2026-10-25T14:00:00",
-   "round": "Regular Season - 8",
-   "home": "Crystal Palace",
-   "away": "Newcastle",
-   "referee": "P. Tierney",
-   "ref_cards": 3.62,
-   "ref_games": 16,
-   "pick": "Away",
-   "model_pick": "Away",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 33.0,
-    "draw": 26.6,
-    "away": 40.5
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 8.2,
-     "defence_hit_pct": 0.0,
-     "key_out": [
-      "J. Strand Larsen"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 6.8,
-     "defence_hit_pct": 0.0,
-     "key_out": [
-      "A. Elanga"
-     ]
-    }
-   },
-   "home_pct": 34.3,
-   "draw_pct": 27.1,
-   "away_pct": 38.5,
-   "xg_home": 1.36,
-   "xg_away": 1.45,
-   "over25": 53.2,
-   "btts": 57.8,
-   "cards5": 36.9,
-   "cards": {
-    "exp": 3.99,
-    "home": 1.89,
-    "away": 2.1,
-    "over": {
-     "2.5": 73.4,
-     "3.5": 54.8,
-     "4.5": 36.9,
-     "5.5": 22.7,
-     "6.5": 12.8
-    }
-   },
-   "form": {
-    "home": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 100.0,
-     "btts": 100.0
-    },
-    "away": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 66.66666666666666,
-     "btts": 66.66666666666666
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 44.52230784497404,
-     "sh": 50.20707584518848,
-     "any": 72.37603482240812
-    },
-    "away": {
-     "fh": 56.96873507607487,
-     "sh": 51.00801700025512,
-     "any": 78.91813000389543
-    },
-    "match_fh": 76.12724731509115,
-    "match_sh": 75.60545906299888
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 2032,
-       "name": "J. Strand Larsen",
-       "p": 27.4,
-       "price": {
-        "odd": 2.4,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.4
-        }
-       }
-      },
-      {
-       "id": 338735,
-       "name": "A. Khalaili",
-       "p": 23.9,
-       "price": {
-        "odd": 5.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 2601,
-       "name": "D. Kamada",
-       "p": 19.8,
-       "price": null
-      },
-      {
-       "id": 184226,
-       "name": "Yeremy Pino",
-       "p": 17.8,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 126949,
-      "name": "C. Richards",
-      "sot": 2
-     }
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 153430,
-       "name": "A. Elanga",
-       "p": 28.2,
-       "price": {
-        "odd": 3.75,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.75
-        }
-       }
-      },
-      {
-       "id": 18778,
-       "name": "H. Barnes",
-       "p": 18.5,
-       "price": {
-        "odd": 3.2,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.2
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 20649,
-       "name": "Y. Wissa",
-       "p": 26.1,
-       "price": null
-      },
-      {
-       "id": 161933,
-       "name": "Nico González",
-       "p": 21.4,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 284492,
-      "name": "L. Hall",
-      "sot": 3
-     }
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 278898,
-      "name": "C. Riad",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 2597,
-      "name": "T. Tomiyasu",
-      "type": "Missing Fixture",
-      "reason": "Calf Injury"
-     },
-     {
-      "id": 19088,
-      "name": "D. Henderson",
-      "type": "Questionable",
-      "reason": "Foot Injury"
-     },
-     {
-      "id": 2032,
-      "name": "J. Larsen",
-      "type": "Questionable",
-      "reason": "Injury"
-     },
-     {
-      "id": 38747,
-      "name": "Q. Timber",
-      "type": "Questionable",
-      "reason": "Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 329640,
-      "name": "E. Jaouen",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 158694,
-      "name": "V. Livramento",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 153430,
-      "name": "A. Elanga",
-      "type": "Questionable",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 19192,
-      "name": "J. Ramsey",
-      "type": "Questionable",
-      "reason": "Thigh Injury"
-     }
-    ]
-   },
-   "previous": [
-    {
-     "date": "12/04/2026",
-     "home": "Crystal Palace",
-     "away": "Newcastle",
-     "hg": 2,
-     "ag": 1
-    },
-    {
-     "date": "04/01/2026",
-     "home": "Newcastle",
-     "away": "Crystal Palace",
-     "hg": 2,
-     "ag": 0
-    },
-    {
-     "date": "16/04/2025",
-     "home": "Newcastle",
-     "away": "Crystal Palace",
-     "hg": 5,
-     "ag": 0
-    },
-    {
-     "date": "30/11/2024",
-     "home": "Crystal Palace",
-     "away": "Newcastle",
-     "hg": 1,
-     "ag": 1
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 3.04,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 2.8,
-      "Bet365": 2.88,
-      "Betfair": 2.88,
-      "BetVictor": 2.8
-     }
-    },
-    "draw": {
-     "odd": 3.74,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.4,
-      "Bet365": 3.6,
-      "Betfair": 3.6,
-      "BetVictor": 3.5
-     }
-    },
-    "away": {
-     "odd": 2.41,
-     "bookie": "Dafabet",
-     "books": {
-      "William Hill": 2.3,
-      "Bet365": 2.35,
-      "Betfair": 2.3,
-      "BetVictor": 2.3
-     }
-    },
-    "over25": {
-     "odd": 1.63,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.57,
-      "Betfair": 1.5,
-      "BetVictor": 1.53
-     }
-    },
-    "under25": {
-     "odd": 2.5,
-     "bookie": "Betfair",
-     "books": {
-      "Bet365": 2.38,
-      "Betfair": 2.5,
-      "BetVictor": 2.29
-     }
-    },
-    "btts_yes": {
-     "odd": 1.47,
-     "bookie": "Betano",
-     "books": {
-      "William Hill": 1.44,
-      "Bet365": 1.44,
-      "Betfair": 1.44,
-      "BetVictor": 1.4
-     }
-    },
-    "btts_no": {
-     "odd": 2.8,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 2.6,
-      "Bet365": 2.62,
-      "Betfair": 2.8,
-      "BetVictor": 2.63
-     }
-    },
-    "cards_over45": {
-     "odd": 2.21,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 2.2
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.27,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.55,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.6,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 2.46,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 2.21,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.2
-       }
-      },
-      "under": {
-       "odd": 1.65,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.62
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 3.1,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.34,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 4.55,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.17,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
-  {
-   "id": 1557442,
-   "kickoff": "2026-10-25T14:00:00",
-   "round": "Regular Season - 8",
-   "home": "Hull City",
-   "away": "Brentford",
-   "referee": "R. Jones",
-   "ref_cards": 4.32,
-   "ref_games": 44,
-   "pick": "Draw",
-   "model_pick": "Home",
-   "call_reason": "low data, bookmakers disagree",
-   "low_data": true,
-   "market": {
-    "home": 20.0,
-    "draw": 23.7,
-    "away": 56.3
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 6.5,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "N. Mendy"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 12.1,
-     "defence_hit_pct": 0.0,
-     "key_out": [
-      "V. Janelt"
-     ]
-    }
-   },
-   "home_pct": 36.6,
-   "draw_pct": 31.7,
-   "away_pct": 31.7,
-   "xg_home": 1.12,
-   "xg_away": 1.02,
-   "over25": 36.2,
-   "btts": 44.3,
-   "cards5": 39.7,
-   "cards": {
-    "exp": 4.15,
-    "home": 2.34,
-    "away": 1.81,
-    "over": {
-     "2.5": 75.5,
-     "3.5": 57.5,
-     "4.5": 39.7,
-     "5.5": 25.1,
-     "6.5": 14.6
-    }
-   },
-   "form": {
-    "home": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 33.33333333333333,
-     "btts": 33.33333333333333
-    },
-    "away": {
-     "played": 3,
-     "win": 0.0,
-     "over25": 66.66666666666666,
-     "btts": 100.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 42.20468958341701,
-     "sh": 48.12694262704667,
-     "any": 70.01980546872943
-    },
-    "away": {
-     "fh": 46.08495493278646,
-     "sh": 50.66634627875959,
-     "any": 73.40173836289017
-    },
-    "match_fh": 68.83963234216333,
-    "match_sh": 74.40912550100684
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 299923,
-       "name": "M. Belloumi",
-       "p": 18.9,
-       "price": {
-        "odd": 4.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.0
-        }
-       }
-      },
-      {
-       "id": 19569,
-       "name": "J. Gelhardt",
-       "p": 13.9,
-       "price": {
-        "odd": 4.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 19666,
-       "name": "M. Crooks",
-       "p": 37.4,
-       "price": null
-      },
-      {
-       "id": 19337,
-       "name": "O. McBurnie",
-       "p": 27.3,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 19093,
-      "name": "J. Egan",
-      "sot": 1
-     }
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 178077,
-       "name": "K. Schade",
-       "p": 15.7,
-       "price": {
-        "odd": 2.75,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.75
-        }
-       }
-      },
-      {
-       "id": 196156,
-       "name": "Thiago",
-       "p": 13.1,
-       "price": null
-      }
-     ],
-     "bookings": [
-      {
-       "id": 196156,
-       "name": "Thiago",
-       "p": 33.8,
-       "price": null
-      },
-      {
-       "id": 1119,
-       "name": "K. Ajer",
-       "p": 22.3,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 106725,
-      "name": "K. Lewis-Potter",
-      "sot": 3
-     }
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 380873,
-      "name": "I. Ansah",
-      "type": "Missing Fixture",
-      "reason": "Back Injury"
-     },
-     {
-      "id": 2930,
-      "name": "J. Butland",
-      "type": "Missing Fixture",
-      "reason": "Arm Injury"
-     },
-     {
-      "id": 282124,
-      "name": "D. Gyabi",
-      "type": "Missing Fixture",
-      "reason": "Groin Injury"
-     },
-     {
-      "id": 331551,
-      "name": "C. Hughes",
-      "type": "Missing Fixture",
-      "reason": "Groin Injury"
-     },
-     {
-      "id": 162991,
-      "name": "E. Matazo",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 358431,
-      "name": "N. Mendy",
-      "type": "Missing Fixture",
-      "reason": "Groin Injury"
-     },
-     {
-      "id": 18941,
-      "name": "M. Targett",
-      "type": "Missing Fixture",
-      "reason": "Ankle Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 19362,
-      "name": "J. Dasilva",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 393193,
-      "name": "K. Furo",
-      "type": "Missing Fixture",
-      "reason": "Surgery"
-     },
-     {
-      "id": 25073,
-      "name": "V. Janelt",
-      "type": "Missing Fixture",
-      "reason": "Red Card"
-     },
-     {
-      "id": 319517,
-      "name": "A. Milambo",
-      "type": "Missing Fixture",
-      "reason": "Knock"
-     },
-     {
-      "id": 263538,
-      "name": "Y. Yarmolyuk",
-      "type": "Missing Fixture",
-      "reason": "Red Card"
-     }
-    ]
-   },
-   "previous": [],
-   "odds": {
-    "home": {
-     "odd": 5.03,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 4.5,
-      "Bet365": 4.75,
-      "Betfair": 5.0,
-      "BetVictor": 4.6
-     }
-    },
-    "draw": {
-     "odd": 4.25,
-     "bookie": "Betano",
-     "books": {
-      "William Hill": 3.8,
-      "Bet365": 4.1,
-      "Betfair": 4.0,
-      "BetVictor": 4.0
-     }
-    },
-    "away": {
-     "odd": 1.73,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 1.7,
-      "Bet365": 1.67,
-      "Betfair": 1.67,
-      "BetVictor": 1.65
-     }
-    },
-    "over25": {
-     "odd": 1.71,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.67,
-      "Betfair": 1.6,
-      "BetVictor": 1.62
-     }
-    },
-    "under25": {
-     "odd": 2.32,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 2.2,
-      "Betfair": 2.2,
-      "BetVictor": 2.11
-     }
-    },
-    "btts_yes": {
-     "odd": 1.67,
-     "bookie": "Bet365",
-     "books": {
-      "William Hill": 1.65,
-      "Bet365": 1.67,
-      "Betfair": 1.65,
-      "BetVictor": 1.62
-     }
-    },
-    "btts_no": {
-     "odd": 2.25,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 2.2,
-      "Bet365": 2.1,
-      "Betfair": 2.25,
-      "BetVictor": 2.15
-     }
-    },
-    "cards_over45": {
-     "odd": 2.22,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 2.2
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.26,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.6,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.6,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 2.43,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 2.22,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.2
-       }
-      },
-      "under": {
-       "odd": 1.65,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.62
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 3.1,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.34,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 4.65,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.17,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
-  {
-   "id": 1557446,
-   "kickoff": "2026-10-25T16:30:00",
-   "round": "Regular Season - 8",
-   "home": "Sunderland",
-   "away": "Leeds",
-   "referee": "S. Attwell",
-   "ref_cards": 4.77,
-   "ref_games": 48,
-   "pick": "Away",
-   "model_pick": "Away",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 32.6,
-    "draw": 30.6,
-    "away": 36.8
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 9.4,
-     "defence_hit_pct": 10.0,
-     "key_out": [
-      "D. Ballard",
-      "K. Danso",
-      "T. Meunier",
-      "W. Isidor"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 15.9,
-     "defence_hit_pct": 0.0,
-     "key_out": [
-      "D. Calvert-Lewin",
-      "N. Okafor"
-     ]
-    }
-   },
-   "home_pct": 29.4,
-   "draw_pct": 32.0,
-   "away_pct": 38.6,
-   "xg_home": 0.95,
-   "xg_away": 1.13,
-   "over25": 34.7,
-   "btts": 42.8,
-   "cards5": 42.9,
-   "cards": {
-    "exp": 4.33,
-    "home": 2.39,
-    "away": 1.94,
-    "over": {
-     "2.5": 77.7,
-     "3.5": 60.5,
-     "4.5": 42.9,
-     "5.5": 27.8,
-     "6.5": 16.6
-    }
-   },
-   "form": {
-    "home": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 0.0,
-     "btts": 0.0
-    },
-    "away": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 33.33333333333333,
-     "btts": 66.66666666666666
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 30.005726663001298,
-     "sh": 55.30932885674843,
-     "any": 68.7190894838533
-    },
-    "away": {
-     "fh": 48.00663408244511,
-     "sh": 54.08500245442174,
-     "any": 76.12724731509115
-    },
-    "match_fh": 63.607621342560705,
-    "match_sh": 79.48027944147358
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 38750,
-       "name": "B. Brobbey",
-       "p": 24.5,
-       "price": {
-        "odd": 3.25,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.25
-        }
-       }
-      },
-      {
-       "id": 20638,
-       "name": "E. Le Fée",
-       "p": 9.3,
-       "price": {
-        "odd": 5.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.5
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 22225,
-       "name": "Reinildo",
-       "p": 25.8,
-       "price": null
-      },
-      {
-       "id": 1464,
-       "name": "G. Xhaka",
-       "p": 24.1,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 264,
-      "name": "T. Meunier",
-      "sot": 4
-     }
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 18766,
-       "name": "D. Calvert-Lewin",
-       "p": 36.0,
-       "price": {
-        "odd": 2.75,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.75
-        }
-       }
-      },
-      {
-       "id": 19201,
-       "name": "J. Bogle",
-       "p": 23.4,
-       "price": {
-        "odd": 6.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 6.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 18766,
-       "name": "D. Calvert-Lewin",
-       "p": 29.0,
-       "price": null
-      },
-      {
-       "id": 2279,
-       "name": "E. Ampadu",
-       "p": 24.1,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 2803,
-      "name": "N. Elvedi",
-      "sot": 2
-     }
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 55904,
-      "name": "D. Ballard",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 25287,
-      "name": "K. Danso",
-      "type": "Missing Fixture",
-      "reason": "Red Card"
-     },
-     {
-      "id": 284414,
-      "name": "R. Mundle",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 84087,
-      "name": "W. Isidor",
-      "type": "Questionable",
-      "reason": "Injury"
-     },
-     {
-      "id": 264,
-      "name": "T. Meunier",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 313059,
-      "name": "M. Joseph",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 19321,
-      "name": "J. Rodon",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 18766,
-      "name": "D. Calvert-Lewin",
-      "type": "Questionable",
-      "reason": "Foot Injury"
-     },
-     {
-      "id": 48389,
-      "name": "N. Okafor",
-      "type": "Questionable",
-      "reason": "Groin Injury"
-     },
-     {
-      "id": 177665,
-      "name": "A. Stach",
-      "type": "Questionable",
-      "reason": "Groin Injury"
-     }
-    ]
-   },
-   "previous": [
-    {
-     "date": "03/03/2026",
-     "home": "Leeds",
-     "away": "Sunderland",
-     "hg": 0,
-     "ag": 1
-    },
-    {
-     "date": "28/12/2025",
-     "home": "Sunderland",
-     "away": "Leeds",
-     "hg": 1,
-     "ag": 1
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 3.08,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 2.9,
-      "Bet365": 2.88,
-      "Betfair": 2.9,
-      "BetVictor": 2.88
-     }
-    },
-    "draw": {
-     "odd": 3.3,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.1,
-      "Bet365": 3.1,
-      "Betfair": 3.1,
-      "BetVictor": 3.0
-     }
-    },
-    "away": {
-     "odd": 2.64,
-     "bookie": "Pinnacle",
-     "books": {
-      "William Hill": 2.5,
-      "Bet365": 2.6,
-      "Betfair": 2.6,
-      "BetVictor": 2.55
-     }
-    },
-    "over25": {
-     "odd": 2.23,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 2.2,
-      "Betfair": 2.15,
-      "BetVictor": 2.04
-     }
-    },
-    "under25": {
-     "odd": 1.81,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.67,
-      "Betfair": 1.67,
-      "BetVictor": 1.67
-     }
-    },
-    "btts_yes": {
-     "odd": 1.83,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 1.8,
-      "Bet365": 1.8,
-      "Betfair": 1.83,
-      "BetVictor": 1.78
-     }
-    },
-    "btts_no": {
-     "odd": 2.0,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 1.95,
-      "Bet365": 1.95,
-      "Betfair": 2.0,
-      "BetVictor": 1.93
-     }
-    },
-    "cards_over45": {
-     "odd": 1.91,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 1.83
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.2,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 4.2,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.45,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 2.81,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 1.91,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.83
-       }
-      },
-      "under": {
-       "odd": 1.91,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.83
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 2.82,
-       "bookie": "Pinnacle",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.45,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 3.8,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.24,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1557450,
    "kickoff": "2026-10-31T12:30:00",
@@ -2110,9 +20,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 47.4,
-    "draw": 25.4,
-    "away": 27.2
+    "home": 52.8,
+    "draw": 24.4,
+    "away": 22.7
    },
    "injury_effect": {
     "home": {
@@ -2126,24 +36,24 @@
      "key_out": []
     }
    },
-   "home_pct": 42.5,
-   "draw_pct": 24.5,
-   "away_pct": 33.0,
-   "xg_home": 1.76,
-   "xg_away": 1.54,
-   "over25": 64.1,
-   "btts": 65.9,
-   "cards5": 43.6,
+   "home_pct": 45.0,
+   "draw_pct": 24.1,
+   "away_pct": 30.9,
+   "xg_home": 1.84,
+   "xg_away": 1.5,
+   "over25": 64.9,
+   "btts": 66.1,
+   "cards5": 44.2,
    "cards": {
-    "exp": 4.37,
+    "exp": 4.4,
     "home": 2.53,
-    "away": 1.85,
+    "away": 1.87,
     "over": {
-     "2.5": 78.3,
-     "3.5": 61.2,
-     "4.5": 43.6,
-     "5.5": 28.5,
-     "6.5": 17.2
+     "2.5": 78.6,
+     "3.5": 61.7,
+     "4.5": 44.2,
+     "5.5": 29.0,
+     "6.5": 17.5
     }
    },
    "form": {
@@ -2162,17 +72,17 @@
    },
    "goals": {
     "home": {
-     "fh": 46.20861700373957,
-     "sh": 56.414295475841094,
-     "any": 76.55464674779127
+     "fh": 46.90043354565374,
+     "sh": 57.017675946456194,
+     "any": 77.17657227556604
     },
     "away": {
-     "fh": 47.91780716909293,
-     "sh": 65.38496063261651,
-     "any": 81.97172844818493
+     "fh": 47.18668388265006,
+     "sh": 64.67865703032516,
+     "any": 81.34562748053227
     },
-    "match_fh": 71.98426818147588,
-    "match_sh": 84.91279122041094
+    "match_fh": 71.95635811152381,
+    "match_sh": 84.81806590471075
    },
    "players": {
     "home": {
@@ -2180,39 +90,39 @@
       {
        "id": 10329,
        "name": "João Pedro",
-       "p": 41.3,
+       "p": 46.3,
        "price": {
-        "odd": 2.3,
+        "odd": 2.1,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.3
+         "Bet365": 2.1
         }
        }
       },
       {
        "id": 19170,
        "name": "M. Rogers",
-       "p": 31.3,
+       "p": 35.4,
        "price": {
-        "odd": 3.0,
+        "odd": 2.88,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.0
+         "Bet365": 2.88
         }
        }
       }
      ],
      "bookings": [
       {
-       "id": 19170,
-       "name": "M. Rogers",
-       "p": 24.5,
+       "id": 152982,
+       "name": "C. Palmer",
+       "p": 30.5,
        "price": null
       },
       {
-       "id": 152982,
-       "name": "C. Palmer",
-       "p": 19.5,
+       "id": 19170,
+       "name": "M. Rogers",
+       "p": 24.5,
        "price": null
       }
      ],
@@ -2227,19 +137,7 @@
       {
        "id": 20589,
        "name": "B. Mbeumo",
-       "p": 35.8,
-       "price": {
-        "odd": 3.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.5
-        }
-       }
-      },
-      {
-       "id": 1485,
-       "name": "Bruno Fernandes",
-       "p": 27.5,
+       "p": 36.5,
        "price": {
         "odd": 3.75,
         "bookie": "Bet365",
@@ -2247,26 +145,38 @@
          "Bet365": 3.75
         }
        }
+      },
+      {
+       "id": 1485,
+       "name": "Bruno Fernandes",
+       "p": 28.0,
+       "price": {
+        "odd": 4.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.0
+        }
+       }
       }
      ],
      "bookings": [
+      {
+       "id": 2935,
+       "name": "H. Maguire",
+       "p": 26.4,
+       "price": null
+      },
       {
        "id": 891,
        "name": "L. Shaw",
        "p": 25.2,
        "price": null
-      },
-      {
-       "id": 1485,
-       "name": "Bruno Fernandes",
-       "p": 21.6,
-       "price": null
       }
      ],
      "defender": {
-      "id": 2935,
-      "name": "H. Maguire",
-      "sot": 2
+      "id": 2467,
+      "name": "Lisandro Martínez",
+      "sot": 3
      }
     }
    },
@@ -2306,61 +216,61 @@
    ],
    "odds": {
     "home": {
-     "odd": 2.08,
+     "odd": 1.9,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 2.0,
-      "Bet365": 1.95,
-      "Betfair": 1.95,
-      "BetVictor": 1.95
+      "William Hill": 1.85,
+      "Bet365": 1.7,
+      "Betfair": 1.8,
+      "BetVictor": 1.75
      }
     },
     "draw": {
-     "odd": 3.88,
+     "odd": 4.06,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 3.6,
-      "Bet365": 3.6,
-      "Betfair": 3.7,
-      "BetVictor": 3.75
+      "William Hill": 3.8,
+      "Bet365": 3.9,
+      "Betfair": 3.75,
+      "BetVictor": 3.9
      }
     },
     "away": {
-     "odd": 3.62,
-     "bookie": "1xBet",
+     "odd": 4.5,
+     "bookie": "Bet365",
      "books": {
-      "William Hill": 3.4,
-      "Bet365": 3.5,
-      "Betfair": 3.4,
-      "BetVictor": 3.4
+      "William Hill": 3.8,
+      "Bet365": 4.5,
+      "Betfair": 4.2,
+      "BetVictor": 4.0
      }
     },
     "over25": {
-     "odd": 1.6,
-     "bookie": "Betano",
+     "odd": 1.58,
+     "bookie": "Pinnacle",
      "books": {
       "Bet365": 1.57,
       "Betfair": 1.5,
-      "BetVictor": 1.53
+      "BetVictor": 1.52
      }
     },
     "under25": {
-     "odd": 2.42,
-     "bookie": "Betano",
+     "odd": 2.49,
+     "bookie": "Pinnacle",
      "books": {
       "Bet365": 2.38,
       "Betfair": 2.4,
-      "BetVictor": 2.28
+      "BetVictor": 2.31
      }
     },
     "btts_yes": {
-     "odd": 1.52,
-     "bookie": "Betano",
+     "odd": 1.53,
+     "bookie": "Bet365",
      "books": {
       "William Hill": 1.5,
-      "Bet365": 1.5,
+      "Bet365": 1.53,
       "Betfair": 1.47,
-      "BetVictor": 1.47
+      "BetVictor": 1.5
      }
     },
     "btts_no": {
@@ -2368,9 +278,9 @@
      "bookie": "Betfair",
      "books": {
       "William Hill": 2.5,
-      "Bet365": 2.5,
+      "Bet365": 2.38,
       "Betfair": 2.63,
-      "BetVictor": 2.45
+      "BetVictor": 2.4
      }
     },
     "cards_over45": null,
@@ -2412,9 +322,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 43.9,
-    "draw": 27.2,
-    "away": 29.0
+    "home": 44.3,
+    "draw": 27.7,
+    "away": 28.0
    },
    "injury_effect": {
     "home": {
@@ -2428,24 +338,24 @@
      "key_out": []
     }
    },
-   "home_pct": 40.9,
-   "draw_pct": 28.1,
-   "away_pct": 31.0,
-   "xg_home": 1.41,
-   "xg_away": 1.2,
-   "over25": 48.5,
-   "btts": 53.9,
-   "cards5": 38.5,
+   "home_pct": 43.0,
+   "draw_pct": 28.4,
+   "away_pct": 28.6,
+   "xg_home": 1.42,
+   "xg_away": 1.12,
+   "over25": 46.7,
+   "btts": 52.1,
+   "cards5": 38.2,
    "cards": {
-    "exp": 4.08,
-    "home": 2.31,
-    "away": 1.77,
+    "exp": 4.06,
+    "home": 2.3,
+    "away": 1.76,
     "over": {
-     "2.5": 74.6,
-     "3.5": 56.3,
-     "4.5": 38.5,
-     "5.5": 24.0,
-     "6.5": 13.8
+     "2.5": 74.3,
+     "3.5": 56.0,
+     "4.5": 38.2,
+     "5.5": 23.7,
+     "6.5": 13.6
     }
    },
    "form": {
@@ -2456,25 +366,25 @@
      "btts": 50.0
     },
     "away": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 33.33333333333333,
-     "btts": 66.66666666666666
+     "played": 4,
+     "win": 25.0,
+     "over25": 25.0,
+     "btts": 50.0
     }
    },
    "goals": {
     "home": {
-     "fh": 42.38293249640643,
-     "sh": 56.735503857295086,
-     "any": 75.07226605236808
+     "fh": 43.551134492204014,
+     "sh": 56.451479353457614,
+     "any": 75.41735414959851
     },
     "away": {
-     "fh": 47.441494334796865,
-     "sh": 54.57870732288714,
-     "any": 76.12724731509114
+     "fh": 45.321435940555986,
+     "sh": 54.17634958436409,
+     "any": 74.94428595311085
     },
-    "match_fh": 69.71733031199986,
-    "match_sh": 80.3487065817438
+    "match_fh": 69.13457091249037,
+    "match_sh": 80.04447813774739
    },
    "players": {
     "home": {
@@ -2482,12 +392,12 @@
       {
        "id": 19245,
        "name": "M. Tavernier",
-       "p": 23.3,
+       "p": 24.7,
        "price": {
-        "odd": 4.5,
+        "odd": 3.4,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 4.5
+         "Bet365": 3.4
         }
        }
       },
@@ -2508,13 +418,13 @@
       {
        "id": 331832,
        "name": "António Silva",
-       "p": 28.4,
+       "p": 26.4,
        "price": null
       },
       {
        "id": 18869,
        "name": "A. Smith",
-       "p": 28.0,
+       "p": 26.0,
        "price": null
       }
      ],
@@ -2529,7 +439,7 @@
       {
        "id": 18766,
        "name": "D. Calvert-Lewin",
-       "p": 34.0,
+       "p": 31.1,
        "price": {
         "odd": 2.75,
         "bookie": "Bet365",
@@ -2541,27 +451,27 @@
       {
        "id": 19201,
        "name": "J. Bogle",
-       "p": 22.0,
+       "p": 18.7,
        "price": {
-        "odd": 8.0,
+        "odd": 8.5,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 8.0
+         "Bet365": 8.5
         }
        }
       }
      ],
      "bookings": [
       {
-       "id": 18766,
-       "name": "D. Calvert-Lewin",
-       "p": 26.2,
+       "id": 2279,
+       "name": "E. Ampadu",
+       "p": 26.4,
        "price": null
       },
       {
-       "id": 2279,
-       "name": "E. Ampadu",
-       "p": 21.6,
+       "id": 18766,
+       "name": "D. Calvert-Lewin",
+       "p": 26.2,
        "price": null
       }
      ],
@@ -2598,29 +508,29 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 2.15,
-      "Bet365": 2.2,
-      "Betfair": 2.1,
+      "Bet365": 2.15,
+      "Betfair": 2.05,
       "BetVictor": 2.1
      }
     },
     "draw": {
-     "odd": 3.6,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 3.3,
-      "Bet365": 3.4,
-      "Betfair": 3.6,
-      "BetVictor": 3.5
-     }
-    },
-    "away": {
      "odd": 3.52,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 3.2,
-      "Bet365": 3.25,
-      "Betfair": 3.3,
-      "BetVictor": 3.2
+      "William Hill": 3.3,
+      "Bet365": 3.4,
+      "Betfair": 3.4,
+      "BetVictor": 3.4
+     }
+    },
+    "away": {
+     "odd": 3.61,
+     "bookie": "Pinnacle",
+     "books": {
+      "William Hill": 3.3,
+      "Bet365": 3.4,
+      "Betfair": 3.4,
+      "BetVictor": 3.25
      }
     },
     "over25": {
@@ -2628,36 +538,36 @@
      "bookie": "1xBet",
      "books": {
       "Bet365": 1.8,
-      "Betfair": 1.75,
-      "BetVictor": 1.78
+      "Betfair": 1.8,
+      "BetVictor": 1.77
      }
     },
     "under25": {
-     "odd": 2.02,
-     "bookie": "1xBet",
+     "odd": 2.04,
+     "bookie": "SBO",
      "books": {
       "Bet365": 2.0,
-      "Betfair": 1.95,
-      "BetVictor": 1.89
+      "Betfair": 1.91,
+      "BetVictor": 1.9
      }
     },
     "btts_yes": {
-     "odd": 1.67,
-     "bookie": "William Hill",
+     "odd": 1.7,
+     "bookie": "Bet365",
      "books": {
       "William Hill": 1.67,
-      "Bet365": 1.67,
-      "Betfair": 1.67,
+      "Bet365": 1.7,
+      "Betfair": 1.65,
       "BetVictor": 1.65
      }
     },
     "btts_no": {
-     "odd": 2.15,
-     "bookie": "William Hill",
+     "odd": 2.2,
+     "bookie": "Betfair",
      "books": {
       "William Hill": 2.15,
-      "Bet365": 2.1,
-      "Betfair": 2.15,
+      "Bet365": 2.05,
+      "Betfair": 2.2,
       "BetVictor": 2.1
      }
     },
@@ -2700,9 +610,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 56.5,
-    "draw": 22.2,
-    "away": 21.3
+    "home": 56.2,
+    "draw": 22.6,
+    "away": 21.2
    },
    "injury_effect": {
     "home": {
@@ -2716,24 +626,24 @@
      "key_out": []
     }
    },
-   "home_pct": 51.3,
-   "draw_pct": 24.1,
-   "away_pct": 24.6,
-   "xg_home": 1.88,
-   "xg_away": 1.25,
-   "over25": 60.6,
-   "btts": 61.4,
-   "cards5": 38.1,
+   "home_pct": 52.4,
+   "draw_pct": 23.9,
+   "away_pct": 23.7,
+   "xg_home": 1.91,
+   "xg_away": 1.23,
+   "over25": 60.7,
+   "btts": 61.1,
+   "cards5": 37.8,
    "cards": {
-    "exp": 4.06,
-    "home": 1.9,
-    "away": 2.16,
+    "exp": 4.04,
+    "home": 1.89,
+    "away": 2.15,
     "over": {
-     "2.5": 74.3,
-     "3.5": 55.9,
-     "4.5": 38.1,
-     "5.5": 23.7,
-     "6.5": 13.5
+     "2.5": 74.0,
+     "3.5": 55.6,
+     "4.5": 37.8,
+     "5.5": 23.4,
+     "6.5": 13.3
     }
    },
    "form": {
@@ -2744,25 +654,25 @@
      "btts": 75.0
     },
     "away": {
-     "played": 3,
-     "win": 66.66666666666666,
-     "over25": 66.66666666666666,
-     "btts": 33.33333333333333
+     "played": 4,
+     "win": 50.0,
+     "over25": 50.0,
+     "btts": 25.0
     }
    },
    "goals": {
     "home": {
-     "fh": 59.18077725009344,
-     "sh": 55.04792471836406,
-     "any": 81.65091226008335
+     "fh": 59.768757507962064,
+     "sh": 54.829991227248186,
+     "any": 81.82754423695941
     },
     "away": {
-     "fh": 44.030866993374886,
-     "sh": 56.882954425407874,
-     "any": 75.86776341382937
+     "fh": 43.358092107747325,
+     "sh": 56.23412533329206,
+     "any": 75.21017358304454
     },
-    "match_fh": 77.15383492683422,
-    "match_sh": 80.61799321409207
+    "match_fh": 77.21225668375105,
+    "match_sh": 80.23095057357646
    },
    "players": {
     "home": {
@@ -2770,7 +680,7 @@
       {
        "id": 1100,
        "name": "E. Haaland",
-       "p": 39.0,
+       "p": 39.6,
        "price": {
         "odd": 1.67,
         "bookie": "Bet365",
@@ -2782,7 +692,7 @@
       {
        "id": 156477,
        "name": "R. Cherki",
-       "p": 19.2,
+       "p": 18.2,
        "price": {
         "odd": 2.75,
         "bookie": "Bet365",
@@ -2796,13 +706,13 @@
       {
        "id": 631,
        "name": "P. Foden",
-       "p": 21.5,
+       "p": 19.5,
        "price": null
       },
       {
-       "id": 129033,
-       "name": "J. Gvardiol",
-       "p": 19.8,
+       "id": 156477,
+       "name": "R. Cherki",
+       "p": 19.0,
        "price": null
       }
      ],
@@ -2817,7 +727,7 @@
       {
        "id": 392482,
        "name": "C. Kostoulas",
-       "p": 20.7,
+       "p": 21.1,
        "price": {
         "odd": 3.25,
         "bookie": "Bet365",
@@ -2827,17 +737,23 @@
        }
       },
       {
-       "id": 18970,
-       "name": "P. Groß",
-       "p": 14.8,
-       "price": null
+       "id": 265820,
+       "name": "Y. Ayari",
+       "p": 15.1,
+       "price": {
+        "odd": 6.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 6.0
+        }
+       }
       }
      ],
      "bookings": [
       {
        "id": 18970,
        "name": "P. Groß",
-       "p": 28.2,
+       "p": 26.2,
        "price": null
       },
       {
@@ -2893,17 +809,17 @@
      "odd": 1.74,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 1.62,
-      "Bet365": 1.67,
+      "William Hill": 1.67,
+      "Bet365": 1.65,
       "Betfair": 1.67,
       "BetVictor": 1.65
      }
     },
     "draw": {
-     "odd": 4.44,
-     "bookie": "1xBet",
+     "odd": 4.51,
+     "bookie": "Pinnacle",
      "books": {
-      "William Hill": 4.33,
+      "William Hill": 4.0,
       "Bet365": 4.1,
       "Betfair": 4.2,
       "BetVictor": 4.2
@@ -2913,15 +829,15 @@
      "odd": 4.67,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 4.5,
-      "Bet365": 4.33,
+      "William Hill": 4.33,
+      "Bet365": 4.5,
       "Betfair": 4.33,
-      "BetVictor": 4.33
+      "BetVictor": 4.4
      }
     },
     "over25": {
-     "odd": 1.5,
-     "bookie": "Betano",
+     "odd": 1.47,
+     "bookie": "1xBet",
      "books": {
       "Bet365": 1.44,
       "Betfair": 1.4,
@@ -2944,7 +860,7 @@
       "William Hill": 1.44,
       "Bet365": 1.5,
       "Betfair": 1.47,
-      "BetVictor": 1.44
+      "BetVictor": 1.45
      }
     },
     "btts_no": {
@@ -3017,19 +933,19 @@
    "away_pct": 25.1,
    "xg_home": 1.56,
    "xg_away": 1.07,
-   "over25": 48.9,
-   "btts": 52.8,
-   "cards5": 34.8,
+   "over25": 49.1,
+   "btts": 53.0,
+   "cards5": 34.4,
    "cards": {
-    "exp": 3.88,
-    "home": 2.12,
+    "exp": 3.85,
+    "home": 2.09,
     "away": 1.76,
     "over": {
-     "2.5": 71.7,
-     "3.5": 52.6,
-     "4.5": 34.8,
-     "5.5": 21.0,
-     "6.5": 11.6
+     "2.5": 71.3,
+     "3.5": 52.2,
+     "4.5": 34.4,
+     "5.5": 20.6,
+     "6.5": 11.3
     }
    },
    "form": {
@@ -3048,17 +964,17 @@
    },
    "goals": {
     "home": {
-     "fh": 46.809716768518015,
-     "sh": 54.03272236038499,
-     "any": 75.5498748296871
+     "fh": 46.262152178244186,
+     "sh": 54.11112019976143,
+     "any": 75.34030360583935
     },
     "away": {
-     "fh": 38.71382702612512,
-     "sh": 55.20112675765889,
-     "any": 72.54448505435187
+     "fh": 39.026865819815626,
+     "sh": 54.829991227248186,
+     "any": 72.45842994178898
     },
-    "match_fh": 67.40171101345999,
-    "match_sh": 79.40717755727387
+    "match_fh": 67.23434994209754,
+    "match_sh": 79.2719889685147
    },
    "players": {
     "home": {
@@ -3066,19 +982,19 @@
       {
        "id": 178077,
        "name": "K. Schade",
-       "p": 21.9,
+       "p": 22.4,
        "price": {
-        "odd": 3.1,
+        "odd": 2.88,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.1
+         "Bet365": 2.88
         }
        }
       },
       {
        "id": 196156,
        "name": "Thiago",
-       "p": 18.5,
+       "p": 18.9,
        "price": null
       }
      ],
@@ -3107,19 +1023,19 @@
       {
        "id": 18746,
        "name": "M. Gibbs-White",
-       "p": 14.9,
+       "p": 15.1,
        "price": {
-        "odd": 3.5,
+        "odd": 3.4,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.5
+         "Bet365": 3.4
         }
        }
       },
       {
        "id": 48648,
        "name": "D. Ndoye",
-       "p": 14.9,
+       "p": 15.0,
        "price": {
         "odd": 4.75,
         "bookie": "Bet365",
@@ -3197,7 +1113,7 @@
     },
     "draw": {
      "odd": 3.88,
-     "bookie": "1xBet",
+     "bookie": "Pinnacle",
      "books": {
       "William Hill": 3.5,
       "Bet365": 3.5,
@@ -3230,7 +1146,7 @@
      "books": {
       "Bet365": 2.1,
       "Betfair": 2.0,
-      "BetVictor": 2.03
+      "BetVictor": 2.02
      }
     },
     "btts_yes": {
@@ -3308,32 +1224,32 @@
      "key_out": []
     }
    },
-   "home_pct": 58.4,
-   "draw_pct": 24.2,
-   "away_pct": 17.4,
-   "xg_home": 1.84,
+   "home_pct": 57.7,
+   "draw_pct": 24.6,
+   "away_pct": 17.7,
+   "xg_home": 1.8,
    "xg_away": 0.91,
-   "over25": 51.9,
-   "btts": 51.2,
-   "cards5": 40.2,
+   "over25": 50.8,
+   "btts": 50.6,
+   "cards5": 38.1,
    "cards": {
-    "exp": 4.18,
-    "home": 2.33,
-    "away": 1.85,
+    "exp": 4.06,
+    "home": 2.19,
+    "away": 1.87,
     "over": {
-     "2.5": 75.8,
-     "3.5": 57.9,
-     "4.5": 40.2,
-     "5.5": 25.4,
-     "6.5": 14.8
+     "2.5": 74.3,
+     "3.5": 55.9,
+     "4.5": 38.1,
+     "5.5": 23.6,
+     "6.5": 13.5
     }
    },
    "form": {
     "home": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 33.33333333333333,
-     "btts": 33.33333333333333
+     "played": 4,
+     "win": 25.0,
+     "over25": 25.0,
+     "btts": 50.0
     },
     "away": {
      "played": 4,
@@ -3344,17 +1260,17 @@
    },
    "goals": {
     "home": {
-     "fh": 54.74500534679583,
-     "sh": 49.98549601160981,
-     "any": 77.36593889422743
+     "fh": 56.176500753505074,
+     "sh": 47.79542232389839,
+     "any": 77.12212729547775
     },
     "away": {
-     "fh": 49.265875187151586,
-     "sh": 46.28235057974352,
-     "any": 72.74682069659873
+     "fh": 47.79542232389839,
+     "sh": 47.79542232389839,
+     "any": 72.74682069659875
     },
-    "match_fh": 77.04027452859552,
-    "match_sh": 73.13338408823637
+    "match_fh": 77.12212729547775,
+    "match_sh": 72.74682069659875
    },
    "players": {
     "home": {
@@ -3372,14 +1288,14 @@
        }
       },
       {
-       "id": 19569,
-       "name": "J. Gelhardt",
-       "p": 23.0,
+       "id": 19337,
+       "name": "O. McBurnie",
+       "p": 25.8,
        "price": {
-        "odd": 3.2,
+        "odd": 3.0,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.2
+         "Bet365": 3.0
         }
        }
       }
@@ -3394,7 +1310,7 @@
       {
        "id": 19337,
        "name": "O. McBurnie",
-       "p": 26.5,
+       "p": 24.6,
        "price": null
       }
      ],
@@ -3409,18 +1325,18 @@
       {
        "id": 321648,
        "name": "Emersonn",
-       "p": 13.1,
+       "p": 13.4,
        "price": null
       },
       {
        "id": 70747,
        "name": "J. Enciso",
-       "p": 10.1,
+       "p": 10.4,
        "price": {
-        "odd": 3.75,
+        "odd": 3.6,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.75
+         "Bet365": 3.6
         }
        }
       }
@@ -3453,7 +1369,7 @@
    "previous": [],
    "odds": {
     "home": {
-     "odd": 2.69,
+     "odd": 2.73,
      "bookie": "1xBet",
      "books": {
       "William Hill": 2.62,
@@ -3463,7 +1379,7 @@
      }
     },
     "draw": {
-     "odd": 3.6,
+     "odd": 3.53,
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.3,
@@ -3483,41 +1399,1516 @@
      }
     },
     "over25": {
-     "odd": 1.82,
-     "bookie": "Betano",
+     "odd": 1.9,
+     "bookie": "1xBet",
      "books": {
       "Bet365": 1.8,
-      "Betfair": 1.73,
-      "BetVictor": 1.71
+      "Betfair": 1.75,
+      "BetVictor": 1.76
      }
     },
     "under25": {
-     "odd": 2.17,
-     "bookie": "1xBet",
+     "odd": 2.05,
+     "bookie": "SBO",
      "books": {
       "Bet365": 2.0,
-      "Betfair": 2.0,
-      "BetVictor": 1.98
+      "Betfair": 1.95,
+      "BetVictor": 1.92
+     }
+    },
+    "btts_yes": {
+     "odd": 1.65,
+     "bookie": "Betfair",
+     "books": {
+      "William Hill": 1.6,
+      "Bet365": 1.62,
+      "Betfair": 1.65,
+      "BetVictor": 1.6
+     }
+    },
+    "btts_no": {
+     "odd": 2.25,
+     "bookie": "William Hill",
+     "books": {
+      "William Hill": 2.25,
+      "Bet365": 2.2,
+      "Betfair": 2.2,
+      "BetVictor": 2.15
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1557451,
+   "kickoff": "2026-10-31T15:00:00",
+   "round": "Regular Season - 9",
+   "home": "Coventry",
+   "away": "Sunderland",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Draw",
+   "model_pick": "Away",
+   "call_reason": "low data",
+   "low_data": true,
+   "market": {
+    "home": 32.2,
+    "draw": 27.6,
+    "away": 40.2
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 30.2,
+   "draw_pct": 31.0,
+   "away_pct": 38.8,
+   "xg_home": 1.02,
+   "xg_away": 1.19,
+   "over25": 38.0,
+   "btts": 45.6,
+   "cards5": 33.0,
+   "cards": {
+    "exp": 3.77,
+    "home": 1.51,
+    "away": 2.26,
+    "over": {
+     "2.5": 70.2,
+     "3.5": 50.7,
+     "4.5": 33.0,
+     "5.5": 19.5,
+     "6.5": 10.6
+    }
+   },
+   "form": {
+    "home": {
+     "played": 4,
+     "win": 25.0,
+     "over25": 50.0,
+     "btts": 25.0
+    },
+    "away": {
+     "played": 4,
+     "win": 0.0,
+     "over25": 50.0,
+     "btts": 75.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 29.19710315745342,
+     "sh": 50.30790522174499,
+     "any": 64.81655739525164
+    },
+    "away": {
+     "fh": 36.92279986462036,
+     "sh": 58.90111481018556,
+     "any": 74.07597393541084
+    },
+    "match_fh": 55.339515056980495,
+    "match_sh": 79.57710301867121
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 421875,
+       "name": "S. Cherif",
+       "p": 24.4,
+       "price": {
+        "odd": 3.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.5
+        }
+       }
+      },
+      {
+       "id": 20372,
+       "name": "J. Rudoni",
+       "p": 20.6,
+       "price": {
+        "odd": 4.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.0
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 37961,
+       "name": "M. van Ewijk",
+       "p": 21.6,
+       "price": null
+      },
+      {
+       "id": 162414,
+       "name": "A. Amenda",
+       "p": 18.9,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 264437,
+      "name": "B. Thomas",
+      "sot": 0
+     }
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 38750,
+       "name": "B. Brobbey",
+       "p": 37.3,
+       "price": {
+        "odd": 2.75,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.75
+        }
+       }
+      },
+      {
+       "id": 20638,
+       "name": "E. Le Fée",
+       "p": 14.9,
+       "price": {
+        "odd": 4.33,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.33
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 55904,
+       "name": "D. Ballard",
+       "p": 25.8,
+       "price": null
+      },
+      {
+       "id": 22225,
+       "name": "Reinildo",
+       "p": 23.2,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 264,
+      "name": "T. Meunier",
+      "sot": 4
+     }
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {
+    "home": {
+     "odd": 3.1,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 2.9,
+      "Bet365": 2.88,
+      "Betfair": 2.88,
+      "BetVictor": 2.9
+     }
+    },
+    "draw": {
+     "odd": 3.5,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.3,
+      "Bet365": 3.4,
+      "Betfair": 3.4,
+      "BetVictor": 3.4
+     }
+    },
+    "away": {
+     "odd": 2.46,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 2.38,
+      "Bet365": 2.3,
+      "Betfair": 2.3,
+      "BetVictor": 2.3
+     }
+    },
+    "over25": {
+     "odd": 1.98,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.91,
+      "Betfair": 1.85,
+      "BetVictor": 1.85
+     }
+    },
+    "under25": {
+     "odd": 1.96,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.91,
+      "Betfair": 1.85,
+      "BetVictor": 1.82
+     }
+    },
+    "btts_yes": {
+     "odd": 1.7,
+     "bookie": "Bet365",
+     "books": {
+      "William Hill": 1.67,
+      "Bet365": 1.7,
+      "Betfair": 1.67,
+      "BetVictor": 1.67
+     }
+    },
+    "btts_no": {
+     "odd": 2.15,
+     "bookie": "Betfair",
+     "books": {
+      "William Hill": 2.1,
+      "Bet365": 2.05,
+      "Betfair": 2.15,
+      "BetVictor": 2.05
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1557456,
+   "kickoff": "2026-10-31T17:30:00",
+   "round": "Regular Season - 9",
+   "home": "Tottenham",
+   "away": "Crystal Palace",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 61.1,
+    "draw": 21.9,
+    "away": 17.0
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 46.2,
+   "draw_pct": 27.0,
+   "away_pct": 26.8,
+   "xg_home": 1.56,
+   "xg_away": 1.14,
+   "over25": 50.8,
+   "btts": 54.8,
+   "cards5": 40.3,
+   "cards": {
+    "exp": 4.18,
+    "home": 2.39,
+    "away": 1.8,
+    "over": {
+     "2.5": 75.9,
+     "3.5": 58.1,
+     "4.5": 40.3,
+     "5.5": 25.5,
+     "6.5": 14.9
+    }
+   },
+   "form": {
+    "home": {
+     "played": 4,
+     "win": 25.0,
+     "over25": 50.0,
+     "btts": 50.0
+    },
+    "away": {
+     "played": 4,
+     "win": 25.0,
+     "over25": 50.0,
+     "btts": 25.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 44.24541441115867,
+     "sh": 51.885131843998366,
+     "any": 73.17375465300391
+    },
+    "away": {
+     "fh": 44.829226698841865,
+     "sh": 47.10398100576661,
+     "any": 70.81685727535395
+    },
+    "match_fh": 69.23976397978015,
+    "match_sh": 74.54915020115102
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 81573,
+       "name": "Omar Marmoush",
+       "p": 26.1,
+       "price": {
+        "odd": 2.3,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.3
+        }
+       }
+      },
+      {
+       "id": 18883,
+       "name": "D. Solanke",
+       "p": 19.5,
+       "price": {
+        "odd": 2.2,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.2
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 67972,
+       "name": "C. Gallagher",
+       "p": 23.4,
+       "price": null
+      },
+      {
+       "id": 152849,
+       "name": "M. van de Ven",
+       "p": 20.7,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 38695,
+      "name": "J. van Hecke",
+      "sot": 2
+     }
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 2032,
+       "name": "J. Strand Larsen",
+       "p": 16.2,
+       "price": {
+        "odd": 3.4,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.4
+        }
+       }
+      },
+      {
+       "id": 182201,
+       "name": "T. Mitchell",
+       "p": 13.5,
+       "price": {
+        "odd": 13.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 13.0
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 2601,
+       "name": "D. Kamada",
+       "p": 19.9,
+       "price": null
+      },
+      {
+       "id": 184226,
+       "name": "Yeremy Pino",
+       "p": 19.2,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 126949,
+      "name": "C. Richards",
+      "sot": 2
+     }
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [
+    {
+     "date": "05/03/2026",
+     "home": "Tottenham",
+     "away": "Crystal Palace",
+     "hg": 1,
+     "ag": 3
+    },
+    {
+     "date": "28/12/2025",
+     "home": "Crystal Palace",
+     "away": "Tottenham",
+     "hg": 0,
+     "ag": 1
+    },
+    {
+     "date": "11/05/2025",
+     "home": "Tottenham",
+     "away": "Crystal Palace",
+     "hg": 0,
+     "ag": 2
+    },
+    {
+     "date": "27/10/2024",
+     "home": "Crystal Palace",
+     "away": "Tottenham",
+     "hg": 1,
+     "ag": 0
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 1.58,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 1.53,
+      "Bet365": 1.53,
+      "Betfair": 1.5,
+      "BetVictor": 1.5
+     }
+    },
+    "draw": {
+     "odd": 4.69,
+     "bookie": "Pinnacle",
+     "books": {
+      "William Hill": 4.0,
+      "Bet365": 4.2,
+      "Betfair": 4.4,
+      "BetVictor": 4.33
+     }
+    },
+    "away": {
+     "odd": 6.0,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 5.0,
+      "Bet365": 5.5,
+      "Betfair": 5.5,
+      "BetVictor": 5.75
+     }
+    },
+    "over25": {
+     "odd": 1.64,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.57,
+      "Betfair": 1.57,
+      "BetVictor": 1.55
+     }
+    },
+    "under25": {
+     "odd": 2.46,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.38,
+      "Betfair": 2.25,
+      "BetVictor": 2.25
+     }
+    },
+    "btts_yes": {
+     "odd": 1.67,
+     "bookie": "William Hill",
+     "books": {
+      "William Hill": 1.67,
+      "Bet365": 1.67,
+      "Betfair": 1.67,
+      "BetVictor": 1.62
+     }
+    },
+    "btts_no": {
+     "odd": 2.15,
+     "bookie": "Betfair",
+     "books": {
+      "William Hill": 2.1,
+      "Bet365": 2.1,
+      "Betfair": 2.15,
+      "BetVictor": 2.15
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1557447,
+   "kickoff": "2026-10-31T20:00:00",
+   "round": "Regular Season - 9",
+   "home": "Aston Villa",
+   "away": "Fulham",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 49.0,
+    "draw": 25.1,
+    "away": 25.9
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 47.9,
+   "draw_pct": 27.6,
+   "away_pct": 24.4,
+   "xg_home": 1.53,
+   "xg_away": 1.02,
+   "over25": 46.9,
+   "btts": 51.1,
+   "cards5": 38.6,
+   "cards": {
+    "exp": 4.09,
+    "home": 1.89,
+    "away": 2.19,
+    "over": {
+     "2.5": 74.7,
+     "3.5": 56.4,
+     "4.5": 38.6,
+     "5.5": 24.1,
+     "6.5": 13.8
+    }
+   },
+   "form": {
+    "home": {
+     "played": 4,
+     "win": 25.0,
+     "over25": 75.0,
+     "btts": 75.0
+    },
+    "away": {
+     "played": 4,
+     "win": 25.0,
+     "over25": 25.0,
+     "btts": 25.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 43.695484403375794,
+     "sh": 56.55666149321166,
+     "any": 75.5394386947511
+    },
+    "away": {
+     "fh": 42.92132958754171,
+     "sh": 52.436332105900284,
+     "any": 72.85129076665058
+    },
+    "match_fh": 67.8621311152717,
+    "match_sh": 79.33675475052165
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 283058,
+       "name": "N. Jackson",
+       "p": 30.5,
+       "price": {
+        "odd": 2.4,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.4
+        }
+       }
+      },
+      {
+       "id": 406244,
+       "name": "J. Manzambi",
+       "p": 17.4,
+       "price": {
+        "odd": 2.6,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.6
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 19298,
+       "name": "M. Cash",
+       "p": 33.6,
+       "price": null
+      },
+      {
+       "id": 195103,
+       "name": "João Gomes",
+       "p": 31.1,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 138816,
+      "name": "I. Maatsen",
+      "sot": 1
+     }
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 389315,
+       "name": "Joshua King",
+       "p": 21.5,
+       "price": {
+        "odd": 4.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.0
+        }
+       }
+      },
+      {
+       "id": 336711,
+       "name": "Gonzalo García",
+       "p": 17.7,
+       "price": {
+        "odd": 3.1,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.1
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 389315,
+       "name": "Joshua King",
+       "p": 25.8,
+       "price": null
+      },
+      {
+       "id": 2920,
+       "name": "T. Castagne",
+       "p": 21.2,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 2920,
+      "name": "T. Castagne",
+      "sot": 2
+     }
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [
+    {
+     "date": "25/04/2026",
+     "home": "Fulham",
+     "away": "Aston Villa",
+     "hg": 1,
+     "ag": 0
+    },
+    {
+     "date": "28/09/2025",
+     "home": "Aston Villa",
+     "away": "Fulham",
+     "hg": 3,
+     "ag": 1
+    },
+    {
+     "date": "03/05/2025",
+     "home": "Aston Villa",
+     "away": "Fulham",
+     "hg": 1,
+     "ag": 0
+    },
+    {
+     "date": "19/10/2024",
+     "home": "Fulham",
+     "away": "Aston Villa",
+     "hg": 1,
+     "ag": 3
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 1.97,
+     "bookie": "Dafabet",
+     "books": {
+      "William Hill": 1.85,
+      "Bet365": 1.9,
+      "Betfair": 1.95,
+      "BetVictor": 1.9
+     }
+    },
+    "draw": {
+     "odd": 3.96,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.75,
+      "Bet365": 3.8,
+      "Betfair": 3.6,
+      "BetVictor": 3.7
+     }
+    },
+    "away": {
+     "odd": 3.94,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.4,
+      "Bet365": 3.75,
+      "Betfair": 3.6,
+      "BetVictor": 3.6
+     }
+    },
+    "over25": {
+     "odd": 1.74,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.67,
+      "Betfair": 1.65,
+      "BetVictor": 1.65
+     }
+    },
+    "under25": {
+     "odd": 2.27,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.2,
+      "Betfair": 2.1,
+      "BetVictor": 2.07
      }
     },
     "btts_yes": {
      "odd": 1.62,
-     "bookie": "Bet365",
+     "bookie": "William Hill",
      "books": {
-      "William Hill": 1.6,
+      "William Hill": 1.62,
+      "Bet365": 1.62,
+      "Betfair": 1.57,
+      "BetVictor": 1.57
+     }
+    },
+    "btts_no": {
+     "odd": 2.38,
+     "bookie": "Betfair",
+     "books": {
+      "William Hill": 2.2,
+      "Bet365": 2.2,
+      "Betfair": 2.38,
+      "BetVictor": 2.25
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1557453,
+   "kickoff": "2026-11-01T16:30:00",
+   "round": "Regular Season - 9",
+   "home": "Liverpool",
+   "away": "Arsenal",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 31.4,
+    "draw": 27.4,
+    "away": 41.2
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 26.2,
+   "draw_pct": 28.8,
+   "away_pct": 45.0,
+   "xg_home": 1.02,
+   "xg_away": 1.42,
+   "over25": 44.1,
+   "btts": 49.5,
+   "cards5": 36.1,
+   "cards": {
+    "exp": 3.95,
+    "home": 2.13,
+    "away": 1.82,
+    "over": {
+     "2.5": 72.7,
+     "3.5": 53.9,
+     "4.5": 36.1,
+     "5.5": 22.0,
+     "6.5": 12.3
+    }
+   },
+   "form": {
+    "home": {
+     "played": 4,
+     "win": 25.0,
+     "over25": 50.0,
+     "btts": 25.0
+    },
+    "away": {
+     "played": 4,
+     "win": 75.0,
+     "over25": 25.0,
+     "btts": 0.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 39.026865819815626,
+     "sh": 53.13479749835619,
+     "any": 71.42481719485761
+    },
+    "away": {
+     "fh": 47.10398100576661,
+     "sh": 62.42936288324567,
+     "any": 80.12662865446714
+    },
+    "match_fh": 67.74763936267027,
+    "match_sh": 82.39244483407533
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 2864,
+       "name": "A. Isak",
+       "p": 31.1,
+       "price": {
+        "odd": 3.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.0
+        }
+       }
+      },
+      {
+       "id": 338751,
+       "name": "Víctor Muñoz",
+       "p": 16.3,
+       "price": {
+        "odd": 4.75,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.75
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 290,
+       "name": "V. van Dijk",
+       "p": 21.6,
+       "price": null
+      },
+      {
+       "id": 367636,
+       "name": "J. Jacquet",
+       "p": 21.2,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 290,
+      "name": "V. van Dijk",
+      "sot": 1
+     }
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 1460,
+       "name": "B. Saka",
+       "p": 18.8,
+       "price": {
+        "odd": 3.4,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.4
+        }
+       }
+      },
+      {
+       "id": 978,
+       "name": "K. Havertz",
+       "p": 15.9,
+       "price": {
+        "odd": 3.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.0
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 161800,
+       "name": "C. Tzolis",
+       "p": 23.7,
+       "price": null
+      },
+      {
+       "id": 22224,
+       "name": "Gabriel Magalhães",
+       "p": 20.0,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 22224,
+      "name": "Gabriel Magalhães",
+      "sot": 4
+     }
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [
+    {
+     "date": "08/01/2026",
+     "home": "Arsenal",
+     "away": "Liverpool",
+     "hg": 0,
+     "ag": 0
+    },
+    {
+     "date": "31/08/2025",
+     "home": "Liverpool",
+     "away": "Arsenal",
+     "hg": 1,
+     "ag": 0
+    },
+    {
+     "date": "11/05/2025",
+     "home": "Liverpool",
+     "away": "Arsenal",
+     "hg": 2,
+     "ag": 2
+    },
+    {
+     "date": "27/10/2024",
+     "home": "Arsenal",
+     "away": "Liverpool",
+     "hg": 2,
+     "ag": 2
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 3.2,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.0,
+      "Bet365": 3.0,
+      "Betfair": 2.88,
+      "BetVictor": 3.0
+     }
+    },
+    "draw": {
+     "odd": 3.63,
+     "bookie": "Pinnacle",
+     "books": {
+      "William Hill": 3.4,
+      "Bet365": 3.4,
+      "Betfair": 3.4,
+      "BetVictor": 3.4
+     }
+    },
+    "away": {
+     "odd": 2.35,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 2.25,
+      "Bet365": 2.25,
+      "Betfair": 2.3,
+      "BetVictor": 2.25
+     }
+    },
+    "over25": {
+     "odd": 1.89,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.8,
+      "Betfair": 1.75,
+      "BetVictor": 1.77
+     }
+    },
+    "under25": {
+     "odd": 2.06,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.0,
+      "Betfair": 1.95,
+      "BetVictor": 1.91
+     }
+    },
+    "btts_yes": {
+     "odd": 1.65,
+     "bookie": "William Hill",
+     "books": {
+      "William Hill": 1.65,
       "Bet365": 1.62,
       "Betfair": 1.6,
-      "BetVictor": 1.57
+      "BetVictor": 1.62
      }
     },
     "btts_no": {
      "odd": 2.3,
      "bookie": "Betfair",
      "books": {
-      "William Hill": 2.25,
+      "William Hill": 2.15,
       "Bet365": 2.2,
       "Betfair": 2.3,
-      "BetVictor": 2.25
+      "BetVictor": 2.15
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1557455,
+   "kickoff": "2026-11-02T20:00:00",
+   "round": "Regular Season - 9",
+   "home": "Newcastle",
+   "away": "Everton",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 42.4,
+    "draw": 26.3,
+    "away": 31.2
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 43.6,
+   "draw_pct": 27.7,
+   "away_pct": 28.7,
+   "xg_home": 1.48,
+   "xg_away": 1.16,
+   "over25": 49.3,
+   "btts": 54.1,
+   "cards5": 39.8,
+   "cards": {
+    "exp": 4.16,
+    "home": 2.21,
+    "away": 1.95,
+    "over": {
+     "2.5": 75.6,
+     "3.5": 57.6,
+     "4.5": 39.8,
+     "5.5": 25.1,
+     "6.5": 14.6
+    }
+   },
+   "form": {
+    "home": {
+     "played": 4,
+     "win": 25.0,
+     "over25": 75.0,
+     "btts": 75.0
+    },
+    "away": {
+     "played": 4,
+     "win": 0.0,
+     "over25": 25.0,
+     "btts": 50.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 48.84297031416218,
+     "sh": 53.42720563782368,
+     "any": 76.17474176261726
+    },
+    "away": {
+     "fh": 42.276287424305245,
+     "sh": 56.66775393055381,
+     "any": 74.98701882628009
+    },
+    "match_fh": 70.47026322188414,
+    "match_sh": 79.8189621455646
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 315237,
+       "name": "W. Osula",
+       "p": 13.1,
+       "price": null
+      },
+      {
+       "id": 18778,
+       "name": "H. Barnes",
+       "p": 12.9,
+       "price": {
+        "odd": 3.2,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.2
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 20649,
+       "name": "Y. Wissa",
+       "p": 28.1,
+       "price": null
+      },
+      {
+       "id": 161933,
+       "name": "Nico González",
+       "p": 23.1,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 284492,
+      "name": "L. Hall",
+      "sot": 3
+     }
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 343684,
+       "name": "T. Barry",
+       "p": 35.6,
+       "price": {
+        "odd": 3.2,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.2
+        }
+       }
+      },
+      {
+       "id": 148099,
+       "name": "K. Dewsbury-Hall",
+       "p": 20.7,
+       "price": {
+        "odd": 4.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.0
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 405360,
+       "name": "H. Armstrong",
+       "p": 26.2,
+       "price": null
+      },
+      {
+       "id": 895,
+       "name": "J. Garner",
+       "p": 25.0,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 17661,
+      "name": "J. Branthwaite",
+      "sot": 3
+     }
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [
+    {
+     "date": "28/02/2026",
+     "home": "Newcastle",
+     "away": "Everton",
+     "hg": 2,
+     "ag": 3
+    },
+    {
+     "date": "29/11/2025",
+     "home": "Everton",
+     "away": "Newcastle",
+     "hg": 1,
+     "ag": 4
+    },
+    {
+     "date": "25/05/2025",
+     "home": "Newcastle",
+     "away": "Everton",
+     "hg": 0,
+     "ag": 1
+    },
+    {
+     "date": "05/10/2024",
+     "home": "Everton",
+     "away": "Newcastle",
+     "hg": 0,
+     "ag": 0
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 2.26,
+     "bookie": "Pinnacle",
+     "books": {
+      "William Hill": 2.15,
+      "Bet365": 2.2,
+      "Betfair": 2.25,
+      "BetVictor": 2.15
+     }
+    },
+    "draw": {
+     "odd": 3.78,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.5,
+      "Bet365": 3.5,
+      "Betfair": 3.6,
+      "BetVictor": 3.5
+     }
+    },
+    "away": {
+     "odd": 3.24,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.0,
+      "Bet365": 3.0,
+      "Betfair": 2.88,
+      "BetVictor": 3.0
+     }
+    },
+    "over25": {
+     "odd": 1.76,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.67,
+      "Betfair": 1.65,
+      "BetVictor": 1.65
+     }
+    },
+    "under25": {
+     "odd": 2.23,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.2,
+      "Betfair": 2.1,
+      "BetVictor": 2.06
+     }
+    },
+    "btts_yes": {
+     "odd": 1.6,
+     "bookie": "Betano",
+     "books": {
+      "William Hill": 1.57,
+      "Bet365": 1.57,
+      "Betfair": 1.57,
+      "BetVictor": 1.53
+     }
+    },
+    "btts_no": {
+     "odd": 2.38,
+     "bookie": "Betfair",
+     "books": {
+      "William Hill": 2.3,
+      "Bet365": 2.25,
+      "Betfair": 2.38,
+      "BetVictor": 2.3
      }
     },
     "cards_over45": null,
