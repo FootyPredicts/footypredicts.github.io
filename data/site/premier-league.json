@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-10-28T11:44:20.457453+00:00",
+ "updated": "2026-10-29T11:52:16.549582+00:00",
  "matches_used": 840,
  "fixtures": [
   {
@@ -12,9 +12,9 @@
    "round": "Regular Season - 9",
    "home": "Chelsea",
    "away": "Manchester United",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
+   "referee": "P. Bankes",
+   "ref_cards": 4.18,
+   "ref_games": 50,
    "pick": "Home",
    "model_pick": "Home",
    "call_reason": "",
@@ -26,34 +26,42 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 10.4,
+     "defence_hit_pct": 9.0,
+     "key_out": [
+      "E. Martínez",
+      "João Pedro",
+      "M. Lacroix"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 7.7,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "Bruno Fernandes",
+      "L. Shaw",
+      "M. Rashford"
+     ]
     }
    },
-   "home_pct": 45.0,
-   "draw_pct": 24.1,
-   "away_pct": 30.9,
-   "xg_home": 1.84,
-   "xg_away": 1.5,
-   "over25": 64.9,
-   "btts": 66.1,
-   "cards5": 44.2,
+   "home_pct": 41.9,
+   "draw_pct": 24.9,
+   "away_pct": 33.2,
+   "xg_home": 1.71,
+   "xg_away": 1.51,
+   "over25": 62.5,
+   "btts": 64.7,
+   "cards5": 44.4,
    "cards": {
-    "exp": 4.4,
-    "home": 2.53,
-    "away": 1.87,
+    "exp": 4.42,
+    "home": 2.54,
+    "away": 1.88,
     "over": {
-     "2.5": 78.6,
-     "3.5": 61.7,
-     "4.5": 44.2,
-     "5.5": 29.0,
-     "6.5": 17.5
+     "2.5": 78.8,
+     "3.5": 61.9,
+     "4.5": 44.4,
+     "5.5": 29.2,
+     "6.5": 17.7
     }
    },
    "form": {
@@ -88,18 +96,6 @@
     "home": {
      "scorers": [
       {
-       "id": 10329,
-       "name": "João Pedro",
-       "p": 46.3,
-       "price": {
-        "odd": 2.1,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.1
-        }
-       }
-      },
-      {
        "id": 19170,
        "name": "M. Rogers",
        "p": 35.4,
@@ -110,19 +106,31 @@
          "Bet365": 2.88
         }
        }
+      },
+      {
+       "id": 1864,
+       "name": "Pedro Neto",
+       "p": 34.4,
+       "price": {
+        "odd": 3.4,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.4
+        }
+       }
       }
      ],
      "bookings": [
       {
        "id": 152982,
        "name": "C. Palmer",
-       "p": 30.5,
+       "p": 30.7,
        "price": null
       },
       {
        "id": 19170,
        "name": "M. Rogers",
-       "p": 24.5,
+       "p": 24.7,
        "price": null
       }
      ],
@@ -163,13 +171,13 @@
       {
        "id": 2935,
        "name": "H. Maguire",
-       "p": 26.4,
+       "p": 26.6,
        "price": null
       },
       {
-       "id": 891,
-       "name": "L. Shaw",
-       "p": 25.2,
+       "id": 1485,
+       "name": "Bruno Fernandes",
+       "p": 21.8,
        "price": null
       }
      ],
@@ -181,8 +189,88 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 19545,
+      "name": "R. James",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 10329,
+      "name": "Joao Pedro",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 19599,
+      "name": "E. Martinez",
+      "type": "Missing Fixture",
+      "reason": "Broken jawbone"
+     },
+     {
+      "id": 181734,
+      "name": "P. Chavarria",
+      "type": "Questionable",
+      "reason": "Injury"
+     },
+     {
+      "id": 286894,
+      "name": "J. Gittens",
+      "type": "Questionable",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 20995,
+      "name": "M. Lacroix",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 382452,
+      "name": "P. Dorgu",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 115589,
+      "name": "B. Sesko",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
+     },
+     {
+      "id": 891,
+      "name": "L. Shaw",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
+      "id": 51494,
+      "name": "M. Ugarte",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 1485,
+      "name": "B. Fernandes",
+      "type": "Questionable",
+      "reason": "Injury"
+     },
+     {
+      "id": 284322,
+      "name": "K. Mainoo",
+      "type": "Questionable",
+      "reason": "Injury"
+     },
+     {
+      "id": 909,
+      "name": "M. Rashford",
+      "type": "Questionable",
+      "reason": "Hip Injury"
+     }
+    ]
    },
    "previous": [
     {
@@ -364,9 +452,9 @@
    "round": "Regular Season - 9",
    "home": "Bournemouth",
    "away": "Leeds",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
+   "referee": "M. Salisbury",
+   "ref_cards": 3.66,
+   "ref_games": 29,
    "pick": "Home",
    "model_pick": "Home",
    "call_reason": "",
@@ -378,34 +466,36 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.2,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 0.6,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "N. Elvedi"
+     ]
     }
    },
-   "home_pct": 43.0,
-   "draw_pct": 28.4,
-   "away_pct": 28.6,
-   "xg_home": 1.42,
-   "xg_away": 1.12,
-   "over25": 46.7,
-   "btts": 52.1,
-   "cards5": 38.2,
+   "home_pct": 42.7,
+   "draw_pct": 28.5,
+   "away_pct": 28.7,
+   "xg_home": 1.41,
+   "xg_away": 1.11,
+   "over25": 46.1,
+   "btts": 51.7,
+   "cards5": 35.4,
    "cards": {
-    "exp": 4.06,
-    "home": 2.3,
-    "away": 1.76,
+    "exp": 3.91,
+    "home": 2.21,
+    "away": 1.7,
     "over": {
-     "2.5": 74.3,
-     "3.5": 56.0,
-     "4.5": 38.2,
-     "5.5": 23.7,
-     "6.5": 13.6
+     "2.5": 72.2,
+     "3.5": 53.3,
+     "4.5": 35.4,
+     "5.5": 21.5,
+     "6.5": 11.9
     }
    },
    "form": {
@@ -468,13 +558,13 @@
       {
        "id": 331832,
        "name": "António Silva",
-       "p": 26.4,
+       "p": 24.3,
        "price": null
       },
       {
        "id": 18869,
        "name": "A. Smith",
-       "p": 26.0,
+       "p": 23.9,
        "price": null
       }
      ],
@@ -515,13 +605,13 @@
       {
        "id": 2279,
        "name": "E. Ampadu",
-       "p": 26.4,
+       "p": 24.3,
        "price": null
       },
       {
        "id": 19201,
        "name": "J. Bogle",
-       "p": 25.4,
+       "p": 23.4,
        "price": null
       }
      ],
@@ -533,8 +623,52 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 51051,
+      "name": "J. Araujo",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 304853,
+      "name": "A. Scott",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 361485,
+      "name": "A. Toth",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 313059,
+      "name": "M. Joseph",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 19321,
+      "name": "J. Rodon",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 2803,
+      "name": "N. Elvedi",
+      "type": "Questionable",
+      "reason": "Illness"
+     },
+     {
+      "id": 19329,
+      "name": "D. James",
+      "type": "Questionable",
+      "reason": "Back Injury"
+     }
+    ]
    },
    "previous": [
     {
@@ -700,9 +834,9 @@
    "round": "Regular Season - 9",
    "home": "Manchester City",
    "away": "Brighton",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
+   "referee": "C. Pawson",
+   "ref_cards": 3.81,
+   "ref_games": 47,
    "pick": "Home",
    "model_pick": "Home",
    "call_reason": "",
@@ -714,34 +848,36 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.5,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 2.1,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "F. Kadıoğlu"
+     ]
     }
    },
-   "home_pct": 52.4,
-   "draw_pct": 23.9,
-   "away_pct": 23.7,
-   "xg_home": 1.91,
-   "xg_away": 1.23,
-   "over25": 60.7,
-   "btts": 61.1,
-   "cards5": 37.8,
+   "home_pct": 52.3,
+   "draw_pct": 24.2,
+   "away_pct": 23.5,
+   "xg_home": 1.88,
+   "xg_away": 1.21,
+   "over25": 59.5,
+   "btts": 60.2,
+   "cards5": 35.8,
    "cards": {
-    "exp": 4.04,
-    "home": 1.89,
-    "away": 2.15,
+    "exp": 3.93,
+    "home": 1.84,
+    "away": 2.09,
     "over": {
-     "2.5": 74.0,
-     "3.5": 55.6,
-     "4.5": 37.8,
-     "5.5": 23.4,
-     "6.5": 13.3
+     "2.5": 72.5,
+     "3.5": 53.6,
+     "4.5": 35.8,
+     "5.5": 21.7,
+     "6.5": 12.1
     }
    },
    "form": {
@@ -804,13 +940,13 @@
       {
        "id": 631,
        "name": "P. Foden",
-       "p": 19.5,
+       "p": 18.3,
        "price": null
       },
       {
        "id": 156477,
        "name": "R. Cherki",
-       "p": 19.0,
+       "p": 17.8,
        "price": null
       }
      ],
@@ -845,13 +981,13 @@
       {
        "id": 18970,
        "name": "P. Groß",
-       "p": 26.2,
+       "p": 24.7,
        "price": null
       },
       {
        "id": 22160,
        "name": "O. Boscagli",
-       "p": 25.4,
+       "p": 23.9,
        "price": null
       }
      ],
@@ -863,8 +999,70 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 19281,
+      "name": "A. Semenyo",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 41621,
+      "name": "M. Nunes",
+      "type": "Questionable",
+      "reason": "Knock"
+     }
+    ],
+    "away": [
+     {
+      "id": 282637,
+      "name": "F. Azeez",
+      "type": "Missing Fixture",
+      "reason": "Abdominal strain"
+     },
+     {
+      "id": 129643,
+      "name": "E. Ferguson",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 106835,
+      "name": "K. Mitoma",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 64003,
+      "name": "P. Struijk",
+      "type": "Missing Fixture",
+      "reason": "Rest"
+     },
+     {
+      "id": 343311,
+      "name": "S. Tzimas",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 524411,
+      "name": "Z. Yohanna",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
+      "id": 388871,
+      "name": "C. Andres",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 1361,
+      "name": "F. Kadioglu",
+      "type": "Questionable",
+      "reason": "Hip Injury"
+     }
+    ]
    },
    "previous": [
     {
@@ -1044,9 +1242,9 @@
    "round": "Regular Season - 9",
    "home": "Brentford",
    "away": "Nottingham Forest",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
+   "referee": "D. England",
+   "ref_cards": 4.44,
+   "ref_games": 48,
    "pick": "Home",
    "model_pick": "Home",
    "call_reason": "",
@@ -1058,34 +1256,36 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 2.2,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 4.0,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "Igor Jesus"
+     ]
     }
    },
-   "home_pct": 47.7,
-   "draw_pct": 27.2,
-   "away_pct": 25.1,
-   "xg_home": 1.56,
-   "xg_away": 1.07,
-   "over25": 49.1,
-   "btts": 53.0,
-   "cards5": 34.4,
+   "home_pct": 47.9,
+   "draw_pct": 27.6,
+   "away_pct": 24.5,
+   "xg_home": 1.53,
+   "xg_away": 1.03,
+   "over25": 47.1,
+   "btts": 51.3,
+   "cards5": 36.2,
    "cards": {
-    "exp": 3.85,
-    "home": 2.09,
-    "away": 1.76,
+    "exp": 3.95,
+    "home": 2.15,
+    "away": 1.81,
     "over": {
-     "2.5": 71.3,
-     "3.5": 52.2,
-     "4.5": 34.4,
-     "5.5": 20.6,
-     "6.5": 11.3
+     "2.5": 72.8,
+     "3.5": 54.0,
+     "4.5": 36.2,
+     "5.5": 22.1,
+     "6.5": 12.4
     }
    },
    "form": {
@@ -1142,13 +1342,13 @@
       {
        "id": 25073,
        "name": "V. Janelt",
-       "p": 45.5,
+       "p": 47.5,
        "price": null
       },
       {
        "id": 196156,
        "name": "Thiago",
-       "p": 30.6,
+       "p": 32.2,
        "price": null
       }
      ],
@@ -1189,13 +1389,13 @@
       {
        "id": 2771,
        "name": "O. Aina",
-       "p": 31.9,
+       "p": 33.5,
        "price": null
       },
       {
        "id": 363695,
        "name": "Murillo",
-       "p": 26.4,
+       "p": 27.8,
        "price": null
       }
      ],
@@ -1207,8 +1407,64 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 393193,
+      "name": "K. Furo",
+      "type": "Missing Fixture",
+      "reason": "Surgery"
+     },
+     {
+      "id": 19346,
+      "name": "R. Henry",
+      "type": "Missing Fixture",
+      "reason": "Hip Injury"
+     },
+     {
+      "id": 263538,
+      "name": "Y. Yarmolyuk",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 19362,
+      "name": "J. Dasilva",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 319517,
+      "name": "A. Milambo",
+      "type": "Questionable",
+      "reason": "Knock"
+     }
+    ],
+    "away": [
+     {
+      "id": 181806,
+      "name": "N. Savona",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 6056,
+      "name": "N. Dominguez",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 9366,
+      "name": "Igor Jesus",
+      "type": "Questionable",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 138780,
+      "name": "N. Williams",
+      "type": "Questionable",
+      "reason": "Elbow Injury"
+     }
+    ]
    },
    "previous": [
     {
@@ -1390,9 +1646,9 @@
    "round": "Regular Season - 9",
    "home": "Hull City",
    "away": "Ipswich",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
+   "referee": "T. Kirk",
+   "ref_cards": 3.83,
+   "ref_games": 6,
    "pick": "Home",
    "model_pick": "Home",
    "call_reason": "",
@@ -1404,34 +1660,36 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 2.0,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "N. Mendy"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 0.7,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 57.7,
-   "draw_pct": 24.6,
-   "away_pct": 17.7,
-   "xg_home": 1.8,
-   "xg_away": 0.91,
-   "over25": 50.8,
-   "btts": 50.6,
-   "cards5": 38.1,
+   "home_pct": 56.5,
+   "draw_pct": 25.0,
+   "away_pct": 18.4,
+   "xg_home": 1.77,
+   "xg_away": 0.92,
+   "over25": 50.3,
+   "btts": 50.7,
+   "cards5": 37.1,
    "cards": {
-    "exp": 4.06,
-    "home": 2.19,
-    "away": 1.87,
+    "exp": 4.0,
+    "home": 2.16,
+    "away": 1.84,
     "over": {
-     "2.5": 74.3,
-     "3.5": 55.9,
-     "4.5": 38.1,
-     "5.5": 23.6,
-     "6.5": 13.5
+     "2.5": 73.5,
+     "3.5": 54.9,
+     "4.5": 37.1,
+     "5.5": 22.8,
+     "6.5": 12.9
     }
    },
    "form": {
@@ -1494,13 +1752,13 @@
       {
        "id": 19666,
        "name": "M. Crooks",
-       "p": 36.4,
+       "p": 35.5,
        "price": null
       },
       {
        "id": 19337,
        "name": "O. McBurnie",
-       "p": 24.6,
+       "p": 23.9,
        "price": null
       }
      ],
@@ -1535,13 +1793,13 @@
       {
        "id": 303467,
        "name": "A. Fatawu",
-       "p": 31.0,
+       "p": 30.2,
        "price": null
       },
       {
        "id": 2823,
        "name": "S. Lukić",
-       "p": 22.8,
+       "p": 22.1,
        "price": null
       }
      ],
@@ -1553,8 +1811,70 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 380873,
+      "name": "I. Ansah",
+      "type": "Missing Fixture",
+      "reason": "Back Injury"
+     },
+     {
+      "id": 2930,
+      "name": "J. Butland",
+      "type": "Missing Fixture",
+      "reason": "Arm Injury"
+     },
+     {
+      "id": 282124,
+      "name": "D. Gyabi",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 331551,
+      "name": "C. Hughes",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 162991,
+      "name": "E. Matazo",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 18941,
+      "name": "M. Targett",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 179843,
+      "name": "L. Gourna-Douath",
+      "type": "Questionable",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 358431,
+      "name": "N. Mendy",
+      "type": "Questionable",
+      "reason": "Groin Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 18397,
+      "name": "J. Taylor",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 2823,
+      "name": "S. Lukic",
+      "type": "Questionable",
+      "reason": "Groin Injury"
+     }
+    ]
    },
    "previous": [],
    "odds": {
@@ -1705,12 +2025,12 @@
    "round": "Regular Season - 9",
    "home": "Coventry",
    "away": "Sunderland",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
-   "pick": "Draw",
+   "referee": "S. Hooper",
+   "ref_cards": 4.54,
+   "ref_games": 39,
+   "pick": "Away",
    "model_pick": "Away",
-   "call_reason": "low data",
+   "call_reason": "",
    "low_data": true,
    "market": {
     "home": 31.6,
@@ -1719,34 +2039,41 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 0.9,
+     "defence_hit_pct": 6.0,
+     "key_out": [
+      "A. Amenda",
+      "B. Thomas"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 3.2,
+     "defence_hit_pct": 6.0,
+     "key_out": [
+      "D. Ballard",
+      "N. Mukiele",
+      "W. Isidor"
+     ]
     }
    },
-   "home_pct": 30.2,
-   "draw_pct": 31.0,
-   "away_pct": 38.8,
-   "xg_home": 1.02,
-   "xg_away": 1.19,
-   "over25": 38.0,
-   "btts": 45.6,
-   "cards5": 33.0,
+   "home_pct": 31.0,
+   "draw_pct": 30.4,
+   "away_pct": 38.5,
+   "xg_home": 1.07,
+   "xg_away": 1.22,
+   "over25": 40.2,
+   "btts": 47.4,
+   "cards5": 35.4,
    "cards": {
-    "exp": 3.77,
-    "home": 1.51,
-    "away": 2.26,
+    "exp": 3.91,
+    "home": 1.56,
+    "away": 2.34,
     "over": {
-     "2.5": 70.2,
-     "3.5": 50.7,
-     "4.5": 33.0,
-     "5.5": 19.5,
-     "6.5": 10.6
+     "2.5": 72.1,
+     "3.5": 53.2,
+     "4.5": 35.4,
+     "5.5": 21.4,
+     "6.5": 11.9
     }
    },
    "form": {
@@ -1809,13 +2136,13 @@
       {
        "id": 37961,
        "name": "M. van Ewijk",
-       "p": 21.6,
+       "p": 23.1,
        "price": null
       },
       {
-       "id": 162414,
-       "name": "A. Amenda",
-       "p": 18.9,
+       "id": 475575,
+       "name": "Caleb Marfo Yirenkyi",
+       "p": 18.5,
        "price": null
       }
      ],
@@ -1856,13 +2183,13 @@
       {
        "id": 22225,
        "name": "Reinildo",
-       "p": 28.2,
+       "p": 30.1,
        "price": null
       },
       {
-       "id": 55904,
-       "name": "D. Ballard",
-       "p": 25.8,
+       "id": 1464,
+       "name": "G. Xhaka",
+       "p": 21.4,
        "price": null
       }
      ],
@@ -1874,8 +2201,70 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 162414,
+      "name": "A. Amenda",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 17714,
+      "name": "L. Woolfenden",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 427,
+      "name": "H. Wright",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 19984,
+      "name": "J. Eccles",
+      "type": "Questionable",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 264437,
+      "name": "B. Thomas",
+      "type": "Questionable",
+      "reason": "Leg Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 55904,
+      "name": "D. Ballard",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 284414,
+      "name": "R. Mundle",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 84087,
+      "name": "W. Isidor",
+      "type": "Questionable",
+      "reason": "Injury"
+     },
+     {
+      "id": 1146,
+      "name": "N. Mukiele",
+      "type": "Questionable",
+      "reason": "Face Injury"
+     },
+     {
+      "id": 492528,
+      "name": "J. Ta Bi",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ]
    },
    "previous": [],
    "odds": {
@@ -2040,23 +2429,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.2,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 4.3,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "J. Strand Larsen"
+     ]
     }
    },
-   "home_pct": 46.2,
-   "draw_pct": 27.0,
-   "away_pct": 26.8,
-   "xg_home": 1.56,
-   "xg_away": 1.14,
-   "over25": 50.8,
-   "btts": 54.8,
+   "home_pct": 46.0,
+   "draw_pct": 27.6,
+   "away_pct": 26.4,
+   "xg_home": 1.51,
+   "xg_away": 1.09,
+   "over25": 48.3,
+   "btts": 52.8,
    "cards5": 40.3,
    "cards": {
     "exp": 4.18,
@@ -2195,8 +2586,88 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 863,
+      "name": "R. Bentancur",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 63577,
+      "name": "M. Mudryk",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 336564,
+      "name": "W. Odobert",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 162016,
+      "name": "X. Simons",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 19145,
+      "name": "T. Adarabioyo",
+      "type": "Questionable",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 347316,
+      "name": "L. Bergvall",
+      "type": "Questionable",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 18784,
+      "name": "J. Maddison",
+      "type": "Questionable",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 204039,
+      "name": "D. Udogie",
+      "type": "Questionable",
+      "reason": "Knee Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 278898,
+      "name": "C. Riad",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 2597,
+      "name": "T. Tomiyasu",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 2032,
+      "name": "J. Larsen",
+      "type": "Questionable",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 2218,
+      "name": "I. Sarr",
+      "type": "Questionable",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 38747,
+      "name": "Q. Timber",
+      "type": "Questionable",
+      "reason": "Hamstring Injury"
+     }
+    ]
    },
    "previous": [
     {
@@ -2382,23 +2853,23 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 0.7,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 2.6,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 47.9,
-   "draw_pct": 27.6,
-   "away_pct": 24.4,
-   "xg_home": 1.53,
-   "xg_away": 1.02,
-   "over25": 46.9,
-   "btts": 51.1,
+   "home_pct": 48.3,
+   "draw_pct": 27.8,
+   "away_pct": 23.9,
+   "xg_home": 1.52,
+   "xg_away": 1.0,
+   "over25": 45.9,
+   "btts": 50.2,
    "cards5": 38.6,
    "cards": {
     "exp": 4.09,
@@ -2537,8 +3008,40 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 162714,
+      "name": "A. Onana",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 162012,
+      "name": "M. Ruggeri",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 18846,
+      "name": "A. Wan-Bissaka",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 19032,
+      "name": "R. Sessegnon",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 1161,
+      "name": "E. Smith Rowe",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ]
    },
    "previous": [
     {
@@ -3327,22 +3830,22 @@
      "books": {
       "William Hill": 1.57,
       "Bet365": 1.57,
-      "Betfair": 1.57,
+      "Betfair": 1.53,
       "BetVictor": 1.53
      }
     },
     "btts_no": {
-     "odd": 2.38,
+     "odd": 2.45,
      "bookie": "Betfair",
      "books": {
       "William Hill": 2.3,
       "Bet365": 2.25,
-      "Betfair": 2.38,
+      "Betfair": 2.45,
       "BetVictor": 2.3
      }
     },
     "cards_over45": {
-     "odd": 2.07,
+     "odd": 1.98,
      "bookie": "Betano",
      "books": {
       "Bet365": 1.73
@@ -3351,31 +3854,31 @@
     "cards": {
      "2.5": {
       "over": {
-       "odd": 1.24,
+       "odd": 1.21,
        "bookie": "Betano",
        "books": {}
       },
       "under": {
-       "odd": 3.75,
+       "odd": 4.1,
        "bookie": "Betano",
        "books": {}
       }
      },
      "3.5": {
       "over": {
-       "odd": 1.55,
+       "odd": 1.47,
        "bookie": "Betano",
        "books": {}
       },
       "under": {
-       "odd": 2.35,
+       "odd": 2.55,
        "bookie": "Betano",
        "books": {}
       }
      },
      "4.5": {
       "over": {
-       "odd": 2.07,
+       "odd": 1.98,
        "bookie": "Betano",
        "books": {
         "Bet365": 1.73
@@ -3391,24 +3894,24 @@
      },
      "5.5": {
       "over": {
-       "odd": 3.0,
+       "odd": 2.75,
        "bookie": "Betano",
        "books": {}
       },
       "under": {
-       "odd": 1.36,
+       "odd": 1.42,
        "bookie": "Betano",
        "books": {}
       }
      },
      "6.5": {
       "over": {
-       "odd": 4.4,
+       "odd": 4.0,
        "bookie": "Betano",
        "books": {}
       },
       "under": {
-       "odd": 1.19,
+       "odd": 1.22,
        "bookie": "Betano",
        "books": {}
       }
