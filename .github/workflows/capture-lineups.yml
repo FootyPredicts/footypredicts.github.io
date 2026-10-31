@@ -1,0 +1,43 @@
+name: Capture lineups
+
+on:
+  schedule:
+    - cron: "*/20 11-21 * * *"     # line-ups come out ~1 hour before kick-off
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "live or backfill"
+        default: "live"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capture-lineups
+  cancel-in-progress: false
+
+jobs:
+  lineups:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      API_FOOTBALL_MIN_INTERVAL: "0.25"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-pipeline.txt
+      - run: pip install -r requirements-pipeline.txt
+      - run: python -m pipeline.lineups ${{ github.event.inputs.mode || 'live' }}
+      - name: Save line-ups
+        run: |
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
+          git add data/*/lineups.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Save lineups"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done

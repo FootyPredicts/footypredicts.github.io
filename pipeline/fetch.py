@@ -288,6 +288,14 @@ def fetch_odds(league, key, n_fixtures=12):
         if best:
             odds[str(fx["id"])] = {"updated": datetime.now(timezone.utc).isoformat(), "markets": best, "books": books}
     _save(os.path.join(d, "odds.json"), odds)
+    # keep the latest pre-kick-off 1X2 prices of every fixture, to test a bookmaker blend later
+    hist_path = os.path.join(d, "odds_history.json")
+    hist = _load(hist_path, {})
+    for fid, v in odds.items():
+        mw = (v.get("books") or {}).get("Match Winner")
+        if mw:
+            hist[fid] = {"Match Winner": mw}
+    _save(hist_path, hist)
     _save(os.path.join(d, "odds_bookmakers.json"),
           {"checked_fixtures": min(n_fixtures, len(upcoming)),
            "priced_fixtures_by_bookmaker": {k: len(v) for k, v in sorted(book_seen.items(), key=lambda kv: -len(kv[1]))}})
