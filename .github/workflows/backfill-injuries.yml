@@ -24,11 +24,12 @@ jobs:
       - run: pip install -r requirements-pipeline.txt
       - run: python -m pipeline.backfill_injuries 400
       - run: python -m pipeline.fetch_other_competitions
+      - run: python -m pipeline.backfill_odds 150
       - name: Save injury history
         run: |
           git config user.name "Claude"
           git config user.email "noreply@anthropic.com"
-          git add data/*/injuries_history.json data/other_competitions.json
+          git add data/*/injuries_history.json data/other_competitions.json data/*/odds_history.json
           git diff --cached --quiet || git commit -m "Add historical injury lists"
           git pull --rebase
           git push
