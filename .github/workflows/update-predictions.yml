@@ -47,6 +47,9 @@ jobs:
             exit 1
           fi
 
+      - name: Update shirt numbers
+        run: python -m pipeline.squads || echo "::warning::Shirt numbers not updated"
+
       - name: Download data and predict (all leagues)
         run: |
           set -o pipefail

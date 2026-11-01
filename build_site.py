@@ -32,6 +32,22 @@ def _live_url():
 
 
 LIVE_PICKS = {}
+SQUADS = {}   # player id (str) -> shirt number, from data/<league>/squads.json
+
+
+def load_squads():
+    SQUADS.clear()
+    for lg in LEAGUE_ORDER:
+        try:
+            with open(os.path.join("data", lg, "squads.json"), encoding="utf-8") as fh:
+                SQUADS.update(json.load(fh))
+        except (FileNotFoundError, ValueError):
+            pass
+
+
+def shirt(pid):
+    n = SQUADS.get(str(pid))
+    return None if n is None else int(n)
 SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.com/").rstrip("/") + "/"
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
@@ -111,12 +127,14 @@ def names(f, lst, team, kind):
     for x in lst:
         what = "to score" if kind == "scorer" else "to be booked"
         price = x.get("price")
+        num = shirt(x.get("id"))
+        tag = f'<span class="no" title="Shirt number">{num}</span>' if num is not None else ""
         if price:
-            out.append(f'<span class="pl">{esc(x["name"])} <small>{x["p"]:.0f}%</small> '
+            out.append(f'<span class="pl">{tag}{esc(x["name"])} <small>{x["p"]:.0f}%</small> '
                        + sel(f, f"{kind}-{x.get('id', x['name'])}", f"{kind}-{x.get('id', x['name'])}",
                              f"{x['name']} ({team}) {what}", price, x["p"] / 100, text="") + "</span>")
         else:
-            out.append(f'<span class="pl">{esc(x["name"])} <small>{x["p"]:.0f}%</small></span>')
+            out.append(f'<span class="pl">{tag}{esc(x["name"])} <small>{x["p"]:.0f}%</small></span>')
     return "".join(out)
 
 
@@ -740,6 +758,7 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
 
 
 def build():
+    load_squads()
     leagues = []
     for key in LEAGUE_ORDER:
         path = os.path.join(SITE_DATA, f"{key}.json")
@@ -769,7 +788,10 @@ def build():
                 LIVE_PICKS[str(f["id"])] = {"lg": d["league"], "h": f["home"], "a": f["away"], "pk": f["pick"],
                                             "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"]),
                                             "sc": [x["name"] for side in ("home", "away") for x in f["players"][side]["scorers"]],
-                                            "bk": [x["name"] for side in ("home", "away") for x in f["players"][side]["bookings"]]}
+                                            "bk": [x["name"] for side in ("home", "away") for x in f["players"][side]["bookings"]],
+                                            "no": {x["name"]: shirt(x.get("id")) for side in ("home", "away")
+                                                   for x in f["players"][side]["scorers"] + f["players"][side]["bookings"]
+                                                   if shirt(x.get("id")) is not None}}
     os.makedirs(os.path.dirname(keep_path), exist_ok=True)
     with open(keep_path, "w", encoding="utf-8") as fh:
         json.dump(LIVE_PICKS, fh)
@@ -1240,6 +1262,7 @@ a.chip { text-decoration:none; }
 
 EXTRA_CSS += r"""
 /* live scores */
+.pl .no { display:inline-block; min-width:22px; margin-right:6px; padding:1px 5px; border-radius:6px; background:var(--ink,#16231b); color:#fff; font:700 12px/16px "Barlow Condensed",sans-serif; text-align:center; vertical-align:1px; }
 .st-wait { margin:8px 0 0; font-size:12px; color:var(--muted); }
 .lv-none { margin:0; font-size:13px; color:var(--muted); padding:8px 2px; }
 .lv-key { margin:-2px 0 8px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
@@ -1530,7 +1553,9 @@ __DECOR__
         li.appendChild(el('span', 't', e.m + (e.x ? '+' + e.x : '') + "'"));
         if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
         var label = e.t === 'Goal' ? (e.d === 'Own Goal' ? 'Own goal' : e.d === 'Missed Penalty' ? 'Penalty missed' : e.d === 'Penalty' ? 'Goal (pen)' : 'Goal') : '';
-        li.appendChild(el('span', '', (e.p || '') + (label ? ' · ' + label : '')));
+        var shirtNo = '';
+        if (isPick && pk.no) Object.keys(pk.no).forEach(function (n) { if (sn(n) === sn(e.p)) shirtNo = '#' + pk.no[n] + ' '; });
+        li.appendChild(el('span', '', shirtNo + (e.p || '') + (label ? ' · ' + label : '')));
         li.appendChild(el('span', 'who', e.s === 'h' ? m.home : m.away));
         ul.appendChild(li);
       });
