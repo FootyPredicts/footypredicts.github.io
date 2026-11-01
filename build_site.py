@@ -23,6 +23,15 @@ SHOW_TRACK_RECORD = os.environ.get("SHOW_TRACK_RECORD") == "1"
 SITE_DATA = os.path.join(BASE_DIR, "data", "site")
 OUT_DIR = os.path.join(BASE_DIR, "docs")
 # Public address of the site (used for sharing previews and the sitemap). Change if you buy a domain.
+def _live_url():
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "live_config.json"), encoding="utf-8") as fh:
+            return json.load(fh).get("url", "") or ""
+    except Exception:
+        return ""
+
+
+LIVE_PICKS = {}
 SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.com/").rstrip("/") + "/"
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
@@ -411,8 +420,9 @@ def render_match(f, i):
       <section class="block"><h3>Last meetings</h3><table class="pm">{prev}</table></section>""" if prev else ""
 
     return f"""
-    <article id="m{i}" class="match" role="tabpanel" hidden>
+    <article id="m{i}" class="match" role="tabpanel" data-fid="{f["id"]}" hidden>
       <header class="match-head">
+        <div class="live-box" data-fid="{f["id"]}" hidden></div>
         <div class="kick">{esc(day)} · {esc(time_)}</div>
         <h2 class="fixture"><span>{esc(home)}</span><span class="vs">v</span><span>{esc(away)}</span></h2>
         {ref}
@@ -637,6 +647,9 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = PAGE.format(title=esc(title), desc=esc(desc), nav=nav, sub=sub, chips=chips, body=body,
                        css=CSS, extra_css=EXTRA_CSS, prefix=prefix)
     html = html.replace("{prefix}", prefix)
+    on_live = path == "" or path.rstrip("/") in LEAGUE_ORDER
+    html = html.replace("__LIVESTRIP__", '<section id="live" class="live" aria-live="polite" hidden></section>' if on_live else "")
+    html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS}).replace("</", "<\\/"))
     html = html.replace("__DECOR__", DECOR_DEFS).replace("__HEAD__", head_tags(esc(title), esc(desc), path))
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
@@ -652,6 +665,11 @@ def build():
                 leagues.append(d)
     if not leagues:
         raise SystemExit("No prediction files in data/site/ - run: python -m pipeline.run")
+    LIVE_PICKS.clear()
+    for d in leagues:
+        for f in d["fixtures"]:
+            LIVE_PICKS[str(f["id"])] = {"h": f["home"], "a": f["away"], "pk": f["pick"],
+                                        "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"])}
     updated = max(datetime.fromisoformat(d["updated"]) for d in leagues).astimezone()
     upd = updated.strftime("%d %b, %H:%M")
 
@@ -1076,6 +1094,33 @@ a.chip { text-decoration:none; }
 }
 """
 
+EXTRA_CSS += r"""
+/* live scores */
+.live { max-width:960px; margin:16px auto 0; padding:0 16px; }
+.lv { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin:0 0 8px;
+  box-shadow:0 1px 0 #fff inset, 0 8px 16px -10px rgba(15,61,46,.3); }
+.lv-top { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.lv-min { font:700 13px/1 Barlow,sans-serif; color:#b3261e; display:inline-flex; align-items:center; gap:6px; min-width:54px; }
+.lv-min.ft { color:var(--muted); }
+.lv-min i { width:8px; height:8px; border-radius:50%; background:#d93025; animation:lvp 1.4s infinite; }
+.lv-min.ft i { display:none; }
+@keyframes lvp { 50% { opacity:.25; } }
+.lv-teams { font:700 20px/1.15 "Barlow Condensed",sans-serif; flex:1 1 220px; }
+.lv-score { font:800 26px/1 "Barlow Condensed",sans-serif; letter-spacing:.04em; }
+.lv-pick { font-size:13px; padding:3px 9px; border-radius:99px; background:#eef2ee; color:var(--ink); white-space:nowrap; }
+.lv-pick.ok { background:#dff3e4; color:#115c2a; }
+.lv-pick.no { background:#fbe4e2; color:#8a1c14; }
+.lv-ev { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:2px; font-size:14px; }
+.lv-ev li { display:flex; gap:8px; align-items:center; }
+.lv-ev .t { color:var(--muted); min-width:34px; font-variant-numeric:tabular-nums; }
+.lv-ev .h { justify-content:flex-start; } .lv-ev .a { justify-content:flex-start; }
+.lv-ev .who { color:var(--muted); font-size:12px; }
+.lv-card { display:inline-block; width:10px; height:14px; border-radius:2px; background:#f6d33b; }
+.lv-card.red { background:#d93025; }
+.lv-note { color:var(--muted); font-size:12px; margin:2px 0 8px; }
+.live-box { margin:0 0 12px; }
+"""
+
 PAGE = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1101,7 +1146,7 @@ __DECOR__
     {chips}
   </div>
 </header>
-<main>{body}
+<main>__LIVESTRIP__{body}
 </main>
 <footer class="foot">
 <p><b>18+ only.</b> Gambling can be addictive. Please gamble responsibly and only with money you can afford to lose. Free, confidential help: <a href="https://www.begambleaware.org" rel="noopener">BeGambleAware.org</a> · National Gambling Helpline 0808 8020 133 · <a href="https://www.gamstop.co.uk" rel="noopener">GAMSTOP</a> · <a href="{prefix}responsible-gambling/">Responsible gambling and how this site is funded</a></p>
@@ -1248,6 +1293,83 @@ __DECOR__
     }
   });
   applyBook(); save(); render();
+})();
+</script>
+<script>
+/* Live scores: polls the relay only while a match is on and the tab is open. */
+(function () {
+  var L = __LIVEDATA__;
+  var strip = document.getElementById('live');
+  if (!L.url || !strip) return;
+  var picks = L.picks, state = {}, timer = null, lastOk = 0;
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function minute(m) {
+    if (m.fin) return 'FT';
+    if (m.st === 'HT') return 'HT';
+    if (m.st === 'BT' || m.st === 'INT') return 'Break';
+    if (m.st === 'P') return 'Pens';
+    return (m.el || 0) + (m.ex ? '+' + m.ex : '') + "'";
+  }
+  function box(m, compact) {
+    var pk = picks[String(m.id)], card = el('div', 'lv');
+    var top = el('div', 'lv-top');
+    var mn = el('span', 'lv-min' + (m.fin ? ' ft' : '')); mn.appendChild(el('i')); mn.appendChild(document.createTextNode(minute(m)));
+    top.appendChild(mn);
+    top.appendChild(el('span', 'lv-teams', m.home + ' v ' + m.away));
+    top.appendChild(el('span', 'lv-score', m.hg + ' – ' + m.ag));
+    if (pk) {
+      var res = m.hg > m.ag ? 'Home' : m.hg < m.ag ? 'Away' : 'Draw', ok = res === pk.pk;
+      var name = pk.pk === 'Home' ? pk.h : pk.pk === 'Away' ? pk.a : 'a draw';
+      top.appendChild(el('span', 'lv-pick ' + (ok ? 'ok' : 'no'), 'We said ' + name + (m.fin ? (ok ? ' · right' : ' · wrong') : (ok ? ' · on track' : ' · not on track'))));
+    }
+    card.appendChild(top);
+    if (m.ev && m.ev.length) {
+      var ul = el('ul', 'lv-ev');
+      m.ev.slice().sort(function (a, b) { return (a.m + (a.x || 0) / 100) - (b.m + (b.x || 0) / 100); }).forEach(function (e) {
+        var li = el('li', e.s);
+        li.appendChild(el('span', 't', e.m + (e.x ? '+' + e.x : '') + "'"));
+        if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
+        var label = e.t === 'Goal' ? (e.d === 'Own Goal' ? 'Own goal' : e.d === 'Missed Penalty' ? 'Penalty missed' : e.d === 'Penalty' ? 'Goal (pen)' : 'Goal') : '';
+        li.appendChild(el('span', '', (e.p || '') + (label ? ' · ' + label : '')));
+        li.appendChild(el('span', 'who', e.s === 'h' ? m.home : m.away));
+        ul.appendChild(li);
+      });
+      card.appendChild(ul);
+    }
+    return card;
+  }
+  function render() {
+    var list = Object.keys(state).map(function (k) { return state[k]; });
+    list.sort(function (a, b) { return (a.fin ? 1 : 0) - (b.fin ? 1 : 0) || a.id - b.id; });
+    strip.textContent = '';
+    if (list.length) {
+      strip.appendChild(el('p', 'lv-note', 'Live now · scores update about every 30 seconds'));
+      list.forEach(function (m) { var c = box(m, true); strip.appendChild(c); });
+    }
+    strip.hidden = !list.length;
+    document.querySelectorAll('.live-box').forEach(function (b) {
+      var m = state[b.dataset.fid]; b.textContent = '';
+      if (m) b.appendChild(box(m, false));
+      b.hidden = !m;
+    });
+  }
+  function windowOpen() {
+    var now = Date.now();
+    if (Object.keys(state).some(function (k) { return !state[k].fin; })) return true;
+    return Object.keys(picks).some(function (k) { var t = Date.parse(picks[k].ko); return now > t - 10 * 60000 && now < t + 160 * 60000; });
+  }
+  function poll() {
+    if (document.hidden || !windowOpen()) return;
+    fetch(L.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || j.error) return;
+      var seen = {};
+      (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; state[m.id] = m; });
+      Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if ((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P' || m.gone >= 6) m.fin = true; });
+      render();
+    }).catch(function () {});
+  }
+  poll(); setInterval(poll, 30000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) poll(); });
 })();
 </script>
 </body>

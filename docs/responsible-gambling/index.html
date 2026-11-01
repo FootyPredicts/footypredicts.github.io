@@ -375,6 +375,31 @@ a.chip { text-decoration:none; }
   .row-pick { grid-column:2; grid-row:2; }
   .row-bar { grid-column:1 / 3; }
 }
+
+/* live scores */
+.live { max-width:960px; margin:16px auto 0; padding:0 16px; }
+.lv { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin:0 0 8px;
+  box-shadow:0 1px 0 #fff inset, 0 8px 16px -10px rgba(15,61,46,.3); }
+.lv-top { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.lv-min { font:700 13px/1 Barlow,sans-serif; color:#b3261e; display:inline-flex; align-items:center; gap:6px; min-width:54px; }
+.lv-min.ft { color:var(--muted); }
+.lv-min i { width:8px; height:8px; border-radius:50%; background:#d93025; animation:lvp 1.4s infinite; }
+.lv-min.ft i { display:none; }
+@keyframes lvp { 50% { opacity:.25; } }
+.lv-teams { font:700 20px/1.15 "Barlow Condensed",sans-serif; flex:1 1 220px; }
+.lv-score { font:800 26px/1 "Barlow Condensed",sans-serif; letter-spacing:.04em; }
+.lv-pick { font-size:13px; padding:3px 9px; border-radius:99px; background:#eef2ee; color:var(--ink); white-space:nowrap; }
+.lv-pick.ok { background:#dff3e4; color:#115c2a; }
+.lv-pick.no { background:#fbe4e2; color:#8a1c14; }
+.lv-ev { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:2px; font-size:14px; }
+.lv-ev li { display:flex; gap:8px; align-items:center; }
+.lv-ev .t { color:var(--muted); min-width:34px; font-variant-numeric:tabular-nums; }
+.lv-ev .h { justify-content:flex-start; } .lv-ev .a { justify-content:flex-start; }
+.lv-ev .who { color:var(--muted); font-size:12px; }
+.lv-card { display:inline-block; width:10px; height:14px; border-radius:2px; background:#f6d33b; }
+.lv-card.red { background:#d93025; }
+.lv-note { color:var(--muted); font-size:12px; margin:2px 0 8px; }
+.live-box { margin:0 0 12px; }
 </style>
 </head>
 <body>
@@ -597,6 +622,83 @@ a.chip { text-decoration:none; }
     }
   });
   applyBook(); save(); render();
+})();
+</script>
+<script>
+/* Live scores: polls the relay only while a match is on and the tab is open. */
+(function () {
+  var L = {"url": "", "picks": {"1557453": {"h": "Liverpool", "a": "Arsenal", "pk": "Away", "ko": "2026-11-01T16:30:00Z", "hp": 29, "dp": 30, "ap": 41}, "1557455": {"h": "Newcastle", "a": "Everton", "pk": "Home", "ko": "2026-11-02T20:00:00Z", "hp": 43, "dp": 28, "ap": 29}, "1557460": {"h": "Everton", "a": "Coventry", "pk": "Home", "ko": "2026-11-06T20:00:00Z", "hp": 51, "dp": 27, "ap": 22}, "1557463": {"h": "Leeds", "a": "Tottenham", "pk": "Home", "ko": "2026-11-07T12:30:00Z", "hp": 45, "dp": 29, "ap": 26}, "1557461": {"h": "Fulham", "a": "Newcastle", "pk": "Home", "ko": "2026-11-07T15:00:00Z", "hp": 39, "dp": 28, "ap": 33}, "1557457": {"h": "Arsenal", "a": "Hull City", "pk": "Home", "ko": "2026-11-07T15:00:00Z", "hp": 62, "dp": 26, "ap": 12}, "1557465": {"h": "Nottingham Forest", "a": "Manchester City", "pk": "Away", "ko": "2026-11-07T17:30:00Z", "hp": 22, "dp": 26, "ap": 52}, "1557458": {"h": "Brighton", "a": "Brentford", "pk": "Home", "ko": "2026-11-08T14:00:00Z", "hp": 51, "dp": 25, "ap": 24}, "1557459": {"h": "Crystal Palace", "a": "Liverpool", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 22, "dp": 25, "ap": 53}, "1557462": {"h": "Ipswich", "a": "Bournemouth", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 25, "dp": 22, "ap": 53}, "1570438": {"h": "Getafe", "a": "Sevilla", "pk": "Draw", "ko": "2026-11-01T13:00:00Z", "hp": 32, "dp": 34, "ap": 34}, "1570440": {"h": "Racing Santander", "a": "Real Madrid", "pk": "Away", "ko": "2026-11-01T15:15:00Z", "hp": 9, "dp": 13, "ap": 78}, "1570437": {"h": "Elche", "a": "Valencia", "pk": "Home", "ko": "2026-11-01T17:30:00Z", "hp": 51, "dp": 27, "ap": 22}, "1570433": {"h": "Athletic Club", "a": "Real Sociedad", "pk": "Home", "ko": "2026-11-01T20:00:00Z", "hp": 47, "dp": 26, "ap": 27}, "1570436": {"h": "Deportivo La Coruna", "a": "Osasuna", "pk": "Home", "ko": "2026-11-02T20:00:00Z", "hp": 46, "dp": 29, "ap": 25}, "1570450": {"h": "Sevilla", "a": "Alaves", "pk": "Home", "ko": "2026-11-06T20:00:00Z", "hp": 48, "dp": 27, "ap": 26}, "1570447": {"h": "Malaga", "a": "Racing Santander", "pk": "Home", "ko": "2026-11-07T13:00:00Z", "hp": 40, "dp": 24, "ap": 36}, "1570446": {"h": "Espanyol", "a": "Deportivo La Coruna", "pk": "Home", "ko": "2026-11-07T15:15:00Z", "hp": 40, "dp": 30, "ap": 29}, "1570448": {"h": "Osasuna", "a": "Athletic Club", "pk": "Away", "ko": "2026-11-07T17:30:00Z", "hp": 34, "dp": 30, "ap": 36}, "1570451": {"h": "Valencia", "a": "Real Madrid", "pk": "Away", "ko": "2026-11-07T20:00:00Z", "hp": 16, "dp": 24, "ap": 60}, "1575207": {"h": "Union Berlin", "a": "1. FC K\u00f6ln", "pk": "Home", "ko": "2026-11-01T14:30:00Z", "hp": 45, "dp": 28, "ap": 28}, "1575205": {"h": "Eintracht Frankfurt", "a": "Hamburger SV", "pk": "Home", "ko": "2026-11-01T16:30:00Z", "hp": 59, "dp": 23, "ap": 18}, "1575218": {"h": "Hamburger SV", "a": "Borussia M\u00f6nchengladbach", "pk": "Home", "ko": "2026-11-06T19:30:00Z", "hp": 40, "dp": 28, "ap": 32}, "1575217": {"h": "FSV Mainz 05", "a": "Bayern M\u00fcnchen", "pk": "Away", "ko": "2026-11-07T14:30:00Z", "hp": 12, "dp": 15, "ap": 74}, "1575212": {"h": "Borussia Dortmund", "a": "SV Elversberg", "pk": "Home", "ko": "2026-11-07T14:30:00Z", "hp": 70, "dp": 17, "ap": 13}, "1575213": {"h": "RB Leipzig", "a": "FC Augsburg", "pk": "Home", "ko": "2026-11-07T14:30:00Z", "hp": 64, "dp": 20, "ap": 16}, "1575220": {"h": "SC Paderborn 07", "a": "Eintracht Frankfurt", "pk": "Draw", "ko": "2026-11-07T14:30:00Z", "hp": 36, "dp": 32, "ap": 32}, "1575214": {"h": "VfB Stuttgart", "a": "Werder Bremen", "pk": "Home", "ko": "2026-11-07T17:30:00Z", "hp": 62, "dp": 20, "ap": 18}, "1575219": {"h": "1. FC K\u00f6ln", "a": "Bayer Leverkusen", "pk": "Away", "ko": "2026-11-08T14:30:00Z", "hp": 26, "dp": 23, "ap": 51}, "1575216": {"h": "SC Freiburg", "a": "Union Berlin", "pk": "Home", "ko": "2026-11-08T16:30:00Z", "hp": 61, "dp": 22, "ap": 17}, "1550180": {"h": "Como", "a": "Venezia", "pk": "Home", "ko": "2026-11-01T11:30:00Z", "hp": 71, "dp": 21, "ap": 8}, "1550183": {"h": "Lazio", "a": "Cagliari", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 56, "dp": 26, "ap": 17}, "1550181": {"h": "Frosinone", "a": "Torino", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 69, "dp": 16, "ap": 15}, "1550184": {"h": "Lecce", "a": "Genoa", "pk": "Away", "ko": "2026-11-01T17:00:00Z", "hp": 22, "dp": 33, "ap": 45}, "1550182": {"h": "Juventus", "a": "Napoli", "pk": "Draw", "ko": "2026-11-01T19:45:00Z", "hp": 32, "dp": 32, "ap": 36}, "1550185": {"h": "Sassuolo", "a": "Fiorentina", "pk": "Home", "ko": "2026-11-02T17:30:00Z", "hp": 37, "dp": 26, "ap": 36}, "1550178": {"h": "Atalanta", "a": "Parma", "pk": "Home", "ko": "2026-11-02T19:45:00Z", "hp": 56, "dp": 28, "ap": 16}, "1550196": {"h": "Venezia", "a": "Udinese", "pk": "Away", "ko": "2026-11-06T19:45:00Z", "hp": 26, "dp": 30, "ap": 44}, "1550188": {"h": "Cagliari", "a": "Frosinone", "pk": "Away", "ko": "2026-11-07T14:00:00Z", "hp": 18, "dp": 19, "ap": 63}, "1550195": {"h": "Torino", "a": "Lecce", "pk": "Home", "ko": "2026-11-07T14:00:00Z", "hp": 48, "dp": 28, "ap": 23}, "1552808": {"h": "Strasbourg", "a": "Auxerre", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 55, "dp": 24, "ap": 21}, "1552804": {"h": "Lyon", "a": "Angers", "pk": "Home", "ko": "2026-11-01T16:15:00Z", "hp": 65, "dp": 24, "ap": 11}, "1552807": {"h": "Paris FC", "a": "Monaco", "pk": "Home", "ko": "2026-11-01T16:15:00Z", "hp": 37, "dp": 27, "ap": 36}, "1552805": {"h": "Marseille", "a": "Toulouse", "pk": "Home", "ko": "2026-11-01T19:45:00Z", "hp": 55, "dp": 22, "ap": 22}, "1552803": {"h": "Lorient", "a": "Stade Brestois 29", "pk": "Home", "ko": "2026-11-02T19:45:00Z", "hp": 49, "dp": 27, "ap": 24}, "1552817": {"h": "Toulouse", "a": "Strasbourg", "pk": "Home", "ko": "2026-11-06T19:45:00Z", "hp": 43, "dp": 25, "ap": 32}, "1552811": {"h": "Auxerre", "a": "Paris FC", "pk": "Away", "ko": "2026-11-07T16:15:00Z", "hp": 31, "dp": 28, "ap": 41}, "1552815": {"h": "Paris Saint Germain", "a": "Estac Troyes", "pk": "Home", "ko": "2026-11-07T19:45:00Z", "hp": 87, "dp": 10, "ap": 3}, "1552816": {"h": "Rennes", "a": "Lille", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 34, "dp": 27, "ap": 38}, "1552813": {"h": "Le Havre", "a": "Lorient", "pk": "Away", "ko": "2026-11-08T16:15:00Z", "hp": 28, "dp": 30, "ap": 42}}};
+  var strip = document.getElementById('live');
+  if (!L.url || !strip) return;
+  var picks = L.picks, state = {}, timer = null, lastOk = 0;
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function minute(m) {
+    if (m.fin) return 'FT';
+    if (m.st === 'HT') return 'HT';
+    if (m.st === 'BT' || m.st === 'INT') return 'Break';
+    if (m.st === 'P') return 'Pens';
+    return (m.el || 0) + (m.ex ? '+' + m.ex : '') + "'";
+  }
+  function box(m, compact) {
+    var pk = picks[String(m.id)], card = el('div', 'lv');
+    var top = el('div', 'lv-top');
+    var mn = el('span', 'lv-min' + (m.fin ? ' ft' : '')); mn.appendChild(el('i')); mn.appendChild(document.createTextNode(minute(m)));
+    top.appendChild(mn);
+    top.appendChild(el('span', 'lv-teams', m.home + ' v ' + m.away));
+    top.appendChild(el('span', 'lv-score', m.hg + ' – ' + m.ag));
+    if (pk) {
+      var res = m.hg > m.ag ? 'Home' : m.hg < m.ag ? 'Away' : 'Draw', ok = res === pk.pk;
+      var name = pk.pk === 'Home' ? pk.h : pk.pk === 'Away' ? pk.a : 'a draw';
+      top.appendChild(el('span', 'lv-pick ' + (ok ? 'ok' : 'no'), 'We said ' + name + (m.fin ? (ok ? ' · right' : ' · wrong') : (ok ? ' · on track' : ' · not on track'))));
+    }
+    card.appendChild(top);
+    if (m.ev && m.ev.length) {
+      var ul = el('ul', 'lv-ev');
+      m.ev.slice().sort(function (a, b) { return (a.m + (a.x || 0) / 100) - (b.m + (b.x || 0) / 100); }).forEach(function (e) {
+        var li = el('li', e.s);
+        li.appendChild(el('span', 't', e.m + (e.x ? '+' + e.x : '') + "'"));
+        if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
+        var label = e.t === 'Goal' ? (e.d === 'Own Goal' ? 'Own goal' : e.d === 'Missed Penalty' ? 'Penalty missed' : e.d === 'Penalty' ? 'Goal (pen)' : 'Goal') : '';
+        li.appendChild(el('span', '', (e.p || '') + (label ? ' · ' + label : '')));
+        li.appendChild(el('span', 'who', e.s === 'h' ? m.home : m.away));
+        ul.appendChild(li);
+      });
+      card.appendChild(ul);
+    }
+    return card;
+  }
+  function render() {
+    var list = Object.keys(state).map(function (k) { return state[k]; });
+    list.sort(function (a, b) { return (a.fin ? 1 : 0) - (b.fin ? 1 : 0) || a.id - b.id; });
+    strip.textContent = '';
+    if (list.length) {
+      strip.appendChild(el('p', 'lv-note', 'Live now · scores update about every 30 seconds'));
+      list.forEach(function (m) { var c = box(m, true); strip.appendChild(c); });
+    }
+    strip.hidden = !list.length;
+    document.querySelectorAll('.live-box').forEach(function (b) {
+      var m = state[b.dataset.fid]; b.textContent = '';
+      if (m) b.appendChild(box(m, false));
+      b.hidden = !m;
+    });
+  }
+  function windowOpen() {
+    var now = Date.now();
+    if (Object.keys(state).some(function (k) { return !state[k].fin; })) return true;
+    return Object.keys(picks).some(function (k) { var t = Date.parse(picks[k].ko); return now > t - 10 * 60000 && now < t + 160 * 60000; });
+  }
+  function poll() {
+    if (document.hidden || !windowOpen()) return;
+    fetch(L.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || j.error) return;
+      var seen = {};
+      (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; state[m.id] = m; });
+      Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if ((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P' || m.gone >= 6) m.fin = true; });
+      render();
+    }).catch(function () {});
+  }
+  poll(); setInterval(poll, 30000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) poll(); });
 })();
 </script>
 </body>
