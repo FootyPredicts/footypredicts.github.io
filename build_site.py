@@ -1189,6 +1189,8 @@ a.chip { text-decoration:none; }
 
 EXTRA_CSS += r"""
 /* live scores */
+.lv-key { margin:-2px 0 8px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
+.lv-key .sw { display:inline-block; width:22px; height:10px; border-radius:4px; background:linear-gradient(180deg,#fff7c9,#f6e27a); border:1px solid #e0c54a; }
 .lv-stats { margin:8px 0 0; }
 .lv-stats > summary { cursor:pointer; list-style:none; display:inline-block; font-size:13px; font-weight:600; color:var(--pitch); padding:2px 10px; border:1px solid var(--line); border-radius:99px; background:#fff; }
 .lv-stats > summary::-webkit-details-marker { display:none; }
@@ -1536,6 +1538,8 @@ __DECOR__
     strip.textContent = '';
     if (here.length) {
       strip.appendChild(el('p', 'lv-h', 'Live now · updates about every 30 seconds'));
+      var key = el('p', 'lv-key'); key.appendChild(el('i', 'sw')); key.appendChild(document.createTextNode(' Yellow highlight = one of our predicted scorers or booked players'));
+      strip.appendChild(key);
       here.forEach(function (m) { strip.appendChild(box(m)); });
     }
     strip.hidden = !here.length;
