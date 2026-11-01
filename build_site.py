@@ -286,7 +286,8 @@ def view_block(f):
     mk = f.get("market")
     notes = []
     if f.get("call_reason") and f["pick"] == "Draw":
-        notes.append(f"<b>Called a draw:</b> the match is too close to separate and there is a warning sign ({esc(f['call_reason'])}).")
+        notes.append("<b>Called a draw:</b> the match is too close to separate." if f["call_reason"].startswith("too close") and "," not in f["call_reason"]
+                     else f"<b>Called a draw:</b> the match is too close to separate ({esc(f['call_reason'])}).")
     elif f.get("low_data"):
         notes.append("<b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.")
     ie = f.get("injury_effect") or {}

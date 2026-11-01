@@ -313,6 +313,7 @@ DEF_PENALTY = {"Defender": 0.04, "Goalkeeper": 0.07}   # opponent scores this mu
 DEF_CAP = 0.15
 DOUBTFUL_WEIGHT = 0.5       # a doubtful player counts as half a missing one
 THIN_MATCHES = 15           # fewer matches of history than this = low data
+DRAW_GAP = 3                # draw within this many points of the favourite = called a draw (back-tested: same accuracy)
 CLOSE_GAP = 8               # draw within this many points of the favourite = close call
 
 
@@ -419,7 +420,10 @@ def predict_league(league, name, country):
         close = model_pick != "Draw" and 100 * (max(ph, pa) - pdraw) < CLOSE_GAP
         disagree = market_pick is not None and market_pick != model_pick
         reasons = (["low data"] if thin else []) + (["bookmakers disagree"] if disagree else [])
-        pick = "Draw" if (close and reasons) else model_pick
+        very_close = model_pick != "Draw" and 100 * (max(ph, pa) - pdraw) < DRAW_GAP
+        if very_close:
+            reasons = ["too close to call"] + reasons
+        pick = "Draw" if (very_close or (close and reasons)) else model_pick
         c5 = cards["over"]["4.5"] / 100
         card_factor = float(np.clip(ref_rate / league_cards, 0.8, 1.3)) if league_cards else 1.0
         ra = ref_tab.loc[ref] if ref in ref_tab.index else None
