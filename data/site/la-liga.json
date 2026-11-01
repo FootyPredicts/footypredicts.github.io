@@ -3,7 +3,7 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-01T07:46:38.320719+00:00",
+ "updated": "2026-11-01T08:18:05.987675+00:00",
  "matches_used": 864,
  "fixtures": [
   {
@@ -20,14 +20,14 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 29.4,
-    "draw": 31.8,
-    "away": 38.8
+    "home": 28.4,
+    "draw": 32.0,
+    "away": 39.6
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 2.7,
-     "defence_hit_pct": 6.0,
+     "goals_lost_pct": 2.9,
+     "defence_hit_pct": 8.0,
      "key_out": [
       "J. Mojica",
       "Z. Romero"
@@ -39,13 +39,13 @@
      "key_out": []
     }
    },
-   "home_pct": 32.7,
-   "draw_pct": 34.4,
-   "away_pct": 33.0,
+   "home_pct": 32.2,
+   "draw_pct": 34.2,
+   "away_pct": 33.6,
    "xg_home": 0.93,
-   "xg_away": 0.93,
-   "over25": 28.6,
-   "btts": 37.8,
+   "xg_away": 0.95,
+   "over25": 29.0,
+   "btts": 38.1,
    "cards5": 50.0,
    "cards": {
     "exp": 4.76,
@@ -200,16 +200,16 @@
       "reason": "Yellow Cards"
      },
      {
+      "id": 180927,
+      "name": "Z. Romero",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
       "id": 403554,
       "name": "C. Uche",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 180927,
-      "name": "Z. Romero",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
      }
     ],
     "away": [
@@ -259,13 +259,13 @@
    ],
    "odds": {
     "home": {
-     "odd": 3.32,
+     "odd": 3.46,
      "bookie": "Pinnacle",
      "books": {
-      "William Hill": 3.1,
-      "Bet365": 3.25,
-      "Betfair": 3.3,
-      "BetVictor": 3.25
+      "William Hill": 3.2,
+      "Bet365": 3.4,
+      "Betfair": 3.4,
+      "BetVictor": 3.3
      }
     },
     "draw": {
@@ -274,7 +274,7 @@
      "books": {
       "William Hill": 2.9,
       "Bet365": 3.0,
-      "Betfair": 3.0,
+      "Betfair": 2.9,
       "BetVictor": 3.0
      }
     },
@@ -282,19 +282,19 @@
      "odd": 2.56,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 2.45,
-      "Bet365": 2.4,
-      "Betfair": 2.5,
-      "BetVictor": 2.4
+      "William Hill": 2.4,
+      "Bet365": 2.35,
+      "Betfair": 2.4,
+      "BetVictor": 2.38
      }
     },
     "over25": {
-     "odd": 2.73,
+     "odd": 2.77,
      "bookie": "Pinnacle",
      "books": {
       "Bet365": 2.62,
       "Betfair": 2.7,
-      "BetVictor": 2.48
+      "BetVictor": 2.5
      }
     },
     "under25": {
@@ -303,16 +303,16 @@
      "books": {
       "Bet365": 1.5,
       "Betfair": 1.44,
-      "BetVictor": 1.46
+      "BetVictor": 1.45
      }
     },
     "btts_yes": {
-     "odd": 2.16,
-     "bookie": "Marathonbet",
+     "odd": 2.2,
+     "bookie": "Betfair",
      "books": {
       "William Hill": 2.15,
       "Bet365": 2.1,
-      "Betfair": 2.15,
+      "Betfair": 2.2,
       "BetVictor": 2.15
      }
     },
@@ -322,7 +322,7 @@
      "books": {
       "William Hill": 1.67,
       "Bet365": 1.67,
-      "Betfair": 1.67,
+      "Betfair": 1.62,
       "BetVictor": 1.62
      }
     },
@@ -1618,11 +1618,11 @@
     },
     "away": {
      "fh": 39.85555213395007,
-     "sh": 51.42714077127304,
-     "any": 70.78612200412849
+     "sh": 51.42714077127305,
+     "any": 70.7861220041285
     },
     "match_fh": 64.65453180412199,
-    "match_sh": 79.42416036143652
+    "match_sh": 79.42416036143653
    },
    "players": {
     "home": {
