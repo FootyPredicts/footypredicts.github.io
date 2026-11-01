@@ -1456,7 +1456,6 @@ __DECOR__
       });
       card.appendChild(ul);
     }
-    if (pk) { var chips = pickChips(m, pk); if (chips) card.appendChild(chips); }
     return card;
   }
   function sn(x) {
