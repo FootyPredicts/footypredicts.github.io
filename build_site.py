@@ -35,6 +35,45 @@ LIVE_PICKS = {}
 SQUADS = {}   # player id (str) -> shirt number, from data/<league>/squads.json
 
 
+# Main shirt colour per club (plain colours only, no crests or logos).
+SHIRT_COLOUR = {
+    "Arsenal": "#EF0107", "Aston Villa": "#670E36", "Bournemouth": "#DA291C", "Brentford": "#E30613", "Brighton": "#0057B8",
+    "Chelsea": "#034694", "Coventry": "#5BC2E7", "Crystal Palace": "#1B458F", "Everton": "#003399", "Fulham": "#FFFFFF",
+    "Hull City": "#F5A12D", "Ipswich": "#3A64A3", "Leeds": "#FFFFFF", "Liverpool": "#C8102E", "Manchester City": "#6CABDD",
+    "Manchester United": "#DA291C", "Newcastle": "#222222", "Nottingham Forest": "#DD0000", "Sunderland": "#EB172B", "Tottenham": "#FFFFFF",
+    "Alaves": "#0761AF", "Athletic Club": "#EE2523", "Atletico Madrid": "#CB3524", "Barcelona": "#A50044", "Celta Vigo": "#8AC3EE",
+    "Deportivo La Coruna": "#0A57A8", "Elche": "#FFFFFF", "Espanyol": "#0070B8", "Getafe": "#005999", "Levante": "#B4053F",
+    "Malaga": "#1F6FB5", "Osasuna": "#D91A21", "Racing Santander": "#00A651", "Rayo Vallecano": "#FFFFFF", "Real Betis": "#0BB363",
+    "Real Madrid": "#FFFFFF", "Real Sociedad": "#0067B1", "Sevilla": "#FFFFFF", "Valencia": "#FFFFFF", "Villarreal": "#FBE10F",
+    "1. FC K\u00f6ln": "#FFFFFF", "1899 Hoffenheim": "#1961B5", "Bayer Leverkusen": "#E32221", "Bayern M\u00fcnchen": "#DC052D",
+    "Borussia Dortmund": "#FDE100", "Borussia M\u00f6nchengladbach": "#FFFFFF", "Eintracht Frankfurt": "#E1000F", "FC Augsburg": "#BA3733",
+    "FC Schalke 04": "#004D9D", "FSV Mainz 05": "#C3141E", "Hamburger SV": "#FFFFFF", "RB Leipzig": "#FFFFFF", "SC Freiburg": "#E2001A",
+    "SC Paderborn 07": "#004B9B", "SV Elversberg": "#222222", "Union Berlin": "#EB1923", "VfB Stuttgart": "#FFFFFF", "Werder Bremen": "#1D9053",
+    "AC Milan": "#FB090B", "AS Roma": "#8E1F2F", "Atalanta": "#1E71B8", "Bologna": "#1A2F48", "Cagliari": "#A21C26", "Como": "#0A58A3",
+    "Fiorentina": "#5F2D87", "Frosinone": "#FFDD00", "Genoa": "#B5121B", "Inter": "#0068A8", "Juventus": "#FFFFFF", "Lazio": "#87D8F7",
+    "Lecce": "#F4D10D", "Monza": "#E5232B", "Napoli": "#12A0D7", "Parma": "#FFFFFF", "Sassuolo": "#00A651", "Torino": "#8B1A2B",
+    "Udinese": "#FFFFFF", "Venezia": "#F36F21",
+    "Angers": "#FFFFFF", "Auxerre": "#FFFFFF", "Estac Troyes": "#0064B0", "Le Havre": "#5AA0DC", "Le Mans": "#F2C400", "Lens": "#F6C300",
+    "Lille": "#E01E13", "Lorient": "#F57F20", "Lyon": "#FFFFFF", "Marseille": "#FFFFFF", "Monaco": "#E32A27", "Nice": "#E2001A",
+    "Paris FC": "#1D3D8F", "Paris Saint Germain": "#004170", "Rennes": "#E13327", "Stade Brestois 29": "#E30613", "Strasbourg": "#0072BC",
+    "Toulouse": "#5B2C83",
+}
+SHIRT_PATH = "M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"
+
+
+def shirt_colours(team):
+    bg = SHIRT_COLOUR.get(team, "#2f4a3a")
+    r, g, b = (int(bg[i:i + 2], 16) for i in (1, 3, 5))
+    fg = "#16231b" if (0.299 * r + 0.587 * g + 0.114 * b) > 150 else "#ffffff"
+    return bg, fg
+
+
+def shirt_html(num, team):
+    bg, fg = shirt_colours(team)
+    return (f'<span class="no" title="Shirt number" style="--c:{bg};--t:{fg}"><svg viewBox="0 0 32 30" aria-hidden="true">'
+            f'<path d="{SHIRT_PATH}"/></svg><b>{num}</b></span>')
+
+
 def load_squads():
     SQUADS.clear()
     for lg in LEAGUE_ORDER:
@@ -128,7 +167,7 @@ def names(f, lst, team, kind):
         what = "to score" if kind == "scorer" else "to be booked"
         price = x.get("price")
         num = shirt(x.get("id"))
-        tag = f'<span class="no" title="Shirt number">{num}</span>' if num is not None else ""
+        tag = shirt_html(num, team) if num is not None else ""
         if price:
             out.append(f'<span class="pl">{tag}{esc(x["name"])} <small>{x["p"]:.0f}%</small> '
                        + sel(f, f"{kind}-{x.get('id', x['name'])}", f"{kind}-{x.get('id', x['name'])}",
@@ -751,6 +790,7 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = html.replace("{prefix}", prefix)
     on_live = path == "" or path.rstrip("/") in LEAGUE_ORDER
     html = html.replace("__LIVESTRIP__", '<section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>' if on_live else "")
+    html = html.replace("__SHIRTPATH__", SHIRT_PATH)
     html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS,
                                                        "league": path.rstrip("/") if path.rstrip("/") in LEAGUE_ORDER else ""}).replace("</", "<\\/"))
     html = html.replace("__DECOR__", DECOR_DEFS).replace("__HEAD__", head_tags(esc(title), esc(desc), path))
@@ -789,7 +829,7 @@ def build():
                                             "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"]),
                                             "sc": [x["name"] for side in ("home", "away") for x in f["players"][side]["scorers"]],
                                             "bk": [x["name"] for side in ("home", "away") for x in f["players"][side]["bookings"]],
-                                            "no": {x["name"]: shirt(x.get("id")) for side in ("home", "away")
+                                            "no": {x["name"]: [shirt(x.get("id"))] + list(shirt_colours(f[side])) for side in ("home", "away")
                                                    for x in f["players"][side]["scorers"] + f["players"][side]["bookings"]
                                                    if shirt(x.get("id")) is not None}}
     os.makedirs(os.path.dirname(keep_path), exist_ok=True)
@@ -1262,7 +1302,12 @@ a.chip { text-decoration:none; }
 
 EXTRA_CSS += r"""
 /* live scores */
-.pl .no { display:inline-block; min-width:22px; margin-right:6px; padding:1px 5px; border-radius:6px; background:var(--ink,#16231b); color:#fff; font:700 12px/16px "Barlow Condensed",sans-serif; text-align:center; vertical-align:1px; }
+.players td span.no, .no { position:relative; display:inline-block; width:30px; height:28px; margin-right:6px; vertical-align:middle; flex:none; }
+.no svg { position:absolute; inset:0; width:100%; height:100%; }
+.no path { fill:var(--c); stroke:#16231b; stroke-width:1.2; stroke-linejoin:round; }
+.no b { position:absolute; inset:0; padding-top:4px; text-align:center; font:700 14px/1 "Barlow Condensed",sans-serif; color:var(--t); }
+.lv-ev li .no { width:24px; height:22px; margin:0 6px 0 0; }
+.lv-ev li .no b { font-size:11px; padding-top:3px; }
 .st-wait { margin:8px 0 0; font-size:12px; color:var(--muted); }
 .lv-none { margin:0; font-size:13px; color:var(--muted); padding:8px 2px; }
 .lv-key { margin:-2px 0 8px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
@@ -1493,6 +1538,7 @@ __DECOR__
 /* Live scores and "my matches". Polls the relay only while a match is on and the tab is open.
    Starred matches are kept in this browser only (localStorage). */
 (function () {
+  var SHIRT_D = '__SHIRTPATH__';
   var L = __LIVEDATA__;
   var strip = document.getElementById('live'), mine = document.getElementById('myfav');
   if (!L.url || !strip) return;
@@ -1553,9 +1599,15 @@ __DECOR__
         li.appendChild(el('span', 't', e.m + (e.x ? '+' + e.x : '') + "'"));
         if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
         var label = e.t === 'Goal' ? (e.d === 'Own Goal' ? 'Own goal' : e.d === 'Missed Penalty' ? 'Penalty missed' : e.d === 'Penalty' ? 'Goal (pen)' : 'Goal') : '';
-        var shirtNo = '';
-        if (isPick && pk.no) Object.keys(pk.no).forEach(function (n) { if (sn(n) === sn(e.p)) shirtNo = '#' + pk.no[n] + ' '; });
-        li.appendChild(el('span', '', shirtNo + (e.p || '') + (label ? ' · ' + label : '')));
+        if (isPick && pk.no) Object.keys(pk.no).forEach(function (n) {
+          if (sn(n) !== sn(e.p) || li.querySelector('.no')) return;
+          var v = pk.no[n], w = el('span', 'no'), ns = 'http://www.w3.org/2000/svg';
+          w.style.setProperty('--c', v[1]); w.style.setProperty('--t', v[2]);
+          var sv = document.createElementNS(ns, 'svg'), pa = document.createElementNS(ns, 'path');
+          sv.setAttribute('viewBox', '0 0 32 30'); pa.setAttribute('d', SHIRT_D); sv.appendChild(pa); w.appendChild(sv); w.appendChild(el('b', '', String(v[0])));
+          li.appendChild(w);
+        });
+        li.appendChild(el('span', '', (e.p || '') + (label ? ' · ' + label : '')));
         li.appendChild(el('span', 'who', e.s === 'h' ? m.home : m.away));
         ul.appendChild(li);
       });
