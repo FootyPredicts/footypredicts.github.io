@@ -418,6 +418,7 @@ a.chip { text-decoration:none; }
 }
 
 /* live scores */
+.st-wait { margin:8px 0 0; font-size:12px; color:var(--muted); }
 .lv-none { margin:0; font-size:13px; color:var(--muted); padding:8px 2px; }
 .lv-key { margin:-2px 0 8px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
 .lv-key .sw { display:inline-block; width:22px; height:10px; border-radius:4px; background:linear-gradient(180deg,#fff7c9,#f6e27a); border:1px solid #e0c54a; }
@@ -1642,7 +1643,7 @@ a.chip { text-decoration:none; }
       });
       card.appendChild(ul);
     }
-    if (!m.pre) { var sb = statsBlock(m); if (sb) card.appendChild(sb); }
+    if (!m.pre) { var sb = statsBlock(m); if (sb) card.appendChild(sb); else card.appendChild(el('p', 'st-wait', 'Match stats not available yet')); }
     return card;
   }
   function sn(x) {
@@ -1748,7 +1749,7 @@ a.chip { text-decoration:none; }
     fetch(L.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
       if (!j || j.error) return;
       var seen = {};
-      (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; m.t = Date.now(); state[m.id] = m; });
+      (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; m.t = Date.now(); if (!m.sx && state[m.id] && state[m.id].sx) m.sx = state[m.id].sx; state[m.id] = m; });
       Object.keys(state).forEach(function (k) { if (state[k].restored && !seen[k]) { state[k].fin = true; state[k].restored = false; } });
       Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if ((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P' || m.gone >= 6) m.fin = true; });
       persist(); render();
