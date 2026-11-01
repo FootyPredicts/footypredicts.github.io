@@ -318,7 +318,7 @@ def view_block(f):
             return f'<tr><th>{label}</th><td>{h:.0f}%</td><td>{d:.0f}%</td><td>{a:.0f}%</td></tr>'
         table = (f'<table class="bk vm"><tr><th></th><th>{esc(short(f["home"]))}</th><th>Draw</th><th>{esc(short(f["away"]))}</th></tr>'
                  + r("Our model", f["home_pct"], f["draw_pct"], f["away_pct"])
-                 + r("Bookmakers (average, margin removed)", mk["home"], mk["draw"], mk["away"]) + '</table>')
+                 + r("Bookmakers", mk["home"], mk["draw"], mk["away"]) + '</table>')
     note_html = "".join(f"<p class='vm-note'>{n}</p>" for n in notes)
     return f"""
       <section class="block">
