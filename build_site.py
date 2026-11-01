@@ -365,6 +365,46 @@ def mirror(rows):
     return "".join(f"<tr><td>{a}</td><th>{lbl}</th><td>{b}</td></tr>" for lbl, a, b in rows)
 
 
+_PM_LABELS = [("pos", "Possession", "%"), ("xg", "Expected goals", ""), ("sh", "Shots", ""), ("sot", "Shots on target", ""),
+              ("co", "Corners", ""), ("fo", "Fouls", ""), ("of", "Offsides", ""), ("sv", "Saves", ""),
+              ("pp", "Pass accuracy", "%"), ("yc", "Yellow cards", ""), ("rc", "Red cards", "")]
+
+
+def prev_row(m):
+    """One past meeting: a score row that opens to goals, cards and match stats."""
+    head = (f'<span class="pm-date">{esc(m["date"])}</span><span class="pm-h">{esc(m["home"])}</span>'
+            f'<span class="pm-score">{m["hg"]}\u2013{m["ag"]}</span><span class="pm-a">{esc(m["away"])}</span>')
+    bits = [f'<p class="pm-meta">{esc(m["date"])}'
+            + (f' \u00b7 Half-time {m["ht"][0]}\u2013{m["ht"][1]}' if m.get("ht") else "")
+            + (f' \u00b7 Referee {esc(m["ref"])}' if m.get("ref") else "") + "</p>"]
+    def evlist(items, fmt):
+        out = []
+        for side in ("h", "a"):
+            names = [fmt(x) for x in items if x["t"] == side]
+            out.append("<td>" + ("<br>".join(names) if names else '<span class="none">\u2013</span>') + "</td>")
+        return "".join(out)
+    if "goals" in m:
+        bits.append(f'<table class="pm-ev"><tr><th>{esc(m["home"])}</th><th>{esc(m["away"])}</th></tr>'
+                    f'<tr class="pm-sec"><td colspan="2">Goals</td></tr><tr>{evlist(m["goals"], lambda x: f"{esc(x["n"])} {x["m"]}&prime;")}</tr>'
+                    f'<tr class="pm-sec"><td colspan="2">Cards</td></tr>'
+                    f'<tr>{evlist(m["cards"], lambda x: ("&#128997; " if x["r"] else "&#128993; ") + f"{esc(x["n"])} {x["m"]}&prime;")}</tr></table>')
+    sx = m.get("sx")
+    if sx and sx.get("h") and sx.get("a"):
+        rows = []
+        for k, lbl, suf in _PM_LABELS:
+            h, a = sx["h"].get(k), sx["a"].get(k)
+            if h is None and a is None:
+                continue
+            def fm(v, k=k, suf=suf):
+                return "\u2013" if v is None else (f"{v:.1f}" if k == "xg" else f"{v:.0f}{suf}")
+            rows.append((lbl, fm(h), fm(a)))
+        if rows:
+            bits.append(f'<table class="mirror pm-stats"><tr class="names"><td>{esc(m["home"])}</td><th></th><td>{esc(m["away"])}</td></tr>{mirror(rows)}</table>')
+    if len(bits) == 1:
+        bits.append('<p class="halves">Detailed stats are not available for this match.</p>')
+    return f'<details class="pmx"><summary>{head}</summary><div class="pm-body">{"".join(bits)}</div></details>'
+
+
 # ---------------------------------------------------------------- match panel
 
 def render_match(f, i):
@@ -414,10 +454,9 @@ def render_match(f, i):
     form_note = ('<p class="halves">Early-season sample: percentages are based on only a few games '
                  'and will settle as more are played.</p>') if small and min(small) < 5 else ""
 
-    prev = "".join(f"""<tr><td class="pm-date">{esc(m['date'])}</td><td class="pm-h">{esc(m['home'])}</td>
-          <td class="pm-score">{m['hg']}–{m['ag']}</td><td class="pm-a">{esc(m['away'])}</td></tr>""" for m in f["previous"])
+    prev = "".join(prev_row(m) for m in f["previous"])
     prev_block = f"""
-      <section class="block"><h3>Last meetings</h3><table class="pm">{prev}</table></section>""" if prev else ""
+      <section class="block"><h3>Last meetings</h3><p class="halves pm-tip">Tap a match for the full details.</p><div class="pm">{prev}</div></section>""" if prev else ""
 
     return f"""
     <article id="m{i}" class="match" role="tabpanel" data-fid="{f["id"]}" hidden>
@@ -896,11 +935,22 @@ button.sel.na { opacity:.45; cursor:not-allowed; }
 .none { color:var(--muted); font-weight:400 !important; }
 .mirror:not(.players) td { font:700 20px/1 "Barlow Condensed",sans-serif; }
 
-.pm { width:100%; border-collapse:collapse; font-size:15px; }
-.pm td { padding:8px 6px; border-bottom:1px solid var(--line); }
-.pm-date { color:var(--muted); white-space:nowrap; font-size:13px; width:1%; padding-right:14px !important; }
+.pm { font-size:15px; }
+.pmx { border-bottom:1px solid var(--line); }
+.pmx summary { display:grid; grid-template-columns:auto 1fr 64px 1fr; align-items:center; gap:0 8px; padding:10px 6px; cursor:pointer; list-style:none; }
+.pmx summary::-webkit-details-marker { display:none; }
+.pmx summary:hover { background:rgba(0,0,0,.03); }
+.pm-date { color:var(--muted); white-space:nowrap; font-size:13px; padding-right:10px; }
 .pm-h { text-align:right; }
-.pm-score { text-align:center; font:700 18px/1 "Barlow Condensed",sans-serif; width:64px; white-space:nowrap; }
+.pm-score { text-align:center; font:700 18px/1 "Barlow Condensed",sans-serif; white-space:nowrap; }
+.pmx[open] summary { background:rgba(0,0,0,.04); }
+.pm-body { padding:10px 6px 16px; }
+.pm-meta { margin:0 0 10px; font-size:13px; color:var(--muted); }
+.pm-tip { margin:-4px 0 6px; }
+.pm-ev { width:100%; border-collapse:collapse; margin-bottom:12px; font-size:14px; }
+.pm-ev th { text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding:4px 6px; }
+.pm-ev td { vertical-align:top; padding:3px 6px; }
+.pm-ev .pm-sec td { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding-top:8px; border-top:1px solid var(--line); }
 
 .foot a { color:inherit; }
 .foot p { margin:0 0 8px; }
@@ -924,6 +974,7 @@ button.sel.na { opacity:.45; cursor:not-allowed; }
   .mirror .names th { display:none; }
   .players td small { display:block; margin-left:0; }
   .pm-date { display:none; }
+  .pmx summary { grid-template-columns:1fr 64px 1fr; }
 }
 @media (prefers-reduced-motion:no-preference) {
   .meter-fill { transition:width .5s ease; }
