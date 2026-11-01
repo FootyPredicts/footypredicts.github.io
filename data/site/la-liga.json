@@ -3,9 +3,154 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-01T16:42:43.714647+00:00",
+ "updated": "2026-11-01T16:47:41.789231+00:00",
  "matches_used": 865,
  "fixtures": [
+  {
+   "id": 1570440,
+   "kickoff": "2026-11-01T15:15:00",
+   "round": "Regular Season - 11",
+   "home": "Racing Santander",
+   "away": "Real Madrid",
+   "referee": "J. Luis Munuera Montero",
+   "ref_cards": 4.43,
+   "ref_games": 14,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": true,
+   "market": null,
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 9.9,
+   "draw_pct": 13.4,
+   "away_pct": 76.7,
+   "xg_home": 1.19,
+   "xg_away": 3.25,
+   "over25": 82.0,
+   "btts": 67.4,
+   "cards5": 52.4,
+   "cards": {
+    "exp": 4.91,
+    "home": 2.73,
+    "away": 2.19,
+    "over": {
+     "2.5": 83.4,
+     "3.5": 68.8,
+     "4.5": 52.4,
+     "5.5": 37.0,
+     "6.5": 24.3
+    }
+   },
+   "form": {
+    "home": {
+     "played": 5,
+     "win": 60.0,
+     "over25": 100.0,
+     "btts": 100.0
+    },
+    "away": {
+     "played": 5,
+     "win": 60.0,
+     "over25": 80.0,
+     "btts": 80.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 51.63122811421068,
+     "sh": 41.84772955489664,
+     "any": 71.87246096200067
+    },
+    "away": {
+     "fh": 65.24483893896212,
+     "sh": 71.2437712338152,
+     "any": 90.00572637723197
+    },
+    "match_fh": 83.18935542784791,
+    "match_sh": 83.27760007807561
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 457101,
+       "name": "M. Zabiri",
+       "p": 29.7
+      },
+      {
+       "id": 47209,
+       "name": "Andrés Martín",
+       "p": 11.5
+      }
+     ],
+     "bookings": [
+      {
+       "id": 482469,
+       "name": "Jorge Salinas",
+       "p": 31.5
+      },
+      {
+       "id": 46734,
+       "name": "Pablo Ramón",
+       "p": 29.9
+      }
+     ],
+     "defender": {
+      "id": 482469,
+      "name": "Jorge Salinas",
+      "sot": 3
+     }
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 278,
+       "name": "Kylian Mbappé",
+       "p": 64.4
+      },
+      {
+       "id": 129718,
+       "name": "J. Bellingham",
+       "p": 23.6
+      }
+     ],
+     "bookings": [
+      {
+       "id": 1145,
+       "name": "I. Konaté",
+       "p": 29.3
+      },
+      {
+       "id": 361497,
+       "name": "D. Huijsen",
+       "p": 25.1
+      }
+     ],
+     "defender": {
+      "id": 361497,
+      "name": "D. Huijsen",
+      "sot": 2
+     }
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": null
+  },
   {
    "id": 1570437,
    "kickoff": "2026-11-01T17:30:00",
@@ -1053,11 +1198,11 @@
     },
     "away": {
      "fh": 39.85555213395007,
-     "sh": 51.42714077127305,
-     "any": 70.7861220041285
+     "sh": 51.42714077127304,
+     "any": 70.78612200412849
     },
     "match_fh": 64.65453180412199,
-    "match_sh": 79.42416036143653
+    "match_sh": 79.42416036143652
    },
    "players": {
     "home": {
@@ -3493,440 +3638,6 @@
       "Bet365": 2.25,
       "Betfair": 2.4,
       "BetVictor": 2.3
-     }
-    },
-    "cards_over45": null,
-    "cards": {
-     "2.5": {
-      "over": null,
-      "under": null
-     },
-     "3.5": {
-      "over": null,
-      "under": null
-     },
-     "4.5": {
-      "over": null,
-      "under": null
-     },
-     "5.5": {
-      "over": null,
-      "under": null
-     },
-     "6.5": {
-      "over": null,
-      "under": null
-     }
-    }
-   }
-  },
-  {
-   "id": 1570449,
-   "kickoff": "2026-11-08T15:15:00",
-   "round": "Regular Season - 12",
-   "home": "Real Sociedad",
-   "away": "Rayo Vallecano",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 53.8,
-    "draw": 24.3,
-    "away": 21.9
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    },
-    "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 50.1,
-   "draw_pct": 24.8,
-   "away_pct": 25.1,
-   "xg_home": 1.81,
-   "xg_away": 1.23,
-   "over25": 58.5,
-   "btts": 60.0,
-   "cards5": 55.5,
-   "cards": {
-    "exp": 5.11,
-    "home": 2.32,
-    "away": 2.79,
-    "over": {
-     "2.5": 85.1,
-     "3.5": 71.3,
-     "4.5": 55.5,
-     "5.5": 40.1,
-     "6.5": 27.0
-    }
-   },
-   "form": {
-    "home": {
-     "played": 5,
-     "win": 60.0,
-     "over25": 80.0,
-     "btts": 60.0
-    },
-    "away": {
-     "played": 5,
-     "win": 0.0,
-     "over25": 60.0,
-     "btts": 100.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 54.11112019976143,
-     "sh": 57.817211126463974,
-     "any": 80.64279071743464
-    },
-    "away": {
-     "fh": 43.05919091093837,
-     "sh": 55.7709986833872,
-     "any": 74.81564879830896
-    },
-    "match_fh": 73.8705005598372,
-    "match_sh": 81.34297375373976
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 61774,
-       "name": "O. Óskarsson",
-       "p": 31.2,
-       "price": {
-        "odd": 2.1,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.1
-        }
-       }
-      },
-      {
-       "id": 47323,
-       "name": "Mikel Oyarzabal",
-       "p": 28.8,
-       "price": {
-        "odd": 2.1,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.1
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 2449,
-       "name": "Y. Herrera",
-       "p": 26.3,
-       "price": null
-      },
-      {
-       "id": 199044,
-       "name": "J. Aramburu",
-       "p": 25.3,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 199044,
-      "name": "J. Aramburu",
-      "sot": 2
-     }
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 52,
-       "name": "Sergio Camello",
-       "p": 36.7,
-       "price": {
-        "odd": 3.6,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.6
-        }
-       }
-      },
-      {
-       "id": 47543,
-       "name": "Álvaro García",
-       "p": 17.1,
-       "price": {
-        "odd": 4.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 41552,
-       "name": "P. Ciss",
-       "p": 37.5,
-       "price": null
-      },
-      {
-       "id": 47285,
-       "name": "Unai López",
-       "p": 20.9,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 18895,
-      "name": "F. Lejeune",
-      "sot": 3
-     }
-    }
-   },
-   "injuries": {
-    "home": [],
-    "away": []
-   },
-   "previous": [
-    {
-     "date": "26/04/2026",
-     "home": "Rayo Vallecano",
-     "away": "Real Sociedad",
-     "hg": 3,
-     "ag": 3,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "J. Guzman",
-     "sx": {
-      "h": {
-       "pos": 58.0,
-       "xg": 2.38,
-       "sh": 24.0,
-       "sot": 9.0,
-       "co": 6.0,
-       "fo": 14.0,
-       "of": 0.0,
-       "sv": 5.0,
-       "pp": 85.0,
-       "yc": 6.0,
-       "rc": 1.0
-      },
-      "a": {
-       "pos": 42.0,
-       "xg": 2.23,
-       "sh": 13.0,
-       "sot": 8.0,
-       "co": 4.0,
-       "fo": 12.0,
-       "of": 2.0,
-       "sv": 6.0,
-       "pp": 76.0,
-       "yc": 4.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "05/10/2025",
-     "home": "Real Sociedad",
-     "away": "Rayo Vallecano",
-     "hg": 0,
-     "ag": 1,
-     "ht": [
-      0,
-      0
-     ],
-     "ref": "J. Luis Guzman Mansilla",
-     "sx": {
-      "h": {
-       "pos": 51.0,
-       "xg": 0.79,
-       "sh": 10.0,
-       "sot": 3.0,
-       "co": 7.0,
-       "fo": 13.0,
-       "of": 0.0,
-       "sv": 1.0,
-       "pp": 80.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 49.0,
-       "xg": 0.8,
-       "sh": 7.0,
-       "sot": 2.0,
-       "co": 5.0,
-       "fo": 21.0,
-       "of": 1.0,
-       "sv": 3.0,
-       "pp": 79.0,
-       "yc": 2.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "16/03/2025",
-     "home": "Rayo Vallecano",
-     "away": "Real Sociedad",
-     "hg": 2,
-     "ag": 2,
-     "ht": [
-      0,
-      1
-     ],
-     "ref": "A. Muñiz",
-     "sx": {
-      "h": {
-       "pos": 55.0,
-       "xg": 0.56,
-       "sh": 10.0,
-       "sot": 5.0,
-       "co": 4.0,
-       "fo": 16.0,
-       "of": 2.0,
-       "sv": 2.0,
-       "pp": 80.0,
-       "yc": 3.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 45.0,
-       "xg": 0.57,
-       "sh": 8.0,
-       "sot": 4.0,
-       "co": 4.0,
-       "fo": 9.0,
-       "of": 5.0,
-       "sv": 3.0,
-       "pp": 75.0,
-       "yc": 2.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "18/08/2024",
-     "home": "Real Sociedad",
-     "away": "Rayo Vallecano",
-     "hg": 1,
-     "ag": 2,
-     "ht": [
-      0,
-      0
-     ],
-     "ref": "A. Hernández",
-     "sx": {
-      "h": {
-       "pos": 66.0,
-       "xg": 1.08,
-       "sh": 11.0,
-       "sot": 4.0,
-       "co": 10.0,
-       "fo": 14.0,
-       "of": 0.0,
-       "sv": 2.0,
-       "pp": 81.0,
-       "yc": 2.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 34.0,
-       "xg": 1.11,
-       "sh": 12.0,
-       "sot": 5.0,
-       "co": 5.0,
-       "fo": 21.0,
-       "of": 3.0,
-       "sv": 3.0,
-       "pp": 64.0,
-       "yc": 4.0,
-       "rc": 0.0
-      }
-     }
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 1.82,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 1.67,
-      "Bet365": 1.73,
-      "Betfair": 1.75,
-      "BetVictor": 1.7
-     }
-    },
-    "draw": {
-     "odd": 4.05,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.75,
-      "Bet365": 3.8,
-      "Betfair": 3.9,
-      "BetVictor": 3.75
-     }
-    },
-    "away": {
-     "odd": 4.57,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 4.2,
-      "Bet365": 4.33,
-      "Betfair": 4.1,
-      "BetVictor": 4.2
-     }
-    },
-    "over25": {
-     "odd": 1.73,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.67,
-      "Betfair": 1.65,
-      "BetVictor": 1.63
-     }
-    },
-    "under25": {
-     "odd": 2.28,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 2.2,
-      "Betfair": 2.1,
-      "BetVictor": 2.1
-     }
-    },
-    "btts_yes": {
-     "odd": 1.67,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 1.67,
-      "Bet365": 1.67,
-      "Betfair": 1.6,
-      "BetVictor": 1.6
-     }
-    },
-    "btts_no": {
-     "odd": 2.2,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 2.15,
-      "Bet365": 2.1,
-      "Betfair": 2.2,
-      "BetVictor": 2.15
      }
     },
     "cards_over45": null,
