@@ -1573,6 +1573,20 @@ a.chip { text-decoration:none; }
   var LG = { 39: 'premier-league', 140: 'la-liga', 78: 'bundesliga', 135: 'serie-a', 61: 'ligue-1' };
   var picks = L.picks, state = {}, favs = [], FKEY = 'fp-fav-v1';
   try { favs = JSON.parse(localStorage.getItem(FKEY) || '[]').map(String); } catch (e) { favs = []; }
+  var SKEY = 'fp-live-v1';
+  function restore() {
+    try {
+      var o = JSON.parse(localStorage.getItem(SKEY) || '{}'), now = Date.now();
+      Object.keys(o).forEach(function (k) { if (now - o[k].t < 90 * 60000) { o[k].restored = true; state[k] = o[k]; } });
+    } catch (e) {}
+  }
+  function persist() {
+    try {
+      var o = {}, now = Date.now();
+      Object.keys(state).forEach(function (k) { var m = state[k]; if (now - (m.t || now) < 90 * 60000) o[k] = m; });
+      localStorage.setItem(SKEY, JSON.stringify(o));
+    } catch (e) {}
+  }
   function saveFavs() { try { localStorage.setItem(FKEY, JSON.stringify(favs)); } catch (e) {} }
   function isFav(id) { return favs.indexOf(String(id)) > -1; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -1709,12 +1723,13 @@ a.chip { text-decoration:none; }
     fetch(L.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
       if (!j || j.error) return;
       var seen = {};
-      (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; state[m.id] = m; });
+      (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; m.t = Date.now(); state[m.id] = m; });
+      Object.keys(state).forEach(function (k) { if (state[k].restored && !seen[k]) { state[k].fin = true; state[k].restored = false; } });
       Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if ((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P' || m.gone >= 6) m.fin = true; });
-      render();
+      persist(); render();
     }).catch(function () {});
   }
-  render(); poll(); setInterval(poll, 30000);
+  restore(); render(); poll(); setInterval(poll, 30000);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) poll(); });
 })();
 </script>
