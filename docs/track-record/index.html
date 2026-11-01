@@ -418,12 +418,12 @@ a.chip { text-decoration:none; }
 }
 
 /* live scores */
-.players td span.no, .no { position:relative; display:inline-block; width:30px; height:28px; margin-right:6px; vertical-align:middle; flex:none; }
-.no svg { position:absolute; inset:0; width:100%; height:100%; }
-.no path { fill:var(--c); stroke:#16231b; stroke-width:1.2; stroke-linejoin:round; }
-.no b { position:absolute; inset:0; padding-top:4px; text-align:center; font:700 14px/1 "Barlow Condensed",sans-serif; color:var(--t); }
-.lv-ev li .no { width:24px; height:22px; margin:0 6px 0 0; }
-.lv-ev li .no b { font-size:11px; padding-top:3px; }
+.players td span.shirt, .shirt { position:relative; display:inline-block; width:30px; height:28px; margin-right:6px; vertical-align:middle; flex:none; }
+.shirt svg { position:absolute; inset:0; width:100%; height:100%; }
+.shirt path { fill:var(--c); stroke:#16231b; stroke-width:1.2; stroke-linejoin:round; }
+.shirt b { position:absolute; inset:0; padding-top:4px; text-align:center; font:700 14px/1 "Barlow Condensed",sans-serif; color:var(--t); }
+.lv-ev li .shirt { width:24px; height:22px; margin:0 6px 0 0; }
+.lv-ev li .shirt b { font-size:11px; padding-top:3px; }
 .st-wait { margin:8px 0 0; font-size:12px; color:var(--muted); }
 .lv-none { margin:0; font-size:13px; color:var(--muted); padding:8px 2px; }
 .lv-key { margin:-2px 0 8px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
@@ -2237,8 +2237,8 @@ a.chip { text-decoration:none; }
         if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
         var label = e.t === 'Goal' ? (e.d === 'Own Goal' ? 'Own goal' : e.d === 'Missed Penalty' ? 'Penalty missed' : e.d === 'Penalty' ? 'Goal (pen)' : 'Goal') : '';
         if (isPick && pk.no) Object.keys(pk.no).forEach(function (n) {
-          if (sn(n) !== sn(e.p) || li.querySelector('.no')) return;
-          var v = pk.no[n], w = el('span', 'no'), ns = 'http://www.w3.org/2000/svg';
+          if (sn(n) !== sn(e.p) || li.querySelector('.shirt')) return;
+          var v = pk.no[n], w = el('span', 'shirt'), ns = 'http://www.w3.org/2000/svg';
           w.style.setProperty('--c', v[1]); w.style.setProperty('--t', v[2]);
           var sv = document.createElementNS(ns, 'svg'), pa = document.createElementNS(ns, 'path');
           sv.setAttribute('viewBox', '0 0 32 30'); pa.setAttribute('d', SHIRT_D); sv.appendChild(pa); w.appendChild(sv); w.appendChild(el('b', '', String(v[0])));
