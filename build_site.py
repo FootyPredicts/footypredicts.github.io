@@ -572,23 +572,69 @@ def track_record_page(leagues, upd):
                 f'<li class="{"hit" if surname(c["name"]) in picked else ""}"><span class="min">{c.get("minute") or ""}{"&prime;" if c.get("minute") else ""}</span>'
                 f'<span class="card {"red" if c["card"] == "Red" else "yellow"}"></span>{esc(c["name"])}</li>' for c in items)
 
-        mrows = []
-        for m in matches[:60 if SHOW_TRACK_RECORD else 200]:
-            d = datetime.fromisoformat(m["kickoff"][:19]).strftime("%a %d %b")
-            mark = '<span class="ok">&#10003; right</span>' if m["correct"] else '<span class="no">&#10007; wrong</span>'
+        def mk_chips(m):
+            out = []
+            def chip_(text, hit):
+                out.append(f'<span class="mk {"ok" if hit else "miss"}">{text} {"&#10003;" if hit else "&#10007;"}</span>')
+            if m.get("over25_p") is not None and m.get("over25") is not None:
+                over = m["over25_p"] >= 50
+                chip_("Over 2.5 goals" if over else "Under 2.5 goals", over == bool(m["over25"]))
+            if m.get("btts_p") is not None and m.get("btts") is not None:
+                yes = m["btts_p"] >= 50
+                chip_("Both teams score" if yes else "Not both score", yes == bool(m["btts"]))
+            if m.get("cards5_p") is not None and m.get("cards") is not None:
+                over = m["cards5_p"] >= 50
+                chip_("Over 4.5 cards" if over else "Under 4.5 cards", over == (m["cards"] > 4.5))
+            return f'<div class="mks">{"".join(out)}</div>' if out else ""
+
+        def match_card(m):
+            d = datetime.fromisoformat(m["kickoff"][:19]).strftime("%H:%M")
+            if m["correct"]:
+                mark = '<span class="ok">&#10003; right</span>'
+            else:
+                mark = f'<span class="miss">&#10007; {"it was a draw" if m.get("actual") == "Draw" else "other result"}</span>'
             pick = "Draw" if m["pick"] == "Draw" else (m["home"] if m["pick"] == "Home" else m["away"])
-            mrows.append(f"""
-        <article class="rc">
-          <div class="rc-top"><span>{d} · {esc(m['league_name'])}</span><span class="rc-pick">Our pick: <b>{esc(short(pick))}</b> {m['pick_pct']:.0f}% {mark}</span></div>
-          <div class="rc-score"><span class="t">{esc(m['home'])}</span><b>{m['score']}</b><span class="t">{esc(m['away'])}</span></div>
-          <div class="rc-cols">
-            <div><h4>Goals</h4><ul>{goals_col(m, m['home'])}</ul><h4>Cards</h4><ul>{cards_col(m, m['home'])}</ul></div>
-            <div><h4>Goals</h4><ul>{goals_col(m, m['away'])}</ul><h4>Cards</h4><ul>{cards_col(m, m['away'])}</ul></div>
+            return f"""
+        <details class="rc">
+          <summary>
+            <span class="rc-line"><span class="t">{esc(short(m['home']))}</span><b>{m['score']}</b><span class="t">{esc(short(m['away']))}</span></span>
+            <span class="rc-pick">{d} · pick <b>{esc(short(pick))}</b> {m['pick_pct']:.0f}% {mark}</span>
+          </summary>
+          <div class="rc-body">
+            <p class="rc-lg">{esc(m['league_name'])}</p>
+            {mk_chips(m)}
+            <div class="rc-cols">
+              <div><h4 class="tn">{esc(short(m['home']))}</h4><h4>Goals</h4><ul>{goals_col(m, m['home'])}</ul><h4>Cards</h4><ul>{cards_col(m, m['home'])}</ul></div>
+              <div><h4 class="tn">{esc(short(m['away']))}</h4><h4>Goals</h4><ul>{goals_col(m, m['away'])}</ul><h4>Cards</h4><ul>{cards_col(m, m['away'])}</ul></div>
+            </div>
           </div>
-        </article>""")
+        </details>"""
+
+        ms = sorted(matches, key=lambda m: m["kickoff"], reverse=True)[:400]
+        days = {}
+        for m in ms:
+            days.setdefault(m["kickoff"][:10], []).append(m)
+        latest = datetime.fromisoformat(next(iter(days))).date()
+
+        def day_block(day, items, open_):
+            right = sum(1 for m in items if m["correct"])
+            title = datetime.fromisoformat(day).strftime("%a %d %b")
+            return (f'<details class="day"{" open" if open_ else ""}><summary><span class="dt">{title}</span>'
+                    f'<span class="dsum">{right} of {len(items)} results right</span></summary>'
+                    f'<div class="rc-list">{"".join(match_card(m) for m in items)}</div></details>')
+
+        recent_html, older_html, older_n = [], [], 0
+        for i, (day, items) in enumerate(days.items()):
+            if (latest - datetime.fromisoformat(day).date()).days < 7:
+                recent_html.append(day_block(day, items, i < 1))
+            else:
+                older_html.append(day_block(day, items, False))
+                older_n += len(items)
+        older = (f'<details class="older"><summary>Show older matches ({older_n})</summary>{"".join(older_html)}</details>'
+                 if older_html else "")
         recent = f"""
-      <section class="block"><h3>Every match <span class="sub">goals and cards for each side; highlighted = one of our player picks</span></h3>
-        <div class="rc-list">{''.join(mrows)}</div></section>"""
+      <section class="block"><h3>Every match <span class="sub">newest first; tap a day or a match to open it. Highlighted names were our player picks.</span></h3>
+        {"".join(recent_html)}{older}</section>"""
         body = private + recent
     body += """
       <section class="block tr-method"><h3>How this is checked</h3>
@@ -898,6 +944,35 @@ EXTRA_CSS = r"""
 .rc-score { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin:10px 0 8px; font:700 22px/1.1 "Barlow Condensed",sans-serif; }
 .rc-score .t:first-child { text-align:right; } .rc-score b { font-size:34px; background:#f1f4f0; border-radius:10px; padding:2px 12px; }
 .rc-cols { display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; border-top:1px solid var(--line); padding-top:8px; }
+
+
+details.rc { padding:0; }
+details.rc > summary { list-style:none; cursor:pointer; display:grid; grid-template-columns:1fr; gap:2px; padding:10px 14px; }
+details.rc > summary::-webkit-details-marker { display:none; }
+.rc-line { display:flex; align-items:baseline; gap:10px; font:700 20px/1.15 "Barlow Condensed",sans-serif; }
+.rc-line b { background:#f1f4f0; border-radius:8px; padding:0 9px; font-size:22px; }
+.rc-line .t:first-child { flex:1; text-align:right; } .rc-line .t:last-child { flex:1; }
+details.rc > summary .rc-pick { font-size:13px; color:var(--muted); text-align:center; }
+.rc-body { padding:0 14px 12px; border-top:1px solid var(--line); }
+.rc-lg { margin:8px 0 6px; font-size:12px; color:var(--muted); }
+details.rc[open] > summary { padding-bottom:8px; }
+.day .rc-list { gap:8px; }
+.day { margin:0 0 12px; }
+.day > summary, .older > summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+  padding:10px 14px; background:var(--paper); border:1px solid var(--line); border-radius:12px; font:700 18px/1.2 "Barlow Condensed",sans-serif; }
+.day > summary::-webkit-details-marker, .older > summary::-webkit-details-marker { display:none; }
+.day > summary::after { content:"\25BE"; color:var(--muted); margin-left:6px; }
+.day[open] > summary::after { content:"\25B4"; }
+.day .dsum { font:500 14px/1.2 Barlow,sans-serif; color:var(--muted); margin-left:auto; }
+.day .rc-list, .older .day { margin-top:10px; }
+.older > summary { justify-content:center; color:var(--pitch); }
+.older { margin-top:6px; }
+.rc .miss { color:var(--muted); font-weight:600; }
+.mks { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 8px; }
+.mk { font-size:12px; padding:2px 8px; border-radius:99px; background:#f1f4f0; color:var(--muted); }
+.mk.ok { background:#dff3e4; color:#115c2a; }
+.rc-cols h4.tn { margin:0 0 4px; font:700 15px/1.1 "Barlow Condensed",sans-serif; text-transform:none; letter-spacing:0; color:var(--ink); }
+@media (max-width:520px) { .rc-cols { grid-template-columns:1fr; } .rc-cols > div + div { border-top:1px solid var(--line); padding-top:8px; } }
 .rc-cols h4 { margin:6px 0 3px; font:700 12px/1 Barlow,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
 .rc-cols ul { list-style:none; margin:0; padding:0; font-size:14px; }
 .rc-cols li { display:flex; gap:6px; align-items:baseline; padding:2px 4px; border-radius:6px; }
