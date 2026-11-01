@@ -423,7 +423,7 @@ def render_match(f, i):
     <article id="m{i}" class="match" role="tabpanel" data-fid="{f["id"]}" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="{f["id"]}" hidden></div>
-        <div class="kick">{esc(day)} · {esc(time_)}</div>
+        <div class="kick">{esc(day)} · {esc(time_)} <button type="button" class="fav-btn" data-fav="{f["id"]}" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>{esc(home)}</span><span class="vs">v</span><span>{esc(away)}</span></h2>
         {ref}
         <div class="threeway" aria-label="Result chances">
@@ -694,8 +694,9 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
                        css=CSS, extra_css=EXTRA_CSS, prefix=prefix)
     html = html.replace("{prefix}", prefix)
     on_live = path == "" or path.rstrip("/") in LEAGUE_ORDER
-    html = html.replace("__LIVESTRIP__", '<section id="live" class="live" aria-live="polite" hidden></section>' if on_live else "")
-    html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS}).replace("</", "<\\/"))
+    html = html.replace("__LIVESTRIP__", '<section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>' if on_live else "")
+    html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS,
+                                                       "league": path.rstrip("/") if path.rstrip("/") in LEAGUE_ORDER else ""}).replace("</", "<\\/"))
     html = html.replace("__DECOR__", DECOR_DEFS).replace("__HEAD__", head_tags(esc(title), esc(desc), path))
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
@@ -1187,6 +1188,13 @@ a.chip { text-decoration:none; }
 
 EXTRA_CSS += r"""
 /* live scores */
+.lv-fav, .fav-btn { font:inherit; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:99px; }
+.lv-fav { margin-left:auto; padding:2px 10px; font-size:16px; line-height:1.4; color:#8a6d00; }
+.lv-fav.on, .fav-btn.on { background:#fff3b0; border-color:#e0c54a; }
+.fav-btn { margin-left:10px; padding:2px 10px; font-size:13px; }
+.lv-h { font:700 13px/1 Barlow,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 8px; }
+.lv-pre { color:var(--muted); }
+
 .live { max-width:960px; margin:16px auto 0; padding:0 16px; }
 .lv { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin:0 0 8px;
   box-shadow:0 1px 0 #fff inset, 0 8px 16px -10px rgba(15,61,46,.3); }
@@ -1387,36 +1395,49 @@ __DECOR__
 })();
 </script>
 <script>
-/* Live scores: polls the relay only while a match is on and the tab is open. */
+/* Live scores and "my matches". Polls the relay only while a match is on and the tab is open.
+   Starred matches are kept in this browser only (localStorage). */
 (function () {
   var L = __LIVEDATA__;
-  var strip = document.getElementById('live');
+  var strip = document.getElementById('live'), mine = document.getElementById('myfav');
   if (!L.url || !strip) return;
-  var picks = L.picks, state = {}, timer = null, lastOk = 0;
+  var LG = { 39: 'premier-league', 140: 'la-liga', 78: 'bundesliga', 135: 'serie-a', 61: 'ligue-1' };
+  var picks = L.picks, state = {}, favs = [], FKEY = 'fp-fav-v1';
+  try { favs = JSON.parse(localStorage.getItem(FKEY) || '[]').map(String); } catch (e) { favs = []; }
+  function saveFavs() { try { localStorage.setItem(FKEY, JSON.stringify(favs)); } catch (e) {} }
+  function isFav(id) { return favs.indexOf(String(id)) > -1; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function minute(m) {
+    if (m.pre) return new Date(Date.parse(m.ko)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     if (m.fin) return 'FT';
     if (m.st === 'HT') return 'HT';
     if (m.st === 'BT' || m.st === 'INT') return 'Break';
     if (m.st === 'P') return 'Pens';
     return (m.el || 0) + (m.ex ? '+' + m.ex : '') + "'";
   }
-  function box(m, compact) {
+  function box(m) {
     var pk = picks[String(m.id)], card = el('div', 'lv');
     var top = el('div', 'lv-top');
-    var mn = el('span', 'lv-min' + (m.fin ? ' ft' : '')); mn.appendChild(el('i')); mn.appendChild(document.createTextNode(minute(m)));
+    var mn = el('span', 'lv-min' + (m.fin || m.pre ? ' ft' : '')); mn.appendChild(el('i')); mn.appendChild(document.createTextNode(minute(m)));
     top.appendChild(mn);
     top.appendChild(el('span', 'lv-teams', m.home + ' v ' + m.away));
-    top.appendChild(el('span', 'lv-score', m.hg + ' – ' + m.ag));
+    top.appendChild(el('span', 'lv-score' + (m.pre ? ' lv-pre' : ''), m.pre ? 'v' : m.hg + ' – ' + m.ag));
     if (pk) {
-      var res = m.hg > m.ag ? 'Home' : m.hg < m.ag ? 'Away' : 'Draw', ok = res === pk.pk;
       var name = pk.pk === 'Home' ? pk.h : pk.pk === 'Away' ? pk.a : 'a draw';
-      top.appendChild(el('span', 'lv-pick ' + (ok ? 'ok' : 'no'), 'We said ' + name + (m.fin ? (ok ? ' · right' : ' · wrong') : (ok ? ' · on track' : ' · not on track'))));
+      if (m.pre) top.appendChild(el('span', 'lv-pick', 'We said ' + name));
+      else {
+        var res = m.hg > m.ag ? 'Home' : m.hg < m.ag ? 'Away' : 'Draw', ok = res === pk.pk;
+        top.appendChild(el('span', 'lv-pick ' + (ok ? 'ok' : 'no'), 'We said ' + name + (m.fin ? (ok ? ' · right' : ' · wrong') : (ok ? ' · on track' : ' · not on track'))));
+      }
     }
+    var b = el('button', 'lv-fav' + (isFav(m.id) ? ' on' : ''), isFav(m.id) ? '★' : '☆');
+    b.type = 'button'; b.dataset.fav = m.id; b.title = isFav(m.id) ? 'Remove from my matches' : 'Add to my matches';
+    b.setAttribute('aria-label', b.title);
+    top.appendChild(b);
     card.appendChild(top);
     if (m.ev && m.ev.length) {
       var ul = el('ul', 'lv-ev');
-      m.ev.slice().sort(function (a, b) { return (a.m + (a.x || 0) / 100) - (b.m + (b.x || 0) / 100); }).forEach(function (e) {
+      m.ev.slice().sort(function (a, c) { return (a.m + (a.x || 0) / 100) - (c.m + (c.x || 0) / 100); }).forEach(function (e) {
         var li = el('li', e.s);
         li.appendChild(el('span', 't', e.m + (e.x ? '+' + e.x : '') + "'"));
         if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
@@ -1429,21 +1450,46 @@ __DECOR__
     }
     return card;
   }
+  function pre(id) { var pk = picks[String(id)]; return pk ? { id: id, home: pk.h, away: pk.a, pre: true, ko: pk.ko, ev: [] } : null; }
   function render() {
+    // drop stars for matches that ended more than 4 hours ago
+    favs = favs.filter(function (id) { var pk = picks[id]; return !pk || Date.now() < Date.parse(pk.ko) + 4 * 3600000 || state[id]; });
     var list = Object.keys(state).map(function (k) { return state[k]; });
-    list.sort(function (a, b) { return (a.fin ? 1 : 0) - (b.fin ? 1 : 0) || a.id - b.id; });
+    var here = list.filter(function (m) { return !L.league || LG[m.lg] === L.league; });
+    here.sort(function (a, b) { return (a.fin ? 1 : 0) - (b.fin ? 1 : 0) || a.id - b.id; });
     strip.textContent = '';
-    if (list.length) {
-      strip.appendChild(el('p', 'lv-note', 'Live now · scores update about every 30 seconds'));
-      list.forEach(function (m) { var c = box(m, true); strip.appendChild(c); });
+    if (here.length) {
+      strip.appendChild(el('p', 'lv-h', 'Live now · updates about every 30 seconds'));
+      here.forEach(function (m) { strip.appendChild(box(m)); });
     }
-    strip.hidden = !list.length;
-    document.querySelectorAll('.live-box').forEach(function (b) {
-      var m = state[b.dataset.fid]; b.textContent = '';
-      if (m) b.appendChild(box(m, false));
-      b.hidden = !m;
+    strip.hidden = !here.length;
+    if (mine) {
+      mine.textContent = '';
+      var fm = favs.map(function (id) { return state[id] || pre(id); }).filter(Boolean);
+      fm.sort(function (a, b) { return (a.pre ? 1 : 0) - (b.pre ? 1 : 0) || (a.pre ? Date.parse(a.ko) - Date.parse(b.ko) : 0); });
+      if (fm.length) {
+        mine.appendChild(el('p', 'lv-h', '★ My matches'));
+        fm.forEach(function (m) { mine.appendChild(box(m)); });
+      }
+      mine.hidden = !fm.length;
+    }
+    document.querySelectorAll('.live-box').forEach(function (bx) {
+      var m = state[bx.dataset.fid]; bx.textContent = '';
+      if (m) bx.appendChild(box(m));
+      bx.hidden = !m;
+    });
+    document.querySelectorAll('.fav-btn').forEach(function (bt) {
+      var on = isFav(bt.dataset.fav);
+      bt.classList.toggle('on', on); bt.setAttribute('aria-pressed', on ? 'true' : 'false');
+      bt.textContent = on ? '★ Tracking' : '☆ Track this match';
     });
   }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-fav]'); if (!b) return;
+    var id = String(b.dataset.fav), i = favs.indexOf(id);
+    if (i > -1) favs.splice(i, 1); else favs.push(id);
+    saveFavs(); render(); poll();
+  });
   function windowOpen() {
     var now = Date.now();
     if (Object.keys(state).some(function (k) { return !state[k].fin; })) return true;
@@ -1459,7 +1505,7 @@ __DECOR__
       render();
     }).catch(function () {});
   }
-  poll(); setInterval(poll, 30000);
+  render(); poll(); setInterval(poll, 30000);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) poll(); });
 })();
 </script>

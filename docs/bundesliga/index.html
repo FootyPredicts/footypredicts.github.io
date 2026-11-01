@@ -406,6 +406,13 @@ a.chip { text-decoration:none; }
 }
 
 /* live scores */
+.lv-fav, .fav-btn { font:inherit; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:99px; }
+.lv-fav { margin-left:auto; padding:2px 10px; font-size:16px; line-height:1.4; color:#8a6d00; }
+.lv-fav.on, .fav-btn.on { background:#fff3b0; border-color:#e0c54a; }
+.fav-btn { margin-left:10px; padding:2px 10px; font-size:13px; }
+.lv-h { font:700 13px/1 Barlow,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 8px; }
+.lv-pre { color:var(--muted); }
+
 .live { max-width:960px; margin:16px auto 0; padding:0 16px; }
 .lv { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin:0 0 8px;
   box-shadow:0 1px 0 #fff inset, 0 8px 16px -10px rgba(15,61,46,.3); }
@@ -538,11 +545,11 @@ a.chip { text-decoration:none; }
       </button></nav>
   </div>
 </header>
-<main><section id="live" class="live" aria-live="polite" hidden></section>
+<main><section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>
     <article id="m0" class="match" role="tabpanel" data-fid="1575207" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575207" hidden></div>
-        <div class="kick">Sun 01 Nov · 14:30</div>
+        <div class="kick">Sun 01 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575207" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>Union Berlin</span><span class="vs">v</span><span>1. FC Köln</span></h2>
         <p class="ref">Referee <b>R. Hempel</b> <span class="ref-avg">(4.0 cards per game, 2 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -630,7 +637,7 @@ a.chip { text-decoration:none; }
     <article id="m1" class="match" role="tabpanel" data-fid="1575205" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575205" hidden></div>
-        <div class="kick">Sun 01 Nov · 16:30</div>
+        <div class="kick">Sun 01 Nov · 16:30 <button type="button" class="fav-btn" data-fav="1575205" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>Eintracht Frankfurt</span><span class="vs">v</span><span>Hamburger SV</span></h2>
         <p class="ref">Referee <b>F. Exner</b> <span class="ref-avg">(5.0 cards per game, 26 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -718,7 +725,7 @@ a.chip { text-decoration:none; }
     <article id="m2" class="match" role="tabpanel" data-fid="1575218" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575218" hidden></div>
-        <div class="kick">Fri 06 Nov · 19:30</div>
+        <div class="kick">Fri 06 Nov · 19:30 <button type="button" class="fav-btn" data-fav="1575218" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>Hamburger SV</span><span class="vs">v</span><span>Borussia Mönchengladbach</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -806,7 +813,7 @@ a.chip { text-decoration:none; }
     <article id="m3" class="match" role="tabpanel" data-fid="1575217" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575217" hidden></div>
-        <div class="kick">Sat 07 Nov · 14:30</div>
+        <div class="kick">Sat 07 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575217" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>FSV Mainz 05</span><span class="vs">v</span><span>Bayern München</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -896,7 +903,7 @@ a.chip { text-decoration:none; }
     <article id="m4" class="match" role="tabpanel" data-fid="1575212" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575212" hidden></div>
-        <div class="kick">Sat 07 Nov · 14:30</div>
+        <div class="kick">Sat 07 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575212" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>Borussia Dortmund</span><span class="vs">v</span><span>SV Elversberg</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -981,7 +988,7 @@ a.chip { text-decoration:none; }
     <article id="m5" class="match" role="tabpanel" data-fid="1575213" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575213" hidden></div>
-        <div class="kick">Sat 07 Nov · 14:30</div>
+        <div class="kick">Sat 07 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575213" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>RB Leipzig</span><span class="vs">v</span><span>FC Augsburg</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1071,7 +1078,7 @@ a.chip { text-decoration:none; }
     <article id="m6" class="match" role="tabpanel" data-fid="1575220" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575220" hidden></div>
-        <div class="kick">Sat 07 Nov · 14:30</div>
+        <div class="kick">Sat 07 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575220" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>SC Paderborn 07</span><span class="vs">v</span><span>Eintracht Frankfurt</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1156,7 +1163,7 @@ a.chip { text-decoration:none; }
     <article id="m7" class="match" role="tabpanel" data-fid="1575214" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575214" hidden></div>
-        <div class="kick">Sat 07 Nov · 17:30</div>
+        <div class="kick">Sat 07 Nov · 17:30 <button type="button" class="fav-btn" data-fav="1575214" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>VfB Stuttgart</span><span class="vs">v</span><span>Werder Bremen</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1246,7 +1253,7 @@ a.chip { text-decoration:none; }
     <article id="m8" class="match" role="tabpanel" data-fid="1575219" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575219" hidden></div>
-        <div class="kick">Sun 08 Nov · 14:30</div>
+        <div class="kick">Sun 08 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575219" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>1. FC Köln</span><span class="vs">v</span><span>Bayer Leverkusen</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1334,7 +1341,7 @@ a.chip { text-decoration:none; }
     <article id="m9" class="match" role="tabpanel" data-fid="1575216" hidden>
       <header class="match-head">
         <div class="live-box" data-fid="1575216" hidden></div>
-        <div class="kick">Sun 08 Nov · 16:30</div>
+        <div class="kick">Sun 08 Nov · 16:30 <button type="button" class="fav-btn" data-fav="1575216" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>SC Freiburg</span><span class="vs">v</span><span>Union Berlin</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1570,36 +1577,49 @@ a.chip { text-decoration:none; }
 })();
 </script>
 <script>
-/* Live scores: polls the relay only while a match is on and the tab is open. */
+/* Live scores and "my matches". Polls the relay only while a match is on and the tab is open.
+   Starred matches are kept in this browser only (localStorage). */
 (function () {
-  var L = {"url": "https://live.footypredicts.com/", "picks": {"1557453": {"h": "Liverpool", "a": "Arsenal", "pk": "Away", "ko": "2026-11-01T16:30:00Z", "hp": 29, "dp": 30, "ap": 41}, "1557455": {"h": "Newcastle", "a": "Everton", "pk": "Home", "ko": "2026-11-02T20:00:00Z", "hp": 43, "dp": 28, "ap": 29}, "1557460": {"h": "Everton", "a": "Coventry", "pk": "Home", "ko": "2026-11-06T20:00:00Z", "hp": 51, "dp": 27, "ap": 22}, "1557463": {"h": "Leeds", "a": "Tottenham", "pk": "Home", "ko": "2026-11-07T12:30:00Z", "hp": 45, "dp": 29, "ap": 26}, "1557461": {"h": "Fulham", "a": "Newcastle", "pk": "Home", "ko": "2026-11-07T15:00:00Z", "hp": 39, "dp": 28, "ap": 33}, "1557457": {"h": "Arsenal", "a": "Hull City", "pk": "Home", "ko": "2026-11-07T15:00:00Z", "hp": 62, "dp": 26, "ap": 12}, "1557465": {"h": "Nottingham Forest", "a": "Manchester City", "pk": "Away", "ko": "2026-11-07T17:30:00Z", "hp": 22, "dp": 26, "ap": 52}, "1557458": {"h": "Brighton", "a": "Brentford", "pk": "Home", "ko": "2026-11-08T14:00:00Z", "hp": 51, "dp": 25, "ap": 24}, "1557459": {"h": "Crystal Palace", "a": "Liverpool", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 22, "dp": 25, "ap": 53}, "1557462": {"h": "Ipswich", "a": "Bournemouth", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 25, "dp": 22, "ap": 53}, "1570440": {"h": "Racing Santander", "a": "Real Madrid", "pk": "Away", "ko": "2026-11-01T15:15:00Z", "hp": 9, "dp": 13, "ap": 78}, "1570437": {"h": "Elche", "a": "Valencia", "pk": "Home", "ko": "2026-11-01T17:30:00Z", "hp": 51, "dp": 27, "ap": 22}, "1570433": {"h": "Athletic Club", "a": "Real Sociedad", "pk": "Home", "ko": "2026-11-01T20:00:00Z", "hp": 47, "dp": 26, "ap": 27}, "1570436": {"h": "Deportivo La Coruna", "a": "Osasuna", "pk": "Home", "ko": "2026-11-02T20:00:00Z", "hp": 46, "dp": 29, "ap": 25}, "1570450": {"h": "Sevilla", "a": "Alaves", "pk": "Home", "ko": "2026-11-06T20:00:00Z", "hp": 48, "dp": 27, "ap": 26}, "1570447": {"h": "Malaga", "a": "Racing Santander", "pk": "Home", "ko": "2026-11-07T13:00:00Z", "hp": 40, "dp": 24, "ap": 36}, "1570446": {"h": "Espanyol", "a": "Deportivo La Coruna", "pk": "Home", "ko": "2026-11-07T15:15:00Z", "hp": 40, "dp": 30, "ap": 29}, "1570448": {"h": "Osasuna", "a": "Athletic Club", "pk": "Away", "ko": "2026-11-07T17:30:00Z", "hp": 34, "dp": 30, "ap": 36}, "1570451": {"h": "Valencia", "a": "Real Madrid", "pk": "Away", "ko": "2026-11-07T20:00:00Z", "hp": 16, "dp": 24, "ap": 60}, "1570445": {"h": "Elche", "a": "Real Betis", "pk": "Home", "ko": "2026-11-08T13:00:00Z", "hp": 38, "dp": 26, "ap": 36}, "1575207": {"h": "Union Berlin", "a": "1. FC K\u00f6ln", "pk": "Home", "ko": "2026-11-01T14:30:00Z", "hp": 45, "dp": 28, "ap": 28}, "1575205": {"h": "Eintracht Frankfurt", "a": "Hamburger SV", "pk": "Home", "ko": "2026-11-01T16:30:00Z", "hp": 62, "dp": 22, "ap": 16}, "1575218": {"h": "Hamburger SV", "a": "Borussia M\u00f6nchengladbach", "pk": "Home", "ko": "2026-11-06T19:30:00Z", "hp": 40, "dp": 28, "ap": 32}, "1575217": {"h": "FSV Mainz 05", "a": "Bayern M\u00fcnchen", "pk": "Away", "ko": "2026-11-07T14:30:00Z", "hp": 12, "dp": 15, "ap": 74}, "1575212": {"h": "Borussia Dortmund", "a": "SV Elversberg", "pk": "Home", "ko": "2026-11-07T14:30:00Z", "hp": 70, "dp": 17, "ap": 13}, "1575213": {"h": "RB Leipzig", "a": "FC Augsburg", "pk": "Home", "ko": "2026-11-07T14:30:00Z", "hp": 64, "dp": 20, "ap": 16}, "1575220": {"h": "SC Paderborn 07", "a": "Eintracht Frankfurt", "pk": "Draw", "ko": "2026-11-07T14:30:00Z", "hp": 36, "dp": 32, "ap": 32}, "1575214": {"h": "VfB Stuttgart", "a": "Werder Bremen", "pk": "Home", "ko": "2026-11-07T17:30:00Z", "hp": 62, "dp": 20, "ap": 18}, "1575219": {"h": "1. FC K\u00f6ln", "a": "Bayer Leverkusen", "pk": "Away", "ko": "2026-11-08T14:30:00Z", "hp": 26, "dp": 23, "ap": 51}, "1575216": {"h": "SC Freiburg", "a": "Union Berlin", "pk": "Home", "ko": "2026-11-08T16:30:00Z", "hp": 61, "dp": 22, "ap": 17}, "1550183": {"h": "Lazio", "a": "Cagliari", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 57, "dp": 26, "ap": 17}, "1550181": {"h": "Frosinone", "a": "Torino", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 69, "dp": 16, "ap": 15}, "1550184": {"h": "Lecce", "a": "Genoa", "pk": "Away", "ko": "2026-11-01T17:00:00Z", "hp": 22, "dp": 33, "ap": 45}, "1550182": {"h": "Juventus", "a": "Napoli", "pk": "Away", "ko": "2026-11-01T19:45:00Z", "hp": 32, "dp": 32, "ap": 36}, "1550185": {"h": "Sassuolo", "a": "Fiorentina", "pk": "Home", "ko": "2026-11-02T17:30:00Z", "hp": 37, "dp": 26, "ap": 37}, "1550178": {"h": "Atalanta", "a": "Parma", "pk": "Home", "ko": "2026-11-02T19:45:00Z", "hp": 56, "dp": 28, "ap": 16}, "1550196": {"h": "Venezia", "a": "Udinese", "pk": "Away", "ko": "2026-11-06T19:45:00Z", "hp": 26, "dp": 30, "ap": 44}, "1550188": {"h": "Cagliari", "a": "Frosinone", "pk": "Away", "ko": "2026-11-07T14:00:00Z", "hp": 18, "dp": 19, "ap": 63}, "1550195": {"h": "Torino", "a": "Lecce", "pk": "Home", "ko": "2026-11-07T14:00:00Z", "hp": 48, "dp": 28, "ap": 24}, "1550194": {"h": "Parma", "a": "Bologna", "pk": "Away", "ko": "2026-11-07T17:00:00Z", "hp": 21, "dp": 31, "ap": 48}, "1552808": {"h": "Strasbourg", "a": "Auxerre", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 55, "dp": 24, "ap": 21}, "1552804": {"h": "Lyon", "a": "Angers", "pk": "Home", "ko": "2026-11-01T16:15:00Z", "hp": 65, "dp": 24, "ap": 11}, "1552807": {"h": "Paris FC", "a": "Monaco", "pk": "Home", "ko": "2026-11-01T16:15:00Z", "hp": 37, "dp": 27, "ap": 36}, "1552805": {"h": "Marseille", "a": "Toulouse", "pk": "Home", "ko": "2026-11-01T19:45:00Z", "hp": 55, "dp": 22, "ap": 22}, "1552803": {"h": "Lorient", "a": "Stade Brestois 29", "pk": "Home", "ko": "2026-11-02T19:45:00Z", "hp": 49, "dp": 27, "ap": 24}, "1552817": {"h": "Toulouse", "a": "Strasbourg", "pk": "Home", "ko": "2026-11-06T19:45:00Z", "hp": 43, "dp": 25, "ap": 32}, "1552811": {"h": "Auxerre", "a": "Paris FC", "pk": "Away", "ko": "2026-11-07T16:15:00Z", "hp": 31, "dp": 28, "ap": 41}, "1552815": {"h": "Paris Saint Germain", "a": "Estac Troyes", "pk": "Home", "ko": "2026-11-07T19:45:00Z", "hp": 87, "dp": 10, "ap": 3}, "1552816": {"h": "Rennes", "a": "Lille", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 34, "dp": 27, "ap": 38}, "1552813": {"h": "Le Havre", "a": "Lorient", "pk": "Away", "ko": "2026-11-08T16:15:00Z", "hp": 28, "dp": 30, "ap": 42}}};
-  var strip = document.getElementById('live');
+  var L = {"url": "https://live.footypredicts.com/", "picks": {"1557453": {"h": "Liverpool", "a": "Arsenal", "pk": "Away", "ko": "2026-11-01T16:30:00Z", "hp": 29, "dp": 30, "ap": 41}, "1557455": {"h": "Newcastle", "a": "Everton", "pk": "Home", "ko": "2026-11-02T20:00:00Z", "hp": 43, "dp": 28, "ap": 29}, "1557460": {"h": "Everton", "a": "Coventry", "pk": "Home", "ko": "2026-11-06T20:00:00Z", "hp": 51, "dp": 27, "ap": 22}, "1557463": {"h": "Leeds", "a": "Tottenham", "pk": "Home", "ko": "2026-11-07T12:30:00Z", "hp": 45, "dp": 29, "ap": 26}, "1557461": {"h": "Fulham", "a": "Newcastle", "pk": "Home", "ko": "2026-11-07T15:00:00Z", "hp": 39, "dp": 28, "ap": 33}, "1557457": {"h": "Arsenal", "a": "Hull City", "pk": "Home", "ko": "2026-11-07T15:00:00Z", "hp": 62, "dp": 26, "ap": 12}, "1557465": {"h": "Nottingham Forest", "a": "Manchester City", "pk": "Away", "ko": "2026-11-07T17:30:00Z", "hp": 22, "dp": 26, "ap": 52}, "1557458": {"h": "Brighton", "a": "Brentford", "pk": "Home", "ko": "2026-11-08T14:00:00Z", "hp": 51, "dp": 25, "ap": 24}, "1557459": {"h": "Crystal Palace", "a": "Liverpool", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 22, "dp": 25, "ap": 53}, "1557462": {"h": "Ipswich", "a": "Bournemouth", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 25, "dp": 22, "ap": 53}, "1570440": {"h": "Racing Santander", "a": "Real Madrid", "pk": "Away", "ko": "2026-11-01T15:15:00Z", "hp": 9, "dp": 13, "ap": 78}, "1570437": {"h": "Elche", "a": "Valencia", "pk": "Home", "ko": "2026-11-01T17:30:00Z", "hp": 51, "dp": 27, "ap": 22}, "1570433": {"h": "Athletic Club", "a": "Real Sociedad", "pk": "Home", "ko": "2026-11-01T20:00:00Z", "hp": 47, "dp": 26, "ap": 27}, "1570436": {"h": "Deportivo La Coruna", "a": "Osasuna", "pk": "Home", "ko": "2026-11-02T20:00:00Z", "hp": 46, "dp": 29, "ap": 25}, "1570450": {"h": "Sevilla", "a": "Alaves", "pk": "Home", "ko": "2026-11-06T20:00:00Z", "hp": 48, "dp": 27, "ap": 26}, "1570447": {"h": "Malaga", "a": "Racing Santander", "pk": "Home", "ko": "2026-11-07T13:00:00Z", "hp": 40, "dp": 24, "ap": 36}, "1570446": {"h": "Espanyol", "a": "Deportivo La Coruna", "pk": "Home", "ko": "2026-11-07T15:15:00Z", "hp": 40, "dp": 30, "ap": 29}, "1570448": {"h": "Osasuna", "a": "Athletic Club", "pk": "Away", "ko": "2026-11-07T17:30:00Z", "hp": 34, "dp": 30, "ap": 36}, "1570451": {"h": "Valencia", "a": "Real Madrid", "pk": "Away", "ko": "2026-11-07T20:00:00Z", "hp": 16, "dp": 24, "ap": 60}, "1570445": {"h": "Elche", "a": "Real Betis", "pk": "Home", "ko": "2026-11-08T13:00:00Z", "hp": 38, "dp": 26, "ap": 36}, "1575207": {"h": "Union Berlin", "a": "1. FC K\u00f6ln", "pk": "Home", "ko": "2026-11-01T14:30:00Z", "hp": 45, "dp": 28, "ap": 28}, "1575205": {"h": "Eintracht Frankfurt", "a": "Hamburger SV", "pk": "Home", "ko": "2026-11-01T16:30:00Z", "hp": 62, "dp": 22, "ap": 16}, "1575218": {"h": "Hamburger SV", "a": "Borussia M\u00f6nchengladbach", "pk": "Home", "ko": "2026-11-06T19:30:00Z", "hp": 40, "dp": 28, "ap": 32}, "1575217": {"h": "FSV Mainz 05", "a": "Bayern M\u00fcnchen", "pk": "Away", "ko": "2026-11-07T14:30:00Z", "hp": 12, "dp": 15, "ap": 74}, "1575212": {"h": "Borussia Dortmund", "a": "SV Elversberg", "pk": "Home", "ko": "2026-11-07T14:30:00Z", "hp": 70, "dp": 17, "ap": 13}, "1575213": {"h": "RB Leipzig", "a": "FC Augsburg", "pk": "Home", "ko": "2026-11-07T14:30:00Z", "hp": 64, "dp": 20, "ap": 16}, "1575220": {"h": "SC Paderborn 07", "a": "Eintracht Frankfurt", "pk": "Draw", "ko": "2026-11-07T14:30:00Z", "hp": 36, "dp": 32, "ap": 32}, "1575214": {"h": "VfB Stuttgart", "a": "Werder Bremen", "pk": "Home", "ko": "2026-11-07T17:30:00Z", "hp": 62, "dp": 20, "ap": 18}, "1575219": {"h": "1. FC K\u00f6ln", "a": "Bayer Leverkusen", "pk": "Away", "ko": "2026-11-08T14:30:00Z", "hp": 26, "dp": 23, "ap": 51}, "1575216": {"h": "SC Freiburg", "a": "Union Berlin", "pk": "Home", "ko": "2026-11-08T16:30:00Z", "hp": 61, "dp": 22, "ap": 17}, "1550183": {"h": "Lazio", "a": "Cagliari", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 57, "dp": 26, "ap": 17}, "1550181": {"h": "Frosinone", "a": "Torino", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 69, "dp": 16, "ap": 15}, "1550184": {"h": "Lecce", "a": "Genoa", "pk": "Away", "ko": "2026-11-01T17:00:00Z", "hp": 22, "dp": 33, "ap": 45}, "1550182": {"h": "Juventus", "a": "Napoli", "pk": "Away", "ko": "2026-11-01T19:45:00Z", "hp": 32, "dp": 32, "ap": 36}, "1550185": {"h": "Sassuolo", "a": "Fiorentina", "pk": "Home", "ko": "2026-11-02T17:30:00Z", "hp": 37, "dp": 26, "ap": 37}, "1550178": {"h": "Atalanta", "a": "Parma", "pk": "Home", "ko": "2026-11-02T19:45:00Z", "hp": 56, "dp": 28, "ap": 16}, "1550196": {"h": "Venezia", "a": "Udinese", "pk": "Away", "ko": "2026-11-06T19:45:00Z", "hp": 26, "dp": 30, "ap": 44}, "1550188": {"h": "Cagliari", "a": "Frosinone", "pk": "Away", "ko": "2026-11-07T14:00:00Z", "hp": 18, "dp": 19, "ap": 63}, "1550195": {"h": "Torino", "a": "Lecce", "pk": "Home", "ko": "2026-11-07T14:00:00Z", "hp": 48, "dp": 28, "ap": 24}, "1550194": {"h": "Parma", "a": "Bologna", "pk": "Away", "ko": "2026-11-07T17:00:00Z", "hp": 21, "dp": 31, "ap": 48}, "1552808": {"h": "Strasbourg", "a": "Auxerre", "pk": "Home", "ko": "2026-11-01T14:00:00Z", "hp": 55, "dp": 24, "ap": 21}, "1552804": {"h": "Lyon", "a": "Angers", "pk": "Home", "ko": "2026-11-01T16:15:00Z", "hp": 65, "dp": 24, "ap": 11}, "1552807": {"h": "Paris FC", "a": "Monaco", "pk": "Home", "ko": "2026-11-01T16:15:00Z", "hp": 37, "dp": 27, "ap": 36}, "1552805": {"h": "Marseille", "a": "Toulouse", "pk": "Home", "ko": "2026-11-01T19:45:00Z", "hp": 55, "dp": 22, "ap": 22}, "1552803": {"h": "Lorient", "a": "Stade Brestois 29", "pk": "Home", "ko": "2026-11-02T19:45:00Z", "hp": 49, "dp": 27, "ap": 24}, "1552817": {"h": "Toulouse", "a": "Strasbourg", "pk": "Home", "ko": "2026-11-06T19:45:00Z", "hp": 43, "dp": 25, "ap": 32}, "1552811": {"h": "Auxerre", "a": "Paris FC", "pk": "Away", "ko": "2026-11-07T16:15:00Z", "hp": 31, "dp": 28, "ap": 41}, "1552815": {"h": "Paris Saint Germain", "a": "Estac Troyes", "pk": "Home", "ko": "2026-11-07T19:45:00Z", "hp": 87, "dp": 10, "ap": 3}, "1552816": {"h": "Rennes", "a": "Lille", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 34, "dp": 27, "ap": 38}, "1552813": {"h": "Le Havre", "a": "Lorient", "pk": "Away", "ko": "2026-11-08T16:15:00Z", "hp": 28, "dp": 30, "ap": 42}}, "league": "bundesliga"};
+  var strip = document.getElementById('live'), mine = document.getElementById('myfav');
   if (!L.url || !strip) return;
-  var picks = L.picks, state = {}, timer = null, lastOk = 0;
+  var LG = { 39: 'premier-league', 140: 'la-liga', 78: 'bundesliga', 135: 'serie-a', 61: 'ligue-1' };
+  var picks = L.picks, state = {}, favs = [], FKEY = 'fp-fav-v1';
+  try { favs = JSON.parse(localStorage.getItem(FKEY) || '[]').map(String); } catch (e) { favs = []; }
+  function saveFavs() { try { localStorage.setItem(FKEY, JSON.stringify(favs)); } catch (e) {} }
+  function isFav(id) { return favs.indexOf(String(id)) > -1; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function minute(m) {
+    if (m.pre) return new Date(Date.parse(m.ko)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     if (m.fin) return 'FT';
     if (m.st === 'HT') return 'HT';
     if (m.st === 'BT' || m.st === 'INT') return 'Break';
     if (m.st === 'P') return 'Pens';
     return (m.el || 0) + (m.ex ? '+' + m.ex : '') + "'";
   }
-  function box(m, compact) {
+  function box(m) {
     var pk = picks[String(m.id)], card = el('div', 'lv');
     var top = el('div', 'lv-top');
-    var mn = el('span', 'lv-min' + (m.fin ? ' ft' : '')); mn.appendChild(el('i')); mn.appendChild(document.createTextNode(minute(m)));
+    var mn = el('span', 'lv-min' + (m.fin || m.pre ? ' ft' : '')); mn.appendChild(el('i')); mn.appendChild(document.createTextNode(minute(m)));
     top.appendChild(mn);
     top.appendChild(el('span', 'lv-teams', m.home + ' v ' + m.away));
-    top.appendChild(el('span', 'lv-score', m.hg + ' – ' + m.ag));
+    top.appendChild(el('span', 'lv-score' + (m.pre ? ' lv-pre' : ''), m.pre ? 'v' : m.hg + ' – ' + m.ag));
     if (pk) {
-      var res = m.hg > m.ag ? 'Home' : m.hg < m.ag ? 'Away' : 'Draw', ok = res === pk.pk;
       var name = pk.pk === 'Home' ? pk.h : pk.pk === 'Away' ? pk.a : 'a draw';
-      top.appendChild(el('span', 'lv-pick ' + (ok ? 'ok' : 'no'), 'We said ' + name + (m.fin ? (ok ? ' · right' : ' · wrong') : (ok ? ' · on track' : ' · not on track'))));
+      if (m.pre) top.appendChild(el('span', 'lv-pick', 'We said ' + name));
+      else {
+        var res = m.hg > m.ag ? 'Home' : m.hg < m.ag ? 'Away' : 'Draw', ok = res === pk.pk;
+        top.appendChild(el('span', 'lv-pick ' + (ok ? 'ok' : 'no'), 'We said ' + name + (m.fin ? (ok ? ' · right' : ' · wrong') : (ok ? ' · on track' : ' · not on track'))));
+      }
     }
+    var b = el('button', 'lv-fav' + (isFav(m.id) ? ' on' : ''), isFav(m.id) ? '★' : '☆');
+    b.type = 'button'; b.dataset.fav = m.id; b.title = isFav(m.id) ? 'Remove from my matches' : 'Add to my matches';
+    b.setAttribute('aria-label', b.title);
+    top.appendChild(b);
     card.appendChild(top);
     if (m.ev && m.ev.length) {
       var ul = el('ul', 'lv-ev');
-      m.ev.slice().sort(function (a, b) { return (a.m + (a.x || 0) / 100) - (b.m + (b.x || 0) / 100); }).forEach(function (e) {
+      m.ev.slice().sort(function (a, c) { return (a.m + (a.x || 0) / 100) - (c.m + (c.x || 0) / 100); }).forEach(function (e) {
         var li = el('li', e.s);
         li.appendChild(el('span', 't', e.m + (e.x ? '+' + e.x : '') + "'"));
         if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
@@ -1612,21 +1632,46 @@ a.chip { text-decoration:none; }
     }
     return card;
   }
+  function pre(id) { var pk = picks[String(id)]; return pk ? { id: id, home: pk.h, away: pk.a, pre: true, ko: pk.ko, ev: [] } : null; }
   function render() {
+    // drop stars for matches that ended more than 4 hours ago
+    favs = favs.filter(function (id) { var pk = picks[id]; return !pk || Date.now() < Date.parse(pk.ko) + 4 * 3600000 || state[id]; });
     var list = Object.keys(state).map(function (k) { return state[k]; });
-    list.sort(function (a, b) { return (a.fin ? 1 : 0) - (b.fin ? 1 : 0) || a.id - b.id; });
+    var here = list.filter(function (m) { return !L.league || LG[m.lg] === L.league; });
+    here.sort(function (a, b) { return (a.fin ? 1 : 0) - (b.fin ? 1 : 0) || a.id - b.id; });
     strip.textContent = '';
-    if (list.length) {
-      strip.appendChild(el('p', 'lv-note', 'Live now · scores update about every 30 seconds'));
-      list.forEach(function (m) { var c = box(m, true); strip.appendChild(c); });
+    if (here.length) {
+      strip.appendChild(el('p', 'lv-h', 'Live now · updates about every 30 seconds'));
+      here.forEach(function (m) { strip.appendChild(box(m)); });
     }
-    strip.hidden = !list.length;
-    document.querySelectorAll('.live-box').forEach(function (b) {
-      var m = state[b.dataset.fid]; b.textContent = '';
-      if (m) b.appendChild(box(m, false));
-      b.hidden = !m;
+    strip.hidden = !here.length;
+    if (mine) {
+      mine.textContent = '';
+      var fm = favs.map(function (id) { return state[id] || pre(id); }).filter(Boolean);
+      fm.sort(function (a, b) { return (a.pre ? 1 : 0) - (b.pre ? 1 : 0) || (a.pre ? Date.parse(a.ko) - Date.parse(b.ko) : 0); });
+      if (fm.length) {
+        mine.appendChild(el('p', 'lv-h', '★ My matches'));
+        fm.forEach(function (m) { mine.appendChild(box(m)); });
+      }
+      mine.hidden = !fm.length;
+    }
+    document.querySelectorAll('.live-box').forEach(function (bx) {
+      var m = state[bx.dataset.fid]; bx.textContent = '';
+      if (m) bx.appendChild(box(m));
+      bx.hidden = !m;
+    });
+    document.querySelectorAll('.fav-btn').forEach(function (bt) {
+      var on = isFav(bt.dataset.fav);
+      bt.classList.toggle('on', on); bt.setAttribute('aria-pressed', on ? 'true' : 'false');
+      bt.textContent = on ? '★ Tracking' : '☆ Track this match';
     });
   }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-fav]'); if (!b) return;
+    var id = String(b.dataset.fav), i = favs.indexOf(id);
+    if (i > -1) favs.splice(i, 1); else favs.push(id);
+    saveFavs(); render(); poll();
+  });
   function windowOpen() {
     var now = Date.now();
     if (Object.keys(state).some(function (k) { return !state[k].fin; })) return true;
@@ -1642,7 +1687,7 @@ a.chip { text-decoration:none; }
       render();
     }).catch(function () {});
   }
-  poll(); setInterval(poll, 30000);
+  render(); poll(); setInterval(poll, 30000);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) poll(); });
 })();
 </script>
