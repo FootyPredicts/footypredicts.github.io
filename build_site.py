@@ -729,7 +729,9 @@ def build():
             ko = datetime.fromisoformat(f["kickoff"]).replace(tzinfo=timezone.utc)
             if ko > now_utc or str(f["id"]) not in LIVE_PICKS:
                 LIVE_PICKS[str(f["id"])] = {"h": f["home"], "a": f["away"], "pk": f["pick"],
-                                            "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"])}
+                                            "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"]),
+                                            "sc": [x["name"] for side in ("home", "away") for x in f["players"][side]["scorers"]],
+                                            "bk": [x["name"] for side in ("home", "away") for x in f["players"][side]["bookings"]]}
     os.makedirs(os.path.dirname(keep_path), exist_ok=True)
     with open(keep_path, "w", encoding="utf-8") as fh:
         json.dump(LIVE_PICKS, fh)
@@ -1188,6 +1190,11 @@ a.chip { text-decoration:none; }
 
 EXTRA_CSS += r"""
 /* live scores */
+.lv-ev li.hit { background:linear-gradient(180deg,#fff7c9,#f6e27a); border-radius:6px; padding:1px 6px; font-weight:700; }
+.pk-row { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 0; }
+.pk { font-size:12px; padding:2px 9px; border-radius:99px; background:#f1f4f0; color:var(--muted); }
+.pk.ok { background:#fff1a8; color:#4a3b00; font-weight:700; }
+.pk.miss { text-decoration:line-through; opacity:.7; }
 .lv-fav, .fav-btn { font:inherit; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:99px; }
 .lv-fav { margin-left:auto; padding:2px 10px; font-size:16px; line-height:1.4; color:#8a6d00; }
 .lv-fav.on, .fav-btn.on { background:#fff3b0; border-color:#e0c54a; }
@@ -1438,7 +1445,9 @@ __DECOR__
     if (m.ev && m.ev.length) {
       var ul = el('ul', 'lv-ev');
       m.ev.slice().sort(function (a, c) { return (a.m + (a.x || 0) / 100) - (c.m + (c.x || 0) / 100); }).forEach(function (e) {
-        var li = el('li', e.s);
+        var isPick = pk && ((e.t === 'Goal' && e.d !== 'Missed Penalty' && e.d !== 'Own Goal' && (pk.sc || []).some(function (n) { return sn(n) === sn(e.p); })) ||
+                            (e.t === 'Card' && (pk.bk || []).some(function (n) { return sn(n) === sn(e.p); })));
+        var li = el('li', e.s + (isPick ? ' hit' : ''));
         li.appendChild(el('span', 't', e.m + (e.x ? '+' + e.x : '') + "'"));
         if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
         var label = e.t === 'Goal' ? (e.d === 'Own Goal' ? 'Own goal' : e.d === 'Missed Penalty' ? 'Penalty missed' : e.d === 'Penalty' ? 'Goal (pen)' : 'Goal') : '';
@@ -1448,7 +1457,24 @@ __DECOR__
       });
       card.appendChild(ul);
     }
+    if (pk) { var chips = pickChips(m, pk); if (chips) card.appendChild(chips); }
     return card;
+  }
+  function sn(x) {
+    var w = String(x || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' ').split(/\s+/).filter(function (t) { return t.length > 1; });
+    return w.length ? w[w.length - 1] : '';
+  }
+  function pickChips(m, pk) {
+    var row = el('div', 'pk-row'), any = false;
+    function add(names, what, kind) {
+      (names || []).forEach(function (n) {
+        var hit = (m.ev || []).some(function (e) { return sn(e.p) === sn(n) && (kind === 'goal' ? (e.t === 'Goal' && e.d !== 'Missed Penalty' && e.d !== 'Own Goal') : e.t === 'Card'); });
+        var cls = 'pk' + (hit ? ' ok' : (m.fin ? ' miss' : ''));
+        row.appendChild(el('span', cls, (hit ? '\u2713 ' : '') + n + ' ' + what)); any = true;
+      });
+    }
+    add(pk.sc, 'to score', 'goal'); add(pk.bk, 'to be booked', 'card');
+    return any ? row : null;
   }
   function pre(id) { var pk = picks[String(id)]; return pk ? { id: id, home: pk.h, away: pk.a, pre: true, ko: pk.ko, ev: [] } : null; }
   function render() {
