@@ -727,7 +727,7 @@ def build():
         for f in d["fixtures"]:
             ko = datetime.fromisoformat(f["kickoff"]).replace(tzinfo=timezone.utc)
             if ko > now_utc or str(f["id"]) not in LIVE_PICKS:
-                LIVE_PICKS[str(f["id"])] = {"h": f["home"], "a": f["away"], "pk": f["pick"],
+                LIVE_PICKS[str(f["id"])] = {"lg": d["league"], "h": f["home"], "a": f["away"], "pk": f["pick"],
                                             "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"]),
                                             "sc": [x["name"] for side in ("home", "away") for x in f["players"][side]["scorers"]],
                                             "bk": [x["name"] for side in ("home", "away") for x in f["players"][side]["bookings"]]}
@@ -1189,6 +1189,7 @@ a.chip { text-decoration:none; }
 
 EXTRA_CSS += r"""
 /* live scores */
+.lv-none { margin:0; font-size:13px; color:var(--muted); padding:8px 2px; }
 .lv-key { margin:-2px 0 8px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
 .lv-key .sw { display:inline-block; width:22px; height:10px; border-radius:4px; background:linear-gradient(180deg,#fff7c9,#f6e27a); border:1px solid #e0c54a; }
 .lv-stats { margin:8px 0 0; }
@@ -1542,7 +1543,21 @@ __DECOR__
       strip.appendChild(key);
       here.forEach(function (m) { strip.appendChild(box(m)); });
     }
-    strip.hidden = !here.length;
+    if (!here.length && L.url) {
+      var nx = null, nowT = Date.now();
+      Object.keys(picks).forEach(function (k) {
+        var q = picks[k], t = Date.parse(q.ko);
+        if (L.league && q.lg && q.lg !== L.league) return;
+        if (t > nowT && (nx === null || t < nx)) nx = t;
+      });
+      var msg = 'No matches in play right now.';
+      if (nx !== null) {
+        var dd = new Date(nx), same = dd.toDateString() === new Date().toDateString();
+        msg += ' Next kick-off: ' + (same ? 'today' : dd.toLocaleDateString('en-GB', { weekday: 'long' })) + ' at ' + dd.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) + '.';
+      }
+      strip.appendChild(el('p', 'lv-none', msg));
+    }
+    strip.hidden = !here.length && !strip.childNodes.length;
     if (mine) {
       mine.textContent = '';
       var fm = favs.map(function (id) { return state[id] || pre(id); }).filter(Boolean);
