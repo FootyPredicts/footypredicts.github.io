@@ -406,6 +406,17 @@ a.chip { text-decoration:none; }
 }
 
 /* live scores */
+.lv-stats { margin:8px 0 0; }
+.lv-stats > summary { cursor:pointer; list-style:none; display:inline-block; font-size:13px; font-weight:600; color:var(--pitch); padding:2px 10px; border:1px solid var(--line); border-radius:99px; background:#fff; }
+.lv-stats > summary::-webkit-details-marker { display:none; }
+.lv-stats[open] > summary { background:#eef2ee; }
+.st-grid { display:grid; gap:9px; margin-top:10px; }
+.st-top { display:grid; grid-template-columns:48px 1fr 48px; align-items:baseline; font-size:14px; font-variant-numeric:tabular-nums; }
+.st-top b { font-weight:700; } .st-top span { text-align:center; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+.st-top b:last-child { text-align:right; }
+.st-bar { display:flex; height:6px; border-radius:4px; overflow:hidden; background:#e8ece8; margin-top:3px; gap:2px; }
+.st-bar i { display:block; background:var(--home); } .st-bar i + i { background:var(--away); }
+
 .lv-ev li.hit { background:linear-gradient(180deg,#fff7c9,#f6e27a); border-radius:6px; padding:1px 6px; font-weight:700; }
 .pk-row { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 0; }
 .pk { font-size:12px; padding:2px 9px; border-radius:99px; background:#f1f4f0; color:var(--muted); }
@@ -721,6 +732,7 @@ a.chip { text-decoration:none; }
       });
       card.appendChild(ul);
     }
+    if (!m.pre) { var sb = statsBlock(m); if (sb) card.appendChild(sb); }
     return card;
   }
   function sn(x) {
@@ -738,6 +750,32 @@ a.chip { text-decoration:none; }
     }
     add(pk.sc, 'to score', 'goal'); add(pk.bk, 'to be booked', 'card');
     return any ? row : null;
+  }
+  var openStats = {};
+  function statsBlock(m) {
+    var sx = m.sx; if (!sx || !sx.h || !sx.a) return null;
+    var rows = [['pos', 'Possession', '%'], ['sh', 'Shots', ''], ['sot', 'On target', ''], ['xg', 'Expected goals', ''], ['co', 'Corners', ''],
+                ['fo', 'Fouls', ''], ['of', 'Offsides', ''], ['yc', 'Yellow cards', ''], ['rc', 'Red cards', '']];
+    var grid = el('div', 'st-grid'), n = 0;
+    rows.forEach(function (r) {
+      var a = sx.h[r[0]], b = sx.a[r[0]];
+      if (a == null && b == null) return;
+      if (r[0] === 'xg' && (a == null || b == null)) return;
+      if (r[0] === 'rc' && !a && !b) return;
+      a = a || 0; b = b || 0; n++;
+      var fmt = function (v) { return (r[0] === 'xg' ? v.toFixed(2) : Math.round(v)) + r[2]; };
+      var row = el('div', 'st-row'), top = el('div', 'st-top');
+      top.appendChild(el('b', '', fmt(a))); top.appendChild(el('span', '', r[1])); top.appendChild(el('b', '', fmt(b)));
+      var bar = el('div', 'st-bar'), t = a + b || 1, l = el('i'), rt = el('i');
+      l.style.width = (100 * a / t) + '%'; rt.style.width = (100 * b / t) + '%';
+      bar.appendChild(l); bar.appendChild(rt); row.appendChild(top); row.appendChild(bar); grid.appendChild(row);
+    });
+    if (!n) return null;
+    var d = el('details', 'lv-stats'); d.appendChild(el('summary', '', 'Stats'));
+    if (openStats[m.id]) d.open = true;
+    d.addEventListener('toggle', function () { openStats[m.id] = d.open; });
+    d.appendChild(grid);
+    return d;
   }
   function pre(id) { var pk = picks[String(id)]; return pk ? { id: id, home: pk.h, away: pk.a, pre: true, ko: pk.ko, ev: [] } : null; }
   function render() {

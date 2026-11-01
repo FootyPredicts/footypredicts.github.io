@@ -10,6 +10,27 @@ const ALLOWED = [
   "https://footypredicts.github.io",
 ];
 
+const STAT_KEYS = {
+  "Ball Possession": "pos", "Total Shots": "sh", "Shots on Goal": "sot", "Corner Kicks": "co",
+  "Fouls": "fo", "Offsides": "of", "Yellow Cards": "yc", "Red Cards": "rc", "expected_goals": "xg",
+};
+
+function statsOf(f) {
+  const out = { h: {}, a: {} };
+  const list = f.statistics || [];
+  for (const t of list) {
+    const side = t.team && t.team.id === f.teams.home.id ? "h" : "a";
+    for (const s of t.statistics || []) {
+      const k = STAT_KEYS[s.type];
+      if (!k) continue;
+      let v = s.value;
+      if (typeof v === "string") v = parseFloat(v);
+      out[side][k] = v == null || Number.isNaN(v) ? null : v;
+    }
+  }
+  return list.length ? out : null;
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
@@ -52,6 +73,24 @@ export default {
             p: e.player && e.player.name,
           })),
       }));
+      // Live statistics for all matches in play: one extra call, cached for 60 seconds.
+      const ids = matches.map((m) => m.id).sort((a, b) => a - b).slice(0, 20);
+      if (ids.length) {
+        try {
+          const r2 = await fetch(`https://v3.football.api-sports.io/fixtures?ids=${ids.join("-")}`, {
+            headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
+            cf: { cacheTtl: 60, cacheEverything: true },
+          });
+          if (r2.ok) {
+            const j2 = await r2.json();
+            const byId = Object.fromEntries(matches.map((m) => [m.id, m]));
+            for (const f of j2.response || []) {
+              const m = byId[f.fixture.id];
+              if (m) m.sx = statsOf(f);
+            }
+          }
+        } catch (e) { /* statistics are optional */ }
+      }
       return json({ ts: Date.now(), matches }, cors, 20);
     } catch (e) {
       return json({ ts: Date.now(), matches: [], error: "failed" }, cors, 10);
