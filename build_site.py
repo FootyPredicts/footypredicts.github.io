@@ -422,7 +422,6 @@ def render_match(f, i):
     return f"""
     <article id="m{i}" class="match" role="tabpanel" data-fid="{f["id"]}" hidden>
       <header class="match-head">
-        <div class="live-box" data-fid="{f["id"]}" hidden></div>
         <div class="kick">{esc(day)} · {esc(time_)} <button type="button" class="fav-btn" data-fav="{f["id"]}" aria-pressed="false">&#9734; Track this match</button></div>
         <h2 class="fixture"><span>{esc(home)}</span><span class="vs">v</span><span>{esc(away)}</span></h2>
         {ref}
@@ -1499,11 +1498,6 @@ __DECOR__
       }
       mine.hidden = !fm.length;
     }
-    document.querySelectorAll('.live-box').forEach(function (bx) {
-      var m = state[bx.dataset.fid]; bx.textContent = '';
-      if (m) bx.appendChild(box(m));
-      bx.hidden = !m;
-    });
     document.querySelectorAll('.fav-btn').forEach(function (bt) {
       var on = isFav(bt.dataset.fav);
       bt.classList.toggle('on', on); bt.setAttribute('aria-pressed', on ? 'true' : 'false');

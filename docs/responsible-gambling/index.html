@@ -763,11 +763,6 @@ a.chip { text-decoration:none; }
       }
       mine.hidden = !fm.length;
     }
-    document.querySelectorAll('.live-box').forEach(function (bx) {
-      var m = state[bx.dataset.fid]; bx.textContent = '';
-      if (m) bx.appendChild(box(m));
-      bx.hidden = !m;
-    });
     document.querySelectorAll('.fav-btn').forEach(function (bt) {
       var on = isFav(bt.dataset.fav);
       bt.classList.toggle('on', on); bt.setAttribute('aria-pressed', on ? 'true' : 'false');
