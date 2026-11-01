@@ -23,7 +23,7 @@ SHOW_TRACK_RECORD = os.environ.get("SHOW_TRACK_RECORD") == "1"
 SITE_DATA = os.path.join(BASE_DIR, "data", "site")
 OUT_DIR = os.path.join(BASE_DIR, "docs")
 # Public address of the site (used for sharing previews and the sitemap). Change if you buy a domain.
-SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.github.io/").rstrip("/") + "/"
+SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.com/").rstrip("/") + "/"
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
 
