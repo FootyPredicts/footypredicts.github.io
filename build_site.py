@@ -13,7 +13,7 @@ import json
 import re
 import unicodedata
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from html import escape
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -711,11 +711,27 @@ def build():
                 leagues.append(d)
     if not leagues:
         raise SystemExit("No prediction files in data/site/ - run: python -m pipeline.run")
+    # Picks for the live strip. A pick is refreshed until kick-off and then frozen, so the
+    # "We said ..." label keeps showing what was published before the match started.
+    keep_path = os.path.join(BASE_DIR, "data", "live_picks.json")
+    try:
+        with open(keep_path, encoding="utf-8") as fh:
+            saved = json.load(fh)
+    except (FileNotFoundError, ValueError):
+        saved = {}
+    now_utc = datetime.now(timezone.utc)
     LIVE_PICKS.clear()
+    LIVE_PICKS.update({k: v for k, v in saved.items()
+                       if now_utc - datetime.fromisoformat(v["ko"].replace("Z", "+00:00")) < timedelta(hours=30)})
     for d in leagues:
         for f in d["fixtures"]:
-            LIVE_PICKS[str(f["id"])] = {"h": f["home"], "a": f["away"], "pk": f["pick"],
-                                        "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"])}
+            ko = datetime.fromisoformat(f["kickoff"]).replace(tzinfo=timezone.utc)
+            if ko > now_utc or str(f["id"]) not in LIVE_PICKS:
+                LIVE_PICKS[str(f["id"])] = {"h": f["home"], "a": f["away"], "pk": f["pick"],
+                                            "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"])}
+    os.makedirs(os.path.dirname(keep_path), exist_ok=True)
+    with open(keep_path, "w", encoding="utf-8") as fh:
+        json.dump(LIVE_PICKS, fh)
     updated = max(datetime.fromisoformat(d["updated"]) for d in leagues).astimezone()
     upd = updated.strftime("%d %b, %H:%M")
 
