@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import result_model as rm  # noqa: E402
 
 FINISHED = {"FT", "AET", "PEN"}
-UPCOMING = {"NS", "TBD"}
+UPCOMING = {"NS", "TBD", "1H", "HT", "2H", "ET", "BT", "P", "INT", "LIVE"}  # includes in-play, so a card stays up while its match is on
 
 
 # ---------------------------------------------------------------- loading
