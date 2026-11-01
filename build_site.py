@@ -480,7 +480,11 @@ def render_match(f, i):
     pl = f["players"]
     def dfd(side):
         d = pl[side].get("defender")
-        return f"<span>{esc(d['name'])} <small>{d['sot']} on target</small></span>" if d else '<span class="none">No pick</span>'
+        if not d:
+            return '<span class="none">No pick</span>'
+        num = shirt(d.get("id"))
+        tag = shirt_html(num, f[side]) if num is not None else ""
+        return f"<span>{tag}{esc(d['name'])} <small>{d['sot']} on target</small></span>"
     players = mirror([
         ("To score", names(f, pl["home"]["scorers"], home, "scorer"), names(f, pl["away"]["scorers"], away, "scorer")),
         ("To be booked", names(f, pl["home"]["bookings"], home, "booked"), names(f, pl["away"]["bookings"], away, "booked")),
