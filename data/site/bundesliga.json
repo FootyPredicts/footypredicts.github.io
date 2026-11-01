@@ -3,465 +3,9 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-01T16:25:02.863541+00:00",
+ "updated": "2026-11-01T16:42:56.337647+00:00",
  "matches_used": 687,
  "fixtures": [
-  {
-   "id": 1575205,
-   "kickoff": "2026-11-01T16:30:00",
-   "round": "Regular Season - 8",
-   "home": "Eintracht Frankfurt",
-   "away": "Hamburger SV",
-   "referee": "F. Exner",
-   "ref_cards": 5.04,
-   "ref_games": 26,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 62.0,
-    "draw": 20.6,
-    "away": 17.5
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    },
-    "away": {
-     "goals_lost_pct": 14.8,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "Fábio Vieira",
-      "N. Capaldo",
-      "Y. Poulsen"
-     ]
-    }
-   },
-   "home_pct": 61.9,
-   "draw_pct": 21.8,
-   "away_pct": 16.3,
-   "xg_home": 2.1,
-   "xg_away": 1.0,
-   "over25": 59.9,
-   "btts": 56.2,
-   "cards5": 45.5,
-   "cards": {
-    "exp": 4.5,
-    "home": 2.09,
-    "away": 2.41,
-    "over": {
-     "2.5": 78.9,
-     "3.5": 62.6,
-     "4.5": 45.5,
-     "5.5": 30.6,
-     "6.5": 19.1
-    }
-   },
-   "form": {
-    "home": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 66.66666666666666,
-     "btts": 66.66666666666666
-    },
-    "away": {
-     "played": 4,
-     "win": 25.0,
-     "over25": 50.0,
-     "btts": 25.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 49.58333873312112,
-     "sh": 60.913534874369276,
-     "any": 80.29390927641401
-    },
-    "away": {
-     "fh": 45.45044361797566,
-     "sh": 58.471401632221955,
-     "any": 77.34633381870447
-    },
-    "match_fh": 72.49793493628968,
-    "match_sh": 83.76793888181518
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 25926,
-       "name": "J. Burkardt",
-       "p": 36.4,
-       "price": {
-        "odd": 2.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.0
-        }
-       }
-      },
-      {
-       "id": 339887,
-       "name": "C. Uzun",
-       "p": 24.7,
-       "price": {
-        "odd": 2.6,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.6
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 162219,
-       "name": "R. Onyedika",
-       "p": 40.0,
-       "price": null
-      },
-      {
-       "id": 269531,
-       "name": "N. Collins",
-       "p": 19.8,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 26238,
-      "name": "R. Koch",
-      "sot": 3
-     }
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 263177,
-       "name": "A. Grønbæk",
-       "p": 15.7,
-       "price": null
-      },
-      {
-       "id": 69971,
-       "name": "T. Moffi",
-       "p": 15.4,
-       "price": {
-        "odd": 3.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 1427,
-       "name": "A. Sambi Lokonga",
-       "p": 27.2,
-       "price": null
-      },
-      {
-       "id": 162265,
-       "name": "W. Omari",
-       "p": 18.6,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 1408,
-      "name": "S. Bornauw",
-      "sot": 1
-     }
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 162771,
-      "name": "J. Ngankam",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 5973,
-      "name": "N. Capaldo",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 283216,
-      "name": "B. Nadir",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 1167,
-      "name": "Y. Poulsen",
-      "type": "Missing Fixture",
-      "reason": "Hip Injury"
-     },
-     {
-      "id": 260898,
-      "name": "N. Remberg",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 41725,
-      "name": "F. Vieira",
-      "type": "Missing Fixture",
-      "reason": "Thigh Injury"
-     },
-     {
-      "id": 14335,
-      "name": "M. Vuskovic",
-      "type": "Missing Fixture",
-      "reason": "Doping"
-     },
-     {
-      "id": 1408,
-      "name": "S. Bornauw",
-      "type": "Questionable",
-      "reason": "Face Injury"
-     }
-    ]
-   },
-   "previous": [
-    {
-     "date": "02/05/2026",
-     "home": "Eintracht Frankfurt",
-     "away": "Hamburger SV",
-     "hg": 1,
-     "ag": 2,
-     "ht": [
-      0,
-      0
-     ],
-     "ref": "D. Aytekin",
-     "sx": {
-      "h": {
-       "pos": 64.0,
-       "xg": 0.65,
-       "sh": 8.0,
-       "sot": 5.0,
-       "co": 9.0,
-       "fo": 13.0,
-       "of": 0.0,
-       "sv": 2.0,
-       "pp": 86.0,
-       "yc": 6.0,
-       "rc": 1.0
-      },
-      "a": {
-       "pos": 36.0,
-       "xg": 0.62,
-       "sh": 9.0,
-       "sot": 4.0,
-       "co": 4.0,
-       "fo": 5.0,
-       "of": 2.0,
-       "sv": 4.0,
-       "pp": 82.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "20/12/2025",
-     "home": "Hamburger SV",
-     "away": "Eintracht Frankfurt",
-     "hg": 1,
-     "ag": 1,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "T. Stieler",
-     "sx": {
-      "h": {
-       "pos": 40.0,
-       "xg": 0.75,
-       "sh": 9.0,
-       "sot": 3.0,
-       "co": 5.0,
-       "fo": 8.0,
-       "of": 3.0,
-       "sv": 1.0,
-       "pp": 78.0,
-       "yc": 0.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 60.0,
-       "xg": 1.59,
-       "sh": 9.0,
-       "sot": 3.0,
-       "co": 5.0,
-       "fo": 12.0,
-       "of": 0.0,
-       "sv": 1.0,
-       "pp": 84.0,
-       "yc": 0.0,
-       "rc": 0.0
-      }
-     }
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 1.59,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 1.53,
-      "Bet365": 1.53,
-      "Betfair": 1.5,
-      "BetVictor": 1.5
-     }
-    },
-    "draw": {
-     "odd": 4.93,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 4.4,
-      "Bet365": 4.75,
-      "Betfair": 4.5,
-      "BetVictor": 4.6
-     }
-    },
-    "away": {
-     "odd": 5.73,
-     "bookie": "Pinnacle",
-     "books": {
-      "William Hill": 5.0,
-      "Bet365": 5.5,
-      "Betfair": 5.5,
-      "BetVictor": 5.5
-     }
-    },
-    "over25": {
-     "odd": 1.42,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 1.4,
-      "Betfair": 1.36,
-      "BetVictor": 1.4
-     }
-    },
-    "under25": {
-     "odd": 3.0,
-     "bookie": "Bet365",
-     "books": {
-      "Bet365": 3.0,
-      "Betfair": 2.88,
-      "BetVictor": 2.68
-     }
-    },
-    "btts_yes": {
-     "odd": 1.5,
-     "bookie": "Bet365",
-     "books": {
-      "William Hill": 1.44,
-      "Bet365": 1.5,
-      "Betfair": 1.44,
-      "BetVictor": 1.45
-     }
-    },
-    "btts_no": {
-     "odd": 2.63,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 2.62,
-      "Bet365": 2.5,
-      "Betfair": 2.63,
-      "BetVictor": 2.5
-     }
-    },
-    "cards_over45": {
-     "odd": 2.34,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 1.83
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.29,
-       "bookie": "Pinnacle",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.75,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.67,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 1.67
-       }
-      },
-      "under": {
-       "odd": 2.35,
-       "bookie": "Betano",
-       "books": {
-        "Bet365": 2.1
-       }
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 2.34,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.83
-       }
-      },
-      "under": {
-       "odd": 1.83,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 1.83
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 2.95,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.36,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 4.4,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.19,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1575218,
    "kickoff": "2026-11-06T19:30:00",
@@ -528,7 +72,7 @@
    },
    "goals": {
     "home": {
-     "fh": 46.85177944800735,
+     "fh": 46.851779448007356,
      "sh": 52.64953675050974,
      "any": 74.83407135977069
     },
@@ -537,7 +81,7 @@
      "sh": 58.1444064775316,
      "any": 78.65949508414057
     },
-    "match_fh": 72.901833028598,
+    "match_fh": 72.90183302859802,
     "match_sh": 80.18118257128756
    },
    "players": {
@@ -3079,8 +2623,8 @@
    "goals": {
     "home": {
      "fh": 54.267132312500735,
-     "sh": 62.113988634657225,
-     "any": 82.67364055021686
+     "sh": 62.11398863465721,
+     "any": 82.67364055021685
     },
     "away": {
      "fh": 34.91081403011258,
@@ -3505,11 +3049,11 @@
     },
     "away": {
      "fh": 34.3339564660612,
-     "sh": 40.93139306483731,
+     "sh": 40.931393064837316,
      "any": 61.21198285506488
     },
     "match_fh": 71.01046531658542,
-    "match_sh": 72.42430160655205
+    "match_sh": 72.42430160655206
    },
    "players": {
     "home": {
@@ -3698,6 +3242,232 @@
      }
     }
    }
+  },
+  {
+   "id": 1575221,
+   "kickoff": "2026-11-20T19:30:00",
+   "round": "Regular Season - 10",
+   "home": "Bayern München",
+   "away": "1. FC Köln",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 91.1,
+   "draw_pct": 6.2,
+   "away_pct": 2.7,
+   "xg_home": 4.18,
+   "xg_away": 0.8,
+   "over25": 87.3,
+   "btts": 54.4,
+   "cards5": 35.3,
+   "cards": {
+    "exp": 3.9,
+    "home": 1.67,
+    "away": 2.23,
+    "over": {
+     "2.5": 71.4,
+     "3.5": 52.7,
+     "4.5": 35.3,
+     "5.5": 21.7,
+     "6.5": 12.3
+    }
+   },
+   "form": {
+    "home": {
+     "played": 4,
+     "win": 75.0,
+     "over25": 100.0,
+     "btts": 75.0
+    },
+    "away": {
+     "played": 4,
+     "win": 0.0,
+     "over25": 50.0,
+     "btts": 75.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 68.05570146151481,
+     "sh": 81.94531008516779,
+     "any": 94.23255595340822
+    },
+    "away": {
+     "fh": 40.40789331290786,
+     "sh": 53.452918597593836,
+     "any": 72.26161359095049
+    },
+    "match_fh": 80.9637195345027,
+    "match_sh": 91.59606878839104
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 19617,
+       "name": "M. Olise",
+       "p": 36.9
+      },
+      {
+       "id": 184,
+       "name": "H. Kane",
+       "p": 29.5
+      }
+     ],
+     "bookings": [
+      {
+       "id": 1157,
+       "name": "K. Laimer",
+       "p": 25.0
+      },
+      {
+       "id": 1149,
+       "name": "D. Upamecano",
+       "p": 19.6
+      }
+     ],
+     "defender": {
+      "id": 1149,
+      "name": "D. Upamecano",
+      "sot": 6
+     }
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 432310,
+       "name": "S. El Mala",
+       "p": 17.6
+      },
+      {
+       "id": 93016,
+       "name": "T. Dallinga",
+       "p": 17.0
+      }
+     ],
+     "bookings": [
+      {
+       "id": 7578,
+       "name": "G. Mensah",
+       "p": 27.6
+      },
+      {
+       "id": 1156,
+       "name": "T. Krauß",
+       "p": 20.8
+      }
+     ],
+     "defender": {
+      "id": 191740,
+      "name": "S. Sebulonsen",
+      "sot": 1
+     }
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [
+    {
+     "date": "16/05/2026",
+     "home": "Bayern München",
+     "away": "1. FC Köln",
+     "hg": 5,
+     "ag": 1,
+     "ht": [
+      3,
+      1
+     ],
+     "ref": "D. Aytekin",
+     "sx": {
+      "h": {
+       "pos": 69.0,
+       "xg": 3.05,
+       "sh": 19.0,
+       "sot": 7.0,
+       "co": 5.0,
+       "fo": 6.0,
+       "of": 5.0,
+       "sv": 1.0,
+       "pp": 91.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 31.0,
+       "xg": 0.98,
+       "sh": 9.0,
+       "sot": 2.0,
+       "co": 5.0,
+       "fo": 4.0,
+       "of": 1.0,
+       "sv": 2.0,
+       "pp": 81.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     }
+    },
+    {
+     "date": "14/01/2026",
+     "home": "1. FC Köln",
+     "away": "Bayern München",
+     "hg": 1,
+     "ag": 3,
+     "ht": [
+      1,
+      1
+     ],
+     "ref": "P. Ittrich",
+     "sx": {
+      "h": {
+       "pos": 28.0,
+       "xg": 0.72,
+       "sh": 8.0,
+       "sot": 3.0,
+       "co": 4.0,
+       "fo": 3.0,
+       "of": 3.0,
+       "sv": 5.0,
+       "pp": 70.0,
+       "yc": 0.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 72.0,
+       "xg": 1.5,
+       "sh": 19.0,
+       "sot": 8.0,
+       "co": 6.0,
+       "fo": 4.0,
+       "of": 5.0,
+       "sv": 2.0,
+       "pp": 89.0,
+       "yc": 0.0,
+       "rc": 0.0
+      }
+     }
+    }
+   ],
+   "odds": null
   }
  ]
 }
