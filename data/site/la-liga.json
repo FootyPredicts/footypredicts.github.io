@@ -3,373 +3,9 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-01T13:48:57.749461+00:00",
- "matches_used": 864,
+ "updated": "2026-11-01T16:24:49.623908+00:00",
+ "matches_used": 865,
  "fixtures": [
-  {
-   "id": 1570440,
-   "kickoff": "2026-11-01T15:15:00",
-   "round": "Regular Season - 11",
-   "home": "Racing Santander",
-   "away": "Real Madrid",
-   "referee": "J. Luis Munuera Montero",
-   "ref_cards": 4.43,
-   "ref_games": 14,
-   "pick": "Away",
-   "model_pick": "Away",
-   "call_reason": "",
-   "low_data": true,
-   "market": {
-    "home": 9.1,
-    "draw": 12.5,
-    "away": 78.5
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 4.6,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "Andrés Martín",
-      "Jorge Salinas"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 3.7,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 9.0,
-   "draw_pct": 12.9,
-   "away_pct": 78.1,
-   "xg_home": 1.14,
-   "xg_away": 3.28,
-   "over25": 81.7,
-   "btts": 65.7,
-   "cards5": 52.4,
-   "cards": {
-    "exp": 4.91,
-    "home": 2.73,
-    "away": 2.19,
-    "over": {
-     "2.5": 83.3,
-     "3.5": 68.8,
-     "4.5": 52.4,
-     "5.5": 37.0,
-     "6.5": 24.3
-    }
-   },
-   "form": {
-    "home": {
-     "played": 5,
-     "win": 60.0,
-     "over25": 100.0,
-     "btts": 100.0
-    },
-    "away": {
-     "played": 5,
-     "win": 60.0,
-     "over25": 80.0,
-     "btts": 80.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 51.63122811421068,
-     "sh": 41.84772955489664,
-     "any": 71.87246096200067
-    },
-    "away": {
-     "fh": 65.24483893896212,
-     "sh": 71.2437712338152,
-     "any": 90.00572637723197
-    },
-    "match_fh": 83.18935542784791,
-    "match_sh": 83.27760007807561
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 457101,
-       "name": "M. Zabiri",
-       "p": 29.7,
-       "price": null
-      },
-      {
-       "id": 1570,
-       "name": "Sergio Canales",
-       "p": 10.5,
-       "price": {
-        "odd": 4.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 46734,
-       "name": "Pablo Ramón",
-       "p": 29.9,
-       "price": null
-      },
-      {
-       "id": 457101,
-       "name": "M. Zabiri",
-       "p": 23.9,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 343316,
-      "name": "J. Belocian",
-      "sot": 3
-     }
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 278,
-       "name": "Kylian Mbappé",
-       "p": 64.4,
-       "price": {
-        "odd": 1.3,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 1.3
-        }
-       }
-      },
-      {
-       "id": 129718,
-       "name": "J. Bellingham",
-       "p": 23.6,
-       "price": {
-        "odd": 2.75,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.75
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 1145,
-       "name": "I. Konaté",
-       "p": 29.3,
-       "price": null
-      },
-      {
-       "id": 361497,
-       "name": "D. Huijsen",
-       "p": 25.1,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 361497,
-      "name": "D. Huijsen",
-      "sot": 2
-     }
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 47209,
-      "name": "A. Martin",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 482469,
-      "name": "J. Salinas",
-      "type": "Missing Fixture",
-      "reason": "Yellow Cards"
-     }
-    ],
-    "away": [
-     {
-      "id": 341640,
-      "name": "R. Asencio",
-      "type": "Missing Fixture",
-      "reason": "Broken Leg"
-     },
-     {
-      "id": 653,
-      "name": "F. Mendy",
-      "type": "Missing Fixture",
-      "reason": "Hip Injury"
-     },
-     {
-      "id": 10009,
-      "name": "Rodrygo",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 756,
-      "name": "F. Valverde",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury"
-     },
-     {
-      "id": 762,
-      "name": "Vinicius Junior",
-      "type": "Missing Fixture",
-      "reason": "Red Card"
-     }
-    ]
-   },
-   "previous": [],
-   "odds": {
-    "home": {
-     "odd": 12.0,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 9.5,
-      "Bet365": 9.0,
-      "Betfair": 12.0,
-      "BetVictor": 11.5
-     }
-    },
-    "draw": {
-     "odd": 8.5,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 7.0,
-      "Bet365": 7.5,
-      "Betfair": 8.5,
-      "BetVictor": 7.5
-     }
-    },
-    "away": {
-     "odd": 1.26,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 1.22,
-      "Bet365": 1.25,
-      "Betfair": 1.18,
-      "BetVictor": 1.2
-     }
-    },
-    "over25": {
-     "odd": 1.22,
-     "bookie": "Betano",
-     "books": {
-      "Bet365": 1.2,
-      "Betfair": 1.2,
-      "BetVictor": 1.18
-     }
-    },
-    "under25": {
-     "odd": 4.8,
-     "bookie": "BetVictor",
-     "books": {
-      "Bet365": 4.5,
-      "Betfair": 4.33,
-      "BetVictor": 4.8
-     }
-    },
-    "btts_yes": {
-     "odd": 1.57,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 1.44,
-      "Bet365": 1.5,
-      "Betfair": 1.57,
-      "BetVictor": 1.45
-     }
-    },
-    "btts_no": {
-     "odd": 2.62,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 2.62,
-      "Bet365": 2.5,
-      "Betfair": 2.3,
-      "BetVictor": 2.5
-     }
-    },
-    "cards_over45": {
-     "odd": 2.25,
-     "bookie": "Betano",
-     "books": {
-      "Bet365": 1.83
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.28,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.45,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.62,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 2.53,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 2.25,
-       "bookie": "Betano",
-       "books": {
-        "Bet365": 1.83
-       }
-      },
-      "under": {
-       "odd": 1.83,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 1.83
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 3.25,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.4,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 4.9,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.16,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1570437,
    "kickoff": "2026-11-01T17:30:00",
@@ -384,9 +20,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 40.9,
-    "draw": 28.3,
-    "away": 30.8
+    "home": 40.8,
+    "draw": 28.0,
+    "away": 31.2
    },
    "injury_effect": {
     "home": {
@@ -402,13 +38,13 @@
      ]
     }
    },
-   "home_pct": 51.2,
+   "home_pct": 51.3,
    "draw_pct": 26.9,
-   "away_pct": 21.9,
-   "xg_home": 1.6,
+   "away_pct": 21.8,
+   "xg_home": 1.61,
    "xg_away": 0.97,
    "over25": 47.5,
-   "btts": 50.6,
+   "btts": 50.5,
    "cards5": 49.6,
    "cards": {
     "exp": 4.74,
@@ -456,7 +92,7 @@
       {
        "id": 184277,
        "name": "Fer Niño",
-       "p": 35.9,
+       "p": 35.8,
        "price": {
         "odd": 2.6,
         "bookie": "Bet365",
@@ -488,7 +124,7 @@
       {
        "id": 311345,
        "name": "F. Redondo",
-       "p": 25.9,
+       "p": 25.8,
        "price": null
       }
      ],
@@ -600,14 +236,80 @@
      "home": "Elche",
      "away": "Valencia",
      "hg": 1,
-     "ag": 0
+     "ag": 0,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "F. Maeso",
+     "sx": {
+      "h": {
+       "pos": 57.0,
+       "xg": 0.59,
+       "sh": 8.0,
+       "sot": 2.0,
+       "co": 5.0,
+       "fo": 15.0,
+       "of": 4.0,
+       "sv": 7.0,
+       "pp": 85.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 43.0,
+       "xg": 2.54,
+       "sh": 22.0,
+       "sot": 8.0,
+       "co": 9.0,
+       "fo": 18.0,
+       "of": 3.0,
+       "sv": 2.0,
+       "pp": 85.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "10/01/2026",
      "home": "Valencia",
      "away": "Elche",
      "hg": 1,
-     "ag": 1
+     "ag": 1,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "M. Angel Ortiz Arias",
+     "sx": {
+      "h": {
+       "pos": 39.0,
+       "xg": 1.96,
+       "sh": 16.0,
+       "sot": 4.0,
+       "co": 8.0,
+       "fo": 14.0,
+       "of": 3.0,
+       "sv": 0.0,
+       "pp": 77.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 61.0,
+       "xg": 0.16,
+       "sh": 5.0,
+       "sot": 1.0,
+       "co": 6.0,
+       "fo": 14.0,
+       "of": 5.0,
+       "sv": 3.0,
+       "pp": 86.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     }
     }
    ],
    "odds": {
@@ -623,22 +325,22 @@
     },
     "draw": {
      "odd": 3.5,
-     "bookie": "1xBet",
+     "bookie": "BetVictor",
      "books": {
       "William Hill": 3.25,
       "Bet365": 3.4,
       "Betfair": 3.3,
-      "BetVictor": 3.4
+      "BetVictor": 3.5
      }
     },
     "away": {
-     "odd": 3.23,
+     "odd": 3.22,
      "bookie": "Pinnacle",
      "books": {
       "William Hill": 3.0,
       "Bet365": 3.0,
-      "Betfair": 3.2,
-      "BetVictor": 3.1
+      "Betfair": 3.1,
+      "BetVictor": 3.0
      }
     },
     "over25": {
@@ -647,7 +349,7 @@
      "books": {
       "Bet365": 1.91,
       "Betfair": 1.9,
-      "BetVictor": 1.86
+      "BetVictor": 1.87
      }
     },
     "under25": {
@@ -768,7 +470,7 @@
    "market": {
     "home": 48.1,
     "draw": 26.4,
-    "away": 25.6
+    "away": 25.5
    },
    "injury_effect": {
     "home": {
@@ -782,20 +484,20 @@
      "key_out": []
     }
    },
-   "home_pct": 47.0,
+   "home_pct": 47.1,
    "draw_pct": 25.8,
-   "away_pct": 27.2,
+   "away_pct": 27.1,
    "xg_home": 1.68,
-   "xg_away": 1.24,
-   "over25": 55.9,
-   "btts": 58.7,
+   "xg_away": 1.23,
+   "over25": 55.7,
+   "btts": 58.5,
    "cards5": 52.0,
    "cards": {
     "exp": 4.89,
     "home": 2.37,
     "away": 2.52,
     "over": {
-     "2.5": 83.1,
+     "2.5": 83.2,
      "3.5": 68.5,
      "4.5": 52.0,
      "5.5": 36.6,
@@ -836,7 +538,7 @@
       {
        "id": 30510,
        "name": "Álex Berenguer",
-       "p": 24.6,
+       "p": 24.5,
        "price": {
         "odd": 4.0,
         "bookie": "Bet365",
@@ -974,28 +676,160 @@
      "home": "Athletic Club",
      "away": "Real Sociedad",
      "hg": 1,
-     "ag": 1
+     "ag": 1,
+     "ht": [
+      0,
+      1
+     ],
+     "ref": "G. Cuadra",
+     "sx": {
+      "h": {
+       "pos": 55.0,
+       "xg": 0.97,
+       "sh": 19.0,
+       "sot": 4.0,
+       "co": 6.0,
+       "fo": 14.0,
+       "of": 3.0,
+       "sv": 4.0,
+       "pp": 79.0,
+       "yc": 4.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 45.0,
+       "xg": 1.66,
+       "sh": 8.0,
+       "sot": 6.0,
+       "co": 3.0,
+       "fo": 14.0,
+       "of": 5.0,
+       "sv": 3.0,
+       "pp": 76.0,
+       "yc": 2.0,
+       "rc": 1.0
+      }
+     }
     },
     {
      "date": "01/11/2025",
      "home": "Real Sociedad",
      "away": "Athletic Club",
      "hg": 3,
-     "ag": 2
+     "ag": 2,
+     "ht": [
+      1,
+      1
+     ],
+     "ref": "J. Luis Munuera Montero",
+     "sx": {
+      "h": {
+       "pos": 51.0,
+       "xg": 1.52,
+       "sh": 9.0,
+       "sot": 5.0,
+       "co": 6.0,
+       "fo": 20.0,
+       "of": 3.0,
+       "sv": 2.0,
+       "pp": 74.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 49.0,
+       "xg": 0.83,
+       "sh": 11.0,
+       "sot": 4.0,
+       "co": 2.0,
+       "fo": 8.0,
+       "of": 1.0,
+       "sv": 2.0,
+       "pp": 77.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "04/05/2025",
      "home": "Real Sociedad",
      "away": "Athletic Club",
      "hg": 0,
-     "ag": 0
+     "ag": 0,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "C. Soto",
+     "sx": {
+      "h": {
+       "pos": 59.0,
+       "xg": 0.92,
+       "sh": 12.0,
+       "sot": 3.0,
+       "co": 7.0,
+       "fo": 18.0,
+       "of": 3.0,
+       "sv": 1.0,
+       "pp": 81.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 41.0,
+       "xg": 0.17,
+       "sh": 3.0,
+       "sot": 1.0,
+       "co": 3.0,
+       "fo": 13.0,
+       "of": 1.0,
+       "sv": 3.0,
+       "pp": 74.0,
+       "yc": 2.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "24/11/2024",
      "home": "Athletic Club",
      "away": "Real Sociedad",
      "hg": 1,
-     "ag": 0
+     "ag": 0,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "G. Manzano",
+     "sx": {
+      "h": {
+       "pos": 40.0,
+       "xg": 1.34,
+       "sh": 12.0,
+       "sot": 4.0,
+       "co": 4.0,
+       "fo": 18.0,
+       "of": 1.0,
+       "sv": 1.0,
+       "pp": 73.0,
+       "yc": 3.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 60.0,
+       "xg": 0.7,
+       "sh": 6.0,
+       "sot": 1.0,
+       "co": 4.0,
+       "fo": 9.0,
+       "of": 3.0,
+       "sv": 3.0,
+       "pp": 83.0,
+       "yc": 4.0,
+       "rc": 0.0
+      }
+     }
     }
    ],
    "odds": {
@@ -1013,24 +847,24 @@
      "odd": 3.76,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 3.4,
+      "William Hill": 3.5,
       "Bet365": 3.7,
       "Betfair": 3.6,
-      "BetVictor": 3.7
+      "BetVictor": 3.6
      }
     },
     "away": {
-     "odd": 3.95,
+     "odd": 3.88,
      "bookie": "Pinnacle",
      "books": {
       "William Hill": 3.6,
       "Bet365": 3.75,
       "Betfair": 3.8,
-      "BetVictor": 3.7
+      "BetVictor": 3.75
      }
     },
     "over25": {
-     "odd": 1.85,
+     "odd": 1.84,
      "bookie": "Pinnacle",
      "books": {
       "Bet365": 1.8,
@@ -1111,15 +945,15 @@
      },
      "5.5": {
       "over": {
-       "odd": 1.67,
-       "bookie": "Bet365",
+       "odd": 1.74,
+       "bookie": "Pinnacle",
        "books": {
         "Bet365": 1.67
        }
       },
       "under": {
-       "odd": 2.25,
-       "bookie": "Pinnacle",
+       "odd": 2.15,
+       "bookie": "Betano",
        "books": {
         "Bet365": 2.1
        }
@@ -1127,15 +961,15 @@
      },
      "6.5": {
       "over": {
-       "odd": 2.26,
+       "odd": 2.45,
        "bookie": "Pinnacle",
        "books": {
         "Bet365": 2.1
        }
       },
       "under": {
-       "odd": 1.83,
-       "bookie": "1xBet",
+       "odd": 1.67,
+       "bookie": "Bet365",
        "books": {
         "Bet365": 1.67
        }
@@ -1178,13 +1012,13 @@
     }
    },
    "home_pct": 45.7,
-   "draw_pct": 28.9,
-   "away_pct": 25.4,
+   "draw_pct": 29.0,
+   "away_pct": 25.3,
    "xg_home": 1.41,
-   "xg_away": 0.99,
-   "over25": 43.2,
-   "btts": 48.6,
-   "cards5": 50.5,
+   "xg_away": 0.98,
+   "over25": 42.8,
+   "btts": 48.3,
+   "cards5": 50.6,
    "cards": {
     "exp": 4.8,
     "home": 2.26,
@@ -1192,7 +1026,7 @@
     "over": {
      "2.5": 82.3,
      "3.5": 67.2,
-     "4.5": 50.5,
+     "4.5": 50.6,
      "5.5": 35.2,
      "6.5": 22.8
     }
@@ -1237,7 +1071,7 @@
       {
        "id": 188445,
        "name": "Luismi Cruz",
-       "p": 17.5,
+       "p": 17.4,
        "price": {
         "odd": 5.0,
         "bookie": "Bet365",
@@ -1272,7 +1106,7 @@
       {
        "id": 46746,
        "name": "A. Budimir",
-       "p": 31.8,
+       "p": 31.7,
        "price": {
         "odd": 2.6,
         "bookie": "Bet365",
@@ -1376,7 +1210,7 @@
      }
     },
     "draw": {
-     "odd": 3.42,
+     "odd": 3.45,
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.2,
@@ -1434,9 +1268,11 @@
      }
     },
     "cards_over45": {
-     "odd": 1.75,
-     "bookie": "Betano",
-     "books": {}
+     "odd": 1.8,
+     "bookie": "Bet365",
+     "books": {
+      "Bet365": 1.8
+     }
     },
     "cards": {
      "2.5": {
@@ -1465,14 +1301,18 @@
      },
      "4.5": {
       "over": {
-       "odd": 1.75,
-       "bookie": "Betano",
-       "books": {}
+       "odd": 1.8,
+       "bookie": "Bet365",
+       "books": {
+        "Bet365": 1.8
+       }
       },
       "under": {
        "odd": 2.05,
        "bookie": "Betano",
-       "books": {}
+       "books": {
+        "Bet365": 1.91
+       }
       }
      },
      "5.5": {
@@ -1516,9 +1356,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 45.8,
-    "draw": 28.6,
-    "away": 25.6
+    "home": 45.7,
+    "draw": 28.7,
+    "away": 25.5
    },
    "injury_effect": {
     "home": {
@@ -1532,24 +1372,24 @@
      "key_out": []
     }
    },
-   "home_pct": 47.5,
-   "draw_pct": 26.7,
-   "away_pct": 25.8,
+   "home_pct": 46.7,
+   "draw_pct": 26.5,
+   "away_pct": 26.7,
    "xg_home": 1.61,
-   "xg_away": 1.13,
-   "over25": 51.5,
-   "btts": 55.0,
-   "cards5": 51.2,
+   "xg_away": 1.17,
+   "over25": 52.6,
+   "btts": 56.1,
+   "cards5": 51.5,
    "cards": {
-    "exp": 4.84,
-    "home": 2.54,
-    "away": 2.3,
+    "exp": 4.85,
+    "home": 2.57,
+    "away": 2.29,
     "over": {
-     "2.5": 82.7,
-     "3.5": 67.7,
-     "4.5": 51.2,
-     "5.5": 35.8,
-     "6.5": 23.3
+     "2.5": 82.8,
+     "3.5": 68.0,
+     "4.5": 51.5,
+     "5.5": 36.1,
+     "6.5": 23.5
     }
    },
    "form": {
@@ -1568,17 +1408,17 @@
    },
    "goals": {
     "home": {
-     "fh": 37.02819698041991,
-     "sh": 59.52369485736783,
-     "any": 74.51134085597751
+     "fh": 37.6118524519784,
+     "sh": 59.02908217479668,
+     "any": 74.43900333543347
     },
     "away": {
-     "fh": 45.78137755385083,
-     "sh": 54.55484481387538,
-     "any": 75.36026288956852
+     "fh": 45.399557841456804,
+     "sh": 55.5255985325267,
+     "any": 75.71678015139396
     },
-    "match_fh": 65.8575558732811,
-    "match_sh": 81.60548031432147
+    "match_fh": 65.93579558425589,
+    "match_sh": 81.77842952151049
    },
    "players": {
     "home": {
@@ -1586,7 +1426,7 @@
       {
        "id": 135749,
        "name": "Félix Correia",
-       "p": 24.4,
+       "p": 24.3,
        "price": {
         "odd": 4.33,
         "bookie": "Bet365",
@@ -1645,7 +1485,7 @@
       {
        "id": 760,
        "name": "M. Díaz",
-       "p": 20.1,
+       "p": 22.7,
        "price": {
         "odd": 4.0,
         "bookie": "Bet365",
@@ -1657,15 +1497,15 @@
      ],
      "bookings": [
       {
-       "id": 6233,
-       "name": "N. Tenaglia",
-       "p": 22.8,
+       "id": 162686,
+       "name": "Antonio Blanco",
+       "p": 22.0,
        "price": null
       },
       {
-       "id": 183751,
-       "name": "A. Rebbach",
-       "p": 22.4,
+       "id": 6233,
+       "name": "N. Tenaglia",
+       "p": 21.5,
        "price": null
       }
      ],
@@ -1686,28 +1526,160 @@
      "home": "Sevilla",
      "away": "Alaves",
      "hg": 1,
-     "ag": 1
+     "ag": 1,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "I. Galech",
+     "sx": {
+      "h": {
+       "pos": 26.0,
+       "xg": 0.27,
+       "sh": 4.0,
+       "sot": 2.0,
+       "co": 0.0,
+       "fo": 16.0,
+       "of": 2.0,
+       "sv": 0.0,
+       "pp": 62.0,
+       "yc": 5.0,
+       "rc": 2.0
+      },
+      "a": {
+       "pos": 74.0,
+       "xg": 1.13,
+       "sh": 12.0,
+       "sot": 1.0,
+       "co": 3.0,
+       "fo": 13.0,
+       "of": 1.0,
+       "sv": 1.0,
+       "pp": 87.0,
+       "yc": 0.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "20/09/2025",
      "home": "Alaves",
      "away": "Sevilla",
      "hg": 1,
-     "ag": 2
+     "ag": 2,
+     "ht": [
+      1,
+      1
+     ],
+     "ref": "I. Galech Apezteguia",
+     "sx": {
+      "h": {
+       "pos": 48.0,
+       "xg": 0.95,
+       "sh": 8.0,
+       "sot": 5.0,
+       "co": 4.0,
+       "fo": 20.0,
+       "of": 3.0,
+       "sv": 1.0,
+       "pp": 78.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 52.0,
+       "xg": 0.48,
+       "sh": 9.0,
+       "sot": 3.0,
+       "co": 4.0,
+       "fo": 19.0,
+       "of": 4.0,
+       "sv": 4.0,
+       "pp": 80.0,
+       "yc": 7.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "20/04/2025",
      "home": "Sevilla",
      "away": "Alaves",
      "hg": 1,
-     "ag": 1
+     "ag": 1,
+     "ht": [
+      1,
+      1
+     ],
+     "ref": "M. Ortiz",
+     "sx": {
+      "h": {
+       "pos": 44.0,
+       "xg": 1.72,
+       "sh": 10.0,
+       "sot": 2.0,
+       "co": 3.0,
+       "fo": 10.0,
+       "of": 1.0,
+       "sv": 2.0,
+       "pp": 78.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 56.0,
+       "xg": 1.02,
+       "sh": 11.0,
+       "sot": 3.0,
+       "co": 6.0,
+       "fo": 11.0,
+       "of": 2.0,
+       "sv": 1.0,
+       "pp": 82.0,
+       "yc": 2.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "20/09/2024",
      "home": "Alaves",
      "away": "Sevilla",
      "hg": 2,
-     "ag": 1
+     "ag": 1,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "J. Alberola",
+     "sx": {
+      "h": {
+       "pos": 35.0,
+       "xg": 1.1,
+       "sh": 10.0,
+       "sot": 4.0,
+       "co": 3.0,
+       "fo": 11.0,
+       "of": 1.0,
+       "sv": 1.0,
+       "pp": 62.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 65.0,
+       "xg": 0.52,
+       "sh": 8.0,
+       "sot": 2.0,
+       "co": 5.0,
+       "fo": 16.0,
+       "of": 2.0,
+       "sv": 2.0,
+       "pp": 84.0,
+       "yc": 4.0,
+       "rc": 0.0
+      }
+     }
     }
    ],
    "odds": {
@@ -1728,7 +1700,7 @@
       "William Hill": 3.2,
       "Bet365": 3.3,
       "Betfair": 3.25,
-      "BetVictor": 3.2
+      "BetVictor": 3.13
      }
     },
     "away": {
@@ -1766,7 +1738,7 @@
       "William Hill": 1.91,
       "Bet365": 1.95,
       "Betfair": 1.91,
-      "BetVictor": 1.91
+      "BetVictor": 1.9
      }
     },
     "btts_no": {
@@ -1776,7 +1748,7 @@
       "William Hill": 1.85,
       "Bet365": 1.8,
       "Betfair": 1.8,
-      "BetVictor": 1.78
+      "BetVictor": 1.8
      }
     },
     "cards_over45": null,
@@ -1834,13 +1806,13 @@
      "key_out": []
     }
    },
-   "home_pct": 39.7,
-   "draw_pct": 24.0,
-   "away_pct": 36.3,
+   "home_pct": 39.8,
+   "draw_pct": 24.1,
+   "away_pct": 36.2,
    "xg_home": 1.76,
-   "xg_away": 1.68,
-   "over25": 66.7,
-   "btts": 68.1,
+   "xg_away": 1.67,
+   "over25": 66.5,
+   "btts": 67.9,
    "cards5": 52.6,
    "cards": {
     "exp": 4.93,
@@ -1848,7 +1820,7 @@
     "away": 2.63,
     "over": {
      "2.5": 83.5,
-     "3.5": 68.9,
+     "3.5": 69.0,
      "4.5": 52.6,
      "5.5": 37.2,
      "6.5": 24.5
@@ -1888,13 +1860,13 @@
       {
        "id": 386850,
        "name": "Adrián Niño Heredia",
-       "p": 37.2,
+       "p": 43.0,
        "price": null
       },
       {
        "id": 376401,
        "name": "Chupe",
-       "p": 25.2,
+       "p": 23.4,
        "price": null
       }
      ],
@@ -1902,13 +1874,13 @@
       {
        "id": 190253,
        "name": "David Larrubia",
-       "p": 22.6,
+       "p": 26.1,
        "price": null
       },
       {
        "id": 185096,
        "name": "Puga",
-       "p": 21.0,
+       "p": 20.3,
        "price": null
       }
      ],
@@ -1923,13 +1895,13 @@
       {
        "id": 457101,
        "name": "M. Zabiri",
-       "p": 42.1,
+       "p": 42.0,
        "price": null
       },
       {
        "id": 47209,
        "name": "Andrés Martín",
-       "p": 17.2,
+       "p": 17.1,
        "price": {
         "odd": 12.0,
         "bookie": "Bet365",
@@ -2002,7 +1974,7 @@
      "books": {
       "Bet365": 1.67,
       "Betfair": 1.6,
-      "BetVictor": 1.63
+      "BetVictor": 1.62
      }
     },
     "under25": {
@@ -2011,7 +1983,7 @@
      "books": {
       "Bet365": 2.2,
       "Betfair": 2.2,
-      "BetVictor": 2.1
+      "BetVictor": 2.12
      }
     },
     "btts_yes": {
@@ -2031,7 +2003,7 @@
       "William Hill": 2.38,
       "Bet365": 2.38,
       "Betfair": 2.4,
-      "BetVictor": 2.38
+      "BetVictor": 2.4
      }
     },
     "cards_over45": null,
@@ -2090,13 +2062,13 @@
     }
    },
    "home_pct": 40.0,
-   "draw_pct": 30.5,
-   "away_pct": 29.4,
-   "xg_home": 1.24,
+   "draw_pct": 30.6,
+   "away_pct": 29.3,
+   "xg_home": 1.23,
    "xg_away": 1.02,
-   "over25": 39.4,
-   "btts": 46.6,
-   "cards5": 52.2,
+   "over25": 39.1,
+   "btts": 46.3,
+   "cards5": 52.3,
    "cards": {
     "exp": 4.9,
     "home": 2.68,
@@ -2104,7 +2076,7 @@
     "over": {
      "2.5": 83.3,
      "3.5": 68.6,
-     "4.5": 52.2,
+     "4.5": 52.3,
      "5.5": 36.8,
      "6.5": 24.2
     }
@@ -2143,7 +2115,7 @@
       {
        "id": 312990,
        "name": "Roberto Fernández",
-       "p": 29.2,
+       "p": 29.1,
        "price": {
         "odd": 2.6,
         "bookie": "Bet365",
@@ -2155,7 +2127,7 @@
       {
        "id": 286639,
        "name": "Bryan Zaragoza",
-       "p": 15.0,
+       "p": 14.9,
        "price": {
         "odd": 3.4,
         "bookie": "Bet365",
@@ -2202,7 +2174,7 @@
       {
        "id": 295880,
        "name": "Peke",
-       "p": 11.2,
+       "p": 11.1,
        "price": null
       }
      ],
@@ -2356,14 +2328,14 @@
      "key_out": []
     }
    },
-   "home_pct": 34.5,
-   "draw_pct": 29.7,
-   "away_pct": 35.7,
+   "home_pct": 34.6,
+   "draw_pct": 29.8,
+   "away_pct": 35.6,
    "xg_home": 1.19,
    "xg_away": 1.21,
-   "over25": 43.1,
-   "btts": 50.0,
-   "cards5": 49.0,
+   "over25": 42.9,
+   "btts": 49.7,
+   "cards5": 49.1,
    "cards": {
     "exp": 4.7,
     "home": 2.51,
@@ -2371,9 +2343,9 @@
     "over": {
      "2.5": 81.4,
      "3.5": 65.9,
-     "4.5": 49.0,
+     "4.5": 49.1,
      "5.5": 33.7,
-     "6.5": 21.5
+     "6.5": 21.6
     }
    },
    "form": {
@@ -2457,7 +2429,7 @@
       {
        "id": 30510,
        "name": "Álex Berenguer",
-       "p": 23.7,
+       "p": 23.6,
        "price": {
         "odd": 4.5,
         "bookie": "Bet365",
@@ -2469,7 +2441,7 @@
       {
        "id": 84086,
        "name": "Robert Navarro",
-       "p": 20.7,
+       "p": 20.6,
        "price": {
         "odd": 3.75,
         "bookie": "Bet365",
@@ -2510,28 +2482,160 @@
      "home": "Athletic Club",
      "away": "Osasuna",
      "hg": 1,
-     "ag": 0
+     "ag": 0,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "V. Garcia",
+     "sx": {
+      "h": {
+       "pos": 35.0,
+       "xg": 0.54,
+       "sh": 7.0,
+       "sot": 2.0,
+       "co": 5.0,
+       "fo": 12.0,
+       "of": 0.0,
+       "sv": 2.0,
+       "pp": 78.0,
+       "yc": 3.0,
+       "rc": 1.0
+      },
+      "a": {
+       "pos": 65.0,
+       "xg": 1.21,
+       "sh": 8.0,
+       "sot": 3.0,
+       "co": 4.0,
+       "fo": 11.0,
+       "of": 0.0,
+       "sv": 2.0,
+       "pp": 84.0,
+       "yc": 2.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "03/01/2026",
      "home": "Osasuna",
      "away": "Athletic Club",
      "hg": 1,
-     "ag": 1
+     "ag": 1,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "J. Luis Munuera Montero",
+     "sx": {
+      "h": {
+       "pos": 49.0,
+       "xg": 0.67,
+       "sh": 11.0,
+       "sot": 4.0,
+       "co": 1.0,
+       "fo": 12.0,
+       "of": 2.0,
+       "sv": 5.0,
+       "pp": 79.0,
+       "yc": 3.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 51.0,
+       "xg": 1.46,
+       "sh": 16.0,
+       "sot": 6.0,
+       "co": 9.0,
+       "fo": 19.0,
+       "of": 0.0,
+       "sv": 3.0,
+       "pp": 80.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "30/03/2025",
      "home": "Athletic Club",
      "away": "Osasuna",
      "hg": 0,
-     "ag": 0
+     "ag": 0,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "G. Cuadra",
+     "sx": {
+      "h": {
+       "pos": 62.0,
+       "xg": 0.7,
+       "sh": 11.0,
+       "sot": 5.0,
+       "co": 3.0,
+       "fo": 12.0,
+       "of": 2.0,
+       "sv": 2.0,
+       "pp": 86.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 38.0,
+       "xg": 0.36,
+       "sh": 5.0,
+       "sot": 2.0,
+       "co": 4.0,
+       "fo": 12.0,
+       "of": 1.0,
+       "sv": 5.0,
+       "pp": 74.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "21/12/2024",
      "home": "Osasuna",
      "away": "Athletic Club",
      "hg": 1,
-     "ag": 2
+     "ag": 2,
+     "ht": [
+      1,
+      1
+     ],
+     "ref": "A. Quintero",
+     "sx": {
+      "h": {
+       "pos": 53.0,
+       "xg": 0.6,
+       "sh": 6.0,
+       "sot": 3.0,
+       "co": 4.0,
+       "fo": 10.0,
+       "of": 3.0,
+       "sv": 6.0,
+       "pp": 79.0,
+       "yc": 0.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 47.0,
+       "xg": 1.18,
+       "sh": 13.0,
+       "sot": 8.0,
+       "co": 3.0,
+       "fo": 13.0,
+       "of": 0.0,
+       "sv": 2.0,
+       "pp": 81.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     }
     }
    ],
    "odds": {
@@ -2556,7 +2660,7 @@
      }
     },
     "away": {
-     "odd": 2.23,
+     "odd": 2.24,
      "bookie": "Pinnacle",
      "books": {
       "William Hill": 2.15,
@@ -2658,20 +2762,20 @@
      "key_out": []
     }
    },
-   "home_pct": 16.2,
-   "draw_pct": 23.7,
-   "away_pct": 60.1,
+   "home_pct": 16.3,
+   "draw_pct": 23.8,
+   "away_pct": 59.9,
    "xg_home": 0.88,
-   "xg_away": 1.88,
-   "over25": 52.0,
-   "btts": 50.3,
+   "xg_away": 1.87,
+   "over25": 51.8,
+   "btts": 50.2,
    "cards5": 49.7,
    "cards": {
     "exp": 4.74,
     "home": 2.41,
     "away": 2.33,
     "over": {
-     "2.5": 81.7,
+     "2.5": 81.8,
      "3.5": 66.4,
      "4.5": 49.7,
      "5.5": 34.3,
@@ -2759,7 +2863,7 @@
       {
        "id": 278,
        "name": "Kylian Mbappé",
-       "p": 56.3,
+       "p": 56.2,
        "price": {
         "odd": 1.53,
         "bookie": "Bet365",
@@ -2812,28 +2916,160 @@
      "home": "Valencia",
      "away": "Real Madrid",
      "hg": 0,
-     "ag": 2
+     "ag": 2,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "J. Alberola",
+     "sx": {
+      "h": {
+       "pos": 40.0,
+       "xg": 0.44,
+       "sh": 7.0,
+       "sot": 0.0,
+       "co": 5.0,
+       "fo": 10.0,
+       "of": 1.0,
+       "sv": 4.0,
+       "pp": 79.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 60.0,
+       "xg": 0.96,
+       "sh": 11.0,
+       "sot": 6.0,
+       "co": 8.0,
+       "fo": 13.0,
+       "of": 3.0,
+       "sv": 0.0,
+       "pp": 89.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "01/11/2025",
      "home": "Real Madrid",
      "away": "Valencia",
      "hg": 4,
-     "ag": 0
+     "ag": 0,
+     "ht": [
+      3,
+      0
+     ],
+     "ref": "M. Busquets Ferrer",
+     "sx": {
+      "h": {
+       "pos": 65.0,
+       "xg": 2.71,
+       "sh": 21.0,
+       "sot": 11.0,
+       "co": 7.0,
+       "fo": 14.0,
+       "of": 2.0,
+       "sv": 1.0,
+       "pp": 90.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 35.0,
+       "xg": 0.49,
+       "sh": 4.0,
+       "sot": 1.0,
+       "co": 1.0,
+       "fo": 7.0,
+       "of": 0.0,
+       "sv": 7.0,
+       "pp": 83.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "05/04/2025",
      "home": "Real Madrid",
      "away": "Valencia",
      "hg": 1,
-     "ag": 2
+     "ag": 2,
+     "ht": [
+      0,
+      1
+     ],
+     "ref": "G. Cuadra",
+     "sx": {
+      "h": {
+       "pos": 65.0,
+       "xg": 3.47,
+       "sh": 21.0,
+       "sot": 9.0,
+       "co": 9.0,
+       "fo": 10.0,
+       "of": 6.0,
+       "sv": 0.0,
+       "pp": 91.0,
+       "yc": 0.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 35.0,
+       "xg": 0.78,
+       "sh": 10.0,
+       "sot": 2.0,
+       "co": 4.0,
+       "fo": 13.0,
+       "of": 1.0,
+       "sv": 8.0,
+       "pp": 77.0,
+       "yc": 4.0,
+       "rc": 0.0
+      }
+     }
     },
     {
      "date": "03/01/2025",
      "home": "Valencia",
      "away": "Real Madrid",
      "hg": 1,
-     "ag": 2
+     "ag": 2,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "C. Soto",
+     "sx": {
+      "h": {
+       "pos": 38.0,
+       "xg": 0.89,
+       "sh": 8.0,
+       "sot": 5.0,
+       "co": 2.0,
+       "fo": 16.0,
+       "of": 0.0,
+       "sv": 3.0,
+       "pp": 81.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 62.0,
+       "xg": 2.01,
+       "sh": 17.0,
+       "sot": 5.0,
+       "co": 5.0,
+       "fo": 9.0,
+       "of": 4.0,
+       "sv": 4.0,
+       "pp": 89.0,
+       "yc": 3.0,
+       "rc": 1.0
+      }
+     }
     }
    ],
    "odds": {
@@ -2848,7 +3084,7 @@
      }
     },
     "draw": {
-     "odd": 5.83,
+     "odd": 5.84,
      "bookie": "Pinnacle",
      "books": {
       "William Hill": 5.0,
@@ -2878,7 +3114,7 @@
     },
     "under25": {
      "odd": 2.92,
-     "bookie": "Betano",
+     "bookie": "Pinnacle",
      "books": {
       "Bet365": 2.75,
       "Betfair": 2.88,
@@ -2960,13 +3196,13 @@
      "key_out": []
     }
    },
-   "home_pct": 37.8,
+   "home_pct": 37.9,
    "draw_pct": 26.3,
-   "away_pct": 35.9,
+   "away_pct": 35.7,
    "xg_home": 1.5,
-   "xg_away": 1.46,
-   "over25": 56.7,
-   "btts": 60.5,
+   "xg_away": 1.45,
+   "over25": 56.6,
+   "btts": 60.4,
    "cards5": 47.8,
    "cards": {
     "exp": 4.63,
@@ -2976,7 +3212,7 @@
      "2.5": 80.6,
      "3.5": 64.8,
      "4.5": 47.8,
-     "5.5": 32.5,
+     "5.5": 32.6,
      "6.5": 20.6
     }
    },
@@ -3061,7 +3297,7 @@
       {
        "id": 181421,
        "name": "A. Ezzalzouli",
-       "p": 27.6,
+       "p": 25.9,
        "price": {
         "odd": 3.4,
         "bookie": "Bet365",
@@ -3100,7 +3336,7 @@
      "defender": {
       "id": 1561,
       "name": "Marc Bartra",
-      "sot": 3
+      "sot": 5
      }
     }
    },
@@ -3114,14 +3350,80 @@
      "home": "Real Betis",
      "away": "Elche",
      "hg": 2,
-     "ag": 1
+     "ag": 1,
+     "ht": [
+      1,
+      1
+     ],
+     "ref": "I. Diaz",
+     "sx": {
+      "h": {
+       "pos": 45.0,
+       "xg": 1.8,
+       "sh": 16.0,
+       "sot": 7.0,
+       "co": 8.0,
+       "fo": 16.0,
+       "of": 3.0,
+       "sv": 1.0,
+       "pp": 86.0,
+       "yc": 3.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 55.0,
+       "xg": 0.4,
+       "sh": 8.0,
+       "sot": 2.0,
+       "co": 1.0,
+       "fo": 13.0,
+       "of": 2.0,
+       "sv": 3.0,
+       "pp": 86.0,
+       "yc": 3.0,
+       "rc": 1.0
+      }
+     }
     },
     {
      "date": "18/08/2025",
      "home": "Elche",
      "away": "Real Betis",
      "hg": 1,
-     "ag": 1
+     "ag": 1,
+     "ht": [
+      0,
+      1
+     ],
+     "ref": "V. Garcia Verdura",
+     "sx": {
+      "h": {
+       "pos": 68.0,
+       "xg": 0.64,
+       "sh": 6.0,
+       "sot": 2.0,
+       "co": 1.0,
+       "fo": 14.0,
+       "of": 4.0,
+       "sv": 3.0,
+       "pp": 90.0,
+       "yc": 0.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 32.0,
+       "xg": 1.86,
+       "sh": 12.0,
+       "sot": 4.0,
+       "co": 3.0,
+       "fo": 13.0,
+       "of": 0.0,
+       "sv": 1.0,
+       "pp": 81.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     }
     }
    ],
    "odds": {
@@ -3191,6 +3493,440 @@
       "Bet365": 2.25,
       "Betfair": 2.4,
       "BetVictor": 2.3
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1570449,
+   "kickoff": "2026-11-08T15:15:00",
+   "round": "Regular Season - 12",
+   "home": "Real Sociedad",
+   "away": "Rayo Vallecano",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 53.8,
+    "draw": 24.3,
+    "away": 21.9
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 50.1,
+   "draw_pct": 24.8,
+   "away_pct": 25.1,
+   "xg_home": 1.81,
+   "xg_away": 1.23,
+   "over25": 58.5,
+   "btts": 60.0,
+   "cards5": 55.5,
+   "cards": {
+    "exp": 5.11,
+    "home": 2.32,
+    "away": 2.79,
+    "over": {
+     "2.5": 85.1,
+     "3.5": 71.3,
+     "4.5": 55.5,
+     "5.5": 40.1,
+     "6.5": 27.0
+    }
+   },
+   "form": {
+    "home": {
+     "played": 5,
+     "win": 60.0,
+     "over25": 80.0,
+     "btts": 60.0
+    },
+    "away": {
+     "played": 5,
+     "win": 0.0,
+     "over25": 60.0,
+     "btts": 100.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 54.11112019976143,
+     "sh": 57.817211126463974,
+     "any": 80.64279071743464
+    },
+    "away": {
+     "fh": 43.05919091093837,
+     "sh": 55.7709986833872,
+     "any": 74.81564879830896
+    },
+    "match_fh": 73.8705005598372,
+    "match_sh": 81.34297375373976
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 61774,
+       "name": "O. Óskarsson",
+       "p": 31.2,
+       "price": {
+        "odd": 2.1,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.1
+        }
+       }
+      },
+      {
+       "id": 47323,
+       "name": "Mikel Oyarzabal",
+       "p": 28.8,
+       "price": {
+        "odd": 2.1,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.1
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 2449,
+       "name": "Y. Herrera",
+       "p": 26.3,
+       "price": null
+      },
+      {
+       "id": 199044,
+       "name": "J. Aramburu",
+       "p": 25.3,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 199044,
+      "name": "J. Aramburu",
+      "sot": 2
+     }
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 52,
+       "name": "Sergio Camello",
+       "p": 36.7,
+       "price": {
+        "odd": 3.6,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.6
+        }
+       }
+      },
+      {
+       "id": 47543,
+       "name": "Álvaro García",
+       "p": 17.1,
+       "price": {
+        "odd": 4.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.0
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 41552,
+       "name": "P. Ciss",
+       "p": 37.5,
+       "price": null
+      },
+      {
+       "id": 47285,
+       "name": "Unai López",
+       "p": 20.9,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 18895,
+      "name": "F. Lejeune",
+      "sot": 3
+     }
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [
+    {
+     "date": "26/04/2026",
+     "home": "Rayo Vallecano",
+     "away": "Real Sociedad",
+     "hg": 3,
+     "ag": 3,
+     "ht": [
+      1,
+      1
+     ],
+     "ref": "J. Guzman",
+     "sx": {
+      "h": {
+       "pos": 58.0,
+       "xg": 2.38,
+       "sh": 24.0,
+       "sot": 9.0,
+       "co": 6.0,
+       "fo": 14.0,
+       "of": 0.0,
+       "sv": 5.0,
+       "pp": 85.0,
+       "yc": 6.0,
+       "rc": 1.0
+      },
+      "a": {
+       "pos": 42.0,
+       "xg": 2.23,
+       "sh": 13.0,
+       "sot": 8.0,
+       "co": 4.0,
+       "fo": 12.0,
+       "of": 2.0,
+       "sv": 6.0,
+       "pp": 76.0,
+       "yc": 4.0,
+       "rc": 0.0
+      }
+     }
+    },
+    {
+     "date": "05/10/2025",
+     "home": "Real Sociedad",
+     "away": "Rayo Vallecano",
+     "hg": 0,
+     "ag": 1,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "J. Luis Guzman Mansilla",
+     "sx": {
+      "h": {
+       "pos": 51.0,
+       "xg": 0.79,
+       "sh": 10.0,
+       "sot": 3.0,
+       "co": 7.0,
+       "fo": 13.0,
+       "of": 0.0,
+       "sv": 1.0,
+       "pp": 80.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 49.0,
+       "xg": 0.8,
+       "sh": 7.0,
+       "sot": 2.0,
+       "co": 5.0,
+       "fo": 21.0,
+       "of": 1.0,
+       "sv": 3.0,
+       "pp": 79.0,
+       "yc": 2.0,
+       "rc": 0.0
+      }
+     }
+    },
+    {
+     "date": "16/03/2025",
+     "home": "Rayo Vallecano",
+     "away": "Real Sociedad",
+     "hg": 2,
+     "ag": 2,
+     "ht": [
+      0,
+      1
+     ],
+     "ref": "A. Muñiz",
+     "sx": {
+      "h": {
+       "pos": 55.0,
+       "xg": 0.56,
+       "sh": 10.0,
+       "sot": 5.0,
+       "co": 4.0,
+       "fo": 16.0,
+       "of": 2.0,
+       "sv": 2.0,
+       "pp": 80.0,
+       "yc": 3.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 45.0,
+       "xg": 0.57,
+       "sh": 8.0,
+       "sot": 4.0,
+       "co": 4.0,
+       "fo": 9.0,
+       "of": 5.0,
+       "sv": 3.0,
+       "pp": 75.0,
+       "yc": 2.0,
+       "rc": 0.0
+      }
+     }
+    },
+    {
+     "date": "18/08/2024",
+     "home": "Real Sociedad",
+     "away": "Rayo Vallecano",
+     "hg": 1,
+     "ag": 2,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "A. Hernández",
+     "sx": {
+      "h": {
+       "pos": 66.0,
+       "xg": 1.08,
+       "sh": 11.0,
+       "sot": 4.0,
+       "co": 10.0,
+       "fo": 14.0,
+       "of": 0.0,
+       "sv": 2.0,
+       "pp": 81.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 34.0,
+       "xg": 1.11,
+       "sh": 12.0,
+       "sot": 5.0,
+       "co": 5.0,
+       "fo": 21.0,
+       "of": 3.0,
+       "sv": 3.0,
+       "pp": 64.0,
+       "yc": 4.0,
+       "rc": 0.0
+      }
+     }
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 1.82,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 1.67,
+      "Bet365": 1.73,
+      "Betfair": 1.75,
+      "BetVictor": 1.7
+     }
+    },
+    "draw": {
+     "odd": 4.05,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.75,
+      "Bet365": 3.8,
+      "Betfair": 3.9,
+      "BetVictor": 3.75
+     }
+    },
+    "away": {
+     "odd": 4.57,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 4.2,
+      "Bet365": 4.33,
+      "Betfair": 4.1,
+      "BetVictor": 4.2
+     }
+    },
+    "over25": {
+     "odd": 1.73,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.67,
+      "Betfair": 1.65,
+      "BetVictor": 1.63
+     }
+    },
+    "under25": {
+     "odd": 2.28,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.2,
+      "Betfair": 2.1,
+      "BetVictor": 2.1
+     }
+    },
+    "btts_yes": {
+     "odd": 1.67,
+     "bookie": "William Hill",
+     "books": {
+      "William Hill": 1.67,
+      "Bet365": 1.67,
+      "Betfair": 1.6,
+      "BetVictor": 1.6
+     }
+    },
+    "btts_no": {
+     "odd": 2.2,
+     "bookie": "Betfair",
+     "books": {
+      "William Hill": 2.15,
+      "Bet365": 2.1,
+      "Betfair": 2.2,
+      "BetVictor": 2.15
      }
     },
     "cards_over45": null,
