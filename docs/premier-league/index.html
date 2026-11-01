@@ -1678,7 +1678,7 @@ a.chip { text-decoration:none; }
     rows.forEach(function (r) {
       var a = sx.h[r[0]], b = sx.a[r[0]];
       if (a == null && b == null) return;
-      if (r[0] === 'xg' && (a == null || b == null)) return;
+      if (r[0] === 'xg' && (a == null || b == null || !(a > 0 || b > 0))) return;  // provider often sends 0.00 until later
       if (r[0] === 'rc' && !a && !b) return;
       a = a || 0; b = b || 0; n++;
       var fmt = function (v) { return (r[0] === 'xg' ? v.toFixed(2) : Math.round(v)) + r[2]; };
