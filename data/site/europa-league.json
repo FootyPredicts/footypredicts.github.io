@@ -3,8 +3,8 @@
  "name": "Europa League",
  "country": "Europe",
  "season": 2026,
- "updated": "2026-11-03T07:15:23.914157+00:00",
- "matches_used": 25472,
+ "updated": "2026-11-03T13:08:32.401928+00:00",
+ "matches_used": 25464,
  "euro": true,
  "fixtures": [
   {
@@ -22,13 +22,13 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 41.4,
-   "draw_pct": 28.8,
-   "away_pct": 29.8,
+   "home_pct": 41.3,
+   "draw_pct": 28.9,
+   "away_pct": 29.9,
    "xg_home": 1.37,
-   "xg_away": 1.12,
-   "over25": 45.5,
-   "btts": 51.4,
+   "xg_away": 1.13,
+   "over25": 45.4,
+   "btts": 51.3,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -42,36 +42,62 @@
       {
        "id": 163004,
        "name": "E. Lepaul",
-       "p": 48.6
+       "p": 45.7
       },
       {
-       "id": 40403,
-       "name": "S. Szymański",
-       "p": 23.9
+       "id": 22015,
+       "name": "B. Dia",
+       "p": 21.7
       }
      ],
      "bookings": [
       {
-       "id": 129681,
-       "name": "A. Rouault",
-       "p": 23.5
+       "id": 417830,
+       "name": "A. Ait Boudlal",
+       "p": 25.5
       },
       {
        "id": 22261,
        "name": "A. Thomasson",
-       "p": 22.0
+       "p": 20.0
       }
      ],
      "defender": {
       "id": 438281,
       "name": "M. Nagida",
-      "sot": 3
+      "sot": 7
      }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 2722,
+       "name": "A. El Kaabi",
+       "p": 27.9
+      },
+      {
+       "id": 291713,
+       "name": "A. González",
+       "p": 19.2
+      }
+     ],
+     "bookings": [
+      {
+       "id": 47281,
+       "name": "Dani García",
+       "p": 34.0
+      },
+      {
+       "id": 278196,
+       "name": "S. Onyemaechi",
+       "p": 24.6
+      }
+     ],
+     "defender": {
+      "id": 971,
+      "name": "P. Retsos",
+      "sot": 1
+     }
     }
    },
    "injuries": {
@@ -113,38 +139,64 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 314257,
+       "name": "T. Guddal",
+       "p": 22.0
+      },
+      {
+       "id": 237122,
+       "name": "J. Mercado",
+       "p": 19.7
+      }
+     ],
+     "bookings": [
+      {
+       "id": 295027,
+       "name": "M. Ryneš",
+       "p": 31.5
+      },
+      {
+       "id": 323899,
+       "name": "M. Suchomel",
+       "p": 25.2
+      }
+     ],
+     "defender": {
+      "id": 314257,
+      "name": "T. Guddal",
+      "sot": 3
+     }
     },
     "away": {
      "scorers": [
       {
        "id": 19245,
        "name": "M. Tavernier",
-       "p": 29.2
+       "p": 27.1
       },
       {
        "id": 152856,
        "name": "Evanilson",
-       "p": 25.4
+       "p": 26.4
       }
      ],
      "bookings": [
       {
-       "id": 331832,
-       "name": "António Silva",
-       "p": 24.7
+       "id": 1150,
+       "name": "T. Adams",
+       "p": 23.9
       },
       {
-       "id": 18869,
-       "name": "A. Smith",
-       "p": 24.3
+       "id": 162267,
+       "name": "A. Truffert",
+       "p": 21.7
       }
      ],
      "defender": {
-      "id": 331832,
-      "name": "António Silva",
+      "id": 162267,
+      "name": "A. Truffert",
       "sot": 2
      }
     }
@@ -188,14 +240,62 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
+     "scorers": [
+      {
+       "id": 202614,
+       "name": "M. Winkler",
+       "p": 12.1
+      },
+      {
+       "id": 157146,
+       "name": "L. Pétrot",
+       "p": 0.8
+      }
+     ],
+     "bookings": [
+      {
+       "id": 202614,
+       "name": "M. Winkler",
+       "p": 13.1
+      },
+      {
+       "id": 157146,
+       "name": "L. Pétrot",
+       "p": 3.2
+      }
+     ],
      "defender": null
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 28382,
+       "name": "H. Tabaković",
+       "p": 11.5
+      },
+      {
+       "id": 442544,
+       "name": "B. Mazurek",
+       "p": 3.9
+      }
+     ],
+     "bookings": [
+      {
+       "id": 136154,
+       "name": "A. Barry",
+       "p": 15.1
+      },
+      {
+       "id": 442544,
+       "name": "B. Mazurek",
+       "p": 13.7
+      }
+     ],
+     "defender": {
+      "id": 48722,
+      "name": "D. Schmid",
+      "sot": 1
+     }
     }
    },
    "injuries": {
@@ -221,13 +321,13 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 44.7,
+   "home_pct": 44.8,
    "draw_pct": 25.1,
-   "away_pct": 30.2,
-   "xg_home": 1.73,
-   "xg_away": 1.4,
+   "away_pct": 30.1,
+   "xg_home": 1.74,
+   "xg_away": 1.39,
    "over25": 60.5,
-   "btts": 62.8,
+   "btts": 62.7,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -241,30 +341,30 @@
       {
        "id": 7332,
        "name": "L. Sučić",
-       "p": 23.8
+       "p": 25.8
       },
       {
        "id": 61774,
        "name": "O. Óskarsson",
-       "p": 23.6
+       "p": 24.6
       }
      ],
      "bookings": [
       {
+       "id": 276184,
+       "name": "M. Sarr",
+       "p": 29.4
+      },
+      {
        "id": 199044,
        "name": "J. Aramburu",
        "p": 29.2
-      },
-      {
-       "id": 2449,
-       "name": "Y. Herrera",
-       "p": 26.3
       }
      ],
      "defender": {
-      "id": 199044,
-      "name": "J. Aramburu",
-      "sot": 2
+      "id": 23,
+      "name": "Sergio Gómez",
+      "sot": 4
      }
     },
     "away": {
@@ -272,24 +372,24 @@
       {
        "id": 350856,
        "name": "E. Nuamah",
-       "p": 30.9
+       "p": 26.4
       },
       {
        "id": 86,
        "name": "L. Openda",
-       "p": 22.9
+       "p": 23.9
       }
      ],
      "bookings": [
       {
        "id": 25916,
        "name": "M. Niakhaté",
-       "p": 14.2
+       "p": 20.2
       },
       {
        "id": 86,
        "name": "L. Openda",
-       "p": 13.6
+       "p": 15.4
       }
      ],
      "defender": {
@@ -327,7 +427,7 @@
    "away_pct": 28.8,
    "xg_home": 1.32,
    "xg_away": 1.05,
-   "over25": 42.3,
+   "over25": 42.2,
    "btts": 48.7,
    "cards5": 0.0,
    "cards": null,
@@ -338,14 +438,66 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 9650,
+       "name": "Reinaldo",
+       "p": 23.0
+      },
+      {
+       "id": 1131,
+       "name": "A. Oko-Flex",
+       "p": 8.7
+      }
+     ],
+     "bookings": [
+      {
+       "id": 137072,
+       "name": "N. Serafimov",
+       "p": 21.9
+      },
+      {
+       "id": 286910,
+       "name": "Aldair",
+       "p": 19.8
+      }
+     ],
+     "defender": {
+      "id": 367528,
+      "name": "Maicon",
+      "sot": 2
+     }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 40858,
+       "name": "K. Szmyt",
+       "p": 9.7
+      },
+      {
+       "id": 41566,
+       "name": "Rodrigo Conceição",
+       "p": 5.3
+      }
+     ],
+     "bookings": [
+      {
+       "id": 277166,
+       "name": "Bernardo Vital",
+       "p": 23.2
+      },
+      {
+       "id": 491470,
+       "name": "Eryk Kozlowski",
+       "p": 15.2
+      }
+     ],
+     "defender": {
+      "id": 41566,
+      "name": "Rodrigo Conceição",
+      "sot": 2
+     }
     }
    },
    "injuries": {
@@ -371,13 +523,13 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 41.5,
+   "home_pct": 41.6,
    "draw_pct": 26.2,
-   "away_pct": 32.3,
+   "away_pct": 32.2,
    "xg_home": 1.58,
    "xg_away": 1.37,
    "over25": 56.4,
-   "btts": 60.1,
+   "btts": 60.0,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -387,14 +539,66 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 37134,
+       "name": "B. Linssen",
+       "p": 30.3
+      },
+      {
+       "id": 50120,
+       "name": "T. Chery",
+       "p": 29.6
+      }
+     ],
+     "bookings": [
+      {
+       "id": 330315,
+       "name": "N. Lebreton",
+       "p": 28.4
+      },
+      {
+       "id": 274275,
+       "name": "B. Pereira",
+       "p": 24.7
+      }
+     ],
+     "defender": {
+      "id": 353808,
+      "name": "Deveron Fonville",
+      "sot": 0
+     }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 22100,
+       "name": "L. Diony",
+       "p": 23.2
+      },
+      {
+       "id": 347681,
+       "name": "J. Montnor",
+       "p": 12.5
+      }
+     ],
+     "bookings": [
+      {
+       "id": 21699,
+       "name": "S. Coulibaly",
+       "p": 34.1
+      },
+      {
+       "id": 76868,
+       "name": "M. Marić",
+       "p": 18.2
+      }
+     ],
+     "defender": {
+      "id": 21699,
+      "name": "S. Coulibaly",
+      "sot": 2
+     }
     }
    },
    "injuries": {
@@ -420,11 +624,11 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 34.3,
-   "draw_pct": 26.9,
-   "away_pct": 38.7,
+   "home_pct": 34.6,
+   "draw_pct": 27.0,
+   "away_pct": 38.4,
    "xg_home": 1.37,
-   "xg_away": 1.47,
+   "xg_away": 1.46,
    "over25": 53.9,
    "btts": 58.3,
    "cards5": 0.0,
@@ -436,14 +640,66 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 39323,
+       "name": "T. Lehne Olsen",
+       "p": 18.5
+      },
+      {
+       "id": 364814,
+       "name": "D. Bassi",
+       "p": 12.0
+      }
+     ],
+     "bookings": [
+      {
+       "id": 531341,
+       "name": "G. Nyheim",
+       "p": 19.3
+      },
+      {
+       "id": 39038,
+       "name": "R. Gabrielsen",
+       "p": 13.4
+      }
+     ],
+     "defender": {
+      "id": 57194,
+      "name": "L. Ranger",
+      "sot": 0
+     }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 271869,
+       "name": "C. Kabongo",
+       "p": 12.7
+      },
+      {
+       "id": 1291,
+       "name": "D. Vavro",
+       "p": 4.7
+      }
+     ],
+     "bookings": [
+      {
+       "id": 340621,
+       "name": "S. PirgiÄ",
+       "p": 21.9
+      },
+      {
+       "id": 807,
+       "name": "P. Hrošovský",
+       "p": 17.2
+      }
+     ],
+     "defender": {
+      "id": 317825,
+      "name": "S. Dweh",
+      "sot": 2
+     }
     }
    },
    "injuries": {
@@ -469,12 +725,12 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 57.3,
+   "home_pct": 57.2,
    "draw_pct": 22.2,
    "away_pct": 20.6,
    "xg_home": 2.11,
    "xg_away": 1.21,
-   "over25": 64.6,
+   "over25": 64.5,
    "btts": 62.5,
    "cards5": 0.0,
    "cards": null,
@@ -489,30 +745,30 @@
       {
        "id": 2032,
        "name": "J. Strand Larsen",
-       "p": 20.4
+       "p": 21.0
       },
       {
-       "id": 338735,
-       "name": "A. Khalaili",
-       "p": 15.1
+       "id": 184226,
+       "name": "Yeremy Pino",
+       "p": 18.4
       }
      ],
      "bookings": [
       {
        "id": 184226,
        "name": "Yeremy Pino",
-       "p": 22.6
+       "p": 28.2
       },
       {
-       "id": 2601,
-       "name": "D. Kamada",
-       "p": 18.5
+       "id": 2490,
+       "name": "J. Lerma",
+       "p": 15.7
       }
      ],
      "defender": {
       "id": 126949,
       "name": "C. Richards",
-      "sot": 2
+      "sot": 4
      }
     },
     "away": {
@@ -520,30 +776,30 @@
       {
        "id": 66019,
        "name": "A. Hložek",
-       "p": 21.8
+       "p": 21.5
       },
       {
-       "id": 279905,
-       "name": "B. Conté",
-       "p": 18.2
+       "id": 7327,
+       "name": "A. Prass",
+       "p": 16.4
       }
      ],
      "bookings": [
       {
-       "id": 37153,
-       "name": "W. Burger",
-       "p": 28.0
+       "id": 7327,
+       "name": "A. Prass",
+       "p": 29.2
       },
       {
-       "id": 390586,
-       "name": "L. Avdullahu",
-       "p": 19.9
+       "id": 37153,
+       "name": "W. Burger",
+       "p": 27.5
       }
      ],
      "defender": {
-      "id": 26300,
-      "name": "O. Kabak",
-      "sot": 2
+      "id": 7327,
+      "name": "A. Prass",
+      "sot": 6
      }
     }
    },
@@ -570,9 +826,9 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 59.8,
+   "home_pct": 59.9,
    "draw_pct": 23.4,
-   "away_pct": 16.8,
+   "away_pct": 16.7,
    "xg_home": 1.92,
    "xg_away": 0.92,
    "over25": 54.1,
@@ -588,26 +844,26 @@
     "home": {
      "scorers": [
       {
-       "id": 335056,
-       "name": "Diego Moreira",
-       "p": 31.6
-      },
-      {
        "id": 359100,
        "name": "A. Cissè",
-       "p": 27.1
+       "p": 34.3
+      },
+      {
+       "id": 335056,
+       "name": "Diego Moreira",
+       "p": 27.2
       }
      ],
      "bookings": [
       {
        "id": 45826,
        "name": "S. Pavlović",
-       "p": 23.1
+       "p": 24.0
       },
       {
        "id": 162141,
        "name": "K. De Winter",
-       "p": 23.0
+       "p": 24.0
       }
      ],
      "defender": {
@@ -617,9 +873,35 @@
      }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 2027,
+       "name": "K. Zachariassen",
+       "p": 11.4
+      },
+      {
+       "id": 199779,
+       "name": "B. Yusuf",
+       "p": 11.0
+      }
+     ],
+     "bookings": [
+      {
+       "id": 28467,
+       "name": "A. Osváth",
+       "p": 21.5
+      },
+      {
+       "id": 199779,
+       "name": "B. Yusuf",
+       "p": 14.4
+      }
+     ],
+     "defender": {
+      "id": 76109,
+      "name": "M. Gómez",
+      "sot": 3
+     }
     }
    },
    "injuries": {
@@ -647,7 +929,7 @@
    "injury_effect": {},
    "home_pct": 67.1,
    "draw_pct": 20.1,
-   "away_pct": 12.8,
+   "away_pct": 12.7,
    "xg_home": 2.21,
    "xg_away": 0.87,
    "over25": 59.5,
@@ -665,36 +947,62 @@
       {
        "id": 38750,
        "name": "B. Brobbey",
-       "p": 30.1
+       "p": 27.3
       },
       {
        "id": 20638,
        "name": "E. Le Fée",
-       "p": 15.7
+       "p": 17.8
       }
      ],
      "bookings": [
       {
        "id": 6168,
        "name": "O. Alderete",
-       "p": 29.4
+       "p": 32.3
       },
       {
-       "id": 22225,
-       "name": "Reinildo",
-       "p": 26.2
+       "id": 55904,
+       "name": "D. Ballard",
+       "p": 22.7
       }
      ],
      "defender": {
-      "id": 264,
-      "name": "T. Meunier",
-      "sot": 4
+      "id": 1146,
+      "name": "N. Mukiele",
+      "sot": 3
      }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 182434,
+       "name": "D. Beljo",
+       "p": 29.9
+      },
+      {
+       "id": 105993,
+       "name": "A. Hoxha",
+       "p": 12.7
+      }
+     ],
+     "bookings": [
+      {
+       "id": 1369,
+       "name": "M. Zajc",
+       "p": 20.7
+      },
+      {
+       "id": 2373,
+       "name": "J. Mišić",
+       "p": 17.5
+      }
+     ],
+     "defender": {
+      "id": 288319,
+      "name": "M. Valinčić",
+      "sot": 3
+     }
     }
    },
    "injuries": {
@@ -720,13 +1028,13 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 55.6,
+   "home_pct": 55.7,
    "draw_pct": 22.0,
-   "away_pct": 22.4,
+   "away_pct": 22.3,
    "xg_home": 2.15,
-   "xg_away": 1.33,
+   "xg_away": 1.32,
    "over25": 67.4,
-   "btts": 65.6,
+   "btts": 65.5,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -740,30 +1048,30 @@
       {
        "id": 794,
        "name": "P. Schick",
-       "p": 42.9
+       "p": 42.0
       },
       {
        "id": 380587,
        "name": "I. Maza",
-       "p": 22.5
+       "p": 23.2
       }
      ],
      "bookings": [
       {
        "id": 380587,
        "name": "I. Maza",
-       "p": 26.1
+       "p": 22.5
       },
       {
        "id": 6231,
        "name": "F. Medina",
-       "p": 25.4
+       "p": 20.7
       }
      ],
      "defender": {
       "id": 6231,
       "name": "F. Medina",
-      "sot": 3
+      "sot": 6
      }
     },
     "away": {
@@ -771,30 +1079,30 @@
       {
        "id": 85041,
        "name": "A. Gouiri",
-       "p": 33.4
+       "p": 27.4
       },
       {
        "id": 412,
        "name": "A. Harit",
-       "p": 17.1
+       "p": 16.4
       }
      ],
      "bookings": [
       {
        "id": 1138,
        "name": "T. Weah",
-       "p": 26.3
+       "p": 21.2
       },
       {
        "id": 896,
        "name": "A. Gomes",
-       "p": 15.6
+       "p": 18.0
       }
      ],
      "defender": {
       "id": 1138,
       "name": "T. Weah",
-      "sot": 3
+      "sot": 4
      }
     }
    },
@@ -823,11 +1131,11 @@
    "injury_effect": {},
    "home_pct": 25.7,
    "draw_pct": 27.4,
-   "away_pct": 47.0,
+   "away_pct": 46.9,
    "xg_home": 1.08,
    "xg_away": 1.54,
    "over25": 48.8,
-   "btts": 53.0,
+   "btts": 52.9,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -837,21 +1145,47 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 335633,
+       "name": "Weslley Patati",
+       "p": 23.9
+      },
+      {
+       "id": 342954,
+       "name": "M. Meerdink",
+       "p": 23.1
+      }
+     ],
+     "bookings": [
+      {
+       "id": 444790,
+       "name": "A. Oufkir",
+       "p": 21.1
+      },
+      {
+       "id": 199793,
+       "name": "S. Maikuma",
+       "p": 19.6
+      }
+     ],
+     "defender": {
+      "id": 47430,
+      "name": "W. Hoedt",
+      "sot": 0
+     }
     },
     "away": {
      "scorers": [
       {
-       "id": 26315,
-       "name": "N. González",
-       "p": 16.7
+       "id": 158054,
+       "name": "N. Woltemade",
+       "p": 18.5
       },
       {
-       "id": 395559,
-       "name": "Kerim-Sam Alajbegović",
-       "p": 14.8
+       "id": 21104,
+       "name": "R. Kolo Muani",
+       "p": 17.5
       }
      ],
      "bookings": [
@@ -863,7 +1197,7 @@
       {
        "id": 47522,
        "name": "Douglas Luiz",
-       "p": 17.0
+       "p": 18.7
       }
      ],
      "defender": {
@@ -897,9 +1231,9 @@
    "market": null,
    "injury_effect": {},
    "home_pct": 74.3,
-   "draw_pct": 15.6,
+   "draw_pct": 15.5,
    "away_pct": 10.1,
-   "xg_home": 2.78,
+   "xg_home": 2.79,
    "xg_away": 0.98,
    "over25": 72.6,
    "btts": 59.3,
@@ -912,14 +1246,66 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 39043,
+       "name": "F. Aursnes",
+       "p": 11.8
+      },
+      {
+       "id": 348568,
+       "name": "A. Circati",
+       "p": 1.5
+      }
+     ],
+     "bookings": [
+      {
+       "id": 161939,
+       "name": "Tomás Araújo",
+       "p": 15.1
+      },
+      {
+       "id": 39043,
+       "name": "F. Aursnes",
+       "p": 6.7
+      }
+     ],
+     "defender": {
+      "id": 348568,
+      "name": "A. Circati",
+      "sot": 0
+     }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 25619,
+       "name": "M. Ishak",
+       "p": 14.7
+      },
+      {
+       "id": 161176,
+       "name": "P. Wålemark",
+       "p": 13.7
+      }
+     ],
+     "bookings": [
+      {
+       "id": 31556,
+       "name": "R. Murawski",
+       "p": 28.4
+      },
+      {
+       "id": 40565,
+       "name": "M. Skrzypczak",
+       "p": 16.4
+      }
+     ],
+     "defender": {
+      "id": 394956,
+      "name": "M. Gurgul",
+      "sot": 5
+     }
     }
    },
    "injuries": {
@@ -945,9 +1331,9 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 34.0,
+   "home_pct": 34.1,
    "draw_pct": 25.7,
-   "away_pct": 40.3,
+   "away_pct": 40.2,
    "xg_home": 1.46,
    "xg_away": 1.6,
    "over25": 58.9,
@@ -961,14 +1347,66 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 454968,
+       "name": "C. Durán",
+       "p": 37.5
+      },
+      {
+       "id": 328035,
+       "name": "M. Baur",
+       "p": 19.6
+      }
+     ],
+     "bookings": [
+      {
+       "id": 451314,
+       "name": "Colby Donovan",
+       "p": 16.3
+      },
+      {
+       "id": 69450,
+       "name": "L. Scales",
+       "p": 15.6
+      }
+     ],
+     "defender": {
+      "id": 1117,
+      "name": "K. Tierney",
+      "sot": 1
+     }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 18786,
+       "name": "W. Ndidi",
+       "p": 7.2
+      },
+      {
+       "id": 1946,
+       "name": "L. Trossard",
+       "p": 3.7
+      }
+     ],
+     "bookings": [
+      {
+       "id": 333137,
+       "name": "K. Ouattara",
+       "p": 15.1
+      },
+      {
+       "id": 18786,
+       "name": "W. Ndidi",
+       "p": 11.2
+      }
+     ],
+     "defender": {
+      "id": 333137,
+      "name": "K. Ouattara",
+      "sot": 0
+     }
     }
    },
    "injuries": {
@@ -996,7 +1434,7 @@
    "injury_effect": {},
    "home_pct": 32.3,
    "draw_pct": 29.9,
-   "away_pct": 37.8,
+   "away_pct": 37.9,
    "xg_home": 1.13,
    "xg_away": 1.24,
    "over25": 42.3,
@@ -1014,36 +1452,62 @@
       {
        "id": 320517,
        "name": "Pablo Durán",
-       "p": 19.8
+       "p": 18.2
       },
       {
-       "id": 122734,
-       "name": "Ferran Jutglà",
-       "p": 16.6
+       "id": 384135,
+       "name": "Javi Rodríguez",
+       "p": 15.4
       }
      ],
      "bookings": [
       {
        "id": 329722,
        "name": "Yoel Lago",
-       "p": 26.5
+       "p": 25.1
       },
       {
        "id": 2278,
        "name": "Marcos Alonso",
-       "p": 25.0
+       "p": 21.1
       }
      ],
      "defender": {
       "id": 384135,
       "name": "Javi Rodríguez",
-      "sot": 2
+      "sot": 4
      }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 414149,
+       "name": "R. Mofokeng",
+       "p": 21.9
+      },
+      {
+       "id": 314145,
+       "name": "Guilherme Henriques da Silva Carvalho",
+       "p": 21.4
+      }
+     ],
+     "bookings": [
+      {
+       "id": 340574,
+       "name": "K. Van de Perre",
+       "p": 32.9
+      },
+      {
+       "id": 5967,
+       "name": "K. Mac Allister",
+       "p": 28.5
+      }
+     ],
+     "defender": {
+      "id": 48708,
+      "name": "N. Havenaar",
+      "sot": 1
+     }
     }
    },
    "injuries": {
@@ -1069,11 +1533,11 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 46.2,
+   "home_pct": 46.3,
    "draw_pct": 25.5,
-   "away_pct": 28.3,
-   "xg_home": 1.7,
-   "xg_away": 1.3,
+   "away_pct": 28.2,
+   "xg_home": 1.71,
+   "xg_away": 1.29,
    "over25": 57.7,
    "btts": 60.3,
    "cards5": 0.0,
@@ -1085,14 +1549,66 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 45983,
+       "name": "I. Zlatanović",
+       "p": 18.0
+      },
+      {
+       "id": 32266,
+       "name": "J. East",
+       "p": 12.2
+      }
+     ],
+     "bookings": [
+      {
+       "id": 105786,
+       "name": "E. Peretz",
+       "p": 28.5
+      },
+      {
+       "id": 162269,
+       "name": "I. Rotman",
+       "p": 20.6
+      }
+     ],
+     "defender": {
+      "id": 105605,
+      "name": "M. Vítor",
+      "sot": 1
+     }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 47292,
+       "name": "K. Kodro",
+       "p": 13.6
+      },
+      {
+       "id": 36848,
+       "name": "Aitor Cantalapiedra",
+       "p": 10.6
+      }
+     ],
+     "bookings": [
+      {
+       "id": 14361,
+       "name": "K. Krizmanić",
+       "p": 16.5
+      },
+      {
+       "id": 1602,
+       "name": "T. Androutsos",
+       "p": 13.4
+      }
+     ],
+     "defender": {
+      "id": 417556,
+      "name": "K. Kostoulas",
+      "sot": 1
+     }
     }
    },
    "injuries": {
@@ -1118,12 +1634,12 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 61.5,
-   "draw_pct": 22.8,
-   "away_pct": 15.7,
+   "home_pct": 61.7,
+   "draw_pct": 22.7,
+   "away_pct": 15.6,
    "xg_home": 1.97,
    "xg_away": 0.9,
-   "over25": 54.6,
+   "over25": 54.7,
    "btts": 51.8,
    "cards5": 0.0,
    "cards": null,
@@ -1134,14 +1650,66 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 158614,
+       "name": "S. Włodarczyk",
+       "p": 19.2
+      },
+      {
+       "id": 216761,
+       "name": "S. Jatta",
+       "p": 15.7
+      }
+     ],
+     "bookings": [
+      {
+       "id": 19041,
+       "name": "J. Gorenc Stankovič",
+       "p": 26.7
+      },
+      {
+       "id": 422408,
+       "name": "L. Balbo",
+       "p": 20.7
+      }
+     ],
+     "defender": {
+      "id": 7757,
+      "name": "J. Heil",
+      "sot": 2
+     }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 109987,
+       "name": "S. Sešlar",
+       "p": 8.1
+      },
+      {
+       "id": 2183,
+       "name": "B. Verbič",
+       "p": 6.7
+      }
+     ],
+     "bookings": [
+      {
+       "id": 325384,
+       "name": "A. Tutyškinas",
+       "p": 33.3
+      },
+      {
+       "id": 2183,
+       "name": "B. Verbič",
+       "p": 22.6
+      }
+     ],
+     "defender": {
+      "id": 278810,
+      "name": "M. Avdyli",
+      "sot": 1
+     }
     }
    },
    "injuries": {
@@ -1167,13 +1735,13 @@
    "low_data": true,
    "market": null,
    "injury_effect": {},
-   "home_pct": 67.1,
-   "draw_pct": 20.1,
-   "away_pct": 12.8,
-   "xg_home": 2.22,
+   "home_pct": 67.3,
+   "draw_pct": 20.0,
+   "away_pct": 12.7,
+   "xg_home": 2.23,
    "xg_away": 0.87,
-   "over25": 59.7,
-   "btts": 52.6,
+   "over25": 59.9,
+   "btts": 52.7,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -1183,14 +1751,66 @@
    "goals": null,
    "players": {
     "home": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 286961,
+       "name": "Manu Pozo",
+       "p": 22.1
+      },
+      {
+       "id": 141620,
+       "name": "M. Abubakari",
+       "p": 15.9
+      }
+     ],
+     "bookings": [
+      {
+       "id": 162209,
+       "name": "J. Mutombo",
+       "p": 32.9
+      },
+      {
+       "id": 332315,
+       "name": "Alejandro Alfaro",
+       "p": 20.2
+      }
+     ],
+     "defender": {
+      "id": 277165,
+      "name": "Volnei Feltes",
+      "sot": 1
+     }
     },
     "away": {
-     "scorers": [],
-     "bookings": [],
-     "defender": null
+     "scorers": [
+      {
+       "id": 41624,
+       "name": "Sandro Lima",
+       "p": 11.9
+      },
+      {
+       "id": 269533,
+       "name": "A. Serobyan",
+       "p": 4.3
+      }
+     ],
+     "bookings": [
+      {
+       "id": 41969,
+       "name": "Bruno Wilson",
+       "p": 22.5
+      },
+      {
+       "id": 130806,
+       "name": "E. Grigoryan",
+       "p": 14.2
+      }
+     ],
+     "defender": {
+      "id": 41969,
+      "name": "Bruno Wilson",
+      "sot": 1
+     }
     }
    },
    "injuries": {
