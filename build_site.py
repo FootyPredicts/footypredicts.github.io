@@ -74,6 +74,38 @@ def shirt_html(num, team):
             f'<path d="{SHIRT_PATH}"/></svg><b>{num}</b></span>')
 
 
+TEAM_NEWS = {}
+
+
+def load_news():
+    TEAM_NEWS.clear()
+    try:
+        with open(os.path.join("data", "team_news.json"), encoding="utf-8") as fh:
+            TEAM_NEWS.update(json.load(fh).get("teams", {}))
+    except (FileNotFoundError, ValueError):
+        pass
+
+
+def news_block(f):
+    """Linked headlines about each club, from the news feed. Headlines only; each links to the publisher."""
+    cols, any_ = [], False
+    for team in (f["home"], f["away"]):
+        items = [x for x in TEAM_NEWS.get(team, []) if str(x.get("u", "")).startswith(("http://", "https://"))][:3]
+        any_ = any_ or bool(items)
+        li = "".join(
+            f'<li><a href="{esc(x["u"])}" target="_blank" rel="noopener nofollow">{esc(x["t"])}</a>'
+            f'<span class="nw-src">{esc(x.get("s", ""))}{" · " + esc(x["d"][5:10].replace("-", "/")) if x.get("d") else ""}</span></li>'
+            for x in items) or '<li class="none">No recent headlines</li>'
+        cols.append(f'<div><h4>{esc(team)}</h4><ul>{li}</ul></div>')
+    if not any_:
+        return ""
+    return f"""
+      <section class="block nw">
+        <h3>Team news <span class="sub">latest headlines, from the publishers' own sites</span></h3>
+        <div class="nw-cols">{cols[0]}{cols[1]}</div>
+      </section>"""
+
+
 def load_squads():
     SQUADS.clear()
     for lg in LEAGUE_ORDER:
@@ -580,6 +612,7 @@ def render_match(f, i):
         </div>
       </header>
       {euro_note}
+      {news_block(f)}
       {view_block(f)}
       {players_sec}
       {bookie_table(f)}
@@ -829,6 +862,7 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
 
 def build():
     load_squads()
+    load_news()
     leagues = []
     for key in LEAGUE_ORDER:
         path = os.path.join(SITE_DATA, f"{key}.json")
@@ -1348,6 +1382,15 @@ EXTRA_CSS += r"""
 .more { margin:8px 2px 0; font-size:14px; }
 .more a { color:var(--pitch-2); font-weight:600; }
 .euro-note { margin:14px 2px 0; }
+.nw-cols { display:grid; grid-template-columns:1fr 1fr; gap:14px 20px; }
+.nw h4 { margin:0 0 6px; font:700 18px/1.1 "Barlow Condensed",sans-serif; }
+.nw ul { list-style:none; margin:0; padding:0; }
+.nw li { padding:7px 0; border-top:1px solid var(--line); font-size:14px; line-height:1.35; }
+.nw li:first-child { border-top:0; }
+.nw a { color:var(--ink); font-weight:600; text-decoration:none; }
+.nw a:hover { text-decoration:underline; }
+.nw-src { display:block; color:var(--muted); font-size:12px; margin-top:1px; }
+@media (max-width:700px) { .nw-cols { grid-template-columns:1fr; } }
 /* live scores */
 .players td span.shirt, .shirt { position:relative; display:inline-block; width:30px; height:28px; margin-right:6px; vertical-align:middle; flex:none; }
 .shirt svg { position:absolute; inset:0; width:100%; height:100%; }

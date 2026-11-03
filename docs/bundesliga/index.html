@@ -420,6 +420,15 @@ a.chip { text-decoration:none; }
 .more { margin:8px 2px 0; font-size:14px; }
 .more a { color:var(--pitch-2); font-weight:600; }
 .euro-note { margin:14px 2px 0; }
+.nw-cols { display:grid; grid-template-columns:1fr 1fr; gap:14px 20px; }
+.nw h4 { margin:0 0 6px; font:700 18px/1.1 "Barlow Condensed",sans-serif; }
+.nw ul { list-style:none; margin:0; padding:0; }
+.nw li { padding:7px 0; border-top:1px solid var(--line); font-size:14px; line-height:1.35; }
+.nw li:first-child { border-top:0; }
+.nw a { color:var(--ink); font-weight:600; text-decoration:none; }
+.nw a:hover { text-decoration:underline; }
+.nw-src { display:block; color:var(--muted); font-size:12px; margin-top:1px; }
+@media (max-width:700px) { .nw-cols { grid-template-columns:1fr; } }
 /* live scores */
 .players td span.shirt, .shirt { position:relative; display:inline-block; width:30px; height:28px; margin-right:6px; vertical-align:middle; flex:none; }
 .shirt svg { position:absolute; inset:0; width:100%; height:100%; }
@@ -642,6 +651,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Hamburger SV</th><th>Draw</th><th>Borussia Mönchengladbach</th></tr><tr><th>Our model</th><td>39%</td><td>27%</td><td>33%</td></tr><tr><th>Bookmakers</th><td>39%</td><td>26%</td><td>35%</td></tr></table>
@@ -729,6 +739,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
@@ -820,6 +831,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Borussia Dortmund</th><th>Draw</th><th>SV Elversberg</th></tr><tr><th>Our model</th><td>70%</td><td>17%</td><td>13%</td></tr><tr><th>Bookmakers</th><td>73%</td><td>16%</td><td>11%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p>
@@ -906,6 +918,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
@@ -997,6 +1010,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>SC Paderborn 07</th><th>Draw</th><th>Eintracht Frankfurt</th></tr><tr><th>Our model</th><td>35%</td><td>32%</td><td>33%</td></tr><tr><th>Bookmakers</th><td>32%</td><td>24%</td><td>44%</td></tr></table><p class='vm-note'><b>Called a draw:</b> the match is too close to separate (low data, bookmakers disagree).</p>
@@ -1083,6 +1097,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
@@ -1174,6 +1189,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>1. FC Köln</th><th>Draw</th><th>Bayer Leverkusen</th></tr><tr><th>Our model</th><td>26%</td><td>23%</td><td>51%</td></tr><tr><th>Bookmakers</th><td>23%</td><td>23%</td><td>54%</td></tr></table>
@@ -1261,6 +1277,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
@@ -1352,6 +1369,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>1899 Hoffenheim</th><th>Draw</th><th>FC Schalke 04</th></tr><tr><th>Our model</th><td>53%</td><td>31%</td><td>16%</td></tr><tr><th>Bookmakers</th><td>58%</td><td>22%</td><td>20%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p>
@@ -1438,6 +1456,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">

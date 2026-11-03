@@ -420,6 +420,15 @@ a.chip { text-decoration:none; }
 .more { margin:8px 2px 0; font-size:14px; }
 .more a { color:var(--pitch-2); font-weight:600; }
 .euro-note { margin:14px 2px 0; }
+.nw-cols { display:grid; grid-template-columns:1fr 1fr; gap:14px 20px; }
+.nw h4 { margin:0 0 6px; font:700 18px/1.1 "Barlow Condensed",sans-serif; }
+.nw ul { list-style:none; margin:0; padding:0; }
+.nw li { padding:7px 0; border-top:1px solid var(--line); font-size:14px; line-height:1.35; }
+.nw li:first-child { border-top:0; }
+.nw a { color:var(--ink); font-weight:600; text-decoration:none; }
+.nw a:hover { text-decoration:underline; }
+.nw-src { display:block; color:var(--muted); font-size:12px; margin-top:1px; }
+@media (max-width:700px) { .nw-cols { grid-template-columns:1fr; } }
 /* live scores */
 .players td span.shirt, .shirt { position:relative; display:inline-block; width:30px; height:28px; margin-right:6px; vertical-align:middle; flex:none; }
 .shirt svg { position:absolute; inset:0; width:100%; height:100%; }
@@ -642,6 +651,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Sevilla</th><th>Draw</th><th>Alaves</th></tr><tr><th>Our model</th><td>47%</td><td>26%</td><td>27%</td></tr><tr><th>Bookmakers</th><td>49%</td><td>28%</td><td>23%</td></tr></table>
@@ -729,6 +739,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
@@ -819,6 +830,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Espanyol</th><th>Draw</th><th>Deportivo La</th></tr><tr><th>Our model</th><td>39%</td><td>30%</td><td>30%</td></tr><tr><th>Bookmakers</th><td>42%</td><td>29%</td><td>30%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p>
@@ -905,6 +917,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
@@ -996,6 +1009,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Valencia</th><th>Draw</th><th>Real Madrid</th></tr><tr><th>Our model</th><td>16%</td><td>24%</td><td>59%</td></tr><tr><th>Bookmakers</th><td>11%</td><td>16%</td><td>73%</td></tr></table>
@@ -1083,6 +1097,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
@@ -1174,6 +1189,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Real Sociedad</th><th>Draw</th><th>Rayo Vallecano</th></tr><tr><th>Our model</th><td>50%</td><td>25%</td><td>25%</td></tr><tr><th>Bookmakers</th><td>56%</td><td>24%</td><td>20%</td></tr></table>
@@ -1261,6 +1277,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
@@ -1352,6 +1369,7 @@ a.chip { text-decoration:none; }
       </header>
       
       
+      
       <section class="block">
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Celta Vigo</th><th>Draw</th><th>Levante</th></tr><tr><th>Our model</th><td>52%</td><td>26%</td><td>22%</td></tr><tr><th>Bookmakers</th><td>52%</td><td>26%</td><td>22%</td></tr></table>
@@ -1439,6 +1457,7 @@ a.chip { text-decoration:none; }
           <span class="stub-cap">chance to win</span>
         </div>
       </header>
+      
       
       
       <section class="block">
