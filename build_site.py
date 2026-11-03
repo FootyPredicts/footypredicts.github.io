@@ -952,7 +952,7 @@ def build():
         <div class="rows">{''.join(rows)}</div>{more}
       </section>""")
     html = page("FootyPredicts – football predictions for Europe's top leagues",
-                "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, the Champions League and the Europa League.",
+                "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A and Ligue 1.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
                 "", "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
