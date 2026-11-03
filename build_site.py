@@ -122,6 +122,7 @@ def shirt(pid):
 SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.com/").rstrip("/") + "/"
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
+SHOW_EUROPE = False      # switch on again once the European model has more data
 EURO_ORDER = ["champions-league", "europa-league"]
 
 
@@ -656,7 +657,7 @@ def track_record_page(leagues, upd):
             matches = json.load(fh)
     except (FileNotFoundError, ValueError):
         matches = []
-    euro_matches = [m for m in matches if m.get("league") in EURO_ORDER]
+    euro_matches = [m for m in matches if m.get("league") in EURO_ORDER] if SHOW_EUROPE else []
     matches = [m for m in matches if m.get("league") not in EURO_ORDER]    # domestic record stays separate
     summary = {"overall": {"matches": 0}, "leagues": {}}
     if SHOW_TRACK_RECORD:       # totals and percentages: private, only when you build it on your own computer
@@ -875,7 +876,7 @@ def build():
     if not leagues:
         raise SystemExit("No prediction files in data/site/ - run: python -m pipeline.run")
     euro = []
-    for key in EURO_ORDER:
+    for key in (EURO_ORDER if SHOW_EUROPE else []):
         path = os.path.join(SITE_DATA, f"{key}.json")
         if os.path.exists(path):
             with open(path, encoding="utf-8") as fh:
