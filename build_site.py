@@ -556,8 +556,9 @@ def render_match(f, i):
       <section class="block"><h3>Last meetings</h3><p class="halves pm-tip">Tap a match for the full details.</p><div class="pm">{prev}</div></section>""" if prev else ""
 
     euro_note = ('<p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength '
-                 'adjusted. Injuries, cards and player picks are not included yet.</p>') if euro else ""
-    players_sec = "" if euro else f"""
+                 'adjusted. Injuries and referee cards are not included yet.</p>') if euro else ""
+    has_pl = any(f["players"][x]["scorers"] or f["players"][x]["bookings"] for x in ("home", "away"))
+    players_sec = "" if (euro and not has_pl) else f"""
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>{esc(home)}</td><th></th><td>{esc(away)}</td></tr>{players}</table>

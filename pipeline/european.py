@@ -113,7 +113,25 @@ class EuroModel:
         return lh, la
 
 
-def build_fixture(f, em, res):
+def load_players():
+    """Domestic-league season stats (big five) plus European-competition stats, summed per player and club."""
+    rows = []
+    season = current_season()
+    for path in glob.glob(os.path.join(DATA_DIR, "*", f"players_{season}.json")) + [os.path.join(DATA_DIR, "euro_players.json")]:
+        try:
+            with open(path, encoding="utf-8") as fh:
+                rows += json.load(fh)
+        except (OSError, ValueError):
+            pass
+    if not rows:
+        return pd.DataFrame()
+    df = pd.DataFrame(rows)
+    agg = {c: "sum" for c in ("apps", "minutes", "goals", "shots", "sot", "yellow", "red")}
+    agg.update(name="first", position="first")
+    return df.groupby(["id", "team"], as_index=False).agg(agg)
+
+
+def build_fixture(f, em, res, p_rates=None):
     home, away = f["home"], f["away"]
     lh, la = em.expected_goals(home, away)
     ph, pdraw, pa = rm.probabilities(lh, la)
@@ -140,7 +158,9 @@ def build_fixture(f, em, res):
         "xg_home": round(lh, 2), "xg_away": round(la, 2),
         "over25": round(100 * o25, 1), "btts": round(100 * btts, 1),
         "cards5": 0.0, "cards": None, "form": {"home": None, "away": None}, "goals": None,
-        "players": {"home": dict(empty_side), "away": dict(empty_side)},
+        "players": ({"home": models.player_picks(p_rates, home, 1.0, 1.0, True),
+                     "away": models.player_picks(p_rates, away, 1.0, 1.0, False)}
+                    if p_rates is not None and not p_rates.empty else {"home": dict(empty_side), "away": dict(empty_side)}),
         "injuries": {"home": [], "away": []}, "previous": previous, "odds": {}, "euro": True,
     }
 
@@ -150,6 +170,7 @@ def main():
     now = pd.Timestamp.now(tz=None)
     em = EuroModel(df, team_league, now)
     print(f"fitted on {em.n_matches} matches, {em.n} clubs, {em.nl} leagues")
+    p_rates = models.player_rates(load_players())
     res = df[df["status"].isin(FINISHED) & df["hg"].notna()].copy()
     out_dir = os.path.join(DATA_DIR, "site")
     os.makedirs(out_dir, exist_ok=True)
@@ -157,7 +178,7 @@ def main():
         up = df[(df["comp"] == prefix) & df["status"].isin(models.UPCOMING) &
                 (df["dt"] >= now - pd.Timedelta(hours=3)) & (df["dt"] <= now + pd.Timedelta(days=DAYS_AHEAD))]
         up = up.sort_values("dt").head(MAX_FIXTURES)
-        fixtures = [build_fixture(f, em, res) for _, f in up.iterrows()]
+        fixtures = [build_fixture(f, em, res, p_rates) for _, f in up.iterrows()]
         result = {"league": key, "name": name, "country": "Europe", "season": current_season(),
                   "updated": datetime.now(timezone.utc).isoformat(), "matches_used": int(em.n_matches),
                   "euro": True, "fixtures": fixtures}

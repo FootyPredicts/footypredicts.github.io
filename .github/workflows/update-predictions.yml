@@ -61,6 +61,9 @@ jobs:
       - name: Refresh European results history
         run: python -m pipeline.fetch_history || echo "::warning::History not refreshed"
 
+      - name: European player stats
+        run: python -m pipeline.euro_players || echo "::warning::European player stats not refreshed"
+
       - name: European predictions (Champions League, Europa League)
         run: python -m pipeline.european || echo "::warning::European predictions failed"
 
