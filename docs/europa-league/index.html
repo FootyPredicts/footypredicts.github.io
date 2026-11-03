@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Europa League predictions – FootyPredicts</title>
+<meta name="description" content="Europa League match predictions: result chances, goals, cards and players for every fixture.">
+<link rel="canonical" href="https://footypredicts.com/europa-league/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="FootyPredicts">
+<meta property="og:title" content="Europa League predictions – FootyPredicts"><meta property="og:description" content="Europa League match predictions: result chances, goals, cards and players for every fixture.">
+<meta property="og:url" content="https://footypredicts.com/europa-league/"><meta property="og:image" content="https://footypredicts.com/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Europa League predictions – FootyPredicts">
+<meta name="twitter:description" content="Europa League match predictions: result chances, goals, cards and players for every fixture."><meta name="twitter:image" content="https://footypredicts.com/og.png">
+<meta name="theme-color" content="#0f3d2e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root {
+  --pitch:#0f3d2e; --pitch-2:#145039; --chalk:#f6f7f2; --paper:#ffffff;
+  --ink:#14211b; --muted:#5d6b64; --line:#dfe5df; --flood:#f6d33b; --flood-ink:#2a2300;
+  --home:#145039; --draw:#9aa7a0; --away:#c9a227;
+}
+* { box-sizing:border-box; }
+html { background:var(--chalk); }
+body { margin:0; font:16px/1.5 Barlow,system-ui,sans-serif; color:var(--ink); background:var(--chalk); }
+.cond { font-family:"Barlow Condensed",Barlow,sans-serif; }
+
+/* top bar */
+.top { background:var(--pitch); color:#fff; padding:22px 16px 0; position:relative; overflow:hidden; }
+.top::after { content:""; position:absolute; inset:auto -10% -140px auto; width:420px; height:420px;
+  border:2px solid rgba(255,255,255,.08); border-radius:50%; pointer-events:none; }
+.top-in { max-width:960px; margin:0 auto; position:relative; z-index:1; }
+.brand { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.brand h1 { margin:0; font:800 clamp(30px,6vw,44px)/1 "Barlow Condensed",sans-serif; letter-spacing:.01em; }
+.brand h1 span { color:var(--flood); }
+.brand p { margin:0; color:rgba(255,255,255,.72); font-size:14px; }
+
+/* fixture chips */
+.chips { display:flex; gap:8px; overflow-x:auto; padding:18px 0 16px; scroll-snap-type:x proximity; scrollbar-width:thin; }
+.chip { flex:0 0 auto; scroll-snap-align:start; display:grid; gap:1px; text-align:left; cursor:pointer;
+  padding:9px 12px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06); color:#fff; font:inherit; }
+.chip:hover { background:rgba(255,255,255,.12); }
+.chip[aria-selected="true"] { background:#fff; color:var(--ink); border-color:#fff; }
+.chip:focus-visible, .match :focus-visible { outline:3px solid var(--flood); outline-offset:2px; }
+.chip-when { font-size:12px; opacity:.75; }
+.chip-teams { font:700 17px/1.15 "Barlow Condensed",sans-serif; white-space:nowrap; }
+.chip-teams i { font-style:normal; opacity:.55; font-weight:500; }
+.chip-pick { font-size:12px; font-weight:600; color:var(--flood); }
+.chip[aria-selected="true"] .chip-pick { color:#8a6d00; }
+
+/* match */
+main { max-width:960px; margin:0 auto; padding:20px 16px 56px; }
+.match-head { position:relative; background:var(--paper); border-radius:18px; padding:22px 22px 26px;
+  border:1px solid var(--line); overflow:hidden; }
+.kick { color:var(--muted); font-size:14px; }
+.fixture { margin:6px 0 16px; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px;
+  font:800 clamp(30px,6.4vw,52px)/1 "Barlow Condensed",sans-serif; letter-spacing:-.005em; padding-right:6px; }
+.ref { margin:-6px 0 16px; font-size:19px; color:var(--ink); }
+.ref b { font:700 24px/1.1 "Barlow Condensed",sans-serif; }
+.ref-avg { color:var(--muted); font-size:16px; }
+.fixture .vs { font-weight:500; color:var(--muted); font-size:.6em; }
+
+.threeway { margin:0 0 18px; max-width:520px; }
+.tw-bar { display:flex; height:10px; border-radius:6px; overflow:hidden; gap:2px; }
+.tw-h { background:var(--home); } .tw-d { background:var(--draw); } .tw-a { background:var(--away); }
+.tw-legend { display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin-top:5px; }
+
+.markets { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px 20px; max-width:620px; }
+.meter-top { display:flex; justify-content:space-between; gap:8px; font-size:14px; color:var(--muted); }
+.meter-top b { color:var(--ink); font:700 22px/1 "Barlow Condensed",sans-serif; }
+.meter-track { height:6px; background:#edf1ed; border-radius:4px; margin-top:6px; overflow:hidden; }
+.meter-fill { height:100%; background:var(--pitch-2); border-radius:4px; }
+.meter-note { font-size:12px; color:var(--muted); margin-top:3px; }
+.meter-note.is-value { color:#7a5d00; font-weight:600; }
+.halves { margin:10px 2px 0; font-size:14px; color:var(--muted); }
+.halves b { color:var(--ink); }
+
+/* the "back" stub - bottom right */
+.stub { position:absolute; right:0; bottom:0; display:grid; justify-items:end; gap:0;
+  background:var(--flood); color:var(--flood-ink); padding:14px 20px 14px 26px; min-width:190px;
+  border-top-left-radius:16px; }
+.stub { background:linear-gradient(155deg,#ffe56b 0%,#f6d33b 45%,#dcb41d 100%);
+  box-shadow:-6px -6px 18px rgba(255,255,255,.7) inset, 6px 8px 14px rgba(120,90,0,.25) inset, -10px -6px 24px rgba(15,61,46,.18); }
+.stub::before { content:""; position:absolute; left:-1px; top:12px; bottom:12px; width:0;
+  border-left:3px dotted rgba(42,35,0,.35); }
+.stub-label { font-size:13px; font-weight:600; }
+.stub-team { font:800 24px/1.05 "Barlow Condensed",sans-serif; text-align:right; max-width:230px; }
+.stub-pct { font:800 46px/.95 "Barlow Condensed",sans-serif; margin-top:2px; }
+.stub-pct small { font-size:.5em; margin-left:1px; }
+.stub-cap { font-size:12px; opacity:.8; }
+.stub-risk { font-size:12px; font-weight:700; background:var(--flood-ink); color:var(--flood);
+  padding:2px 8px; border-radius:999px; margin:2px 0 4px; }
+.match-head { padding-bottom:26px; }
+.markets { margin-right:220px; }
+
+/* blocks */
+.block { margin-top:26px; }
+.block h3 { margin:0 0 10px; font:700 22px/1.1 "Barlow Condensed",sans-serif; }
+.block h3 .sub { font:400 14px Barlow,sans-serif; color:var(--muted); margin-left:6px; }
+.mirror { width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.mirror td, .mirror th { padding:10px 14px; border-top:1px solid var(--line); vertical-align:top; }
+.mirror tr:first-child td, .mirror tr:first-child th { border-top:0; }
+.mirror td { width:40%; }
+.mirror td:last-child { text-align:right; }
+.mirror th { width:20%; text-align:center; font-weight:500; color:var(--muted); font-size:13px; }
+.players td span { display:block; font-weight:600; }
+.players td small { font-weight:400; color:var(--muted); margin-left:4px; }
+.players .names td { font:700 18px/1.2 "Barlow Condensed",sans-serif; background:#f1f4f0; }
+.players .names th { background:#f1f4f0; }
+button.sel.na { opacity:.45; cursor:not-allowed; }
+.betwith { display:block; text-align:center; margin:10px 0 4px; padding:12px 16px; border-radius:10px; background:var(--flood); color:var(--flood-ink); font:700 18px "Barlow Condensed",sans-serif; text-decoration:none; }
+.inj-out small { color:#b3261e; }
+.inj-q small { color:#9a6700; }
+.none { color:var(--muted); font-weight:400 !important; }
+.mirror:not(.players) td { font:700 20px/1 "Barlow Condensed",sans-serif; }
+
+.pm { font-size:15px; }
+.pmx { border-bottom:1px solid var(--line); }
+.pmx summary { display:grid; grid-template-columns:auto 1fr 64px 1fr; align-items:center; gap:0 8px; padding:10px 6px; cursor:pointer; list-style:none; }
+.pmx summary::-webkit-details-marker { display:none; }
+.pmx summary:hover { background:rgba(0,0,0,.03); }
+.pm-date { color:var(--muted); white-space:nowrap; font-size:13px; padding-right:10px; }
+.pm-h { text-align:right; }
+.pm-score { text-align:center; font:700 18px/1 "Barlow Condensed",sans-serif; white-space:nowrap; }
+.pmx[open] summary { background:rgba(0,0,0,.04); }
+.pm-body { padding:10px 6px 16px; }
+.pm-meta { margin:0 0 10px; font-size:13px; color:var(--muted); }
+.pm-tip { margin:-4px 0 6px; }
+.pm-ev { width:100%; border-collapse:collapse; margin-bottom:12px; font-size:14px; }
+.pm-ev th { text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding:4px 6px; }
+.pm-ev td { vertical-align:top; padding:3px 6px; }
+.pm-ev .pm-sec td { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding-top:8px; border-top:1px solid var(--line); }
+
+.foot a { color:inherit; }
+.foot p { margin:0 0 8px; }
+.foot { max-width:960px; margin:0 auto; padding:0 16px 40px; color:var(--muted); font-size:13px; }
+
+@media (max-width:700px) {
+  .match-head { padding:18px 16px 0; }
+  .markets { grid-template-columns:1fr; margin-right:0; max-width:none; }
+  .stub { position:relative; margin:20px -16px 0; border-radius:0; border-top-left-radius:0;
+    grid-template-columns:auto 1fr auto; align-items:end; justify-items:start; gap:2px 12px; padding:14px 16px; min-width:0; }
+  .stub::before { display:none; }
+  .stub-label { grid-column:1; grid-row:1; }
+  .stub-team { grid-column:1 / 3; grid-row:2; text-align:left; }
+  .stub-pct { grid-column:3; grid-row:1 / 3; align-self:center; }
+  .stub-cap { grid-column:1 / 4; grid-row:3; }
+  .stub-risk { grid-column:1 / 4; grid-row:4; justify-self:start; margin-top:6px; }
+  .mirror tr { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); }
+  .mirror tr:first-child { border-top:0; }
+  .mirror td, .mirror th { display:block; width:auto; border-top:0; padding:8px 12px; }
+  .mirror th { grid-column:1 / 3; grid-row:1; text-align:center; font-size:12px; padding:8px 12px 0; }
+  .mirror .names th { display:none; }
+  .players td small { display:block; margin-left:0; }
+  .pm-date { display:none; }
+  .pmx summary { grid-template-columns:1fr 64px 1fr; }
+}
+@media (prefers-reduced-motion:no-preference) {
+  .meter-fill { transition:width .5s ease; }
+}
+/* motion when a match opens */
+@media (prefers-reduced-motion:no-preference) {
+  .match.play .r-fg { animation:fp-sweep 1.1s cubic-bezier(.2,.8,.2,1) both; }
+  .match.play .ring svg { animation:fp-pop .7s cubic-bezier(.2,1.4,.4,1) both; transform-origin:50% 50%; }
+  .match.play .tw-bar { animation:fp-grow .8s cubic-bezier(.2,.8,.2,1) both; transform-origin:left center; }
+  .match.play .meter-fill { animation:fp-bar .9s cubic-bezier(.2,.8,.2,1) .15s both; }
+  .match.play .stub-team { animation:fp-slide .6s cubic-bezier(.2,.8,.2,1) .15s both; }
+  .match.play .stub-label { animation:fp-slide .6s cubic-bezier(.2,.8,.2,1) both; }
+  .match.play .picks3 .sel, .match.play .meter-sel .sel { animation:fp-rise .5s ease both; }
+  .match.play .picks3 .sel:nth-child(2) { animation-delay:.08s; } .match.play .picks3 .sel:nth-child(3) { animation-delay:.16s; }
+  .match.play .block { animation:fp-rise .6s ease both; }
+  .match.play .block:nth-of-type(1) { animation-delay:.25s; } .match.play .block:nth-of-type(2) { animation-delay:.35s; }
+  .match.play .block:nth-of-type(3) { animation-delay:.45s; } .match.play .block:nth-of-type(n+4) { animation-delay:.55s; }
+  @keyframes fp-sweep { from { stroke-dasharray:0 240; } }
+  @keyframes fp-pop { from { transform:scale(.6) rotate(-25deg); opacity:0; } }
+  @keyframes fp-grow { from { transform:scaleX(0); } }
+  @keyframes fp-bar { from { width:0; } }
+  @keyframes fp-slide { from { opacity:0; transform:translateX(26px); } }
+  @keyframes fp-rise { from { opacity:0; transform:translateY(14px); } }
+}
+.vm th:first-child { max-width:200px; }
+.vm td { font:700 20px/1 "Barlow Condensed",sans-serif; }
+.vm-note { margin:10px 0 0; font-size:15px; color:var(--ink); }
+/* results cards */
+.rc-list { display:grid; gap:14px; }
+.rc { background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:14px 16px; box-shadow:0 8px 16px -10px rgba(15,61,46,.25); }
+.rc-top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; font-size:13px; color:var(--muted); }
+.rc-pick b { color:var(--ink); }
+.rc .ok { color:#1b7a46; font-weight:700; } .rc .no { color:#b3261e; font-weight:700; }
+.rc-score { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin:10px 0 8px; font:700 22px/1.1 "Barlow Condensed",sans-serif; }
+.rc-score .t:first-child { text-align:right; } .rc-score b { font-size:34px; background:#f1f4f0; border-radius:10px; padding:2px 12px; }
+.rc-cols { display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; border-top:1px solid var(--line); padding-top:8px; }
+
+
+details.rc { padding:0; }
+details.rc > summary { list-style:none; cursor:pointer; display:grid; grid-template-columns:1fr; gap:2px; padding:10px 14px; }
+details.rc > summary::-webkit-details-marker { display:none; }
+.rc-line { display:flex; align-items:baseline; gap:10px; font:700 20px/1.15 "Barlow Condensed",sans-serif; }
+.rc-line b { background:#f1f4f0; border-radius:8px; padding:0 9px; font-size:22px; }
+.rc-line .t:first-child { flex:1; text-align:right; } .rc-line .t:last-child { flex:1; }
+details.rc > summary .rc-pick { font-size:13px; color:var(--muted); text-align:center; }
+.rc-body { padding:0 14px 12px; border-top:1px solid var(--line); }
+.rc-lg { margin:8px 0 6px; font-size:12px; color:var(--muted); }
+details.rc[open] > summary { padding-bottom:8px; }
+.day .rc-list { gap:8px; }
+.day { margin:0 0 12px; }
+.day > summary, .older > summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+  padding:10px 14px; background:var(--paper); border:1px solid var(--line); border-radius:12px; font:700 18px/1.2 "Barlow Condensed",sans-serif; }
+.day > summary::-webkit-details-marker, .older > summary::-webkit-details-marker { display:none; }
+.day > summary::after { content:"\25BE"; color:var(--muted); margin-left:6px; }
+.day[open] > summary::after { content:"\25B4"; }
+.day .dsum { font:500 14px/1.2 Barlow,sans-serif; color:var(--muted); margin-left:auto; }
+.day .rc-list, .older .day { margin-top:10px; }
+.older > summary { justify-content:center; color:var(--pitch); }
+.older { margin-top:6px; }
+.rc .miss { color:var(--muted); font-weight:600; }
+.mks { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 8px; }
+.mk { font-size:12px; padding:2px 8px; border-radius:99px; background:#f1f4f0; color:var(--muted); }
+.mk.ok { background:#dff3e4; color:#115c2a; }
+.rc-cols h4.tn { margin:0 0 4px; font:700 15px/1.1 "Barlow Condensed",sans-serif; text-transform:none; letter-spacing:0; color:var(--ink); }
+@media (max-width:520px) { .rc-cols { grid-template-columns:1fr; } .rc-cols > div + div { border-top:1px solid var(--line); padding-top:8px; } }
+.rc-cols h4 { margin:6px 0 3px; font:700 12px/1 Barlow,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.rc-cols ul { list-style:none; margin:0; padding:0; font-size:14px; }
+.rc-cols li { display:flex; gap:6px; align-items:baseline; padding:2px 4px; border-radius:6px; }
+.rc-cols li.hit { background:linear-gradient(180deg,#fff7c9,#f6e27a); font-weight:700; }
+.rc-cols .min { min-width:30px; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rc-cols .none { color:var(--muted); }
+.card { display:inline-block; width:9px; height:13px; border-radius:2px; flex:none; transform:translateY(2px); }
+.card.yellow { background:#f6d33b; border:1px solid #c9a227; } .card.red { background:#d3262b; border:1px solid #8f1318; }
+@media (max-width:520px) { .rc-score { font-size:18px; } .rc-score b { font-size:28px; } }
+/* depth + football decoration */
+.bk { width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 8px 16px -10px rgba(15,61,46,.3); }
+.bk th, .bk td { padding:10px 12px; border-top:1px solid var(--line); text-align:center; }
+.bk tr:first-child th { border-top:0; font-size:13px; color:var(--muted); font-weight:600; background:#f1f4f0; }
+.bk th:first-child { text-align:left; font-weight:700; }
+.bk-p { font:700 20px/1 "Barlow Condensed",sans-serif; }
+.bk-best { color:#0f3d2e; background:linear-gradient(180deg,#fff7c9,#f6e27a); border-radius:8px; box-shadow:inset 0 1px 0 #fff; }
+.bk-go { display:inline-block; padding:7px 18px; border-radius:999px; background:var(--pitch); color:#fff; text-decoration:none; font:700 16px "Barlow Condensed",sans-serif; letter-spacing:.06em; box-shadow:0 3px 0 #0a2a20; }
+.bk-go:hover { transform:translateY(-1px); }
+.bk-block .halves a { color:inherit; }
+.head-kicker { position:absolute; left:8px; bottom:4px; width:260px; height:236px; pointer-events:none; z-index:0;
+  filter:drop-shadow(0 10px 8px rgba(15,61,46,.28)); }
+@media (max-width:900px) { .head-kicker { display:none; } }
+.stub { min-width:250px !important; padding:0 26px 22px 0 !important; gap:2px !important; }
+.stub-label { background:var(--pitch); color:#fff; font:700 14px "Barlow Condensed",sans-serif !important; letter-spacing:.14em; text-transform:uppercase;
+  padding:5px 14px; border-radius:999px; box-shadow:0 3px 0 #0a2a20, 0 6px 10px -3px rgba(15,61,46,.5); }
+.stub-team { font-size:44px !important; line-height:1 !important; margin-top:10px; text-shadow:0 6px 10px rgba(15,61,46,.2); max-width:300px !important; }
+.stub .ring { margin:8px 0 4px !important; }
+.stub .ring svg { width:176px !important; height:176px !important; filter:drop-shadow(0 12px 12px rgba(15,61,46,.35)); }
+.stub .ring text { font-size:36px !important; }
+.stub-cap { font-size:14px !important; font-weight:600; opacity:1 !important; color:var(--muted); letter-spacing:.04em; }
+.markets { margin-right:290px !important; }
+@media (max-width:900px) { .markets { margin-right:0 !important; } .stub { position:relative !important; margin:18px 0 0 !important; min-width:0 !important; padding:0 !important; } }
+@media (max-width:700px) { .stub-team { font-size:34px !important; } .stub .ring svg { width:132px !important; height:132px !important; } }
+.stub { background:none !important; box-shadow:none !important; border-radius:0 !important; padding-right:22px !important; padding-bottom:18px !important; }
+.stub::before { display:none !important; }
+@media (max-width:700px) { .stub { margin:14px 0 0 !important; padding:0 0 4px !important; } }
+.match-head { box-shadow:0 1px 0 #fff inset, 0 2px 0 rgba(15,61,46,.06), 0 10px 22px -8px rgba(15,61,46,.28), 0 28px 44px -26px rgba(15,61,46,.35);
+  background:linear-gradient(180deg,#ffffff 0%,#f7faf6 100%); }
+.head-ball { position:absolute; top:-26px; right:-22px; width:128px; height:128px; opacity:.95; pointer-events:none;
+  filter:drop-shadow(0 12px 8px rgba(15,61,46,.3)); transform:rotate(18deg); }
+.fixture, .kick, .ref, .threeway, .markets { position:relative; z-index:1; }
+.threeway .tw-bar { height:12px; box-shadow:inset 0 2px 3px rgba(0,0,0,.25), 0 1px 0 #fff; }
+.tw-h, .tw-d, .tw-a { background-image:linear-gradient(180deg,rgba(255,255,255,.35),rgba(0,0,0,.12)); }
+.meter-track { box-shadow:inset 0 1px 3px rgba(0,0,0,.2); height:8px; }
+.meter-fill { background-image:linear-gradient(180deg,#2b7a57,#0f3d2e); box-shadow:0 1px 2px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.35); }
+button.sel { box-shadow:0 2px 0 rgba(15,61,46,.18), 0 5px 8px -3px rgba(15,61,46,.25), inset 0 1px 0 rgba(255,255,255,.8);
+  transition:transform .12s ease, box-shadow .12s ease; }
+button.sel:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 3px 0 rgba(15,61,46,.2), 0 9px 12px -4px rgba(15,61,46,.3), inset 0 1px 0 #fff; }
+button.sel:active:not(:disabled), button.sel[aria-pressed="true"] { transform:translateY(1px); box-shadow:inset 0 2px 4px rgba(0,0,0,.25); }
+.mirror, .tr-hero, .row { box-shadow:0 1px 0 #fff inset, 0 8px 16px -10px rgba(15,61,46,.3); }
+.decor { position:fixed; top:110px; bottom:0; width:calc((100vw - 960px) / 2 - 24px); max-width:240px; pointer-events:none; display:none; z-index:0; }
+.decor-l { left:12px; } .decor-r { right:12px; }
+.decor svg { position:absolute; filter:drop-shadow(0 14px 10px rgba(15,61,46,.28)); }
+.d-ball { width:84px; height:84px; } .d-flag { width:78px; height:117px; left:50%; top:34%; margin-left:-30px; }
+.d-goal { width:170px; height:121px; right:0; top:8%; }
+.d1 { left:30%; top:12%; transform:rotate(-20deg); } .d2 { left:8%; top:68%; width:62px; height:62px; transform:rotate(40deg); }
+.d3 { right:34%; top:46%; width:96px; height:96px; transform:rotate(25deg); } .d4 { right:10%; top:78%; width:58px; height:58px; }
+main, .top, .foot { position:relative; z-index:1; }
+
+@media (prefers-reduced-motion:no-preference) {
+  .d1, .d3 { animation:fp-float 7s ease-in-out infinite; } .d2, .d4 { animation:fp-float 9s ease-in-out -3s infinite; }
+  @keyframes fp-float { 0%,100% { translate:0 0; } 50% { translate:0 -12px; } }
+}
+@media (max-width:700px) { .head-ball { width:64px; height:64px; top:-16px; right:-18px; opacity:.85; } }
+
+/* cards */
+.cards-box .meter-top b { font-size:26px; }
+.cards-split { display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin:2px 0 8px; }
+.cards-box .meter { margin-top:8px; }
+.cards-box .meter .meter-top b { font-size:18px; }
+
+/* track record */
+.lg-tr { border-style:dashed; }
+.tr-hero { background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:22px; display:grid; gap:10px; }
+.tr-big { display:flex; align-items:center; gap:18px; }
+.tr-big b { font:800 clamp(56px,10vw,84px)/1 "Barlow Condensed",sans-serif; color:var(--pitch); }
+.tr-big span { font-size:17px; line-height:1.35; }
+.tr-calib { margin:0; color:var(--muted); max-width:62ch; }
+.tr-calib b { color:var(--ink); }
+.tr-table { width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.tr-table th, .tr-table td { padding:10px 14px; border-top:1px solid var(--line); text-align:left; }
+.tr-table tr:first-child td { color:var(--muted); font-size:13px; border-top:0; }
+.tr-table tr:first-child th { border-top:0; }
+.tr-table td { font:700 19px/1.1 "Barlow Condensed",sans-serif; }
+.tr-table td small { font:400 13px Barlow,sans-serif; color:var(--muted); }
+.tr-table th a { color:var(--ink); }
+.tr-scroll { overflow-x:auto; }
+.tr-list { width:100%; border-collapse:collapse; font-size:14px; }
+.tr-list td { padding:8px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+.tr-list .tr-m { white-space:nowrap; }
+.tr-list .tr-sc { color:var(--muted); font-size:13px; }
+.tr-list .tr-sc b { color:var(--ink); }
+.ok { color:#1d7a46; font-weight:800; }
+.no { color:#b3261e; font-weight:800; }
+.tr-method p { color:var(--muted); max-width:70ch; }
+@media (max-width:700px) { .tr-big { flex-direction:column; align-items:flex-start; gap:6px; } .tr-table th, .tr-table td { padding:8px 10px; } }
+
+/* clickable prices */
+.picks3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin-top:10px; }
+.meter-sel { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.sel { display:inline-flex; align-items:baseline; gap:6px; font:inherit; font-size:13px; color:var(--ink);
+  background:#fff; border:1px solid var(--line); border-radius:9px; padding:6px 9px; cursor:pointer; text-align:left; }
+button.sel:hover { border-color:var(--pitch-2); }
+.sel b { font:700 18px/1 "Barlow Condensed",sans-serif; }
+.sel small { color:var(--muted); font-size:11px; }
+.sel[aria-pressed="true"] { background:var(--pitch); color:#fff; border-color:var(--pitch); }
+.sel[aria-pressed="true"] small { color:rgba(255,255,255,.75); }
+.picks3 .sel { justify-content:space-between; flex-wrap:wrap; }
+.picks3 .sel-l { font-weight:600; flex:1 1 100%; }
+.none-price { cursor:default; color:var(--muted); border-style:dashed; }
+.pl { display:block; margin:2px 0; }
+.pl .sel { padding:3px 7px; margin-left:4px; vertical-align:middle; }
+.pl .sel b { font-size:15px; }
+.mirror td:last-child .pl { text-align:right; }
+.markets { margin-right:220px; }
+
+/* ring */
+.ring svg { width:96px; height:96px; display:block; }
+.ring .r-shadow { fill:rgba(42,35,0,.28); filter:blur(2.5px); }
+.ring .r-dial { fill:url(#fp-dial-g); stroke:rgba(255,255,255,.55); stroke-width:1.2; }
+.ring .r-bg { fill:none; stroke:rgba(42,35,0,.2); stroke-width:9; }
+.ring .r-fg { fill:none; stroke:url(#fp-ring-g); stroke-width:9; stroke-linecap:round; filter:drop-shadow(0 1.5px 1px rgba(0,0,0,.35)); }
+.ring text { font:800 34px "Barlow Condensed",sans-serif; fill:var(--flood-ink); }
+.stub .ring { margin:4px 0 2px; }
+
+/* bet slip */
+.slip { position:fixed; right:16px; bottom:16px; z-index:20; width:min(360px, calc(100vw - 32px));
+  background:var(--paper); border:1px solid var(--line); border-radius:16px;
+  box-shadow:0 12px 34px rgba(15,61,46,.22); overflow:hidden; }
+.slip[hidden] { display:none; }
+.slip-head { width:100%; display:flex; justify-content:space-between; align-items:center; gap:10px; cursor:pointer;
+  background:var(--pitch); color:#fff; border:0; padding:12px 16px; font:700 18px "Barlow Condensed",sans-serif; }
+.slip-head b { color:var(--flood); }
+.slip-body { padding:10px 16px 14px; max-height:55vh; overflow:auto; }
+.slip.closed .slip-body { display:none; }
+.slip-item { display:grid; grid-template-columns:1fr auto auto; gap:4px 10px; align-items:center; padding:8px 0; border-bottom:1px solid var(--line); }
+.slip-item .what { font-weight:600; font-size:14px; }
+.slip-item .m { grid-column:1; color:var(--muted); font-size:12px; }
+.slip-item .o { font:700 18px "Barlow Condensed",sans-serif; grid-row:1 / 3; grid-column:2; }
+.slip-item .x { grid-row:1 / 3; grid-column:3; border:0; background:none; font-size:20px; cursor:pointer; color:var(--muted); }
+.slip-tot { display:flex; justify-content:space-between; margin-top:10px; font-size:14px; }
+.slip-tot b { font:800 22px "Barlow Condensed",sans-serif; }
+.slip-note { font-size:12px; color:var(--muted); margin:6px 0 0; }
+.slip-actions { display:flex; gap:8px; margin-top:12px; }
+.slip-actions button { flex:1; font:600 14px Barlow,sans-serif; padding:9px; border-radius:10px; cursor:pointer;
+  border:1px solid var(--pitch); background:var(--pitch); color:#fff; }
+.slip-actions .ghost { background:#fff; color:var(--pitch); }
+.sel:focus-visible, .slip button:focus-visible { outline:3px solid var(--flood); outline-offset:2px; }
+@media (max-width:700px) {
+  .markets { margin-right:0; }
+  .picks3 { gap:6px; }
+  .picks3 .sel { padding:6px 7px; }
+  .stub .ring { grid-column:3; grid-row:1 / 3; align-self:center; }
+  .ring svg { width:76px; height:76px; }
+  .slip { right:8px; left:8px; bottom:8px; width:auto; }
+  main { padding-bottom:90px; }
+}
+
+/* league menu */
+.leagues { display:flex; gap:6px; overflow-x:auto; padding:14px 0 2px; scrollbar-width:thin; }
+.lg { flex:0 0 auto; color:rgba(255,255,255,.78); text-decoration:none; font:600 15px/1 Barlow,sans-serif;
+  padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.18); }
+.lg:hover { color:#fff; border-color:rgba(255,255,255,.4); }
+.lg.on { background:var(--flood); color:var(--flood-ink); border-color:var(--flood); }
+.lg:focus-visible, .row:focus-visible, .chip:focus-visible { outline:3px solid var(--flood); outline-offset:2px; }
+a.chip { text-decoration:none; }
+.top-pad { padding-bottom:18px; }
+
+/* front page */
+.league-block { margin-top:28px; }
+.league-block:first-child { margin-top:4px; }
+.league-block h2 { margin:0 0 10px; font:800 30px/1 "Barlow Condensed",sans-serif; }
+.league-block h2 a { color:var(--ink); text-decoration:none; }
+.league-block h2 a:hover { text-decoration:underline; }
+.league-block h2 .sub { font:400 15px Barlow,sans-serif; color:var(--muted); margin-left:6px; }
+.rows { background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.row { display:grid; grid-template-columns:120px 1fr 140px 170px; align-items:center; gap:14px;
+  padding:11px 16px; border-top:1px solid var(--line); color:var(--ink); text-decoration:none; }
+.row:first-child { border-top:0; }
+.row:hover { background:#f6f8f5; }
+.row-when { color:var(--muted); font-size:13px; }
+.row-teams { font:700 19px/1.15 "Barlow Condensed",sans-serif; }
+.row-teams i { font-style:normal; color:var(--muted); font-weight:500; }
+.row-bar { display:flex; height:8px; border-radius:5px; overflow:hidden; gap:2px; }
+.row-pick { text-align:right; font-size:14px; }
+.row-pick b { font:800 20px/1 "Barlow Condensed",sans-serif; margin-left:4px; }
+.row-pick em { display:block; font-style:normal; font-size:12px; font-weight:700; color:#7a5d00; }
+@media (max-width:700px) {
+  .row { grid-template-columns:1fr auto; gap:4px 10px; padding:10px 14px; }
+  .row-when { grid-column:1 / 3; }
+  .row-teams { grid-column:1; }
+  .row-pick { grid-column:2; grid-row:2; }
+  .row-bar { grid-column:1 / 3; }
+}
+
+.slip-book { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:0 0 10px; font-size:13px; color:var(--muted); }
+.slip-book select { font:inherit; font-size:14px; color:var(--ink,#16231b); padding:6px 8px; border:1px solid var(--line); border-radius:8px; background:#fff; max-width:60%; }
+.more { margin:8px 2px 0; font-size:14px; }
+.more a { color:var(--pitch-2); font-weight:600; }
+.euro-note { margin:14px 2px 0; }
+/* live scores */
+.players td span.shirt, .shirt { position:relative; display:inline-block; width:30px; height:28px; margin-right:6px; vertical-align:middle; flex:none; }
+.shirt svg { position:absolute; inset:0; width:100%; height:100%; }
+.shirt path { fill:var(--c); stroke:#16231b; stroke-width:1.2; stroke-linejoin:round; }
+.shirt b { position:absolute; inset:0; padding-top:4px; text-align:center; font:700 14px/1 "Barlow Condensed",sans-serif; color:var(--t); }
+.lv-ev li .shirt { width:24px; height:22px; margin:0 6px 0 0; }
+.lv-ev li .shirt b { font-size:11px; padding-top:3px; }
+.st-wait { margin:8px 0 0; font-size:12px; color:var(--muted); }
+.lv-none { margin:0; font-size:13px; color:var(--muted); padding:8px 2px; }
+.lv-key { margin:-2px 0 8px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
+.lv-key .sw { display:inline-block; width:22px; height:10px; border-radius:4px; background:linear-gradient(180deg,#fff7c9,#f6e27a); border:1px solid #e0c54a; }
+.lv-stats { margin:8px 0 0; }
+.lv-stats > summary { cursor:pointer; list-style:none; display:inline-block; font-size:13px; font-weight:600; color:var(--pitch); padding:2px 10px; border:1px solid var(--line); border-radius:99px; background:#fff; }
+.lv-stats > summary::-webkit-details-marker { display:none; }
+.lv-stats[open] > summary { background:#eef2ee; }
+.st-grid { display:grid; gap:9px; margin-top:10px; }
+.st-top { display:grid; grid-template-columns:48px 1fr 48px; align-items:baseline; font-size:14px; font-variant-numeric:tabular-nums; }
+.st-top b { font-weight:700; } .st-top span { text-align:center; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+.st-top b:last-child { text-align:right; }
+.st-bar { display:flex; height:6px; border-radius:4px; overflow:hidden; background:#e8ece8; margin-top:3px; gap:2px; }
+.st-bar i { display:block; background:var(--home); } .st-bar i + i { background:var(--away); }
+
+.lv-ev li.hit { background:linear-gradient(180deg,#fff7c9,#f6e27a); border-radius:6px; padding:1px 6px; font-weight:700; }
+.pk-row { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 0; }
+.pk { font-size:12px; padding:2px 9px; border-radius:99px; background:#f1f4f0; color:var(--muted); }
+.pk.ok { background:#fff1a8; color:#4a3b00; font-weight:700; }
+.pk.miss { text-decoration:line-through; opacity:.7; }
+.lv-fav, .fav-btn { font:inherit; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:99px; }
+.lv-fav { margin-left:auto; padding:2px 10px; font-size:16px; line-height:1.4; color:#8a6d00; }
+.lv-fav.on, .fav-btn.on { background:#fff3b0; border-color:#e0c54a; }
+.fav-btn { margin-left:10px; padding:2px 10px; font-size:13px; }
+.lv-h { font:700 13px/1 Barlow,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 8px; }
+.lv-pre { color:var(--muted); }
+
+.live { max-width:960px; margin:16px auto 0; padding:0 16px; }
+.lv { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin:0 0 8px;
+  box-shadow:0 1px 0 #fff inset, 0 8px 16px -10px rgba(15,61,46,.3); }
+.lv-top { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.lv-min { font:700 13px/1 Barlow,sans-serif; color:#b3261e; display:inline-flex; align-items:center; gap:6px; min-width:54px; }
+.lv-min.ft { color:var(--muted); }
+.lv-min i { width:8px; height:8px; border-radius:50%; background:#d93025; animation:lvp 1.4s infinite; }
+.lv-min.ft i { display:none; }
+@keyframes lvp { 50% { opacity:.25; } }
+.lv-teams { font:700 20px/1.15 "Barlow Condensed",sans-serif; flex:1 1 220px; }
+.lv-score { font:800 26px/1 "Barlow Condensed",sans-serif; letter-spacing:.04em; }
+.lv-pick { font-size:13px; padding:3px 9px; border-radius:99px; background:#eef2ee; color:var(--ink); white-space:nowrap; }
+.lv-pick.ok { background:#dff3e4; color:#115c2a; }
+.lv-pick.no { background:#fbe4e2; color:#8a1c14; }
+.lv-ev { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:2px; font-size:14px; }
+.lv-ev li { display:flex; gap:8px; align-items:center; }
+.lv-ev .t { color:var(--muted); min-width:34px; font-variant-numeric:tabular-nums; }
+.lv-ev .h { justify-content:flex-start; } .lv-ev .a { justify-content:flex-start; }
+.lv-ev .who { color:var(--muted); font-size:12px; }
+.lv-card { display:inline-block; width:10px; height:14px; border-radius:2px; background:#f6d33b; }
+.lv-card.red { background:#d93025; }
+.lv-note { color:var(--muted); font-size:12px; margin:2px 0 8px; }
+.live-box { margin:0 0 12px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="fp-ring-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a4300"/><stop offset=".5" stop-color="#2a2300"/><stop offset="1" stop-color="#0f3d2e"/></linearGradient>
+  <radialGradient id="fp-dial-g" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fff6c2"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#d9b21c"/></radialGradient>
+  <radialGradient id="fp-ball-g" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#e6ebe7"/><stop offset="1" stop-color="#aab5ae"/></radialGradient>
+  <linearGradient id="fp-post-g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#b9c3bd"/></linearGradient>
+  <symbol id="fp-ball" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="47" fill="url(#fp-ball-g)" stroke="#8d9a92" stroke-width="1.5"/>
+    <polygon points="50,33 66,45 60,64 40,64 34,45" fill="#1d2a24"/>
+    <g stroke="#1d2a24" stroke-width="2" fill="none" stroke-linecap="round">
+      <path d="M50 33 L50 12"/><path d="M66 45 L86 38"/><path d="M60 64 L73 82"/><path d="M40 64 L27 82"/><path d="M34 45 L14 38"/></g>
+    <g fill="#1d2a24"><polygon points="50,3 62,9 58,20 42,20 38,9"/><polygon points="93,38 95,53 85,58 79,45 86,36"/>
+      <polygon points="7,38 14,36 21,45 15,58 5,53"/><polygon points="76,86 66,95 54,91 55,78 68,76"/><polygon points="24,86 32,76 45,78 46,91 34,95"/></g>
+    <ellipse cx="36" cy="26" rx="16" ry="9" fill="#fff" opacity=".35" transform="rotate(-30 36 26)"/>
+  </symbol>
+  <symbol id="fp-flag" viewBox="0 0 80 120">
+    <ellipse cx="22" cy="113" rx="16" ry="4" fill="#000" opacity=".18"/>
+    <rect x="20" y="8" width="4" height="104" rx="2" fill="url(#fp-post-g)" stroke="#8d9a92" stroke-width=".8"/>
+    <path d="M24 10 L70 24 L24 40 Z" fill="#f6d33b" stroke="#c9a227" stroke-width="1.2"/>
+    <path d="M24 10 L70 24 L24 40 Z" fill="#fff" opacity=".18" transform="translate(0 -2)"/>
+  </symbol>
+  <symbol id="fp-kicker" viewBox="0 0 220 200">
+    <ellipse cx="100" cy="190" rx="70" ry="6" fill="#000" opacity=".16"/>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M96 112 L100 152 L96 184" stroke="#1d2a24" stroke-width="15"/>
+      <path d="M96 184 L112 186" stroke="#f6d33b" stroke-width="12"/>
+      <path d="M88 112 L122 138 L158 126" stroke="#2c3a33" stroke-width="15"/>
+      <path d="M158 126 L170 122" stroke="#f6d33b" stroke-width="12"/>
+      <path d="M92 82 L62 100 L44 88" stroke="#2c3a33" stroke-width="10"/>
+      <path d="M96 80 L128 74 L146 58" stroke="#1d2a24" stroke-width="10"/>
+      <path d="M90 118 L86 80" stroke="#f6d33b" stroke-width="30"/>
+      <path d="M88 118 L100 116" stroke="#ffffff" stroke-width="26"/>
+    </g>
+    <circle cx="94" cy="56" r="14" fill="#1d2a24"/>
+    <path d="M82 54 Q94 36 108 52" fill="none" stroke="#0f1814" stroke-width="5" stroke-linecap="round"/>
+    <text x="86" y="104" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="22" fill="#145039" text-anchor="middle" transform="rotate(-4 86 100)">9</text>
+    <use href="#fp-ball" x="170" y="104" width="38" height="38"/>
+    <g stroke="#9db0a6" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M200 94 L214 88"/><path d="M204 150 L216 156"/><path d="M148 156 L130 164"/></g>
+  </symbol>
+  <symbol id="fp-goal" viewBox="0 0 140 100">
+    <g stroke="#9db0a6" stroke-width="1" opacity=".9">
+      <path d="M18 14 H122 M18 28 H122 M18 42 H122 M18 56 H122 M18 70 H122"/>
+      <path d="M32 14 V86 M46 14 V86 M60 14 V86 M74 14 V86 M88 14 V86 M102 14 V86 M116 14 V86"/></g>
+    <path d="M8 90 V10 Q8 6 12 6 H128 Q132 6 132 10 V90" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M8 90 V10 Q8 6 12 6 H128 Q132 6 132 10 V90" fill="none" stroke="#b9c3bd" stroke-width="1.5" transform="translate(1.5 1.5)" opacity=".7"/>
+  </symbol>
+</defs></svg>
+<header class="top top-pad">
+  <div class="top-in">
+    <div class="brand">
+      <h1><a href="../" style="color:inherit;text-decoration:none">Footy<span>Predicts</span></a></h1>
+      <p>Europa League · 04 Nov – 05 Nov 2026 · updated 03 Nov, 06:52</p>
+    </div>
+    <nav class="leagues" aria-label="Leagues"><a href="../" class="lg">All leagues</a><a href="../premier-league/" class="lg">Premier League</a><a href="../la-liga/" class="lg">La Liga</a><a href="../bundesliga/" class="lg">Bundesliga</a><a href="../serie-a/" class="lg">Serie A</a><a href="../ligue-1/" class="lg">Ligue 1</a><a href="../champions-league/" class="lg">Champions League</a><a href="../europa-league/" class="lg on">Europa League</a><a href="../track-record/" class="lg lg-tr">How we did</a></nav>
+    <nav class="chips" role="tablist" aria-label="Fixtures">
+      <button class="chip" role="tab" data-tab="m0" aria-controls="m0" aria-selected="false">
+        <span class="chip-when">Wed 04 Nov 15:30</span>
+        <span class="chip-teams">Rennes <i>v</i> Olympiakos Piraeus</span>
+        <span class="chip-pick">Rennes 41%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m1" aria-controls="m1" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 17:45</span>
+        <span class="chip-teams">Sparta Praha <i>v</i> Bournemouth</span>
+        <span class="chip-pick">Bournemouth 69%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m2" aria-controls="m2" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 17:45</span>
+        <span class="chip-teams">Anderlecht <i>v</i> Red Bull</span>
+        <span class="chip-pick">Anderlecht 48%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m3" aria-controls="m3" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 17:45</span>
+        <span class="chip-teams">Real Sociedad <i>v</i> Lyon</span>
+        <span class="chip-pick">Real Sociedad 45%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m4" aria-controls="m4" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 17:45</span>
+        <span class="chip-teams">Levski Sofia <i>v</i> Jagiellonia</span>
+        <span class="chip-pick">Levski Sofia 42%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m5" aria-controls="m5" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 17:45</span>
+        <span class="chip-teams">NEC Nijmegen <i>v</i> Omonia Nicosia</span>
+        <span class="chip-pick">NEC Nijmegen 42%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m6" aria-controls="m6" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 17:45</span>
+        <span class="chip-teams">Lillestrom <i>v</i> Plzen</span>
+        <span class="chip-pick">Plzen 39%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m7" aria-controls="m7" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 17:45</span>
+        <span class="chip-teams">Crystal Palace <i>v</i> 1899 Hoffenheim</span>
+        <span class="chip-pick">Crystal Palace 57%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m8" aria-controls="m8" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 17:45</span>
+        <span class="chip-teams">AC Milan <i>v</i> Ferencvarosi TC</span>
+        <span class="chip-pick">AC Milan 60%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m9" aria-controls="m9" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">Sunderland <i>v</i> Dinamo Zagreb</span>
+        <span class="chip-pick">Sunderland 67%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m10" aria-controls="m10" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">Bayer Leverkusen <i>v</i> Marseille</span>
+        <span class="chip-pick">Bayer Leverkusen 56%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m11" aria-controls="m11" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">AZ Alkmaar <i>v</i> Juventus</span>
+        <span class="chip-pick">Juventus 47%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m12" aria-controls="m12" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">Benfica <i>v</i> Lech Poznan</span>
+        <span class="chip-pick">Benfica 74%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m13" aria-controls="m13" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">Celtic <i>v</i> Beşiktaş</span>
+        <span class="chip-pick">Beşiktaş 40%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m14" aria-controls="m14" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">Celta Vigo <i>v</i> Union St.</span>
+        <span class="chip-pick">Union St. 38% · draw risk</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m15" aria-controls="m15" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">Hapoel Beer <i>v</i> OFI</span>
+        <span class="chip-pick">Hapoel Beer 46%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m16" aria-controls="m16" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">Sturm Graz <i>v</i> Celje</span>
+        <span class="chip-pick">Sturm Graz 62%</span>
+      </button>
+      <button class="chip" role="tab" data-tab="m17" aria-controls="m17" aria-selected="false">
+        <span class="chip-when">Thu 05 Nov 20:00</span>
+        <span class="chip-teams">Torreense <i>v</i> Ararat-Armenia</span>
+        <span class="chip-pick">Torreense 67%</span>
+      </button></nav>
+  </div>
+</header>
+<main><section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>
+    <article id="m0" class="match" role="tabpanel" data-fid="1636324" hidden>
+      <header class="match-head">
+        <div class="kick">Wed 04 Nov · 15:30 <button type="button" class="fav-btn" data-fav="1636324" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Rennes</span><span class="vs">v</span><span>Olympiakos Piraeus</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:41.4"></span><span class="tw-d" style="flex:28.8"></span><span class="tw-a" style="flex:29.8"></span></div>
+          <div class="tw-legend"><span>Home 41%</span><span>Draw 29%</span><span>Away 30%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Rennes <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Olympiakos Piraeus <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>46%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:46%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>51%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:51%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#701a14">Favoured</span>
+          
+          <span class="stub-team">Rennes</span>
+          <span class="stub-pct ring" role="img" aria-label="41 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636324" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#f2a39e"/><stop offset=".55" stop-color="#e13327"/><stop offset="1" stop-color="#a2251c"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#651712;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636324)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#ffffff;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="98.8 238.8" transform="rotate(-90 50 50)" style="stroke:#ffffff"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#ffffff">41<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.4</td><th>Expected goals</th><td>1.1</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m1" class="match" role="tabpanel" data-fid="1636337" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 17:45 <button type="button" class="fav-btn" data-fav="1636337" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Sparta Praha</span><span class="vs">v</span><span>Bournemouth</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:11.8"></span><span class="tw-d" style="flex:18.8"></span><span class="tw-a" style="flex:69.4"></span></div>
+          <div class="tw-legend"><span>Home 12%</span><span>Draw 19%</span><span>Away 69%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Sparta Praha <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Bournemouth <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>62%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:62%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>54%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:54%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#6d140e">Favoured</span>
+          
+          <span class="stub-team">Bournemouth</span>
+          <span class="stub-pct ring" role="img" aria-label="69 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636337" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#ee9f99"/><stop offset=".55" stop-color="#da291c"/><stop offset="1" stop-color="#9d1e14"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#62120d;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636337)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#ffffff;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="165.7 238.8" transform="rotate(-90 50 50)" style="stroke:#ffffff"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#ffffff">69<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>0.9</td><th>Expected goals</th><td>2.3</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m2" class="match" role="tabpanel" data-fid="1636211" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 17:45 <button type="button" class="fav-btn" data-fav="1636211" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Anderlecht</span><span class="vs">v</span><span>Red Bull Salzburg</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:47.7"></span><span class="tw-d" style="flex:25.8"></span><span class="tw-a" style="flex:26.5"></span></div>
+          <div class="tw-legend"><span>Home 48%</span><span>Draw 26%</span><span>Away 26%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Anderlecht <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Red Bull <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>55%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:55%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>58%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:58%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">Anderlecht</span>
+          <span class="stub-pct ring" role="img" aria-label="48 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636211" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636211)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="113.9 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">48<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.7</td><th>Expected goals</th><td>1.2</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m3" class="match" role="tabpanel" data-fid="1636319" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 17:45 <button type="button" class="fav-btn" data-fav="1636319" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Real Sociedad</span><span class="vs">v</span><span>Lyon</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:44.7"></span><span class="tw-d" style="flex:25.1"></span><span class="tw-a" style="flex:30.2"></span></div>
+          <div class="tw-legend"><span>Home 45%</span><span>Draw 25%</span><span>Away 30%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Real Sociedad <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Lyon <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>60%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:60%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>63%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:63%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#003458">Favoured</span>
+          
+          <span class="stub-team">Real Sociedad</span>
+          <span class="stub-pct ring" role="img" aria-label="45 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636319" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#8cbbdc"/><stop offset=".55" stop-color="#0067b1"/><stop offset="1" stop-color="#004a7f"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#002e50;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636319)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#ffffff;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="106.7 238.8" transform="rotate(-90 50 50)" style="stroke:#ffffff"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#ffffff">45<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.7</td><th>Expected goals</th><td>1.4</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m4" class="match" role="tabpanel" data-fid="1636286" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 17:45 <button type="button" class="fav-btn" data-fav="1636286" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Levski Sofia</span><span class="vs">v</span><span>Jagiellonia</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:41.6"></span><span class="tw-d" style="flex:29.6"></span><span class="tw-a" style="flex:28.8"></span></div>
+          <div class="tw-legend"><span>Home 42%</span><span>Draw 30%</span><span>Away 29%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Levski Sofia <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Jagiellonia <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>42%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:42%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>49%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:49%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">Levski Sofia</span>
+          <span class="stub-pct ring" role="img" aria-label="42 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636286" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636286)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="99.3 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">42<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.3</td><th>Expected goals</th><td>1.1</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m5" class="match" role="tabpanel" data-fid="1636302" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 17:45 <button type="button" class="fav-btn" data-fav="1636302" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>NEC Nijmegen</span><span class="vs">v</span><span>Omonia Nicosia</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:41.5"></span><span class="tw-d" style="flex:26.2"></span><span class="tw-a" style="flex:32.3"></span></div>
+          <div class="tw-legend"><span>Home 42%</span><span>Draw 26%</span><span>Away 32%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">NEC Nijmegen <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Omonia Nicosia <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>56%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:56%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>60%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:60%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">NEC Nijmegen</span>
+          <span class="stub-pct ring" role="img" aria-label="42 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636302" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636302)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="99.1 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">42<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.6</td><th>Expected goals</th><td>1.4</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m6" class="match" role="tabpanel" data-fid="1636289" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 17:45 <button type="button" class="fav-btn" data-fav="1636289" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Lillestrom</span><span class="vs">v</span><span>Plzen</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:34.3"></span><span class="tw-d" style="flex:26.9"></span><span class="tw-a" style="flex:38.7"></span></div>
+          <div class="tw-legend"><span>Home 34%</span><span>Draw 27%</span><span>Away 39%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Lillestrom <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Plzen <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>54%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:54%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>58%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:58%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">Plzen</span>
+          <span class="stub-pct ring" role="img" aria-label="39 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636289" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636289)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="92.4 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">39<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.4</td><th>Expected goals</th><td>1.5</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m7" class="match" role="tabpanel" data-fid="1636254" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 17:45 <button type="button" class="fav-btn" data-fav="1636254" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Crystal Palace</span><span class="vs">v</span><span>1899 Hoffenheim</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:57.3"></span><span class="tw-d" style="flex:22.2"></span><span class="tw-a" style="flex:20.6"></span></div>
+          <div class="tw-legend"><span>Home 57%</span><span>Draw 22%</span><span>Away 21%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Crystal Palace <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">1899 Hoffenheim <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>65%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:65%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>62%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:62%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#0e2248">Favoured</span>
+          
+          <span class="stub-team">Crystal Palace</span>
+          <span class="stub-pct ring" role="img" aria-label="57 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636254" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#98abcd"/><stop offset=".55" stop-color="#1b458f"/><stop offset="1" stop-color="#133267"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#0c1f40;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636254)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#ffffff;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="136.8 238.8" transform="rotate(-90 50 50)" style="stroke:#ffffff"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#ffffff">57<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>2.1</td><th>Expected goals</th><td>1.2</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m8" class="match" role="tabpanel" data-fid="1636208" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 17:45 <button type="button" class="fav-btn" data-fav="1636208" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>AC Milan</span><span class="vs">v</span><span>Ferencvarosi TC</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:59.8"></span><span class="tw-d" style="flex:23.4"></span><span class="tw-a" style="flex:16.8"></span></div>
+          <div class="tw-legend"><span>Home 60%</span><span>Draw 23%</span><span>Away 17%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">AC Milan <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Ferencvarosi TC <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>54%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:54%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>52%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:52%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7e0406">Favoured</span>
+          
+          <span class="stub-team">AC Milan</span>
+          <span class="stub-pct ring" role="img" aria-label="60 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636208" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fd9091"/><stop offset=".55" stop-color="#fb090b"/><stop offset="1" stop-color="#b50608"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#710405;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636208)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#ffffff;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="142.8 238.8" transform="rotate(-90 50 50)" style="stroke:#ffffff"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#ffffff">60<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.9</td><th>Expected goals</th><td>0.9</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m9" class="match" role="tabpanel" data-fid="1636345" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636345" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Sunderland</span><span class="vs">v</span><span>Dinamo Zagreb</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:67.1"></span><span class="tw-d" style="flex:20.1"></span><span class="tw-a" style="flex:12.8"></span></div>
+          <div class="tw-legend"><span>Home 67%</span><span>Draw 20%</span><span>Away 13%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Sunderland <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Dinamo Zagreb <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>60%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:60%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>52%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:52%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#760c16">Favoured</span>
+          
+          <span class="stub-team">Sunderland</span>
+          <span class="stub-pct ring" role="img" aria-label="67 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636345" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#f697a0"/><stop offset=".55" stop-color="#eb172b"/><stop offset="1" stop-color="#a9111f"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6a0a13;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636345)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#ffffff;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="160.2 238.8" transform="rotate(-90 50 50)" style="stroke:#ffffff"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#ffffff">67<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>2.2</td><th>Expected goals</th><td>0.9</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m10" class="match" role="tabpanel" data-fid="1636223" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636223" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Bayer Leverkusen</span><span class="vs">v</span><span>Marseille</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:55.6"></span><span class="tw-d" style="flex:22.0"></span><span class="tw-a" style="flex:22.4"></span></div>
+          <div class="tw-legend"><span>Home 56%</span><span>Draw 22%</span><span>Away 22%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Bayer Leverkusen <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Marseille <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>67%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:67%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>66%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:66%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#721110">Favoured</span>
+          
+          <span class="stub-team">Bayer Leverkusen</span>
+          <span class="stub-pct ring" role="img" aria-label="56 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636223" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#f29c9b"/><stop offset=".55" stop-color="#e32221"/><stop offset="1" stop-color="#a31818"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#660f0f;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636223)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#ffffff;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="132.8 238.8" transform="rotate(-90 50 50)" style="stroke:#ffffff"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#ffffff">56<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>2.1</td><th>Expected goals</th><td>1.3</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m11" class="match" role="tabpanel" data-fid="1636219" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636219" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>AZ Alkmaar</span><span class="vs">v</span><span>Juventus</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:25.7"></span><span class="tw-d" style="flex:27.4"></span><span class="tw-a" style="flex:47.0"></span></div>
+          <div class="tw-legend"><span>Home 26%</span><span>Draw 27%</span><span>Away 47%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">AZ Alkmaar <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Juventus <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>49%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:49%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>53%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:53%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#161616">Favoured</span>
+          
+          <span class="stub-team">Juventus</span>
+          <span class="stub-pct ring" role="img" aria-label="47 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636219" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#a0a0a0"/><stop offset=".55" stop-color="#2b2b2b"/><stop offset="1" stop-color="#1f1f1f"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#131313;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636219)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#ffffff;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="112.2 238.8" transform="rotate(-90 50 50)" style="stroke:#ffffff"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#ffffff">47<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.1</td><th>Expected goals</th><td>1.5</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m12" class="match" role="tabpanel" data-fid="1636229" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636229" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Benfica</span><span class="vs">v</span><span>Lech Poznan</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:74.3"></span><span class="tw-d" style="flex:15.6"></span><span class="tw-a" style="flex:10.1"></span></div>
+          <div class="tw-legend"><span>Home 74%</span><span>Draw 16%</span><span>Away 10%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Benfica <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Lech Poznan <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>73%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:73%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>59%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:59%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">Benfica</span>
+          <span class="stub-pct ring" role="img" aria-label="74 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636229" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636229)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="177.4 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">74<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>2.8</td><th>Expected goals</th><td>1.0</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m13" class="match" role="tabpanel" data-fid="1636250" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636250" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Celtic</span><span class="vs">v</span><span>Beşiktaş</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:34.0"></span><span class="tw-d" style="flex:25.7"></span><span class="tw-a" style="flex:40.3"></span></div>
+          <div class="tw-legend"><span>Home 34%</span><span>Draw 26%</span><span>Away 40%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Celtic <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Beşiktaş <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>59%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:59%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>62%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:62%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">Beşiktaş</span>
+          <span class="stub-pct ring" role="img" aria-label="40 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636250" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636250)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="96.2 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">40<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.5</td><th>Expected goals</th><td>1.6</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m14" class="match" role="tabpanel" data-fid="1636245" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636245" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Celta Vigo</span><span class="vs">v</span><span>Union St. Gilloise</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:32.3"></span><span class="tw-d" style="flex:29.9"></span><span class="tw-a" style="flex:37.8"></span></div>
+          <div class="tw-legend"><span>Home 32%</span><span>Draw 30%</span><span>Away 38%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Celta Vigo <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Union St. <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>42%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:42%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>49%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:49%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          <span class="stub-risk">Draw risk · draw 30%</span>
+          <span class="stub-team">Union St. Gilloise</span>
+          <span class="stub-pct ring" role="img" aria-label="38 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636245" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636245)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="90.3 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">38<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.1</td><th>Expected goals</th><td>1.2</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m15" class="match" role="tabpanel" data-fid="1636264" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636264" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Hapoel Beer Sheva</span><span class="vs">v</span><span>OFI</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:46.2"></span><span class="tw-d" style="flex:25.5"></span><span class="tw-a" style="flex:28.3"></span></div>
+          <div class="tw-legend"><span>Home 46%</span><span>Draw 26%</span><span>Away 28%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Hapoel Beer <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">OFI <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>58%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:58%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>60%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:60%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">Hapoel Beer Sheva</span>
+          <span class="stub-pct ring" role="img" aria-label="46 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636264" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636264)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="110.3 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">46<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>1.7</td><th>Expected goals</th><td>1.3</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m16" class="match" role="tabpanel" data-fid="1636339" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636339" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Sturm Graz</span><span class="vs">v</span><span>Celje</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:61.5"></span><span class="tw-d" style="flex:22.8"></span><span class="tw-a" style="flex:15.7"></span></div>
+          <div class="tw-legend"><span>Home 62%</span><span>Draw 23%</span><span>Away 16%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Sturm Graz <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Celje <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>55%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:55%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>52%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:52%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">Sturm Graz</span>
+          <span class="stub-pct ring" role="img" aria-label="62 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636339" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636339)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="146.8 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">62<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>2.0</td><th>Expected goals</th><td>0.9</td></tr></table>
+      </section>
+      
+      
+    </article>
+    <article id="m17" class="match" role="tabpanel" data-fid="1636347" hidden>
+      <header class="match-head">
+        <div class="kick">Thu 05 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1636347" aria-pressed="false">&#9734; Track this match</button></div>
+        <h2 class="fixture"><span>Torreense</span><span class="vs">v</span><span>Ararat-Armenia</span></h2>
+        
+        <div class="threeway" aria-label="Result chances">
+          <div class="tw-bar"><span class="tw-h" style="flex:67.1"></span><span class="tw-d" style="flex:20.1"></span><span class="tw-a" style="flex:12.8"></span></div>
+          <div class="tw-legend"><span>Home 67%</span><span>Draw 20%</span><span>Away 13%</span></div>
+          <div class="picks3">
+            <span class="sel none-price">Torreense <small>no price</small></span>
+            <span class="sel none-price">Draw <small>no price</small></span>
+            <span class="sel none-price">Ararat-Armenia <small>no price</small></span>
+          </div>
+        </div>
+        <div class="markets">
+          
+        <div class="meter">
+          <div class="meter-top"><span>Over 2.5 goals</span><b>60%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:60%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Over <small>no price</small></span><span class="sel none-price">Under <small>no price</small></span></div>
+        </div>
+          
+        <div class="meter">
+          <div class="meter-top"><span>Both teams to score</span><b>53%</b></div>
+          <div class="meter-track"><div class="meter-fill" style="width:53%"></div></div>
+          <div class="meter-sel"><span class="sel none-price">Yes <small>no price</small></span><span class="sel none-price">No <small>no price</small></span></div>
+        </div>
+          
+        </div>
+        <div class="stub">
+          <span class="stub-label" style="background:#7b6a1e">Favoured</span>
+          
+          <span class="stub-team">Torreense</span>
+          <span class="stub-pct ring" role="img" aria-label="67 percent"><svg viewBox="0 0 100 100"><defs><radialGradient id="rg1636347" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fbeba7"/><stop offset=".55" stop-color="#f6d33b"/><stop offset="1" stop-color="#b1982a"/></radialGradient></defs><circle class="r-shadow" cx="50" cy="54" r="44" style="fill:#6f5f1b;fill-opacity:.35"/><circle class="r-dial" cx="50" cy="50" r="46" style="fill:url(#rg1636347)"/><circle class="r-bg" cx="50" cy="50" r="38" style="stroke:#5d5016;stroke-opacity:.22"/><circle class="r-fg" cx="50" cy="50" r="38" stroke-dasharray="160.2 238.8" transform="rotate(-90 50 50)" style="stroke:#5d5016"/><text x="50" y="50" dominant-baseline="central" text-anchor="middle" style="fill:#1a1a14">67<tspan dy="-12" font-size="20">%</tspan></text></svg></span>
+          <span class="stub-cap">chance to win</span>
+        </div>
+      </header>
+      <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries, cards and player picks are not included yet.</p>
+      
+      <section class="block">
+        <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
+        <p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p>
+      </section>
+      
+      
+      
+      
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror"><tr><td>2.2</td><th>Expected goals</th><td>0.9</td></tr></table>
+      </section>
+      
+      
+    </article>
+</main>
+<footer class="foot">
+<p><b>18+ only.</b> Gambling can be addictive. Please gamble responsibly and only with money you can afford to lose. Free, confidential help: <a href="https://www.begambleaware.org" rel="noopener">BeGambleAware.org</a> · National Gambling Helpline 0808 8020 133 · <a href="https://www.gamstop.co.uk" rel="noopener">GAMSTOP</a> · <a href="../responsible-gambling/">Responsible gambling and how this site is funded</a></p>
+<p>Predictions come from statistical models trained on past matches. They are probabilities, not guarantees, and are not betting advice. Past results do not predict future results. Odds are the best price found across bookmakers at the last update and change often.</p>
+<p>FootyPredicts does not take bets. If we link to a bookmaker, that link may be an affiliate link and we may be paid if you sign up. This never changes our predictions.</p>
+<p>We count visits with Cloudflare Web Analytics, which does not use cookies or track you across sites. Bets you add to the slip and matches you star are kept only in your own browser.</p>
+</footer>
+<script>
+(function () {
+  var chips = document.querySelectorAll('button.chip');
+  if (!chips.length) return;
+  function play(id) {
+    var m = document.getElementById(id); if (!m) return;
+    m.classList.remove('play'); void m.offsetWidth; m.classList.add('play');
+    var t = m.querySelector('.ring text');
+    if (!t || !t.firstChild || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var target = parseFloat(t.firstChild.nodeValue) || 0, start = null;
+    (function step(ts) {
+      if (start === null) start = ts;
+      var k = Math.min(1, (ts - start) / 1000), e = 1 - Math.pow(1 - k, 3);
+      t.firstChild.nodeValue = Math.round(target * e);
+      if (k < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  function show(id) {
+    document.querySelectorAll('.match').forEach(function (m) { m.hidden = m.id !== id; });
+    play(id);
+    chips.forEach(function (c) { c.setAttribute('aria-selected', c.dataset.tab === id ? 'true' : 'false'); });
+    try { history.replaceState(null, '', '#' + id); } catch (e) {}
+  }
+  chips.forEach(function (c) { c.addEventListener('click', function () { show(c.dataset.tab); }); });
+  var h = location.hash.slice(1);
+  show(h && document.getElementById(h) ? h : chips[0].dataset.tab);
+})();
+</script>
+<script>
+/* Bet slip: picks are kept in this browser only (localStorage). */
+(function () {
+  var KEY = 'fp-slip-v1', BKEY = 'fp-book-v1', picks = [];
+  var BOOKIES = {"William Hill": {"url": "https://sports.williamhill.com/betting/en-gb/football", "aff": false}, "Bet365": {"url": "https://www.bet365.com/#/AS/B1/", "aff": false}, "BetVictor": {"url": "https://www.betvictor.com/en-gb/sports/football", "aff": false}, "Betfair": {"url": "https://www.betfair.com/sport/football", "aff": false}}, book = 'best';
+  try { book = localStorage.getItem(BKEY) || 'best'; } catch (e) {}
+  if (book !== 'best' && !BOOKIES[book]) book = 'best';
+  try { picks = JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { picks = []; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(picks)); } catch (e) {} }
+  var slip = document.createElement('aside');
+  slip.className = 'slip closed'; slip.setAttribute('aria-label', 'Bet slip'); slip.hidden = true;
+  document.body.appendChild(slip);
+  function fmt(n) { return n >= 100 ? n.toFixed(0) : n.toFixed(2); }
+  function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  /* Show every price at the chosen bookmaker (or the best price found). */
+  function priceFor(books, best, bestBk) {
+    if (book === 'best') return { odd: best, bookie: bestBk };
+    var o = books && books[book];
+    return o ? { odd: o, bookie: book } : null;
+  }
+  function applyBook() {
+    document.querySelectorAll('button.sel').forEach(function (b) {
+      var books = {}; try { books = JSON.parse(b.dataset.books || '{}'); } catch (e) {}
+      var pr = priceFor(books, parseFloat(b.dataset.bestOdd), b.dataset.bestBookie);
+      var bEl = b.querySelector('b'), sm = b.querySelector('small');
+      if (pr) { b.dataset.odd = pr.odd.toFixed(2); b.dataset.bookie = pr.bookie; b.disabled = false; b.classList.remove('na');
+                bEl.textContent = pr.odd.toFixed(2); if (sm) sm.textContent = pr.bookie; }
+      else { b.dataset.odd = ''; b.disabled = true; b.classList.add('na'); bEl.textContent = '\u2013'; if (sm) sm.textContent = 'not at ' + book; }
+    });
+    picks.forEach(function (p) {
+      var pr = priceFor(p.books, p.bestOdd, p.bestBookie);
+      p.odd = pr ? pr.odd : null; p.bookie = pr ? pr.bookie : null;
+    });
+  }
+  function bookSelect() {
+    return '<label class="slip-book">Prices from <select aria-label="Show prices from">' +
+      '<option value="best"' + (book === 'best' ? ' selected' : '') + '>Best price found</option>' +
+      Object.keys(BOOKIES).map(function (k) { return '<option value="' + esc(k) + '"' + (book === k ? ' selected' : '') + '>' + esc(k) + '</option>'; }).join('') +
+      '</select></label>';
+  }
+  document.addEventListener('change', function (e) {
+    var sel = e.target.closest && e.target.closest('.slip-book select');
+    if (!sel) return;
+    book = sel.value; try { localStorage.setItem(BKEY, book); } catch (er) {}
+    applyBook(); save(); render();
+  });
+  function render() {
+    document.querySelectorAll('button.sel').forEach(function (b) {
+      b.setAttribute('aria-pressed', picks.some(function (p) { return p.key === b.dataset.key; }) ? 'true' : 'false');
+    });
+    if (!picks.length) { slip.hidden = true; return; }
+    slip.hidden = false;
+    var priced = picks.filter(function (p) { return p.odd; }), missing = picks.length - priced.length;
+    var odds = priced.reduce(function (a, p) { return a * p.odd; }, 1);
+    var chance = picks.reduce(function (a, p) { return a * p.p; }, 1);
+    var fids = picks.map(function (p) { return p.fid; });
+    var sameMatch = fids.some(function (f, i) { return fids.indexOf(f) !== i; });
+    var items = picks.map(function (p, i) {
+      return '<div class="slip-item"><span class="what">' + esc(p.label) + '</span>' +
+        '<span class="m">' + esc(p.match) + ' · ' + (p.odd ? esc(p.bookie) : 'not at ' + esc(book)) + '</span>' +
+        '<span class="o">' + (p.odd ? p.odd.toFixed(2) : '\u2013') + '</span>' +
+        '<button class="x" data-i="' + i + '" aria-label="Remove ' + esc(p.label) + '">×</button></div>';
+    }).join('');
+    slip.innerHTML =
+      '<button class="slip-head" aria-expanded="' + (!slip.classList.contains('closed')) + '">' +
+      '<span>Bet slip (' + picks.length + ')</span><span>' + (picks.length > 1 ? 'Combined odds ' : 'Odds ') + '<b>' + fmt(odds) + '</b></span></button>' +
+      '<div class="slip-body">' + bookSelect() + items +
+      '<div class="slip-tot"><span>' + (picks.length > 1 ? 'Combined odds' : 'Odds') + '</span><b>' + fmt(odds) + '</b></div>' +
+      '<div class="slip-tot"><span>Our model\u2019s chance' + (picks.length > 1 ? ' of all landing' : '') + '</span><b>' + (100 * chance).toFixed(chance < 0.1 ? 1 : 0) + '%</b></div>' +
+      (sameMatch ? '<p class="slip-note">Picks from the same match are linked, so bookmakers price them differently from these simple combined odds.</p>' : '') +
+      (picks.length > 1 && book === 'best' ? '<p class="slip-note">Prices are the best found for each pick, which may be at different bookmakers. Choose a bookmaker in \u201cPrices from\u201d above to see all prices from one place.</p>' : '') +
+      (missing ? '<p class="slip-note">' + missing + ' pick(s) are not offered by ' + esc(book) + ' and are left out of the odds.</p>' : '') +
+      betLink() +
+      '<div class="slip-actions"><button class="copy">Copy slip</button><button class="ghost clear">Clear</button></div>' +
+      '<p class="slip-note">Odds change. Check the price with the bookmaker. 18+ · BeGambleAware.org</p></div>';
+  }
+  function betLink() {
+    if (book === 'best') return '<p class="slip-note">Choose a bookmaker in \u201cPrices from\u201d to get a link to bet with them.</p>';
+    var c = BOOKIES[book]; if (!c || !c.url) return '';
+    return '<a class="betwith" href="' + esc(c.url) + '" target="_blank" rel="' + (c.aff ? 'sponsored ' : '') + 'noopener nofollow">Bet with ' + esc(book) + ' \u2192</a>' +
+      '<p class="slip-note">' + (c.aff ? 'Affiliate link: we may earn a commission if you sign up. ' : '') +
+      'This opens ' + esc(book) + '\u2019s site \u2013 add your picks there and check the final price. 18+ only.</p>';
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('button.sel');
+    if (b) {
+      var k = b.dataset.key, i = picks.findIndex(function (p) { return p.key === k; });
+      if (i >= 0) picks.splice(i, 1);
+      else {
+        picks = picks.filter(function (p) { return p.group !== b.dataset.group; });
+        picks.push({ key: k, group: b.dataset.group, fid: b.dataset.fid, label: b.dataset.label, match: b.dataset.match,
+                     odd: parseFloat(b.dataset.odd), bookie: b.dataset.bookie, p: parseFloat(b.dataset.p),
+                     bestOdd: parseFloat(b.dataset.bestOdd), bestBookie: b.dataset.bestBookie,
+                     books: JSON.parse(b.dataset.books || '{}') });
+        if (picks.length === 1 && window.innerWidth > 700) slip.classList.remove('closed');
+      }
+      save(); render(); return;
+    }
+    if (e.target.closest('.slip-head')) { slip.classList.toggle('closed'); render(); return; }
+    var x = e.target.closest('.slip .x');
+    if (x) { picks.splice(+x.dataset.i, 1); save(); render(); return; }
+    if (e.target.closest('.slip .clear')) { picks = []; save(); render(); return; }
+    var c = e.target.closest('.slip .copy');
+    if (c) {
+      var odds = picks.filter(function (p) { return p.odd; }).reduce(function (a, p) { return a * p.odd; }, 1);
+      var text = picks.map(function (p) { return p.match + ': ' + p.label + (p.odd ? ' @ ' + p.odd.toFixed(2) + ' (' + p.bookie + ')' : ' (not at ' + book + ')'); }).join('\n') +
+        '\nCombined odds: ' + fmt(odds) + '\nfrom FootyPredicts';
+      var done = function () { c.textContent = 'Copied'; setTimeout(function () { c.textContent = 'Copy slip'; }, 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () {}); else done();
+    }
+  });
+  applyBook(); save(); render();
+})();
+</script>
+<script>
+/* Live scores and "my matches". Polls the relay only while a match is on and the tab is open.
+   Starred matches are kept in this browser only (localStorage). */
+(function () {
+  var SHIRT_D = 'M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z';
+  var L = {"url": "https://live.footypredicts.com/", "picks": {"1557455": {"lg": "premier-league", "h": "Newcastle", "a": "Everton", "pk": "Home", "ko": "2026-11-02T20:00:00Z", "hp": 43, "dp": 28, "ap": 29, "sc": ["H. Barnes", "A. Elanga", "T. Barry", "K. Dewsbury-Hall"], "bk": ["Nico Gonz\u00e1lez", "Y. Wissa", "H. Armstrong", "J. Garner"], "no": {"H. Barnes": [11, "#222222", "#ffffff"], "A. Elanga": [19, "#222222", "#ffffff"], "Nico Gonz\u00e1lez": [6, "#222222", "#ffffff"], "Y. Wissa": [9, "#222222", "#ffffff"], "T. Barry": [11, "#003399", "#ffffff"], "K. Dewsbury-Hall": [8, "#003399", "#ffffff"], "H. Armstrong": [45, "#003399", "#ffffff"], "J. Garner": [37, "#003399", "#ffffff"]}}, "1557460": {"lg": "premier-league", "h": "Everton", "a": "Coventry", "pk": "Home", "ko": "2026-11-06T20:00:00Z", "hp": 51, "dp": 27, "ap": 21, "sc": ["T. Barry", "K. Dewsbury-Hall", "J. Rudoni", "S. Cherif"], "bk": ["H. Armstrong", "J. Garner", "M. van Ewijk", "A. Amenda"], "no": {"T. Barry": [11, "#003399", "#ffffff"], "K. Dewsbury-Hall": [8, "#003399", "#ffffff"], "H. Armstrong": [45, "#003399", "#ffffff"], "J. Garner": [37, "#003399", "#ffffff"], "J. Rudoni": [5, "#5BC2E7", "#16231b"], "S. Cherif": [49, "#5BC2E7", "#16231b"], "M. van Ewijk": [27, "#5BC2E7", "#16231b"], "A. Amenda": [24, "#5BC2E7", "#16231b"]}}, "1557463": {"lg": "premier-league", "h": "Leeds", "a": "Tottenham", "pk": "Home", "ko": "2026-11-07T12:30:00Z", "hp": 45, "dp": 29, "ap": 26, "sc": ["D. Calvert-Lewin", "J. Bogle", "Omar Marmoush", "D. Solanke"], "bk": ["E. Ampadu", "J. Bogle", "C. Gallagher", "M. van de Ven"], "no": {"D. Calvert-Lewin": [9, "#FFFFFF", "#16231b"], "J. Bogle": [2, "#FFFFFF", "#16231b"], "E. Ampadu": [4, "#FFFFFF", "#16231b"], "Omar Marmoush": [22, "#FFFFFF", "#16231b"], "D. Solanke": [19, "#FFFFFF", "#16231b"], "C. Gallagher": [8, "#FFFFFF", "#16231b"], "M. van de Ven": [37, "#FFFFFF", "#16231b"]}}, "1557461": {"lg": "premier-league", "h": "Fulham", "a": "Newcastle", "pk": "Home", "ko": "2026-11-07T15:00:00Z", "hp": 39, "dp": 28, "ap": 33, "sc": ["Joshua King", "Gonzalo Garc\u00eda", "H. Barnes", "A. Elanga"], "bk": ["C. Bassey", "Joshua King", "Nico Gonz\u00e1lez", "Y. Wissa"], "no": {"Joshua King": [24, "#FFFFFF", "#16231b"], "Gonzalo Garc\u00eda": [7, "#FFFFFF", "#16231b"], "C. Bassey": [3, "#FFFFFF", "#16231b"], "H. Barnes": [11, "#222222", "#ffffff"], "A. Elanga": [19, "#222222", "#ffffff"], "Nico Gonz\u00e1lez": [6, "#222222", "#ffffff"], "Y. Wissa": [9, "#222222", "#ffffff"]}}, "1557457": {"lg": "premier-league", "h": "Arsenal", "a": "Hull City", "pk": "Home", "ko": "2026-11-07T15:00:00Z", "hp": 62, "dp": 26, "ap": 12, "sc": ["B. Saka", "K. Havertz", "O. McBurnie", "M. Belloumi"], "bk": ["C. Tzolis", "M. Lewis-Skelly", "M. Crooks", "O. McBurnie"], "no": {"B. Saka": [7, "#EF0107", "#ffffff"], "K. Havertz": [29, "#EF0107", "#ffffff"], "C. Tzolis": [17, "#EF0107", "#ffffff"], "M. Lewis-Skelly": [49, "#EF0107", "#ffffff"], "O. McBurnie": [9, "#F5A12D", "#16231b"], "M. Belloumi": [10, "#F5A12D", "#16231b"], "M. Crooks": [25, "#F5A12D", "#16231b"]}}, "1557465": {"lg": "premier-league", "h": "Nottingham Forest", "a": "Manchester City", "pk": "Away", "ko": "2026-11-07T17:30:00Z", "hp": 22, "dp": 26, "ap": 52, "sc": ["D. Ndoye", "M. Gibbs-White", "E. Haaland", "R. Cherki"], "bk": ["O. Aina", "N. Milenkovi\u0107", "E. Anderson", "J. Gvardiol"], "no": {"D. Ndoye": [14, "#DD0000", "#ffffff"], "M. Gibbs-White": [10, "#DD0000", "#ffffff"], "O. Aina": [34, "#DD0000", "#ffffff"], "N. Milenkovi\u0107": [31, "#DD0000", "#ffffff"], "E. Haaland": [9, "#6CABDD", "#16231b"], "R. Cherki": [10, "#6CABDD", "#16231b"], "E. Anderson": [5, "#6CABDD", "#16231b"], "J. Gvardiol": [24, "#6CABDD", "#16231b"]}}, "1557458": {"lg": "premier-league", "h": "Brighton", "a": "Brentford", "pk": "Home", "ko": "2026-11-08T14:00:00Z", "hp": 51, "dp": 25, "ap": 24, "sc": ["C. Kostoulas", "Y. Ayari", "Thiago", "K. Schade"], "bk": ["P. Gro\u00df", "M. De Cuyper", "V. Janelt", "Thiago"], "no": {"C. Kostoulas": [19, "#0057B8", "#ffffff"], "Y. Ayari": [26, "#0057B8", "#ffffff"], "P. Gro\u00df": [13, "#0057B8", "#ffffff"], "M. De Cuyper": [29, "#0057B8", "#ffffff"], "Thiago": [9, "#E30613", "#ffffff"], "K. Schade": [7, "#E30613", "#ffffff"], "V. Janelt": [27, "#E30613", "#ffffff"]}}, "1557459": {"lg": "premier-league", "h": "Crystal Palace", "a": "Liverpool", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 23, "dp": 25, "ap": 52, "sc": ["J. Strand Larsen", "A. Khalaili", "A. Isak", "V\u00edctor Mu\u00f1oz"], "bk": ["Yeremy Pino", "D. Kamada", "V. van Dijk", "M. Kerkez"], "no": {"J. Strand Larsen": [22, "#1B458F", "#ffffff"], "A. Khalaili": [25, "#1B458F", "#ffffff"], "Yeremy Pino": [10, "#1B458F", "#ffffff"], "D. Kamada": [18, "#1B458F", "#ffffff"], "A. Isak": [9, "#C8102E", "#ffffff"], "V\u00edctor Mu\u00f1oz": [23, "#C8102E", "#ffffff"], "V. van Dijk": [4, "#C8102E", "#ffffff"], "M. Kerkez": [6, "#C8102E", "#ffffff"]}}, "1557462": {"lg": "premier-league", "h": "Ipswich", "a": "Bournemouth", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 25, "dp": 22, "ap": 53, "sc": ["J. Enciso", "Emersonn", "M. Tavernier", "Evanilson"], "bk": ["A. Fatawu", "S. Luki\u0107", "Ant\u00f3nio Silva", "A. Smith"], "no": {"J. Enciso": [10, "#3A64A3", "#ffffff"], "Emersonn": [19, "#3A64A3", "#ffffff"], "A. Fatawu": [7, "#3A64A3", "#ffffff"], "S. Luki\u0107": [23, "#3A64A3", "#ffffff"], "M. Tavernier": [16, "#DA291C", "#ffffff"], "Evanilson": [9, "#DA291C", "#ffffff"], "Ant\u00f3nio Silva": [14, "#DA291C", "#ffffff"], "A. Smith": [15, "#DA291C", "#ffffff"]}}, "1570436": {"lg": "la-liga", "h": "Deportivo La Coruna", "a": "Osasuna", "pk": "Home", "ko": "2026-11-02T20:00:00Z", "hp": 46, "dp": 29, "ap": 25, "sc": ["Peke", "Luismi Cruz", "A. Budimir", "Ra\u00fal Garc\u00eda"], "bk": ["L. Amatucci", "Adri\u00e0 Alti", "Moncayola", "Kike Barja"], "no": {"Peke": [10, "#0A57A8", "#ffffff"], "Luismi Cruz": [19, "#0A57A8", "#ffffff"], "L. Amatucci": [16, "#0A57A8", "#ffffff"], "Adri\u00e0 Alti": [2, "#0A57A8", "#ffffff"], "A. Budimir": [17, "#D91A21", "#ffffff"], "Ra\u00fal Garc\u00eda": [9, "#D91A21", "#ffffff"], "Moncayola": [7, "#D91A21", "#ffffff"], "Kike Barja": [11, "#D91A21", "#ffffff"]}}, "1570450": {"lg": "la-liga", "h": "Sevilla", "a": "Alaves", "pk": "Home", "ko": "2026-11-06T20:00:00Z", "hp": 47, "dp": 26, "ap": 27, "sc": ["F\u00e9lix Correia", "L. Stassin", "L. Boy\u00e9", "M. D\u00edaz"], "bk": ["Isaac", "G. Suazo", "Antonio Blanco", "N. Tenaglia"], "no": {"F\u00e9lix Correia": [20, "#FFFFFF", "#16231b"], "L. Stassin": [19, "#FFFFFF", "#16231b"], "Isaac": [16, "#FFFFFF", "#16231b"], "G. Suazo": [17, "#FFFFFF", "#16231b"], "L. Boy\u00e9": [15, "#0761AF", "#ffffff"], "M. D\u00edaz": [9, "#0761AF", "#ffffff"], "Antonio Blanco": [8, "#0761AF", "#ffffff"], "N. Tenaglia": [14, "#0761AF", "#ffffff"]}}, "1570447": {"lg": "la-liga", "h": "Malaga", "a": "Racing Santander", "pk": "Home", "ko": "2026-11-07T13:00:00Z", "hp": 42, "dp": 25, "ap": 34, "sc": ["Adri\u00e1n Ni\u00f1o Heredia", "Chupe", "M. Zabiri", "Andr\u00e9s Mart\u00edn"], "bk": ["David Larrubia", "Puga", "Jorge Salinas", "Pablo Ram\u00f3n"], "no": {"Adri\u00e1n Ni\u00f1o Heredia": [21, "#1F6FB5", "#ffffff"], "Chupe": [9, "#1F6FB5", "#ffffff"], "David Larrubia": [10, "#1F6FB5", "#ffffff"], "Puga": [3, "#1F6FB5", "#ffffff"], "M. Zabiri": [21, "#00A651", "#ffffff"], "Andr\u00e9s Mart\u00edn": [11, "#00A651", "#ffffff"], "Jorge Salinas": [17, "#00A651", "#ffffff"], "Pablo Ram\u00f3n": [5, "#00A651", "#ffffff"]}}, "1570446": {"lg": "la-liga", "h": "Espanyol", "a": "Deportivo La Coruna", "pk": "Home", "ko": "2026-11-07T15:15:00Z", "hp": 39, "dp": 30, "ap": 30, "sc": ["Roberto Fern\u00e1ndez", "Bryan Zaragoza", "P. Aubameyang", "Peke"], "bk": ["Roger Hinojo", "C. Riedel", "L. Amatucci", "Adri\u00e0 Alti"], "no": {"Roberto Fern\u00e1ndez": [9, "#0070B8", "#ffffff"], "Bryan Zaragoza": [15, "#0070B8", "#ffffff"], "Roger Hinojo": [21, "#0070B8", "#ffffff"], "C. Riedel": [5, "#0070B8", "#ffffff"], "P. Aubameyang": [7, "#0A57A8", "#ffffff"], "Peke": [10, "#0A57A8", "#ffffff"], "L. Amatucci": [16, "#0A57A8", "#ffffff"], "Adri\u00e0 Alti": [2, "#0A57A8", "#ffffff"]}}, "1570448": {"lg": "la-liga", "h": "Osasuna", "a": "Athletic Club", "pk": "Away", "ko": "2026-11-07T17:30:00Z", "hp": 34, "dp": 30, "ap": 36, "sc": ["A. Budimir", "Ra\u00fal Garc\u00eda", "\u00c1lex Berenguer", "I. Williams"], "bk": ["Moncayola", "Kike Barja", "Yuri", "Be\u00f1at Gerenabarrena"], "no": {"A. Budimir": [17, "#D91A21", "#ffffff"], "Ra\u00fal Garc\u00eda": [9, "#D91A21", "#ffffff"], "Moncayola": [7, "#D91A21", "#ffffff"], "Kike Barja": [11, "#D91A21", "#ffffff"], "\u00c1lex Berenguer": [7, "#EE2523", "#ffffff"], "I. Williams": [9, "#EE2523", "#ffffff"], "Yuri": [17, "#EE2523", "#ffffff"], "Be\u00f1at Gerenabarrena": [24, "#EE2523", "#ffffff"]}}, "1570451": {"lg": "la-liga", "h": "Valencia", "a": "Real Madrid", "pk": "Away", "ko": "2026-11-07T20:00:00Z", "hp": 16, "dp": 24, "ap": 59, "sc": ["Dani Raba", "Luis Rioja", "Kylian Mbapp\u00e9", "J. Bellingham"], "bk": ["G. Rodr\u00edguez", "J. de Haas", "I. Konat\u00e9", "Vin\u00edcius J\u00fanior"], "no": {"Dani Raba": [19, "#FFFFFF", "#16231b"], "Luis Rioja": [11, "#FFFFFF", "#16231b"], "G. Rodr\u00edguez": [2, "#FFFFFF", "#16231b"], "J. de Haas": [12, "#FFFFFF", "#16231b"], "Kylian Mbapp\u00e9": [10, "#FFFFFF", "#16231b"], "J. Bellingham": [5, "#FFFFFF", "#16231b"], "I. Konat\u00e9": [16, "#FFFFFF", "#16231b"], "Vin\u00edcius J\u00fanior": [7, "#FFFFFF", "#16231b"]}}, "1570445": {"lg": "la-liga", "h": "Elche", "a": "Real Betis", "pk": "Away", "ko": "2026-11-08T13:00:00Z", "hp": 36, "dp": 27, "ap": 37, "sc": ["Fer Ni\u00f1o", "L. Cepeda", "A. Ezzalzouli", "C. Hern\u00e1ndez"], "bk": ["Gonzalo Villar", "F. Redondo", "Diego Llorente", "F. Bernal"], "no": {"Fer Ni\u00f1o": [14, "#FFFFFF", "#16231b"], "L. Cepeda": [21, "#FFFFFF", "#16231b"], "Gonzalo Villar": [12, "#FFFFFF", "#16231b"], "F. Redondo": [5, "#FFFFFF", "#16231b"], "A. Ezzalzouli": [10, "#0BB363", "#ffffff"], "C. Hern\u00e1ndez": [9, "#0BB363", "#ffffff"], "Diego Llorente": [3, "#0BB363", "#ffffff"], "F. Bernal": [6, "#0BB363", "#ffffff"]}}, "1575218": {"lg": "bundesliga", "h": "Hamburger SV", "a": "Borussia M\u00f6nchengladbach", "pk": "Home", "ko": "2026-11-06T19:30:00Z", "hp": 39, "dp": 27, "ap": 33, "sc": ["Y. Poulsen", "T. Moffi", "H. Bolin", "S. Machino"], "bk": ["S. Nandja", "N. Capaldo", "K. Diks", "Z. Uno"], "no": {"Y. Poulsen": [15, "#FFFFFF", "#16231b"], "T. Moffi": [9, "#FFFFFF", "#16231b"], "S. Nandja": [43, "#FFFFFF", "#16231b"], "N. Capaldo": [24, "#FFFFFF", "#16231b"], "H. Bolin": [38, "#FFFFFF", "#16231b"], "S. Machino": [18, "#FFFFFF", "#16231b"], "K. Diks": [4, "#FFFFFF", "#16231b"], "Z. Uno": [47, "#FFFFFF", "#16231b"]}}, "1575217": {"lg": "bundesliga", "h": "FSV Mainz 05", "a": "Bayern M\u00fcnchen", "pk": "Away", "ko": "2026-11-07T14:30:00Z", "hp": 12, "dp": 15, "ap": 74, "sc": ["P. Tietz", "S. Becker", "M. Olise", "H. Kane"], "bk": ["P. Mwene", "S. Posch", "K. Laimer", "D. Upamecano"], "no": {"P. Tietz": [9, "#C3141E", "#ffffff"], "S. Becker": [23, "#C3141E", "#ffffff"], "P. Mwene": [2, "#C3141E", "#ffffff"], "S. Posch": [4, "#C3141E", "#ffffff"], "M. Olise": [17, "#DC052D", "#ffffff"], "H. Kane": [9, "#DC052D", "#ffffff"], "K. Laimer": [27, "#DC052D", "#ffffff"], "D. Upamecano": [2, "#DC052D", "#ffffff"]}}, "1575212": {"lg": "bundesliga", "h": "Borussia Dortmund", "a": "SV Elversberg", "pk": "Home", "ko": "2026-11-07T14:30:00Z", "hp": 70, "dp": 17, "ap": 13, "sc": ["S. Guirassy", "F\u00e1bio Silva", "M. Krattenmacher", "D. Mokwa"], "bk": ["J. Bellingham", "J. Ryerson", "F. Keidel", "Noah Darvich"], "no": {"S. Guirassy": [9, "#FDE100", "#16231b"], "F\u00e1bio Silva": [21, "#FDE100", "#16231b"], "J. Bellingham": [7, "#FDE100", "#16231b"], "J. Ryerson": [26, "#FDE100", "#16231b"], "M. Krattenmacher": [7, "#222222", "#ffffff"], "D. Mokwa": [42, "#222222", "#ffffff"], "F. Keidel": [43, "#222222", "#ffffff"], "Noah Darvich": [10, "#222222", "#ffffff"]}}, "1575213": {"lg": "bundesliga", "h": "RB Leipzig", "a": "FC Augsburg", "pk": "Home", "ko": "2026-11-07T14:30:00Z", "hp": 64, "dp": 20, "ap": 16, "sc": ["A. Nusa", "C. Nkunku", "M. Gregoritsch", "R. Fellhauer"], "bk": ["N. El Aynaoui", "A. Nusa", "Noahkai Kai Daniel Banks", "C. Matsima"], "no": {"A. Nusa": [7, "#FFFFFF", "#16231b"], "C. Nkunku": [28, "#FFFFFF", "#16231b"], "N. El Aynaoui": [21, "#FFFFFF", "#16231b"], "M. Gregoritsch": [11, "#BA3733", "#ffffff"], "R. Fellhauer": [19, "#BA3733", "#ffffff"], "Noahkai Kai Daniel Banks": [40, "#BA3733", "#ffffff"], "C. Matsima": [5, "#BA3733", "#ffffff"]}}, "1575220": {"lg": "bundesliga", "h": "SC Paderborn 07", "a": "Eintracht Frankfurt", "pk": "Draw", "ko": "2026-11-07T14:30:00Z", "hp": 35, "dp": 32, "ap": 33, "sc": ["S. Marino", "S. Tigges", "Y. Ebnoutalib", "J. Burkardt"], "bk": ["T. Scheller", "J. ter Horst", "R. Onyedika", "Elias Baum"], "no": {"S. Marino": [30, "#004B9B", "#ffffff"], "S. Tigges": [27, "#004B9B", "#ffffff"], "T. Scheller": [25, "#004B9B", "#ffffff"], "J. ter Horst": [21, "#004B9B", "#ffffff"], "Y. Ebnoutalib": [11, "#E1000F", "#ffffff"], "J. Burkardt": [9, "#E1000F", "#ffffff"], "R. Onyedika": [25, "#E1000F", "#ffffff"], "Elias Baum": [2, "#E1000F", "#ffffff"]}}, "1575214": {"lg": "bundesliga", "h": "VfB Stuttgart", "a": "Werder Bremen", "pk": "Home", "ko": "2026-11-07T17:30:00Z", "hp": 62, "dp": 20, "ap": 18, "sc": ["E. Demirovi\u0107", "J. Vagnoman", "N. F\u00fcllkrug", "M. Gr\u00fcll"], "bk": ["A. Karazor", "J. Chabot", "Y. Regeer", "Arthur"], "no": {"E. Demirovi\u0107": [9, "#FFFFFF", "#16231b"], "J. Vagnoman": [4, "#FFFFFF", "#16231b"], "A. Karazor": [16, "#FFFFFF", "#16231b"], "J. Chabot": [24, "#FFFFFF", "#16231b"], "N. F\u00fcllkrug": [10, "#1D9053", "#ffffff"], "M. Gr\u00fcll": [17, "#1D9053", "#ffffff"], "Y. Regeer": [44, "#1D9053", "#ffffff"], "Arthur": [13, "#1D9053", "#ffffff"]}}, "1575219": {"lg": "bundesliga", "h": "1. FC K\u00f6ln", "a": "Bayer Leverkusen", "pk": "Away", "ko": "2026-11-08T14:30:00Z", "hp": 26, "dp": 23, "ap": 51, "sc": ["S. El Mala", "M. B\u00fclter", "P. Schick", "I. Maza"], "bk": ["G. Mensah", "Jahmai Simpson-Pusey", "I. Maza", "F. Medina"], "no": {"S. El Mala": [10, "#FFFFFF", "#16231b"], "M. B\u00fclter": [30, "#FFFFFF", "#16231b"], "G. Mensah": [14, "#FFFFFF", "#16231b"], "Jahmai Simpson-Pusey": [22, "#FFFFFF", "#16231b"], "P. Schick": [14, "#E32221", "#ffffff"], "I. Maza": [30, "#E32221", "#ffffff"], "F. Medina": [2, "#E32221", "#ffffff"]}}, "1575216": {"lg": "bundesliga", "h": "SC Freiburg", "a": "Union Berlin", "pk": "Home", "ko": "2026-11-08T16:30:00Z", "hp": 62, "dp": 22, "ap": 16, "sc": ["I. Matanovi\u0107", "Y. Suzuki", "T. Skarke", "E. Latte Lath"], "bk": ["Y. Suzuki", "M. Eggestein", "F. Uduokhai", "Z. Van Den Bosch"], "no": {"I. Matanovi\u0107": [31, "#E2001A", "#ffffff"], "Y. Suzuki": [14, "#E2001A", "#ffffff"], "M. Eggestein": [8, "#E2001A", "#ffffff"], "T. Skarke": [21, "#EB1923", "#ffffff"], "E. Latte Lath": [29, "#EB1923", "#ffffff"], "F. Uduokhai": [2, "#EB1923", "#ffffff"], "Z. Van Den Bosch": [4, "#EB1923", "#ffffff"]}}, "1550185": {"lg": "serie-a", "h": "Sassuolo", "a": "Fiorentina", "pk": "Home", "ko": "2026-11-02T17:30:00Z", "hp": 37, "dp": 26, "ap": 36, "sc": ["D. Berardi", "S. Esposito", "Franco Mastantuono", "A. Njie"], "bk": ["D. Berardi", "L. Lipani", "Viery", "Franco Mastantuono"], "no": {"D. Berardi": [10, "#00A651", "#ffffff"], "S. Esposito": [94, "#00A651", "#ffffff"], "L. Lipani": [35, "#00A651", "#ffffff"], "Franco Mastantuono": [30, "#5F2D87", "#ffffff"], "A. Njie": [25, "#5F2D87", "#ffffff"], "Viery": [33, "#5F2D87", "#ffffff"]}}, "1550178": {"lg": "serie-a", "h": "Atalanta", "a": "Parma", "pk": "Home", "ko": "2026-11-02T19:45:00Z", "hp": 54, "dp": 28, "ap": 17, "sc": ["N. Krstovi\u0107", "\u00c9derson", "D. Romero", "S. Lontani"], "bk": ["\u00c9derson", "E. Elmas", "M. Troilo", "E. Del Prato"], "no": {"N. Krstovi\u0107": [90, "#1E71B8", "#ffffff"], "\u00c9derson": [13, "#1E71B8", "#ffffff"], "E. Elmas": [99, "#1E71B8", "#ffffff"], "D. Romero": [9, "#FFFFFF", "#16231b"], "S. Lontani": [76, "#FFFFFF", "#16231b"], "M. Troilo": [37, "#FFFFFF", "#16231b"], "E. Del Prato": [15, "#FFFFFF", "#16231b"]}}, "1550196": {"lg": "serie-a", "h": "Venezia", "a": "Udinese", "pk": "Away", "ko": "2026-11-06T19:45:00Z", "hp": 26, "dp": 30, "ap": 44, "sc": ["A. Adams", "J. Yeboah", "J. Ekkelenkamp", "I. Gueye"], "bk": ["Juan Jesus", "J. Schingtienne", "J. Karlstr\u00f6m", "N. Zaniolo"], "no": {"A. Adams": [45, "#F36F21", "#ffffff"], "J. Yeboah": [10, "#F36F21", "#ffffff"], "Juan Jesus": [15, "#F36F21", "#ffffff"], "J. Schingtienne": [3, "#F36F21", "#ffffff"], "J. Ekkelenkamp": [32, "#FFFFFF", "#16231b"], "I. Gueye": [7, "#FFFFFF", "#16231b"], "J. Karlstr\u00f6m": [8, "#FFFFFF", "#16231b"], "N. Zaniolo": [10, "#FFFFFF", "#16231b"]}}, "1550188": {"lg": "serie-a", "h": "Cagliari", "a": "Frosinone", "pk": "Away", "ko": "2026-11-07T14:00:00Z", "hp": 16, "dp": 19, "ap": 64, "sc": ["D. Maldini", "M&apos;Bala Nzola", "A. Raimondo", "G. Cal\u00f2"], "bk": ["A. Deiola", "J. Rodr\u00edguez", "G. Bracaglia", "A. Raimondo"], "no": {"D. Maldini": [70, "#A21C26", "#ffffff"], "M&apos;Bala Nzola": [18, "#A21C26", "#ffffff"], "A. Deiola": [14, "#A21C26", "#ffffff"], "J. Rodr\u00edguez": [15, "#A21C26", "#ffffff"], "A. Raimondo": [9, "#FFDD00", "#16231b"], "G. Cal\u00f2": [14, "#FFDD00", "#16231b"], "G. Bracaglia": [79, "#FFDD00", "#16231b"]}}, "1550195": {"lg": "serie-a", "h": "Torino", "a": "Lecce", "pk": "Home", "ko": "2026-11-07T14:00:00Z", "hp": 48, "dp": 29, "ap": 24, "sc": ["C. Adams", "G. Simeone", "L. Coulibaly", "W. Geubbels"], "bk": ["R. Belghali", "A. Ismajli", "Kialonda Gaspar", "Danilo Veiga"], "no": {"C. Adams": [19, "#8B1A2B", "#ffffff"], "G. Simeone": [18, "#8B1A2B", "#ffffff"], "R. Belghali": [45, "#8B1A2B", "#ffffff"], "A. Ismajli": [44, "#8B1A2B", "#ffffff"], "L. Coulibaly": [29, "#F4D10D", "#16231b"], "W. Geubbels": [69, "#F4D10D", "#16231b"], "Kialonda Gaspar": [4, "#F4D10D", "#16231b"], "Danilo Veiga": [17, "#F4D10D", "#16231b"]}}, "1550194": {"lg": "serie-a", "h": "Parma", "a": "Bologna", "pk": "Away", "ko": "2026-11-07T17:00:00Z", "hp": 24, "dp": 31, "ap": 45, "sc": ["D. Romero", "S. Lontani", "F. Bernardeschi", "R. Piccoli"], "bk": ["M. Troilo", "E. Del Prato", "T. Heggem", "T. Pobega"], "no": {"D. Romero": [9, "#FFFFFF", "#16231b"], "S. Lontani": [76, "#FFFFFF", "#16231b"], "M. Troilo": [37, "#FFFFFF", "#16231b"], "E. Del Prato": [15, "#FFFFFF", "#16231b"], "F. Bernardeschi": [10, "#1A2F48", "#ffffff"], "R. Piccoli": [91, "#1A2F48", "#ffffff"], "T. Heggem": [14, "#1A2F48", "#ffffff"], "T. Pobega": [4, "#1A2F48", "#ffffff"]}}, "1552803": {"lg": "ligue-1", "h": "Lorient", "a": "Stade Brestois 29", "pk": "Home", "ko": "2026-11-02T19:45:00Z", "hp": 50, "dp": 27, "ap": 24, "sc": ["J. Makengo", "M. Kone", "L. Ajorque", "K. Doumbia"], "bk": ["K. Kouassi", "N. Adjei", "K. Doumbia", "B. Locko"], "no": {"J. Makengo": [17, "#F57F20", "#16231b"], "M. Kone": [42, "#F57F20", "#16231b"], "K. Kouassi": [43, "#F57F20", "#16231b"], "N. Adjei": [32, "#F57F20", "#16231b"], "L. Ajorque": [19, "#E30613", "#ffffff"], "K. Doumbia": [23, "#E30613", "#ffffff"], "B. Locko": [2, "#E30613", "#ffffff"]}}, "1552817": {"lg": "ligue-1", "h": "Toulouse", "a": "Strasbourg", "pk": "Home", "ko": "2026-11-06T19:45:00Z", "hp": 40, "dp": 25, "ap": 35, "sc": ["C. Tengstedt", "J. Russell-Rowe", "Gessime Yassine", "C. Harder"], "bk": ["C. C\u00e1sseres", "N. Sigur", "Gessime Yassine", "P. Diop"], "no": {"C. Tengstedt": [20, "#5B2C83", "#ffffff"], "J. Russell-Rowe": [13, "#5B2C83", "#ffffff"], "C. C\u00e1sseres": [23, "#5B2C83", "#ffffff"], "N. Sigur": [14, "#5B2C83", "#ffffff"], "Gessime Yassine": [80, "#0072BC", "#ffffff"], "C. Harder": [40, "#0072BC", "#ffffff"], "P. Diop": [21, "#0072BC", "#ffffff"]}}, "1552811": {"lg": "ligue-1", "h": "Auxerre", "a": "Paris FC", "pk": "Away", "ko": "2026-11-07T16:15:00Z", "hp": 28, "dp": 27, "ap": 45, "sc": ["C. Archer", "D. Namaso", "L. Sinayoko", "P. Pagis"], "bk": ["C. Makosso", "C. Akpa", "H. Traor\u00e9", "S. Chergui"], "no": {"C. Archer": [9, "#FFFFFF", "#16231b"], "D. Namaso": [10, "#FFFFFF", "#16231b"], "C. Makosso": [15, "#FFFFFF", "#16231b"], "C. Akpa": [92, "#FFFFFF", "#16231b"], "L. Sinayoko": [9, "#1D3D8F", "#ffffff"], "P. Pagis": [7, "#1D3D8F", "#ffffff"], "H. Traor\u00e9": [14, "#1D3D8F", "#ffffff"], "S. Chergui": [31, "#1D3D8F", "#ffffff"]}}, "1552815": {"lg": "ligue-1", "h": "Paris Saint Germain", "a": "Estac Troyes", "pk": "Home", "ko": "2026-11-07T19:45:00Z", "hp": 87, "dp": 10, "ap": 3, "sc": ["Ferran Torres", "Marquinhos", "R. Ripart", "T. Nkada"], "bk": ["Vitinha", "Marquinhos", "M. Diaz", "A. Mille"], "no": {"Ferran Torres": [9, "#004170", "#ffffff"], "Marquinhos": [5, "#004170", "#ffffff"], "Vitinha": [17, "#004170", "#ffffff"], "R. Ripart": [20, "#0064B0", "#ffffff"], "T. Nkada": [23, "#0064B0", "#ffffff"], "M. Diaz": [4, "#0064B0", "#ffffff"], "A. Mille": [17, "#0064B0", "#ffffff"]}}, "1552816": {"lg": "ligue-1", "h": "Rennes", "a": "Lille", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 35, "dp": 27, "ap": 38, "sc": ["E. Lepaul", "S. Szyma\u0144ski", "A. Ueda", "O. Giroud"], "bk": ["A. Rouault", "A. Thomasson", "M. Goffi", "R. Perraud"], "no": {"E. Lepaul": [9, "#E13327", "#ffffff"], "S. Szyma\u0144ski": [17, "#E13327", "#ffffff"], "A. Rouault": [24, "#E13327", "#ffffff"], "A. Thomasson": [28, "#E13327", "#ffffff"], "A. Ueda": [18, "#E01E13", "#ffffff"], "O. Giroud": [9, "#E01E13", "#ffffff"], "M. Goffi": [38, "#E01E13", "#ffffff"], "R. Perraud": [15, "#E01E13", "#ffffff"]}}, "1552813": {"lg": "ligue-1", "h": "Le Havre", "a": "Lorient", "pk": "Away", "ko": "2026-11-08T16:15:00Z", "hp": 30, "dp": 31, "ap": 39, "sc": ["M. Samatta", "J. Maja", "J. Makengo", "M. Kone"], "bk": ["A. Seko", "A. Touba", "K. Kouassi", "N. Adjei"], "no": {"M. Samatta": [25, "#5AA0DC", "#ffffff"], "J. Maja": [9, "#5AA0DC", "#ffffff"], "A. Seko": [15, "#5AA0DC", "#ffffff"], "A. Touba": [5, "#5AA0DC", "#ffffff"], "J. Makengo": [17, "#F57F20", "#16231b"], "M. Kone": [42, "#F57F20", "#16231b"], "K. Kouassi": [43, "#F57F20", "#16231b"], "N. Adjei": [32, "#F57F20", "#16231b"]}}, "1570449": {"lg": "la-liga", "h": "Real Sociedad", "a": "Rayo Vallecano", "pk": "Home", "ko": "2026-11-08T15:15:00Z", "hp": 50, "dp": 25, "ap": 25, "sc": ["L. Su\u010di\u0107", "O. \u00d3skarsson", "Sergio Camello", "\u00c1lvaro Garc\u00eda"], "bk": ["J. Aramburu", "Y. Herrera", "P. Ciss", "Unai L\u00f3pez"], "no": {"L. Su\u010di\u0107": [24, "#0067B1", "#ffffff"], "O. \u00d3skarsson": [9, "#0067B1", "#ffffff"], "J. Aramburu": [2, "#0067B1", "#ffffff"], "Y. Herrera": [21, "#0067B1", "#ffffff"], "Sergio Camello": [10, "#FFFFFF", "#16231b"], "\u00c1lvaro Garc\u00eda": [18, "#FFFFFF", "#16231b"], "P. Ciss": [6, "#FFFFFF", "#16231b"], "Unai L\u00f3pez": [8, "#FFFFFF", "#16231b"]}}, "1575215": {"lg": "bundesliga", "h": "1899 Hoffenheim", "a": "FC Schalke 04", "pk": "Home", "ko": "2026-11-08T18:30:00Z", "hp": 53, "dp": 31, "ap": 16, "sc": ["A. Hlo\u017eek", "B. Cont\u00e9", "A. Aouchiche", "K. Karaman"], "bk": ["W. Burger", "L. Avdullahu", "H. Kuru\u00e7ay", "J. Dina Ebimbe"], "no": {"A. Hlo\u017eek": [10, "#1961B5", "#ffffff"], "B. Cont\u00e9": [20, "#1961B5", "#ffffff"], "W. Burger": [18, "#1961B5", "#ffffff"], "L. Avdullahu": [7, "#1961B5", "#ffffff"], "A. Aouchiche": [24, "#004D9D", "#ffffff"], "K. Karaman": [19, "#004D9D", "#ffffff"], "H. Kuru\u00e7ay": [4, "#004D9D", "#ffffff"], "J. Dina Ebimbe": [29, "#004D9D", "#ffffff"]}}, "1550187": {"lg": "serie-a", "h": "AS Roma", "a": "Sassuolo", "pk": "Home", "ko": "2026-11-07T19:45:00Z", "hp": 72, "dp": 17, "ap": 11, "sc": ["D. Malen", "M. Soul\u00e9", "D. Berardi", "S. Esposito"], "bk": ["M. Kon\u00e9", "B. Cristante", "D. Berardi", "K. Thorstvedt"], "no": {"D. Malen": [14, "#8E1F2F", "#ffffff"], "M. Soul\u00e9": [18, "#8E1F2F", "#ffffff"], "M. Kon\u00e9": [17, "#8E1F2F", "#ffffff"], "B. Cristante": [4, "#8E1F2F", "#ffffff"], "D. Berardi": [10, "#00A651", "#ffffff"], "S. Esposito": [94, "#00A651", "#ffffff"], "K. Thorstvedt": [42, "#00A651", "#ffffff"]}}, "1550193": {"lg": "serie-a", "h": "Napoli", "a": "Lazio", "pk": "Home", "ko": "2026-11-08T11:30:00Z", "hp": 42, "dp": 29, "ap": 29, "sc": ["R. H\u00f8jlund", "S. McTominay", "T. Noslin", "M. Zaccagni"], "bk": ["Rafa Mar\u00edn", "B. Badiashile", "O. Provstgaard", "M. Zaccagni"], "no": {"R. H\u00f8jlund": [19, "#12A0D7", "#ffffff"], "S. McTominay": [8, "#12A0D7", "#ffffff"], "Rafa Mar\u00edn": [16, "#12A0D7", "#ffffff"], "B. Badiashile": [5, "#12A0D7", "#ffffff"], "T. Noslin": [14, "#87D8F7", "#16231b"], "M. Zaccagni": [10, "#87D8F7", "#16231b"], "O. Provstgaard": [25, "#87D8F7", "#16231b"]}}, "1552810": {"lg": "ligue-1", "h": "Angers", "a": "Nice", "pk": "Away", "ko": "2026-11-08T16:15:00Z", "hp": 28, "dp": 30, "ap": 42, "sc": ["A. El Ouazzani", "P. Peter", "E. Wahi", "M. Amoura"], "bk": ["J. Lefort", "B. van den Boomen", "E. Wahi", "M. Amoura"], "no": {"A. El Ouazzani": [19, "#FFFFFF", "#16231b"], "P. Peter": [9, "#FFFFFF", "#16231b"], "J. Lefort": [21, "#FFFFFF", "#16231b"], "B. van den Boomen": [8, "#FFFFFF", "#16231b"], "E. Wahi": [11, "#E2001A", "#ffffff"], "M. Amoura": [9, "#E2001A", "#ffffff"]}}, "1552812": {"lg": "ligue-1", "h": "Stade Brestois 29", "a": "Lyon", "pk": "Away", "ko": "2026-11-08T16:15:00Z", "hp": 30, "dp": 26, "ap": 44, "sc": ["L. Ajorque", "K. Doumbia", "E. Nuamah", "L. Openda"], "bk": ["K. Doumbia", "B. Locko", "M. Niakhat\u00e9", "L. Openda"], "no": {"L. Ajorque": [19, "#E30613", "#ffffff"], "K. Doumbia": [23, "#E30613", "#ffffff"], "B. Locko": [2, "#E30613", "#ffffff"], "E. Nuamah": [7, "#FFFFFF", "#16231b"], "L. Openda": [17, "#FFFFFF", "#16231b"], "M. Niakhat\u00e9": [19, "#FFFFFF", "#16231b"]}}, "1552814": {"lg": "ligue-1", "h": "Le Mans", "a": "Monaco", "pk": "Away", "ko": "2026-11-08T16:15:00Z", "hp": 23, "dp": 23, "ap": 54, "sc": ["L. Mafouta", "A. Bourabaa", "Paris Josua  Brunner", "M. Abline"], "bk": ["A. Lauray", "D. Sidib\u00e9", "L. Camara", "A. Golovin"], "no": {"L. Mafouta": [14, "#F2C400", "#16231b"], "A. Bourabaa": [11, "#F2C400", "#16231b"], "A. Lauray": [8, "#F2C400", "#16231b"], "D. Sidib\u00e9": [19, "#F2C400", "#16231b"], "Paris Josua  Brunner": [29, "#E32A27", "#ffffff"], "M. Abline": [11, "#E32A27", "#ffffff"], "L. Camara": [8, "#E32A27", "#ffffff"], "A. Golovin": [10, "#E32A27", "#ffffff"]}}, "1557466": {"lg": "premier-league", "h": "Sunderland", "a": "Chelsea", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 27, "dp": 27, "ap": 46, "sc": ["B. Brobbey", "E. Le F\u00e9e", "Jo\u00e3o Pedro", "M. Rogers"], "bk": ["O. Alderete", "Reinildo", "C. Palmer", "M. Rogers"], "no": {"B. Brobbey": [9, "#EB172B", "#ffffff"], "E. Le F\u00e9e": [28, "#EB172B", "#ffffff"], "O. Alderete": [15, "#EB172B", "#ffffff"], "Reinildo": [17, "#EB172B", "#ffffff"], "Jo\u00e3o Pedro": [9, "#034694", "#ffffff"], "M. Rogers": [17, "#034694", "#ffffff"], "C. Palmer": [10, "#034694", "#ffffff"]}}, "1575221": {"lg": "bundesliga", "h": "Bayern M\u00fcnchen", "a": "1. FC K\u00f6ln", "pk": "Home", "ko": "2026-11-20T19:30:00Z", "hp": 91, "dp": 6, "ap": 3, "sc": ["M. Olise", "H. Kane", "S. El Mala", "M. B\u00fclter"], "bk": ["K. Laimer", "D. Upamecano", "G. Mensah", "Jahmai Simpson-Pusey"], "no": {"M. Olise": [17, "#DC052D", "#ffffff"], "H. Kane": [9, "#DC052D", "#ffffff"], "K. Laimer": [27, "#DC052D", "#ffffff"], "D. Upamecano": [2, "#DC052D", "#ffffff"], "S. El Mala": [10, "#FFFFFF", "#16231b"], "M. B\u00fclter": [30, "#FFFFFF", "#16231b"], "G. Mensah": [14, "#FFFFFF", "#16231b"], "Jahmai Simpson-Pusey": [22, "#FFFFFF", "#16231b"]}}, "1570452": {"lg": "la-liga", "h": "Villarreal", "a": "Getafe", "pk": "Home", "ko": "2026-11-08T17:30:00Z", "hp": 59, "dp": 27, "ap": 14, "sc": ["G. Mikautadze", "N. P\u00e9p\u00e9", "M. Satriano", "Iv\u00e1n Az\u00f3n"], "bk": ["J. Foyth", "Renato Veiga", "Mario Mart\u00edn", "J. Mojica"], "no": {"G. Mikautadze": [9, "#FBE10F", "#16231b"], "N. P\u00e9p\u00e9": [19, "#FBE10F", "#16231b"], "J. Foyth": [8, "#FBE10F", "#16231b"], "Renato Veiga": [12, "#FBE10F", "#16231b"], "M. Satriano": [10, "#005999", "#ffffff"], "Iv\u00e1n Az\u00f3n": [20, "#005999", "#ffffff"], "Mario Mart\u00edn": [6, "#005999", "#ffffff"], "J. Mojica": [22, "#005999", "#ffffff"]}}, "1570444": {"lg": "la-liga", "h": "Celta Vigo", "a": "Levante", "pk": "Home", "ko": "2026-11-08T17:30:00Z", "hp": 52, "dp": 26, "ap": 22, "sc": ["Pablo Dur\u00e1n", "Ferran Jutgl\u00e0", "Brugui", "Iv\u00e1n Romero"], "bk": ["Yoel Lago", "Marcos Alonso", "A. Mandi", "Dela"], "no": {"Pablo Dur\u00e1n": [11, "#8AC3EE", "#16231b"], "Ferran Jutgl\u00e0": [9, "#8AC3EE", "#16231b"], "Yoel Lago": [18, "#8AC3EE", "#16231b"], "Marcos Alonso": [3, "#8AC3EE", "#16231b"], "Brugui": [7, "#B4053F", "#ffffff"], "Iv\u00e1n Romero": [9, "#B4053F", "#ffffff"], "A. Mandi": [2, "#B4053F", "#ffffff"], "Dela": [4, "#B4053F", "#ffffff"]}}, "1550192": {"lg": "serie-a", "h": "Monza", "a": "Atalanta", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 19, "dp": 20, "ap": 62, "sc": ["Gustavo Varela", "Jay Robinson", "N. Krstovi\u0107", "\u00c9derson"], "bk": ["L. Lucchesi", "M. Folorunsho", "\u00c9derson", "E. Elmas"], "no": {"Gustavo Varela": [9, "#E5232B", "#ffffff"], "Jay Robinson": [46, "#E5232B", "#ffffff"], "L. Lucchesi": [3, "#E5232B", "#ffffff"], "M. Folorunsho": [90, "#E5232B", "#ffffff"], "N. Krstovi\u0107": [90, "#1E71B8", "#ffffff"], "\u00c9derson": [13, "#1E71B8", "#ffffff"], "E. Elmas": [99, "#1E71B8", "#ffffff"]}}, "1550190": {"lg": "serie-a", "h": "Genoa", "a": "AC Milan", "pk": "Away", "ko": "2026-11-08T14:00:00Z", "hp": 22, "dp": 28, "ap": 50, "sc": ["M. Osmaji\u0107", "T. Baldanzi", "Diego Moreira", "A. Ciss\u00e8"], "bk": ["J. V\u00e1squez", "L. \u00d8stig\u00e5rd", "S. Pavlovi\u0107", "K. De Winter"], "no": {"M. Osmaji\u0107": [18, "#B5121B", "#ffffff"], "T. Baldanzi": [8, "#B5121B", "#ffffff"], "J. V\u00e1squez": [22, "#B5121B", "#ffffff"], "L. \u00d8stig\u00e5rd": [5, "#B5121B", "#ffffff"], "Diego Moreira": [22, "#FB090B", "#ffffff"], "A. Ciss\u00e8": [70, "#FB090B", "#ffffff"], "S. Pavlovi\u0107": [31, "#FB090B", "#ffffff"], "K. De Winter": [5, "#FB090B", "#ffffff"]}}, "1552818": {"lg": "ligue-1", "h": "Lens", "a": "Marseille", "pk": "Home", "ko": "2026-11-08T19:45:00Z", "hp": 48, "dp": 23, "ap": 28, "sc": ["F. Thauvin", "A. Sima", "A. Gouiri", "A. Harit"], "bk": ["S. Baidoo", "F. Thauvin", "T. Weah", "A. Gomes"], "no": {"F. Thauvin": [10, "#F6C300", "#16231b"], "A. Sima": [19, "#F6C300", "#16231b"], "S. Baidoo": [6, "#F6C300", "#16231b"], "A. Gouiri": [9, "#FFFFFF", "#16231b"], "A. Harit": [77, "#FFFFFF", "#16231b"], "T. Weah": [22, "#FFFFFF", "#16231b"], "A. Gomes": [7, "#FFFFFF", "#16231b"]}}, "1557464": {"lg": "premier-league", "h": "Manchester United", "a": "Aston Villa", "pk": "Home", "ko": "2026-11-08T16:30:00Z", "hp": 42, "dp": 26, "ap": 32, "sc": ["B. Mbeumo", "Bruno Fernandes", "N. Jackson", "J. Manzambi"], "bk": ["H. Maguire", "L. Shaw", "M. Cash", "Jo\u00e3o Gomes"], "no": {"B. Mbeumo": [19, "#DA291C", "#ffffff"], "Bruno Fernandes": [8, "#DA291C", "#ffffff"], "H. Maguire": [5, "#DA291C", "#ffffff"], "L. Shaw": [23, "#DA291C", "#ffffff"], "N. Jackson": [11, "#670E36", "#ffffff"], "J. Manzambi": [44, "#670E36", "#ffffff"], "M. Cash": [2, "#670E36", "#ffffff"], "Jo\u00e3o Gomes": [35, "#670E36", "#ffffff"]}}, "1570443": {"lg": "la-liga", "h": "Atletico Madrid", "a": "Barcelona", "pk": "Away", "ko": "2026-11-08T20:00:00Z", "hp": 32, "dp": 24, "ap": 44, "sc": ["J. David", "\u00c1lex Baena", "Raphinha", "Lamine Yamal"], "bk": ["Marc Pubill", "C. Romero", "Ferm\u00edn", "Jo\u00e3o Cancelo"], "no": {"J. David": [15, "#CB3524", "#ffffff"], "\u00c1lex Baena": [10, "#CB3524", "#ffffff"], "Marc Pubill": [18, "#CB3524", "#ffffff"], "C. Romero": [21, "#CB3524", "#ffffff"], "Raphinha": [11, "#A50044", "#ffffff"], "Lamine Yamal": [10, "#A50044", "#ffffff"], "Ferm\u00edn": [7, "#A50044", "#ffffff"], "Jo\u00e3o Cancelo": [2, "#A50044", "#ffffff"]}}, "1550191": {"lg": "serie-a", "h": "Inter", "a": "Como", "pk": "Home", "ko": "2026-11-08T17:00:00Z", "hp": 44, "dp": 26, "ap": 30, "sc": ["Lautaro Mart\u00ednez", "M. Thuram", "T. Douvikas", "N. Paz"], "bk": ["Lautaro Mart\u00ednez", "N. Barella", "Assane Diao", "Yan Couto"], "no": {"Lautaro Mart\u00ednez": [10, "#0068A8", "#ffffff"], "M. Thuram": [9, "#0068A8", "#ffffff"], "N. Barella": [23, "#0068A8", "#ffffff"], "T. Douvikas": [9, "#0A58A3", "#ffffff"], "N. Paz": [10, "#0A58A3", "#ffffff"], "Assane Diao": [11, "#0A58A3", "#ffffff"], "Yan Couto": [27, "#0A58A3", "#ffffff"]}}, "1550189": {"lg": "serie-a", "h": "Fiorentina", "a": "Juventus", "pk": "Away", "ko": "2026-11-08T19:45:00Z", "hp": 23, "dp": 27, "ap": 49, "sc": ["Franco Mastantuono", "A. Njie", "N. Gonz\u00e1lez", "Kerim-Sam Alajbegovi\u0107"], "bk": ["L. Ranieri", "Viery", "J. Lucum\u00ed", "Douglas Luiz"], "no": {"Franco Mastantuono": [30, "#5F2D87", "#ffffff"], "A. Njie": [25, "#5F2D87", "#ffffff"], "L. Ranieri": [6, "#5F2D87", "#ffffff"], "Viery": [33, "#5F2D87", "#ffffff"], "N. Gonz\u00e1lez": [31, "#FFFFFF", "#16231b"], "Kerim-Sam Alajbegovi\u0107": [17, "#FFFFFF", "#16231b"], "J. Lucum\u00ed": [26, "#FFFFFF", "#16231b"], "Douglas Luiz": [12, "#FFFFFF", "#16231b"]}}, "1552827": {"lg": "ligue-1", "h": "Estac Troyes", "a": "Le Havre", "pk": "Draw", "ko": "2026-11-20T19:45:00Z", "hp": 32, "dp": 31, "ap": 37, "sc": ["R. Ripart", "T. Nkada", "M. Samatta", "J. Maja"], "bk": ["M. Diaz", "A. Mille", "A. Seko", "A. Touba"], "no": {"R. Ripart": [20, "#0064B0", "#ffffff"], "T. Nkada": [23, "#0064B0", "#ffffff"], "M. Diaz": [4, "#0064B0", "#ffffff"], "A. Mille": [17, "#0064B0", "#ffffff"], "M. Samatta": [25, "#5AA0DC", "#ffffff"], "J. Maja": [9, "#5AA0DC", "#ffffff"], "A. Seko": [15, "#5AA0DC", "#ffffff"], "A. Touba": [5, "#5AA0DC", "#ffffff"]}}, "1635723": {"lg": "champions-league", "h": "Shakhtar Donetsk", "a": "Sporting CP", "pk": "Away", "ko": "2026-11-03T17:45:00Z", "hp": 23, "dp": 25, "ap": 52, "sc": [], "bk": [], "no": {}}, "1635669": {"lg": "champions-league", "h": "Galatasaray", "a": "VfB Stuttgart", "pk": "Home", "ko": "2026-11-03T17:45:00Z", "hp": 39, "dp": 24, "ap": 37, "sc": [], "bk": [], "no": {}}, "1635746": {"lg": "champions-league", "h": "Villarreal", "a": "Paris Saint Germain", "pk": "Away", "ko": "2026-11-03T20:00:00Z", "hp": 26, "dp": 23, "ap": 51, "sc": [], "bk": [], "no": {}}, "1635622": {"lg": "champions-league", "h": "Atletico Madrid", "a": "Bayern M\u00fcnchen", "pk": "Away", "ko": "2026-11-03T20:00:00Z", "hp": 34, "dp": 23, "ap": 44, "sc": [], "bk": [], "no": {}}, "1635627": {"lg": "champions-league", "h": "Barcelona", "a": "Aston Villa", "pk": "Home", "ko": "2026-11-03T20:00:00Z", "hp": 54, "dp": 21, "ap": 25, "sc": [], "bk": [], "no": {}}, "1635677": {"lg": "champions-league", "h": "Lask Linz", "a": "Slovan Bratislava", "pk": "Home", "ko": "2026-11-03T20:00:00Z", "hp": 63, "dp": 20, "ap": 17, "sc": [], "bk": [], "no": {}}, "1635662": {"lg": "champions-league", "h": "Feyenoord", "a": "Inter", "pk": "Away", "ko": "2026-11-03T20:00:00Z", "hp": 26, "dp": 22, "ap": 52, "sc": [], "bk": [], "no": {}}, "1635695": {"lg": "champions-league", "h": "Manchester United", "a": "AS Roma", "pk": "Home", "ko": "2026-11-03T20:00:00Z", "hp": 48, "dp": 25, "ap": 27, "sc": [], "bk": [], "no": {}}, "1635640": {"lg": "champions-league", "h": "Bodo/Glimt", "a": "Lille", "pk": "Home", "ko": "2026-11-03T20:00:00Z", "hp": 46, "dp": 26, "ap": 27, "sc": [], "bk": [], "no": {}}, "1635606": {"lg": "champions-league", "h": "AEK Athens FC", "a": "Real Madrid", "pk": "Away", "ko": "2026-11-04T17:45:00Z", "hp": 17, "dp": 22, "ap": 61, "sc": [], "bk": [], "no": {}}, "1635658": {"lg": "champions-league", "h": "Fenerbah\u00e7e", "a": "Liverpool", "pk": "Away", "ko": "2026-11-04T17:45:00Z", "hp": 18, "dp": 21, "ap": 61, "sc": [], "bk": [], "no": {}}, "1635726": {"lg": "champions-league", "h": "Slavia Praha", "a": "Arsenal", "pk": "Away", "ko": "2026-11-04T20:00:00Z", "hp": 9, "dp": 19, "ap": 72, "sc": [], "bk": [], "no": {}}, "1635681": {"lg": "champions-league", "h": "Lens", "a": "Como", "pk": "Away", "ko": "2026-11-04T20:00:00Z", "hp": 32, "dp": 27, "ap": 41, "sc": [], "bk": [], "no": {}}, "1635651": {"lg": "champions-league", "h": "Borussia Dortmund", "a": "Real Betis", "pk": "Home", "ko": "2026-11-04T20:00:00Z", "hp": 51, "dp": 25, "ap": 24, "sc": [], "bk": [], "no": {}}, "1635710": {"lg": "champions-league", "h": "RB Leipzig", "a": "Manchester City", "pk": "Away", "ko": "2026-11-04T20:00:00Z", "hp": 20, "dp": 21, "ap": 59, "sc": [], "bk": [], "no": {}}, "1635707": {"lg": "champions-league", "h": "PSV Eindhoven", "a": "Club Brugge KV", "pk": "Home", "ko": "2026-11-04T20:00:00Z", "hp": 44, "dp": 22, "ap": 35, "sc": [], "bk": [], "no": {}}, "1635656": {"lg": "champions-league", "h": "FC Porto", "a": "Napoli", "pk": "Home", "ko": "2026-11-04T20:00:00Z", "hp": 47, "dp": 28, "ap": 25, "sc": [], "bk": [], "no": {}}, "1635745": {"lg": "champions-league", "h": "Viking", "a": "Sabah FA", "pk": "Home", "ko": "2026-11-04T20:00:00Z", "hp": 75, "dp": 15, "ap": 10, "sc": [], "bk": [], "no": {}}, "1636324": {"lg": "europa-league", "h": "Rennes", "a": "Olympiakos Piraeus", "pk": "Home", "ko": "2026-11-04T15:30:00Z", "hp": 41, "dp": 29, "ap": 30, "sc": [], "bk": [], "no": {}}, "1636337": {"lg": "europa-league", "h": "Sparta Praha", "a": "Bournemouth", "pk": "Away", "ko": "2026-11-05T17:45:00Z", "hp": 12, "dp": 19, "ap": 69, "sc": [], "bk": [], "no": {}}, "1636211": {"lg": "europa-league", "h": "Anderlecht", "a": "Red Bull Salzburg", "pk": "Home", "ko": "2026-11-05T17:45:00Z", "hp": 48, "dp": 26, "ap": 26, "sc": [], "bk": [], "no": {}}, "1636319": {"lg": "europa-league", "h": "Real Sociedad", "a": "Lyon", "pk": "Home", "ko": "2026-11-05T17:45:00Z", "hp": 45, "dp": 25, "ap": 30, "sc": [], "bk": [], "no": {}}, "1636286": {"lg": "europa-league", "h": "Levski Sofia", "a": "Jagiellonia", "pk": "Home", "ko": "2026-11-05T17:45:00Z", "hp": 42, "dp": 30, "ap": 29, "sc": [], "bk": [], "no": {}}, "1636302": {"lg": "europa-league", "h": "NEC Nijmegen", "a": "Omonia Nicosia", "pk": "Home", "ko": "2026-11-05T17:45:00Z", "hp": 42, "dp": 26, "ap": 32, "sc": [], "bk": [], "no": {}}, "1636289": {"lg": "europa-league", "h": "Lillestrom", "a": "Plzen", "pk": "Away", "ko": "2026-11-05T17:45:00Z", "hp": 34, "dp": 27, "ap": 39, "sc": [], "bk": [], "no": {}}, "1636254": {"lg": "europa-league", "h": "Crystal Palace", "a": "1899 Hoffenheim", "pk": "Home", "ko": "2026-11-05T17:45:00Z", "hp": 57, "dp": 22, "ap": 21, "sc": [], "bk": [], "no": {}}, "1636208": {"lg": "europa-league", "h": "AC Milan", "a": "Ferencvarosi TC", "pk": "Home", "ko": "2026-11-05T17:45:00Z", "hp": 60, "dp": 23, "ap": 17, "sc": [], "bk": [], "no": {}}, "1636345": {"lg": "europa-league", "h": "Sunderland", "a": "Dinamo Zagreb", "pk": "Home", "ko": "2026-11-05T20:00:00Z", "hp": 67, "dp": 20, "ap": 13, "sc": [], "bk": [], "no": {}}, "1636223": {"lg": "europa-league", "h": "Bayer Leverkusen", "a": "Marseille", "pk": "Home", "ko": "2026-11-05T20:00:00Z", "hp": 56, "dp": 22, "ap": 22, "sc": [], "bk": [], "no": {}}, "1636219": {"lg": "europa-league", "h": "AZ Alkmaar", "a": "Juventus", "pk": "Away", "ko": "2026-11-05T20:00:00Z", "hp": 26, "dp": 27, "ap": 47, "sc": [], "bk": [], "no": {}}, "1636229": {"lg": "europa-league", "h": "Benfica", "a": "Lech Poznan", "pk": "Home", "ko": "2026-11-05T20:00:00Z", "hp": 74, "dp": 16, "ap": 10, "sc": [], "bk": [], "no": {}}, "1636250": {"lg": "europa-league", "h": "Celtic", "a": "Be\u015fikta\u015f", "pk": "Away", "ko": "2026-11-05T20:00:00Z", "hp": 34, "dp": 26, "ap": 40, "sc": [], "bk": [], "no": {}}, "1636245": {"lg": "europa-league", "h": "Celta Vigo", "a": "Union St. Gilloise", "pk": "Away", "ko": "2026-11-05T20:00:00Z", "hp": 32, "dp": 30, "ap": 38, "sc": [], "bk": [], "no": {}}, "1636264": {"lg": "europa-league", "h": "Hapoel Beer Sheva", "a": "OFI", "pk": "Home", "ko": "2026-11-05T20:00:00Z", "hp": 46, "dp": 26, "ap": 28, "sc": [], "bk": [], "no": {}}, "1636339": {"lg": "europa-league", "h": "Sturm Graz", "a": "Celje", "pk": "Home", "ko": "2026-11-05T20:00:00Z", "hp": 62, "dp": 23, "ap": 16, "sc": [], "bk": [], "no": {}}, "1636347": {"lg": "europa-league", "h": "Torreense", "a": "Ararat-Armenia", "pk": "Home", "ko": "2026-11-05T20:00:00Z", "hp": 67, "dp": 20, "ap": 13, "sc": [], "bk": [], "no": {}}}, "league": "europa-league"};
+  var strip = document.getElementById('live'), mine = document.getElementById('myfav');
+  if (!L.url || !strip) return;
+  var LG = { 39: 'premier-league', 140: 'la-liga', 78: 'bundesliga', 135: 'serie-a', 61: 'ligue-1', 2: 'champions-league', 3: 'europa-league' };
+  var picks = L.picks, state = {}, favs = [], FKEY = 'fp-fav-v1';
+  try { favs = JSON.parse(localStorage.getItem(FKEY) || '[]').map(String); } catch (e) { favs = []; }
+  var SKEY = 'fp-live-v1';
+  function restore() {
+    try {
+      var o = JSON.parse(localStorage.getItem(SKEY) || '{}'), now = Date.now();
+      Object.keys(o).forEach(function (k) { if (now - o[k].t < 90 * 60000) { o[k].restored = true; state[k] = o[k]; } });
+    } catch (e) {}
+  }
+  function persist() {
+    try {
+      var o = {}, now = Date.now();
+      Object.keys(state).forEach(function (k) { var m = state[k]; if (now - (m.t || now) < 90 * 60000) o[k] = m; });
+      localStorage.setItem(SKEY, JSON.stringify(o));
+    } catch (e) {}
+  }
+  function saveFavs() { try { localStorage.setItem(FKEY, JSON.stringify(favs)); } catch (e) {} }
+  function isFav(id) { return favs.indexOf(String(id)) > -1; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function minute(m) {
+    if (m.pre) return new Date(Date.parse(m.ko)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    if (m.fin) return 'FT';
+    if (m.st === 'HT') return 'HT';
+    if (m.st === 'BT' || m.st === 'INT') return 'Break';
+    if (m.st === 'P') return 'Pens';
+    return (m.el || 0) + (m.ex ? '+' + m.ex : '') + "'";
+  }
+  function box(m) {
+    var pk = picks[String(m.id)], card = el('div', 'lv');
+    var top = el('div', 'lv-top');
+    var mn = el('span', 'lv-min' + (m.fin || m.pre ? ' ft' : '')); mn.appendChild(el('i')); mn.appendChild(document.createTextNode(minute(m)));
+    top.appendChild(mn);
+    top.appendChild(el('span', 'lv-teams', m.home + ' v ' + m.away));
+    top.appendChild(el('span', 'lv-score' + (m.pre ? ' lv-pre' : ''), m.pre ? 'v' : m.hg + ' – ' + m.ag));
+    if (pk) {
+      var name = pk.pk === 'Home' ? pk.h : pk.pk === 'Away' ? pk.a : 'a draw';
+      if (m.pre) top.appendChild(el('span', 'lv-pick', 'We said ' + name));
+      else {
+        var res = m.hg > m.ag ? 'Home' : m.hg < m.ag ? 'Away' : 'Draw', ok = res === pk.pk;
+        top.appendChild(el('span', 'lv-pick ' + (ok ? 'ok' : 'no'), 'We said ' + name + (m.fin ? (ok ? ' · right' : ' · wrong') : (ok ? ' · on track' : ' · not on track'))));
+      }
+    }
+    var b = el('button', 'lv-fav' + (isFav(m.id) ? ' on' : ''), isFav(m.id) ? '★' : '☆');
+    b.type = 'button'; b.dataset.fav = m.id; b.title = isFav(m.id) ? 'Remove from my matches' : 'Add to my matches';
+    b.setAttribute('aria-label', b.title);
+    top.appendChild(b);
+    card.appendChild(top);
+    if (m.ev && m.ev.length) {
+      var ul = el('ul', 'lv-ev');
+      m.ev.slice().sort(function (a, c) { return (a.m + (a.x || 0) / 100) - (c.m + (c.x || 0) / 100); }).forEach(function (e) {
+        var isPick = pk && ((e.t === 'Goal' && e.d !== 'Missed Penalty' && e.d !== 'Own Goal' && (pk.sc || []).some(function (n) { return sn(n) === sn(e.p); })) ||
+                            (e.t === 'Card' && (pk.bk || []).some(function (n) { return sn(n) === sn(e.p); })));
+        var li = el('li', e.s + (isPick ? ' hit' : ''));
+        li.appendChild(el('span', 't', e.m + (e.x ? '+' + e.x : '') + "'"));
+        if (e.t === 'Card') li.appendChild(el('span', 'lv-card' + (e.d === 'Yellow Card' ? '' : ' red')));
+        var label = e.t === 'Goal' ? (e.d === 'Own Goal' ? 'Own goal' : e.d === 'Missed Penalty' ? 'Penalty missed' : e.d === 'Penalty' ? 'Goal (pen)' : 'Goal') : '';
+        if (isPick && pk.no) Object.keys(pk.no).forEach(function (n) {
+          if (sn(n) !== sn(e.p) || li.querySelector('.shirt')) return;
+          var v = pk.no[n], w = el('span', 'shirt'), ns = 'http://www.w3.org/2000/svg';
+          w.style.setProperty('--c', v[1]); w.style.setProperty('--t', v[2]);
+          var sv = document.createElementNS(ns, 'svg'), pa = document.createElementNS(ns, 'path');
+          sv.setAttribute('viewBox', '0 0 32 30'); pa.setAttribute('d', SHIRT_D); sv.appendChild(pa); w.appendChild(sv); w.appendChild(el('b', '', String(v[0])));
+          li.appendChild(w);
+        });
+        li.appendChild(el('span', '', (e.p || '') + (label ? ' · ' + label : '')));
+        li.appendChild(el('span', 'who', e.s === 'h' ? m.home : m.away));
+        ul.appendChild(li);
+      });
+      card.appendChild(ul);
+    }
+    if (!m.pre) { var sb = statsBlock(m); if (sb) card.appendChild(sb); else card.appendChild(el('p', 'st-wait', 'Match stats not available yet')); }
+    return card;
+  }
+  function sn(x) {
+    var w = String(x || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' ').split(/\s+/).filter(function (t) { return t.length > 1; });
+    return w.length ? w[w.length - 1] : '';
+  }
+  function pickChips(m, pk) {
+    var row = el('div', 'pk-row'), any = false;
+    function add(names, what, kind) {
+      (names || []).forEach(function (n) {
+        var hit = (m.ev || []).some(function (e) { return sn(e.p) === sn(n) && (kind === 'goal' ? (e.t === 'Goal' && e.d !== 'Missed Penalty' && e.d !== 'Own Goal') : e.t === 'Card'); });
+        var cls = 'pk' + (hit ? ' ok' : (m.fin ? ' miss' : ''));
+        row.appendChild(el('span', cls, (hit ? '\u2713 ' : '') + n + ' ' + what)); any = true;
+      });
+    }
+    add(pk.sc, 'to score', 'goal'); add(pk.bk, 'to be booked', 'card');
+    return any ? row : null;
+  }
+  var openStats = {};
+  function statsBlock(m) {
+    var sx = m.sx; if (!sx || !sx.h || !sx.a) return null;
+    var rows = [['pos', 'Possession', '%'], ['sh', 'Shots', ''], ['sot', 'On target', ''], ['xg', 'Expected goals', ''], ['co', 'Corners', ''],
+                ['fo', 'Fouls', ''], ['of', 'Offsides', ''], ['yc', 'Yellow cards', ''], ['rc', 'Red cards', '']];
+    var grid = el('div', 'st-grid'), n = 0;
+    rows.forEach(function (r) {
+      var a = sx.h[r[0]], b = sx.a[r[0]];
+      if (a == null && b == null) return;
+      if (r[0] === 'xg' && (a == null || b == null || !(a > 0 || b > 0))) return;  // provider often sends 0.00 until later
+      if (r[0] === 'rc' && !a && !b) return;
+      a = a || 0; b = b || 0; n++;
+      var fmt = function (v) { return (r[0] === 'xg' ? v.toFixed(2) : Math.round(v)) + r[2]; };
+      var row = el('div', 'st-row'), top = el('div', 'st-top');
+      top.appendChild(el('b', '', fmt(a))); top.appendChild(el('span', '', r[1])); top.appendChild(el('b', '', fmt(b)));
+      var bar = el('div', 'st-bar'), t = a + b || 1, l = el('i'), rt = el('i');
+      l.style.width = (100 * a / t) + '%'; rt.style.width = (100 * b / t) + '%';
+      bar.appendChild(l); bar.appendChild(rt); row.appendChild(top); row.appendChild(bar); grid.appendChild(row);
+    });
+    if (!n) return null;
+    var d = el('details', 'lv-stats'); d.appendChild(el('summary', '', 'Stats'));
+    if (openStats[m.id]) d.open = true;
+    d.addEventListener('toggle', function () { openStats[m.id] = d.open; });
+    d.appendChild(grid);
+    return d;
+  }
+  function pre(id) { var pk = picks[String(id)]; return pk ? { id: id, home: pk.h, away: pk.a, pre: true, ko: pk.ko, ev: [] } : null; }
+  function render() {
+    // drop stars for matches that ended more than 4 hours ago
+    favs = favs.filter(function (id) { var pk = picks[id]; return !pk || Date.now() < Date.parse(pk.ko) + 4 * 3600000 || state[id]; });
+    var list = Object.keys(state).map(function (k) { return state[k]; });
+    var here = list.filter(function (m) { return !L.league || LG[m.lg] === L.league; });
+    here.sort(function (a, b) { return (a.fin ? 1 : 0) - (b.fin ? 1 : 0) || a.id - b.id; });
+    strip.textContent = '';
+    if (here.length) {
+      strip.appendChild(el('p', 'lv-h', 'Live now · updates about every 30 seconds'));
+      var key = el('p', 'lv-key'); key.appendChild(el('i', 'sw')); key.appendChild(document.createTextNode(' Yellow highlight = one of our predicted scorers or booked players'));
+      strip.appendChild(key);
+      here.forEach(function (m) { strip.appendChild(box(m)); });
+    }
+    if (!here.length && L.url) {
+      var nx = null, nowT = Date.now();
+      Object.keys(picks).forEach(function (k) {
+        var q = picks[k], t = Date.parse(q.ko);
+        if (L.league && q.lg && q.lg !== L.league) return;
+        if (t > nowT && (nx === null || t < nx)) nx = t;
+      });
+      var msg = 'No matches in play right now.';
+      if (nx !== null) {
+        var dd = new Date(nx), same = dd.toDateString() === new Date().toDateString();
+        msg += ' Next kick-off: ' + (same ? 'today' : dd.toLocaleDateString('en-GB', { weekday: 'long' })) + ' at ' + dd.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) + '.';
+      }
+      strip.appendChild(el('p', 'lv-none', msg));
+    }
+    strip.hidden = !here.length && !strip.childNodes.length;
+    if (mine) {
+      mine.textContent = '';
+      var fm = favs.map(function (id) { return state[id] || pre(id); }).filter(Boolean);
+      fm.sort(function (a, b) { return (a.pre ? 1 : 0) - (b.pre ? 1 : 0) || (a.pre ? Date.parse(a.ko) - Date.parse(b.ko) : 0); });
+      if (fm.length) {
+        mine.appendChild(el('p', 'lv-h', '★ My matches'));
+        fm.forEach(function (m) { mine.appendChild(box(m)); });
+      }
+      mine.hidden = !fm.length;
+    }
+    document.querySelectorAll('.fav-btn').forEach(function (bt) {
+      var on = isFav(bt.dataset.fav);
+      bt.classList.toggle('on', on); bt.setAttribute('aria-pressed', on ? 'true' : 'false');
+      bt.textContent = on ? '★ Tracking' : '☆ Track this match';
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-fav]'); if (!b) return;
+    var id = String(b.dataset.fav), i = favs.indexOf(id);
+    if (i > -1) favs.splice(i, 1); else favs.push(id);
+    saveFavs(); render(); poll();
+  });
+  function windowOpen() {
+    var now = Date.now();
+    if (Object.keys(state).some(function (k) { return !state[k].fin; })) return true;
+    return Object.keys(picks).some(function (k) { var t = Date.parse(picks[k].ko); return now > t - 10 * 60000 && now < t + 160 * 60000; });
+  }
+  // A match only counts as finished once it is plausibly over: a match that drops out of the feed
+  // for a moment while it is still being played must keep showing as live, not FT.
+  function canEnd(k) { var pk = picks[String(k)]; return !pk || Date.now() > Date.parse(pk.ko) + 100 * 60000; }
+  function poll() {
+    if (document.hidden || !windowOpen()) return;
+    fetch(L.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || j.error) return;
+      var seen = {};
+      (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; m.t = Date.now(); if (!m.sx && state[m.id] && state[m.id].sx) m.sx = state[m.id].sx; state[m.id] = m; });
+      Object.keys(state).forEach(function (k) { if (state[k].restored && !seen[k]) { if (canEnd(k)) state[k].fin = true; state[k].restored = false; } });
+      Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if (((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P' || m.gone >= 6) && canEnd(k)) m.fin = true; });
+      persist(); render();
+    }).catch(function () {});
+  }
+  restore(); render(); poll(); setInterval(poll, 30000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) poll(); });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b5e4f16d42364838bdb3fc7493edb4e2"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

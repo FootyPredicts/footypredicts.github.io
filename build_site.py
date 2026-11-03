@@ -90,6 +90,7 @@ def shirt(pid):
 SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.com/").rstrip("/") + "/"
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
+EURO_ORDER = ["champions-league", "europa-league"]
 
 
 # ---------------------------------------------------------------- helpers
@@ -474,6 +475,8 @@ def render_match(f, i):
         avg = (f' <span class="ref-avg">({f["ref_cards"]:.1f} cards per game, {f["ref_games"]} games)</span>'
                if f.get("ref_cards") is not None else ' <span class="ref-avg">(no card history yet)</span>')
         ref = f'<p class="ref">Referee <b>{esc(f["referee"])}</b>{avg}</p>'
+    elif f.get("euro"):
+        ref = ""
     else:
         ref = '<p class="ref">Referee <b>to be confirmed</b></p>'
 
@@ -498,8 +501,9 @@ def render_match(f, i):
         <table class="mirror players"><tr class="names"><td>{esc(home)}</td><th></th><td>{esc(away)}</td></tr>{mirror([("Not available", injury_list(inj["home"]), injury_list(inj["away"]))])}</table>
       </section>"""
 
-    g = f["goals"]
-    goals = mirror([
+    euro = bool(f.get("euro"))
+    g = f["goals"] or {}
+    goals = "" if euro else mirror([
         ("To score", pct(g["home"]["any"]), pct(g["away"]["any"])),
         ("Score in 1st half", pct(g["home"]["fh"]), pct(g["away"]["fh"])),
         ("Score in 2nd half", pct(g["home"]["sh"]), pct(g["away"]["sh"])),
@@ -509,7 +513,7 @@ def render_match(f, i):
     fh, fa = f["form"]["home"], f["form"]["away"]
     def fv(s, k):
         return "—" if not s else (str(s["played"]) if k == "played" else pct(s[k]))
-    form = mirror([("Played", fv(fh, "played"), fv(fa, "played")), ("Win", fv(fh, "win"), fv(fa, "win")),
+    form = "" if euro else mirror([("Played", fv(fh, "played"), fv(fa, "played")), ("Win", fv(fh, "win"), fv(fa, "win")),
                    ("Over 2.5 goals", fv(fh, "over25"), fv(fa, "over25")), ("Both teams scored", fv(fh, "btts"), fv(fa, "btts"))])
     small = [s["played"] for s in (fh, fa) if s]
     form_note = ('<p class="halves">Early-season sample: percentages are based on only a few games '
@@ -518,6 +522,30 @@ def render_match(f, i):
     prev = "".join(prev_row(m) for m in f["previous"])
     prev_block = f"""
       <section class="block"><h3>Last meetings</h3><p class="halves pm-tip">Tap a match for the full details.</p><div class="pm">{prev}</div></section>""" if prev else ""
+
+    euro_note = ('<p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength '
+                 'adjusted. Injuries, cards and player picks are not included yet.</p>') if euro else ""
+    players_sec = "" if euro else f"""
+      <section class="block">
+        <h3>Players to watch</h3>
+        <table class="mirror players"><tr class="names"><td>{esc(home)}</td><th></th><td>{esc(away)}</td></tr>{players}</table>
+      </section>"""
+    inj_sec = "" if euro else inj_block
+    goals_sec = f"""
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror">{mirror([("Expected goals", f"{f['xg_home']:.1f}", f"{f['xg_away']:.1f}")])}</table>
+      </section>""" if euro else f"""
+      <section class="block">
+        <h3>Goals</h3>
+        <table class="mirror">{goals}</table>
+        <p class="halves">Chance of a goal in the 1st half <b>{pct(g['match_fh'])}</b> · 2nd half <b>{pct(g['match_sh'])}</b></p>
+      </section>"""
+    form_sec = "" if euro else f"""
+      <section class="block">
+        <h3>This season <span class="sub">home record v away record</span></h3>
+        <table class="mirror">{form}</table>{form_note}
+      </section>"""
 
     return f"""
     <article id="m{i}" class="match" role="tabpanel" data-fid="{f["id"]}" hidden>
@@ -541,7 +569,7 @@ def render_match(f, i):
           {meter("Both teams to score", f["btts"],
                  sel(f, "btts", "btts_yes", "Both teams to score", odds_of(f, "btts_yes"), f["btts"] / 100, "Yes")
                  + sel(f, "btts", "btts_no", "Both teams to score - No", odds_of(f, "btts_no"), 1 - f["btts"] / 100, "No"))}
-          {cards_block(f)}
+          {"" if euro else cards_block(f)}
         </div>
         <div class="stub">
           <span class="stub-label" style="background:{_hex(_mix(_rgb(team_colour(team)), (0, 0, 0), .5))}">Favoured</span>
@@ -551,22 +579,13 @@ def render_match(f, i):
           <span class="stub-cap">{cap}</span>
         </div>
       </header>
+      {euro_note}
       {view_block(f)}
-      <section class="block">
-        <h3>Players to watch</h3>
-        <table class="mirror players"><tr class="names"><td>{esc(home)}</td><th></th><td>{esc(away)}</td></tr>{players}</table>
-      </section>
+      {players_sec}
       {bookie_table(f)}
-      {inj_block}
-      <section class="block">
-        <h3>Goals</h3>
-        <table class="mirror">{goals}</table>
-        <p class="halves">Chance of a goal in the 1st half <b>{pct(g['match_fh'])}</b> · 2nd half <b>{pct(g['match_sh'])}</b></p>
-      </section>
-      <section class="block">
-        <h3>This season <span class="sub">home record v away record</span></h3>
-        <table class="mirror">{form}</table>{form_note}
-      </section>
+      {inj_sec}
+      {goals_sec}
+      {form_sec}
       {prev_block}
     </article>"""
 
@@ -603,6 +622,8 @@ def track_record_page(leagues, upd):
             matches = json.load(fh)
     except (FileNotFoundError, ValueError):
         matches = []
+    euro_matches = [m for m in matches if m.get("league") in EURO_ORDER]
+    matches = [m for m in matches if m.get("league") not in EURO_ORDER]    # domestic record stays separate
     summary = {"overall": {"matches": 0}, "leagues": {}}
     if SHOW_TRACK_RECORD:       # totals and percentages: private, only when you build it on your own computer
         try:
@@ -709,32 +730,37 @@ def track_record_page(leagues, upd):
           </div>
         </details>"""
 
-        ms = sorted(matches, key=lambda m: m["kickoff"], reverse=True)[:400]
-        days = {}
-        for m in ms:
-            days.setdefault(m["kickoff"][:10], []).append(m)
-        latest = datetime.fromisoformat(next(iter(days))).date()
+        def every_section(items_all, heading, sub, open_first=True):
+            ms = sorted(items_all, key=lambda m: m["kickoff"], reverse=True)[:400]
+            days = {}
+            for m in ms:
+                days.setdefault(m["kickoff"][:10], []).append(m)
+            latest = datetime.fromisoformat(next(iter(days))).date()
 
-        def day_block(day, items, open_):
-            right = sum(1 for m in items if m["correct"])
-            title = datetime.fromisoformat(day).strftime("%a %d %b")
-            return (f'<details class="day"{" open" if open_ else ""}><summary><span class="dt">{title}</span>'
-                    f'<span class="dsum">{right} of {len(items)} results right</span></summary>'
-                    f'<div class="rc-list">{"".join(match_card(m) for m in items)}</div></details>')
+            def day_block(day, items, open_):
+                right = sum(1 for m in items if m["correct"])
+                title = datetime.fromisoformat(day).strftime("%a %d %b")
+                return (f'<details class="day"{" open" if open_ else ""}><summary><span class="dt">{title}</span>'
+                        f'<span class="dsum">{right} of {len(items)} results right</span></summary>'
+                        f'<div class="rc-list">{"".join(match_card(m) for m in items)}</div></details>')
 
-        recent_html, older_html, older_n = [], [], 0
-        for i, (day, items) in enumerate(days.items()):
-            if (latest - datetime.fromisoformat(day).date()).days < 7:
-                recent_html.append(day_block(day, items, i < 1))
-            else:
-                older_html.append(day_block(day, items, False))
-                older_n += len(items)
-        older = (f'<details class="older"><summary>Show older matches ({older_n})</summary>{"".join(older_html)}</details>'
-                 if older_html else "")
-        recent = f"""
-      <section class="block"><h3>Every match <span class="sub">newest first; tap a day or a match to open it. Highlighted names were our player picks.</span></h3>
+            recent_html, older_html, older_n = [], [], 0
+            for i, (day, items) in enumerate(days.items()):
+                if (latest - datetime.fromisoformat(day).date()).days < 7:
+                    recent_html.append(day_block(day, items, open_first and i < 1))
+                else:
+                    older_html.append(day_block(day, items, False))
+                    older_n += len(items)
+            older = (f'<details class="older"><summary>Show older matches ({older_n})</summary>{"".join(older_html)}</details>'
+                     if older_html else "")
+            return f"""
+      <section class="block"><h3>{heading} <span class="sub">{sub}</span></h3>
         {"".join(recent_html)}{older}</section>"""
-        body = private + recent
+
+        recent = every_section(matches, "Every match", "newest first; tap a day or a match to open it. Highlighted names were our player picks.")
+        euro_sec = every_section(euro_matches, "Champions League and Europa League",
+                                 "tracked separately from the domestic leagues, because European matches are harder to call.", False) if euro_matches else ""
+        body = private + recent + euro_sec
     body += """
       <section class="block tr-method"><h3>How this is checked</h3>
         <p>Only predictions published before kick-off count, and they can't be changed afterwards. Results are checked automatically each morning.</p>
@@ -792,11 +818,11 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = PAGE.format(title=esc(title), desc=esc(desc), nav=nav, sub=sub, chips=chips, body=body,
                        css=CSS, extra_css=EXTRA_CSS, prefix=prefix)
     html = html.replace("{prefix}", prefix)
-    on_live = path == "" or path.rstrip("/") in LEAGUE_ORDER
+    on_live = path == "" or path.rstrip("/") in LEAGUE_ORDER or path.rstrip("/") in EURO_ORDER
     html = html.replace("__LIVESTRIP__", '<section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>' if on_live else "")
     html = html.replace("__SHIRTPATH__", SHIRT_PATH)
     html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS,
-                                                       "league": path.rstrip("/") if path.rstrip("/") in LEAGUE_ORDER else ""}).replace("</", "<\\/"))
+                                                       "league": path.rstrip("/") if (path.rstrip("/") in LEAGUE_ORDER or path.rstrip("/") in EURO_ORDER) else ""}).replace("</", "<\\/"))
     html = html.replace("__DECOR__", DECOR_DEFS).replace("__HEAD__", head_tags(esc(title), esc(desc), path))
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
@@ -813,6 +839,16 @@ def build():
                 leagues.append(d)
     if not leagues:
         raise SystemExit("No prediction files in data/site/ - run: python -m pipeline.run")
+    euro = []
+    for key in EURO_ORDER:
+        path = os.path.join(SITE_DATA, f"{key}.json")
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as fh:
+                d = json.load(fh)
+            if d.get("fixtures"):
+                euro.append(d)
+    domestic = leagues
+    leagues = domestic + euro      # navigation, league pages, live picks, sitemap
     # Picks for the live strip. A pick is refreshed until kick-off and then frozen, so the
     # "We said ..." label keeps showing what was published before the match started.
     keep_path = os.path.join(BASE_DIR, "data", "live_picks.json")
@@ -870,14 +906,18 @@ def build():
             <span class="row-bar"><span class="tw-h" style="flex:{f['home_pct']}"></span><span class="tw-d" style="flex:{f['draw_pct']}"></span><span class="tw-a" style="flex:{f['away_pct']}"></span></span>
             <span class="row-pick">{esc(short(team))} <b>{p:.0f}%</b>{'<em>draw risk</em>' if draw_risk(f) else ''}</span>
           </a>""")
+        more = ""
+        if d.get("euro") and len(rows) > 6:
+            more = f'<p class="more"><a href="{d["league"]}/">All {len(rows)} {esc(d["name"])} matches &rarr;</a></p>'
+            rows = rows[:6]
         sections.append(f"""
       <section class="league-block">
         <h2><a href="{d['league']}/">{esc(d['name'])}</a> <span class="sub">{esc(d['country'])}</span></h2>
-        <div class="rows">{''.join(rows)}</div>
+        <div class="rows">{''.join(rows)}</div>{more}
       </section>""")
     html = page("FootyPredicts – football predictions for Europe's top leagues",
-                "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A and Ligue 1.",
-                league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues · updated {upd}",
+                "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, the Champions League and the Europa League.",
+                league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
                 "", "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
@@ -1305,6 +1345,9 @@ a.chip { text-decoration:none; }
 EXTRA_CSS += r"""
 .slip-book { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:0 0 10px; font-size:13px; color:var(--muted); }
 .slip-book select { font:inherit; font-size:14px; color:var(--ink,#16231b); padding:6px 8px; border:1px solid var(--line); border-radius:8px; background:#fff; max-width:60%; }
+.more { margin:8px 2px 0; font-size:14px; }
+.more a { color:var(--pitch-2); font-weight:600; }
+.euro-note { margin:14px 2px 0; }
 /* live scores */
 .players td span.shirt, .shirt { position:relative; display:inline-block; width:30px; height:28px; margin-right:6px; vertical-align:middle; flex:none; }
 .shirt svg { position:absolute; inset:0; width:100%; height:100%; }
@@ -1547,7 +1590,7 @@ __DECOR__
   var L = __LIVEDATA__;
   var strip = document.getElementById('live'), mine = document.getElementById('myfav');
   if (!L.url || !strip) return;
-  var LG = { 39: 'premier-league', 140: 'la-liga', 78: 'bundesliga', 135: 'serie-a', 61: 'ligue-1' };
+  var LG = { 39: 'premier-league', 140: 'la-liga', 78: 'bundesliga', 135: 'serie-a', 61: 'ligue-1', 2: 'champions-league', 3: 'europa-league' };
   var picks = L.picks, state = {}, favs = [], FKEY = 'fp-fav-v1';
   try { favs = JSON.parse(localStorage.getItem(FKEY) || '[]').map(String); } catch (e) { favs = []; }
   var SKEY = 'fp-live-v1';

@@ -21,6 +21,7 @@ from datetime import datetime, timezone
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 LEAGUES = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
+EURO = ["champions-league", "europa-league"]      # results come from data/history/
 FINISHED = {"FT", "AET", "PEN"}
 OUT = os.path.join(BASE, "data", "track_record")
 
@@ -57,7 +58,7 @@ def published_predictions():
     commits.sort(key=lambda c: c[1])                       # oldest first
     best = {}
     for h, when in commits:
-        for lg in LEAGUES:
+        for lg in LEAGUES + EURO:
             d = git_json(h, f"data/site/{lg}.json")
             for f in (d or {}).get("fixtures", []):
                 if utc(f["kickoff"]) > when:              # published before kick-off
@@ -152,22 +153,28 @@ def summarise(rows):
 def main():
     preds = published_predictions()
     rows = []
-    for lg in LEAGUES:
+    for lg in LEAGUES + EURO:
         d = os.path.join(BASE, "data", lg)
-        if not os.path.isdir(d):
-            continue
-        results = {}
-        for name in os.listdir(d):
-            if name.startswith("fixtures_"):
-                for x in load(os.path.join(d, name), []):
-                    results[x["id"]] = x
-        events = load(os.path.join(d, "match_events.json"), {})
-        stats = load(os.path.join(d, "match_stats.json"), {})
-        ids_by_name = {}
-        for name in os.listdir(d):
-            if name.startswith("players_"):
-                for p in load(os.path.join(d, name), []):
-                    ids_by_name[(p["name"], p["team"])] = p["id"]
+        results, events, stats, ids_by_name = {}, {}, {}, {}
+        if lg in EURO:
+            hist = os.path.join(BASE, "data", "history")
+            for name in (os.listdir(hist) if os.path.isdir(hist) else []):
+                if name.startswith(lg + "_"):
+                    for x in load(os.path.join(hist, name), []):
+                        results[x["id"]] = x
+        else:
+            if not os.path.isdir(d):
+                continue
+            for name in os.listdir(d):
+                if name.startswith("fixtures_"):
+                    for x in load(os.path.join(d, name), []):
+                        results[x["id"]] = x
+            events = load(os.path.join(d, "match_events.json"), {})
+            stats = load(os.path.join(d, "match_stats.json"), {})
+            for name in os.listdir(d):
+                if name.startswith("players_"):
+                    for p in load(os.path.join(d, name), []):
+                        ids_by_name[(p["name"], p["team"])] = p["id"]
         for fid, (plg, lname, when, f) in preds.items():
             if plg != lg:
                 continue
@@ -183,13 +190,15 @@ def main():
         if "goal_events" not in r:
             lg = r["league"]
             if lg not in ev_cache:
-                ev_cache[lg] = load(os.path.join(BASE, "data", lg, "match_events.json"), {})
+                ev_cache[lg] = load(os.path.join(BASE, "data", lg, "match_events.json"), {})  # none for European competitions
             r.update(event_lists(ev_cache[lg].get(str(r["id"]))))
     rows.sort(key=lambda r: r["kickoff"], reverse=True)
     by = defaultdict(list)
     for r in rows:
         by[r["league"]].append(r)
-    summary = {"updated": datetime.now(timezone.utc).isoformat(), "overall": summarise(rows),
+    dom = [r for r in rows if r["league"] not in EURO]
+    eur = [r for r in rows if r["league"] in EURO]
+    summary = {"updated": datetime.now(timezone.utc).isoformat(), "overall": summarise(dom), "european": summarise(eur),
                "leagues": {lg: dict(summarise(v), name=v[0]["league_name"]) for lg, v in by.items()}}
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "matches.json"), "w", encoding="utf-8") as fh:
