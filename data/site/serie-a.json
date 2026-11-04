@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-03T13:07:31.142984+00:00",
+ "updated": "2026-11-04T13:22:54.396007+00:00",
  "matches_used": 860,
  "fixtures": [
   {
@@ -20,29 +20,32 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 43.5,
-    "draw": 26.5,
-    "away": 29.9
+    "home": 43.7,
+    "draw": 27.0,
+    "away": 29.3
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 0.7,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 4.9,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "I. Gueye",
+      "O. Solet"
+     ]
     }
    },
-   "home_pct": 25.5,
-   "draw_pct": 30.2,
-   "away_pct": 44.3,
-   "xg_home": 0.93,
-   "xg_away": 1.31,
-   "over25": 38.8,
-   "btts": 45.2,
+   "home_pct": 26.9,
+   "draw_pct": 30.9,
+   "away_pct": 42.2,
+   "xg_home": 0.94,
+   "xg_away": 1.25,
+   "over25": 37.4,
+   "btts": 44.5,
    "cards5": 28.9,
    "cards": {
     "exp": 3.56,
@@ -104,10 +107,10 @@
        "name": "J. Yeboah",
        "p": 24.4,
        "price": {
-        "odd": 2.6,
+        "odd": 2.75,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.6
+         "Bet365": 2.75
         }
        }
       }
@@ -147,14 +150,14 @@
        }
       },
       {
-       "id": 434410,
-       "name": "I. Gueye",
-       "p": 21.6,
+       "id": 786,
+       "name": "N. Zaniolo",
+       "p": 18.9,
        "price": {
-        "odd": 3.4,
+        "odd": 3.25,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.4
+         "Bet365": 3.25
         }
        }
       }
@@ -183,13 +186,62 @@
    "injuries": {
     "home": [
      {
+      "id": 212,
+      "name": "A. Adorante",
+      "type": "Missing Fixture",
+      "reason": "Hernia"
+     },
+     {
+      "id": 14704,
+      "name": "B. Franjic",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
       "id": 26095,
-      "name": "M. Šverko",
+      "name": "M. Sverko",
       "type": "Missing Fixture",
       "reason": "Hip Injury"
+     },
+     {
+      "id": 1482,
+      "name": "T. Correia",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 505,
+      "name": "D. Alaba",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 434410,
+      "name": "I. Gueye",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 1134,
+      "name": "V. Bayo",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 656,
+      "name": "O. Solet",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 162907,
+      "name": "A. Zanoli",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     }
+    ]
    },
    "previous": [
     {
@@ -275,8 +327,8 @@
    ],
    "odds": {
     "home": {
-     "odd": 2.23,
-     "bookie": "Dafabet",
+     "odd": 2.22,
+     "bookie": "Pinnacle",
      "books": {
       "William Hill": 2.1,
       "Bet365": 2.15,
@@ -290,7 +342,7 @@
      "books": {
       "William Hill": 3.4,
       "Bet365": 3.5,
-      "Betfair": 3.7,
+      "Betfair": 3.5,
       "BetVictor": 3.5
      }
     },
@@ -299,18 +351,18 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.1,
-      "Bet365": 3.1,
-      "Betfair": 3.2,
+      "Bet365": 3.3,
+      "Betfair": 3.3,
       "BetVictor": 3.1
      }
     },
     "over25": {
-     "odd": 1.76,
+     "odd": 1.78,
      "bookie": "Pinnacle",
      "books": {
       "Bet365": 1.73,
-      "Betfair": 1.65,
-      "BetVictor": 1.67
+      "Betfair": 1.67,
+      "BetVictor": 1.68
      }
     },
     "under25": {
@@ -318,8 +370,8 @@
      "bookie": "1xBet",
      "books": {
       "Bet365": 2.1,
-      "Betfair": 2.1,
-      "BetVictor": 2.04
+      "Betfair": 2.15,
+      "BetVictor": 2.02
      }
     },
     "btts_yes": {
@@ -328,17 +380,17 @@
      "books": {
       "William Hill": 1.6,
       "Bet365": 1.57,
-      "Betfair": 1.57,
-      "BetVictor": 1.55
+      "Betfair": 1.53,
+      "BetVictor": 1.57
      }
     },
     "btts_no": {
-     "odd": 2.32,
-     "bookie": "Betano",
+     "odd": 2.38,
+     "bookie": "Betfair",
      "books": {
       "William Hill": 2.25,
       "Bet365": 2.25,
-      "Betfair": 2.3,
+      "Betfair": 2.38,
       "BetVictor": 2.25
      }
     },
@@ -381,8 +433,8 @@
    "call_reason": "",
    "low_data": true,
    "market": {
-    "home": 35.4,
-    "draw": 25.9,
+    "home": 35.2,
+    "draw": 26.0,
     "away": 38.7
    },
    "injury_effect": {
@@ -555,13 +607,13 @@
    "previous": [],
    "odds": {
     "home": {
-     "odd": 2.84,
-     "bookie": "Pinnacle",
+     "odd": 2.82,
+     "bookie": "1xBet",
      "books": {
       "William Hill": 2.62,
-      "Bet365": 2.62,
+      "Bet365": 2.75,
       "Betfair": 2.7,
-      "BetVictor": 2.63
+      "BetVictor": 2.6
      }
     },
     "draw": {
@@ -576,10 +628,10 @@
     },
     "away": {
      "odd": 2.5,
-     "bookie": "1xBet",
+     "bookie": "Bet365",
      "books": {
       "William Hill": 2.38,
-      "Bet365": 2.45,
+      "Bet365": 2.5,
       "Betfair": 2.45,
       "BetVictor": 2.38
      }
@@ -661,9 +713,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 52.0,
-    "draw": 26.4,
-    "away": 21.7
+    "home": 52.8,
+    "draw": 26.0,
+    "away": 21.2
    },
    "injury_effect": {
     "home": {
@@ -1000,7 +1052,7 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 1.8,
-      "Bet365": 1.8,
+      "Bet365": 1.75,
       "Betfair": 1.83,
       "BetVictor": 1.75
      }
@@ -1010,17 +1062,17 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.5,
-      "Bet365": 3.3,
+      "Bet365": 3.6,
       "Betfair": 3.75,
       "BetVictor": 3.6
      }
     },
     "away": {
-     "odd": 4.58,
-     "bookie": "Pinnacle",
+     "odd": 5.0,
+     "bookie": "Bet365",
      "books": {
       "William Hill": 4.0,
-      "Bet365": 4.5,
+      "Bet365": 5.0,
       "Betfair": 4.4,
       "BetVictor": 4.33
      }
@@ -1031,16 +1083,16 @@
      "books": {
       "Bet365": 1.91,
       "Betfair": 1.91,
-      "BetVictor": 1.86
+      "BetVictor": 1.85
      }
     },
     "under25": {
      "odd": 1.93,
-     "bookie": "1xBet",
+     "bookie": "Pinnacle",
      "books": {
       "Bet365": 1.91,
       "Betfair": 1.8,
-      "BetVictor": 1.81
+      "BetVictor": 1.82
      }
     },
     "btts_yes": {
@@ -1060,7 +1112,7 @@
       "William Hill": 1.95,
       "Bet365": 1.95,
       "Betfair": 1.87,
-      "BetVictor": 1.91
+      "BetVictor": 1.93
      }
     },
     "cards_over45": null,
@@ -1102,9 +1154,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 21.3,
-    "draw": 27.1,
-    "away": 51.6
+    "home": 21.1,
+    "draw": 27.0,
+    "away": 51.8
    },
    "injury_effect": {
     "home": {
@@ -1430,11 +1482,11 @@
    ],
    "odds": {
     "home": {
-     "odd": 4.63,
-     "bookie": "1xBet",
+     "odd": 4.75,
+     "bookie": "Bet365",
      "books": {
       "William Hill": 4.2,
-      "Bet365": 4.5,
+      "Bet365": 4.75,
       "Betfair": 4.5,
       "BetVictor": 4.33
      }
@@ -1444,7 +1496,7 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.4,
-      "Bet365": 3.4,
+      "Bet365": 3.5,
       "Betfair": 3.6,
       "BetVictor": 3.4
      }
@@ -1536,9 +1588,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 72.3,
-    "draw": 16.9,
-    "away": 10.9
+    "home": 72.7,
+    "draw": 16.2,
+    "away": 11.1
    },
    "injury_effect": {
     "home": {
@@ -1620,10 +1672,10 @@
        "name": "M. Soulé",
        "p": 36.3,
        "price": {
-        "odd": 2.2,
+        "odd": 2.1,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.2
+         "Bet365": 2.1
         }
        }
       }
@@ -1667,10 +1719,10 @@
        "name": "A. Laurienté",
        "p": 14.5,
        "price": {
-        "odd": 4.75,
+        "odd": 4.5,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 4.75
+         "Bet365": 4.5
         }
        }
       }
@@ -1825,45 +1877,45 @@
      }
     },
     "draw": {
-     "odd": 6.25,
+     "odd": 6.29,
      "bookie": "Pinnacle",
      "books": {
       "William Hill": 5.5,
-      "Bet365": 5.25,
+      "Bet365": 6.0,
       "Betfair": 6.0,
-      "BetVictor": 5.5
+      "BetVictor": 5.75
      }
     },
     "away": {
-     "odd": 9.18,
+     "odd": 9.23,
      "bookie": "Pinnacle",
      "books": {
-      "William Hill": 8.0,
+      "William Hill": 7.5,
       "Bet365": 9.0,
       "Betfair": 9.0,
       "BetVictor": 8.5
      }
     },
     "over25": {
-     "odd": 1.38,
-     "bookie": "1xBet",
+     "odd": 1.4,
+     "bookie": "Bet365",
      "books": {
-      "Bet365": 1.36,
+      "Bet365": 1.4,
       "Betfair": 1.33,
       "BetVictor": 1.36
      }
     },
     "under25": {
-     "odd": 3.2,
-     "bookie": "Bet365",
+     "odd": 3.18,
+     "bookie": "Pinnacle",
      "books": {
-      "Bet365": 3.2,
+      "Bet365": 3.0,
       "Betfair": 3.0,
       "BetVictor": 2.82
      }
     },
     "btts_yes": {
-     "odd": 1.67,
+     "odd": 1.65,
      "bookie": "Betano",
      "books": {
       "William Hill": 1.62,
@@ -1921,9 +1973,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 44.0,
-    "draw": 26.2,
-    "away": 29.8
+    "home": 43.2,
+    "draw": 26.5,
+    "away": 30.3
    },
    "injury_effect": {
     "home": {
@@ -2257,13 +2309,13 @@
    ],
    "odds": {
     "home": {
-     "odd": 2.22,
-     "bookie": "Pinnacle",
+     "odd": 2.25,
+     "bookie": "Betfair",
      "books": {
       "William Hill": 2.1,
-      "Bet365": 2.1,
-      "Betfair": 2.1,
-      "BetVictor": 2.1
+      "Bet365": 2.2,
+      "Betfair": 2.25,
+      "BetVictor": 2.15
      }
     },
     "draw": {
@@ -2272,7 +2324,7 @@
      "books": {
       "William Hill": 3.5,
       "Bet365": 3.6,
-      "Betfair": 3.5,
+      "Betfair": 3.6,
       "BetVictor": 3.5
      }
     },
@@ -2280,10 +2332,10 @@
      "odd": 3.34,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 3.0,
+      "William Hill": 3.1,
       "Bet365": 3.1,
       "Betfair": 3.1,
-      "BetVictor": 3.2
+      "BetVictor": 3.1
      }
     },
     "over25": {
@@ -2292,16 +2344,16 @@
      "books": {
       "Bet365": 1.73,
       "Betfair": 1.73,
-      "BetVictor": 1.7
+      "BetVictor": 1.69
      }
     },
     "under25": {
-     "odd": 2.13,
-     "bookie": "SBO",
+     "odd": 2.14,
+     "bookie": "Pinnacle",
      "books": {
       "Bet365": 2.1,
       "Betfair": 2.0,
-      "BetVictor": 1.99
+      "BetVictor": 2.01
      }
     },
     "btts_yes": {
@@ -2310,8 +2362,8 @@
      "books": {
       "William Hill": 1.62,
       "Bet365": 1.62,
-      "Betfair": 1.57,
-      "BetVictor": 1.6
+      "Betfair": 1.6,
+      "BetVictor": 1.57
      }
     },
     "btts_no": {
@@ -2321,7 +2373,7 @@
       "William Hill": 2.2,
       "Bet365": 2.2,
       "Betfair": 2.25,
-      "BetVictor": 2.2
+      "BetVictor": 2.25
      }
     },
     "cards_over45": null,
@@ -2363,9 +2415,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 20.8,
-    "draw": 26.3,
-    "away": 52.9
+    "home": 20.5,
+    "draw": 26.4,
+    "away": 53.1
    },
    "injury_effect": {
     "home": {
@@ -2701,9 +2753,9 @@
      "odd": 4.84,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 4.33,
-      "Bet365": 4.5,
-      "Betfair": 4.5,
+      "William Hill": 4.4,
+      "Bet365": 4.75,
+      "Betfair": 4.6,
       "BetVictor": 4.5
      }
     },
@@ -2711,9 +2763,9 @@
      "odd": 3.72,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 3.5,
-      "Bet365": 3.5,
-      "Betfair": 3.6,
+      "William Hill": 3.4,
+      "Bet365": 3.6,
+      "Betfair": 3.7,
       "BetVictor": 3.5
      }
     },
@@ -2723,7 +2775,7 @@
      "books": {
       "William Hill": 1.75,
       "Bet365": 1.75,
-      "Betfair": 1.75,
+      "Betfair": 1.8,
       "BetVictor": 1.75
      }
     },
@@ -2761,7 +2813,7 @@
      "books": {
       "William Hill": 1.85,
       "Bet365": 1.8,
-      "Betfair": 1.8,
+      "Betfair": 1.83,
       "BetVictor": 1.8
      }
     },
@@ -2804,8 +2856,8 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 28.5,
-    "draw": 25.4,
+    "home": 28.7,
+    "draw": 25.3,
     "away": 46.1
    },
    "injury_effect": {
@@ -2876,10 +2928,10 @@
        "name": "Gustavo Varela",
        "p": 54.0,
        "price": {
-        "odd": 2.62,
+        "odd": 2.6,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.62
+         "Bet365": 2.6
         }
        }
       },
@@ -2939,15 +2991,15 @@
      ],
      "bookings": [
       {
-       "id": 10097,
-       "name": "Éderson",
-       "p": 17.1,
+       "id": 400530,
+       "name": "R. ObriÄ",
+       "p": 27.8,
        "price": null
       },
       {
-       "id": 1358,
-       "name": "E. Elmas",
-       "p": 15.9,
+       "id": 10097,
+       "name": "Éderson",
+       "p": 17.1,
        "price": null
       }
      ],
@@ -3057,9 +3109,9 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.2,
-      "Bet365": 3.3,
-      "Betfair": 3.25,
-      "BetVictor": 3.25
+      "Bet365": 3.4,
+      "Betfair": 3.3,
+      "BetVictor": 3.2
      }
     },
     "draw": {
@@ -3067,18 +3119,18 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.6,
-      "Bet365": 3.5,
-      "Betfair": 3.75,
+      "Bet365": 3.6,
+      "Betfair": 3.9,
       "BetVictor": 3.75
      }
     },
     "away": {
-     "odd": 2.1,
-     "bookie": "1xBet",
+     "odd": 2.11,
+     "bookie": "Dafabet",
      "books": {
       "William Hill": 2.0,
-      "Bet365": 2.05,
-      "Betfair": 2.0,
+      "Bet365": 2.1,
+      "Betfair": 2.05,
       "BetVictor": 2.0
      }
     },
@@ -3106,17 +3158,17 @@
      "books": {
       "William Hill": 1.55,
       "Bet365": 1.5,
-      "Betfair": 1.45,
+      "Betfair": 1.5,
       "BetVictor": 1.45
      }
     },
     "btts_no": {
-     "odd": 2.55,
-     "bookie": "Betfair",
+     "odd": 2.5,
+     "bookie": "Bet365",
      "books": {
       "William Hill": 2.4,
       "Bet365": 2.5,
-      "Betfair": 2.55,
+      "Betfair": 2.5,
       "BetVictor": 2.5
      }
     },
@@ -3159,9 +3211,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 53.0,
-    "draw": 23.3,
-    "away": 23.6
+    "home": 53.4,
+    "draw": 23.1,
+    "away": 23.5
    },
    "injury_effect": {
     "home": {
@@ -3482,11 +3534,11 @@
    "odds": {
     "home": {
      "odd": 1.83,
-     "bookie": "1xBet",
+     "bookie": "Pinnacle",
      "books": {
       "William Hill": 1.75,
       "Bet365": 1.75,
-      "Betfair": 1.75,
+      "Betfair": 1.8,
       "BetVictor": 1.75
      }
     },
@@ -3495,8 +3547,8 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.9,
-      "Bet365": 4.0,
-      "Betfair": 4.0,
+      "Bet365": 4.2,
+      "Betfair": 4.2,
       "BetVictor": 4.0
      }
     },
@@ -3505,27 +3557,27 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.9,
-      "Bet365": 4.0,
-      "Betfair": 3.9,
+      "Bet365": 4.2,
+      "Betfair": 4.0,
       "BetVictor": 3.9
      }
     },
     "over25": {
-     "odd": 1.53,
+     "odd": 1.52,
      "bookie": "Betano",
      "books": {
       "Bet365": 1.5,
       "Betfair": 1.44,
-      "BetVictor": 1.47
+      "BetVictor": 1.46
      }
     },
     "under25": {
-     "odd": 2.63,
+     "odd": 2.7,
      "bookie": "Pinnacle",
      "books": {
       "Bet365": 2.62,
       "Betfair": 2.6,
-      "BetVictor": 2.44
+      "BetVictor": 2.47
      }
     },
     "btts_yes": {
@@ -3539,12 +3591,12 @@
      }
     },
     "btts_no": {
-     "odd": 2.6,
+     "odd": 2.63,
      "bookie": "Betfair",
      "books": {
       "William Hill": 2.5,
       "Bet365": 2.5,
-      "Betfair": 2.6,
+      "Betfair": 2.63,
       "BetVictor": 2.55
      }
     },
@@ -3587,9 +3639,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 27.3,
-    "draw": 26.5,
-    "away": 46.1
+    "home": 27.2,
+    "draw": 26.4,
+    "away": 46.4
    },
    "injury_effect": {
     "home": {
@@ -3669,12 +3721,12 @@
       {
        "id": 383006,
        "name": "A. Njie",
-       "p": 15.0,
+       "p": 17.0,
        "price": {
-        "odd": 4.75,
+        "odd": 5.0,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 4.75
+         "Bet365": 5.0
         }
        }
       }
@@ -3718,10 +3770,10 @@
        "name": "Kerim-Sam Alajbegović",
        "p": 20.1,
        "price": {
-        "odd": 3.1,
+        "odd": 3.2,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.1
+         "Bet365": 3.2
         }
        }
       }
@@ -3926,28 +3978,28 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.4,
-      "Bet365": 3.4,
-      "Betfair": 3.4,
+      "Bet365": 3.5,
+      "Betfair": 3.5,
       "BetVictor": 3.4
      }
     },
     "draw": {
      "odd": 3.7,
-     "bookie": "1xBet",
+     "bookie": "Betfair",
      "books": {
-      "William Hill": 3.3,
-      "Bet365": 3.5,
-      "Betfair": 3.6,
-      "BetVictor": 3.6
+      "William Hill": 3.4,
+      "Bet365": 3.6,
+      "Betfair": 3.7,
+      "BetVictor": 3.5
      }
     },
     "away": {
-     "odd": 2.13,
+     "odd": 2.12,
      "bookie": "Pinnacle",
      "books": {
-      "William Hill": 2.05,
-      "Bet365": 2.0,
-      "Betfair": 2.0,
+      "William Hill": 2.0,
+      "Bet365": 2.05,
+      "Betfair": 2.05,
       "BetVictor": 2.0
      }
     },
@@ -3974,18 +4026,18 @@
      "bookie": "William Hill",
      "books": {
       "William Hill": 1.67,
-      "Bet365": 1.62,
+      "Bet365": 1.67,
       "Betfair": 1.6,
       "BetVictor": 1.62
      }
     },
     "btts_no": {
-     "odd": 2.2,
-     "bookie": "Bet365",
+     "odd": 2.25,
+     "bookie": "Betfair",
      "books": {
       "William Hill": 2.15,
-      "Bet365": 2.2,
-      "Betfair": 2.2,
+      "Bet365": 2.1,
+      "Betfair": 2.25,
       "BetVictor": 2.15
      }
     },
