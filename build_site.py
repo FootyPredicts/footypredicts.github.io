@@ -122,7 +122,7 @@ def shirt(pid):
 SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.com/").rstrip("/") + "/"
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
-SHOW_EUROPE = False      # switch on again once the European model has more data
+SHOW_EUROPE = True      # switch on again once the European model has more data
 EURO_ORDER = ["champions-league", "europa-league"]
 
 
@@ -952,7 +952,7 @@ def build():
         <div class="rows">{''.join(rows)}</div>{more}
       </section>""")
     html = page("FootyPredicts – football predictions for Europe's top leagues",
-                "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A and Ligue 1.",
+                "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, the Champions League and the Europa League.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
                 "", "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
