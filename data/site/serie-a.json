@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-05T13:36:34.160313+00:00",
+ "updated": "2026-11-05T18:07:13.605059+00:00",
  "matches_used": 860,
  "fixtures": [
   {
@@ -935,8 +935,8 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 52.5,
-    "draw": 26.2,
+    "home": 52.6,
+    "draw": 26.1,
     "away": 21.3
    },
    "injury_effect": {
@@ -1019,10 +1019,10 @@
        "name": "G. Simeone",
        "p": 25.2,
        "price": {
-        "odd": 2.38,
+        "odd": 2.4,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.38
+         "Bet365": 2.4
         }
        }
       }
@@ -1352,7 +1352,7 @@
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.5,
-      "Bet365": 3.5,
+      "Bet365": 3.6,
       "Betfair": 3.7,
       "BetVictor": 3.6
      }
@@ -1406,50 +1406,62 @@
      }
     },
     "cards_over45": {
-     "odd": 5.2,
+     "odd": 4.0,
      "bookie": "Betano",
      "books": {}
     },
     "cards": {
      "2.5": {
       "over": {
-       "odd": 2.0,
+       "odd": 1.72,
        "bookie": "Betano",
-       "books": {}
+       "books": {
+        "Bet365": 1.57
+       }
       },
       "under": {
-       "odd": 1.78,
-       "bookie": "Betano",
-       "books": {}
+       "odd": 2.25,
+       "bookie": "Bet365",
+       "books": {
+        "Bet365": 2.25
+       }
       }
      },
      "3.5": {
       "over": {
-       "odd": 3.15,
+       "odd": 2.55,
        "bookie": "Betano",
        "books": {}
       },
       "under": {
-       "odd": 1.33,
+       "odd": 1.47,
        "bookie": "Betano",
        "books": {}
       }
      },
      "4.5": {
       "over": {
-       "odd": 5.2,
+       "odd": 4.0,
        "bookie": "Betano",
        "books": {}
       },
       "under": {
-       "odd": 1.14,
+       "odd": 1.22,
        "bookie": "Betano",
        "books": {}
       }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 6.3,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.1,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
       "over": null,
@@ -1529,7 +1541,7 @@
      "any": 64.16753247500965
     },
     "away": {
-     "fh": 40.61049338742069,
+     "fh": 40.610493387420696,
      "sh": 52.13770274887679,
      "any": 71.5748178091118
     },
@@ -1955,14 +1967,18 @@
      },
      "3.5": {
       "over": {
-       "odd": 2.12,
-       "bookie": "Betano",
-       "books": {}
+       "odd": 2.2,
+       "bookie": "Bet365",
+       "books": {
+        "Bet365": 2.2
+       }
       },
       "under": {
        "odd": 1.67,
        "bookie": "Betano",
-       "books": {}
+       "books": {
+        "Bet365": 1.62
+       }
       }
      },
      "4.5": {
@@ -2446,12 +2462,16 @@
       "over": {
        "odd": 2.3,
        "bookie": "Betano",
-       "books": {}
+       "books": {
+        "Bet365": 1.83
+       }
       },
       "under": {
-       "odd": 1.57,
-       "bookie": "Betano",
-       "books": {}
+       "odd": 1.83,
+       "bookie": "Bet365",
+       "books": {
+        "Bet365": 1.83
+       }
       }
      },
      "4.5": {
@@ -3768,7 +3788,7 @@
      "bookings": [
       {
        "id": 400530,
-       "name": "R. ObriÄ",
+       "name": "R. Obrić",
        "p": 27.8,
        "price": null
       },
