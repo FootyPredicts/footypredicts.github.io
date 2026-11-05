@@ -12,6 +12,7 @@ Pages:
 import json
 import re
 import unicodedata
+import math
 import os
 from datetime import datetime, timedelta, timezone
 from html import escape
@@ -900,7 +901,7 @@ def pick_of_day(leagues):
 def fantasy_page(leagues, upd):
     """Captain shortlist for fantasy football: the players with the best chance to score in the next round of Premier League games."""
     pl = next((d for d in leagues if d["league"] == "premier-league"), None)
-    cands = []
+    cands, defs = [], []
     if pl:
         fx = pl["fixtures"]
         first = datetime.fromisoformat(fx[0]["kickoff"]) if fx else None
@@ -908,6 +909,10 @@ def fantasy_page(leagues, upd):
             if first and datetime.fromisoformat(f["kickoff"]) - first > timedelta(days=5):
                 continue
             day, time_, _ = kickoff(f)
+            for team, opp, ven, opp_xg, side in ((f["home"], f["away"], "H", f["xg_away"], "home"), (f["away"], f["home"], "A", f["xg_home"], "away")):
+                d_ = f["players"][side].get("defender")
+                defs.append({"team": team, "opp": opp, "ven": ven, "cs": 100 * math.exp(-opp_xg), "oxg": opp_xg,
+                             "when": f"{day} {time_}", "d": d_["name"] if d_ else ""})
             for side, team, opp, win, xg in (("home", f["home"], f["away"], f["home_pct"], f["xg_home"]),
                                              ("away", f["away"], f["home"], f["away_pct"], f["xg_away"])):
                 doubt = {x["name"] for x in (f.get("injuries") or {}).get(side, []) if "missing" not in x["type"].lower()}
@@ -924,6 +929,18 @@ def fantasy_page(leagues, upd):
           <td class="fc-v fc-xg"><b>{c['p']:.0f}%</b><span>to score</span></td>
           <td class="fc-v fc-xg"><b>{c['a']:.0f}%</b><span>to assist</span></td>
           <td class="fc-v"><b>{c['win']:.0f}%</b><span>team win</span></td></tr>""" for n, c in enumerate(top, 1))
+    defs.sort(key=lambda x: x["cs"], reverse=True)
+    cs_rows = "".join(f"""
+        <tr><td class="fc-n">{n}</td>
+          <td class="fc-p"><b>{esc(c['team'])}</b><span>({c['ven']}) v {esc(short(c['opp']))} · {esc(c['when'])}</span></td>
+          <td class="fc-v"><b>{c['cs']:.0f}%</b><span>clean sheet</span></td>
+          <td class="fc-v fc-xg"><b>{c['oxg']:.1f}</b><span>goals against</span></td></tr>""" for n, c in enumerate(defs[:8], 1))
+    cs_sec = f"""
+      <section class="block">
+        <h3>Best clean sheet chances <span class="sub">for defenders and goalkeepers</span></h3>
+        <p class="halves">The chance each team concedes no goals, from the number of goals the model expects the opponent to score. Pick your defenders and goalkeeper from the top of this list.</p>
+        <table class="fc">{cs_rows}</table>
+      </section>""" if defs else ""
     if top:
         body = f"""
       <section class="block">
@@ -931,8 +948,9 @@ def fantasy_page(leagues, upd):
         <p class="halves">Ranked by each player's chance to score or assist in the match, with a small bonus for a team likely to win. Players ruled out are never listed; doubtful players are flagged, so check team news before you lock in.</p>
         <table class="fc">{rows}</table>
       </section>
+      {cs_sec}
       <section class="block"><h3>How to use this</h3>
-        <p>Goals and assists are the biggest source of points for a captain, but the model can't see clean sheets, bonus points or rotation. Treat the list as a shortlist and use your own judgement. These are probabilities, not guarantees.</p>
+        <p>Goals and assists are the biggest source of points for a captain, but the model can't see bonus points, saves or rotation. Clean sheets are covered in the second table. Treat the list as a shortlist and use your own judgement. These are probabilities, not guarantees.</p>
         <p class="halves">FootyPredicts is not affiliated with the Premier League or any fantasy game.</p>
       </section>"""
     else:
