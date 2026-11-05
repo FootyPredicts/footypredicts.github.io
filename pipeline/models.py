@@ -189,10 +189,22 @@ ASSIST_PRIOR = {"Attacker": 0.14, "Midfielder": 0.13, "Defender": 0.06}
 CARD_PRIOR = {"Attacker": 0.10, "Midfielder": 0.17, "Defender": 0.17}
 
 
-def player_rates(players):
+def _fix_name(n):
+    """A few names arrive from the API double-encoded (UTF-8 read as Latin-1); repair them."""
+    try:
+        if isinstance(n, str) and any(c in n for c in "ÃÄÅ"):
+            return n.encode("latin-1").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        pass
+    return n
+
+
+def player_rates(players, min_exp=30, min_inv=0.4):
     if players.empty:
         return players
     p = players.copy()
+    p["position"] = p["position"].replace({"Forward": "Attacker"})
+    p["name"] = p["name"].map(_fix_name)
     p = p[p["position"] != "Goalkeeper"]
     n90 = p["minutes"] / 90.0
     est_goals = 0.5 * p["goals"] + 0.5 * 0.30 * p["sot"]
@@ -204,7 +216,7 @@ def player_rates(players):
     p["exp_min"] = (p["minutes"] / p["apps"].where(p["apps"] > 0)).clip(upper=90).fillna(0)
     team_games = p.groupby("team")["apps"].transform("max").replace(0, np.nan)
     p["involvement"] = (p["apps"] / team_games).fillna(0)
-    return p[(p["exp_min"] >= 30) & (p["involvement"] >= 0.4)]
+    return p[(p["exp_min"] >= min_exp) & (p["involvement"] >= min_inv)]
 
 
 def player_picks(p, team, opp_factor, card_factor, home, out_ids=()):

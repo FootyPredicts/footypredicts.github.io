@@ -173,7 +173,15 @@ def main():
     now = pd.Timestamp.now(tz=None)
     em = EuroModel(df, team_league, now)
     print(f"fitted on {em.n_matches} matches, {em.n} clubs, {em.nl} leagues")
-    p_rates = models.player_rates(load_players())
+    squad = load_players()
+    p_rates = models.player_rates(squad)
+    # European-competition stats under-report minutes for many players, so a strict filter can leave a club with
+    # one or two eligible players. Clubs with a thin list get a looser filter instead.
+    loose = models.player_rates(squad, min_exp=8, min_inv=0.25)
+    if not p_rates.empty or not loose.empty:
+        n_ok = p_rates.groupby("team").size() if not p_rates.empty else pd.Series(dtype=int)
+        thin = [t for t in loose["team"].unique() if n_ok.get(t, 0) < 8]
+        p_rates = pd.concat([p_rates[~p_rates["team"].isin(thin)], loose[loose["team"].isin(thin)]], ignore_index=True)
     res = df[df["status"].isin(FINISHED) & df["hg"].notna()].copy()
     out_dir = os.path.join(DATA_DIR, "site")
     os.makedirs(out_dir, exist_ok=True)
