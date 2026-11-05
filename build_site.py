@@ -802,8 +802,8 @@ def track_record_page(leagues, upd):
       <section class="block tr-method"><h3>How this is checked</h3>
         <p>Only predictions published before kick-off count, and they can't be changed afterwards. Results are checked automatically each morning.</p>
         <p><b>Model update, 23 Oct 2026:</b> predictions now factor in injuries and suspensions, and flag close or thin-data matches. Earlier matches used the previous model.</p></section>"""
-    return page("How we did – FootyPredicts",
-                "Our published picks next to the results.",
+    return page("Football prediction results: how accurate are our tips? | FootyPredicts",
+                "Every FootyPredicts prediction is published before kick-off and checked against the result. See exactly how many we got right.",
                 league_nav(leagues, "track-record", "../"), f"Results · updated {upd}", "", body, "../", "track-record/")
 
 
@@ -857,6 +857,10 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = html.replace("{prefix}", prefix)
     on_live = path == "" or path.rstrip("/") in LEAGUE_ORDER or path.rstrip("/") in EURO_ORDER
     html = html.replace("__LIVESTRIP__", '<section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>' if on_live else "")
+    if path == "":
+        ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "FootyPredicts", "url": SITE_URL,
+              "description": "Free football predictions: win chances, expected goals, likely scorers and cards."}
+        html = html.replace("</head>", '<script type="application/ld+json">' + json.dumps(ld).replace("</", "<\\/") + "</script></head>", 1)
     html = html.replace("__SHIRTPATH__", SHIRT_PATH)
     html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS,
                                                        "league": path.rstrip("/") if (path.rstrip("/") in LEAGUE_ORDER or path.rstrip("/") in EURO_ORDER) else ""}).replace("</", "<\\/"))
@@ -955,8 +959,8 @@ def fantasy_page(leagues, upd):
       </section>"""
     else:
         body = '<section class="block"><p>The next round of Premier League matches is not available yet. Check back soon.</p></section>'
-    return page("Fantasy football captain picks – FootyPredicts",
-                "Who to captain this gameweek: the Premier League players most likely to score or assist, ranked by our model.",
+    return page("Fantasy Premier League captain picks this gameweek | FootyPredicts",
+                "Who to captain this gameweek: Premier League players ranked by their chance to score or assist, plus the best clean sheet chances for defenders and keepers. Updated daily.",
                 league_nav(leagues, "fantasy", "../"), f"Fantasy captain picks · updated {upd}", "", body, "../", "fantasy/")
 
 
@@ -1017,8 +1021,8 @@ def build():
         fx = d["fixtures"]
         first, last = kickoff(fx[0])[2], kickoff(fx[-1])[2]
         sub = f"{esc(d['name'])} · {first:%d %b} – {last:%d %b %Y} · updated {upd}"
-        html = page(f"{d['name']} predictions – FootyPredicts",
-                    f"{d['name']} match predictions: result chances, goals, cards and players for every fixture.",
+        html = page(f"{d['name']} predictions {first:%d %b} – {last:%d %b} | FootyPredicts",
+                    f"{d['name']} predictions for {first:%d %b} to {last:%d %b %Y}: win chances, expected goals, likely scorers, cards and team news for every match.",
                     league_nav(leagues, d["league"], "../"), sub,
                     '<nav class="chips" role="tablist" aria-label="Fixtures">' + "".join(chip(f, i) for i, f in enumerate(fx)) + "</nav>",
                     "".join(render_match(f, i) for i, f in enumerate(fx)), "../", d["league"] + "/")
@@ -1049,8 +1053,8 @@ def build():
         <h2><a href="{d['league']}/">{esc(d['name'])}</a> <span class="sub">{esc(d['country'])}</span></h2>
         <div class="rows">{''.join(rows)}</div>{more}
       </section>""")
-    html = page("FootyPredicts – football predictions for Europe's top leagues",
-                "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, the Champions League and the Europa League.",
+    html = page("Football predictions today | Premier League, La Liga, Champions League | FootyPredicts",
+                "Free football predictions for today and this week: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
                 "", pick_of_day(leagues) + "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
