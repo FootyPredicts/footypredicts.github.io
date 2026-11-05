@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-05T07:14:12.146123+00:00",
+ "updated": "2026-11-05T13:36:34.160313+00:00",
  "matches_used": 860,
  "fixtures": [
   {
@@ -20,9 +20,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 42.2,
-    "draw": 27.4,
-    "away": 30.3
+    "home": 42.3,
+    "draw": 27.5,
+    "away": 30.1
    },
    "injury_effect": {
     "home": {
@@ -421,7 +421,7 @@
       "William Hill": 3.0,
       "Bet365": 3.2,
       "Betfair": 3.2,
-      "BetVictor": 3.0
+      "BetVictor": 3.1
      }
     },
     "over25": {
@@ -818,20 +818,20 @@
     },
     "over25": {
      "odd": 1.57,
-     "bookie": "Bet365",
+     "bookie": "1xBet",
      "books": {
-      "Bet365": 1.57,
+      "Bet365": 1.53,
       "Betfair": 1.53,
-      "BetVictor": 1.52
+      "BetVictor": 1.51
      }
     },
     "under25": {
      "odd": 2.56,
      "bookie": "Pinnacle",
      "books": {
-      "Bet365": 2.38,
+      "Bet365": 2.5,
       "Betfair": 2.45,
-      "BetVictor": 2.31
+      "BetVictor": 2.33
      }
     },
     "btts_yes": {
@@ -857,7 +857,9 @@
     "cards_over45": {
      "odd": 2.5,
      "bookie": "Betano",
-     "books": {}
+     "books": {
+      "Bet365": 2.2
+     }
     },
     "cards": {
      "2.5": {
@@ -888,12 +890,16 @@
       "over": {
        "odd": 2.5,
        "bookie": "Betano",
-       "books": {}
+       "books": {
+        "Bet365": 2.2
+       }
       },
       "under": {
-       "odd": 1.5,
-       "bookie": "Betano",
-       "books": {}
+       "odd": 1.62,
+       "bookie": "Bet365",
+       "books": {
+        "Bet365": 1.62
+       }
       }
      },
      "5.5": {
