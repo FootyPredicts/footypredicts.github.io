@@ -911,32 +911,34 @@ def fantasy_page(leagues, upd):
             for side, team, opp, win, xg in (("home", f["home"], f["away"], f["home_pct"], f["xg_home"]),
                                              ("away", f["away"], f["home"], f["away_pct"], f["xg_away"])):
                 doubt = {x["name"] for x in (f.get("injuries") or {}).get(side, []) if "missing" not in x["type"].lower()}
-                for pk in f["players"][side]["scorers"]:
+                pls = f["players"][side].get("cap") or [dict(x, g=x["p"], a=0, inv=x["p"]) for x in f["players"][side]["scorers"]]
+                for pk in pls:
                     cands.append({"name": pk["name"], "id": pk["id"], "team": team, "opp": opp, "ven": "H" if side == "home" else "A",
-                                  "p": pk["p"], "win": win, "xg": xg, "when": f"{day} {time_}", "doubt": pk["name"] in doubt})
-    cands.sort(key=lambda c: (c["p"] + 0.15 * c["win"]), reverse=True)
+                                  "p": pk["g"], "a": pk["a"], "inv": pk["inv"], "win": win, "xg": xg, "when": f"{day} {time_}", "doubt": pk["name"] in doubt})
+    cands.sort(key=lambda c: (c["inv"] + 0.15 * c["win"]), reverse=True)
     top = cands[:12]
     rows = "".join(f"""
         <tr><td class="fc-n">{n}</td>
           <td class="fc-p">{shirt_html(shirt(c['id']), c['team']) if shirt(c['id']) else ''}<b>{esc(c['name'])}</b>{' <em class="fc-doubt">doubtful</em>' if c['doubt'] else ''}<span>{esc(short(c['team']))} ({c['ven']}) v {esc(short(c['opp']))} · {esc(c['when'])}</span></td>
-          <td class="fc-v"><b>{c['p']:.0f}%</b><span>to score</span></td>
-          <td class="fc-v"><b>{c['win']:.0f}%</b><span>team win</span></td>
-          <td class="fc-v fc-xg"><b>{c['xg']:.1f}</b><span>team goals</span></td></tr>""" for n, c in enumerate(top, 1))
+          <td class="fc-v"><b>{c['inv']:.0f}%</b><span>goal or assist</span></td>
+          <td class="fc-v fc-xg"><b>{c['p']:.0f}%</b><span>to score</span></td>
+          <td class="fc-v fc-xg"><b>{c['a']:.0f}%</b><span>to assist</span></td>
+          <td class="fc-v"><b>{c['win']:.0f}%</b><span>team win</span></td></tr>""" for n, c in enumerate(top, 1))
     if top:
         body = f"""
       <section class="block">
         <h3>Captain shortlist <span class="sub">next round of Premier League matches</span></h3>
-        <p class="halves">Ranked by each player's chance to score, with a small bonus for a team likely to win. Players ruled out are never listed; doubtful players are flagged, so check team news before you lock in.</p>
+        <p class="halves">Ranked by each player's chance to score or assist in the match, with a small bonus for a team likely to win. Players ruled out are never listed; doubtful players are flagged, so check team news before you lock in.</p>
         <table class="fc">{rows}</table>
       </section>
       <section class="block"><h3>How to use this</h3>
-        <p>Goals are the biggest source of points for a captain, but the model can't see assists, clean sheets, bonus points or rotation. Treat the list as a shortlist and use your own judgement. These are probabilities, not guarantees.</p>
+        <p>Goals and assists are the biggest source of points for a captain, but the model can't see clean sheets, bonus points or rotation. Treat the list as a shortlist and use your own judgement. These are probabilities, not guarantees.</p>
         <p class="halves">FootyPredicts is not affiliated with the Premier League or any fantasy game.</p>
       </section>"""
     else:
         body = '<section class="block"><p>The next round of Premier League matches is not available yet. Check back soon.</p></section>'
     return page("Fantasy football captain picks – FootyPredicts",
-                "Who to captain this gameweek: the Premier League players most likely to score, ranked by our model.",
+                "Who to captain this gameweek: the Premier League players most likely to score or assist, ranked by our model.",
                 league_nav(leagues, "fantasy", "../"), f"Fantasy captain picks · updated {upd}", "", body, "../", "fantasy/")
 
 

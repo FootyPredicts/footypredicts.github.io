@@ -185,6 +185,7 @@ def goal_timing(home, away, rates, avg):
 
 
 GOAL_PRIOR = {"Attacker": 0.32, "Midfielder": 0.12, "Defender": 0.04}
+ASSIST_PRIOR = {"Attacker": 0.14, "Midfielder": 0.13, "Defender": 0.06}
 CARD_PRIOR = {"Attacker": 0.10, "Midfielder": 0.17, "Defender": 0.17}
 
 
@@ -196,6 +197,9 @@ def player_rates(players):
     n90 = p["minutes"] / 90.0
     est_goals = 0.5 * p["goals"] + 0.5 * 0.30 * p["sot"]
     p["goal90"] = (est_goals + p["position"].map(GOAL_PRIOR).fillna(0.10) * 4) / (n90 + 4)
+    if "assists" not in p:
+        p["assists"] = 0
+    p["assist90"] = (p["assists"].fillna(0) + p["position"].map(ASSIST_PRIOR).fillna(0.05) * 4) / (n90 + 4)
     p["card90"] = (p["yellow"] + p["red"] + p["position"].map(CARD_PRIOR).fillna(0.14) * 4) / (n90 + 4)
     p["exp_min"] = (p["minutes"] / p["apps"].where(p["apps"] > 0)).clip(upper=90).fillna(0)
     team_games = p.groupby("team")["apps"].transform("max").replace(0, np.nan)
@@ -208,11 +212,15 @@ def player_picks(p, team, opp_factor, card_factor, home, out_ids=()):
     if out_ids:   # ruled out of this match: never pick them
         sq = sq[~sq["id"].isin(out_ids)]
     if sq.empty:
-        return {"scorers": [], "bookings": [], "defender": None}
+        return {"scorers": [], "bookings": [], "defender": None, "cap": []}
     loc = 1.08 if home else 0.93
     share = sq["exp_min"] / 90
     g = 1 - np.exp(-sq["goal90"] * share * opp_factor * loc)
     c = 1 - np.exp(-sq["card90"] * share * card_factor)
+    a = 1 - np.exp(-sq["assist90"] * share * opp_factor * loc)
+    inv = sq.assign(g=g, a=a)
+    inv["inv"] = 1 - (1 - inv["g"]) * (1 - inv["a"])
+    cap = inv.sort_values("inv", ascending=False).head(4)
     sc = sq.assign(p=g).sort_values("p", ascending=False).head(2)
     bk = sq.assign(p=c).sort_values("p", ascending=False).head(2)
     defs = sq[(sq["position"] == "Defender") & ((sq["shots"] > 0) | (sq["sot"] > 0))]
@@ -224,6 +232,8 @@ def player_picks(p, team, opp_factor, card_factor, home, out_ids=()):
         "scorers": [{"id": int(r["id"]), "name": r["name"], "p": round(100 * r["p"], 1)} for _, r in sc.iterrows()],
         "bookings": [{"id": int(r["id"]), "name": r["name"], "p": round(100 * r["p"], 1)} for _, r in bk.iterrows()],
         "defender": defender,
+        "cap": [{"id": int(r["id"]), "name": r["name"], "pos": r["position"], "g": round(100 * r["g"], 1),
+                 "a": round(100 * r["a"], 1), "inv": round(100 * r["inv"], 1)} for _, r in cap.iterrows()],
     }
 
 

@@ -126,7 +126,10 @@ def load_players():
     if not rows:
         return pd.DataFrame()
     df = pd.DataFrame(rows)
-    agg = {c: "sum" for c in ("apps", "minutes", "goals", "shots", "sot", "yellow", "red")}
+    if "assists" not in df:
+        df["assists"] = 0
+    df["assists"] = df["assists"].fillna(0)
+    agg = {c: "sum" for c in ("apps", "minutes", "goals", "assists", "shots", "sot", "yellow", "red")}
     agg.update(name="first", position="first")
     return df.groupby(["id", "team"], as_index=False).agg(agg)
 

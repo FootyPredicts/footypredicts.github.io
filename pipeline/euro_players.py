@@ -32,10 +32,11 @@ def main():
                     r = rows.setdefault(f"{info.get('id')}|{team}", {
                         "id": info.get("id"), "name": info.get("name"), "team": team,
                         "position": g.get("position") or "", "apps": 0, "minutes": 0,
-                        "goals": 0, "shots": 0, "sot": 0, "yellow": 0, "red": 0})
+                        "goals": 0, "assists": 0, "shots": 0, "sot": 0, "yellow": 0, "red": 0})
                     r["apps"] += g.get("appearences") or g.get("appearances") or 0
                     r["minutes"] += g.get("minutes") or 0
                     r["goals"] += gl.get("total") or 0
+                    r["assists"] += gl.get("assists") or 0
                     r["shots"] += sh.get("total") or 0
                     r["sot"] += sh.get("on") or 0
                     r["yellow"] += (cd.get("yellow") or 0) + (cd.get("yellowred") or 0)
