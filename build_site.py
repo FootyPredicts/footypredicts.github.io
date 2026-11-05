@@ -646,6 +646,7 @@ def league_nav(leagues, current, prefix):
     for d in leagues:
         on = " on" if current == d["league"] else ""
         links.append(f'<a href="{prefix}{d["league"]}/" class="lg{on}">{esc(d["name"])}</a>')
+    links.append(f'<a href="{prefix}fantasy/" class="lg{" on" if current == "fantasy" else ""}">Fantasy captains</a>')
     links.append(f'<a href="{prefix}track-record/" class="lg lg-tr{" on" if current == "track-record" else ""}">How we did</a>')
     return '<nav class="leagues" aria-label="Leagues">' + "".join(links) + "</nav>"
 
@@ -862,6 +863,83 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
 
+def pick_of_day(leagues):
+    """The single match we are most sure about in the next day or so (skips low-data and close calls)."""
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    best = None
+    for hours in (30, 54):
+        for d in leagues:
+            for i, f in enumerate(d["fixtures"]):
+                ko = datetime.fromisoformat(f["kickoff"]).replace(tzinfo=None)
+                if not (now < ko <= now + timedelta(hours=hours)):
+                    continue
+                if f["pick"] == "Draw" or f.get("low_data") or f.get("call_reason") or draw_risk(f):
+                    continue
+                p = max(f["home_pct"], f["away_pct"])
+                if best is None or p > best[0]:
+                    best = (p, d, i, f)
+        if best:
+            break
+    if not best:
+        return ""
+    p, d, i, f = best
+    team, _, _ = most_likely(f)
+    day, time_, _ = kickoff(f)
+    side = "home" if f["pick"] == "Home" else "away"
+    sc = f["players"][side]["scorers"]
+    extra = f' Most likely scorer: <b>{esc(sc[0]["name"])}</b> ({sc[0]["p"]:.0f}%).' if sc else ""
+    return f"""
+      <section class="potd">
+        <span class="potd-tag">Pick of the day</span>
+        <h2><a href="{d['league']}/#m{i}">{esc(f['home'])} <i>v</i> {esc(f['away'])}</a></h2>
+        <p><b>{esc(team)}</b> to win, <b>{p:.0f}%</b> chance. Expected goals {f['xg_home']:.1f} to {f['xg_away']:.1f}.{extra}</p>
+        <p class="potd-sub">{esc(d['name'])} · {esc(day)} {esc(time_)} · the match our model is most confident about. Probabilities, not guarantees.</p>
+      </section>"""
+
+
+def fantasy_page(leagues, upd):
+    """Captain shortlist for fantasy football: the players with the best chance to score in the next round of Premier League games."""
+    pl = next((d for d in leagues if d["league"] == "premier-league"), None)
+    cands = []
+    if pl:
+        fx = pl["fixtures"]
+        first = datetime.fromisoformat(fx[0]["kickoff"]) if fx else None
+        for f in fx:
+            if first and datetime.fromisoformat(f["kickoff"]) - first > timedelta(days=5):
+                continue
+            day, time_, _ = kickoff(f)
+            for side, team, opp, win, xg in (("home", f["home"], f["away"], f["home_pct"], f["xg_home"]),
+                                             ("away", f["away"], f["home"], f["away_pct"], f["xg_away"])):
+                doubt = {x["name"] for x in (f.get("injuries") or {}).get(side, []) if "missing" not in x["type"].lower()}
+                for pk in f["players"][side]["scorers"]:
+                    cands.append({"name": pk["name"], "id": pk["id"], "team": team, "opp": opp, "ven": "H" if side == "home" else "A",
+                                  "p": pk["p"], "win": win, "xg": xg, "when": f"{day} {time_}", "doubt": pk["name"] in doubt})
+    cands.sort(key=lambda c: (c["p"] + 0.15 * c["win"]), reverse=True)
+    top = cands[:12]
+    rows = "".join(f"""
+        <tr><td class="fc-n">{n}</td>
+          <td class="fc-p">{shirt_html(shirt(c['id']), c['team']) if shirt(c['id']) else ''}<b>{esc(c['name'])}</b>{' <em class="fc-doubt">doubtful</em>' if c['doubt'] else ''}<span>{esc(short(c['team']))} ({c['ven']}) v {esc(short(c['opp']))} · {esc(c['when'])}</span></td>
+          <td class="fc-v"><b>{c['p']:.0f}%</b><span>to score</span></td>
+          <td class="fc-v"><b>{c['win']:.0f}%</b><span>team win</span></td>
+          <td class="fc-v fc-xg"><b>{c['xg']:.1f}</b><span>team goals</span></td></tr>""" for n, c in enumerate(top, 1))
+    if top:
+        body = f"""
+      <section class="block">
+        <h3>Captain shortlist <span class="sub">next round of Premier League matches</span></h3>
+        <p class="halves">Ranked by each player's chance to score, with a small bonus for a team likely to win. Players ruled out are never listed; doubtful players are flagged, so check team news before you lock in.</p>
+        <table class="fc">{rows}</table>
+      </section>
+      <section class="block"><h3>How to use this</h3>
+        <p>Goals are the biggest source of points for a captain, but the model can't see assists, clean sheets, bonus points or rotation. Treat the list as a shortlist and use your own judgement. These are probabilities, not guarantees.</p>
+        <p class="halves">FootyPredicts is not affiliated with the Premier League or any fantasy game.</p>
+      </section>"""
+    else:
+        body = '<section class="block"><p>The next round of Premier League matches is not available yet. Check back soon.</p></section>'
+    return page("Fantasy football captain picks – FootyPredicts",
+                "Who to captain this gameweek: the Premier League players most likely to score, ranked by our model.",
+                league_nav(leagues, "fantasy", "../"), f"Fantasy captain picks · updated {upd}", "", body, "../", "fantasy/")
+
+
 def build():
     load_squads()
     load_news()
@@ -954,17 +1032,20 @@ def build():
     html = page("FootyPredicts – football predictions for Europe's top leagues",
                 "Match-by-match predictions for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, the Champions League and the Europa League.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
-                "", "".join(sections), "", "")
+                "", pick_of_day(leagues) + "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
     os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "track-record", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(track_record_page(leagues, upd))
+    os.makedirs(os.path.join(OUT_DIR, "fantasy"), exist_ok=True)
+    with open(os.path.join(OUT_DIR, "fantasy", "index.html"), "w", encoding="utf-8") as fh:
+        fh.write(fantasy_page(leagues, upd))
     os.makedirs(os.path.join(OUT_DIR, "responsible-gambling"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "responsible-gambling", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(responsible_page(leagues))
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    paths = [""] + [d["league"] + "/" for d in leagues] + ["track-record/", "responsible-gambling/"]
+    paths = [""] + [d["league"] + "/" for d in leagues] + ["fantasy/", "track-record/", "responsible-gambling/"]
     with open(os.path.join(OUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as fh:
         fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                  + "".join(f"  <url><loc>{SITE_URL}{x}</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq></url>\n" for x in paths)
@@ -1121,6 +1202,23 @@ button.sel.na { opacity:.45; cursor:not-allowed; }
 }"""
 
 EXTRA_CSS = r"""
+
+.potd { background:var(--pitch); color:#fff; border-radius:14px; padding:16px 18px 14px; margin:0 0 6px; }
+.potd-tag { display:inline-block; background:var(--flood); color:var(--flood-ink); font:700 12px/1 Barlow,sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:5px 8px; border-radius:6px; }
+.potd h2 { margin:10px 0 4px; font:800 30px/1.05 "Barlow Condensed",sans-serif; }
+.potd h2 a { color:#fff; text-decoration:none; } .potd h2 a:hover { text-decoration:underline; }
+.potd h2 i { font-style:normal; opacity:.6; font-weight:500; }
+.potd p { margin:2px 0; } .potd-sub { font-size:13px; color:rgba(255,255,255,.7); }
+table.fc { width:100%; border-collapse:collapse; }
+.fc td { padding:10px 6px; border-top:1px solid var(--line); vertical-align:middle; }
+.fc tr:first-child td { border-top:0; }
+.fc-n { width:26px; color:var(--muted); font:700 18px "Barlow Condensed",sans-serif; }
+.fc-p b { font-size:16px; } .fc-p span.sub2, .fc-p > span:last-child { display:block; color:var(--muted); font-size:13px; }
+.fc-v { text-align:right; white-space:nowrap; } .fc-v b { display:block; font:800 20px/1 "Barlow Condensed",sans-serif; }
+.fc-v span { font-size:11px; color:var(--muted); }
+.fc-doubt { font-style:normal; font-size:11px; font-weight:700; color:#7a5d00; background:#fbefb5; padding:1px 6px; border-radius:5px; margin-left:4px; }
+@media (max-width:560px) { .fc-xg { display:none; } }
+
 /* motion when a match opens */
 @media (prefers-reduced-motion:no-preference) {
   .match.play .r-fg { animation:fp-sweep 1.1s cubic-bezier(.2,.8,.2,1) both; }
