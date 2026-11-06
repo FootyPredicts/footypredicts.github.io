@@ -160,6 +160,20 @@ button.sel.na { opacity:.45; cursor:not-allowed; }
   .meter-fill { transition:width .5s ease; }
 }
 
+.qp-card { display:block; background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 16px; text-decoration:none; color:var(--ink); box-shadow:0 2px 10px rgba(16,61,43,.08); }
+.qp-card:hover { border-color:var(--pitch); }
+.qp-tag { display:inline-block; background:var(--pitch); color:#fff; font:700 11px/1 Barlow,sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:5px 8px; border-radius:6px; }
+.qp-h { display:block; font:800 24px/1.05 "Barlow Condensed",sans-serif; margin:8px 0 4px; }
+.qp-s { display:block; font-size:14px; color:var(--muted); }
+.qp-go { display:block; margin-top:10px; font-weight:700; color:var(--pitch); }
+.qp-inline { margin:10px 0 4px; }
+.qp-side { display:none; }
+@media (min-width:1260px) {
+  .qp-inline { display:none; }
+  .qp-side { display:block; position:fixed; top:152px; width:250px; left:calc(50% - 464px - 290px); }
+}
+
+
 .potd { background:var(--pitch); color:#fff; border-radius:14px; padding:16px 18px 14px; margin:0 0 6px; }
 .potd-tag { display:inline-block; background:var(--flood); color:var(--flood-ink); font:700 12px/1 Barlow,sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:5px 8px; border-radius:6px; }
 .potd h2 { margin:10px 0 4px; font:800 30px/1.05 "Barlow Condensed",sans-serif; }
@@ -568,7 +582,10 @@ a.chip { text-decoration:none; }
         <h2><a href="bundesliga/#m1">FSV Mainz 05 <i>v</i> Bayern München</a></h2>
         <p><b>Bayern München</b> to win, <b>74%</b> chance. Expected goals 1.2 to 3.1. Most likely scorer: <b>M. Olise</b> (43%).</p>
         <p class="potd-sub">Bundesliga · Sat 07 Nov 14:30 · the match our model is most confident about. Probabilities, not guarantees.</p>
-      </section>
+      </section><aside class="qp-side"><a class="qp-card" href="quiz/"><span class="qp-tag">Daily quiz</span><b class="qp-h">10 new questions every day</b>
+        <span class="qp-s">Higher or lower, guess the player. Keep your streak going.</span><span class="qp-go" data-qp="go">Play today&rsquo;s quiz &rarr;</span></a></aside><div class="qp-inline"><a class="qp-card" href="quiz/"><span class="qp-tag">Daily quiz</span><b class="qp-h">10 new questions every day</b>
+        <span class="qp-s">Higher or lower, guess the player. Keep your streak going.</span><span class="qp-go" data-qp="go">Play today&rsquo;s quiz &rarr;</span></a></div><script>(function(){try{var s=JSON.parse(localStorage.getItem('fp-quiz-v1'))||{};var d=Math.floor((Date.now()-Date.UTC(2026,10,6))/864e5)+1;
+      var done=s.days&&s.days[d];document.querySelectorAll('[data-qp]').forEach(function(e){e.textContent=done?('Done today: '+done.s+'/10 · '+(s.streak||1)+' day streak'):(s.streak?('Keep your '+s.streak+' day streak →'):'Play today’s quiz →');});}catch(e){}})();</script>
       <section class="league-block">
         <h2><a href="premier-league/">Premier League</a> <span class="sub">England</span></h2>
         <div class="rows">

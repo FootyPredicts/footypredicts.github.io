@@ -869,6 +869,15 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
 
+def quiz_promo():
+    """Quiz card: in the empty left margin on wide screens, and as a banner under the pick of the day on narrow ones."""
+    card = """<a class="qp-card" href="quiz/"><span class="qp-tag">Daily quiz</span><b class="qp-h">10 new questions every day</b>
+        <span class="qp-s">Higher or lower, guess the player. Keep your streak going.</span><span class="qp-go" data-qp="go">Play today&rsquo;s quiz &rarr;</span></a>"""
+    js = """<script>(function(){try{var s=JSON.parse(localStorage.getItem('fp-quiz-v1'))||{};var d=Math.floor((Date.now()-Date.UTC(2026,10,6))/864e5)+1;
+      var done=s.days&&s.days[d];document.querySelectorAll('[data-qp]').forEach(function(e){e.textContent=done?('Done today: '+done.s+'/10 \u00b7 '+(s.streak||1)+' day streak'):(s.streak?('Keep your '+s.streak+' day streak \u2192'):'Play today\u2019s quiz \u2192');});}catch(e){}})();</script>"""
+    return f'<aside class="qp-side">{card}</aside><div class="qp-inline">{card}</div>{js}'
+
+
 def pick_of_day(leagues):
     """The single match we are most sure about in the next day or so (skips low-data and close calls)."""
     now = datetime.now(timezone.utc).replace(tzinfo=None)
@@ -1064,7 +1073,7 @@ def build():
     html = page("Football predictions today | Premier League, La Liga, Champions League | FootyPredicts",
                 "Free football predictions for today and this week: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
-                "", pick_of_day(leagues) + "".join(sections), "", "")
+                "", pick_of_day(leagues) + quiz_promo() + "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
     os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
@@ -1237,6 +1246,20 @@ button.sel.na { opacity:.45; cursor:not-allowed; }
 }"""
 
 EXTRA_CSS = r"""
+
+.qp-card { display:block; background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 16px; text-decoration:none; color:var(--ink); box-shadow:0 2px 10px rgba(16,61,43,.08); }
+.qp-card:hover { border-color:var(--pitch); }
+.qp-tag { display:inline-block; background:var(--pitch); color:#fff; font:700 11px/1 Barlow,sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:5px 8px; border-radius:6px; }
+.qp-h { display:block; font:800 24px/1.05 "Barlow Condensed",sans-serif; margin:8px 0 4px; }
+.qp-s { display:block; font-size:14px; color:var(--muted); }
+.qp-go { display:block; margin-top:10px; font-weight:700; color:var(--pitch); }
+.qp-inline { margin:10px 0 4px; }
+.qp-side { display:none; }
+@media (min-width:1260px) {
+  .qp-inline { display:none; }
+  .qp-side { display:block; position:fixed; top:152px; width:250px; left:calc(50% - 464px - 290px); }
+}
+
 
 .potd { background:var(--pitch); color:#fff; border-radius:14px; padding:16px 18px 14px; margin:0 0 6px; }
 .potd-tag { display:inline-block; background:var(--flood); color:var(--flood-ink); font:700 12px/1 Barlow,sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:5px 8px; border-radius:6px; }
