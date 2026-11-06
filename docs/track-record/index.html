@@ -166,11 +166,14 @@ button.sel.na { opacity:.45; cursor:not-allowed; }
 .qp-h { display:block; font:800 24px/1.05 "Barlow Condensed",sans-serif; margin:8px 0 4px; }
 .qp-s { display:block; font-size:14px; color:var(--muted); }
 .qp-go { display:block; margin-top:10px; font-weight:700; color:var(--pitch); }
-.qp-inline { margin:10px 0 4px; }
+.qp-inline { margin:10px 0 4px; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.qp-inline .qp-card { padding:11px 12px; } .qp-inline .qp-h { font-size:19px; } .qp-inline .qp-s { display:none; } .qp-inline .qp-go { font-size:13px; margin-top:6px; }
+.qp-side { gap:12px; }
+.qp-tag2 { background:var(--flood); color:var(--flood-ink); }
 .qp-side { display:none; }
 @media (min-width:1260px) {
   .qp-inline { display:none; }
-  .qp-side { display:block; position:fixed; top:152px; width:250px; left:calc(50% - 464px - 290px); }
+  .qp-side { display:grid; position:fixed; top:152px; width:250px; left:calc(50% - 464px - 290px); }
 }
 
 

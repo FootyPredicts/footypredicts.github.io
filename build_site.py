@@ -869,13 +869,20 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
 
-def quiz_promo():
+FANTASY_TOP = []
+
+
+def quiz_promo(leagues):
     """Quiz card: in the empty left margin on wide screens, and as a banner under the pick of the day on narrow ones."""
     card = """<a class="qp-card" href="quiz/"><span class="qp-tag">Daily quiz</span><b class="qp-h">10 new questions every day</b>
         <span class="qp-s">Pick the best of three, guess the player. Keep your streak going.</span><span class="qp-go" data-qp="go">Play today&rsquo;s quiz &rarr;</span></a>"""
     js = """<script>(function(){try{var s=JSON.parse(localStorage.getItem('fp-quiz-v1'))||{};var d=Math.floor((Date.now()-Date.UTC(2026,10,6))/864e5)+1;
       var done=s.days&&s.days[d];document.querySelectorAll('[data-qp]').forEach(function(e){e.textContent=done?('Done today: '+done.s+'/10 \u00b7 '+(s.streak||1)+' day streak'):(s.streak?('Keep your '+s.streak+' day streak \u2192'):'Play today\u2019s quiz \u2192');});}catch(e){}})();</script>"""
-    return f'<aside class="qp-side">{card}</aside><div class="qp-inline">{card}</div>{js}'
+    fantasy_page(leagues, "")      # fills FANTASY_TOP
+    names = ", ".join(f'{esc(c["name"])} {c["inv"]:.0f}%' for c in FANTASY_TOP[:3])
+    fan = f"""<a class="qp-card qp-fan" href="fantasy/"><span class="qp-tag qp-tag2">Fantasy captains</span><b class="qp-h">Who to captain this week</b>
+        <span class="qp-s">{names or "Players ranked by chance to score or assist."}</span><span class="qp-go">See the shortlist &rarr;</span></a>""" if FANTASY_TOP else ""
+    return f'<aside class="qp-side">{card}{fan}</aside><div class="qp-inline">{card}{fan}</div>{js}'
 
 
 def pick_of_day(leagues):
@@ -936,6 +943,7 @@ def fantasy_page(leagues, upd):
                                   "p": pk["g"], "a": pk["a"], "inv": pk["inv"], "win": win, "xg": xg, "when": f"{day} {time_}", "doubt": pk["name"] in doubt})
     cands.sort(key=lambda c: (c["inv"] + 0.15 * c["win"]), reverse=True)
     top = cands[:12]
+    FANTASY_TOP[:] = top[:3]
     rows = "".join(f"""
         <tr><td class="fc-n">{n}</td>
           <td class="fc-p">{shirt_html(shirt(c['id']), c['team']) if shirt(c['id']) else ''}<b>{esc(c['name'])}</b>{' <em class="fc-doubt">doubtful</em>' if c['doubt'] else ''}<span>{esc(short(c['team']))} ({c['ven']}) v {esc(short(c['opp']))} · {esc(c['when'])}</span></td>
@@ -1073,7 +1081,7 @@ def build():
     html = page("Football predictions today | Premier League, La Liga, Champions League | FootyPredicts",
                 "Free football predictions for today and this week: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
-                "", pick_of_day(leagues) + quiz_promo() + "".join(sections), "", "")
+                "", pick_of_day(leagues) + quiz_promo(leagues) + "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
     os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
@@ -1253,11 +1261,14 @@ EXTRA_CSS = r"""
 .qp-h { display:block; font:800 24px/1.05 "Barlow Condensed",sans-serif; margin:8px 0 4px; }
 .qp-s { display:block; font-size:14px; color:var(--muted); }
 .qp-go { display:block; margin-top:10px; font-weight:700; color:var(--pitch); }
-.qp-inline { margin:10px 0 4px; }
+.qp-inline { margin:10px 0 4px; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.qp-inline .qp-card { padding:11px 12px; } .qp-inline .qp-h { font-size:19px; } .qp-inline .qp-s { display:none; } .qp-inline .qp-go { font-size:13px; margin-top:6px; }
+.qp-side { gap:12px; }
+.qp-tag2 { background:var(--flood); color:var(--flood-ink); }
 .qp-side { display:none; }
 @media (min-width:1260px) {
   .qp-inline { display:none; }
-  .qp-side { display:block; position:fixed; top:152px; width:250px; left:calc(50% - 464px - 290px); }
+  .qp-side { display:grid; position:fixed; top:152px; width:250px; left:calc(50% - 464px - 290px); }
 }
 
 
