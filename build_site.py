@@ -647,6 +647,7 @@ def league_nav(leagues, current, prefix):
     for d in leagues:
         on = " on" if current == d["league"] else ""
         links.append(f'<a href="{prefix}{d["league"]}/" class="lg{on}">{esc(d["name"])}</a>')
+    links.append(f'<a href="{prefix}quiz/" class="lg{" on" if current == "quiz" else ""}">Daily quiz</a>')
     links.append(f'<a href="{prefix}fantasy/" class="lg{" on" if current == "fantasy" else ""}">Fantasy captains</a>')
     links.append(f'<a href="{prefix}track-record/" class="lg lg-tr{" on" if current == "track-record" else ""}">How we did</a>')
     return '<nav class="leagues" aria-label="Leagues">' + "".join(links) + "</nav>"
@@ -964,6 +965,13 @@ def fantasy_page(leagues, upd):
                 league_nav(leagues, "fantasy", "../"), f"Fantasy captain picks · updated {upd}", "", body, "../", "fantasy/")
 
 
+def quiz_page(leagues):
+    import quiz_build
+    return page("Daily football quiz: 10 new questions every day | FootyPredicts",
+                "A free daily football quiz built from this season's real stats: higher or lower, guess the player, and more. Keep your streak going.",
+                league_nav(leagues, "quiz", "../"), "Daily quiz", "", quiz_build.quiz_body(quiz_build.build_pool(SQUADS)), "../", "quiz/")
+
+
 def build():
     load_squads()
     load_news()
@@ -1062,6 +1070,9 @@ def build():
     os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "track-record", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(track_record_page(leagues, upd))
+    os.makedirs(os.path.join(OUT_DIR, "quiz"), exist_ok=True)
+    with open(os.path.join(OUT_DIR, "quiz", "index.html"), "w", encoding="utf-8") as fh:
+        fh.write(quiz_page(leagues))
     os.makedirs(os.path.join(OUT_DIR, "fantasy"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "fantasy", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(fantasy_page(leagues, upd))
@@ -1069,7 +1080,7 @@ def build():
     with open(os.path.join(OUT_DIR, "responsible-gambling", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(responsible_page(leagues))
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    paths = [""] + [d["league"] + "/" for d in leagues] + ["fantasy/", "track-record/", "responsible-gambling/"]
+    paths = [""] + [d["league"] + "/" for d in leagues] + ["quiz/", "fantasy/", "track-record/", "responsible-gambling/"]
     with open(os.path.join(OUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as fh:
         fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                  + "".join(f"  <url><loc>{SITE_URL}{x}</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq></url>\n" for x in paths)
