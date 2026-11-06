@@ -9,6 +9,8 @@ LEAGUES = [("premier-league", "Premier League"), ("la-liga", "La Liga"), ("bunde
 STATS = [("goals", "scored more league goals", "goals"), ("assists", "has more assists", "assists"),
          ("yellow", "has been shown more yellow cards", "yellow cards"), ("sot", "has had more shots on target", "shots on target")]
 
+IN = {"Premier League": "the Premier League", "La Liga": "La Liga", "Bundesliga": "the Bundesliga", "Serie A": "Serie A", "Ligue 1": "Ligue 1"}
+
 
 def _load(path):
     try:
@@ -23,17 +25,40 @@ def team_table(fixtures):
     for f in fixtures:
         if f.get("status") != "FT" or f.get("hg") is None:
             continue
-        for me, opp, gf, ga in ((f["home"], f["away"], f["hg"], f["ag"]), (f["away"], f["home"], f["ag"], f["hg"])):
-            r = t.setdefault(me, {"gf": 0, "ga": 0, "w": 0, "cs": 0, "p": 0})
+        for me, gf, ga, hh, ha, home in ((f["home"], f["hg"], f["ag"], f.get("ht_h"), f.get("ht_a"), True),
+                                         (f["away"], f["ag"], f["hg"], f.get("ht_a"), f.get("ht_h"), False)):
+            r = t.setdefault(me, {"gf": 0, "ga": 0, "w": 0, "d": 0, "cs": 0, "p": 0, "sh": 0, "hw": 0})
             r["gf"] += gf; r["ga"] += ga; r["p"] += 1
             r["w"] += gf > ga
+            r["d"] += gf == ga
             r["cs"] += ga == 0
+            r["hw"] += (home and gf > ga)
+            if hh is not None:
+                r["sh"] += gf - hh
     return t
+
+
+def top3(rng, items, key, best="max"):
+    """Three items with a single clear winner; returns (options, answer index) or None."""
+    for _ in range(40):
+        t = rng.sample(items, 3)
+        vals = sorted((key(x) for x in t), reverse=(best == "max"))
+        lo, hi = sorted((vals[0], vals[1]))
+        if vals[0] != vals[1] and (hi == 0 or lo >= 0.6 * hi or abs(hi - lo) <= 2):   # a clear winner, but a close contest
+            return t, [key(x) for x in t].index(vals[0])
+    return None
 
 
 def build_pool(squads):
     rng = random.Random("fp-quiz-pool")
-    hl_p, hl_t, guess = [], [], []
+    hl_p, hl_t, hl_m, guess = [], [], [], []
+    p_stats = [("goals", "has scored the most league goals", "goals", 2), ("assists", "has the most assists", "assists", 2),
+               ("yellow", "has picked up the most yellow cards", "yellow cards", 2),
+               ("sot", "has had the most shots on target", "shots on target", 4)]
+    t_stats = [("gf", "has scored the most goals", "goals scored", "max"), ("ga", "has conceded the fewest goals", "goals conceded", "min"),
+               ("w", "has won the most matches", "wins", "max"), ("cs", "has kept the most clean sheets", "clean sheets", "max"),
+               ("d", "has drawn the most matches", "draws", "max"), ("sh", "has scored the most second-half goals", "second-half goals", "max"),
+               ("hw", "has the most home wins", "home wins", "max")]
     for key, name in LEAGUES:
         base = os.path.join("data", key)
         players = _load(os.path.join(base, "players_2026.json")) or []
@@ -43,33 +68,47 @@ def build_pool(squads):
         for p in regulars:
             names[p["name"]] = names.get(p["name"], 0) + 1
         regulars = [p for p in regulars if names[p["name"]] == 1]
-        # higher or lower: players
-        for stat, verb, label in STATS:
-            pool = [p for p in regulars if p.get(stat, 0) >= (2 if stat != "sot" else 4)]
-            rng.shuffle(pool)
-            seen = set()
-            for i in range(0, len(pool) - 1, 2):
-                a, b = pool[i], pool[i + 1]
-                if a[stat] == b[stat] or a["team"] == b["team"] or (a["id"], b["id"]) in seen:
-                    continue
-                if max(a[stat], b[stat]) > 2.5 * min(a[stat], b[stat]) + 2:
-                    continue   # too lopsided to be fun
-                hl_p.append({"q": f"Who {verb} this season in the {name}?", "o": [f'{a["name"]} ({a["team"]})', f'{b["name"]} ({b["team"]})'],
-                             "a": 0 if a[stat] > b[stat] else 1, "n": f'{a["name"]} {a[stat]}, {b["name"]} {b[stat]} {label}.'})
-        # higher or lower: teams
-        table = team_table(fixtures)
-        teams = sorted(table)
-        for stat, verb, label in (("gf", "has scored more goals", "goals scored"), ("ga", "has conceded more goals", "goals conceded"),
-                                  ("w", "has won more matches", "wins"), ("cs", "has kept more clean sheets", "clean sheets")):
-            for _ in range(8):
-                if len(teams) < 2:
+        label = lambda p: f'{p["name"]} ({p["team"]})'
+        # three players: who has the most
+        for stat, verb, lab, floor in p_stats:
+            pool = [p for p in regulars if p.get(stat, 0) >= floor]
+            for _ in range(6):
+                r = top3(rng, pool, lambda x: x[stat]) if len(pool) >= 3 else None
+                if not r:
                     break
-                a, b = rng.sample(teams, 2)
-                va, vb = table[a][stat], table[b][stat]
-                if abs(va - vb) < 2 or table[a]["p"] != table[b]["p"] and abs(table[a]["p"] - table[b]["p"]) > 1:
+                t, ans = r
+                if len({x["team"] for x in t}) < 3:
                     continue
-                hl_t.append({"q": f"Which {name} team {verb} this season?", "o": [a, b], "a": 0 if va > vb else 1,
-                             "n": f"{a} {va}, {b} {vb} {label}."})
+                hl_p.append({"q": f"Which of these three {verb} this season in {IN[name]}?", "o": [label(x) for x in t], "a": ans,
+                             "n": ", ".join(f'{x["name"]} {x[stat]}' for x in t) + f" {lab}."})
+        # who scores most often per 90
+        att = [p for p in regulars if p["position"] == "Attacker" and p["minutes"] >= 500 and p["goals"] >= 3]
+        for _ in range(4):
+            r = top3(rng, att, lambda x: round(x["goals"] / (x["minutes"] / 90), 2)) if len(att) >= 3 else None
+            if r:
+                t, ans = r
+                hl_p.append({"q": f"Which of these strikers scores most often per 90 minutes in {IN[name]}?", "o": [label(x) for x in t], "a": ans,
+                             "n": ", ".join(f'{x["name"]} {x["goals"] / (x["minutes"] / 90):.2f}' for x in t) + " goals per 90."})
+        # three teams
+        table = {k: v for k, v in team_table(fixtures).items() if v["p"] >= 5}
+        teams = sorted(table)
+        for stat, verb, lab, best in t_stats:
+            for _ in range(5):
+                r = top3(rng, teams, lambda x: table[x][stat], best) if len(teams) >= 3 else None
+                if r:
+                    t, ans = r
+                    hl_t.append({"q": f"Which {name} team {verb} this season?", "o": t, "a": ans,
+                                 "n": ", ".join(f"{x} {table[x][stat]}" for x in t) + f" {lab}."})
+        # three matches: which had the most goals
+        done = [f for f in fixtures if f.get("status") == "FT" and f.get("hg") is not None]
+        for _ in range(4):
+            if len(done) < 3:
+                break
+            r = top3(rng, done, lambda x: x["hg"] + x["ag"])
+            if r:
+                t, ans = r
+                hl_m.append({"q": f"Which of these {name} matches this season had the most goals?", "o": [f'{x["home"]} v {x["away"]}' for x in t],
+                             "a": ans, "n": ", ".join(f'{x["home"]} {x["hg"]}-{x["ag"]} {x["away"]}' for x in t) + "."})
         # guess the player
         cands = [p for p in regulars if (p["goals"] >= 2 or p["assists"] >= 2) and str(p["id"]) in squads]
         for p in cands:
@@ -81,8 +120,9 @@ def build_pool(squads):
                 continue
             guess.append({"pos": p["position"], "lg": name, "no": int(squads[str(p["id"])]), "g": p["goals"], "a": p["assists"],
                           "y": p["yellow"], "ap": p["apps"], "club": p["team"], "ans": p["name"], "opts": opts})
-    rng.shuffle(hl_p); rng.shuffle(hl_t); rng.shuffle(guess)
-    return {"hp": hl_p[:80], "ht": hl_t[:40], "gp": guess[:60]}
+    for L in (hl_p, hl_t, hl_m, guess):
+        rng.shuffle(L)
+    return {"hp": hl_p[:90], "ht": hl_t[:50], "hm": hl_m[:20], "gp": guess[:60]}
 
 
 QUIZ_CSS = """
@@ -127,8 +167,9 @@ var R = rng(DAY * 7919 + 13);
 function pick(arr, n){ var a = arr.slice(), out = []; while (out.length < n && a.length) out.push(a.splice(Math.floor(R() * a.length), 1)[0]); return out; }
 function shuffle(a){ a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(R() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 var qs = [];
-pick(POOL.hp, 4).forEach(function(q){ qs.push({t:'hl', q:q}); });
+pick(POOL.hp, 3).forEach(function(q){ qs.push({t:'hl', q:q}); });
 pick(POOL.ht, 2).forEach(function(q){ qs.push({t:'hl', q:q}); });
+pick(POOL.hm, 1).forEach(function(q){ qs.push({t:'hl', q:q}); });
 pick(POOL.gp, 4).forEach(function(q){ qs.push({t:'gp', q:q, o: shuffle(q.opts)}); });
 qs = shuffle(qs);
 var root = document.getElementById('qz');

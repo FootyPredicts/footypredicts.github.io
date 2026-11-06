@@ -872,7 +872,7 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
 def quiz_promo():
     """Quiz card: in the empty left margin on wide screens, and as a banner under the pick of the day on narrow ones."""
     card = """<a class="qp-card" href="quiz/"><span class="qp-tag">Daily quiz</span><b class="qp-h">10 new questions every day</b>
-        <span class="qp-s">Higher or lower, guess the player. Keep your streak going.</span><span class="qp-go" data-qp="go">Play today&rsquo;s quiz &rarr;</span></a>"""
+        <span class="qp-s">Pick the best of three, guess the player. Keep your streak going.</span><span class="qp-go" data-qp="go">Play today&rsquo;s quiz &rarr;</span></a>"""
     js = """<script>(function(){try{var s=JSON.parse(localStorage.getItem('fp-quiz-v1'))||{};var d=Math.floor((Date.now()-Date.UTC(2026,10,6))/864e5)+1;
       var done=s.days&&s.days[d];document.querySelectorAll('[data-qp]').forEach(function(e){e.textContent=done?('Done today: '+done.s+'/10 \u00b7 '+(s.streak||1)+' day streak'):(s.streak?('Keep your '+s.streak+' day streak \u2192'):'Play today\u2019s quiz \u2192');});}catch(e){}})();</script>"""
     return f'<aside class="qp-side">{card}</aside><div class="qp-inline">{card}</div>{js}'
@@ -977,7 +977,7 @@ def fantasy_page(leagues, upd):
 def quiz_page(leagues):
     import quiz_build
     return page("Daily football quiz: 10 new questions every day | FootyPredicts",
-                "A free daily football quiz built from this season's real stats: higher or lower, guess the player, and more. Keep your streak going.",
+                "A free daily football quiz built from this season's real stats: pick the best of three, guess the player, and more. Keep your streak going.",
                 league_nav(leagues, "quiz", "../"), "Daily quiz", "", quiz_build.quiz_body(quiz_build.build_pool(SQUADS)), "../", "quiz/")
 
 
