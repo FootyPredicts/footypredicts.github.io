@@ -653,7 +653,7 @@ function model(m){
   var P = 1 - Math.exp(-(rh + ra) * hor), ratio = (rh + ra) / (r0h + r0a);
   var level = ratio >= 1.25 ? 'high' : ratio >= 0.85 ? 'building' : 'low';
   var fh = rh / (r0h * mh * late), fa = ra / (r0a * ma * late), who = '';
-  if (sx && t >= 8) { if (fh > 1.3 * fa && fh > 1.1) who = m.home; else if (fa > 1.3 * fh && fa > 1.1) who = m.away; else who = 'both sides'; }
+  if (sx && t >= 8) { if (fh > 1.15 * fa && fh > 1.0) who = m.home; else if (fa > 1.15 * fh && fa > 1.0) who = m.away; else who = 'both sides'; }
   return { P: P, level: level, who: who, basis: basis, live: live, hor: hor };
 }
 function minute(m){
@@ -670,7 +670,7 @@ function statRow(label, a, b, pct){
 function card(m){
   var md = model(m), c = el('div', 'lp-card' + (md.live && md.level === 'high' ? ' hot' : ''));
   var lgl = el('div', 'lp-lg', LGN[m.lg] || 'Football');
-  if (md.live && md.level === 'high') lgl.appendChild(el('span', 'lp-flag', 'High pressure'));
+  if (md.live && md.level === 'high') lgl.appendChild(el('span', 'lp-flag', 'High pressure' + (md.who && md.who !== 'both sides' ? ': ' + md.who : '')));
   c.appendChild(lgl);
   var top = el('div', 'lp-top');
   top.appendChild(el('span', 'lp-min' + (md.live ? '' : ' pause'), minute(m)));
@@ -683,7 +683,7 @@ function card(m){
     var ch = el('span', 'lp-chance'); ch.appendChild(document.createTextNode('Chance of a goal in the next ' + md.hor + ' min ')); ch.appendChild(el('b', '', Math.round(md.P * 100) + '%'));
     mr.appendChild(ch); c.appendChild(mr);
     var mt = el('div', 'lp-meter ' + md.level); mt.appendChild(el('i')); mt.appendChild(el('i')); mt.appendChild(el('i')); c.appendChild(mt);
-    c.appendChild(el('div', 'lp-who', md.who ? (md.who === 'both sides' ? 'Pressure is spread across both sides' : 'Most of the pressure is from ' + md.who) : ''));
+    c.appendChild(el('div', 'lp-who', md.who ? (md.who === 'both sides' ? 'Pressure is spread across both sides' : 'Pressure is coming from ' + md.who + ' (attacking)') : (m.sx ? 'Too early to say which side is on top' : 'Live stats not available yet, so no side to show')));
   }
   if (m.sx) {
     var s = el('div', 'lp-stats'), H = m.sx.h || {}, A = m.sx.a || {};
