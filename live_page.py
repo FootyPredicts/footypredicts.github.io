@@ -57,12 +57,12 @@ function model(m){
   var r0h = bx[0] / 90, r0a = bx[1] / 90, rh = r0h, ra = r0a, basis = 'pre';
   var sx = m.sx, now = Date.now(), h = sx ? pack(sx.h) : null, a = sx ? pack(sx.a) : null;
   if (sx && t >= 8) {
-    var wc = Math.min(t / 90, 1) * 0.35, ww = 0, wh = 0, wa = 0;
+    var wc = Math.min(t / 90, 1) * 0.5, ww = 0, wh = 0, wa = 0;
     var cum = hist[m.id] || [], old = null;
     for (var i = 0; i < cum.length; i++) { var age = (now - cum[i].t) / 60000; if (age <= 16 && age >= 3) { old = cum[i]; break; } }
     if (old) {
       var dt = (now - old.t) / 60000;
-      ww = Math.min(dt / 15, 1) * 0.35;
+      ww = Math.min(dt / 15, 1) * 0.4;
       wh = Math.max(est(h) - est(old.h), 0) / dt; wa = Math.max(est(a) - est(old.a), 0) / dt;
       basis = 'recent';
     } else basis = 'match';
@@ -76,7 +76,7 @@ function model(m){
   rh *= mh * late; ra *= ma * late;
   var hor = live ? Math.max(1, Math.min(15, 95 - t)) : 15;
   var P = 1 - Math.exp(-(rh + ra) * hor), ratio = (rh + ra) / (r0h + r0a);
-  var level = ratio >= 1.35 ? 'high' : ratio >= 0.9 ? 'building' : 'low';
+  var level = ratio >= 1.25 ? 'high' : ratio >= 0.85 ? 'building' : 'low';
   var fh = rh / (r0h * mh * late), fa = ra / (r0a * ma * late), who = '';
   if (sx && t >= 8) { if (fh > 1.3 * fa && fh > 1.1) who = m.home; else if (fa > 1.3 * fh && fa > 1.1) who = m.away; else who = 'both sides'; }
   return { P: P, level: level, who: who, basis: basis, live: live, hor: hor };
