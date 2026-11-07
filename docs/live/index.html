@@ -584,6 +584,8 @@ a.chip { text-decoration:none; }
 .lp-note { color:var(--muted); font-size:14px; margin:0 0 14px; }
 .lp-badge { display:inline-block; background:var(--flood); color:var(--flood-ink); font:700 11px/1 Barlow,sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:4px 7px; border-radius:6px; margin-right:6px; vertical-align:middle; }
 .lp-card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:0 0 12px; }
+.lp-card.hot { border-color:#c0392b; box-shadow:0 0 0 2px rgba(192,57,43,.18); }
+.lp-flag { display:inline-block; background:#c0392b; color:#fff; font:700 11px/1 Barlow,sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:4px 7px; border-radius:6px; margin-left:8px; vertical-align:middle; }
 .lp-lg { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
 .lp-top { display:flex; align-items:center; gap:10px; margin:2px 0 10px; }
 .lp-min { font:700 14px Barlow,sans-serif; color:#fff; background:#c0392b; border-radius:6px; padding:3px 7px; white-space:nowrap; }
@@ -666,8 +668,10 @@ function statRow(label, a, b, pct){
   return r;
 }
 function card(m){
-  var md = model(m), c = el('div', 'lp-card');
-  c.appendChild(el('div', 'lp-lg', LGN[m.lg] || 'Football'));
+  var md = model(m), c = el('div', 'lp-card' + (md.live && md.level === 'high' ? ' hot' : ''));
+  var lgl = el('div', 'lp-lg', LGN[m.lg] || 'Football');
+  if (md.live && md.level === 'high') lgl.appendChild(el('span', 'lp-flag', 'High pressure'));
+  c.appendChild(lgl);
   var top = el('div', 'lp-top');
   top.appendChild(el('span', 'lp-min' + (md.live ? '' : ' pause'), minute(m)));
   top.appendChild(el('span', 'lp-teams', m.home + ' v ' + m.away));
@@ -705,7 +709,8 @@ var STATUS = '';
 function render(list, err){
   root.textContent = '';
   var live = list.filter(function(m){ return m.st !== 'FT' && m.st !== 'AET' && m.st !== 'PEN'; });
-  live.sort(function(a, b){ return (a.lg - b.lg) || (a.id - b.id); });
+  live.forEach(function(m){ m._md = model(m); });
+  live.sort(function(a, b){ return ((b._md.live && b._md.level === 'high') - (a._md.live && a._md.level === 'high')) || (a.lg - b.lg) || (a.id - b.id); });
   if (!live.length) { root.appendChild(el('div', 'lp-none', (err ? 'Live data is not available right now. ' : 'No matches in play right now. ') + nextKick() + (STATUS ? ' (' + STATUS + ')' : ''))); return; }
   root.appendChild(el('p', 'lp-note', live.length + (live.length === 1 ? ' match' : ' matches') + ' in play. Updates every minute while this page is open.'));
   live.forEach(function(m){ root.appendChild(card(m)); });
