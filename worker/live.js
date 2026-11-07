@@ -3,7 +3,9 @@
 // so any number of visitors cost at most ~2 API calls a minute.
 // Secret needed: API_FOOTBALL_KEY (Worker -> Settings -> Variables and Secrets).
 
-const LEAGUES = "39-140-78-135-61"; // Premier League, La Liga, Bundesliga, Serie A, Ligue 1
+const LEAGUES = "39-140-78-135-61-2-3"; // Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League, Europa League
+// The Live tab asks for ?scope=all: those plus Conference League, the English lower leagues, Scotland and other big European leagues.
+const LEAGUES_ALL = LEAGUES + "-848-40-41-42-179-88-94-144-197-203-79-136-141-62";
 const ALLOWED = [
   "https://footypredicts.com",
   "https://www.footypredicts.com",
@@ -46,7 +48,8 @@ export default {
 
     try {
       // The API call itself is cached at Cloudflare's edge for 30 seconds.
-      const r = await fetch(`https://v3.football.api-sports.io/fixtures?live=${LEAGUES}`, {
+      const all = new URL(request.url).searchParams.get("scope") === "all";
+      const r = await fetch(`https://v3.football.api-sports.io/fixtures?live=${all ? LEAGUES_ALL : LEAGUES}`, {
         headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
         cf: { cacheTtl: 30, cacheEverything: true },
       });
@@ -74,23 +77,25 @@ export default {
           })),
       }));
       // Live statistics for all matches in play: one extra call, cached for 60 seconds.
-      const ids = matches.map((m) => m.id).sort((a, b) => a - b).slice(0, 20);
-      if (ids.length) {
+      const ids = matches.map((m) => m.id).sort((a, b) => a - b).slice(0, 60);
+      const chunks = [];
+      for (let i = 0; i < ids.length; i += 20) chunks.push(ids.slice(i, i + 20));
+      const byId = Object.fromEntries(matches.map((m) => [m.id, m]));
+      await Promise.all(chunks.map(async (chunk) => {
         try {
-          const r2 = await fetch(`https://v3.football.api-sports.io/fixtures?ids=${ids.join("-")}`, {
+          const r2 = await fetch(`https://v3.football.api-sports.io/fixtures?ids=${chunk.join("-")}`, {
             headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
             cf: { cacheTtl: 60, cacheEverything: true },
           });
           if (r2.ok) {
             const j2 = await r2.json();
-            const byId = Object.fromEntries(matches.map((m) => [m.id, m]));
             for (const f of j2.response || []) {
               const m = byId[f.fixture.id];
               if (m) m.sx = statsOf(f);
             }
           }
         } catch (e) { /* statistics are optional */ }
-      }
+      }));
       return json({ ts: Date.now(), matches }, cors, 20);
     } catch (e) {
       return json({ ts: Date.now(), matches: [], error: "failed" }, cors, 10);

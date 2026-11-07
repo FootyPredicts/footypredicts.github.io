@@ -647,6 +647,7 @@ def league_nav(leagues, current, prefix):
     for d in leagues:
         on = " on" if current == d["league"] else ""
         links.append(f'<a href="{prefix}{d["league"]}/" class="lg{on}">{esc(d["name"])}</a>')
+    links.append(f'<a href="{prefix}live/" class="lg{" on" if current == "live" else ""}">Live</a>')
     links.append(f'<a href="{prefix}quiz/" class="lg{" on" if current == "quiz" else ""}">Daily quiz</a>')
     links.append(f'<a href="{prefix}fantasy/" class="lg{" on" if current == "fantasy" else ""}">Fantasy captains</a>')
     links.append(f'<a href="{prefix}track-record/" class="lg lg-tr{" on" if current == "track-record" else ""}">How we did</a>')
@@ -989,6 +990,16 @@ def quiz_page(leagues):
                 league_nav(leagues, "quiz", "../"), "Daily quiz", "", quiz_build.quiz_body(quiz_build.build_pool(SQUADS)), "../", "quiz/")
 
 
+def live_tab(leagues):
+    import live_page
+    url = _live_url()
+    if url:
+        url += ("&" if "?" in url else "?") + "scope=all"
+    return page("Live football: attacking pressure and match stats | FootyPredicts",
+                "Live matches with shots, possession, corners and an experimental attacking pressure meter, refreshed every minute.",
+                league_nav(leagues, "live", "../"), "Live matches · experimental", "", live_page.live_body(url, LIVE_PICKS), "../", "live/")
+
+
 def build():
     load_squads()
     load_news()
@@ -1029,7 +1040,7 @@ def build():
             ko = datetime.fromisoformat(f["kickoff"]).replace(tzinfo=timezone.utc)
             if ko > now_utc or str(f["id"]) not in LIVE_PICKS:
                 LIVE_PICKS[str(f["id"])] = {"lg": d["league"], "h": f["home"], "a": f["away"], "pk": f["pick"],
-                                            "ko": f["kickoff"] + "Z", "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"]),
+                                            "ko": f["kickoff"] + "Z", "xh": round(f["xg_home"], 2), "xa": round(f["xg_away"], 2), "hp": round(f["home_pct"]), "dp": round(f["draw_pct"]), "ap": round(f["away_pct"]),
                                             "sc": [x["name"] for side in ("home", "away") for x in f["players"][side]["scorers"]],
                                             "bk": [x["name"] for side in ("home", "away") for x in f["players"][side]["bookings"]],
                                             "no": {x["name"]: [shirt(x.get("id"))] + list(shirt_colours(f[side])) for side in ("home", "away")
@@ -1087,6 +1098,9 @@ def build():
     os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "track-record", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(track_record_page(leagues, upd))
+    os.makedirs(os.path.join(OUT_DIR, "live"), exist_ok=True)
+    with open(os.path.join(OUT_DIR, "live", "index.html"), "w", encoding="utf-8") as fh:
+        fh.write(live_tab(leagues))
     os.makedirs(os.path.join(OUT_DIR, "quiz"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "quiz", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(quiz_page(leagues))
@@ -1097,7 +1111,7 @@ def build():
     with open(os.path.join(OUT_DIR, "responsible-gambling", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(responsible_page(leagues))
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    paths = [""] + [d["league"] + "/" for d in leagues] + ["quiz/", "fantasy/", "track-record/", "responsible-gambling/"]
+    paths = [""] + [d["league"] + "/" for d in leagues] + ["live/", "quiz/", "fantasy/", "track-record/", "responsible-gambling/"]
     with open(os.path.join(OUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as fh:
         fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                  + "".join(f"  <url><loc>{SITE_URL}{x}</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq></url>\n" for x in paths)
