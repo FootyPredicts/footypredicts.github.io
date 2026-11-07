@@ -701,23 +701,27 @@ function nextKick(){
   var d = new Date(best), today = new Date().toDateString() === d.toDateString();
   return 'Next kick-off: ' + (today ? 'today' : d.toLocaleDateString([], { weekday: 'long' })) + ' at ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + '.';
 }
+var STATUS = '';
 function render(list, err){
   root.textContent = '';
   var live = list.filter(function(m){ return m.st !== 'FT' && m.st !== 'AET' && m.st !== 'PEN'; });
   live.sort(function(a, b){ return (a.lg - b.lg) || (a.id - b.id); });
-  if (!live.length) { root.appendChild(el('div', 'lp-none', (err ? 'Live data is not available right now. ' : 'No matches in play right now. ') + nextKick())); return; }
+  if (!live.length) { root.appendChild(el('div', 'lp-none', (err ? 'Live data is not available right now. ' : 'No matches in play right now. ') + nextKick() + (STATUS ? ' (' + STATUS + ')' : ''))); return; }
   root.appendChild(el('p', 'lp-note', live.length + (live.length === 1 ? ' match' : ' matches') + ' in play. Updates every minute while this page is open.'));
   live.forEach(function(m){ root.appendChild(card(m)); });
+  root.appendChild(el('p', 'lp-wait', STATUS));
 }
 var last = [];
 function poll(){
   if (document.hidden) return;
   fetch(C.url, { cache: 'no-store' }).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
-    if (!j || !j.matches) { render(last, true); return; }
+    var hm = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    if (!j || !j.matches) { STATUS = 'Last check ' + hm + ': the live feed did not answer.'; render(last, true); return; }
     last = j.matches; last.forEach(snap);
+    STATUS = 'Last check ' + hm + ': ' + last.length + ' in play, ' + last.filter(function(m){ return m.sx; }).length + ' with stats' + (j.error ? ' (feed says: ' + j.error + ')' : '') + '.';
     try { localStorage.setItem(HKEY, JSON.stringify(hist)); } catch (e) {}
     render(last, false);
-  }).catch(function(){ render(last, true); });
+  }).catch(function(){ STATUS = 'Last check ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ': could not reach the live feed.'; render(last, true); });
 }
 poll(); setInterval(poll, 60000);
 document.addEventListener('visibilitychange', function(){ if (!document.hidden) poll(); });
