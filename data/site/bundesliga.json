@@ -3,562 +3,9 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-07T19:01:13.809333+00:00",
+ "updated": "2026-11-07T22:40:13.312695+00:00",
  "matches_used": 689,
  "fixtures": [
-  {
-   "id": 1575214,
-   "kickoff": "2026-11-07T17:30:00",
-   "round": "Regular Season - 9",
-   "home": "VfB Stuttgart",
-   "away": "Werder Bremen",
-   "referee": "S. Storks",
-   "ref_cards": 4.96,
-   "ref_games": 27,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 52.5,
-    "draw": 22.3,
-    "away": 25.2
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    },
-    "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 62.6,
-   "draw_pct": 19.9,
-   "away_pct": 17.5,
-   "xg_home": 2.38,
-   "xg_away": 1.21,
-   "over25": 69.6,
-   "btts": 64.4,
-   "cards5": 39.3,
-   "cards": {
-    "exp": 4.13,
-    "home": 1.96,
-    "away": 2.18,
-    "over": {
-     "2.5": 74.6,
-     "3.5": 56.7,
-     "4.5": 39.3,
-     "5.5": 25.1,
-     "6.5": 14.8
-    }
-   },
-   "form": {
-    "home": {
-     "played": 3,
-     "win": 33.33333333333333,
-     "over25": 66.66666666666666,
-     "btts": 66.66666666666666
-    },
-    "away": {
-     "played": 4,
-     "win": 25.0,
-     "over25": 75.0,
-     "btts": 100.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 59.466050470446305,
-     "sh": 65.99925938407603,
-     "any": 86.21815695906692
-    },
-    "away": {
-     "fh": 36.14050128519999,
-     "sh": 61.38445040996612,
-     "any": 75.34030360583935
-    },
-    "match_fh": 74.11522302111698,
-    "match_sh": 86.87042714647909
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 46930,
-       "name": "E. Demirović",
-       "p": 37.2,
-       "price": {
-        "odd": 2.05,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.05
-        }
-       }
-      },
-      {
-       "id": 24868,
-       "name": "J. Vagnoman",
-       "p": 20.1,
-       "price": {
-        "odd": 7.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 7.5
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 24963,
-       "name": "A. Karazor",
-       "p": 30.8,
-       "price": null
-      },
-      {
-       "id": 38112,
-       "name": "J. Chabot",
-       "p": 21.9,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 38112,
-      "name": "J. Chabot",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 46930,
-       "name": "E. Demirović",
-       "pos": "Attacker",
-       "g": 37.2,
-       "a": 4.4,
-       "inv": 40.0
-      },
-      {
-       "id": 24868,
-       "name": "J. Vagnoman",
-       "pos": "Midfielder",
-       "g": 20.1,
-       "a": 15.1,
-       "inv": 32.1
-      },
-      {
-       "id": 137210,
-       "name": "A. Stiller",
-       "pos": "Midfielder",
-       "g": 5.8,
-       "a": 21.3,
-       "inv": 25.9
-      },
-      {
-       "id": 26475,
-       "name": "D. Undav",
-       "pos": "Attacker",
-       "g": 13.9,
-       "a": 11.7,
-       "inv": 24.0
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 25391,
-       "name": "N. Füllkrug",
-       "p": 50.2,
-       "price": {
-        "odd": 2.6,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.6
-        }
-       }
-      },
-      {
-       "id": 7073,
-       "name": "M. Grüll",
-       "p": 22.3,
-       "price": {
-        "odd": 3.6,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.6
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 161883,
-       "name": "Y. Regeer",
-       "p": 24.6,
-       "price": null
-      },
-      {
-       "id": 352375,
-       "name": "Arthur",
-       "p": 24.3,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 8673,
-      "name": "O. Deman",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 7073,
-       "name": "M. Grüll",
-       "pos": "Attacker",
-       "g": 22.3,
-       "a": 42.1,
-       "inv": 55.0
-      },
-      {
-       "id": 25391,
-       "name": "N. Füllkrug",
-       "pos": "Attacker",
-       "g": 50.2,
-       "a": 4.4,
-       "inv": 52.4
-      },
-      {
-       "id": 331004,
-       "name": "Chuky San José",
-       "pos": "Midfielder",
-       "g": 11.4,
-       "a": 18.1,
-       "inv": 27.5
-      },
-      {
-       "id": 202526,
-       "name": "E. Dinkçi",
-       "pos": "Attacker",
-       "g": 17.5,
-       "a": 10.4,
-       "inv": 26.1
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [],
-    "away": []
-   },
-   "lineup_confirmed": false,
-   "previous": [
-    {
-     "date": "26/04/2026",
-     "home": "VfB Stuttgart",
-     "away": "Werder Bremen",
-     "hg": 1,
-     "ag": 1,
-     "ht": [
-      0,
-      1
-     ],
-     "ref": "C. Dingert",
-     "sx": {
-      "h": {
-       "pos": 69.0,
-       "xg": 1.82,
-       "sh": 20.0,
-       "sot": 4.0,
-       "co": 14.0,
-       "fo": 8.0,
-       "of": 0.0,
-       "sv": 2.0,
-       "pp": 89.0,
-       "yc": 0.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 31.0,
-       "xg": 0.93,
-       "sh": 9.0,
-       "sot": 3.0,
-       "co": 2.0,
-       "fo": 10.0,
-       "of": 1.0,
-       "sv": 3.0,
-       "pp": 76.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "14/12/2025",
-     "home": "Werder Bremen",
-     "away": "VfB Stuttgart",
-     "hg": 0,
-     "ag": 4,
-     "ht": [
-      0,
-      2
-     ],
-     "ref": "R. Hartmann",
-     "sx": {
-      "h": {
-       "pos": 37.0,
-       "xg": 0.91,
-       "sh": 9.0,
-       "sot": 3.0,
-       "co": 0.0,
-       "fo": 11.0,
-       "of": 0.0,
-       "sv": 8.0,
-       "pp": 77.0,
-       "yc": 2.0,
-       "rc": 1.0
-      },
-      "a": {
-       "pos": 63.0,
-       "xg": 2.17,
-       "sh": 24.0,
-       "sot": 12.0,
-       "co": 9.0,
-       "fo": 6.0,
-       "of": 2.0,
-       "sv": 3.0,
-       "pp": 87.0,
-       "yc": 0.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "13/04/2025",
-     "home": "VfB Stuttgart",
-     "away": "Werder Bremen",
-     "hg": 1,
-     "ag": 2,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "D. Schlager",
-     "sx": {
-      "h": {
-       "pos": 48.0,
-       "xg": 1.67,
-       "sh": 12.0,
-       "sot": 4.0,
-       "co": 3.0,
-       "fo": 12.0,
-       "of": 1.0,
-       "sv": 3.0,
-       "pp": 80.0,
-       "yc": 3.0,
-       "rc": 1.0
-      },
-      "a": {
-       "pos": 52.0,
-       "xg": 1.48,
-       "sh": 14.0,
-       "sot": 5.0,
-       "co": 4.0,
-       "fo": 13.0,
-       "of": 3.0,
-       "sv": 3.0,
-       "pp": 80.0,
-       "yc": 2.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "30/11/2024",
-     "home": "Werder Bremen",
-     "away": "VfB Stuttgart",
-     "hg": 2,
-     "ag": 2,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "H. Osmers",
-     "sx": {
-      "h": {
-       "pos": 43.0,
-       "xg": 1.59,
-       "sh": 20.0,
-       "sot": 6.0,
-       "co": 11.0,
-       "fo": 8.0,
-       "of": 0.0,
-       "sv": 2.0,
-       "pp": 80.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 57.0,
-       "xg": 1.75,
-       "sh": 10.0,
-       "sot": 4.0,
-       "co": 2.0,
-       "fo": 13.0,
-       "of": 1.0,
-       "sv": 4.0,
-       "pp": 86.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     }
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 1.91,
-     "bookie": "Pinnacle",
-     "books": {
-      "William Hill": 1.75,
-      "Bet365": 1.8,
-      "Betfair": 1.87,
-      "BetVictor": 1.75
-     }
-    },
-    "draw": {
-     "odd": 4.52,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 4.0,
-      "Bet365": 4.33,
-      "Betfair": 4.2,
-      "BetVictor": 4.33
-     }
-    },
-    "away": {
-     "odd": 3.85,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.6,
-      "Bet365": 3.8,
-      "Betfair": 3.75,
-      "BetVictor": 3.75
-     }
-    },
-    "over25": {
-     "odd": 1.36,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 1.33,
-      "Betfair": 1.33,
-      "BetVictor": 1.33
-     }
-    },
-    "under25": {
-     "odd": 3.4,
-     "bookie": "Bet365",
-     "books": {
-      "Bet365": 3.4,
-      "Betfair": 3.25,
-      "BetVictor": 2.95
-     }
-    },
-    "btts_yes": {
-     "odd": 1.4,
-     "bookie": "Bet365",
-     "books": {
-      "William Hill": 1.36,
-      "Bet365": 1.4,
-      "Betfair": 1.3,
-      "BetVictor": 1.3
-     }
-    },
-    "btts_no": {
-     "odd": 3.3,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 3.0,
-      "Bet365": 2.75,
-      "Betfair": 3.3,
-      "BetVictor": 3.1
-     }
-    },
-    "cards_over45": {
-     "odd": 2.39,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 2.1
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.3,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.3,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.67,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 2.24,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 2.39,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.1
-       }
-      },
-      "under": {
-       "odd": 1.67,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 1.67
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 3.4,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.29,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 5.2,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.14,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1575219,
    "kickoff": "2026-11-08T14:30:00",
@@ -2450,7 +1897,7 @@
    },
    "goals": {
     "home": {
-     "fh": 38.50870154999738,
+     "fh": 38.50870154999739,
      "sh": 50.45640963801985,
      "any": 69.53500298766807
     },
@@ -4267,6 +3714,220 @@
        "g": 4.0,
        "a": 25.0,
        "inv": 28.0
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "lineup_confirmed": false,
+   "previous": [],
+   "odds": null
+  },
+  {
+   "id": 1575228,
+   "kickoff": "2026-11-21T17:30:00",
+   "round": "Regular Season - 10",
+   "home": "FC Schalke 04",
+   "away": "VfB Stuttgart",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": true,
+   "market": null,
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 19.2,
+   "draw_pct": 32.9,
+   "away_pct": 47.9,
+   "xg_home": 0.64,
+   "xg_away": 1.18,
+   "over25": 27.5,
+   "btts": 33.8,
+   "cards5": 31.2,
+   "cards": {
+    "exp": 3.66,
+    "home": 1.71,
+    "away": 1.95,
+    "over": {
+     "2.5": 67.8,
+     "3.5": 48.4,
+     "4.5": 31.2,
+     "5.5": 18.3,
+     "6.5": 10.0
+    }
+   },
+   "form": {
+    "home": {
+     "played": 4,
+     "win": 0.0,
+     "over25": 0.0,
+     "btts": 0.0
+    },
+    "away": {
+     "played": 5,
+     "win": 40.0,
+     "over25": 60.0,
+     "btts": 60.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 34.07593697995562,
+     "sh": 41.601430299217554,
+     "any": 61.50129010765164
+    },
+    "away": {
+     "fh": 55.067103588277845,
+     "sh": 60.97271194878833,
+     "any": 82.46390908764464
+    },
+    "match_fh": 70.37840905280504,
+    "match_sh": 77.20862198508802
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 137129,
+       "name": "A. Aouchiche",
+       "p": 20.4
+      },
+      {
+       "id": 25466,
+       "name": "K. Karaman",
+       "p": 20.0
+      }
+     ],
+     "bookings": [
+      {
+       "id": 81164,
+       "name": "H. Kuruçay",
+       "p": 19.6
+      },
+      {
+       "id": 90594,
+       "name": "J. Dina Ebimbe",
+       "p": 17.8
+      }
+     ],
+     "defender": {
+      "id": 30422,
+      "name": "R. Gosens",
+      "sot": 1
+     },
+     "cap": [
+      {
+       "id": 125173,
+       "name": "J. Adamu",
+       "pos": "Attacker",
+       "g": 17.0,
+       "a": 14.3,
+       "inv": 28.9
+      },
+      {
+       "id": 25466,
+       "name": "K. Karaman",
+       "pos": "Attacker",
+       "g": 20.0,
+       "a": 5.8,
+       "inv": 24.7
+      },
+      {
+       "id": 137129,
+       "name": "A. Aouchiche",
+       "pos": "Attacker",
+       "g": 20.4,
+       "a": 4.9,
+       "inv": 24.3
+      },
+      {
+       "id": 115,
+       "name": "M. Sylla",
+       "pos": "Attacker",
+       "g": 18.4,
+       "a": 7.0,
+       "inv": 24.1
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 46930,
+       "name": "E. Demirović",
+       "p": 24.3
+      },
+      {
+       "id": 24868,
+       "name": "J. Vagnoman",
+       "p": 12.6
+      }
+     ],
+     "bookings": [
+      {
+       "id": 24963,
+       "name": "A. Karazor",
+       "p": 26.7
+      },
+      {
+       "id": 38112,
+       "name": "J. Chabot",
+       "p": 18.9
+      }
+     ],
+     "defender": {
+      "id": 38112,
+      "name": "J. Chabot",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 46930,
+       "name": "E. Demirović",
+       "pos": "Attacker",
+       "g": 24.3,
+       "a": 2.7,
+       "inv": 26.4
+      },
+      {
+       "id": 24868,
+       "name": "J. Vagnoman",
+       "pos": "Midfielder",
+       "g": 12.6,
+       "a": 9.4,
+       "inv": 20.8
+      },
+      {
+       "id": 137210,
+       "name": "A. Stiller",
+       "pos": "Midfielder",
+       "g": 3.5,
+       "a": 13.4,
+       "inv": 16.5
+      },
+      {
+       "id": 26475,
+       "name": "D. Undav",
+       "pos": "Attacker",
+       "g": 8.6,
+       "a": 7.2,
+       "inv": 15.2
       }
      ]
     }

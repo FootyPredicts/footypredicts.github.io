@@ -3,560 +3,9 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-07T19:01:02.393767+00:00",
+ "updated": "2026-11-07T22:40:06.246380+00:00",
  "matches_used": 851,
  "fixtures": [
-  {
-   "id": 1557465,
-   "kickoff": "2026-11-07T17:30:00",
-   "round": "Regular Season - 10",
-   "home": "Nottingham Forest",
-   "away": "Manchester City",
-   "referee": "S. Barrott",
-   "ref_cards": 4.11,
-   "ref_games": 53,
-   "pick": "Away",
-   "model_pick": "Away",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 20.8,
-    "draw": 24.4,
-    "away": 54.8
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    },
-    "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 21.8,
-   "draw_pct": 26.5,
-   "away_pct": 51.7,
-   "xg_home": 0.98,
-   "xg_away": 1.64,
-   "over25": 48.6,
-   "btts": 51.3,
-   "cards5": 34.9,
-   "cards": {
-    "exp": 3.88,
-    "home": 1.91,
-    "away": 1.96,
-    "over": {
-     "2.5": 71.8,
-     "3.5": 52.7,
-     "4.5": 34.9,
-     "5.5": 20.9,
-     "6.5": 11.5
-    }
-   },
-   "form": {
-    "home": {
-     "played": 4,
-     "win": 0.0,
-     "over25": 0.0,
-     "btts": 0.0
-    },
-    "away": {
-     "played": 4,
-     "win": 75.0,
-     "over25": 75.0,
-     "btts": 50.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 33.68876265734956,
-     "sh": 52.82713493263792,
-     "any": 68.7190894838533
-    },
-    "away": {
-     "fh": 57.66091195897876,
-     "sh": 57.889154466952505,
-     "any": 82.17065203494455
-    },
-    "match_fh": 71.92442684040468,
-    "match_sh": 80.13510765797022
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 48648,
-       "name": "D. Ndoye",
-       "p": 16.2,
-       "price": {
-        "odd": 5.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.5
-        }
-       }
-      },
-      {
-       "id": 18746,
-       "name": "M. Gibbs-White",
-       "p": 16.1,
-       "price": {
-        "odd": 3.6,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.6
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 2771,
-       "name": "O. Aina",
-       "p": 28.4,
-       "price": null
-      },
-      {
-       "id": 2817,
-       "name": "N. Milenković",
-       "p": 25.6,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 363695,
-      "name": "Murillo",
-      "sot": 4
-     },
-     "cap": [
-      {
-       "id": 18746,
-       "name": "M. Gibbs-White",
-       "pos": "Attacker",
-       "g": 16.1,
-       "a": 17.2,
-       "inv": 30.5
-      },
-      {
-       "id": 9366,
-       "name": "Igor Jesus",
-       "pos": "Attacker",
-       "g": 16.1,
-       "a": 4.0,
-       "inv": 19.4
-      },
-      {
-       "id": 48648,
-       "name": "D. Ndoye",
-       "pos": "Attacker",
-       "g": 16.2,
-       "a": 3.4,
-       "inv": 19.1
-      },
-      {
-       "id": 161948,
-       "name": "L. Delap",
-       "pos": "Attacker",
-       "g": 14.2,
-       "a": 3.8,
-       "inv": 17.5
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 1100,
-       "name": "E. Haaland",
-       "p": 43.6,
-       "price": {
-        "odd": 1.67,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 1.67
-        }
-       }
-      },
-      {
-       "id": 156477,
-       "name": "R. Cherki",
-       "p": 19.7,
-       "price": {
-        "odd": 3.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.5
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 138908,
-       "name": "E. Anderson",
-       "p": 17.7,
-       "price": null
-      },
-      {
-       "id": 129033,
-       "name": "J. Gvardiol",
-       "p": 17.4,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 129033,
-      "name": "J. Gvardiol",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 1100,
-       "name": "E. Haaland",
-       "pos": "Attacker",
-       "g": 43.6,
-       "a": 3.8,
-       "inv": 45.8
-      },
-      {
-       "id": 19281,
-       "name": "A. Semenyo",
-       "pos": "Midfielder",
-       "g": 15.2,
-       "a": 24.3,
-       "inv": 35.8
-      },
-      {
-       "id": 156477,
-       "name": "R. Cherki",
-       "pos": "Midfielder",
-       "g": 19.7,
-       "a": 15.1,
-       "inv": 31.9
-      },
-      {
-       "id": 1422,
-       "name": "J. Doku",
-       "pos": "Attacker",
-       "g": 16.0,
-       "a": 12.3,
-       "inv": 26.4
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [],
-    "away": []
-   },
-   "lineup_confirmed": false,
-   "previous": [
-    {
-     "date": "04/03/2026",
-     "home": "Manchester City",
-     "away": "Nottingham Forest",
-     "hg": 2,
-     "ag": 2,
-     "ht": [
-      1,
-      0
-     ],
-     "ref": "D. England",
-     "sx": {
-      "h": {
-       "pos": 70.0,
-       "xg": 2.12,
-       "sh": 21.0,
-       "sot": 7.0,
-       "co": 6.0,
-       "fo": 10.0,
-       "of": 1.0,
-       "sv": 2.0,
-       "pp": 92.0,
-       "yc": 0.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 30.0,
-       "xg": 0.97,
-       "sh": 9.0,
-       "sot": 4.0,
-       "co": 1.0,
-       "fo": 6.0,
-       "of": 3.0,
-       "sv": 3.0,
-       "pp": 82.0,
-       "yc": 4.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "27/12/2025",
-     "home": "Nottingham Forest",
-     "away": "Manchester City",
-     "hg": 1,
-     "ag": 2,
-     "ht": [
-      0,
-      0
-     ],
-     "ref": "R. Jones",
-     "sx": {
-      "h": {
-       "pos": 34.0,
-       "xg": 0.55,
-       "sh": 7.0,
-       "sot": 2.0,
-       "co": 5.0,
-       "fo": 5.0,
-       "of": 1.0,
-       "sv": 3.0,
-       "pp": 75.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 66.0,
-       "xg": 1.45,
-       "sh": 16.0,
-       "sot": 5.0,
-       "co": 5.0,
-       "fo": 13.0,
-       "of": 1.0,
-       "sv": 1.0,
-       "pp": 90.0,
-       "yc": 2.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "08/03/2025",
-     "home": "Nottingham Forest",
-     "away": "Manchester City",
-     "hg": 1,
-     "ag": 0,
-     "ht": [
-      0,
-      0
-     ],
-     "ref": "C. Kavanagh",
-     "sx": {
-      "h": {
-       "pos": 31.0,
-       "xg": 0.73,
-       "sh": 9.0,
-       "sot": 4.0,
-       "co": 3.0,
-       "fo": 9.0,
-       "of": 1.0,
-       "sv": 3.0,
-       "pp": 80.0,
-       "yc": 3.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 69.0,
-       "xg": 0.86,
-       "sh": 14.0,
-       "sot": 3.0,
-       "co": 2.0,
-       "fo": 7.0,
-       "of": 1.0,
-       "sv": 3.0,
-       "pp": 90.0,
-       "yc": 2.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "04/12/2024",
-     "home": "Manchester City",
-     "away": "Nottingham Forest",
-     "hg": 3,
-     "ag": 0,
-     "ht": [
-      2,
-      0
-     ],
-     "ref": "M. Oliver",
-     "sx": {
-      "h": {
-       "pos": 66.0,
-       "xg": 2.41,
-       "sh": 17.0,
-       "sot": 7.0,
-       "co": 8.0,
-       "fo": 7.0,
-       "of": 1.0,
-       "sv": 3.0,
-       "pp": 89.0,
-       "yc": 2.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 34.0,
-       "xg": 0.88,
-       "sh": 12.0,
-       "sot": 3.0,
-       "co": 2.0,
-       "fo": 15.0,
-       "of": 2.0,
-       "sv": 3.0,
-       "pp": 79.0,
-       "yc": 4.0,
-       "rc": 0.0
-      }
-     }
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 4.75,
-     "bookie": "Bet365",
-     "books": {
-      "William Hill": 4.33,
-      "Bet365": 4.75,
-      "Betfair": 4.75,
-      "BetVictor": 4.33
-     }
-    },
-    "draw": {
-     "odd": 4.26,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.9,
-      "Bet365": 3.8,
-      "Betfair": 3.9,
-      "BetVictor": 3.9
-     }
-    },
-    "away": {
-     "odd": 1.8,
-     "bookie": "Betano",
-     "books": {
-      "William Hill": 1.73,
-      "Bet365": 1.73,
-      "Betfair": 1.73,
-      "BetVictor": 1.7
-     }
-    },
-    "over25": {
-     "odd": 1.7,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.67,
-      "Betfair": 1.6,
-      "BetVictor": 1.61
-     }
-    },
-    "under25": {
-     "odd": 2.34,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 2.2,
-      "Betfair": 2.25,
-      "BetVictor": 2.13
-     }
-    },
-    "btts_yes": {
-     "odd": 1.62,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 1.62,
-      "Bet365": 1.62,
-      "Betfair": 1.6,
-      "BetVictor": 1.6
-     }
-    },
-    "btts_no": {
-     "odd": 2.38,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 2.2,
-      "Bet365": 2.2,
-      "Betfair": 2.38,
-      "BetVictor": 2.2
-     }
-    },
-    "cards_over45": {
-     "odd": 3.04,
-     "bookie": "Pinnacle",
-     "books": {}
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.44,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.04,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.98,
-       "bookie": "Betano",
-       "books": {
-        "Bet365": 1.83
-       }
-      },
-      "under": {
-       "odd": 1.9,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.83
-       }
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 3.04,
-       "bookie": "Pinnacle",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.38,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 4.4,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.19,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 6.7,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.09,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1557458,
    "kickoff": "2026-11-08T14:00:00",
@@ -1720,7 +1169,7 @@
    "goals": {
     "home": {
      "fh": 51.09621136525484,
-     "sh": 54.66047380425504,
+     "sh": 54.66047380425505,
      "any": 77.82725394123797
     },
     "away": {
@@ -1729,7 +1178,7 @@
      "any": 81.582923698529
     },
     "match_fh": 78.49612290123602,
-    "match_sh": 81.01006836572589
+    "match_sh": 81.0100683657259
    },
    "players": {
     "home": {
@@ -4807,6 +4256,301 @@
        "fo": 13.0,
        "of": 1.0,
        "sv": 2.0,
+       "pp": 89.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     }
+    }
+   ],
+   "odds": null
+  },
+  {
+   "id": 1557467,
+   "kickoff": "2026-11-21T15:00:00",
+   "round": "Regular Season - 11",
+   "home": "Aston Villa",
+   "away": "Sunderland",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 54.3,
+   "draw_pct": 26.1,
+   "away_pct": 19.6,
+   "xg_home": 1.68,
+   "xg_away": 0.92,
+   "over25": 48.0,
+   "btts": 49.7,
+   "cards5": 41.7,
+   "cards": {
+    "exp": 4.26,
+    "home": 1.87,
+    "away": 2.39,
+    "over": {
+     "2.5": 77.0,
+     "3.5": 59.4,
+     "4.5": 41.7,
+     "5.5": 26.7,
+     "6.5": 15.7
+    }
+   },
+   "form": {
+    "home": {
+     "played": 5,
+     "win": 20.0,
+     "over25": 60.0,
+     "btts": 80.0
+    },
+    "away": {
+     "played": 5,
+     "win": 0.0,
+     "over25": 60.0,
+     "btts": 80.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 47.156625080890194,
+     "sh": 59.4527693599722,
+     "any": 78.57347489357394
+    },
+    "away": {
+     "fh": 36.837502784796364,
+     "sh": 50.4755006605135,
+     "any": 68.7190894838533
+    },
+    "match_fh": 66.62280478829766,
+    "match_sh": 79.91918702949935
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 283058,
+       "name": "N. Jackson",
+       "p": 46.1
+      },
+      {
+       "id": 406244,
+       "name": "J. Manzambi",
+       "p": 25.2
+      }
+     ],
+     "bookings": [
+      {
+       "id": 19298,
+       "name": "M. Cash",
+       "p": 36.8
+      },
+      {
+       "id": 195103,
+       "name": "João Gomes",
+       "p": 27.4
+      }
+     ],
+     "defender": {
+      "id": 138816,
+      "name": "I. Maatsen",
+      "sot": 1
+     },
+     "cap": [
+      {
+       "id": 406244,
+       "name": "J. Manzambi",
+       "pos": "Midfielder",
+       "g": 25.2,
+       "a": 36.8,
+       "inv": 52.7
+      },
+      {
+       "id": 283058,
+       "name": "N. Jackson",
+       "pos": "Attacker",
+       "g": 46.1,
+       "a": 6.5,
+       "inv": 49.6
+      },
+      {
+       "id": 19191,
+       "name": "J.  McGinn",
+       "pos": "Midfielder",
+       "g": 14.8,
+       "a": 32.5,
+       "inv": 42.5
+      },
+      {
+       "id": 19071,
+       "name": "E. Buendía",
+       "pos": "Attacker",
+       "g": 19.4,
+       "a": 5.6,
+       "inv": 23.9
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 38750,
+       "name": "B. Brobbey",
+       "p": 28.0
+      },
+      {
+       "id": 20638,
+       "name": "E. Le Fée",
+       "p": 14.5
+      }
+     ],
+     "bookings": [
+      {
+       "id": 6168,
+       "name": "O. Alderete",
+       "p": 29.4
+      },
+      {
+       "id": 22225,
+       "name": "Reinildo",
+       "p": 26.2
+      }
+     ],
+     "defender": {
+      "id": 264,
+      "name": "T. Meunier",
+      "sot": 4
+     },
+     "cap": [
+      {
+       "id": 38750,
+       "name": "B. Brobbey",
+       "pos": "Attacker",
+       "g": 28.0,
+       "a": 4.7,
+       "inv": 31.4
+      },
+      {
+       "id": 20638,
+       "name": "E. Le Fée",
+       "pos": "Midfielder",
+       "g": 14.5,
+       "a": 10.8,
+       "inv": 23.7
+      },
+      {
+       "id": 311543,
+       "name": "N. Angulo",
+       "pos": "Midfielder",
+       "g": 11.0,
+       "a": 10.6,
+       "inv": 20.4
+      },
+      {
+       "id": 264,
+       "name": "T. Meunier",
+       "pos": "Defender",
+       "g": 5.8,
+       "a": 9.3,
+       "inv": 14.5
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "lineup_confirmed": false,
+   "previous": [
+    {
+     "date": "19/04/2026",
+     "home": "Aston Villa",
+     "away": "Sunderland",
+     "hg": 4,
+     "ag": 3,
+     "ht": [
+      2,
+      1
+     ],
+     "ref": "S. Barrott",
+     "sx": {
+      "h": {
+       "pos": 50.0,
+       "xg": 2.84,
+       "sh": 15.0,
+       "sot": 7.0,
+       "co": 4.0,
+       "fo": 11.0,
+       "of": 0.0,
+       "sv": 4.0,
+       "pp": 85.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 50.0,
+       "xg": 1.73,
+       "sh": 10.0,
+       "sot": 7.0,
+       "co": 5.0,
+       "fo": 11.0,
+       "of": 3.0,
+       "sv": 3.0,
+       "pp": 84.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     }
+    },
+    {
+     "date": "21/09/2025",
+     "home": "Sunderland",
+     "away": "Aston Villa",
+     "hg": 1,
+     "ag": 1,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "S. Barrott",
+     "sx": {
+      "h": {
+       "pos": 29.0,
+       "xg": 1.04,
+       "sh": 14.0,
+       "sot": 4.0,
+       "co": 6.0,
+       "fo": 14.0,
+       "of": 0.0,
+       "sv": 1.0,
+       "pp": 69.0,
+       "yc": 2.0,
+       "rc": 1.0
+      },
+      "a": {
+       "pos": 71.0,
+       "xg": 0.78,
+       "sh": 12.0,
+       "sot": 2.0,
+       "co": 5.0,
+       "fo": 8.0,
+       "of": 3.0,
+       "sv": 3.0,
        "pp": 89.0,
        "yc": 1.0,
        "rc": 0.0
