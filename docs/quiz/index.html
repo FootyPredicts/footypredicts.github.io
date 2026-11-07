@@ -1057,6 +1057,22 @@ show();
       (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; m.t = Date.now(); if (!m.sx && state[m.id] && state[m.id].sx) m.sx = state[m.id].sx; state[m.id] = m; });
       Object.keys(state).forEach(function (k) { if (state[k].restored && !seen[k]) { if (canEnd(k)) state[k].fin = true; state[k].restored = false; } });
       Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if (canEnd(k) && (((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P') && m.gone >= 3 || m.gone >= 10 && overdue(k))) m.fin = true; });
+      persist(); render(); finalise();
+    }).catch(function () {});
+  }
+  // A match leaves the live feed the moment it ends, so the last score we saw can be a goal short.
+  // Ask the relay for the final score of matches we have marked finished (needs the updated relay; ignored by the old one).
+  function finalise() {
+    var now = Date.now(), ids = Object.keys(state).filter(function (k) { var m = state[k]; return m.fin && !m.final && !m.pre && (m.tries || 0) < 8 && now - (m.tryAt || 0) > 90000; }).slice(0, 20);
+    if (!ids.length) return;
+    ids.forEach(function (k) { state[k].tries = (state[k].tries || 0) + 1; state[k].tryAt = now; });
+    fetch(L.url + (L.url.indexOf('?') > -1 ? '&' : '?') + 'ids=' + ids.join('-'), { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j) return;
+      (j.matches || []).forEach(function (x) {
+        var m = state[x.id];
+        if (!m || ['FT', 'AET', 'PEN'].indexOf(x.st) < 0) return;
+        m.hg = x.hg; m.ag = x.ag; m.ev = x.ev || m.ev; m.final = true;
+      });
       persist(); render();
     }).catch(function () {});
   }

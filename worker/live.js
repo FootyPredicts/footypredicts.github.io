@@ -48,7 +48,23 @@ export default {
 
     try {
       // The API call itself is cached at Cloudflare's edge for 30 seconds.
-      const all = new URL(request.url).searchParams.get("scope") === "all";
+      const q = new URL(request.url).searchParams;
+      const want = (q.get("ids") || "").split("-").filter((x) => /^\d+$/.test(x)).slice(0, 20);
+      if (want.length) {
+        // Final scores for matches that have just left the live feed.
+        const rf = await fetch(`https://v3.football.api-sports.io/fixtures?ids=${want.join("-")}`, {
+          headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
+          cf: { cacheTtl: 60, cacheEverything: true },
+        });
+        if (!rf.ok) return json({ ts: Date.now(), matches: [], error: "upstream " + rf.status }, cors, 10);
+        const jf = await rf.json();
+        return json({ ts: Date.now(), matches: (jf.response || []).map((f) => ({
+          id: f.fixture.id, hg: f.goals.home ?? 0, ag: f.goals.away ?? 0, st: f.fixture.status.short, el: f.fixture.status.elapsed,
+          ev: (f.events || []).filter((e) => e.type === "Goal" || e.type === "Card").map((e) => ({
+            m: e.time.elapsed, x: e.time.extra, s: e.team && e.team.id === f.teams.home.id ? "h" : "a", t: e.type, d: e.detail, p: e.player && e.player.name })),
+        })) }, cors, 30);
+      }
+      const all = q.get("scope") === "all";
       const r = await fetch(`https://v3.football.api-sports.io/fixtures?live=${all ? LEAGUES_ALL : LEAGUES}`, {
         headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
         cf: { cacheTtl: 30, cacheEverything: true },
