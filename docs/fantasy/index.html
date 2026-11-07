@@ -1030,7 +1030,8 @@ a.chip { text-decoration:none; }
   }
   // A match only counts as finished once it is plausibly over: a match that drops out of the feed
   // for a moment while it is still being played must keep showing as live, not FT.
-  function canEnd(k) { var pk = picks[String(k)]; return !pk || Date.now() > Date.parse(pk.ko) + 100 * 60000; }
+  function canEnd(k) { var pk = picks[String(k)]; return !pk || Date.now() > Date.parse(pk.ko) + 108 * 60000; }
+  function overdue(k) { var pk = picks[String(k)]; return !pk || Date.now() > Date.parse(pk.ko) + 125 * 60000; }
   function poll() {
     if (document.hidden || !windowOpen()) return;
     fetch(L.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
@@ -1038,7 +1039,7 @@ a.chip { text-decoration:none; }
       var seen = {};
       (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; m.t = Date.now(); if (!m.sx && state[m.id] && state[m.id].sx) m.sx = state[m.id].sx; state[m.id] = m; });
       Object.keys(state).forEach(function (k) { if (state[k].restored && !seen[k]) { if (canEnd(k)) state[k].fin = true; state[k].restored = false; } });
-      Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if (((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P' || m.gone >= 6) && canEnd(k)) m.fin = true; });
+      Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if (canEnd(k) && (((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P') && m.gone >= 3 || m.gone >= 10 && overdue(k))) m.fin = true; });
       persist(); render();
     }).catch(function () {});
   }
