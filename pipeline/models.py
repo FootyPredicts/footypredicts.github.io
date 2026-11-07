@@ -440,6 +440,7 @@ def predict_league(league, name, country):
     n_hist = pd.concat([hist["home"], hist["away"]]).value_counts()
     odds = _load(os.path.join(DATA_DIR, league, "odds.json"), {})
     injuries = _load(os.path.join(DATA_DIR, league, "injuries.json"), {})
+    lineups = _load(os.path.join(DATA_DIR, league, "lineups.json"), {})
     out = []
     for _, f in up.iterrows():
         home, away, ref = f["home"], f["away"], f["referee"] or ""
@@ -454,6 +455,12 @@ def predict_league(league, name, country):
                 inj[side].append({"id": r["id"], "name": r["name"], "type": r["type"], "reason": r["reason"]})
         out_ids = {side: {r["id"] for r in inj[side] if "missing" in r["type"].lower()} for side in inj}
         weights = {side: {r["id"]: (1.0 if "missing" in r["type"].lower() else DOUBTFUL_WEIGHT) for r in inj[side]} for side in inj}
+        # Confirmed line-up (published about an hour before kick-off): anyone not in the matchday squad cannot score or be booked.
+        lu = lineups.get(str(int(f["id"])))
+        if lu and p_rates is not None and len(p_rates):
+            for side, team in (("home", home), ("away", away)):
+                squad = {x["id"] for x in lu[side]["xi"]} | set(lu[side].get("subs") or [])
+                out_ids[side] |= set(p_rates.loc[p_rates["team"] == team, "id"]) - squad
         att_h, def_h, key_h = injury_effect(players, p_rates, home, weights["home"])
         att_a, def_a, key_a = injury_effect(players, p_rates, away, weights["away"])
         lh = lh * (1 - att_h) * (1 + def_a)
@@ -497,6 +504,7 @@ def predict_league(league, name, country):
                 "away": player_picks(p_rates, away, opp(home), card_factor, False, out_ids["away"]),
             },
             "injuries": inj,
+            "lineup_confirmed": bool(lu),
             "previous": previous_meetings(res, home, away, stats=_pm_stats, events=_pm_events),
         })
         attach_odds(out[-1], (odds.get(str(int(f["id"]))) or {}).get("markets"),

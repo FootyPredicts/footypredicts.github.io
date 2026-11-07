@@ -6,7 +6,7 @@ import os
 import sys
 import traceback
 
-from . import fetch, models
+from . import fetch, lineups, models
 from .config import LEAGUES
 
 
@@ -14,6 +14,10 @@ def main():
     key = os.environ.get("API_FOOTBALL_KEY", "")
     if not key:
         sys.exit("API_FOOTBALL_KEY not set")
+    try:
+        lineups.run("live")          # confirmed line-ups for matches kicking off within ~100 minutes
+    except Exception:
+        traceback.print_exc()
     failed = []
     for league, (name, league_id, country, _slug) in LEAGUES.items():
         try:

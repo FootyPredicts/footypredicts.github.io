@@ -562,7 +562,7 @@ def render_match(f, i):
     has_pl = any(f["players"][x]["scorers"] or f["players"][x]["bookings"] for x in ("home", "away"))
     players_sec = "" if (euro and not has_pl) else f"""
       <section class="block">
-        <h3>Players to watch</h3>
+        <h3>Players to watch{" <span class=\"sub\">from the confirmed line-ups</span>" if f.get("lineup_confirmed") else ""}</h3>
         <table class="mirror players"><tr class="names"><td>{esc(home)}</td><th></th><td>{esc(away)}</td></tr>{players}</table>
       </section>"""
     inj_sec = "" if euro else inj_block
