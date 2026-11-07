@@ -1734,9 +1734,16 @@ a.chip { text-decoration:none; }
     b.setAttribute('aria-label', b.title);
     top.appendChild(b);
     card.appendChild(top);
-    if (m.ev && m.ev.length) {
+    var evs = (m.ev || []).slice();
+    ['h', 'a'].forEach(function (side) {
+      var goals = evs.filter(function (e) { return e.t === 'Goal' && e.d !== 'Missed Penalty' && ((e.d === 'Own Goal') ? e.s !== side : e.s === side); })
+        .sort(function (x, y) { return (y.m + (y.x || 0) / 100) - (x.m + (x.x || 0) / 100); });
+      var extra = goals.length - (side === 'h' ? m.hg : m.ag);
+      for (var gi = 0; gi < extra; gi++) evs.splice(evs.indexOf(goals[gi]), 1);   // disallowed by VAR: not in the score
+    });
+    if (evs.length) {
       var ul = el('ul', 'lv-ev');
-      m.ev.slice().sort(function (a, c) { return (a.m + (a.x || 0) / 100) - (c.m + (c.x || 0) / 100); }).forEach(function (e) {
+      evs.slice().sort(function (a, c) { return (a.m + (a.x || 0) / 100) - (c.m + (c.x || 0) / 100); }).forEach(function (e) {
         var isPick = pk && ((e.t === 'Goal' && e.d !== 'Missed Penalty' && e.d !== 'Own Goal' && (pk.sc || []).some(function (n) { return sn(n) === sn(e.p); })) ||
                             (e.t === 'Card' && (pk.bk || []).some(function (n) { return sn(n) === sn(e.p); })));
         var li = el('li', e.s + (isPick ? ' hit' : ''));
