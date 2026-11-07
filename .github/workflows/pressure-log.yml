@@ -32,6 +32,13 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-pipeline.txt
       - run: pip install -r requirements-pipeline.txt
+      - name: Show API usage
+        run: |
+          python - <<'PY'
+          import os, requests
+          r = requests.get("https://v3.football.api-sports.io/status", headers={"x-apisports-key": os.environ["API_FOOTBALL_KEY"]}, timeout=30)
+          print(r.status_code, r.headers.get("x-ratelimit-requests-remaining"), r.headers.get("X-RateLimit-Remaining"), r.text[:600])
+          PY
       - name: Watch live matches and log high-pressure flags
         run: python -m pipeline.pressure_log "${{ github.event.inputs.minutes || '115' }}"
       - name: Save the log
