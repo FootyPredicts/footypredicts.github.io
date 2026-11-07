@@ -718,7 +718,7 @@ function poll(){
     var hm = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     if (!j || !j.matches) { STATUS = 'Last check ' + hm + ': the live feed did not answer.'; render(last, true); return; }
     last = j.matches; last.forEach(snap);
-    STATUS = 'Last check ' + hm + ': ' + last.length + ' in play, ' + last.filter(function(m){ return m.sx; }).length + ' with stats' + (j.error ? ' (feed says: ' + j.error + ')' : '') + '.';
+    STATUS = 'Last check ' + hm + ': ' + last.length + ' in play, ' + last.filter(function(m){ return m.sx; }).length + ' with stats' + (j.error ? ' (feed says: ' + j.error + ')' : '') + (j.dbg ? ' [stats calls: ' + (j.dbg.bulk || []).join(',') + '; ' + (j.dbg.single || 0) + ' single]' : '') + '.';
     try { localStorage.setItem(HKEY, JSON.stringify(hist)); } catch (e) {}
     render(last, false);
   }).catch(function(){ STATUS = 'Last check ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ': could not reach the live feed.'; render(last, true); });

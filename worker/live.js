@@ -57,6 +57,7 @@ export default {
       const j = await r.json();
       const matches = (j.response || []).map((f) => ({
         id: f.fixture.id,
+        hid: f.teams.home.id,
         lg: f.league.id,
         home: f.teams.home.name,
         away: f.teams.away.name,
@@ -81,12 +82,14 @@ export default {
       const chunks = [];
       for (let i = 0; i < ids.length; i += 20) chunks.push(ids.slice(i, i + 20));
       const byId = Object.fromEntries(matches.map((m) => [m.id, m]));
+      const dbg = { bulk: [], single: 0 };
       await Promise.all(chunks.map(async (chunk) => {
         try {
           const r2 = await fetch(`https://v3.football.api-sports.io/fixtures?ids=${chunk.join("-")}`, {
             headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
             cf: { cacheTtl: 60, cacheEverything: true },
           });
+          dbg.bulk.push(r2.status);
           if (r2.ok) {
             const j2 = await r2.json();
             for (const f of j2.response || []) {
@@ -94,9 +97,25 @@ export default {
               if (m) m.sx = statsOf(f);
             }
           }
+        } catch (e) { dbg.bulk.push("err"); }
+      }));
+      // Fallback: for any match the bulk call gave no statistics for, ask the statistics endpoint for that match alone.
+      const missing = matches.filter((m) => !m.sx).slice(0, 12);
+      await Promise.all(missing.map(async (m) => {
+        try {
+          const r3 = await fetch(`https://v3.football.api-sports.io/fixtures/statistics?fixture=${m.id}`, {
+            headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
+            cf: { cacheTtl: 60, cacheEverything: true },
+          });
+          dbg.single++;
+          if (r3.ok) {
+            const j3 = await r3.json();
+            m.sx = statsOf({ teams: { home: { id: m.hid } }, statistics: j3.response || [] });
+          }
         } catch (e) { /* statistics are optional */ }
       }));
-      return json({ ts: Date.now(), matches }, cors, 20);
+      dbg.stats = matches.filter((m) => m.sx).length;
+      return json({ ts: Date.now(), matches, dbg }, cors, 20);
     } catch (e) {
       return json({ ts: Date.now(), matches: [], error: "failed" }, cors, 10);
     }
