@@ -2,7 +2,7 @@ name: Matchday refresh
 
 on:
   schedule:
-    - cron: "10,40 10-20 * * *"   # every 30 minutes in the daytime: picks up confirmed line-ups and late injury news
+    - cron: "7,37 9-21 * * *"   # every 30 minutes in the daytime: picks up confirmed line-ups and late injury news
   workflow_dispatch:
 
 permissions:

@@ -2,7 +2,7 @@ name: Update predictions
 
 on:
   schedule:
-    - cron: "0 6 * * *"        # every day at 06:00 UTC (07:00 UK summer time)
+    - cron: "17 5 * * *"      # every day at 06:00 UTC (07:00 UK summer time)
   workflow_dispatch:            # "Run workflow" button in the Actions tab
   push:
     branches: [main]
