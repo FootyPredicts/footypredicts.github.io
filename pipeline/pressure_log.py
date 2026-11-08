@@ -122,7 +122,12 @@ def summary(flags):
     wins = [f for f in done if f["result"] == "win"]
     side = [f for f in done if f["who"] != "both sides"]
     side_wins = [f for f in side if f.get("by_flagged_side")]
-    return {"flags": len(flags), "resolved": len(done), "wins": len(wins),
+    bands = {}
+    for lo, hi, name in ((0, 30, "0-30"), (30, 60, "30-60"), (60, 75, "60-75"), (75, 120, "75+")):
+        b = [f for f in done if lo <= f["min"] < hi]
+        bands[name] = {"flags": len(b), "wins": sum(f["result"] == "win" for f in b),
+                       "avg_model_chance": round(sum(f["P"] for f in b) / len(b), 3) if b else None}
+    return {"by_minute": bands, "flags": len(flags), "resolved": len(done), "wins": len(wins),
             "hit_rate": round(len(wins) / len(done), 3) if done else None,
             "avg_model_chance": round(sum(f["P"] for f in done) / len(done), 3) if done else None,
             "side_flags": len(side), "side_scored": len(side_wins), "updated": _now()}

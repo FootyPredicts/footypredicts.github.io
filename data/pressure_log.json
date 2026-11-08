@@ -2557,6 +2557,28 @@
   }
  ],
  "summary": {
+  "by_minute": {
+   "0-30": {
+    "flags": 12,
+    "wins": 2,
+    "avg_model_chance": 0.472
+   },
+   "30-60": {
+    "flags": 18,
+    "wins": 8,
+    "avg_model_chance": 0.475
+   },
+   "60-75": {
+    "flags": 18,
+    "wins": 8,
+    "avg_model_chance": 0.474
+   },
+   "75+": {
+    "flags": 23,
+    "wins": 8,
+    "avg_model_chance": 0.408
+   }
+  },
   "flags": 71,
   "resolved": 71,
   "wins": 26,
@@ -2564,6 +2586,6 @@
   "avg_model_chance": 0.452,
   "side_flags": 59,
   "side_scored": 15,
-  "updated": "2026-11-08T02:09:47Z"
+  "updated": "2026-11-08T09:28:54Z"
  }
 }
