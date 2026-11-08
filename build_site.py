@@ -863,6 +863,8 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
         ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "FootyPredicts", "url": SITE_URL,
               "description": "Free football predictions: win chances, expected goals, likely scorers and cards."}
         html = html.replace("</head>", '<script type="application/ld+json">' + json.dumps(ld).replace("</", "<\\/") + "</script></head>", 1)
+    import live_page
+    html = html.replace("__PRESSURE_JS__", live_page.PRESSURE_JS)
     html = html.replace("__SHIRTPATH__", SHIRT_PATH)
     html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS,
                                                        "league": path.rstrip("/") if (path.rstrip("/") in LEAGUE_ORDER or path.rstrip("/") in EURO_ORDER) else ""}).replace("</", "<\\/"))
@@ -1619,6 +1621,15 @@ EXTRA_CSS += r"""
 @keyframes lvp { 50% { opacity:.25; } }
 .lv-teams { font:700 20px/1.15 "Barlow Condensed",sans-serif; flex:1 1 220px; }
 .lv-score { font:800 26px/1 "Barlow Condensed",sans-serif; letter-spacing:.04em; }
+.pm { margin:8px 0 2px; }
+.pm-row { display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; font-size:13px; color:var(--muted); }
+.pm-row b { color:var(--ink); }
+.pm-bar { display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; margin-top:4px; }
+.pm-bar i { height:8px; border-radius:4px; background:var(--line); }
+.pm-bar.low i:nth-child(1) { background:#8aa597; }
+.pm-bar.building i:nth-child(-n+2) { background:#d9a521; }
+.pm-bar.high i { background:#c0392b; }
+.pm.hot .pm-row b { color:#c0392b; }
 .lv-pick { font-size:13px; padding:3px 9px; border-radius:99px; background:#eef2ee; color:var(--ink); white-space:nowrap; }
 .lv-pick.ok { background:#dff3e4; color:#115c2a; }
 .lv-pick.no { background:#fbe4e2; color:#8a1c14; }
@@ -1818,6 +1829,7 @@ __DECOR__
   if (!L.url || !strip) return;
   var LG = { 39: 'premier-league', 140: 'la-liga', 78: 'bundesliga', 135: 'serie-a', 61: 'ligue-1', 2: 'champions-league', 3: 'europa-league' };
   var picks = L.picks, state = {}, favs = [], FKEY = 'fp-fav-v1';
+__PRESSURE_JS__
   try { favs = JSON.parse(localStorage.getItem(FKEY) || '[]').map(String); } catch (e) { favs = []; }
   var SKEY = 'fp-live-v1';
   function restore() {
@@ -1864,6 +1876,21 @@ __DECOR__
     b.setAttribute('aria-label', b.title);
     top.appendChild(b);
     card.appendChild(top);
+    if (!m.fin && !m.pre && (m.st === '1H' || m.st === '2H' || m.st === 'ET' || m.st === 'HT')) {
+      var md = model(m), pm = el('div', 'pm' + (m.sx && md.live && md.level === 'high' ? ' hot' : ''));
+      var pr = el('div', 'pm-row');
+      if (m.sx) {
+        var txt = 'Pressure: ' + md.level + (md.level !== 'low' && md.who && md.who !== 'both sides' ? ' · ' + md.who : '');
+        pr.appendChild(el('b', '', txt));
+        pr.appendChild(el('span', '', 'Goal chance next ' + md.hor + ' min ' + Math.round(md.P * 100) + '%'));
+        pm.appendChild(pr);
+        var bar = el('div', 'pm-bar ' + md.level); bar.appendChild(el('i')); bar.appendChild(el('i')); bar.appendChild(el('i')); pm.appendChild(bar);
+      } else {
+        pr.appendChild(el('span', '', 'Pressure meter: waiting for match stats'));
+        pm.appendChild(pr);
+      }
+      card.appendChild(pm);
+    }
     var evs = (m.ev || []).slice();
     ['h', 'a'].forEach(function (side) {
       var goals = evs.filter(function (e) { return e.t === 'Goal' && e.d !== 'Missed Penalty' && ((e.d === 'Own Goal') ? e.s !== side : e.s === side); })
@@ -2007,6 +2034,7 @@ __DECOR__
       (j.matches || []).forEach(function (m) { seen[m.id] = 1; m.fin = false; m.t = Date.now(); if (!m.sx && state[m.id] && state[m.id].sx) m.sx = state[m.id].sx; state[m.id] = m; });
       Object.keys(state).forEach(function (k) { if (state[k].restored && !seen[k]) { if (canEnd(k)) state[k].fin = true; state[k].restored = false; } });
       Object.keys(state).forEach(function (k) { var m = state[k]; if (seen[k] || m.fin) { m.gone = 0; return; } m.gone = (m.gone || 0) + 1; if (canEnd(k) && (((m.el || 0) >= 85 || m.st === 'ET' || m.st === 'P') && m.gone >= 3 || m.gone >= 10 && overdue(k))) m.fin = true; });
+      (j.matches || []).forEach(snap); try { localStorage.setItem(HKEY, JSON.stringify(hist)); } catch (e) {}
       persist(); render(); finalise();
     }).catch(function () {});
   }

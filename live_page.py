@@ -32,14 +32,9 @@ CSS = """
 .lp-wait { font-size:13px; color:var(--muted); margin:6px 0 0; }
 </style>"""
 
-JS = r"""
-<script>
-(function(){
-var C = __CFG__, root = document.getElementById('lp'), picks = C.picks || {};
-var HKEY = 'fp-pressure-v1', hist = {};
+# Pressure model (JavaScript), shared by the Live tab and the match strip on the home page.
+PRESSURE_JS = r'''var HKEY = 'fp-pressure-v1', hist = {};
 try { hist = JSON.parse(localStorage.getItem(HKEY) || '{}'); } catch (e) { hist = {}; }
-var LGN = {39:'Premier League',140:'La Liga',78:'Bundesliga',135:'Serie A',61:'Ligue 1',2:'Champions League',3:'Europa League',848:'Conference League',40:'Championship',41:'League One',42:'League Two',179:'Scottish Premiership',88:'Eredivisie',94:'Primeira Liga',144:'Belgian Pro League',197:'Greek Super League',203:'Super Lig',79:'2. Bundesliga',136:'Serie B',141:'Segunda Division',62:'Ligue 2'};
-function el(t, c, x){ var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
 function num(v){ return typeof v === 'number' && isFinite(v) ? v : 0; }
 function pack(s){ s = s || {}; return { sh: num(s.sh), sot: num(s.sot), co: num(s.co), xg: (typeof s.xg === 'number' && isFinite(s.xg)) ? s.xg : null }; }
 /* rough goals expected from the chances a team has made: shots off target, shots on target, corners */
@@ -81,6 +76,15 @@ function model(m){
   if (sx && t >= 8) { if (fh > 1.15 * fa && fh > 1.0) who = m.home; else if (fa > 1.15 * fh && fa > 1.0) who = m.away; else who = 'both sides'; }
   return { P: P, level: level, who: who, basis: basis, live: live, hor: hor };
 }
+'''
+
+JS = r"""
+<script>
+(function(){
+var C = __CFG__, root = document.getElementById('lp'), picks = C.picks || {};
+__PRESSURE_JS__
+var LGN = {39:'Premier League',140:'La Liga',78:'Bundesliga',135:'Serie A',61:'Ligue 1',2:'Champions League',3:'Europa League',848:'Conference League',40:'Championship',41:'League One',42:'League Two',179:'Scottish Premiership',88:'Eredivisie',94:'Primeira Liga',144:'Belgian Pro League',197:'Greek Super League',203:'Super Lig',79:'2. Bundesliga',136:'Serie B',141:'Segunda Division',62:'Ligue 2'};
+function el(t, c, x){ var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
 function minute(m){
   if (m.st === 'HT') return 'HT'; if (m.st === 'BT' || m.st === 'INT') return 'Break'; if (m.st === 'P') return 'Pens';
   return (m.el || 0) + (m.ex ? '+' + m.ex : '') + "'";
@@ -166,4 +170,4 @@ def live_body(url, picks):
             'and adjusts for the score, the minute and red cards. The chance of a goal is an estimate from that, not a prediction of what will happen. '
             'It is information only, not advice.</p></section>')
     return (CSS + note + '<section class="block"><div id="lp" aria-live="polite"><div class="lp-none">Loading live matches&hellip;</div></div></section>'
-            + JS.replace("__CFG__", cfg))
+            + JS.replace("__PRESSURE_JS__", PRESSURE_JS).replace("__CFG__", cfg))
