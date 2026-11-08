@@ -33,7 +33,43 @@ function statsOf(f) {
   return list.length ? out : null;
 }
 
+// Timer: GitHub's own schedules are unreliable, so Cloudflare starts the jobs on time instead.
+// Needs the secret GITHUB_TOKEN (fine-grained token, this repo only, "Actions: read and write").
+// Add these cron triggers to the worker (Settings -> Triggers -> Cron Triggers), times are UTC:
+//   0 6 * * *                  daily prediction update
+//   7,37 9-21 * * *            matchday refresh (injuries, line-ups)
+//   0 10,12,14,16,18,20 * * *  pressure log
+//   */20 11-21 * * *           capture line-ups
+//   40 8,12,16,20 * * *        team news
+const REPO = "FootyPredicts/footypredicts.github.io";
+const JOBS = {
+  "0 6 * * *": ["update-predictions.yml"],
+  "7,37 9-21 * * *": ["matchday-refresh.yml"],
+  "0 10,12,14,16,18,20 * * *": ["pressure-log.yml"],
+  "*/20 11-21 * * *": ["capture-lineups.yml"],
+  "40 8,12,16,20 * * *": ["team-news.yml"],
+};
+
+async function dispatch(env, file) {
+  const r = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${file}/dispatches`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      Accept: "application/vnd.github+json",
+      "User-Agent": "footypredicts-timer",
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+    body: JSON.stringify({ ref: "main" }),
+  });
+  console.log(file, r.status);
+  return r.status;
+}
+
 export default {
+  async scheduled(event, env, ctx) {
+    if (!env.GITHUB_TOKEN) { console.log("GITHUB_TOKEN not set"); return; }
+    ctx.waitUntil(Promise.all((JOBS[event.cron] || []).map((f) => dispatch(env, f))));
+  },
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
     const cors = {
