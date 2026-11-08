@@ -799,7 +799,10 @@ def track_record_page(leagues, upd):
         recent = every_section(matches, "Every match", "newest first; tap a day or a match to open it. Highlighted names were our player picks.")
         euro_sec = every_section(euro_matches, "Champions League and Europa League",
                                  "tracked separately from the domestic leagues, because European matches are harder to call.", False) if euro_matches else ""
-        body = private + euro_sec + recent
+        # whichever list has the most recent results goes first
+        euro_latest = max((m["kickoff"] for m in euro_matches), default="")
+        dom_latest = max((m["kickoff"] for m in matches), default="")
+        body = private + ((euro_sec + recent) if euro_latest > dom_latest else (recent + euro_sec))
     body += """
       <section class="block tr-method"><h3>How this is checked</h3>
         <p>Only predictions published before kick-off count, and they can't be changed afterwards. Results are checked automatically each morning.</p>
