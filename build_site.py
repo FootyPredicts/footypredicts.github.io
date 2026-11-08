@@ -203,12 +203,18 @@ def names(f, lst, team, kind):
         price = x.get("price")
         num = shirt(x.get("id"))
         tag = shirt_html(num, team) if num is not None else ""
+        if kind == "scorer" and x.get("gl") is not None:
+            rec = f' <small class="rec">{x["gl"]} goal{"s" if x["gl"] != 1 else ""} in {x["ap"]}</small>'
+        elif kind == "booked" and x.get("yc") is not None:
+            rec = f' <small class="rec">{x["yc"]} yellow{" " + str(x["rc"]) + " red" if x.get("rc") else ""} in {x["ap"]}</small>'
+        else:
+            rec = ""
         if price:
-            out.append(f'<span class="pl">{tag}{esc(x["name"])} <small>{x["p"]:.0f}%</small> '
+            out.append(f'<span class="pl">{tag}{esc(x["name"])} <small>{x["p"]:.0f}%</small>{rec} '
                        + sel(f, f"{kind}-{x.get('id', x['name'])}", f"{kind}-{x.get('id', x['name'])}",
                              f"{x['name']} ({team}) {what}", price, x["p"] / 100, text="") + "</span>")
         else:
-            out.append(f'<span class="pl">{tag}{esc(x["name"])} <small>{x["p"]:.0f}%</small></span>')
+            out.append(f'<span class="pl">{tag}{esc(x["name"])} <small>{x["p"]:.0f}%</small>{rec}</span>')
     return "".join(out)
 
 
@@ -1478,6 +1484,7 @@ button.sel:hover { border-color:var(--pitch-2); }
 .picks3 .sel { justify-content:space-between; flex-wrap:wrap; }
 .picks3 .sel-l { font-weight:600; flex:1 1 100%; }
 .none-price { cursor:default; color:var(--muted); border-style:dashed; }
+.pl .rec { color:var(--muted); font-size:12px; white-space:nowrap; }
 .pl { display:block; margin:2px 0; }
 .pl .sel { padding:3px 7px; margin-left:4px; vertical-align:middle; }
 .pl .sel b { font-size:15px; }

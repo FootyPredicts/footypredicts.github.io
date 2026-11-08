@@ -241,8 +241,10 @@ def player_picks(p, team, opp_factor, card_factor, home, out_ids=()):
         best = defs.assign(score=defs["sot"] * 2 + defs["shots"] * 0.6).sort_values("score", ascending=False).iloc[0]
         defender = {"id": int(best["id"]), "name": best["name"], "sot": int(best["sot"])}
     return {
-        "scorers": [{"id": int(r["id"]), "name": r["name"], "p": round(100 * r["p"], 1)} for _, r in sc.iterrows()],
-        "bookings": [{"id": int(r["id"]), "name": r["name"], "p": round(100 * r["p"], 1)} for _, r in bk.iterrows()],
+        "scorers": [{"id": int(r["id"]), "name": r["name"], "p": round(100 * r["p"], 1),
+                     "gl": int(r["goals"]), "ap": int(r["apps"])} for _, r in sc.iterrows()],
+        "bookings": [{"id": int(r["id"]), "name": r["name"], "p": round(100 * r["p"], 1),
+                      "yc": int(r["yellow"]), "rc": int(r["red"]), "ap": int(r["apps"])} for _, r in bk.iterrows()],
         "defender": defender,
         "cap": [{"id": int(r["id"]), "name": r["name"], "pos": r["position"], "g": round(100 * r["g"], 1),
                  "a": round(100 * r["a"], 1), "inv": round(100 * r["inv"], 1)} for _, r in cap.iterrows()],
