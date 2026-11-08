@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/pressure_log.json 2>/dev/null || true
+          git add data/pressure_log.json data/pressure_snaps.jsonl 2>/dev/null || true
           if git diff --cached --quiet; then echo "No changes"; else
             git commit -m "Pressure log update"
             for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 5; done

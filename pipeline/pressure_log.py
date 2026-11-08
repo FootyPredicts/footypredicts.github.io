@@ -23,7 +23,11 @@ LEAGUES = "39-140-78-135-61-2-3-848-40-41-42-179-88-94-144-197-203-79-136-141-62
 WINDOW = 15          # minutes after a flag in which a goal counts as a win
 COOLDOWN = 15        # no second flag for the same match within this many match minutes
 POLL = 90            # seconds between checks
-KEYS = {"Total Shots": "sh", "Shots on Goal": "sot", "Corner Kicks": "co", "expected_goals": "xg"}
+KEYS = {"Total Shots": "sh", "Shots on Goal": "sot", "Corner Kicks": "co", "expected_goals": "xg",
+        "Yellow Cards": "yc", "Red Cards": "rc", "Fouls": "fo", "Ball Possession": "pos", "Blocked Shots": "bl",
+        "Shots insidebox": "ins", "Total passes": "pa", "Offsides": "of"}
+SNAPS = os.path.join(ROOT, "data", "pressure_snaps.jsonl")   # every live match every ~3 minutes, for finding better signals
+SNAP_EVERY = 170     # seconds
 
 
 def _load(path, default):
@@ -170,6 +174,9 @@ def resolve(flag, key):
     return True
 
 
+_last_snap = [0.0]
+
+
 def poll(log, key, picks, hist):
     now = time.time()
     live = fetch.api_get("fixtures", {"live": LEAGUES}, key).get("response") or []
@@ -186,6 +193,29 @@ def poll(log, key, picks, hist):
             m = matches.get(f["fixture"]["id"])
             if m:
                 m["sx"] = stats_of(f)
+    if now - _last_snap[0] >= SNAP_EVERY:
+        _last_snap[0] = now
+        rows = []
+        for m in matches.values():
+            if m["live"] and m["sx"]:
+                def sv(d):
+                    out = {}
+                    for k, v in d.items():
+                        if isinstance(v, str):
+                            try:
+                                v = float(v.strip("%"))
+                            except ValueError:
+                                continue
+                        if isinstance(v, (int, float)) and v is not None:
+                            out[k] = round(v, 2) if isinstance(v, float) else v
+                    return out
+                rows.append({"id": m["id"], "lg": m["lg"], "t": _now(), "min": m["el"], "hg": m["hg"], "ag": m["ag"],
+                             "h": sv(m["sx"]["h"]), "a": sv(m["sx"]["a"])})
+        if rows:
+            os.makedirs(os.path.dirname(SNAPS), exist_ok=True)
+            with open(SNAPS, "a", encoding="utf-8") as fh:
+                for r in rows:
+                    fh.write(json.dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n")
     flags = log["flags"]
     n_new = 0
     for m in matches.values():
