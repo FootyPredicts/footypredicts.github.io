@@ -3,586 +3,9 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-08T20:45:20.589600+00:00",
+ "updated": "2026-11-09T00:48:53.041522+00:00",
  "matches_used": 874,
  "fixtures": [
-  {
-   "id": 1570443,
-   "kickoff": "2026-11-08T20:00:00",
-   "round": "Regular Season - 12",
-   "home": "Atletico Madrid",
-   "away": "Barcelona",
-   "referee": "J. Alberola Rojas",
-   "ref_cards": 4.81,
-   "ref_games": 16,
-   "pick": "Away",
-   "model_pick": "Away",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 30.6,
-    "draw": 22.6,
-    "away": 46.8
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    },
-    "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 31.6,
-   "draw_pct": 23.9,
-   "away_pct": 44.5,
-   "xg_home": 1.55,
-   "xg_away": 1.86,
-   "over25": 66.2,
-   "btts": 67.2,
-   "cards5": 42.4,
-   "cards": {
-    "exp": 4.3,
-    "home": 2.42,
-    "away": 1.89,
-    "over": {
-     "2.5": 77.1,
-     "3.5": 59.8,
-     "4.5": 42.4,
-     "5.5": 27.5,
-     "6.5": 16.6
-    }
-   },
-   "form": {
-    "home": {
-     "played": 5,
-     "win": 80.0,
-     "over25": 60.0,
-     "btts": 40.0
-    },
-    "away": {
-     "played": 5,
-     "win": 100.0,
-     "over25": 100.0,
-     "btts": 60.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 42.45664825968068,
-     "sh": 55.53760079975043,
-     "any": 74.41484523601547
-    },
-    "away": {
-     "fh": 64.72886504314398,
-     "sh": 69.40123466324354,
-     "any": 89.20746818294096
-    },
-    "match_fh": 79.70380674897362,
-    "match_sh": 86.39505480562374
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 8489,
-       "name": "J. David",
-       "p": 22.8,
-       "gl": 3,
-       "ap": 6,
-       "price": {
-        "odd": 2.6,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.6
-        }
-       }
-      },
-      {
-       "id": 182219,
-       "name": "Álex Baena",
-       "p": 19.3,
-       "gl": 5,
-       "ap": 11,
-       "price": {
-        "odd": 4.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 295793,
-       "name": "Marc Pubill",
-       "p": 23.7,
-       "yc": 3,
-       "rc": 0,
-       "ap": 9,
-       "price": null
-      },
-      {
-       "id": 30776,
-       "name": "C. Romero",
-       "p": 21.9,
-       "yc": 2,
-       "rc": 0,
-       "ap": 6,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 563,
-      "name": "Álex Grimaldo",
-      "sot": 9
-     },
-     "cap": [
-      {
-       "id": 8489,
-       "name": "J. David",
-       "pos": "Attacker",
-       "g": 22.8,
-       "a": 14.8,
-       "inv": 34.2
-      },
-      {
-       "id": 182219,
-       "name": "Álex Baena",
-       "pos": "Midfielder",
-       "g": 19.3,
-       "a": 15.5,
-       "inv": 31.8
-      },
-      {
-       "id": 563,
-       "name": "Álex Grimaldo",
-       "pos": "Defender",
-       "g": 17.9,
-       "a": 11.8,
-       "inv": 27.6
-      },
-      {
-       "id": 323935,
-       "name": "G. Simeone",
-       "pos": "Attacker",
-       "g": 15.4,
-       "a": 11.9,
-       "inv": 25.5
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 1496,
-       "name": "Raphinha",
-       "p": 39.7,
-       "gl": 15,
-       "ap": 10,
-       "price": {
-        "odd": 1.8,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 1.8
-        }
-       }
-      },
-      {
-       "id": 386828,
-       "name": "Lamine Yamal",
-       "p": 32.1,
-       "gl": 10,
-       "ap": 11,
-       "price": {
-        "odd": 2.3,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.3
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 340626,
-       "name": "Fermín",
-       "p": 21.8,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      },
-      {
-       "id": 855,
-       "name": "João Cancelo",
-       "p": 15.6,
-       "yc": 2,
-       "rc": 0,
-       "ap": 8,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 568001,
-      "name": "X. Espart",
-      "sot": 2
-     },
-     "cap": [
-      {
-       "id": 386828,
-       "name": "Lamine Yamal",
-       "pos": "Attacker",
-       "g": 32.1,
-       "a": 27.4,
-       "inv": 50.7
-      },
-      {
-       "id": 1496,
-       "name": "Raphinha",
-       "pos": "Attacker",
-       "g": 39.7,
-       "a": 14.3,
-       "inv": 48.3
-      },
-      {
-       "id": 340626,
-       "name": "Fermín",
-       "pos": "Midfielder",
-       "g": 17.5,
-       "a": 21.1,
-       "inv": 35.0
-      },
-      {
-       "id": 138787,
-       "name": "A. Gordon",
-       "pos": "Attacker",
-       "g": 15.3,
-       "a": 16.9,
-       "inv": 29.6
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [],
-    "away": []
-   },
-   "lineup_confirmed": false,
-   "previous": [
-    {
-     "date": "04/04/2026",
-     "home": "Atletico Madrid",
-     "away": "Barcelona",
-     "hg": 1,
-     "ag": 2,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "M. Busquets",
-     "sx": {
-      "h": {
-       "pos": 33.0,
-       "xg": 0.92,
-       "sh": 6.0,
-       "sot": 2.0,
-       "co": 1.0,
-       "fo": 15.0,
-       "of": 4.0,
-       "sv": 6.0,
-       "pp": 80.0,
-       "yc": 6.0,
-       "rc": 1.0
-      },
-      "a": {
-       "pos": 67.0,
-       "xg": 2.52,
-       "sh": 22.0,
-       "sot": 8.0,
-       "co": 9.0,
-       "fo": 11.0,
-       "of": 3.0,
-       "sv": 1.0,
-       "pp": 92.0,
-       "yc": 2.0,
-       "rc": 1.0
-      }
-     }
-    },
-    {
-     "date": "02/12/2025",
-     "home": "Barcelona",
-     "away": "Atletico Madrid",
-     "hg": 3,
-     "ag": 1,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "R. De Burgos Bengoetxea",
-     "sx": {
-      "h": {
-       "pos": 58.0,
-       "xg": 3.6,
-       "sh": 19.0,
-       "sot": 6.0,
-       "co": 5.0,
-       "fo": 12.0,
-       "of": 1.0,
-       "sv": 1.0,
-       "pp": 86.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 42.0,
-       "xg": 0.98,
-       "sh": 7.0,
-       "sot": 2.0,
-       "co": 4.0,
-       "fo": 9.0,
-       "of": 4.0,
-       "sv": 3.0,
-       "pp": 79.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "16/03/2025",
-     "home": "Atletico Madrid",
-     "away": "Barcelona",
-     "hg": 2,
-     "ag": 4,
-     "ht": [
-      1,
-      0
-     ],
-     "ref": "R. De Burgos",
-     "sx": {
-      "h": {
-       "pos": 34.0,
-       "xg": 1.36,
-       "sh": 7.0,
-       "sot": 2.0,
-       "co": 6.0,
-       "fo": 10.0,
-       "of": 2.0,
-       "sv": 2.0,
-       "pp": 76.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 66.0,
-       "xg": 1.26,
-       "sh": 13.0,
-       "sot": 6.0,
-       "co": 6.0,
-       "fo": 11.0,
-       "of": 0.0,
-       "sv": 0.0,
-       "pp": 90.0,
-       "yc": 3.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "21/12/2024",
-     "home": "Barcelona",
-     "away": "Atletico Madrid",
-     "hg": 1,
-     "ag": 2,
-     "ht": [
-      1,
-      0
-     ],
-     "ref": "R. De Burgos",
-     "sx": {
-      "h": {
-       "pos": 63.0,
-       "xg": 2.54,
-       "sh": 19.0,
-       "sot": 7.0,
-       "co": 11.0,
-       "fo": 11.0,
-       "of": 2.0,
-       "sv": 2.0,
-       "pp": 89.0,
-       "yc": 0.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 37.0,
-       "xg": 0.63,
-       "sh": 5.0,
-       "sot": 4.0,
-       "co": 3.0,
-       "fo": 8.0,
-       "of": 4.0,
-       "sv": 6.0,
-       "pp": 78.0,
-       "yc": 3.0,
-       "rc": 0.0
-      }
-     }
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 3.85,
-     "bookie": "Dafabet",
-     "books": {
-      "William Hill": 3.0,
-      "Bet365": 3.1,
-      "Betfair": 3.1,
-      "BetVictor": 3.1
-     }
-    },
-    "draw": {
-     "odd": 4.4,
-     "bookie": "Dafabet",
-     "books": {
-      "William Hill": 3.9,
-      "Bet365": 4.2,
-      "Betfair": 4.33,
-      "BetVictor": 4.2
-     }
-    },
-    "away": {
-     "odd": 2.1,
-     "bookie": "Betano",
-     "books": {
-      "William Hill": 2.0,
-      "Bet365": 2.05,
-      "Betfair": 2.0,
-      "BetVictor": 2.0
-     }
-    },
-    "over25": {
-     "odd": 1.34,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 1.33,
-      "Betfair": 1.3,
-      "BetVictor": 1.31
-     }
-    },
-    "under25": {
-     "odd": 3.4,
-     "bookie": "Bet365",
-     "books": {
-      "Bet365": 3.4,
-      "Betfair": 3.4,
-      "BetVictor": 3.05
-     }
-    },
-    "btts_yes": {
-     "odd": 1.33,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 1.33,
-      "Bet365": 1.33,
-      "Betfair": 1.3,
-      "BetVictor": 1.29
-     }
-    },
-    "btts_no": {
-     "odd": 3.3,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 3.2,
-      "Bet365": 3.25,
-      "Betfair": 3.3,
-      "BetVictor": 3.25
-     }
-    },
-    "cards_over45": {
-     "odd": 1.8,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 1.67
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.14,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 5.2,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.34,
-       "bookie": "Pinnacle",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.15,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 1.8,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.67
-       }
-      },
-      "under": {
-       "odd": 2.15,
-       "bookie": "Betano",
-       "books": {
-        "Bet365": 2.1
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 2.48,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.1
-       }
-      },
-      "under": {
-       "odd": 1.67,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 1.67
-       }
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 3.05,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.35,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1570455,
    "kickoff": "2026-11-22T16:00:00",
@@ -4543,6 +3966,240 @@
      }
     }
    ],
+   "odds": null
+  },
+  {
+   "id": 1570459,
+   "kickoff": "2026-11-22T16:00:00",
+   "round": "Regular Season - 13",
+   "home": "Racing Santander",
+   "away": "Real Sociedad",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": true,
+   "market": null,
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 31.7,
+   "draw_pct": 20.3,
+   "away_pct": 48.0,
+   "xg_home": 1.96,
+   "xg_away": 2.4,
+   "over25": 81.1,
+   "btts": 78.7,
+   "cards5": 54.6,
+   "cards": {
+    "exp": 5.05,
+    "home": 2.57,
+    "away": 2.48,
+    "over": {
+     "2.5": 84.6,
+     "3.5": 70.6,
+     "4.5": 54.6,
+     "5.5": 39.1,
+     "6.5": 26.1
+    }
+   },
+   "form": {
+    "home": {
+     "played": 6,
+     "win": 50.0,
+     "over25": 100.0,
+     "btts": 83.33333333333334
+    },
+    "away": {
+     "played": 6,
+     "win": 50.0,
+     "over25": 83.33333333333334,
+     "btts": 83.33333333333334
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 52.38894782528606,
+     "sh": 54.7109662399734,
+     "any": 78.43741450708993
+    },
+    "away": {
+     "fh": 65.76527905335759,
+     "sh": 62.09834618592591,
+     "any": 87.02447458258928
+    },
+    "match_fh": 83.70048914822635,
+    "match_sh": 82.83470720853558
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 457101,
+       "name": "M. Zabiri",
+       "p": 44.1,
+       "gl": 8,
+       "ap": 11
+      },
+      {
+       "id": 47209,
+       "name": "Andrés Martín",
+       "p": 19.3,
+       "gl": 1,
+       "ap": 6
+      }
+     ],
+     "bookings": [
+      {
+       "id": 482469,
+       "name": "Jorge Salinas",
+       "p": 32.5,
+       "yc": 5,
+       "rc": 0,
+       "ap": 10
+      },
+      {
+       "id": 46734,
+       "name": "Pablo Ramón",
+       "p": 28.8,
+       "yc": 4,
+       "rc": 0,
+       "ap": 9
+      }
+     ],
+     "defender": {
+      "id": 482469,
+      "name": "Jorge Salinas",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 457101,
+       "name": "M. Zabiri",
+       "pos": "Attacker",
+       "g": 44.1,
+       "a": 4.4,
+       "inv": 46.6
+      },
+      {
+       "id": 47293,
+       "name": "Iñigo Vicente",
+       "pos": "Midfielder",
+       "g": 7.7,
+       "a": 26.2,
+       "inv": 31.9
+      },
+      {
+       "id": 1570,
+       "name": "Sergio Canales",
+       "pos": "Midfielder",
+       "g": 16.8,
+       "a": 12.0,
+       "inv": 26.8
+      },
+      {
+       "id": 47209,
+       "name": "Andrés Martín",
+       "pos": "Midfielder",
+       "g": 19.3,
+       "a": 5.8,
+       "inv": 24.0
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 7332,
+       "name": "L. Sučić",
+       "p": 27.9,
+       "gl": 4,
+       "ap": 10
+      },
+      {
+       "id": 61774,
+       "name": "O. Óskarsson",
+       "p": 27.8,
+       "gl": 3,
+       "ap": 9
+      }
+     ],
+     "bookings": [
+      {
+       "id": 199044,
+       "name": "J. Aramburu",
+       "p": 29.2,
+       "yc": 4,
+       "rc": 0,
+       "ap": 9
+      },
+      {
+       "id": 2449,
+       "name": "Y. Herrera",
+       "p": 26.3,
+       "yc": 4,
+       "rc": 0,
+       "ap": 9
+      }
+     ],
+     "defender": {
+      "id": 199044,
+      "name": "J. Aramburu",
+      "sot": 2
+     },
+     "cap": [
+      {
+       "id": 47323,
+       "name": "Mikel Oyarzabal",
+       "pos": "Attacker",
+       "g": 26.4,
+       "a": 18.7,
+       "inv": 40.2
+      },
+      {
+       "id": 930,
+       "name": "Carlos Soler",
+       "pos": "Midfielder",
+       "g": 13.9,
+       "a": 26.3,
+       "inv": 36.6
+      },
+      {
+       "id": 7332,
+       "name": "L. Sučić",
+       "pos": "Midfielder",
+       "g": 27.9,
+       "a": 4.5,
+       "inv": 31.2
+      },
+      {
+       "id": 61774,
+       "name": "O. Óskarsson",
+       "pos": "Attacker",
+       "g": 27.8,
+       "a": 4.6,
+       "inv": 31.1
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "lineup_confirmed": false,
+   "previous": [],
    "odds": null
   }
  ]
