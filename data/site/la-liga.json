@@ -3,7 +3,7 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-09T13:38:03.207063+00:00",
+ "updated": "2026-11-09T13:55:49.453634+00:00",
  "matches_used": 879,
  "fixtures": [
   {
@@ -228,8 +228,8 @@
       }
      ],
      "defender": {
-      "id": 355994,
-      "name": "A. Freeman",
+      "id": 311773,
+      "name": "S. Mouriño",
       "sot": 2
      },
      "cap": [
@@ -237,9 +237,9 @@
        "id": 182519,
        "name": "Alberto Moleiro",
        "pos": "Midfielder",
-       "g": 10.5,
-       "a": 17.0,
-       "inv": 25.7
+       "g": 9.9,
+       "a": 16.1,
+       "inv": 24.5
       },
       {
        "id": 180496,
@@ -253,9 +253,9 @@
        "id": 18906,
        "name": "Ayoze Pérez",
        "pos": "Attacker",
-       "g": 11.3,
-       "a": 9.8,
-       "inv": 19.9
+       "g": 10.5,
+       "a": 12.5,
+       "inv": 21.7
       },
       {
        "id": 3246,
@@ -592,20 +592,6 @@
     "home": {
      "scorers": [
       {
-       "id": 30510,
-       "name": "Álex Berenguer",
-       "p": 18.7,
-       "gl": 4,
-       "ap": 12,
-       "price": {
-        "odd": 3.4,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.4
-        }
-       }
-      },
-      {
        "id": 47294,
        "name": "I. Williams",
        "p": 15.4,
@@ -616,6 +602,20 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 2.38
+        }
+       }
+      },
+      {
+       "id": 84086,
+       "name": "Robert Navarro",
+       "p": 14.2,
+       "gl": 2,
+       "ap": 10,
+       "price": {
+        "odd": 2.88,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.88
         }
        }
       }
@@ -647,14 +647,6 @@
      },
      "cap": [
       {
-       "id": 30510,
-       "name": "Álex Berenguer",
-       "pos": "Attacker",
-       "g": 18.7,
-       "a": 20.2,
-       "inv": 35.2
-      },
-      {
        "id": 47294,
        "name": "I. Williams",
        "pos": "Midfielder",
@@ -677,6 +669,14 @@
        "g": 14.2,
        "a": 2.9,
        "inv": 16.7
+      },
+      {
+       "id": 128398,
+       "name": "Oihan Sancet",
+       "pos": "Midfielder",
+       "g": 10.7,
+       "a": 3.3,
+       "inv": 13.7
       }
      ]
     },
@@ -1208,9 +1208,9 @@
       {
        "id": 181421,
        "name": "A. Ezzalzouli",
-       "p": 25.4,
-       "gl": 3,
-       "ap": 8,
+       "p": 25.3,
+       "gl": 6,
+       "ap": 17,
        "price": {
         "odd": 3.6,
         "bookie": "Bet365",
@@ -1236,20 +1236,20 @@
      ],
      "bookings": [
       {
-       "id": 47302,
-       "name": "Diego Llorente",
-       "p": 24.0,
-       "yc": 2,
-       "rc": 0,
-       "ap": 5,
-       "price": null
-      },
-      {
        "id": 316519,
        "name": "F. Bernal",
        "p": 23.0,
        "yc": 2,
        "rc": 1,
+       "ap": 8,
+       "price": null
+      },
+      {
+       "id": 47341,
+       "name": "Marc Roca",
+       "p": 19.7,
+       "yc": 2,
+       "rc": 0,
        "ap": 8,
        "price": null
       }
@@ -1272,9 +1272,9 @@
        "id": 181421,
        "name": "A. Ezzalzouli",
        "pos": "Attacker",
-       "g": 25.4,
-       "a": 4.4,
-       "inv": 28.7
+       "g": 25.3,
+       "a": 2.6,
+       "inv": 27.2
       },
       {
        "id": 745,
@@ -1753,21 +1753,21 @@
      ],
      "bookings": [
       {
+       "id": 311345,
+       "name": "F. Redondo",
+       "p": 28.5,
+       "yc": 3,
+       "rc": 1,
+       "ap": 9,
+       "price": null
+      },
+      {
        "id": 46982,
        "name": "Gonzalo Villar",
        "p": 26.0,
        "yc": 4,
        "rc": 0,
        "ap": 11,
-       "price": null
-      },
-      {
-       "id": 311345,
-       "name": "F. Redondo",
-       "p": 24.5,
-       "yc": 2,
-       "rc": 1,
-       "ap": 8,
        "price": null
       }
      ],
@@ -1805,9 +1805,9 @@
        "id": 315127,
        "name": "R. Revivo",
        "pos": "Defender",
-       "g": 4.0,
-       "a": 18.1,
-       "inv": 21.4
+       "g": 3.7,
+       "a": 16.9,
+       "inv": 20.0
       }
      ]
     }
@@ -3044,9 +3044,9 @@
       {
        "id": 182219,
        "name": "Álex Baena",
-       "p": 22.8,
+       "p": 22.4,
        "gl": 5,
-       "ap": 11,
+       "ap": 12,
        "price": {
         "odd": 4.0,
         "bookie": "Bet365",
@@ -3067,12 +3067,12 @@
        "price": null
       },
       {
-       "id": 30776,
-       "name": "C. Romero",
-       "p": 21.7,
-       "yc": 2,
+       "id": 182219,
+       "name": "Álex Baena",
+       "p": 23.3,
+       "yc": 4,
        "rc": 0,
-       "ap": 6,
+       "ap": 12,
        "price": null
       }
      ],
@@ -3094,9 +3094,9 @@
        "id": 182219,
        "name": "Álex Baena",
        "pos": "Midfielder",
-       "g": 22.8,
-       "a": 18.4,
-       "inv": 37.0
+       "g": 22.4,
+       "a": 17.5,
+       "inv": 36.0
       },
       {
        "id": 563,
@@ -3823,7 +3823,7 @@
      "defender": {
       "id": 18895,
       "name": "F. Lejeune",
-      "sot": 3
+      "sot": 4
      },
      "cap": [
       {
