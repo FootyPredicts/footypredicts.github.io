@@ -4212,7 +4212,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-08T22:16:52Z"
   },
   {
    "id": 1552812,
@@ -4354,7 +4357,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 38,
+     "side": "away",
+     "player": "Borja Sainz",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-08T22:16:52Z"
   },
   {
    "id": 1575215,
@@ -4384,18 +4397,61 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 10,
+     "side": "home",
+     "player": "Fisnik Asllani",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-08T22:16:53Z"
+  },
+  {
+   "id": 1575538,
+   "lg": 94,
+   "home": "Estrela",
+   "away": "Benfica",
+   "date": "2026-11-08",
+   "at": "2026-11-08T22:24:26Z",
+   "min": 90,
+   "sh": 2,
+   "sa": 3,
+   "who": "away",
+   "who_name": "Benfica",
+   "ratio": 1.7,
+   "P": 0.214,
+   "stats": {
+    "h": {
+     "sh": 7,
+     "sot": 2,
+     "co": 1,
+     "xg": null
+    },
+    "a": {
+     "sh": 15,
+     "sot": 5,
+     "co": 10,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-08T22:25:57Z"
   }
  ],
  "summary": {
   "by_minute": {
    "0-30": {
-    "flags": 21,
-    "wins": 3,
-    "avg_model_chance": 0.463
+    "flags": 23,
+    "wins": 5,
+    "avg_model_chance": 0.459
    },
    "30-60": {
-    "flags": 33,
+    "flags": 34,
     "wins": 16,
     "avg_model_chance": 0.461
    },
@@ -4405,18 +4461,18 @@
     "avg_model_chance": 0.466
    },
    "75+": {
-    "flags": 38,
+    "flags": 39,
     "wins": 14,
-    "avg_model_chance": 0.393
+    "avg_model_chance": 0.388
    }
   },
-  "flags": 122,
-  "resolved": 119,
-  "wins": 45,
-  "hit_rate": 0.378,
-  "avg_model_chance": 0.441,
-  "side_flags": 103,
-  "side_scored": 28,
-  "updated": "2026-11-08T18:38:11Z"
+  "flags": 123,
+  "resolved": 123,
+  "wins": 47,
+  "hit_rate": 0.382,
+  "avg_model_chance": 0.439,
+  "side_flags": 107,
+  "side_scored": 29,
+  "updated": "2026-11-09T00:11:17Z"
  }
 }
