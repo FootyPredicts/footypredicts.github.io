@@ -3,7 +3,7 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-10T02:41:29.708771+00:00",
+ "updated": "2026-11-10T06:01:41.187127+00:00",
  "matches_used": 697,
  "fixtures": [
   {
@@ -181,9 +181,9 @@
       {
        "id": 432310,
        "name": "S. El Mala",
-       "p": 16.5,
-       "gl": 2,
-       "ap": 7,
+       "p": 18.3,
+       "gl": 3,
+       "ap": 8,
        "price": {
         "odd": 5.5,
         "bookie": "Bet365",
@@ -218,9 +218,9 @@
        "price": null
       },
       {
-       "id": 1156,
-       "name": "T. Krauß",
-       "p": 23.9,
+       "id": 404656,
+       "name": "Jahmai Simpson-Pusey",
+       "p": 24.7,
        "yc": 3,
        "rc": 0,
        "ap": 9,
@@ -228,26 +228,26 @@
       }
      ],
      "defender": {
-      "id": 191740,
-      "name": "S. Sebulonsen",
-      "sot": 2
+      "id": 26303,
+      "name": "B. Sosa",
+      "sot": 3
      },
      "cap": [
       {
        "id": 432310,
        "name": "S. El Mala",
        "pos": "Attacker",
-       "g": 16.5,
-       "a": 3.0,
-       "inv": 19.0
+       "g": 18.3,
+       "a": 2.8,
+       "inv": 20.5
       },
       {
        "id": 25380,
        "name": "L. Maina",
        "pos": "Midfielder",
-       "g": 6.9,
-       "a": 11.8,
-       "inv": 17.8
+       "g": 7.0,
+       "a": 11.0,
+       "inv": 17.3
       },
       {
        "id": 21587,
@@ -1210,12 +1210,12 @@
        "inv": 16.0
       },
       {
-       "id": 163078,
-       "name": "L. Curda",
-       "pos": "Midfielder",
-       "g": 4.7,
-       "a": 11.0,
-       "inv": 15.2
+       "id": 178106,
+       "name": "M. Pieringer",
+       "pos": "Attacker",
+       "g": 12.6,
+       "a": 3.6,
+       "inv": 15.8
       }
      ]
     }
@@ -1479,6 +1479,20 @@
     "away": {
      "scorers": [
       {
+       "id": 203040,
+       "name": "T. Lemperle",
+       "p": 26.1,
+       "gl": 2,
+       "ap": 7,
+       "price": {
+        "odd": 2.75,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.75
+        }
+       }
+      },
+      {
        "id": 66019,
        "name": "A. Hložek",
        "p": 24.6,
@@ -1491,23 +1505,18 @@
          "Bet365": 2.5
         }
        }
-      },
-      {
-       "id": 279905,
-       "name": "B. Conté",
-       "p": 22.6,
-       "gl": 2,
-       "ap": 7,
-       "price": {
-        "odd": 3.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.5
-        }
-       }
       }
      ],
      "bookings": [
+      {
+       "id": 7327,
+       "name": "A. Prass",
+       "p": 33.5,
+       "yc": 3,
+       "rc": 0,
+       "ap": 4,
+       "price": null
+      },
       {
        "id": 37153,
        "name": "W. Burger",
@@ -1516,21 +1525,12 @@
        "rc": 0,
        "ap": 8,
        "price": null
-      },
-      {
-       "id": 26300,
-       "name": "O. Kabak",
-       "p": 19.2,
-       "yc": 2,
-       "rc": 0,
-       "ap": 8,
-       "price": null
       }
      ],
      "defender": {
-      "id": 26300,
-      "name": "O. Kabak",
-      "sot": 2
+      "id": 7327,
+      "name": "A. Prass",
+      "sot": 5
      },
      "cap": [
       {
@@ -1550,12 +1550,12 @@
        "inv": 37.3
       },
       {
-       "id": 362564,
-       "name": "A. Daghim",
-       "pos": "Midfielder",
-       "g": 18.1,
-       "a": 21.7,
-       "inv": 35.9
+       "id": 7327,
+       "name": "A. Prass",
+       "pos": "Defender",
+       "g": 22.2,
+       "a": 15.0,
+       "inv": 33.9
       },
       {
        "id": 66019,
@@ -1979,9 +1979,9 @@
        "id": 26249,
        "name": "J. Haberer",
        "pos": "Midfielder",
-       "g": 12.2,
-       "a": 3.2,
-       "inv": 15.0
+       "g": 11.7,
+       "a": 3.1,
+       "inv": 14.4
       }
      ]
     },
@@ -2500,9 +2500,9 @@
       {
        "id": 202696,
        "name": "I. Matanović",
-       "p": 34.6,
+       "p": 34.1,
        "gl": 4,
-       "ap": 8,
+       "ap": 9,
        "price": {
         "odd": 2.25,
         "bookie": "Bet365",
@@ -2556,9 +2556,9 @@
        "id": 202696,
        "name": "I. Matanović",
        "pos": "Attacker",
-       "g": 34.6,
-       "a": 11.9,
-       "inv": 42.4
+       "g": 34.1,
+       "a": 11.1,
+       "inv": 41.4
       },
       {
        "id": 286710,
@@ -2827,20 +2827,20 @@
        "inv": 22.5
       },
       {
+       "id": 115,
+       "name": "M. Sylla",
+       "pos": "Attacker",
+       "g": 16.6,
+       "a": 6.2,
+       "inv": 21.8
+      },
+      {
        "id": 25466,
        "name": "K. Karaman",
        "pos": "Attacker",
-       "g": 18.1,
-       "a": 5.2,
-       "inv": 22.3
-      },
-      {
-       "id": 24888,
-       "name": "Hwang Hee-Chan",
-       "pos": "Attacker",
-       "g": 9.7,
-       "a": 10.5,
-       "inv": 19.1
+       "g": 16.8,
+       "a": 4.8,
+       "inv": 20.9
       }
      ]
     },
@@ -3234,19 +3234,19 @@
        "price": null
       },
       {
-       "id": 37938,
-       "name": "S. Becker",
-       "p": 16.0,
+       "id": 711,
+       "name": "S. Posch",
+       "p": 28.4,
        "yc": 2,
-       "rc": 0,
-       "ap": 9,
+       "rc": 1,
+       "ap": 7,
        "price": null
       }
      ],
      "defender": {
       "id": 442546,
       "name": "K. Potulski",
-      "sot": 2
+      "sot": 1
      },
      "cap": [
       {
@@ -3679,25 +3679,39 @@
        "inv": 61.9
       },
       {
+       "id": 202526,
+       "name": "E. Dinkçi",
+       "pos": "Attacker",
+       "g": 23.4,
+       "a": 13.4,
+       "inv": 33.7
+      },
+      {
        "id": 331004,
        "name": "Chuky San José",
        "pos": "Midfielder",
        "g": 14.0,
        "a": 22.0,
        "inv": 32.9
-      },
-      {
-       "id": 38124,
-       "name": "L. Reis",
-       "pos": "Midfielder",
-       "g": 20.7,
-       "a": 5.3,
-       "inv": 24.9
       }
      ]
     },
     "away": {
      "scorers": [
+      {
+       "id": 48489,
+       "name": "M. Muheim",
+       "p": 17.7,
+       "gl": 3,
+       "ap": 5,
+       "price": {
+        "odd": 13.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 13.0
+        }
+       }
+      },
       {
        "id": 1167,
        "name": "Y. Poulsen",
@@ -3711,17 +3725,18 @@
          "Bet365": 4.5
         }
        }
-      },
-      {
-       "id": 263177,
-       "name": "A. Grønbæk",
-       "p": 13.8,
-       "gl": 1,
-       "ap": 8,
-       "price": null
       }
      ],
      "bookings": [
+      {
+       "id": 480452,
+       "name": "S. Nandja",
+       "p": 30.8,
+       "yc": 3,
+       "rc": 0,
+       "ap": 5,
+       "price": null
+      },
       {
        "id": 162265,
        "name": "W. Omari",
@@ -3730,21 +3745,12 @@
        "rc": 0,
        "ap": 7,
        "price": null
-      },
-      {
-       "id": 1427,
-       "name": "A. Sambi Lokonga",
-       "p": 20.1,
-       "yc": 2,
-       "rc": 0,
-       "ap": 7,
-       "price": null
       }
      ],
      "defender": {
-      "id": 162265,
-      "name": "W. Omari",
-      "sot": 0
+      "id": 48489,
+      "name": "M. Muheim",
+      "sot": 3
      },
      "cap": [
       {
@@ -3754,6 +3760,14 @@
        "g": 13.8,
        "a": 26.2,
        "inv": 36.4
+      },
+      {
+       "id": 48489,
+       "name": "M. Muheim",
+       "pos": "Defender",
+       "g": 17.7,
+       "a": 10.8,
+       "inv": 26.7
       },
       {
        "id": 1167,
@@ -3770,14 +3784,6 @@
        "g": 5.5,
        "a": 10.4,
        "inv": 15.3
-      },
-      {
-       "id": 69971,
-       "name": "T. Moffi",
-       "pos": "Attacker",
-       "g": 12.9,
-       "a": 2.6,
-       "inv": 15.2
       }
      ]
     }
@@ -4018,7 +4024,7 @@
    "goals": {
     "home": {
      "fh": 42.04217212151905,
-     "sh": 58.471401632221955,
+     "sh": 58.47140163222194,
      "any": 75.93092643765755
     },
     "away": {
@@ -4027,7 +4033,7 @@
      "any": 76.22091174667689
     },
     "match_fh": 69.6974825855674,
-    "match_sh": 81.11243971624383
+    "match_sh": 81.11243971624381
    },
    "players": {
     "home": {
@@ -4104,20 +4110,20 @@
        "inv": 65.3
       },
       {
+       "id": 202526,
+       "name": "E. Dinkçi",
+       "pos": "Attacker",
+       "g": 25.3,
+       "a": 14.6,
+       "inv": 36.3
+      },
+      {
        "id": 331004,
        "name": "Chuky San José",
        "pos": "Midfielder",
        "g": 15.2,
        "a": 23.8,
        "inv": 35.4
-      },
-      {
-       "id": 38124,
-       "name": "L. Reis",
-       "pos": "Midfielder",
-       "g": 22.5,
-       "a": 5.8,
-       "inv": 26.9
       }
      ]
     },
