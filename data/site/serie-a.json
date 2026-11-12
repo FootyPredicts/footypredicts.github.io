@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-12T13:38:59.625125+00:00",
+ "updated": "2026-11-12T13:47:44.634266+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -596,16 +596,16 @@
    },
    "goals": {
     "home": {
-     "fh": 52.388947825286046,
+     "fh": 52.38894782528606,
      "sh": 61.22398967036751,
-     "any": 81.5383334906862
+     "any": 81.53833349068621
     },
     "away": {
      "fh": 38.70510860050871,
      "sh": 39.66532209344763,
      "any": 63.01792470094586
     },
-    "match_fh": 70.81685727535394,
+    "match_fh": 70.81685727535395,
     "match_sh": 76.60461906260477
    },
    "players": {
@@ -2107,8 +2107,442 @@
    }
   },
   {
-   "id": 1550206,
+   "id": 1550201,
    "kickoff": "2026-11-22T11:30:00",
+   "round": "Regular Season - 12",
+   "home": "Juventus",
+   "away": "Venezia",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 69.5,
+    "draw": 19.0,
+    "away": 11.6
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 66.0,
+   "draw_pct": 23.1,
+   "away_pct": 10.9,
+   "xg_home": 1.82,
+   "xg_away": 0.6,
+   "over25": 43.7,
+   "btts": 38.8,
+   "cards5": 29.2,
+   "cards": {
+    "exp": 3.58,
+    "home": 1.51,
+    "away": 2.07,
+    "over": {
+     "2.5": 68.4,
+     "3.5": 47.6,
+     "4.5": 29.2,
+     "5.5": 16.0,
+     "6.5": 7.8
+    }
+   },
+   "form": {
+    "home": {
+     "played": 5,
+     "win": 60.0,
+     "over25": 20.0,
+     "btts": 20.0
+    },
+    "away": {
+     "played": 5,
+     "win": 0.0,
+     "over25": 40.0,
+     "btts": 40.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 50.64939178638066,
+     "sh": 64.52576885630118,
+     "any": 82.49325117147946
+    },
+    "away": {
+     "fh": 22.621353629604567,
+     "sh": 42.813462554102344,
+     "any": 55.74983141826508
+    },
+    "match_fh": 61.81316738874416,
+    "match_sh": 79.71351552336439
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 26315,
+       "name": "N. González",
+       "p": 23.0,
+       "gl": 1,
+       "ap": 6,
+       "price": {
+        "odd": 2.88,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.88
+        }
+       }
+      },
+      {
+       "id": 395559,
+       "name": "Kerim-Sam Alajbegović",
+       "p": 20.1,
+       "gl": 1,
+       "ap": 10,
+       "price": {
+        "odd": 2.38,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.38
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 1929,
+       "name": "J. Lucumí",
+       "p": 22.6,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      },
+      {
+       "id": 47522,
+       "name": "Douglas Luiz",
+       "p": 16.0,
+       "yc": 2,
+       "rc": 0,
+       "ap": 11,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 30497,
+      "name": "Bremer",
+      "sot": 4
+     },
+     "cap": [
+      {
+       "id": 21104,
+       "name": "R. Kolo Muani",
+       "pos": "Attacker",
+       "g": 18.7,
+       "a": 20.0,
+       "inv": 35.0
+      },
+      {
+       "id": 47522,
+       "name": "Douglas Luiz",
+       "pos": "Midfielder",
+       "g": 13.9,
+       "a": 19.6,
+       "inv": 30.8
+      },
+      {
+       "id": 161585,
+       "name": "Francisco Conceição",
+       "pos": "Midfielder",
+       "g": 17.7,
+       "a": 14.5,
+       "inv": 29.6
+      },
+      {
+       "id": 395559,
+       "name": "Kerim-Sam Alajbegović",
+       "pos": "Attacker",
+       "g": 20.1,
+       "a": 11.1,
+       "inv": 28.9
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 57446,
+       "name": "A. Adams",
+       "p": 17.2,
+       "gl": 2,
+       "ap": 11,
+       "price": {
+        "odd": 4.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.5
+        }
+       }
+      },
+      {
+       "id": 25414,
+       "name": "J. Yeboah",
+       "p": 10.8,
+       "gl": 1,
+       "ap": 11,
+       "price": {
+        "odd": 4.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.5
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 373825,
+       "name": "J. Schingtienne",
+       "p": 25.9,
+       "yc": 3,
+       "rc": 0,
+       "ap": 7,
+       "price": null
+      },
+      {
+       "id": 774,
+       "name": "Juan Jesus",
+       "p": 25.6,
+       "yc": 3,
+       "rc": 0,
+       "ap": 8,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 326183,
+      "name": "R. Halhal",
+      "sot": 1
+     },
+     "cap": [
+      {
+       "id": 57446,
+       "name": "A. Adams",
+       "pos": "Attacker",
+       "g": 17.2,
+       "a": 2.4,
+       "inv": 19.1
+      },
+      {
+       "id": 275394,
+       "name": "A. Hainaut",
+       "pos": "Midfielder",
+       "g": 8.6,
+       "a": 10.3,
+       "inv": 17.9
+      },
+      {
+       "id": 51266,
+       "name": "G. Busio",
+       "pos": "Midfielder",
+       "g": 3.5,
+       "a": 13.4,
+       "inv": 16.5
+      },
+      {
+       "id": 25414,
+       "name": "J. Yeboah",
+       "pos": "Attacker",
+       "g": 10.8,
+       "a": 2.2,
+       "inv": 12.8
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": [
+     {
+      "id": 26095,
+      "name": "M. Šverko",
+      "type": "Missing Fixture",
+      "reason": "Hip Injury"
+     }
+    ]
+   },
+   "lineup_confirmed": false,
+   "previous": [
+    {
+     "date": "25/05/2025",
+     "home": "Venezia",
+     "away": "Juventus",
+     "hg": 2,
+     "ag": 3,
+     "ht": [
+      1,
+      2
+     ],
+     "ref": "A. Colombo",
+     "sx": {
+      "h": {
+       "pos": 43.0,
+       "xg": 0.88,
+       "sh": 12.0,
+       "sot": 5.0,
+       "co": 6.0,
+       "fo": 10.0,
+       "of": 0.0,
+       "sv": 2.0,
+       "pp": 76.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 57.0,
+       "xg": 1.96,
+       "sh": 15.0,
+       "sot": 5.0,
+       "co": 6.0,
+       "fo": 18.0,
+       "of": 3.0,
+       "sv": 3.0,
+       "pp": 86.0,
+       "yc": 2.0,
+       "rc": 0.0
+      }
+     }
+    },
+    {
+     "date": "14/12/2024",
+     "home": "Juventus",
+     "away": "Venezia",
+     "hg": 2,
+     "ag": 2,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "A. Giua",
+     "sx": {
+      "h": {
+       "pos": 69.0,
+       "xg": 2.19,
+       "sh": 12.0,
+       "sot": 4.0,
+       "co": 7.0,
+       "fo": 9.0,
+       "of": 2.0,
+       "sv": 0.0,
+       "pp": 91.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 31.0,
+       "xg": 0.59,
+       "sh": 8.0,
+       "sot": 2.0,
+       "co": 4.0,
+       "fo": 8.0,
+       "of": 0.0,
+       "sv": 3.0,
+       "pp": 84.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     }
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 1.4,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.33,
+      "Betfair": 1.33
+     }
+    },
+    "draw": {
+     "odd": 5.39,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 4.75,
+      "Betfair": 5.0
+     }
+    },
+    "away": {
+     "odd": 8.8,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 8.0,
+      "Betfair": 8.0
+     }
+    },
+    "over25": {
+     "odd": 1.68,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.62
+     }
+    },
+    "under25": {
+     "odd": 2.39,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.3
+     }
+    },
+    "btts_yes": {
+     "odd": 1.91,
+     "bookie": "Bet365",
+     "books": {
+      "Bet365": 1.91
+     }
+    },
+    "btts_no": {
+     "odd": 1.91,
+     "bookie": "Bet365",
+     "books": {
+      "Bet365": 1.91
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1550206,
+   "kickoff": "2026-11-22T14:00:00",
    "round": "Regular Season - 12",
    "home": "Sassuolo",
    "away": "Genoa",
@@ -2572,345 +3006,8 @@
    }
   },
   {
-   "id": 1550197,
-   "kickoff": "2026-11-22T14:00:00",
-   "round": "Regular Season - 12",
-   "home": "AC Milan",
-   "away": "Frosinone",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": true,
-   "market": {
-    "home": 61.8,
-    "draw": 21.4,
-    "away": 16.8
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    },
-    "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 41.4,
-   "draw_pct": 23.6,
-   "away_pct": 35.0,
-   "xg_home": 1.84,
-   "xg_away": 1.68,
-   "over25": 68.3,
-   "btts": 69.2,
-   "cards5": 36.7,
-   "cards": {
-    "exp": 3.98,
-    "home": 2.0,
-    "away": 1.98,
-    "over": {
-     "2.5": 74.8,
-     "3.5": 55.5,
-     "4.5": 36.7,
-     "5.5": 21.8,
-     "6.5": 11.7
-    }
-   },
-   "form": {
-    "home": {
-     "played": 5,
-     "win": 80.0,
-     "over25": 80.0,
-     "btts": 60.0
-    },
-    "away": {
-     "played": 5,
-     "win": 20.0,
-     "over25": 60.0,
-     "btts": 40.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 50.1675344905657,
-     "sh": 54.497940049224404,
-     "any": 77.32520166894763
-    },
-    "away": {
-     "fh": 61.65354722372107,
-     "sh": 53.749391765299094,
-     "any": 82.26453235453864
-    },
-    "match_fh": 80.89101714616929,
-    "match_sh": 78.95502051344803
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 335056,
-       "name": "Diego Moreira",
-       "p": 26.9,
-       "gl": 4,
-       "ap": 7,
-       "price": {
-        "odd": 3.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.0
-        }
-       }
-      },
-      {
-       "id": 359100,
-       "name": "A. Cissè",
-       "p": 26.2,
-       "gl": 5,
-       "ap": 8,
-       "price": {
-        "odd": 2.25,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.25
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 45826,
-       "name": "S. Pavlović",
-       "p": 23.1,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      },
-      {
-       "id": 162141,
-       "name": "K. De Winter",
-       "p": 21.7,
-       "yc": 3,
-       "rc": 0,
-       "ap": 11,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 45826,
-      "name": "S. Pavlović",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 335056,
-       "name": "Diego Moreira",
-       "pos": "Attacker",
-       "g": 26.9,
-       "a": 24.2,
-       "inv": 44.6
-      },
-      {
-       "id": 272,
-       "name": "A. Rabiot",
-       "pos": "Midfielder",
-       "g": 22.5,
-       "a": 26.6,
-       "inv": 43.1
-      },
-      {
-       "id": 41585,
-       "name": "Gonçalo Ramos",
-       "pos": "Attacker",
-       "g": 21.2,
-       "a": 14.9,
-       "inv": 32.9
-      },
-      {
-       "id": 17,
-       "name": "C. Pulišić",
-       "pos": "Midfielder",
-       "g": 22.3,
-       "a": 10.3,
-       "inv": 30.3
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 314254,
-       "name": "A. Raimondo",
-       "p": 28.3,
-       "gl": 8,
-       "ap": 10,
-       "price": null
-      },
-      {
-       "id": 32011,
-       "name": "G. Calò",
-       "p": 20.5,
-       "gl": 5,
-       "ap": 11,
-       "price": {
-        "odd": 5.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 379504,
-       "name": "G. Bracaglia",
-       "p": 32.1,
-       "yc": 5,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      },
-      {
-       "id": 314254,
-       "name": "A. Raimondo",
-       "p": 20.6,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 379504,
-      "name": "G. Bracaglia",
-      "sot": 5
-     },
-     "cap": [
-      {
-       "id": 334915,
-       "name": "F. Ghedjemis",
-       "pos": "Attacker",
-       "g": 16.8,
-       "a": 20.9,
-       "inv": 34.3
-      },
-      {
-       "id": 314254,
-       "name": "A. Raimondo",
-       "pos": "Attacker",
-       "g": 28.3,
-       "a": 2.7,
-       "inv": 30.2
-      },
-      {
-       "id": 311251,
-       "name": "G. Kvernadze",
-       "pos": "Midfielder",
-       "g": 13.0,
-       "a": 18.7,
-       "inv": 29.3
-      },
-      {
-       "id": 7562,
-       "name": "R. Schmid",
-       "pos": "Midfielder",
-       "g": 9.5,
-       "a": 18.4,
-       "inv": 26.2
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [],
-    "away": []
-   },
-   "lineup_confirmed": false,
-   "previous": [],
-   "odds": {
-    "home": {
-     "odd": 1.61,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.5
-     }
-    },
-    "draw": {
-     "odd": 4.99,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 4.33
-     }
-    },
-    "away": {
-     "odd": 5.5,
-     "bookie": "Bet365",
-     "books": {
-      "Bet365": 5.5
-     }
-    },
-    "over25": {
-     "odd": 1.37,
-     "bookie": "Betano",
-     "books": {
-      "Bet365": 1.36
-     }
-    },
-    "under25": {
-     "odd": 3.22,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 3.2
-     }
-    },
-    "btts_yes": {
-     "odd": 1.47,
-     "bookie": "Betano",
-     "books": {
-      "Bet365": 1.44
-     }
-    },
-    "btts_no": {
-     "odd": 2.77,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 2.62
-     }
-    },
-    "cards_over45": null,
-    "cards": {
-     "2.5": {
-      "over": null,
-      "under": null
-     },
-     "3.5": {
-      "over": null,
-      "under": null
-     },
-     "4.5": {
-      "over": null,
-      "under": null
-     },
-     "5.5": {
-      "over": null,
-      "under": null
-     },
-     "6.5": {
-      "over": null,
-      "under": null
-     }
-    }
-   }
-  },
-  {
    "id": 1550199,
-   "kickoff": "2026-11-22T17:00:00",
+   "kickoff": "2026-11-22T14:00:00",
    "round": "Regular Season - 12",
    "home": "Bologna",
    "away": "Udinese",
@@ -3382,6 +3479,343 @@
      "bookie": "Bet365",
      "books": {
       "Bet365": 1.95
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1550197,
+   "kickoff": "2026-11-22T17:00:00",
+   "round": "Regular Season - 12",
+   "home": "AC Milan",
+   "away": "Frosinone",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": true,
+   "market": {
+    "home": 61.8,
+    "draw": 21.4,
+    "away": 16.8
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 41.4,
+   "draw_pct": 23.6,
+   "away_pct": 35.0,
+   "xg_home": 1.84,
+   "xg_away": 1.68,
+   "over25": 68.3,
+   "btts": 69.2,
+   "cards5": 36.7,
+   "cards": {
+    "exp": 3.98,
+    "home": 2.0,
+    "away": 1.98,
+    "over": {
+     "2.5": 74.8,
+     "3.5": 55.5,
+     "4.5": 36.7,
+     "5.5": 21.8,
+     "6.5": 11.7
+    }
+   },
+   "form": {
+    "home": {
+     "played": 5,
+     "win": 80.0,
+     "over25": 80.0,
+     "btts": 60.0
+    },
+    "away": {
+     "played": 5,
+     "win": 20.0,
+     "over25": 60.0,
+     "btts": 40.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 50.1675344905657,
+     "sh": 54.497940049224404,
+     "any": 77.32520166894763
+    },
+    "away": {
+     "fh": 61.65354722372107,
+     "sh": 53.749391765299094,
+     "any": 82.26453235453864
+    },
+    "match_fh": 80.89101714616929,
+    "match_sh": 78.95502051344803
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 335056,
+       "name": "Diego Moreira",
+       "p": 26.9,
+       "gl": 4,
+       "ap": 7,
+       "price": {
+        "odd": 3.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.0
+        }
+       }
+      },
+      {
+       "id": 359100,
+       "name": "A. Cissè",
+       "p": 26.2,
+       "gl": 5,
+       "ap": 8,
+       "price": {
+        "odd": 2.25,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.25
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 45826,
+       "name": "S. Pavlović",
+       "p": 23.1,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      },
+      {
+       "id": 162141,
+       "name": "K. De Winter",
+       "p": 21.7,
+       "yc": 3,
+       "rc": 0,
+       "ap": 11,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 45826,
+      "name": "S. Pavlović",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 335056,
+       "name": "Diego Moreira",
+       "pos": "Attacker",
+       "g": 26.9,
+       "a": 24.2,
+       "inv": 44.6
+      },
+      {
+       "id": 272,
+       "name": "A. Rabiot",
+       "pos": "Midfielder",
+       "g": 22.5,
+       "a": 26.6,
+       "inv": 43.1
+      },
+      {
+       "id": 41585,
+       "name": "Gonçalo Ramos",
+       "pos": "Attacker",
+       "g": 21.2,
+       "a": 14.9,
+       "inv": 32.9
+      },
+      {
+       "id": 17,
+       "name": "C. Pulišić",
+       "pos": "Midfielder",
+       "g": 22.3,
+       "a": 10.3,
+       "inv": 30.3
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 314254,
+       "name": "A. Raimondo",
+       "p": 28.3,
+       "gl": 8,
+       "ap": 10,
+       "price": null
+      },
+      {
+       "id": 32011,
+       "name": "G. Calò",
+       "p": 20.5,
+       "gl": 5,
+       "ap": 11,
+       "price": {
+        "odd": 5.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 5.0
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 379504,
+       "name": "G. Bracaglia",
+       "p": 32.1,
+       "yc": 5,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      },
+      {
+       "id": 314254,
+       "name": "A. Raimondo",
+       "p": 20.6,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 379504,
+      "name": "G. Bracaglia",
+      "sot": 5
+     },
+     "cap": [
+      {
+       "id": 334915,
+       "name": "F. Ghedjemis",
+       "pos": "Attacker",
+       "g": 16.8,
+       "a": 20.9,
+       "inv": 34.3
+      },
+      {
+       "id": 314254,
+       "name": "A. Raimondo",
+       "pos": "Attacker",
+       "g": 28.3,
+       "a": 2.7,
+       "inv": 30.2
+      },
+      {
+       "id": 311251,
+       "name": "G. Kvernadze",
+       "pos": "Midfielder",
+       "g": 13.0,
+       "a": 18.7,
+       "inv": 29.3
+      },
+      {
+       "id": 7562,
+       "name": "R. Schmid",
+       "pos": "Midfielder",
+       "g": 9.5,
+       "a": 18.4,
+       "inv": 26.2
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "lineup_confirmed": false,
+   "previous": [],
+   "odds": {
+    "home": {
+     "odd": 1.61,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.5
+     }
+    },
+    "draw": {
+     "odd": 4.99,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 4.33
+     }
+    },
+    "away": {
+     "odd": 5.5,
+     "bookie": "Bet365",
+     "books": {
+      "Bet365": 5.5
+     }
+    },
+    "over25": {
+     "odd": 1.37,
+     "bookie": "Betano",
+     "books": {
+      "Bet365": 1.36
+     }
+    },
+    "under25": {
+     "odd": 3.22,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 3.2
+     }
+    },
+    "btts_yes": {
+     "odd": 1.47,
+     "bookie": "Betano",
+     "books": {
+      "Bet365": 1.44
+     }
+    },
+    "btts_no": {
+     "odd": 2.77,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.62
      }
     },
     "cards_over45": null,
@@ -3903,7 +4337,7 @@
   },
   {
    "id": 1550203,
-   "kickoff": "2026-11-23T17:30:00",
+   "kickoff": "2026-11-23T19:45:00",
    "round": "Regular Season - 12",
    "home": "Monza",
    "away": "Fiorentina",
@@ -4305,440 +4739,6 @@
      "bookie": "Betano",
      "books": {
       "Bet365": 2.38
-     }
-    },
-    "cards_over45": null,
-    "cards": {
-     "2.5": {
-      "over": null,
-      "under": null
-     },
-     "3.5": {
-      "over": null,
-      "under": null
-     },
-     "4.5": {
-      "over": null,
-      "under": null
-     },
-     "5.5": {
-      "over": null,
-      "under": null
-     },
-     "6.5": {
-      "over": null,
-      "under": null
-     }
-    }
-   }
-  },
-  {
-   "id": 1550201,
-   "kickoff": "2026-11-23T19:45:00",
-   "round": "Regular Season - 12",
-   "home": "Juventus",
-   "away": "Venezia",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 69.5,
-    "draw": 19.0,
-    "away": 11.6
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    },
-    "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 66.0,
-   "draw_pct": 23.1,
-   "away_pct": 10.9,
-   "xg_home": 1.82,
-   "xg_away": 0.6,
-   "over25": 43.7,
-   "btts": 38.8,
-   "cards5": 29.2,
-   "cards": {
-    "exp": 3.58,
-    "home": 1.51,
-    "away": 2.07,
-    "over": {
-     "2.5": 68.4,
-     "3.5": 47.6,
-     "4.5": 29.2,
-     "5.5": 16.0,
-     "6.5": 7.8
-    }
-   },
-   "form": {
-    "home": {
-     "played": 5,
-     "win": 60.0,
-     "over25": 20.0,
-     "btts": 20.0
-    },
-    "away": {
-     "played": 5,
-     "win": 0.0,
-     "over25": 40.0,
-     "btts": 40.0
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 50.64939178638066,
-     "sh": 64.52576885630118,
-     "any": 82.49325117147946
-    },
-    "away": {
-     "fh": 22.621353629604567,
-     "sh": 42.813462554102344,
-     "any": 55.74983141826508
-    },
-    "match_fh": 61.81316738874416,
-    "match_sh": 79.71351552336439
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 26315,
-       "name": "N. González",
-       "p": 23.0,
-       "gl": 1,
-       "ap": 6,
-       "price": {
-        "odd": 2.88,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.88
-        }
-       }
-      },
-      {
-       "id": 395559,
-       "name": "Kerim-Sam Alajbegović",
-       "p": 20.1,
-       "gl": 1,
-       "ap": 10,
-       "price": {
-        "odd": 2.38,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.38
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 1929,
-       "name": "J. Lucumí",
-       "p": 22.6,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      },
-      {
-       "id": 47522,
-       "name": "Douglas Luiz",
-       "p": 16.0,
-       "yc": 2,
-       "rc": 0,
-       "ap": 11,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 30497,
-      "name": "Bremer",
-      "sot": 4
-     },
-     "cap": [
-      {
-       "id": 21104,
-       "name": "R. Kolo Muani",
-       "pos": "Attacker",
-       "g": 18.7,
-       "a": 20.0,
-       "inv": 35.0
-      },
-      {
-       "id": 47522,
-       "name": "Douglas Luiz",
-       "pos": "Midfielder",
-       "g": 13.9,
-       "a": 19.6,
-       "inv": 30.8
-      },
-      {
-       "id": 161585,
-       "name": "Francisco Conceição",
-       "pos": "Midfielder",
-       "g": 17.7,
-       "a": 14.5,
-       "inv": 29.6
-      },
-      {
-       "id": 395559,
-       "name": "Kerim-Sam Alajbegović",
-       "pos": "Attacker",
-       "g": 20.1,
-       "a": 11.1,
-       "inv": 28.9
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 57446,
-       "name": "A. Adams",
-       "p": 17.2,
-       "gl": 2,
-       "ap": 11,
-       "price": {
-        "odd": 4.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.5
-        }
-       }
-      },
-      {
-       "id": 25414,
-       "name": "J. Yeboah",
-       "p": 10.8,
-       "gl": 1,
-       "ap": 11,
-       "price": {
-        "odd": 4.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.5
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 373825,
-       "name": "J. Schingtienne",
-       "p": 25.9,
-       "yc": 3,
-       "rc": 0,
-       "ap": 7,
-       "price": null
-      },
-      {
-       "id": 774,
-       "name": "Juan Jesus",
-       "p": 25.6,
-       "yc": 3,
-       "rc": 0,
-       "ap": 8,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 326183,
-      "name": "R. Halhal",
-      "sot": 1
-     },
-     "cap": [
-      {
-       "id": 57446,
-       "name": "A. Adams",
-       "pos": "Attacker",
-       "g": 17.2,
-       "a": 2.4,
-       "inv": 19.1
-      },
-      {
-       "id": 275394,
-       "name": "A. Hainaut",
-       "pos": "Midfielder",
-       "g": 8.6,
-       "a": 10.3,
-       "inv": 17.9
-      },
-      {
-       "id": 51266,
-       "name": "G. Busio",
-       "pos": "Midfielder",
-       "g": 3.5,
-       "a": 13.4,
-       "inv": 16.5
-      },
-      {
-       "id": 25414,
-       "name": "J. Yeboah",
-       "pos": "Attacker",
-       "g": 10.8,
-       "a": 2.2,
-       "inv": 12.8
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [],
-    "away": [
-     {
-      "id": 26095,
-      "name": "M. Šverko",
-      "type": "Missing Fixture",
-      "reason": "Hip Injury"
-     }
-    ]
-   },
-   "lineup_confirmed": false,
-   "previous": [
-    {
-     "date": "25/05/2025",
-     "home": "Venezia",
-     "away": "Juventus",
-     "hg": 2,
-     "ag": 3,
-     "ht": [
-      1,
-      2
-     ],
-     "ref": "A. Colombo",
-     "sx": {
-      "h": {
-       "pos": 43.0,
-       "xg": 0.88,
-       "sh": 12.0,
-       "sot": 5.0,
-       "co": 6.0,
-       "fo": 10.0,
-       "of": 0.0,
-       "sv": 2.0,
-       "pp": 76.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 57.0,
-       "xg": 1.96,
-       "sh": 15.0,
-       "sot": 5.0,
-       "co": 6.0,
-       "fo": 18.0,
-       "of": 3.0,
-       "sv": 3.0,
-       "pp": 86.0,
-       "yc": 2.0,
-       "rc": 0.0
-      }
-     }
-    },
-    {
-     "date": "14/12/2024",
-     "home": "Juventus",
-     "away": "Venezia",
-     "hg": 2,
-     "ag": 2,
-     "ht": [
-      1,
-      0
-     ],
-     "ref": "A. Giua",
-     "sx": {
-      "h": {
-       "pos": 69.0,
-       "xg": 2.19,
-       "sh": 12.0,
-       "sot": 4.0,
-       "co": 7.0,
-       "fo": 9.0,
-       "of": 2.0,
-       "sv": 0.0,
-       "pp": 91.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 31.0,
-       "xg": 0.59,
-       "sh": 8.0,
-       "sot": 2.0,
-       "co": 4.0,
-       "fo": 8.0,
-       "of": 0.0,
-       "sv": 3.0,
-       "pp": 84.0,
-       "yc": 3.0,
-       "rc": 0.0
-      }
-     }
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 1.4,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.33,
-      "Betfair": 1.33
-     }
-    },
-    "draw": {
-     "odd": 5.39,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 4.75,
-      "Betfair": 5.0
-     }
-    },
-    "away": {
-     "odd": 8.8,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 8.0,
-      "Betfair": 8.0
-     }
-    },
-    "over25": {
-     "odd": 1.68,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.62
-     }
-    },
-    "under25": {
-     "odd": 2.39,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 2.3
-     }
-    },
-    "btts_yes": {
-     "odd": 1.91,
-     "bookie": "Bet365",
-     "books": {
-      "Bet365": 1.91
-     }
-    },
-    "btts_no": {
-     "odd": 1.91,
-     "bookie": "Bet365",
-     "books": {
-      "Bet365": 1.91
      }
     },
     "cards_over45": null,
