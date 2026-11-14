@@ -4582,7 +4582,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:38:57Z"
   },
   {
    "id": 1563861,
@@ -4612,7 +4615,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 58,
+     "side": "away",
+     "player": "Iwan Morgan",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:38:57Z"
   },
   {
    "id": 1563856,
@@ -4642,7 +4655,23 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 58,
+     "side": "away",
+     "player": "Alex Henderson",
+     "own": false
+    },
+    {
+     "min": 61,
+     "side": "home",
+     "player": "Jaheim·Headley",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-14T16:38:58Z"
   },
   {
    "id": 1564412,
@@ -4672,7 +4701,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 52,
+     "side": "home",
+     "player": "Jack Diamond",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-14T16:38:58Z"
   },
   {
    "id": 1564408,
@@ -4702,7 +4741,29 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 54,
+     "side": "away",
+     "player": "Emeka Adeile",
+     "own": false
+    },
+    {
+     "min": 56,
+     "side": "away",
+     "player": "H. Araujo",
+     "own": true
+    },
+    {
+     "min": 67,
+     "side": "home",
+     "player": "Sam Nombe",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-14T16:38:58Z"
   },
   {
    "id": 1563859,
@@ -4732,7 +4793,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 64,
+     "side": "home",
+     "player": "Kallum Cesay",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:38:58Z"
   },
   {
    "id": 1564413,
@@ -4762,7 +4833,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 75,
+     "side": "home",
+     "player": "Jensen Weir",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:38:59Z"
   },
   {
    "id": 1563852,
@@ -4792,7 +4873,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 61,
+     "side": "home",
+     "player": "Jack Payne",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:38:59Z"
   },
   {
    "id": 1564410,
@@ -4822,39 +4913,561 @@
      "xg": null
     }
    },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:38:59Z"
+  },
+  {
+   "id": 1563852,
+   "lg": 42,
+   "home": "Colchester",
+   "away": "Gillingham",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:38:57Z",
+   "min": 76,
+   "sh": 2,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Colchester",
+   "ratio": 1.25,
+   "P": 0.413,
+   "stats": {
+    "h": {
+     "sh": 11,
+     "sot": 6,
+     "co": 2,
+     "xg": null
+    },
+    "a": {
+     "sh": 8,
+     "sot": 3,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T17:00:13Z"
+  },
+  {
+   "id": 1563856,
+   "lg": 42,
+   "home": "Port Vale",
+   "away": "Accrington ST",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:38:57Z",
+   "min": 81,
+   "sh": 3,
+   "sa": 1,
+   "who": "home",
+   "who_name": "Port Vale",
+   "ratio": 1.33,
+   "P": 0.409,
+   "stats": {
+    "h": {
+     "sh": 14,
+     "sot": 8,
+     "co": 7,
+     "xg": null
+    },
+    "a": {
+     "sh": 7,
+     "sot": 2,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "win",
+   "goals": [
+    {
+     "min": 85,
+     "side": "away",
+     "player": "Tyler Walton",
+     "own": false
+    },
+    {
+     "min": 90,
+     "side": "away",
+     "player": "Tom William Moore",
+     "own": true
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:54:07Z"
+  },
+  {
+   "id": 1563861,
+   "lg": 42,
+   "home": "Swindon Town",
+   "away": "Grimsby",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:38:57Z",
+   "min": 82,
+   "sh": 0,
+   "sa": 4,
+   "who": "away",
+   "who_name": "Grimsby",
+   "ratio": 1.39,
+   "P": 0.401,
+   "stats": {
+    "h": {
+     "sh": 5,
+     "sot": 1,
+     "co": 5,
+     "xg": null
+    },
+    "a": {
+     "sh": 19,
+     "sot": 8,
+     "co": 9,
+     "xg": null
+    }
+   },
+   "result": "win",
+   "goals": [
+    {
+     "min": 85,
+     "side": "home",
+     "player": "Aaron Drinan",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:55:39Z"
+  },
+  {
+   "id": 1564408,
+   "lg": 41,
+   "home": "Milton Keynes Dons",
+   "away": "Burton Albion",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:38:57Z",
+   "min": 82,
+   "sh": 6,
+   "sa": 2,
+   "who": "home",
+   "who_name": "Milton Keynes Dons",
+   "ratio": 1.4,
+   "P": 0.403,
+   "stats": {
+    "h": {
+     "sh": 18,
+     "sot": 10,
+     "co": 2,
+     "xg": null
+    },
+    "a": {
+     "sh": 5,
+     "sot": 2,
+     "co": 1,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:54:07Z"
+  },
+  {
+   "id": 1564410,
+   "lg": 41,
+   "home": "Sheffield Wednesday",
+   "away": "Plymouth",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:38:57Z",
+   "min": 82,
+   "sh": 3,
+   "sa": 0,
+   "who": "both sides",
+   "who_name": "both sides",
+   "ratio": 1.36,
+   "P": 0.395,
+   "stats": {
+    "h": {
+     "sh": 13,
+     "sot": 5,
+     "co": 7,
+     "xg": null
+    },
+    "a": {
+     "sh": 12,
+     "sot": 4,
+     "co": 4,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:54:08Z"
+  },
+  {
+   "id": 1564412,
+   "lg": 41,
+   "home": "Stockport County",
+   "away": "Reading",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:38:57Z",
+   "min": 79,
+   "sh": 3,
+   "sa": 1,
+   "who": "both sides",
+   "who_name": "both sides",
+   "ratio": 1.44,
+   "P": 0.458,
+   "stats": {
+    "h": {
+     "sh": 15,
+     "sot": 6,
+     "co": 7,
+     "xg": null
+    },
+    "a": {
+     "sh": 8,
+     "sot": 5,
+     "co": 3,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:54:08Z"
+  },
+  {
+   "id": 1564403,
+   "lg": 41,
+   "home": "AFC Wimbledon",
+   "away": "Blackpool",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:45:03Z",
+   "min": 88,
+   "sh": 1,
+   "sa": 0,
+   "who": "away",
+   "who_name": "Blackpool",
+   "ratio": 1.43,
+   "P": 0.247,
+   "stats": {
+    "h": {
+     "sh": 8,
+     "sot": 2,
+     "co": 2,
+     "xg": null
+    },
+    "a": {
+     "sh": 11,
+     "sot": 3,
+     "co": 6,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:52:36Z"
+  },
+  {
+   "id": 1563857,
+   "lg": 42,
+   "home": "Rochdale",
+   "away": "York",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:46:34Z",
+   "min": 88,
+   "sh": 0,
+   "sa": 1,
+   "who": "home",
+   "who_name": "Rochdale",
+   "ratio": 1.55,
+   "P": 0.264,
+   "stats": {
+    "h": {
+     "sh": 11,
+     "sot": 3,
+     "co": 6,
+     "xg": null
+    },
+    "a": {
+     "sh": 17,
+     "sot": 3,
+     "co": 7,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:54:08Z"
+  },
+  {
+   "id": 1563859,
+   "lg": 42,
+   "home": "Salford City",
+   "away": "Northampton",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:48:04Z",
+   "min": 90,
+   "sh": 1,
+   "sa": 1,
+   "who": "away",
+   "who_name": "Northampton",
+   "ratio": 1.28,
+   "P": 0.166,
+   "stats": {
+    "h": {
+     "sh": 9,
+     "sot": 2,
+     "co": 4,
+     "xg": null
+    },
+    "a": {
+     "sh": 10,
+     "sot": 5,
+     "co": 7,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:52:36Z"
+  },
+  {
+   "id": 1563853,
+   "lg": 42,
+   "home": "Crewe",
+   "away": "Newport County",
+   "date": "2026-11-14",
+   "at": "2026-11-14T16:49:34Z",
+   "min": 90,
+   "sh": 2,
+   "sa": 2,
+   "who": "home",
+   "who_name": "Crewe",
+   "ratio": 1.28,
+   "P": 0.166,
+   "stats": {
+    "h": {
+     "sh": 9,
+     "sot": 5,
+     "co": 3,
+     "xg": null
+    },
+    "a": {
+     "sh": 14,
+     "sot": 2,
+     "co": 6,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T16:55:39Z"
+  },
+  {
+   "id": 1570022,
+   "lg": 141,
+   "home": "Real Sociedad II",
+   "away": "Sporting Gijon",
+   "date": "2026-11-14",
+   "at": "2026-11-14T17:06:15Z",
+   "min": 90,
+   "sh": 2,
+   "sa": 2,
+   "who": "both sides",
+   "who_name": "both sides",
+   "ratio": 1.26,
+   "P": 0.163,
+   "stats": {
+    "h": {
+     "sh": 13,
+     "sot": 4,
+     "co": 5,
+     "xg": null
+    },
+    "a": {
+     "sh": 14,
+     "sot": 4,
+     "co": 6,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T17:12:16Z"
+  },
+  {
+   "id": 1570020,
+   "lg": 141,
+   "home": "Mallorca",
+   "away": "Cordoba",
+   "date": "2026-11-14",
+   "at": "2026-11-14T17:40:51Z",
+   "min": 9,
+   "sh": 0,
+   "sa": 1,
+   "who": "both sides",
+   "who_name": "both sides",
+   "ratio": 1.5,
+   "P": 0.471,
+   "stats": {
+    "h": {
+     "sh": 1,
+     "sot": 1,
+     "co": 0,
+     "xg": null
+    },
+    "a": {
+     "sh": 1,
+     "sot": 1,
+     "co": 0,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T17:55:55Z"
+  },
+  {
+   "id": 1570015,
+   "lg": 141,
+   "home": "Almeria",
+   "away": "FC Andorra",
+   "date": "2026-11-14",
+   "at": "2026-11-14T17:45:22Z",
+   "min": 16,
+   "sh": 0,
+   "sa": 0,
+   "who": "away",
+   "who_name": "FC Andorra",
+   "ratio": 1.28,
+   "P": 0.419,
+   "stats": {
+    "h": {
+     "sh": 1,
+     "sot": 1,
+     "co": 0,
+     "xg": null
+    },
+    "a": {
+     "sh": 2,
+     "sot": 1,
+     "co": 0,
+     "xg": null
+    }
+   },
+   "result": "win",
+   "goals": [
+    {
+     "min": 26,
+     "side": "home",
+     "player": "Sergio Arribas Calvo",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T18:00:27Z"
+  },
+  {
+   "id": 1563855,
+   "lg": 42,
+   "home": "Fleetwood Town",
+   "away": "Tranmere",
+   "date": "2026-11-14",
+   "at": "2026-11-14T17:58:56Z",
+   "min": 29,
+   "sh": 0,
+   "sa": 0,
+   "who": "away",
+   "who_name": "Tranmere",
+   "ratio": 1.31,
+   "P": 0.426,
+   "stats": {
+    "h": {
+     "sh": 3,
+     "sot": 1,
+     "co": 0,
+     "xg": null
+    },
+    "a": {
+     "sh": 3,
+     "sot": 1,
+     "co": 3,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-14T18:14:02Z"
+  },
+  {
+   "id": 1570015,
+   "lg": 141,
+   "home": "Almeria",
+   "away": "FC Andorra",
+   "date": "2026-11-14",
+   "at": "2026-11-14T18:00:26Z",
+   "min": 31,
+   "sh": 1,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Almeria",
+   "ratio": 1.57,
+   "P": 0.487,
+   "stats": {
+    "h": {
+     "sh": 3,
+     "sot": 3,
+     "co": 0,
+     "xg": null
+    },
+    "a": {
+     "sh": 3,
+     "sot": 2,
+     "co": 0,
+     "xg": null
+    }
+   },
    "result": "open"
   }
  ],
  "summary": {
   "by_minute": {
    "0-30": {
-    "flags": 23,
-    "wins": 5,
-    "avg_model_chance": 0.459
+    "flags": 26,
+    "wins": 6,
+    "avg_model_chance": 0.457
    },
    "30-60": {
-    "flags": 35,
-    "wins": 16,
+    "flags": 42,
+    "wins": 22,
     "avg_model_chance": 0.46
    },
    "60-75": {
-    "flags": 27,
-    "wins": 12,
-    "avg_model_chance": 0.466
+    "flags": 29,
+    "wins": 13,
+    "avg_model_chance": 0.465
    },
    "75+": {
-    "flags": 41,
-    "wins": 15,
-    "avg_model_chance": 0.381
+    "flags": 52,
+    "wins": 17,
+    "avg_model_chance": 0.368
    }
   },
-  "flags": 135,
-  "resolved": 126,
-  "wins": 48,
-  "hit_rate": 0.381,
-  "avg_model_chance": 0.436,
-  "side_flags": 108,
-  "side_scored": 29,
-  "updated": "2026-11-14T16:20:55Z"
+  "flags": 150,
+  "resolved": 149,
+  "wins": 58,
+  "hit_rate": 0.389,
+  "avg_model_chance": 0.428,
+  "side_flags": 125,
+  "side_scored": 32,
+  "updated": "2026-11-14T18:33:38Z"
  }
 }
