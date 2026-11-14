@@ -4946,19 +4946,29 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 66,
+     "side": "away",
+     "player": "Hugo López",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-14T20:01:18Z"
   }
  ],
  "summary": {
   "by_minute": {
    "0-30": {
-    "flags": 26,
-    "wins": 6,
-    "avg_model_chance": 0.457
+    "flags": 23,
+    "wins": 5,
+    "avg_model_chance": 0.459
    },
    "30-60": {
-    "flags": 42,
-    "wins": 22,
+    "flags": 43,
+    "wins": 23,
     "avg_model_chance": 0.46
    },
    "60-75": {
@@ -4967,18 +4977,18 @@
     "avg_model_chance": 0.465
    },
    "75+": {
-    "flags": 52,
-    "wins": 17,
-    "avg_model_chance": 0.368
+    "flags": 41,
+    "wins": 15,
+    "avg_model_chance": 0.381
    }
   },
   "flags": 136,
-  "resolved": 135,
-  "wins": 55,
-  "hit_rate": 0.407,
+  "resolved": 136,
+  "wins": 56,
+  "hit_rate": 0.412,
   "avg_model_chance": 0.437,
-  "side_flags": 115,
-  "side_scored": 32,
-  "updated": "2026-11-14T18:53:49Z"
+  "side_flags": 116,
+  "side_scored": 33,
+  "updated": "2026-11-14T20:20:57Z"
  }
 }
