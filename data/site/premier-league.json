@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-15T12:37:52.511529+00:00",
+ "updated": "2026-11-15T12:45:33.564344+00:00",
  "matches_used": 860,
  "fixtures": [
   {
@@ -3436,9 +3436,9 @@
    "call_reason": "",
    "low_data": true,
    "market": {
-    "home": 17.0,
-    "draw": 22.8,
-    "away": 60.2
+    "home": 16.2,
+    "draw": 21.7,
+    "away": 62.1
    },
    "injury_effect": {
     "home": {
@@ -3742,52 +3742,71 @@
    "previous": [],
    "odds": {
     "home": {
-     "odd": 6.16,
-     "bookie": "1xBet",
+     "odd": 6.18,
+     "bookie": "Pinnacle",
      "books": {
-      "Bet365": 5.5
+      "William Hill": 5.8,
+      "Bet365": 5.75,
+      "Betfair": 5.5,
+      "BetVictor": 6.0
      }
     },
     "draw": {
      "odd": 4.62,
      "bookie": "1xBet",
      "books": {
-      "Bet365": 4.1
+      "William Hill": 4.33,
+      "Bet365": 4.2,
+      "Betfair": 4.4,
+      "BetVictor": 4.2
      }
     },
     "away": {
      "odd": 1.57,
      "bookie": "1xBet",
      "books": {
-      "Bet365": 1.55
+      "William Hill": 1.5,
+      "Bet365": 1.5,
+      "Betfair": 1.5,
+      "BetVictor": 1.5
      }
     },
     "over25": {
      "odd": 1.72,
      "bookie": "1xBet",
      "books": {
-      "Bet365": 1.67
+      "Bet365": 1.67,
+      "Betfair": 1.6,
+      "BetVictor": 1.63
      }
     },
     "under25": {
      "odd": 2.31,
      "bookie": "1xBet",
      "books": {
-      "Bet365": 2.2
+      "Bet365": 2.2,
+      "Betfair": 2.2,
+      "BetVictor": 2.1
      }
     },
     "btts_yes": {
      "odd": 1.75,
      "bookie": "Bet365",
      "books": {
-      "Bet365": 1.75
+      "William Hill": 1.73,
+      "Bet365": 1.75,
+      "Betfair": 1.75,
+      "BetVictor": 1.7
      }
     },
     "btts_no": {
      "odd": 2.05,
-     "bookie": "Betano",
+     "bookie": "William Hill",
      "books": {
-      "Bet365": 2.0
+      "William Hill": 2.05,
+      "Bet365": 2.0,
+      "Betfair": 2.05,
+      "BetVictor": 2.0
      }
     },
     "cards_over45": null,
