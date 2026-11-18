@@ -3,8 +3,8 @@
  "name": "Champions League",
  "country": "Europe",
  "season": 2026,
- "updated": "2026-11-17T14:28:27.544573+00:00",
- "matches_used": 25293,
+ "updated": "2026-11-18T06:02:57.505606+00:00",
+ "matches_used": 25292,
  "euro": true,
  "fixtures": [
   {
@@ -22,9 +22,9 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 69.3,
+   "home_pct": 69.2,
    "draw_pct": 17.1,
-   "away_pct": 13.6,
+   "away_pct": 13.7,
    "xg_home": 2.72,
    "xg_away": 1.18,
    "over25": 74.8,
@@ -211,11 +211,11 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 23.6,
+   "home_pct": 23.7,
    "draw_pct": 22.6,
-   "away_pct": 53.8,
-   "xg_home": 1.33,
-   "xg_away": 2.08,
+   "away_pct": 53.7,
+   "xg_home": 1.34,
+   "xg_away": 2.07,
    "over25": 66.2,
    "btts": 65.2,
    "cards5": 0.0,
@@ -386,27 +386,27 @@
    "euro": true
   },
   {
-   "id": 1635611,
+   "id": 1635731,
    "kickoff": "2026-11-24T20:00:00",
    "round": "League Stage - 5",
-   "home": "Arsenal",
-   "away": "Borussia Dortmund",
+   "home": "Slovan Bratislava",
+   "away": "Real Betis",
    "referee": "",
    "ref_cards": null,
    "ref_games": null,
-   "pick": "Home",
-   "model_pick": "Home",
+   "pick": "Away",
+   "model_pick": "Away",
    "call_reason": "",
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 66.6,
-   "draw_pct": 22.0,
-   "away_pct": 11.4,
-   "xg_home": 1.95,
-   "xg_away": 0.68,
-   "over25": 49.0,
-   "btts": 43.2,
+   "home_pct": 10.7,
+   "draw_pct": 17.7,
+   "away_pct": 71.6,
+   "xg_home": 0.87,
+   "xg_away": 2.46,
+   "over25": 64.8,
+   "btts": 53.9,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -418,150 +418,717 @@
     "home": {
      "scorers": [
       {
-       "id": 1460,
-       "name": "B. Saka",
-       "p": 26.4,
-       "gl": 4,
-       "ap": 10
+       "id": 56026,
+       "name": "A. Šporar",
+       "p": 22.7,
+       "gl": 2,
+       "ap": 6
       },
       {
-       "id": 978,
-       "name": "K. Havertz",
-       "p": 20.7,
-       "gl": 3,
-       "ap": 13
+       "id": 286075,
+       "name": "Suleiman Camara",
+       "p": 18.8,
+       "gl": 2,
+       "ap": 8
       }
      ],
      "bookings": [
       {
-       "id": 978,
-       "name": "K. Havertz",
-       "p": 16.8,
+       "id": 2975,
+       "name": "C. Blackman",
+       "p": 22.2,
        "yc": 3,
        "rc": 0,
-       "ap": 13
+       "ap": 10
       },
       {
-       "id": 161800,
-       "name": "C. Tzolis",
-       "p": 16.7,
-       "yc": 2,
+       "id": 50911,
+       "name": "Cristian Jesús Martínez",
+       "p": 21.0,
+       "yc": 3,
        "rc": 0,
        "ap": 9
       }
      ],
      "defender": {
-      "id": 22224,
-      "name": "Gabriel Magalhães",
-      "sot": 4
+      "id": 61149,
+      "name": "K. Bajrič",
+      "sot": 2
      },
      "cap": [
       {
-       "id": 2937,
-       "name": "D. Rice",
-       "pos": "Midfielder",
-       "g": 8.9,
-       "a": 27.9,
-       "inv": 34.3
-      },
-      {
-       "id": 1460,
-       "name": "B. Saka",
-       "pos": "Midfielder",
-       "g": 26.4,
-       "a": 10.3,
-       "inv": 34.0
-      },
-      {
-       "id": 978,
-       "name": "K. Havertz",
+       "id": 56026,
+       "name": "A. Šporar",
        "pos": "Attacker",
-       "g": 20.7,
-       "a": 8.7,
-       "inv": 27.6
+       "g": 22.7,
+       "a": 5.1,
+       "inv": 26.7
       },
       {
-       "id": 136723,
-       "name": "N. Madueke",
+       "id": 286075,
+       "name": "Suleiman Camara",
        "pos": "Attacker",
-       "g": 18.5,
-       "a": 9.6,
-       "inv": 26.3
+       "g": 18.8,
+       "a": 4.4,
+       "inv": 22.3
+      },
+      {
+       "id": 41574,
+       "name": "Sandro Cruz",
+       "pos": "Defender",
+       "g": 1.2,
+       "a": 21.2,
+       "inv": 22.2
+      },
+      {
+       "id": 56132,
+       "name": "T. Barseghyan",
+       "pos": "Midfielder",
+       "g": 8.5,
+       "a": 11.8,
+       "inv": 19.3
       }
      ]
     },
     "away": {
      "scorers": [
       {
-       "id": 21393,
-       "name": "S. Guirassy",
-       "p": 34.3,
-       "gl": 7,
+       "id": 181421,
+       "name": "A. Ezzalzouli",
+       "p": 24.8,
+       "gl": 4,
        "ap": 12
       },
       {
-       "id": 129791,
-       "name": "Fábio Silva",
+       "id": 1561,
+       "name": "Marc Bartra",
        "p": 21.6,
-       "gl": 4,
-       "ap": 12
+       "gl": 5,
+       "ap": 11
       }
      ],
      "bookings": [
       {
-       "id": 326757,
-       "name": "J. Bellingham",
-       "p": 22.4,
-       "yc": 4,
-       "rc": 0,
-       "ap": 13
+       "id": 316519,
+       "name": "F. Bernal",
+       "p": 23.6,
+       "yc": 3,
+       "rc": 1,
+       "ap": 11
       },
       {
-       "id": 25368,
-       "name": "W. Anton",
-       "p": 19.5,
+       "id": 195100,
+       "name": "Natan",
+       "p": 22.8,
+       "yc": 4,
+       "rc": 0,
+       "ap": 14
+      }
+     ],
+     "defender": {
+      "id": 1561,
+      "name": "Marc Bartra",
+      "sot": 10
+     },
+     "cap": [
+      {
+       "id": 47582,
+       "name": "C. Hernández",
+       "pos": "Attacker",
+       "g": 20.8,
+       "a": 14.0,
+       "inv": 31.9
+      },
+      {
+       "id": 181421,
+       "name": "A. Ezzalzouli",
+       "pos": "Attacker",
+       "g": 24.8,
+       "a": 8.4,
+       "inv": 31.2
+      },
+      {
+       "id": 745,
+       "name": "Isco",
+       "pos": "Midfielder",
+       "g": 18.7,
+       "a": 10.5,
+       "inv": 27.2
+      },
+      {
+       "id": 1561,
+       "name": "Marc Bartra",
+       "pos": "Defender",
+       "g": 21.6,
+       "a": 1.4,
+       "inv": 22.7
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635715,
+   "kickoff": "2026-11-24T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Real Madrid",
+   "away": "PSV Eindhoven",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 67.0,
+   "draw_pct": 17.4,
+   "away_pct": 15.5,
+   "xg_home": 2.74,
+   "xg_away": 1.31,
+   "over25": 76.8,
+   "btts": 68.7,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 278,
+       "name": "Kylian Mbappé",
+       "p": 59.6,
+       "gl": 17,
+       "ap": 16
+      },
+      {
+       "id": 129718,
+       "name": "J. Bellingham",
+       "p": 24.2,
+       "gl": 5,
+       "ap": 16
+      }
+     ],
+     "bookings": [
+      {
+       "id": 361497,
+       "name": "D. Huijsen",
+       "p": 25.2,
        "yc": 3,
+       "rc": 1,
+       "ap": 12
+      },
+      {
+       "id": 1145,
+       "name": "I. Konaté",
+       "p": 24.1,
+       "yc": 4,
        "rc": 0,
        "ap": 13
       }
      ],
      "defender": {
-      "id": 26243,
-      "name": "N. Schlotterbeck",
+      "id": 226,
+      "name": "D. Dumfries",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 278,
+       "name": "Kylian Mbappé",
+       "pos": "Attacker",
+       "g": 59.6,
+       "a": 17.5,
+       "inv": 66.7
+      },
+      {
+       "id": 291964,
+       "name": "A. Güler",
+       "pos": "Midfielder",
+       "g": 22.7,
+       "a": 29.8,
+       "inv": 45.7
+      },
+      {
+       "id": 129718,
+       "name": "J. Bellingham",
+       "pos": "Midfielder",
+       "g": 24.2,
+       "a": 17.0,
+       "inv": 37.1
+      },
+      {
+       "id": 513776,
+       "name": "Y. Diomande",
+       "pos": "Attacker",
+       "g": 18.2,
+       "a": 19.7,
+       "inv": 34.3
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 36905,
+       "name": "G. Til",
+       "p": 21.5,
+       "gl": 1,
+       "ap": 4
+      },
+      {
+       "id": 38735,
+       "name": "S. Dest",
+       "p": 16.6,
+       "gl": 1,
+       "ap": 4
+      }
+     ],
+     "bookings": [
+      {
+       "id": 38735,
+       "name": "S. Dest",
+       "p": 28.5,
+       "yc": 2,
+       "rc": 0,
+       "ap": 4
+      },
+      {
+       "id": 228,
+       "name": "A. Obispo",
+       "p": 25.7,
+       "yc": 2,
+       "rc": 0,
+       "ap": 4
+      }
+     ],
+     "defender": {
+      "id": 38735,
+      "name": "S. Dest",
+      "sot": 6
+     },
+     "cap": [
+      {
+       "id": 36905,
+       "name": "G. Til",
+       "pos": "Attacker",
+       "g": 21.5,
+       "a": 6.3,
+       "inv": 26.4
+      },
+      {
+       "id": 37438,
+       "name": "S. Mijnans",
+       "pos": "Midfielder",
+       "g": 8.9,
+       "a": 14.1,
+       "inv": 21.8
+      },
+      {
+       "id": 38735,
+       "name": "S. Dest",
+       "pos": "Defender",
+       "g": 16.6,
+       "a": 2.8,
+       "inv": 18.9
+      },
+      {
+       "id": 354506,
+       "name": "K. Sano",
+       "pos": "Midfielder",
+       "g": 13.8,
+       "a": 5.9,
+       "inv": 18.9
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635663,
+   "kickoff": "2026-11-24T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Feyenoord",
+   "away": "FC Porto",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 28.3,
+   "draw_pct": 25.6,
+   "away_pct": 46.1,
+   "xg_home": 1.28,
+   "xg_away": 1.69,
+   "over25": 57.1,
+   "btts": 59.9,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 326067,
+       "name": "A. Hadj-Moussa",
+       "p": 23.4,
+       "gl": 1,
+       "ap": 4
+      },
+      {
+       "id": 353943,
+       "name": "Nacho Ferri",
+       "p": 14.4,
+       "gl": 0,
+       "ap": 4
+      }
+     ],
+     "bookings": [
+      {
+       "id": 8680,
+       "name": "C. Vanhoutte",
+       "p": 25.7,
+       "yc": 2,
+       "rc": 0,
+       "ap": 4
+      },
+      {
+       "id": 425819,
+       "name": "G. Zechiël",
+       "p": 18.9,
+       "yc": 1,
+       "rc": 0,
+       "ap": 4
+      }
+     ],
+     "defender": {
+      "id": 359390,
+      "name": "G. Read",
+      "sot": 0
+     },
+     "cap": [
+      {
+       "id": 326067,
+       "name": "A. Hadj-Moussa",
+       "pos": "Midfielder",
+       "g": 23.4,
+       "a": 6.6,
+       "inv": 28.5
+      },
+      {
+       "id": 314266,
+       "name": "L. Valente",
+       "pos": "Midfielder",
+       "g": 7.4,
+       "a": 17.0,
+       "inv": 23.2
+      },
+      {
+       "id": 353943,
+       "name": "Nacho Ferri",
+       "pos": "Attacker",
+       "g": 14.4,
+       "a": 6.6,
+       "inv": 20.0
+      },
+      {
+       "id": 425819,
+       "name": "G. Zechiël",
+       "pos": "Midfielder",
+       "g": 14.1,
+       "a": 6.8,
+       "inv": 20.0
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 358628,
+       "name": "Samu",
+       "p": 19.4,
+       "gl": 2,
+       "ap": 3
+      },
+      {
+       "id": 182504,
+       "name": "Gabri Veiga",
+       "p": 18.1,
+       "gl": 2,
+       "ap": 4
+      }
+     ],
+     "bookings": [
+      {
+       "id": 278375,
+       "name": "A. Varela",
+       "p": 22.6,
+       "yc": 1,
+       "rc": 0,
+       "ap": 2
+      },
+      {
+       "id": 240,
+       "name": "P. Rosario",
+       "p": 18.9,
+       "yc": 1,
+       "rc": 0,
+       "ap": 4
+      }
+     ],
+     "defender": {
+      "id": 330419,
+      "name": "Alberto Baio",
       "sot": 2
      },
      "cap": [
       {
-       "id": 21393,
-       "name": "S. Guirassy",
-       "pos": "Attacker",
-       "g": 34.3,
-       "a": 13.4,
-       "inv": 43.1
-      },
-      {
-       "id": 129791,
-       "name": "Fábio Silva",
-       "pos": "Attacker",
-       "g": 21.6,
-       "a": 19.6,
-       "inv": 37.0
-      },
-      {
-       "id": 404891,
-       "name": "K. Karetsas",
-       "pos": "Attacker",
-       "g": 13.3,
-       "a": 12.1,
-       "inv": 23.7
-      },
-      {
-       "id": 637,
-       "name": "F. Nmecha",
+       "id": 182504,
+       "name": "Gabri Veiga",
        "pos": "Midfielder",
-       "g": 19.1,
-       "a": 2.6,
-       "inv": 21.2
+       "g": 18.1,
+       "a": 14.6,
+       "inv": 30.1
+      },
+      {
+       "id": 10500,
+       "name": "Pepê Aquino",
+       "pos": "Attacker",
+       "g": 13.5,
+       "a": 16.2,
+       "inv": 27.5
+      },
+      {
+       "id": 358628,
+       "name": "Samu",
+       "pos": "Attacker",
+       "g": 19.4,
+       "a": 4.3,
+       "inv": 22.9
+      },
+      {
+       "id": 2063,
+       "name": "André Silva",
+       "pos": "Attacker",
+       "g": 11.8,
+       "a": 4.8,
+       "inv": 16.1
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635649,
+   "kickoff": "2026-11-24T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Como",
+   "away": "AEK Athens FC",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 63.4,
+   "draw_pct": 21.8,
+   "away_pct": 14.8,
+   "xg_home": 2.06,
+   "xg_away": 0.9,
+   "over25": 56.9,
+   "btts": 52.7,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 26845,
+       "name": "T. Douvikas",
+       "p": 41.2,
+       "gl": 11,
+       "ap": 15
+      },
+      {
+       "id": 350037,
+       "name": "N. Paz",
+       "p": 30.4,
+       "gl": 6,
+       "ap": 14
+      }
+     ],
+     "bookings": [
+      {
+       "id": 400948,
+       "name": "Assane Diao",
+       "p": 16.4,
+       "yc": 2,
+       "rc": 0,
+       "ap": 8
+      },
+      {
+       "id": 350037,
+       "name": "N. Paz",
+       "p": 13.5,
+       "yc": 2,
+       "rc": 0,
+       "ap": 14
+      }
+     ],
+     "defender": {
+      "id": 386305,
+      "name": "Jacobo Ramón Naveros",
+      "sot": 6
+     },
+     "cap": [
+      {
+       "id": 350037,
+       "name": "N. Paz",
+       "pos": "Midfielder",
+       "g": 30.4,
+       "a": 39.3,
+       "inv": 57.8
+      },
+      {
+       "id": 26845,
+       "name": "T. Douvikas",
+       "pos": "Attacker",
+       "g": 41.2,
+       "a": 8.1,
+       "inv": 46.0
+      },
+      {
+       "id": 400948,
+       "name": "Assane Diao",
+       "pos": "Attacker",
+       "g": 27.8,
+       "a": 11.8,
+       "inv": 36.3
+      },
+      {
+       "id": 295026,
+       "name": "M. Baturina",
+       "pos": "Midfielder",
+       "g": 21.3,
+       "a": 12.2,
+       "inv": 30.9
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 1828,
+       "name": "L. Jović",
+       "p": 17.9,
+       "gl": 1,
+       "ap": 6
+      },
+      {
+       "id": 2118,
+       "name": "R. Marin",
+       "p": 17.1,
+       "gl": 2,
+       "ap": 6
+      }
+     ],
+     "bookings": [
+      {
+       "id": 2118,
+       "name": "R. Marin",
+       "p": 21.5,
+       "yc": 2,
+       "rc": 0,
+       "ap": 6
+      },
+      {
+       "id": 26936,
+       "name": "S. Pilios",
+       "p": 15.5,
+       "yc": 1,
+       "rc": 0,
+       "ap": 6
+      }
+     ],
+     "defender": {
+      "id": 26936,
+      "name": "S. Pilios",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 1828,
+       "name": "L. Jović",
+       "pos": "Attacker",
+       "g": 17.9,
+       "a": 12.9,
+       "inv": 28.4
+      },
+      {
+       "id": 26936,
+       "name": "S. Pilios",
+       "pos": "Defender",
+       "g": 13.9,
+       "a": 10.9,
+       "inv": 23.3
+      },
+      {
+       "id": 1321,
+       "name": "L. Majer",
+       "pos": "Midfielder",
+       "g": 10.3,
+       "a": 12.2,
+       "inv": 21.3
+      },
+      {
+       "id": 8543,
+       "name": "A. Koita",
+       "pos": "Midfielder",
+       "g": 9.4,
+       "a": 12.5,
+       "inv": 20.7
       }
      ]
     }
@@ -589,12 +1156,12 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 70.5,
+   "home_pct": 70.4,
    "draw_pct": 18.0,
-   "away_pct": 11.5,
-   "xg_home": 2.46,
+   "away_pct": 11.6,
+   "xg_home": 2.45,
    "xg_away": 0.92,
-   "over25": 65.6,
+   "over25": 65.5,
    "btts": 55.6,
    "cards5": 0.0,
    "cards": null,
@@ -772,6 +1339,195 @@
    "euro": true
   },
   {
+   "id": 1635611,
+   "kickoff": "2026-11-24T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Arsenal",
+   "away": "Borussia Dortmund",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 66.7,
+   "draw_pct": 22.0,
+   "away_pct": 11.4,
+   "xg_home": 1.95,
+   "xg_away": 0.68,
+   "over25": 49.0,
+   "btts": 43.2,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 1460,
+       "name": "B. Saka",
+       "p": 26.4,
+       "gl": 4,
+       "ap": 10
+      },
+      {
+       "id": 978,
+       "name": "K. Havertz",
+       "p": 20.7,
+       "gl": 3,
+       "ap": 13
+      }
+     ],
+     "bookings": [
+      {
+       "id": 978,
+       "name": "K. Havertz",
+       "p": 16.8,
+       "yc": 3,
+       "rc": 0,
+       "ap": 13
+      },
+      {
+       "id": 161800,
+       "name": "C. Tzolis",
+       "p": 16.7,
+       "yc": 2,
+       "rc": 0,
+       "ap": 9
+      }
+     ],
+     "defender": {
+      "id": 22224,
+      "name": "Gabriel Magalhães",
+      "sot": 4
+     },
+     "cap": [
+      {
+       "id": 2937,
+       "name": "D. Rice",
+       "pos": "Midfielder",
+       "g": 8.9,
+       "a": 27.9,
+       "inv": 34.3
+      },
+      {
+       "id": 1460,
+       "name": "B. Saka",
+       "pos": "Midfielder",
+       "g": 26.4,
+       "a": 10.3,
+       "inv": 34.0
+      },
+      {
+       "id": 978,
+       "name": "K. Havertz",
+       "pos": "Attacker",
+       "g": 20.7,
+       "a": 8.7,
+       "inv": 27.6
+      },
+      {
+       "id": 136723,
+       "name": "N. Madueke",
+       "pos": "Attacker",
+       "g": 18.5,
+       "a": 9.6,
+       "inv": 26.3
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 21393,
+       "name": "S. Guirassy",
+       "p": 34.3,
+       "gl": 7,
+       "ap": 12
+      },
+      {
+       "id": 129791,
+       "name": "Fábio Silva",
+       "p": 21.6,
+       "gl": 4,
+       "ap": 12
+      }
+     ],
+     "bookings": [
+      {
+       "id": 326757,
+       "name": "J. Bellingham",
+       "p": 22.4,
+       "yc": 4,
+       "rc": 0,
+       "ap": 13
+      },
+      {
+       "id": 25368,
+       "name": "W. Anton",
+       "p": 19.5,
+       "yc": 3,
+       "rc": 0,
+       "ap": 13
+      }
+     ],
+     "defender": {
+      "id": 26243,
+      "name": "N. Schlotterbeck",
+      "sot": 2
+     },
+     "cap": [
+      {
+       "id": 21393,
+       "name": "S. Guirassy",
+       "pos": "Attacker",
+       "g": 34.3,
+       "a": 13.4,
+       "inv": 43.1
+      },
+      {
+       "id": 129791,
+       "name": "Fábio Silva",
+       "pos": "Attacker",
+       "g": 21.6,
+       "a": 19.6,
+       "inv": 37.0
+      },
+      {
+       "id": 404891,
+       "name": "K. Karetsas",
+       "pos": "Attacker",
+       "g": 13.3,
+       "a": 12.1,
+       "inv": 23.7
+      },
+      {
+       "id": 637,
+       "name": "F. Nmecha",
+       "pos": "Midfielder",
+       "g": 19.1,
+       "a": 2.6,
+       "inv": 21.2
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
    "id": 1635713,
    "kickoff": "2026-11-24T20:00:00",
    "round": "League Stage - 5",
@@ -786,12 +1542,12 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 57.5,
-   "draw_pct": 20.8,
+   "home_pct": 57.4,
+   "draw_pct": 20.9,
    "away_pct": 21.7,
    "xg_home": 2.31,
    "xg_away": 1.39,
-   "over25": 71.5,
+   "over25": 71.4,
    "btts": 68.3,
    "cards5": 0.0,
    "cards": null,
@@ -961,11 +1717,11 @@
    "euro": true
   },
   {
-   "id": 1635663,
-   "kickoff": "2026-11-24T20:00:00",
+   "id": 1635728,
+   "kickoff": "2026-11-25T17:45:00",
    "round": "League Stage - 5",
-   "home": "Feyenoord",
-   "away": "FC Porto",
+   "home": "Slavia Praha",
+   "away": "Villarreal",
    "referee": "",
    "ref_cards": null,
    "ref_games": null,
@@ -975,13 +1731,13 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 28.3,
-   "draw_pct": 25.6,
-   "away_pct": 46.1,
-   "xg_home": 1.29,
-   "xg_away": 1.69,
-   "over25": 57.2,
-   "btts": 60.0,
+   "home_pct": 36.3,
+   "draw_pct": 24.9,
+   "away_pct": 38.8,
+   "xg_home": 1.59,
+   "xg_away": 1.65,
+   "over25": 62.8,
+   "btts": 65.1,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -993,339 +1749,528 @@
     "home": {
      "scorers": [
       {
-       "id": 326067,
-       "name": "A. Hadj-Moussa",
-       "p": 23.4,
+       "id": 66353,
+       "name": "L. Provod",
+       "p": 36.0,
        "gl": 1,
+       "ap": 2
+      },
+      {
+       "id": 135273,
+       "name": "D. Šturm",
+       "p": 19.2,
+       "gl": 2,
+       "ap": 4
+      }
+     ],
+     "bookings": [
+      {
+       "id": 400679,
+       "name": "D. Moses",
+       "p": 21.0,
+       "yc": 1,
+       "rc": 0,
+       "ap": 3
+      },
+      {
+       "id": 365840,
+       "name": "E. Ayaosi",
+       "p": 18.5,
+       "yc": 1,
+       "rc": 0,
+       "ap": 4
+      }
+     ],
+     "defender": {
+      "id": 128772,
+      "name": "D. Zima",
+      "sot": 1
+     },
+     "cap": [
+      {
+       "id": 66353,
+       "name": "L. Provod",
+       "pos": "Attacker",
+       "g": 36.0,
+       "a": 9.4,
+       "inv": 42.1
+      },
+      {
+       "id": 365840,
+       "name": "E. Ayaosi",
+       "pos": "Midfielder",
+       "g": 9.7,
+       "a": 18.1,
+       "inv": 26.1
+      },
+      {
+       "id": 135273,
+       "name": "D. Šturm",
+       "pos": "Midfielder",
+       "g": 19.2,
+       "a": 6.0,
+       "inv": 24.1
+      },
+      {
+       "id": 818,
+       "name": "T. Chorý",
+       "pos": "Attacker",
+       "g": 15.3,
+       "a": 5.7,
+       "inv": 20.1
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 180496,
+       "name": "G. Mikautadze",
+       "p": 22.7,
+       "gl": 5,
+       "ap": 16
+      },
+      {
+       "id": 51016,
+       "name": "T. Buchanan",
+       "p": 15.2,
+       "gl": 1,
+       "ap": 13
+      }
+     ],
+     "bookings": [
+      {
+       "id": 311773,
+       "name": "S. Mouriño",
+       "p": 27.1,
+       "yc": 5,
+       "rc": 0,
+       "ap": 13
+      },
+      {
+       "id": 166,
+       "name": "J. Foyth",
+       "p": 24.1,
+       "yc": 3,
+       "rc": 0,
+       "ap": 8
+      }
+     ],
+     "defender": {
+      "id": 311773,
+      "name": "S. Mouriño",
+      "sot": 5
+     },
+     "cap": [
+      {
+       "id": 18906,
+       "name": "Ayoze Pérez",
+       "pos": "Attacker",
+       "g": 12.3,
+       "a": 20.8,
+       "inv": 30.5
+      },
+      {
+       "id": 180496,
+       "name": "G. Mikautadze",
+       "pos": "Attacker",
+       "g": 22.7,
+       "a": 10.1,
+       "inv": 30.5
+      },
+      {
+       "id": 182519,
+       "name": "Alberto Moleiro",
+       "pos": "Midfielder",
+       "g": 10.6,
+       "a": 17.2,
+       "inv": 25.9
+      },
+      {
+       "id": 3246,
+       "name": "N. Pépé",
+       "pos": "Midfielder",
+       "g": 15.0,
+       "a": 8.4,
+       "inv": 22.2
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635718,
+   "kickoff": "2026-11-25T17:45:00",
+   "round": "League Stage - 5",
+   "home": "Sabah FA",
+   "away": "Barcelona",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 3.0,
+   "draw_pct": 6.2,
+   "away_pct": 90.8,
+   "xg_home": 0.88,
+   "xg_away": 4.29,
+   "over25": 88.9,
+   "btts": 58.0,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 127602,
+       "name": "J. Mickels",
+       "p": 26.2,
+       "gl": 4,
+       "ap": 12
+      },
+      {
+       "id": 360,
+       "name": "V. Simić",
+       "p": 15.1,
+       "gl": 3,
+       "ap": 12
+      }
+     ],
+     "bookings": [
+      {
+       "id": 174827,
+       "name": "S. Solvet",
+       "p": 26.0,
+       "yc": 4,
+       "rc": 0,
+       "ap": 10
+      },
+      {
+       "id": 14285,
+       "name": "I. Lepinjica",
+       "p": 23.8,
+       "yc": 4,
+       "rc": 0,
+       "ap": 12
+      }
+     ],
+     "defender": {
+      "id": 40984,
+      "name": "T. Puchacz",
+      "sot": 1
+     },
+     "cap": [
+      {
+       "id": 127602,
+       "name": "J. Mickels",
+       "pos": "Attacker",
+       "g": 26.2,
+       "a": 9.2,
+       "inv": 32.9
+      },
+      {
+       "id": 40984,
+       "name": "T. Puchacz",
+       "pos": "Defender",
+       "g": 1.9,
+       "a": 23.3,
+       "inv": 24.7
+      },
+      {
+       "id": 55960,
+       "name": "A. Isaev",
+       "pos": "Midfielder",
+       "g": 3.6,
+       "a": 18.6,
+       "inv": 21.6
+      },
+      {
+       "id": 360,
+       "name": "V. Simić",
+       "pos": "Midfielder",
+       "g": 15.1,
+       "a": 3.1,
+       "inv": 17.7
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 1496,
+       "name": "Raphinha",
+       "p": 50.6,
+       "gl": 19,
+       "ap": 14
+      },
+      {
+       "id": 386828,
+       "name": "Lamine Yamal",
+       "p": 41.1,
+       "gl": 13,
+       "ap": 16
+      }
+     ],
+     "bookings": [
+      {
+       "id": 855,
+       "name": "João Cancelo",
+       "p": 17.6,
+       "yc": 3,
+       "rc": 0,
+       "ap": 13
+      },
+      {
+       "id": 340626,
+       "name": "Fermín",
+       "p": 16.5,
+       "yc": 3,
+       "rc": 0,
+       "ap": 15
+      }
+     ],
+     "defender": {
+      "id": 855,
+      "name": "João Cancelo",
+      "sot": 4
+     },
+     "cap": [
+      {
+       "id": 386828,
+       "name": "Lamine Yamal",
+       "pos": "Attacker",
+       "g": 41.1,
+       "a": 43.8,
+       "inv": 66.9
+      },
+      {
+       "id": 1496,
+       "name": "Raphinha",
+       "pos": "Attacker",
+       "g": 50.6,
+       "a": 16.0,
+       "inv": 58.5
+      },
+      {
+       "id": 340626,
+       "name": "Fermín",
+       "pos": "Midfielder",
+       "g": 28.0,
+       "a": 29.1,
+       "inv": 48.9
+      },
+      {
+       "id": 138787,
+       "name": "A. Gordon",
+       "pos": "Attacker",
+       "g": 21.8,
+       "a": 18.5,
+       "inv": 36.3
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635724,
+   "kickoff": "2026-11-25T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Shakhtar Donetsk",
+   "away": "Fenerbahçe",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 34.8,
+   "draw_pct": 27.6,
+   "away_pct": 37.6,
+   "xg_home": 1.33,
+   "xg_away": 1.4,
+   "over25": 51.4,
+   "btts": 56.4,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 406224,
+       "name": "G. Mendoza",
+       "p": 17.2,
+       "gl": 2,
        "ap": 4
       },
       {
-       "id": 353943,
-       "name": "Nacho Ferri",
-       "p": 14.4,
+       "id": 414358,
+       "name": "Kauã Elias",
+       "p": 16.5,
        "gl": 0,
        "ap": 4
       }
      ],
      "bookings": [
       {
-       "id": 8680,
-       "name": "C. Vanhoutte",
-       "p": 25.7,
-       "yc": 2,
-       "rc": 0,
-       "ap": 4
-      },
-      {
-       "id": 425819,
-       "name": "G. Zechiël",
-       "p": 18.9,
-       "yc": 1,
-       "rc": 0,
-       "ap": 4
-      }
-     ],
-     "defender": {
-      "id": 359390,
-      "name": "G. Read",
-      "sot": 0
-     },
-     "cap": [
-      {
-       "id": 326067,
-       "name": "A. Hadj-Moussa",
-       "pos": "Midfielder",
-       "g": 23.4,
-       "a": 6.6,
-       "inv": 28.5
-      },
-      {
-       "id": 314266,
-       "name": "L. Valente",
-       "pos": "Midfielder",
-       "g": 7.4,
-       "a": 17.0,
-       "inv": 23.2
-      },
-      {
-       "id": 353943,
-       "name": "Nacho Ferri",
-       "pos": "Attacker",
-       "g": 14.4,
-       "a": 6.6,
-       "inv": 20.0
-      },
-      {
-       "id": 425819,
-       "name": "G. Zechiël",
-       "pos": "Midfielder",
-       "g": 14.1,
-       "a": 6.8,
-       "inv": 20.0
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 358628,
-       "name": "Samu",
-       "p": 19.4,
-       "gl": 2,
-       "ap": 3
-      },
-      {
-       "id": 182504,
-       "name": "Gabri Veiga",
-       "p": 18.1,
-       "gl": 2,
-       "ap": 4
-      }
-     ],
-     "bookings": [
-      {
-       "id": 278375,
-       "name": "A. Varela",
-       "p": 22.6,
-       "yc": 1,
-       "rc": 0,
-       "ap": 2
-      },
-      {
-       "id": 240,
-       "name": "P. Rosario",
-       "p": 18.9,
-       "yc": 1,
-       "rc": 0,
-       "ap": 4
-      }
-     ],
-     "defender": {
-      "id": 330419,
-      "name": "Alberto Baio",
-      "sot": 2
-     },
-     "cap": [
-      {
-       "id": 182504,
-       "name": "Gabri Veiga",
-       "pos": "Midfielder",
-       "g": 18.1,
-       "a": 14.6,
-       "inv": 30.1
-      },
-      {
-       "id": 10500,
-       "name": "Pepê Aquino",
-       "pos": "Attacker",
-       "g": 13.5,
-       "a": 16.2,
-       "inv": 27.5
-      },
-      {
-       "id": 358628,
-       "name": "Samu",
-       "pos": "Attacker",
-       "g": 19.4,
-       "a": 4.3,
-       "inv": 22.9
-      },
-      {
-       "id": 2063,
-       "name": "André Silva",
-       "pos": "Attacker",
-       "g": 11.8,
-       "a": 4.8,
-       "inv": 16.1
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [],
-    "away": []
-   },
-   "previous": [],
-   "odds": {},
-   "euro": true
-  },
-  {
-   "id": 1635715,
-   "kickoff": "2026-11-24T20:00:00",
-   "round": "League Stage - 5",
-   "home": "Real Madrid",
-   "away": "PSV Eindhoven",
-   "referee": "",
-   "ref_cards": null,
-   "ref_games": null,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": null,
-   "injury_effect": {},
-   "home_pct": 67.1,
-   "draw_pct": 17.4,
-   "away_pct": 15.5,
-   "xg_home": 2.73,
-   "xg_away": 1.3,
-   "over25": 76.7,
-   "btts": 68.5,
-   "cards5": 0.0,
-   "cards": null,
-   "form": {
-    "home": null,
-    "away": null
-   },
-   "goals": null,
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 278,
-       "name": "Kylian Mbappé",
-       "p": 59.6,
-       "gl": 17,
-       "ap": 16
-      },
-      {
-       "id": 129718,
-       "name": "J. Bellingham",
-       "p": 24.2,
-       "gl": 5,
-       "ap": 16
-      }
-     ],
-     "bookings": [
-      {
-       "id": 361497,
-       "name": "D. Huijsen",
-       "p": 25.2,
+       "id": 374356,
+       "name": "Marlon Gomes",
+       "p": 36.2,
        "yc": 3,
-       "rc": 1,
-       "ap": 12
+       "rc": 0,
+       "ap": 4
       },
       {
-       "id": 1145,
-       "name": "I. Konaté",
-       "p": 24.1,
-       "yc": 4,
+       "id": 279792,
+       "name": "Vinícius Tobias",
+       "p": 18.9,
+       "yc": 1,
        "rc": 0,
-       "ap": 13
+       "ap": 4
       }
      ],
      "defender": {
-      "id": 226,
-      "name": "D. Dumfries",
-      "sot": 3
+      "id": 299925,
+      "name": "Pedrinho",
+      "sot": 1
      },
      "cap": [
       {
-       "id": 278,
-       "name": "Kylian Mbappé",
-       "pos": "Attacker",
-       "g": 59.6,
-       "a": 17.5,
-       "inv": 66.7
-      },
-      {
-       "id": 291964,
-       "name": "A. Güler",
+       "id": 415116,
+       "name": "Alisson Santana",
        "pos": "Midfielder",
-       "g": 22.7,
-       "a": 29.8,
-       "inv": 45.7
+       "g": 9.8,
+       "a": 18.3,
+       "inv": 26.3
       },
       {
-       "id": 129718,
-       "name": "J. Bellingham",
-       "pos": "Midfielder",
-       "g": 24.2,
-       "a": 17.0,
-       "inv": 37.1
-      },
-      {
-       "id": 513776,
-       "name": "Y. Diomande",
+       "id": 414358,
+       "name": "Kauã Elias",
        "pos": "Attacker",
-       "g": 18.2,
-       "a": 19.7,
-       "inv": 34.3
+       "g": 16.5,
+       "a": 6.8,
+       "inv": 22.2
+      },
+      {
+       "id": 406224,
+       "name": "G. Mendoza",
+       "pos": "Midfielder",
+       "g": 17.2,
+       "a": 5.4,
+       "inv": 21.6
+      },
+      {
+       "id": 463988,
+       "name": "Isaque",
+       "pos": "Midfielder",
+       "g": 5.8,
+       "a": 13.5,
+       "inv": 18.6
       }
      ]
     },
     "away": {
      "scorers": [
       {
-       "id": 36905,
-       "name": "G. Til",
-       "p": 21.5,
-       "gl": 1,
-       "ap": 4
+       "id": 12724,
+       "name": "Talisca",
+       "p": 36.9,
+       "gl": 4,
+       "ap": 6
       },
       {
-       "id": 38735,
-       "name": "S. Dest",
-       "p": 16.6,
-       "gl": 1,
-       "ap": 4
+       "id": 897,
+       "name": "M. Greenwood",
+       "p": 24.6,
+       "gl": 4,
+       "ap": 10
       }
      ],
      "bookings": [
       {
-       "id": 38735,
-       "name": "S. Dest",
-       "p": 28.5,
-       "yc": 2,
+       "id": 161661,
+       "name": "A. Brown",
+       "p": 26.1,
+       "yc": 3,
        "rc": 0,
-       "ap": 4
+       "ap": 8
       },
       {
-       "id": 228,
-       "name": "A. Obispo",
-       "p": 25.7,
-       "yc": 2,
+       "id": 1454,
+       "name": "M. Guendouzi",
+       "p": 24.6,
+       "yc": 3,
        "rc": 0,
-       "ap": 4
+       "ap": 9
       }
      ],
      "defender": {
-      "id": 38735,
-      "name": "S. Dest",
-      "sot": 6
+      "id": 161661,
+      "name": "A. Brown",
+      "sot": 5
      },
      "cap": [
       {
-       "id": 36905,
-       "name": "G. Til",
+       "id": 12724,
+       "name": "Talisca",
        "pos": "Attacker",
-       "g": 21.5,
-       "a": 6.3,
-       "inv": 26.4
+       "g": 36.9,
+       "a": 4.8,
+       "inv": 40.0
       },
       {
-       "id": 37438,
-       "name": "S. Mijnans",
+       "id": 897,
+       "name": "M. Greenwood",
+       "pos": "Attacker",
+       "g": 24.6,
+       "a": 14.5,
+       "inv": 35.5
+      },
+      {
+       "id": 142959,
+       "name": "K. Aktürkoğlu",
        "pos": "Midfielder",
-       "g": 8.9,
-       "a": 14.1,
-       "inv": 21.8
+       "g": 11.2,
+       "a": 16.3,
+       "inv": 25.7
       },
       {
-       "id": 38735,
-       "name": "S. Dest",
-       "pos": "Defender",
-       "g": 16.6,
-       "a": 2.8,
-       "inv": 18.9
-      },
-      {
-       "id": 354506,
-       "name": "K. Sano",
-       "pos": "Midfielder",
-       "g": 13.8,
-       "a": 5.9,
-       "inv": 18.9
+       "id": 50048,
+       "name": "V. Muriqi",
+       "pos": "Attacker",
+       "g": 21.8,
+       "a": 3.9,
+       "inv": 24.8
       }
      ]
     }
@@ -1339,11 +2284,11 @@
    "euro": true
   },
   {
-   "id": 1635731,
-   "kickoff": "2026-11-24T20:00:00",
+   "id": 1635682,
+   "kickoff": "2026-11-25T20:00:00",
    "round": "League Stage - 5",
-   "home": "Slovan Bratislava",
-   "away": "Real Betis",
+   "home": "Lille",
+   "away": "Bayern München",
    "referee": "",
    "ref_cards": null,
    "ref_games": null,
@@ -1353,13 +2298,13 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 10.7,
-   "draw_pct": 17.6,
-   "away_pct": 71.7,
-   "xg_home": 0.87,
-   "xg_away": 2.47,
-   "over25": 64.8,
-   "btts": 53.9,
+   "home_pct": 17.9,
+   "draw_pct": 21.5,
+   "away_pct": 60.6,
+   "xg_home": 1.11,
+   "xg_away": 2.17,
+   "over25": 63.6,
+   "btts": 60.2,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -1371,150 +2316,150 @@
     "home": {
      "scorers": [
       {
-       "id": 56026,
-       "name": "A. Šporar",
-       "p": 22.7,
-       "gl": 2,
+       "id": 72155,
+       "name": "A. Ueda",
+       "p": 30.8,
+       "gl": 3,
        "ap": 6
       },
       {
-       "id": 286075,
-       "name": "Suleiman Camara",
-       "p": 18.8,
-       "gl": 2,
-       "ap": 8
+       "id": 487381,
+       "name": "S. Diaoune",
+       "p": 25.7,
+       "gl": 3,
+       "ap": 7
       }
      ],
      "bookings": [
       {
-       "id": 2975,
-       "name": "C. Blackman",
-       "p": 22.2,
+       "id": 490745,
+       "name": "M. Goffi",
+       "p": 28.2,
        "yc": 3,
        "rc": 0,
-       "ap": 10
+       "ap": 6
       },
       {
-       "id": 50911,
-       "name": "Cristian Jesús Martínez",
-       "p": 21.0,
+       "id": 20600,
+       "name": "R. Perraud",
+       "p": 19.6,
        "yc": 3,
        "rc": 0,
-       "ap": 9
+       "ap": 12
       }
      ],
      "defender": {
-      "id": 61149,
-      "name": "K. Bajrič",
-      "sot": 2
+      "id": 379329,
+      "name": "Tiago Santos",
+      "sot": 6
      },
      "cap": [
       {
-       "id": 56026,
-       "name": "A. Šporar",
+       "id": 487381,
+       "name": "S. Diaoune",
        "pos": "Attacker",
-       "g": 22.7,
+       "g": 25.7,
+       "a": 19.4,
+       "inv": 40.1
+      },
+      {
+       "id": 72155,
+       "name": "A. Ueda",
+       "pos": "Attacker",
+       "g": 30.8,
        "a": 5.1,
-       "inv": 26.7
+       "inv": 34.3
       },
       {
-       "id": 286075,
-       "name": "Suleiman Camara",
-       "pos": "Attacker",
-       "g": 18.8,
-       "a": 4.4,
-       "inv": 22.3
-      },
-      {
-       "id": 41574,
-       "name": "Sandro Cruz",
-       "pos": "Defender",
-       "g": 1.2,
-       "a": 21.2,
-       "inv": 22.2
-      },
-      {
-       "id": 56132,
-       "name": "T. Barseghyan",
+       "id": 386287,
+       "name": "E. Mbappé",
        "pos": "Midfielder",
-       "g": 8.5,
-       "a": 11.8,
-       "inv": 19.3
+       "g": 17.6,
+       "a": 9.9,
+       "inv": 25.8
+      },
+      {
+       "id": 2295,
+       "name": "O. Giroud",
+       "pos": "Attacker",
+       "g": 15.7,
+       "a": 11.6,
+       "inv": 25.4
       }
      ]
     },
     "away": {
      "scorers": [
       {
-       "id": 181421,
-       "name": "A. Ezzalzouli",
-       "p": 24.8,
-       "gl": 4,
+       "id": 19617,
+       "name": "M. Olise",
+       "p": 36.9,
+       "gl": 8,
        "ap": 12
       },
       {
-       "id": 1561,
-       "name": "Marc Bartra",
-       "p": 21.6,
-       "gl": 5,
-       "ap": 11
+       "id": 184,
+       "name": "H. Kane",
+       "p": 34.8,
+       "gl": 8,
+       "ap": 13
       }
      ],
      "bookings": [
       {
-       "id": 316519,
-       "name": "F. Bernal",
-       "p": 23.6,
-       "yc": 3,
-       "rc": 1,
-       "ap": 11
-      },
-      {
-       "id": 195100,
-       "name": "Natan",
-       "p": 22.8,
+       "id": 1157,
+       "name": "K. Laimer",
+       "p": 27.9,
        "yc": 4,
        "rc": 0,
-       "ap": 14
+       "ap": 10
+      },
+      {
+       "id": 19617,
+       "name": "M. Olise",
+       "p": 15.1,
+       "yc": 2,
+       "rc": 0,
+       "ap": 12
       }
      ],
      "defender": {
-      "id": 1561,
-      "name": "Marc Bartra",
-      "sot": 10
+      "id": 1149,
+      "name": "D. Upamecano",
+      "sot": 9
      },
      "cap": [
       {
-       "id": 47582,
-       "name": "C. Hernández",
+       "id": 184,
+       "name": "H. Kane",
        "pos": "Attacker",
-       "g": 20.8,
-       "a": 14.0,
-       "inv": 31.9
+       "g": 34.8,
+       "a": 46.2,
+       "inv": 64.9
       },
       {
-       "id": 181421,
-       "name": "A. Ezzalzouli",
-       "pos": "Attacker",
-       "g": 24.8,
-       "a": 8.4,
-       "inv": 31.2
-      },
-      {
-       "id": 745,
-       "name": "Isco",
+       "id": 19617,
+       "name": "M. Olise",
        "pos": "Midfielder",
-       "g": 18.7,
-       "a": 10.5,
-       "inv": 27.2
+       "g": 36.9,
+       "a": 22.7,
+       "inv": 51.2
       },
       {
-       "id": 1561,
-       "name": "Marc Bartra",
-       "pos": "Defender",
-       "g": 21.6,
-       "a": 1.4,
-       "inv": 22.7
+       "id": 2489,
+       "name": "L. Díaz",
+       "pos": "Midfielder",
+       "g": 27.6,
+       "a": 9.5,
+       "inv": 34.4
+      },
+      {
+       "id": 502,
+       "name": "J. Kimmich",
+       "pos": "Midfielder",
+       "g": 10.8,
+       "a": 24.0,
+       "inv": 32.1
       }
      ]
     }
@@ -1528,11 +2473,11 @@
    "euro": true
   },
   {
-   "id": 1635649,
-   "kickoff": "2026-11-24T20:00:00",
+   "id": 1635703,
+   "kickoff": "2026-11-25T20:00:00",
    "round": "League Stage - 5",
-   "home": "Como",
-   "away": "AEK Athens FC",
+   "home": "Paris Saint Germain",
+   "away": "AS Roma",
    "referee": "",
    "ref_cards": null,
    "ref_games": null,
@@ -1542,13 +2487,13 @@
    "low_data": false,
    "market": null,
    "injury_effect": {},
-   "home_pct": 63.5,
-   "draw_pct": 21.8,
-   "away_pct": 14.8,
-   "xg_home": 2.07,
-   "xg_away": 0.9,
-   "over25": 57.0,
-   "btts": 52.7,
+   "home_pct": 58.0,
+   "draw_pct": 22.1,
+   "away_pct": 19.9,
+   "xg_home": 2.11,
+   "xg_away": 1.18,
+   "over25": 63.8,
+   "btts": 61.5,
    "cards5": 0.0,
    "cards": null,
    "form": {
@@ -1560,150 +2505,906 @@
     "home": {
      "scorers": [
       {
-       "id": 26845,
-       "name": "T. Douvikas",
-       "p": 41.2,
-       "gl": 11,
-       "ap": 15
+       "id": 931,
+       "name": "Ferran Torres",
+       "p": 34.9,
+       "gl": 7,
+       "ap": 14
       },
       {
-       "id": 350037,
-       "name": "N. Paz",
-       "p": 30.4,
-       "gl": 6,
-       "ap": 14
+       "id": 153,
+       "name": "O. Dembélé",
+       "p": 28.7,
+       "gl": 4,
+       "ap": 8
       }
      ],
      "bookings": [
       {
-       "id": 400948,
-       "name": "Assane Diao",
-       "p": 16.4,
+       "id": 128384,
+       "name": "Vitinha",
+       "p": 14.1,
        "yc": 2,
        "rc": 0,
-       "ap": 8
+       "ap": 13
       },
       {
-       "id": 350037,
-       "name": "N. Paz",
-       "p": 13.5,
-       "yc": 2,
+       "id": 257,
+       "name": "Marquinhos",
+       "p": 13.9,
+       "yc": 1,
        "rc": 0,
-       "ap": 14
+       "ap": 7
       }
      ],
      "defender": {
-      "id": 386305,
-      "name": "Jacobo Ramón Naveros",
-      "sot": 6
+      "id": 9,
+      "name": "A. Hakimi",
+      "sot": 10
      },
      "cap": [
       {
-       "id": 350037,
-       "name": "N. Paz",
-       "pos": "Midfielder",
-       "g": 30.4,
-       "a": 39.3,
-       "inv": 57.8
+       "id": 153,
+       "name": "O. Dembélé",
+       "pos": "Attacker",
+       "g": 28.7,
+       "a": 32.6,
+       "inv": 52.0
       },
       {
-       "id": 26845,
-       "name": "T. Douvikas",
+       "id": 343027,
+       "name": "D. Doué",
        "pos": "Attacker",
-       "g": 41.2,
+       "g": 28.5,
+       "a": 19.4,
+       "inv": 42.4
+      },
+      {
+       "id": 931,
+       "name": "Ferran Torres",
+       "pos": "Attacker",
+       "g": 34.9,
        "a": 8.1,
-       "inv": 46.0
+       "inv": 40.1
       },
       {
-       "id": 400948,
-       "name": "Assane Diao",
-       "pos": "Attacker",
-       "g": 27.8,
-       "a": 11.8,
-       "inv": 36.3
-      },
-      {
-       "id": 295026,
-       "name": "M. Baturina",
+       "id": 328,
+       "name": "Fabián Ruiz",
        "pos": "Midfielder",
-       "g": 21.3,
-       "a": 12.2,
-       "inv": 30.9
+       "g": 23.0,
+       "a": 20.0,
+       "inv": 38.4
       }
      ]
     },
     "away": {
      "scorers": [
       {
-       "id": 1828,
-       "name": "L. Jović",
-       "p": 17.9,
+       "id": 249,
+       "name": "D. Malen",
+       "p": 41.8,
+       "gl": 12,
+       "ap": 14
+      },
+      {
+       "id": 323936,
+       "name": "M. Soulé",
+       "p": 22.4,
+       "gl": 4,
+       "ap": 15
+      }
+     ],
+     "bookings": [
+      {
+       "id": 778,
+       "name": "B. Cristante",
+       "p": 21.6,
+       "yc": 3,
+       "rc": 0,
+       "ap": 11
+      },
+      {
+       "id": 22147,
+       "name": "M. Koné",
+       "p": 16.4,
+       "yc": 2,
+       "rc": 0,
+       "ap": 9
+      }
+     ],
+     "defender": {
+      "id": 6,
+      "name": "L. Balerdi",
+      "sot": 6
+     },
+     "cap": [
+      {
+       "id": 249,
+       "name": "D. Malen",
+       "pos": "Attacker",
+       "g": 41.8,
+       "a": 19.8,
+       "inv": 53.3
+      },
+      {
+       "id": 875,
+       "name": "P. Dybala",
+       "pos": "Attacker",
+       "g": 16.8,
+       "a": 28.6,
+       "inv": 40.6
+      },
+      {
+       "id": 323936,
+       "name": "M. Soulé",
+       "pos": "Attacker",
+       "g": 22.4,
+       "a": 22.5,
+       "inv": 39.9
+      },
+      {
+       "id": 404097,
+       "name": "Rodrigo Mora",
+       "pos": "Attacker",
+       "g": 18.6,
+       "a": 10.8,
+       "inv": 27.4
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635735,
+   "kickoff": "2026-11-25T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Sporting CP",
+   "away": "Manchester United",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 44.4,
+   "draw_pct": 24.3,
+   "away_pct": 31.3,
+   "xg_home": 1.81,
+   "xg_away": 1.5,
+   "over25": 64.2,
+   "btts": 65.7,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 47237,
+       "name": "L. Suárez",
+       "p": 43.3,
+       "gl": 4,
+       "ap": 4
+      },
+      {
+       "id": 154839,
+       "name": "Geny Catamo",
+       "p": 21.7,
        "gl": 1,
+       "ap": 4
+      }
+     ],
+     "bookings": [
+      {
+       "id": 286084,
+       "name": "Sergi Altimira",
+       "p": 18.9,
+       "yc": 1,
+       "rc": 0,
+       "ap": 4
+      },
+      {
+       "id": 51776,
+       "name": "M. Araújo",
+       "p": 18.9,
+       "yc": 1,
+       "rc": 0,
+       "ap": 4
+      }
+     ],
+     "defender": {
+      "id": 51776,
+      "name": "M. Araújo",
+      "sot": 2
+     },
+     "cap": [
+      {
+       "id": 47237,
+       "name": "L. Suárez",
+       "pos": "Attacker",
+       "g": 43.3,
+       "a": 7.1,
+       "inv": 47.3
+      },
+      {
+       "id": 338014,
+       "name": "N. Irankunda",
+       "pos": "Attacker",
+       "g": 18.6,
+       "a": 22.1,
+       "inv": 36.6
+      },
+      {
+       "id": 154839,
+       "name": "Geny Catamo",
+       "pos": "Attacker",
+       "g": 21.7,
+       "a": 6.8,
+       "inv": 27.0
+      },
+      {
+       "id": 331046,
+       "name": "I. Doumbia",
+       "pos": "Midfielder",
+       "g": 20.4,
+       "a": 6.5,
+       "inv": 25.6
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 1485,
+       "name": "Bruno Fernandes",
+       "p": 24.3,
+       "gl": 6,
+       "ap": 13
+      },
+      {
+       "id": 1165,
+       "name": "Matheus Cunha",
+       "p": 23.3,
+       "gl": 4,
+       "ap": 14
+      }
+     ],
+     "bookings": [
+      {
+       "id": 2935,
+       "name": "H. Maguire",
+       "p": 27.7,
+       "yc": 5,
+       "rc": 0,
+       "ap": 13
+      },
+      {
+       "id": 402329,
+       "name": "A. Heaven",
+       "p": 23.7,
+       "yc": 3,
+       "rc": 0,
+       "ap": 7
+      }
+     ],
+     "defender": {
+      "id": 2467,
+      "name": "Lisandro Martínez",
+      "sot": 4
+     },
+     "cap": [
+      {
+       "id": 1485,
+       "name": "Bruno Fernandes",
+       "pos": "Midfielder",
+       "g": 24.3,
+       "a": 17.4,
+       "inv": 37.5
+      },
+      {
+       "id": 1165,
+       "name": "Matheus Cunha",
+       "pos": "Attacker",
+       "g": 23.3,
+       "a": 11.6,
+       "inv": 32.2
+      },
+      {
+       "id": 20589,
+       "name": "B. Mbeumo",
+       "pos": "Midfielder",
+       "g": 21.6,
+       "a": 7.5,
+       "inv": 27.5
+      },
+      {
+       "id": 382452,
+       "name": "P. Dorgu",
+       "pos": "Midfielder",
+       "g": 7.0,
+       "a": 18.2,
+       "inv": 24.0
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635673,
+   "kickoff": "2026-11-25T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Inter",
+   "away": "VfB Stuttgart",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 61.9,
+   "draw_pct": 20.4,
+   "away_pct": 17.7,
+   "xg_home": 2.32,
+   "xg_away": 1.19,
+   "over25": 68.0,
+   "btts": 63.4,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 217,
+       "name": "Lautaro Martínez",
+       "p": 42.8,
+       "gl": 6,
+       "ap": 7
+      },
+      {
+       "id": 21509,
+       "name": "M. Thuram",
+       "p": 32.7,
+       "gl": 6,
+       "ap": 14
+      }
+     ],
+     "bookings": [
+      {
+       "id": 217,
+       "name": "Lautaro Martínez",
+       "p": 25.2,
+       "yc": 3,
+       "rc": 0,
+       "ap": 7
+      },
+      {
+       "id": 5,
+       "name": "M. Akanji",
+       "p": 23.7,
+       "yc": 4,
+       "rc": 0,
+       "ap": 13
+      }
+     ],
+     "defender": {
+      "id": 10238,
+      "name": "Carlos Augusto",
+      "sot": 6
+     },
+     "cap": [
+      {
+       "id": 217,
+       "name": "Lautaro Martínez",
+       "pos": "Attacker",
+       "g": 42.8,
+       "a": 13.4,
+       "inv": 50.5
+      },
+      {
+       "id": 21509,
+       "name": "M. Thuram",
+       "pos": "Attacker",
+       "g": 32.7,
+       "a": 13.5,
+       "inv": 41.8
+      },
+      {
+       "id": 345808,
+       "name": "F. Esposito",
+       "pos": "Attacker",
+       "g": 23.6,
+       "a": 8.2,
+       "inv": 29.9
+      },
+      {
+       "id": 270509,
+       "name": "A. Diouf",
+       "pos": "Midfielder",
+       "g": 7.9,
+       "a": 23.6,
+       "inv": 29.6
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 46930,
+       "name": "E. Demirović",
+       "p": 32.6,
+       "gl": 9,
+       "ap": 13
+      },
+      {
+       "id": 24868,
+       "name": "J. Vagnoman",
+       "p": 15.0,
+       "gl": 2,
+       "ap": 9
+      }
+     ],
+     "bookings": [
+      {
+       "id": 24963,
+       "name": "A. Karazor",
+       "p": 22.7,
+       "yc": 3,
+       "rc": 0,
+       "ap": 7
+      },
+      {
+       "id": 25342,
+       "name": "M. Mittelstädt",
+       "p": 16.0,
+       "yc": 2,
+       "rc": 0,
+       "ap": 11
+      }
+     ],
+     "defender": {
+      "id": 38112,
+      "name": "J. Chabot",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 46930,
+       "name": "E. Demirović",
+       "pos": "Attacker",
+       "g": 32.6,
+       "a": 2.6,
+       "inv": 34.4
+      },
+      {
+       "id": 137210,
+       "name": "A. Stiller",
+       "pos": "Midfielder",
+       "g": 4.9,
+       "a": 25.4,
+       "inv": 29.1
+      },
+      {
+       "id": 26475,
+       "name": "D. Undav",
+       "pos": "Attacker",
+       "g": 14.4,
+       "a": 16.9,
+       "inv": 28.9
+      },
+      {
+       "id": 24868,
+       "name": "J. Vagnoman",
+       "pos": "Midfielder",
+       "g": 15.0,
+       "a": 9.8,
+       "inv": 23.3
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635625,
+   "kickoff": "2026-11-25T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Atletico Madrid",
+   "away": "Viking",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 62.5,
+   "draw_pct": 20.3,
+   "away_pct": 17.1,
+   "xg_home": 2.31,
+   "xg_away": 1.15,
+   "over25": 67.2,
+   "btts": 62.3,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 6009,
+       "name": "J. Álvarez",
+       "p": 21.8,
+       "gl": 2,
+       "ap": 12
+      },
+      {
+       "id": 182219,
+       "name": "Álex Baena",
+       "p": 21.3,
+       "gl": 5,
+       "ap": 16
+      }
+     ],
+     "bookings": [
+      {
+       "id": 295793,
+       "name": "Marc Pubill",
+       "p": 26.1,
+       "yc": 5,
+       "rc": 0,
+       "ap": 14
+      },
+      {
+       "id": 7712,
+       "name": "M. Hjulmand",
+       "p": 20.0,
+       "yc": 3,
+       "rc": 1,
+       "ap": 14
+      }
+     ],
+     "defender": {
+      "id": 563,
+      "name": "Álex Grimaldo",
+      "sot": 10
+     },
+     "cap": [
+      {
+       "id": 182219,
+       "name": "Álex Baena",
+       "pos": "Midfielder",
+       "g": 21.3,
+       "a": 20.3,
+       "inv": 37.3
+      },
+      {
+       "id": 6009,
+       "name": "J. Álvarez",
+       "pos": "Attacker",
+       "g": 21.8,
+       "a": 19.3,
+       "inv": 37.0
+      },
+      {
+       "id": 8489,
+       "name": "J. David",
+       "pos": "Attacker",
+       "g": 20.6,
+       "a": 12.9,
+       "inv": 30.8
+      },
+      {
+       "id": 323935,
+       "name": "G. Simeone",
+       "pos": "Attacker",
+       "g": 19.6,
+       "a": 12.5,
+       "inv": 29.6
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 39145,
+       "name": "Z. Tripić",
+       "p": 32.6,
+       "gl": 4,
        "ap": 6
       },
       {
-       "id": 2118,
-       "name": "R. Marin",
-       "p": 17.1,
-       "gl": 2,
+       "id": 15622,
+       "name": "P. Christiansen",
+       "p": 27.8,
+       "gl": 3,
        "ap": 6
       }
      ],
      "bookings": [
       {
-       "id": 2118,
-       "name": "R. Marin",
-       "p": 21.5,
-       "yc": 2,
+       "id": 94541,
+       "name": "J. Bell",
+       "p": 32.6,
+       "yc": 3,
        "rc": 0,
-       "ap": 6
+       "ap": 5
       },
       {
-       "id": 26936,
-       "name": "S. Pilios",
-       "p": 15.5,
-       "yc": 1,
+       "id": 39285,
+       "name": "K. Askildsen",
+       "p": 23.5,
+       "yc": 2,
        "rc": 0,
        "ap": 6
       }
      ],
      "defender": {
-      "id": 26936,
-      "name": "S. Pilios",
-      "sot": 3
+      "id": 180937,
+      "name": "H. Falchener",
+      "sot": 2
      },
      "cap": [
       {
-       "id": 1828,
-       "name": "L. Jović",
+       "id": 39145,
+       "name": "Z. Tripić",
        "pos": "Attacker",
-       "g": 17.9,
+       "g": 32.6,
+       "a": 27.7,
+       "inv": 51.3
+      },
+      {
+       "id": 15622,
+       "name": "P. Christiansen",
+       "pos": "Attacker",
+       "g": 27.8,
        "a": 12.9,
-       "inv": 28.4
+       "inv": 37.2
       },
       {
-       "id": 26936,
-       "name": "S. Pilios",
+       "id": 1188,
+       "name": "E. Botheim",
+       "pos": "Attacker",
+       "g": 22.5,
+       "a": 14.3,
+       "inv": 33.6
+      },
+      {
+       "id": 39285,
+       "name": "K. Askildsen",
+       "pos": "Midfielder",
+       "g": 7.0,
+       "a": 20.9,
+       "inv": 26.4
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "previous": [],
+   "odds": {},
+   "euro": true
+  },
+  {
+   "id": 1635642,
+   "kickoff": "2026-11-25T20:00:00",
+   "round": "League Stage - 5",
+   "home": "Club Brugge KV",
+   "away": "Liverpool",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {},
+   "home_pct": 31.7,
+   "draw_pct": 23.2,
+   "away_pct": 45.1,
+   "xg_home": 1.62,
+   "xg_away": 1.95,
+   "over25": 69.3,
+   "btts": 69.6,
+   "cards5": 0.0,
+   "cards": null,
+   "form": {
+    "home": null,
+    "away": null
+   },
+   "goals": null,
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 287923,
+       "name": "N. Tresoldi",
+       "p": 47.7,
+       "gl": 5,
+       "ap": 4
+      },
+      {
+       "id": 282126,
+       "name": "Carlos Forbs",
+       "p": 25.6,
+       "gl": 2,
+       "ap": 4
+      }
+     ],
+     "bookings": [
+      {
+       "id": 304984,
+       "name": "J. Spileers",
+       "p": 30.1,
+       "yc": 2,
+       "rc": 0,
+       "ap": 3
+      },
+      {
+       "id": 491248,
+       "name": "Jan Virgili",
+       "p": 25.3,
+       "yc": 2,
+       "rc": 0,
+       "ap": 4
+      }
+     ],
+     "defender": {
+      "id": 375974,
+      "name": "J. Seys",
+      "sot": 2
+     },
+     "cap": [
+      {
+       "id": 287923,
+       "name": "N. Tresoldi",
+       "pos": "Attacker",
+       "g": 47.7,
+       "a": 7.0,
+       "inv": 51.4
+      },
+      {
+       "id": 282126,
+       "name": "Carlos Forbs",
+       "pos": "Midfielder",
+       "g": 25.6,
+       "a": 28.5,
+       "inv": 46.8
+      },
+      {
+       "id": 375974,
+       "name": "J. Seys",
        "pos": "Defender",
-       "g": 13.9,
-       "a": 10.9,
-       "inv": 23.3
+       "g": 12.2,
+       "a": 26.1,
+       "inv": 35.1
       },
       {
-       "id": 1321,
-       "name": "L. Majer",
+       "id": 39291,
+       "name": "H. Vetlesen",
        "pos": "Midfielder",
-       "g": 10.3,
-       "a": 12.2,
-       "inv": 21.3
+       "g": 13.0,
+       "a": 15.2,
+       "inv": 26.2
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 2864,
+       "name": "A. Isak",
+       "p": 32.3,
+       "gl": 8,
+       "ap": 12
       },
       {
-       "id": 8543,
-       "name": "A. Koita",
+       "id": 161904,
+       "name": "B. Barcola",
+       "p": 19.3,
+       "gl": 3,
+       "ap": 12
+      }
+     ],
+     "bookings": [
+      {
+       "id": 6716,
+       "name": "A. Mac Allister",
+       "p": 29.7,
+       "yc": 6,
+       "rc": 0,
+       "ap": 14
+      },
+      {
+       "id": 206254,
+       "name": "M. Kerkez",
+       "p": 19.8,
+       "yc": 3,
+       "rc": 0,
+       "ap": 12
+      }
+     ],
+     "defender": {
+      "id": 101814,
+      "name": "R. Araújo",
+      "sot": 4
+     },
+     "cap": [
+      {
+       "id": 2864,
+       "name": "A. Isak",
+       "pos": "Attacker",
+       "g": 32.3,
+       "a": 8.2,
+       "inv": 37.9
+      },
+      {
+       "id": 247,
+       "name": "C. Gakpo",
        "pos": "Midfielder",
-       "g": 9.4,
-       "a": 12.5,
-       "inv": 20.7
+       "g": 9.3,
+       "a": 29.0,
+       "inv": 35.6
+      },
+      {
+       "id": 161904,
+       "name": "B. Barcola",
+       "pos": "Attacker",
+       "g": 19.3,
+       "a": 17.5,
+       "inv": 33.4
+      },
+      {
+       "id": 203224,
+       "name": "F. Wirtz",
+       "pos": "Midfielder",
+       "g": 13.0,
+       "a": 20.0,
+       "inv": 30.4
       }
      ]
     }
