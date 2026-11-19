@@ -779,7 +779,8 @@ def chip(f, i, href="#"):
 # ---------------------------------------------------------------- pages
 
 def league_nav(leagues, current, prefix):
-    links = [f'<a href="{prefix}" class="lg{" on" if current is None else ""}">All leagues</a>']
+    links = [f'<a href="{prefix}scores/" class="lg{" on" if current == "scores" else ""}">Live scores</a>',
+             f'<a href="{prefix}" class="lg{" on" if current is None else ""}">All leagues</a>']
     for d in leagues:
         on = " on" if current == d["league"] else ""
         links.append(f'<a href="{prefix}{d["league"]}/" class="lg{on}">{esc(d["name"])}</a>')
@@ -1241,15 +1242,20 @@ def build():
         <h2><a href="{d['league']}/">{esc(d['name'])}</a> <span class="sub">{esc(d['country'])}</span></h2>
         <div class="rows">{''.join(rows)}</div>{more}
       </section>""")
-    html = page("Live football scores and predictions today | FootyPredicts",
+    html = page("Free football predictions today | FootyPredicts",
                 "Live football scores from every league in the world, plus free predictions: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
-                "", scores_block() + pick_of_day(leagues) + quiz_promo(leagues) + "".join(sections), "", "")
+                "", pick_of_day(leagues) + quiz_promo(leagues) + "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
     os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "track-record", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(track_record_page(leagues, upd))
+    os.makedirs(os.path.join(OUT_DIR, "scores"), exist_ok=True)
+    with open(os.path.join(OUT_DIR, "scores", "index.html"), "w", encoding="utf-8") as fh:
+        fh.write(page("Live football scores today, every league | FootyPredicts",
+                      "Live football scores from every league in the world: goals, cards, league tables and kick-off times, updated about every 30 seconds.",
+                      league_nav(leagues, "scores", "../"), "Live scores · every league in the world", "", scores_block(), "../", "scores/"))
     os.makedirs(os.path.join(OUT_DIR, "live"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "live", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(live_tab(leagues))
@@ -1263,7 +1269,7 @@ def build():
     with open(os.path.join(OUT_DIR, "responsible-gambling", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(responsible_page(leagues))
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    paths = [""] + [d["league"] + "/" for d in leagues] + ["live/", "quiz/", "fantasy/", "track-record/", "responsible-gambling/"]
+    paths = ["", "scores/"] + [d["league"] + "/" for d in leagues] + ["live/", "quiz/", "fantasy/", "track-record/", "responsible-gambling/"]
     with open(os.path.join(OUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as fh:
         fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                  + "".join(f"  <url><loc>{SITE_URL}{x}</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq></url>\n" for x in paths)

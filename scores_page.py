@@ -260,7 +260,7 @@ def scores_body(url, picks, tables=None):
     cfg = {"tables": tables or {}, "url": url, "picks": {k: {"pk": v["pk"], "h": v["h"], "a": v["a"], "hp": v["hp"], "dp": v["dp"], "ap": v["ap"]} for k, v in picks.items()}}
     html = """
 <section class="ls" id="ls">
-  <div class="ls-head"><h2>Live scores</h2><a href="live/">Live pressure &rarr;</a></div>
+  <div class="ls-head"><h2>Live scores</h2><a href="../live/">Live pressure &rarr;</a></div>
   <div class="ls-days" role="group" aria-label="Day"></div>
   <div class="ls-tools"><div class="ls-fl" style="display:flex;gap:6px;flex-wrap:wrap"></div>
     <input class="ls-q" type="search" placeholder="Search team, league or country" aria-label="Search matches"></div>
