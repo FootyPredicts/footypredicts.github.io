@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-19T21:26:11.925963+00:00",
+ "updated": "2026-11-19T21:38:08.018474+00:00",
  "matches_used": 860,
  "fixtures": [
   {
@@ -8838,7 +8838,7 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 1.4,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
@@ -8850,13 +8850,13 @@
      ]
     }
    },
-   "home_pct": 19.3,
+   "home_pct": 19.0,
    "draw_pct": 27.6,
-   "away_pct": 53.1,
-   "xg_home": 0.83,
+   "away_pct": 53.4,
+   "xg_home": 0.82,
    "xg_away": 1.54,
-   "over25": 42.2,
-   "btts": 45.3,
+   "over25": 41.9,
+   "btts": 44.9,
    "cards5": 44.5,
    "cards": {
     "exp": 4.42,
@@ -9864,21 +9864,21 @@
      ],
      "bookings": [
       {
-       "id": 723,
-       "name": "Joelinton",
-       "p": 27.5,
-       "yc": 2,
-       "rc": 0,
-       "ap": 4,
-       "price": null
-      },
-      {
        "id": 161933,
        "name": "Nico González",
        "p": 26.5,
        "yc": 3,
        "rc": 0,
        "ap": 8,
+       "price": null
+      },
+      {
+       "id": 2806,
+       "name": "F. Schär",
+       "p": 25.8,
+       "yc": 3,
+       "rc": 0,
+       "ap": 5,
        "price": null
       }
      ],
@@ -10016,15 +10016,33 @@
       "id": 329640,
       "name": "E. Jaouen",
       "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 723,
+      "name": "Joelinton",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
      }
     ],
     "away": [
      {
+      "id": 442044,
+      "name": "M. Dowman",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
       "id": 1460,
       "name": "B. Saka",
       "type": "Missing Fixture",
-      "reason": "Thigh Problems"
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 47315,
+      "name": "M. Zubimendi",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
      }
     ]
    },
@@ -11318,7 +11336,7 @@
      "any": 65.35441896699426
     },
     "away": {
-     "fh": 49.01731957886317,
+     "fh": 49.01731957886318,
      "sh": 51.78373068411148,
      "any": 75.4180535036859
     },
