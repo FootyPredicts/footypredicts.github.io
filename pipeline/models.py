@@ -153,6 +153,38 @@ def form_table(res, season):
     return out
 
 
+def venue_table(res, season, pm_stats):
+    """Per team, this season: the home team's HOME games and the away team's AWAY games."""
+    r = res[res["season"] == season].sort_values("dt")
+    out = {}
+    for side in ("home", "away"):
+        opp = "away" if side == "home" else "home"
+        tbl = {}
+        for team, g in r.groupby(side):
+            gf = g["hg"] if side == "home" else g["ag"]
+            ga = g["ag"] if side == "home" else g["hg"]
+            n = len(g)
+            res_ch = ["W" if a > b else "D" if a == b else "L" for a, b in zip(gf, ga)]
+            row = {"played": int(n), "w": res_ch.count("W"), "d": res_ch.count("D"), "l": res_ch.count("L"),
+                   "last5": "".join(res_ch[-5:]), "gf": round(float(gf.mean()), 2), "ga": round(float(ga.mean()), 2),
+                   "cs": round(100 * float((ga == 0).mean())), "fts": round(100 * float((gf == 0).mean()))}
+            acc = {"sh": [], "sot": [], "co": [], "yc": []}
+            for fid in g["id"]:
+                st = (pm_stats or {}).get(str(int(fid))) or {}
+                mine = st.get(side) or {}
+                if "Total Shots" in mine:
+                    acc["sh"].append(mine.get("Total Shots"))
+                    acc["sot"].append(mine.get("Shots on Goal"))
+                    acc["co"].append(mine.get("Corner Kicks"))
+                    acc["yc"].append(mine.get("Yellow Cards"))
+            for k, v in acc.items():
+                v = [x for x in v if x is not None]
+                row[k] = round(sum(v) / len(v), 1) if len(v) >= 3 else None
+            tbl[team] = row
+        out[side] = tbl
+    return out
+
+
 def half_rates(res):
     """Per team: goals scored / conceded per half (last 12 months, both venues)."""
     r = res.dropna(subset=["ht_h", "ht_a"])
@@ -425,6 +457,7 @@ def predict_league(league, name, country):
     received = team_cards_received(res)
     size = card_dispersion(res)
     form = form_table(res, season)
+    venue = venue_table(res, season, _pm_stats)
     rates, avg = half_rates(res)
     p_rates = player_rates(players)
 
@@ -501,6 +534,7 @@ def predict_league(league, name, country):
             "xg_home": round(lh, 2), "xg_away": round(la, 2),
             "over25": round(100 * o25, 1), "btts": round(100 * btts, 1), "cards5": round(100 * c5, 1), "cards": cards,
             "form": {"home": form["home"].get(home), "away": form["away"].get(away)},
+            "venue": {"home": venue["home"].get(home), "away": venue["away"].get(away)},
             "goals": goal_timing(home, away, rates, avg),
             "players": {
                 "home": player_picks(p_rates, home, opp(away), card_factor, True, out_ids["home"]),

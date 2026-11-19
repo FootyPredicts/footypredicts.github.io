@@ -583,6 +583,30 @@ def render_match(f, i):
         <table class="mirror">{goals}</table>
         <p class="halves">Chance of a goal in the 1st half <b>{pct(g['match_fh'])}</b> · 2nd half <b>{pct(g['match_sh'])}</b></p>
       </section>"""
+    vh, va = (f.get("venue") or {}).get("home"), (f.get("venue") or {}).get("away")
+    def vv(s, k, fmt="{}", suffix=""):
+        v = None if not s else s.get(k)
+        return "&mdash;" if v is None else fmt.format(v) + suffix
+    def last5(s):
+        if not s or not s.get("last5"):
+            return "&mdash;"
+        return "".join(f'<span class="f{c}">{c}</span>' for c in s["last5"])
+    venue_sec = "" if (euro or not (vh or va)) else f"""
+      <section class="block">
+        <h3>Home and away form <span class="sub">{esc(home)} at home v {esc(away)} away, this season</span></h3>
+        <table class="mirror">{mirror([
+            ("Record (W-D-L)", f"{vh['w']}-{vh['d']}-{vh['l']}" if vh else "&mdash;", f"{va['w']}-{va['d']}-{va['l']}" if va else "&mdash;"),
+            ("Last 5", last5(vh), last5(va)),
+            ("Goals scored a game", vv(vh, "gf", "{:.1f}"), vv(va, "gf", "{:.1f}")),
+            ("Goals conceded a game", vv(vh, "ga", "{:.1f}"), vv(va, "ga", "{:.1f}")),
+            ("Clean sheets", vv(vh, "cs", "{}", "%"), vv(va, "cs", "{}", "%")),
+            ("Failed to score", vv(vh, "fts", "{}", "%"), vv(va, "fts", "{}", "%")),
+            ("Shots a game", vv(vh, "sh", "{:.1f}"), vv(va, "sh", "{:.1f}")),
+            ("Shots on target a game", vv(vh, "sot", "{:.1f}"), vv(va, "sot", "{:.1f}")),
+            ("Corners a game", vv(vh, "co", "{:.1f}"), vv(va, "co", "{:.1f}")),
+            ("Yellow cards a game", vv(vh, "yc", "{:.1f}"), vv(va, "yc", "{:.1f}")),
+        ])}</table>
+      </section>"""
     form_sec = "" if euro else f"""
       <section class="block">
         <h3>This season <span class="sub">home record v away record</span></h3>
@@ -629,6 +653,7 @@ def render_match(f, i):
       {inj_sec}
       {goals_sec}
       {form_sec}
+      {venue_sec}
       {prev_block}
     </article>"""
 
@@ -1224,6 +1249,8 @@ main { max-width:960px; margin:0 auto; padding:20px 16px 56px; }
 .block { margin-top:26px; }
 .block h3 { margin:0 0 10px; font:700 22px/1.1 "Barlow Condensed",sans-serif; }
 .block h3 .sub { font:400 14px Barlow,sans-serif; color:var(--muted); margin-left:6px; }
+.fW, .fD, .fL { display:inline-block; width:20px; height:20px; line-height:20px; text-align:center; border-radius:5px; color:#fff; font:700 12px Barlow,sans-serif; margin:0 1px; }
+.fW { background:#2e8b57; } .fD { background:#9aa5a0; } .fL { background:#c0392b; }
 .mirror { width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
 .mirror td, .mirror th { padding:10px 14px; border-top:1px solid var(--line); vertical-align:top; }
 .mirror tr:first-child td, .mirror tr:first-child th { border-top:0; }
