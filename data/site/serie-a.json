@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-19T20:08:07.988524+00:00",
+ "updated": "2026-11-19T20:38:06.482969+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -2260,16 +2260,16 @@
    },
    "goals": {
     "home": {
-     "fh": 52.388947825286046,
+     "fh": 52.38894782528606,
      "sh": 61.22398967036751,
-     "any": 81.5383334906862
+     "any": 81.53833349068621
     },
     "away": {
      "fh": 38.70510860050871,
      "sh": 39.66532209344763,
      "any": 63.01792470094586
     },
-    "match_fh": 70.81685727535394,
+    "match_fh": 70.81685727535395,
     "match_sh": 76.60461906260477
    },
    "players": {
@@ -6071,23 +6071,28 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 0.7,
+     "defence_hit_pct": 6.0,
+     "key_out": [
+      "P. Kalulu",
+      "Z. Çelik"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 2.9,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "J. Yeboah"
+     ]
     }
    },
-   "home_pct": 66.0,
-   "draw_pct": 23.1,
-   "away_pct": 10.9,
-   "xg_home": 1.82,
-   "xg_away": 0.6,
-   "over25": 43.7,
-   "btts": 38.8,
+   "home_pct": 65.3,
+   "draw_pct": 23.4,
+   "away_pct": 11.3,
+   "xg_home": 1.81,
+   "xg_away": 0.62,
+   "over25": 43.9,
+   "btts": 39.5,
    "cards5": 29.2,
    "cards": {
     "exp": 3.58,
@@ -7121,13 +7126,86 @@
     }
    },
    "injuries": {
-    "home": [],
+    "home": [
+     {
+      "id": 15573,
+      "name": "K. Grabara",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 162188,
+      "name": "P. Kalulu",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 30533,
+      "name": "M. Locatelli",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 333,
+      "name": "A. Milik",
+      "type": "Missing Fixture",
+      "reason": "Inactive"
+     },
+     {
+      "id": 116,
+      "name": "K. Thuram",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 339883,
+      "name": "K. Yildiz",
+      "type": "Missing Fixture",
+      "reason": "Foot Injury"
+     },
+     {
+      "id": 127011,
+      "name": "A. Cambiaso",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 22222,
+      "name": "Z. Celik",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     }
+    ],
     "away": [
      {
+      "id": 212,
+      "name": "A. Adorante",
+      "type": "Missing Fixture",
+      "reason": "Hernia"
+     },
+     {
+      "id": 14704,
+      "name": "B. Franjic",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
       "id": 26095,
-      "name": "M. Šverko",
+      "name": "M. Sverko",
       "type": "Missing Fixture",
       "reason": "Hip Injury"
+     },
+     {
+      "id": 31390,
+      "name": "P. Mazzocchi",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 25414,
+      "name": "J. Yeboah",
+      "type": "Questionable",
+      "reason": "Injury"
      }
     ]
    },
