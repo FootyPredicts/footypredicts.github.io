@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-19T19:38:16.867771+00:00",
+ "updated": "2026-11-19T20:08:07.988524+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -2896,23 +2896,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 9.0,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "D. Drobnic",
+      "D. Romero",
+      "Diego Carlos"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 0.1,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 10.9,
-   "draw_pct": 22.7,
-   "away_pct": 66.4,
-   "xg_home": 0.62,
-   "xg_away": 1.86,
-   "over25": 45.3,
-   "btts": 39.9,
+   "home_pct": 9.2,
+   "draw_pct": 21.4,
+   "away_pct": 69.4,
+   "xg_home": 0.57,
+   "xg_away": 1.94,
+   "over25": 45.7,
+   "btts": 37.7,
    "cards5": 32.9,
    "cards": {
     "exp": 3.78,
@@ -3826,21 +3830,6 @@
     "home": {
      "scorers": [
       {
-       "id": 194905,
-       "name": "D. Romero",
-       "p": 16.1,
-       "gl": 2,
-       "as": 0,
-       "ap": 9,
-       "price": {
-        "odd": 5.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.0
-        }
-       }
-      },
-      {
        "id": 483670,
        "name": "S. Lontani",
        "p": 13.1,
@@ -3852,6 +3841,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 5.0
+        }
+       }
+      },
+      {
+       "id": 194750,
+       "name": "E. Touré",
+       "p": 10.6,
+       "gl": 0,
+       "as": 1,
+       "ap": 11,
+       "price": {
+        "odd": 5.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 5.5
         }
        }
       }
@@ -3883,14 +3887,6 @@
      },
      "cap": [
       {
-       "id": 194905,
-       "name": "D. Romero",
-       "pos": "Attacker",
-       "g": 16.1,
-       "a": 2.6,
-       "inv": 18.3
-      },
-      {
        "id": 194750,
        "name": "E. Touré",
        "pos": "Attacker",
@@ -3913,6 +3909,14 @@
        "g": 7.1,
        "a": 8.4,
        "inv": 14.9
+      },
+      {
+       "id": 322630,
+       "name": "G. Fabbian",
+       "pos": "Midfielder",
+       "g": 4.7,
+       "a": 10.2,
+       "inv": 14.4
       }
      ]
     },
@@ -4011,8 +4015,70 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 203483,
+      "name": "A. Ndiaye",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 194905,
+      "name": "D. Romero",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
+      "id": 628,
+      "name": "A. Bernabe",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 21090,
+      "name": "Diego Carlos",
+      "type": "Questionable",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 576948,
+      "name": "D. Drobnic",
+      "type": "Questionable",
+      "reason": "Foot Injury"
+     },
+     {
+      "id": 6221,
+      "name": "L. Valenti",
+      "type": "Questionable",
+      "reason": "Coach's decision"
+     }
+    ],
+    "away": [
+     {
+      "id": 782,
+      "name": "L. Pellegrini",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 30418,
+      "name": "P. Gollini",
+      "type": "Questionable",
+      "reason": "Back Injury"
+     },
+     {
+      "id": 162452,
+      "name": "D. Rensch",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 556,
+      "name": "M. Svilar",
+      "type": "Questionable",
+      "reason": "Toe Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -8836,23 +8902,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 1.1,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "Juan Miranda"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 0.2,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "E. Ebosse"
+     ]
     }
    },
-   "home_pct": 52.0,
-   "draw_pct": 25.8,
-   "away_pct": 22.2,
-   "xg_home": 1.71,
-   "xg_away": 1.04,
-   "over25": 51.8,
-   "btts": 53.9,
+   "home_pct": 51.4,
+   "draw_pct": 25.6,
+   "away_pct": 23.0,
+   "xg_home": 1.72,
+   "xg_away": 1.08,
+   "over25": 53.2,
+   "btts": 55.2,
    "cards5": 30.5,
    "cards": {
     "exp": 3.65,
@@ -9812,14 +9882,6 @@
      },
      "cap": [
       {
-       "id": 134,
-       "name": "Juan Miranda",
-       "pos": "Defender",
-       "g": 4.5,
-       "a": 40.9,
-       "inv": 43.5
-      },
-      {
        "id": 873,
        "name": "F. Bernardeschi",
        "pos": "Attacker",
@@ -9842,6 +9904,14 @@
        "g": 26.2,
        "a": 4.9,
        "inv": 29.9
+      },
+      {
+       "id": 30542,
+       "name": "J. Odgaard",
+       "pos": "Midfielder",
+       "g": 13.0,
+       "a": 14.3,
+       "inv": 25.5
       }
      ]
     },
@@ -9940,8 +10010,52 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 47985,
+      "name": "E. Holm",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 134,
+      "name": "J. Miranda",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 349185,
+      "name": "J. Enem",
+      "type": "Questionable",
+      "reason": "Achilles Tendon Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 315249,
+      "name": "N. Bertola",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 434410,
+      "name": "I. Gueye",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 505,
+      "name": "D. Alaba",
+      "type": "Questionable",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 20656,
+      "name": "E. Ebosse",
+      "type": "Questionable",
+      "reason": "Ankle Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -10340,18 +10454,21 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 10.0,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "A. Raimondo",
+      "G. Bracaglia"
+     ]
     }
    },
-   "home_pct": 41.4,
+   "home_pct": 46.4,
    "draw_pct": 23.6,
-   "away_pct": 35.0,
-   "xg_home": 1.84,
-   "xg_away": 1.68,
-   "over25": 68.3,
-   "btts": 69.2,
+   "away_pct": 30.0,
+   "xg_home": 1.91,
+   "xg_away": 1.51,
+   "over25": 66.5,
+   "btts": 67.2,
    "cards5": 36.7,
    "cards": {
     "exp": 3.98,
@@ -11357,15 +11474,6 @@
     "away": {
      "scorers": [
       {
-       "id": 314254,
-       "name": "A. Raimondo",
-       "p": 28.3,
-       "gl": 8,
-       "as": 0,
-       "ap": 10,
-       "price": null
-      },
-      {
        "id": 32011,
        "name": "G. Calò",
        "p": 20.5,
@@ -11379,32 +11487,47 @@
          "Bet365": 5.0
         }
        }
+      },
+      {
+       "id": 334915,
+       "name": "F. Ghedjemis",
+       "p": 16.8,
+       "gl": 1,
+       "as": 4,
+       "ap": 9,
+       "price": {
+        "odd": 3.75,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.75
+        }
+       }
       }
      ],
      "bookings": [
       {
-       "id": 379504,
-       "name": "G. Bracaglia",
-       "p": 32.1,
-       "yc": 5,
+       "id": 353613,
+       "name": "G. Calvani",
+       "p": 17.3,
+       "yc": 2,
        "rc": 0,
        "ap": 10,
        "price": null
       },
       {
-       "id": 314254,
-       "name": "A. Raimondo",
-       "p": 20.6,
-       "yc": 3,
+       "id": 191417,
+       "name": "A. Oyono",
+       "p": 16.9,
+       "yc": 2,
        "rc": 0,
        "ap": 10,
        "price": null
       }
      ],
      "defender": {
-      "id": 379504,
-      "name": "G. Bracaglia",
-      "sot": 5
+      "id": 180586,
+      "name": "I. Monterisi",
+      "sot": 2
      },
      "cap": [
       {
@@ -11414,14 +11537,6 @@
        "g": 16.8,
        "a": 20.9,
        "inv": 34.3
-      },
-      {
-       "id": 314254,
-       "name": "A. Raimondo",
-       "pos": "Attacker",
-       "g": 28.3,
-       "a": 2.7,
-       "inv": 30.2
       },
       {
        "id": 311251,
@@ -11438,13 +11553,40 @@
        "g": 9.5,
        "a": 18.4,
        "inv": 26.2
+      },
+      {
+       "id": 32011,
+       "name": "G. Calò",
+       "pos": "Midfielder",
+       "g": 20.5,
+       "a": 6.8,
+       "inv": 25.9
       }
      ]
     }
    },
    "injuries": {
     "home": [],
-    "away": []
+    "away": [
+     {
+      "id": 379504,
+      "name": "G. Bracaglia",
+      "type": "Missing Fixture",
+      "reason": "Yellow Cards"
+     },
+     {
+      "id": 719,
+      "name": "F. Grillitsch",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 314254,
+      "name": "A. Raimondo",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [],

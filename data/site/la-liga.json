@@ -3,7 +3,7 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-19T19:38:10.297424+00:00",
+ "updated": "2026-11-19T20:08:01.093070+00:00",
  "matches_used": 879,
  "fixtures": [
   {
@@ -26,23 +26,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 5.4,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "Aitor Paredes"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.5,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 49.4,
-   "draw_pct": 29.4,
-   "away_pct": 21.3,
-   "xg_home": 1.4,
-   "xg_away": 0.83,
-   "over25": 38.6,
-   "btts": 43.5,
+   "home_pct": 47.6,
+   "draw_pct": 30.4,
+   "away_pct": 22.1,
+   "xg_home": 1.33,
+   "xg_away": 0.82,
+   "over25": 36.2,
+   "btts": 42.1,
    "cards5": 51.1,
    "cards": {
     "exp": 4.83,
@@ -1174,8 +1176,64 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 332305,
+      "name": "U. Egiluz",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 47291,
+      "name": "G. Guruzeta",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 287680,
+      "name": "M. Sannadi",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 47278,
+      "name": "D. Vivian",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 183849,
+      "name": "A. Paredes",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 286593,
+      "name": "N. Serrano",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 286038,
+      "name": "A. Calatrava",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 47396,
+      "name": "K. Garcia",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 183699,
+      "name": "U. Gonzalez",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -1662,18 +1720,20 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 0.2,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "B. Ede"
+     ]
     }
    },
-   "home_pct": 39.0,
-   "draw_pct": 30.6,
-   "away_pct": 30.4,
-   "xg_home": 1.22,
+   "home_pct": 39.8,
+   "draw_pct": 30.3,
+   "away_pct": 29.9,
+   "xg_home": 1.25,
    "xg_away": 1.05,
-   "over25": 39.7,
-   "btts": 46.9,
+   "over25": 40.3,
+   "btts": 47.3,
    "cards5": 49.3,
    "cards": {
     "exp": 4.72,
@@ -2783,8 +2843,34 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 6638,
+      "name": "F. Garces",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 332645,
+      "name": "M. Rodriguez",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 37616,
+      "name": "Z. Eddahchouri",
+      "type": "Questionable",
+      "reason": "Wrist Injury"
+     },
+     {
+      "id": 497393,
+      "name": "B. Ede",
+      "type": "Questionable",
+      "reason": "Hamstring Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [],
@@ -2946,23 +3032,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.1,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "Álvaro García"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 4.2,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "José Gayà"
+     ]
     }
    },
-   "home_pct": 47.8,
-   "draw_pct": 29.1,
-   "away_pct": 23.1,
-   "xg_home": 1.41,
-   "xg_away": 0.9,
-   "over25": 40.9,
-   "btts": 46.0,
+   "home_pct": 49.1,
+   "draw_pct": 29.0,
+   "away_pct": 21.9,
+   "xg_home": 1.42,
+   "xg_away": 0.87,
+   "over25": 40.2,
+   "btts": 45.0,
    "cards5": 54.9,
    "cards": {
     "exp": 5.07,
@@ -4027,9 +4117,9 @@
       }
      ],
      "defender": {
-      "id": 918,
-      "name": "José Gayà",
-      "sot": 2
+      "id": 333672,
+      "name": "César Tárrega",
+      "sot": 1
      },
      "cap": [
       {
@@ -4068,8 +4158,82 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 11379,
+      "name": "A. Batalla",
+      "type": "Missing Fixture",
+      "reason": "Broken calfbone"
+     },
+     {
+      "id": 30924,
+      "name": "M. Kumbulla",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
+      "id": 1847,
+      "name": "Luiz Felipe",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 47109,
+      "name": "O. Valentin",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 47543,
+      "name": "A. Garcia",
+      "type": "Questionable",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 314006,
+      "name": "J. Vertrouwd",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 19352,
+      "name": "S. Canos",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 918,
+      "name": "J. Gaya",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 162127,
+      "name": "D. Lopez",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 162175,
+      "name": "J. Vazquez",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 83,
+      "name": "A. Danjuma",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 439578,
+      "name": "D. Otorbi",
+      "type": "Questionable",
+      "reason": "Hamstring Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -4502,23 +4666,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.7,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "Miguel Ángel"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.1,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "C. Hernández"
+     ]
     }
    },
-   "home_pct": 32.9,
-   "draw_pct": 26.5,
-   "away_pct": 40.6,
-   "xg_home": 1.36,
-   "xg_away": 1.54,
-   "over25": 55.5,
-   "btts": 59.4,
+   "home_pct": 32.4,
+   "draw_pct": 27.0,
+   "away_pct": 40.5,
+   "xg_home": 1.31,
+   "xg_away": 1.49,
+   "over25": 53.2,
+   "btts": 57.6,
    "cards5": 50.0,
    "cards": {
     "exp": 4.76,
@@ -5453,12 +5621,12 @@
        "price": null
       },
       {
-       "id": 316519,
-       "name": "F. Bernal",
-       "p": 23.0,
+       "id": 47341,
+       "name": "Marc Roca",
+       "p": 18.4,
        "yc": 2,
-       "rc": 1,
-       "ap": 8,
+       "rc": 0,
+       "ap": 9,
        "price": null
       }
      ],
@@ -5504,8 +5672,52 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 195923,
+      "name": "J. A. Carmona",
+      "type": "Missing Fixture",
+      "reason": "Broken Leg"
+     },
+     {
+      "id": 119213,
+      "name": "A. Gonzalez",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 433,
+      "name": "Marcao",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 438263,
+      "name": "M. Sierra",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 316519,
+      "name": "F. Bernal",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 544644,
+      "name": "J. Morante",
+      "type": "Missing Fixture",
+      "reason": "Hip Injury"
+     },
+     {
+      "id": 47582,
+      "name": "C. Hernandez",
+      "type": "Questionable",
+      "reason": "Calf Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -6051,18 +6263,18 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.6,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 70.8,
-   "draw_pct": 19.5,
-   "away_pct": 9.7,
+   "home_pct": 71.4,
+   "draw_pct": 19.3,
+   "away_pct": 9.2,
    "xg_home": 2.16,
-   "xg_away": 0.68,
-   "over25": 54.0,
-   "btts": 44.3,
+   "xg_away": 0.65,
+   "over25": 53.4,
+   "btts": 43.2,
    "cards5": 47.0,
    "cards": {
     "exp": 4.58,
@@ -7121,14 +7333,6 @@
      },
      "cap": [
       {
-       "id": 333502,
-       "name": "Miguel Román",
-       "pos": "Midfielder",
-       "g": 6.3,
-       "a": 13.5,
-       "inv": 18.9
-      },
-      {
        "id": 161875,
        "name": "Hugo González",
        "pos": "Midfielder",
@@ -7151,13 +7355,53 @@
        "g": 10.4,
        "a": 2.1,
        "inv": 12.3
+      },
+      {
+       "id": 47445,
+       "name": "Iago Aspas",
+       "pos": "Attacker",
+       "g": 7.1,
+       "a": 5.0,
+       "inv": 11.8
       }
      ]
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 341640,
+      "name": "R. Asencio",
+      "type": "Missing Fixture",
+      "reason": "Broken Leg"
+     },
+     {
+      "id": 10009,
+      "name": "Rodrygo",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 47348,
+      "name": "B. Iglesias",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 333502,
+      "name": "M. Roman",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 162123,
+      "name": "I. Moriba",
+      "type": "Questionable",
+      "reason": "Knee Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -7675,23 +7919,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 4.1,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "X. Espart"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 5.2,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "J. Foyth"
+     ]
     }
    },
-   "home_pct": 76.4,
-   "draw_pct": 13.8,
-   "away_pct": 9.8,
+   "home_pct": 76.6,
+   "draw_pct": 13.7,
+   "away_pct": 9.6,
    "xg_home": 3.13,
-   "xg_away": 1.13,
-   "over25": 79.8,
-   "btts": 65.1,
+   "xg_away": 1.11,
+   "over25": 79.5,
+   "btts": 64.6,
    "cards5": 45.1,
    "cards": {
     "exp": 4.46,
@@ -8798,8 +9046,8 @@
       }
      ],
      "defender": {
-      "id": 568001,
-      "name": "X. Espart",
+      "id": 619,
+      "name": "Eric García",
       "sot": 2
      },
      "cap": [
@@ -8872,15 +9120,6 @@
      ],
      "bookings": [
       {
-       "id": 166,
-       "name": "J. Foyth",
-       "p": 29.6,
-       "yc": 3,
-       "rc": 0,
-       "ap": 6,
-       "price": null
-      },
-      {
        "id": 336671,
        "name": "Renato Veiga",
        "p": 26.8,
@@ -8888,11 +9127,20 @@
        "rc": 0,
        "ap": 11,
        "price": null
+      },
+      {
+       "id": 51016,
+       "name": "T. Buchanan",
+       "p": 19.5,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10,
+       "price": null
       }
      ],
      "defender": {
-      "id": 311773,
-      "name": "S. Mouriño",
+      "id": 184420,
+      "name": "Carlos Romero",
       "sot": 2
      },
      "cap": [
@@ -8932,8 +9180,64 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 338958,
+      "name": "R. Bardghji",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 568001,
+      "name": "X. Espart",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 1257,
+      "name": "J. Kounde",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 1323,
+      "name": "D. Olmo",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 44,
+      "name": "Rodri",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 290740,
+      "name": "I. Akhomach",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 463280,
+      "name": "A. Diatta",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 166,
+      "name": "J. Foyth",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 1707,
+      "name": "G. Moreno",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -9452,23 +9756,29 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 3.8,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "Andrés Martín",
+      "Álvaro Mantilla"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 8.3,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "L. Sučić",
+      "M. Sarr"
+     ]
     }
    },
-   "home_pct": 31.1,
-   "draw_pct": 20.4,
-   "away_pct": 48.5,
-   "xg_home": 1.92,
-   "xg_away": 2.39,
-   "over25": 80.4,
-   "btts": 78.0,
+   "home_pct": 32.1,
+   "draw_pct": 21.0,
+   "away_pct": 46.9,
+   "xg_home": 1.88,
+   "xg_away": 2.28,
+   "over25": 78.5,
+   "btts": 76.7,
    "cards5": 54.4,
    "cards": {
     "exp": 5.03,
@@ -10596,17 +10906,17 @@
        }
       },
       {
-       "id": 7332,
-       "name": "L. Sučić",
-       "p": 26.5,
-       "gl": 4,
-       "as": 0,
+       "id": 47323,
+       "name": "Mikel Oyarzabal",
+       "p": 26.4,
+       "gl": 2,
+       "as": 2,
        "ap": 11,
        "price": {
-        "odd": 3.2,
+        "odd": 2.05,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.2
+         "Bet365": 2.05
         }
        }
       }
@@ -10662,19 +10972,63 @@
        "inv": 33.7
       },
       {
-       "id": 47317,
-       "name": "Barrenetxea",
+       "id": 925,
+       "name": "Gonçalo Guedes",
        "pos": "Attacker",
-       "g": 19.5,
-       "a": 17.5,
-       "inv": 33.6
+       "g": 20.4,
+       "a": 10.6,
+       "inv": 28.8
       }
      ]
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 181685,
+      "name": "A. Mantilla",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 47209,
+      "name": "A. Martin",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 334014,
+      "name": "M. Gueye",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 47317,
+      "name": "A. Barrenetxea",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 737,
+      "name": "A. Odriozola",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 7332,
+      "name": "L. Sucic",
+      "type": "Missing Fixture",
+      "reason": "Illness"
+     },
+     {
+      "id": 276184,
+      "name": "M. Sarr",
+      "type": "Questionable",
+      "reason": "Calf Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [],
