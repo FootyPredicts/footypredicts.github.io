@@ -169,7 +169,7 @@ def _flat_events(f):
     return {"goals": goals, "cards": cards}
 
 
-def fetch_match_stats(league, key, max_tries=3, events_days=21):
+def fetch_match_stats(league, key, max_tries=3, events_days=800):
     d = _dir(league)
     stats = _load(os.path.join(d, "match_stats.json"), {})
     tries = _load(os.path.join(d, "stats_attempts.json"), {})
@@ -183,7 +183,7 @@ def fetch_match_stats(league, key, max_tries=3, events_days=21):
                 if x["date"] >= cutoff:
                     recent.add(x["id"])
     todo = [i for i in finished if (str(i) not in stats and tries.get(str(i), 0) < max_tries)
-            or (i in recent and str(i) not in events)]
+            or (i in recent and str(i) not in events and tries.get("e" + str(i), 0) < 2)]
     for k in range(0, len(todo), 20):
         batch = todo[k:k + 20]
         data = api_get("fixtures", {"ids": "-".join(map(str, batch))}, key)
@@ -198,6 +198,8 @@ def fetch_match_stats(league, key, max_tries=3, events_days=21):
         for i in batch:
             if i not in got and str(i) not in stats:
                 tries[str(i)] = tries.get(str(i), 0) + 1
+            if str(i) not in events:
+                tries["e" + str(i)] = tries.get("e" + str(i), 0) + 1
         if k % 200 == 0:   # save progress regularly
             _save(os.path.join(d, "match_stats.json"), stats)
             _save(os.path.join(d, "stats_attempts.json"), tries)

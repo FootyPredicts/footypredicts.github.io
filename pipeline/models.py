@@ -153,7 +153,7 @@ def form_table(res, season):
     return out
 
 
-def venue_table(res, season, pm_stats):
+def venue_table(res, season, pm_stats, pm_events=None):
     """Per team, this season: the home team's HOME games and the away team's AWAY games."""
     r = res[res["season"] == season].sort_values("dt")
     out = {}
@@ -165,7 +165,8 @@ def venue_table(res, season, pm_stats):
             ga = g["ag"] if side == "home" else g["hg"]
             n = len(g)
             res_ch = ["W" if a > b else "D" if a == b else "L" for a, b in zip(gf, ga)]
-            row = {"played": int(n), "w": res_ch.count("W"), "d": res_ch.count("D"), "l": res_ch.count("L"),
+            games = [_match_item(x, pm_stats or {}, pm_events or {}) for _, x in g.tail(5).iterrows()]
+            row = {"games": games, "played": int(n), "w": res_ch.count("W"), "d": res_ch.count("D"), "l": res_ch.count("L"),
                    "last5": "".join(res_ch[-5:]), "gf": round(float(gf.mean()), 2), "ga": round(float(ga.mean()), 2),
                    "cs": round(100 * float((ga == 0).mean())), "fts": round(100 * float((gf == 0).mean()))}
             acc = {"sh": [], "sot": [], "co": [], "yc": []}
@@ -293,25 +294,26 @@ def previous_meetings(res, home, away, n=8, stats=None, events=None):
     stats, events = stats or {}, events or {}
     m = res[((res["home"] == home) & (res["away"] == away)) | ((res["home"] == away) & (res["away"] == home))]
     m = m.sort_values("dt", ascending=False).head(n)
-    out = []
-    for _, r in m.iterrows():
-        fid = str(int(r["id"]))
-        item = {"date": r["dt"].strftime("%d/%m/%Y"), "home": r["home"], "away": r["away"], "hg": int(r["hg"]), "ag": int(r["ag"])}
-        if pd.notna(r.get("ht_h")) and pd.notna(r.get("ht_a")):
-            item["ht"] = [int(r["ht_h"]), int(r["ht_a"])]
-        if r.get("referee") and isinstance(r.get("referee"), str):
-            item["ref"] = r["referee"]
-        st = stats.get(fid)
-        if st:
-            item["sx"] = {side[0]: {k: st.get(side, {}).get(src) for k, src in _PM_STATS if st.get(side, {}).get(src) is not None}
-                          for side in ("home", "away")}
-        ev = events.get(fid)
-        if ev:
-            item["goals"] = [{"n": g["name"], "t": "h" if g["team"] == r["home"] else "a", "m": g["minute"]} for g in ev.get("goals", [])]
-            item["cards"] = [{"n": c["name"], "t": "h" if c["team"] == r["home"] else "a", "m": c["minute"],
-                              "r": "Red" in str(c.get("card"))} for c in ev.get("cards", [])]
-        out.append(item)
-    return out
+    return [_match_item(r, stats, events) for _, r in m.iterrows()]
+
+
+def _match_item(r, stats, events):
+    fid = str(int(r["id"]))
+    item = {"date": r["dt"].strftime("%d/%m/%Y"), "home": r["home"], "away": r["away"], "hg": int(r["hg"]), "ag": int(r["ag"])}
+    if pd.notna(r.get("ht_h")) and pd.notna(r.get("ht_a")):
+        item["ht"] = [int(r["ht_h"]), int(r["ht_a"])]
+    if r.get("referee") and isinstance(r.get("referee"), str):
+        item["ref"] = r["referee"]
+    st = stats.get(fid)
+    if st:
+        item["sx"] = {side[0]: {k: st.get(side, {}).get(src) for k, src in _PM_STATS if st.get(side, {}).get(src) is not None}
+                      for side in ("home", "away")}
+    ev = events.get(fid)
+    if ev:
+        item["goals"] = [{"n": g["name"], "t": "h" if g["team"] == r["home"] else "a", "m": g["minute"]} for g in ev.get("goals", [])]
+        item["cards"] = [{"n": c["name"], "t": "h" if c["team"] == r["home"] else "a", "m": c["minute"],
+                          "r": "Red" in str(c.get("card"))} for c in ev.get("cards", [])]
+    return item
 
 
 # ---------------------------------------------------------------- odds
@@ -457,7 +459,7 @@ def predict_league(league, name, country):
     received = team_cards_received(res)
     size = card_dispersion(res)
     form = form_table(res, season)
-    venue = venue_table(res, season, _pm_stats)
+    venue = venue_table(res, season, _pm_stats, _pm_events)
     rates, avg = half_rates(res)
     p_rates = player_rates(players)
 

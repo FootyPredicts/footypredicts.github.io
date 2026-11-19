@@ -469,10 +469,33 @@ _PM_LABELS = [("pos", "Possession", "%"), ("xg", "Expected goals", ""), ("sh", "
               ("pp", "Pass accuracy", "%"), ("yc", "Yellow cards", ""), ("rc", "Red cards", "")]
 
 
+FORM_JS = """<script>
+(function () {
+  function close() { var o = document.querySelector('.fm-ov'); if (o) o.remove(); }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  document.addEventListener('click', function (e) {
+    var ov = e.target.closest('.fm-ov');
+    if (ov && (e.target === ov || e.target.closest('.fm-x'))) { close(); return; }
+    var b = e.target.closest('.fchip'); if (!b) return;
+    var t = b.parentNode.querySelector('template'); if (!t) return;
+    close();
+    var o = document.createElement('div'); o.className = 'fm-ov'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true');
+    var box = document.createElement('div'); box.className = 'fm-box';
+    var x = document.createElement('button'); x.type = 'button'; x.className = 'fm-x'; x.setAttribute('aria-label', 'Close'); x.textContent = '\\u00d7';
+    box.appendChild(x); box.appendChild(t.content.cloneNode(true)); o.appendChild(box); document.body.appendChild(o); x.focus();
+  });
+})();
+</script>"""
+
+
 def prev_row(m):
     """One past meeting: a score row that opens to goals, cards and match stats."""
     head = (f'<span class="pm-date">{esc(m["date"])}</span><span class="pm-h">{esc(m["home"])}</span>'
             f'<span class="pm-score">{m["hg"]}\u2013{m["ag"]}</span><span class="pm-a">{esc(m["away"])}</span>')
+    return f'<details class="pmx"><summary>{head}</summary><div class="pm-body">{pm_body(m)}</div></details>'
+
+
+def pm_body(m):
     bits = [f'<p class="pm-meta">{esc(m["date"])}'
             + (f' \u00b7 Half-time {m["ht"][0]}\u2013{m["ht"][1]}' if m.get("ht") else "")
             + (f' \u00b7 Referee {esc(m["ref"])}' if m.get("ref") else "") + "</p>"]
@@ -501,7 +524,7 @@ def prev_row(m):
             bits.append(f'<table class="mirror pm-stats"><tr class="names"><td>{esc(m["home"])}</td><th></th><td>{esc(m["away"])}</td></tr>{mirror(rows)}</table>')
     if len(bits) == 1:
         bits.append('<p class="halves">Detailed stats are not available for this match.</p>')
-    return f'<details class="pmx"><summary>{head}</summary><div class="pm-body">{"".join(bits)}</div></details>'
+    return "".join(bits)
 
 
 # ---------------------------------------------------------------- match panel
@@ -587,16 +610,25 @@ def render_match(f, i):
     def vv(s, k, fmt="{}", suffix=""):
         v = None if not s else s.get(k)
         return "&mdash;" if v is None else fmt.format(v) + suffix
-    def last5(s):
+    def last5(s, side):
         if not s or not s.get("last5"):
             return "&mdash;"
-        return "".join(f'<span class="f{c}">{c}</span>' for c in s["last5"])
+        games = s.get("games") or []
+        out = []
+        for c, gm in zip(s["last5"], games):
+            mine, theirs = (gm["hg"], gm["ag"]) if side == "home" else (gm["ag"], gm["hg"])
+            opp = gm["away"] if side == "home" else gm["home"]
+            tip = f'{"vs" if side == "home" else "at"} {opp} {gm["hg"]}\u2013{gm["ag"]} \u00b7 {gm["date"]}'
+            title = f'<div class="fm-title"><b>{esc(gm["home"])} {gm["hg"]}\u2013{gm["ag"]} {esc(gm["away"])}</b></div>'
+            out.append(f'<span class="fchip-w"><button type="button" class="fchip f{c}" data-tip="{esc(tip)}" aria-label="{esc(tip)}">{c}</button>'
+                       f'<template>{title}{pm_body(gm)}</template></span>')
+        return "".join(out)
     venue_sec = "" if (euro or not (vh or va)) else f"""
       <section class="block">
         <h3>Home and away form <span class="sub">{esc(home)} at home v {esc(away)} away, this season</span></h3>
         <table class="mirror">{mirror([
             ("Record (W-D-L)", f"{vh['w']}-{vh['d']}-{vh['l']}" if vh else "&mdash;", f"{va['w']}-{va['d']}-{va['l']}" if va else "&mdash;"),
-            ("Last 5", last5(vh), last5(va)),
+            ("Last 5", last5(vh, "home"), last5(va, "away")),
             ("Goals scored a game", vv(vh, "gf", "{:.1f}"), vv(va, "gf", "{:.1f}")),
             ("Goals conceded a game", vv(vh, "ga", "{:.1f}"), vv(va, "ga", "{:.1f}")),
             ("Clean sheets", vv(vh, "cs", "{}", "%"), vv(va, "cs", "{}", "%")),
@@ -904,6 +936,7 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS,
                                                        "league": path.rstrip("/") if (path.rstrip("/") in LEAGUE_ORDER or path.rstrip("/") in EURO_ORDER) else ""}).replace("</", "<\\/"))
     html = html.replace("__DECOR__", DECOR_DEFS).replace("__HEAD__", head_tags(esc(title), esc(desc), path))
+    html = html.replace("</body>", FORM_JS + "</body>", 1) if "fchip" in html else html
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
 
@@ -1250,6 +1283,15 @@ main { max-width:960px; margin:0 auto; padding:20px 16px 56px; }
 .block h3 { margin:0 0 10px; font:700 22px/1.1 "Barlow Condensed",sans-serif; }
 .block h3 .sub { font:400 14px Barlow,sans-serif; color:var(--muted); margin-left:6px; }
 .fW, .fD, .fL { display:inline-block; width:20px; height:20px; line-height:20px; text-align:center; border-radius:5px; color:#fff; font:700 12px Barlow,sans-serif; margin:0 1px; }
+.fchip-w { display:inline-block; position:relative; }
+button.fchip { border:0; cursor:pointer; padding:0; }
+button.fchip:hover, button.fchip:focus-visible { outline:2px solid var(--ink); outline-offset:1px; }
+td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible:after { left:auto; right:0; }
+button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
+.fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
+.fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.fm-x { position:absolute; top:8px; right:10px; border:0; background:none; font-size:26px; line-height:1; cursor:pointer; color:var(--muted); }
+.fm-title { font:700 20px/1.2 Barlow,sans-serif; margin:0 28px 6px 0; }
 .fW { background:#2e8b57; } .fD { background:#9aa5a0; } .fL { background:#c0392b; }
 .mirror { width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
 .mirror td, .mirror th { padding:10px 14px; border-top:1px solid var(--line); vertical-align:top; }
