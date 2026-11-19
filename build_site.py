@@ -204,7 +204,8 @@ def names(f, lst, team, kind):
         num = shirt(x.get("id"))
         tag = shirt_html(num, team) if num is not None else ""
         if kind == "scorer" and x.get("gl") is not None:
-            rec = f' <small class="rec">{x["gl"]} goal{"s" if x["gl"] != 1 else ""} in {x["ap"]}</small>'
+            ast = f', {x["as"]} assist{"s" if x["as"] != 1 else ""}' if x.get("as") is not None else ""
+            rec = f' <small class="rec">{x["gl"]} goal{"s" if x["gl"] != 1 else ""}{ast} in {x["ap"]}</small>'
         elif kind == "booked" and x.get("yc") is not None:
             rec = f' <small class="rec">{x["yc"]} yellow{" " + str(x["rc"]) + " red" if x.get("rc") else ""} in {x["ap"]}</small>'
         else:

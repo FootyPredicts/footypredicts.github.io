@@ -242,7 +242,8 @@ def player_picks(p, team, opp_factor, card_factor, home, out_ids=()):
         defender = {"id": int(best["id"]), "name": best["name"], "sot": int(best["sot"])}
     return {
         "scorers": [{"id": int(r["id"]), "name": r["name"], "p": round(100 * r["p"], 1),
-                     "gl": int(r["goals"]), "ap": int(r["apps"])} for _, r in sc.iterrows()],
+                     "gl": int(r["goals"]), "as": int(r["assists"]) if "assists" in r and r["assists"] == r["assists"] else None,
+                     "ap": int(r["apps"])} for _, r in sc.iterrows()],
         "bookings": [{"id": int(r["id"]), "name": r["name"], "p": round(100 * r["p"], 1),
                       "yc": int(r["yellow"]), "rc": int(r["red"]), "ap": int(r["apps"])} for _, r in bk.iterrows()],
         "defender": defender,
