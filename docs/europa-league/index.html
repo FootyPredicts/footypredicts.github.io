@@ -438,8 +438,8 @@ button.sel:hover { border-color:var(--pitch-2); }
 }
 
 /* league menu */
-.leagues { display:flex; gap:6px; overflow-x:auto; padding:14px 0 2px; scrollbar-width:thin; }
-.lg { flex:0 0 auto; color:rgba(255,255,255,.78); text-decoration:none; font:600 15px/1 Barlow,sans-serif;
+.leagues { display:flex; flex-wrap:wrap; gap:6px; padding:14px 0 2px; }
+.lg { flex:0 0 auto; white-space:nowrap; color:rgba(255,255,255,.78); text-decoration:none; font:600 15px/1 Barlow,sans-serif;
   padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.18); }
 .lg:hover { color:#fff; border-color:rgba(255,255,255,.4); }
 .lg.on { background:var(--flood); color:var(--flood-ink); border-color:var(--flood); }
