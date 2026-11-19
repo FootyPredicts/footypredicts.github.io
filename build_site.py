@@ -870,7 +870,7 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = html.replace("__LIVESTRIP__", '<section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>' if on_live else "")
     if path == "":
         ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "FootyPredicts", "url": SITE_URL,
-              "description": "Free football predictions: win chances, expected goals, likely scorers and cards."}
+              "description": "Live football scores and free predictions: win chances, expected goals, likely scorers and cards."}
         html = html.replace("</head>", '<script type="application/ld+json">' + json.dumps(ld).replace("</", "<\\/") + "</script></head>", 1)
     import live_page
     html = html.replace("__PRESSURE_JS__", live_page.PRESSURE_JS)
@@ -1156,6 +1156,8 @@ body { margin:0; font:16px/1.5 Barlow,system-ui,sans-serif; color:var(--ink); ba
 .brand { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 .brand h1 { margin:0; font:800 clamp(30px,6vw,44px)/1 "Barlow Condensed",sans-serif; letter-spacing:.01em; }
 .brand h1 span { color:var(--flood); }
+.brand-l { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.brand .tag { font:600 12px Barlow,sans-serif; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.72); }
 .brand p { margin:0; color:rgba(255,255,255,.72); font-size:14px; }
 
 /* fixture chips */
@@ -1677,7 +1679,7 @@ __DECOR__
 <header class="top top-pad">
   <div class="top-in">
     <div class="brand">
-      <h1><a href="{prefix}" style="color:inherit;text-decoration:none">Footy<span>Predicts</span></a></h1>
+      <div class="brand-l"><h1><a href="{prefix}" style="color:inherit;text-decoration:none">Footy<span>Predicts</span></a></h1><span class="tag">Live scores &amp; predictions</span></div>
       <p>{sub}</p>
     </div>
     {nav}

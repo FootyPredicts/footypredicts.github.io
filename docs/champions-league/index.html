@@ -33,6 +33,8 @@ body { margin:0; font:16px/1.5 Barlow,system-ui,sans-serif; color:var(--ink); ba
 .brand { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 .brand h1 { margin:0; font:800 clamp(30px,6vw,44px)/1 "Barlow Condensed",sans-serif; letter-spacing:.01em; }
 .brand h1 span { color:var(--flood); }
+.brand-l { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.brand .tag { font:600 12px Barlow,sans-serif; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.72); }
 .brand p { margin:0; color:rgba(255,255,255,.72); font-size:14px; }
 
 /* fixture chips */
@@ -582,7 +584,7 @@ a.chip { text-decoration:none; }
 <header class="top top-pad">
   <div class="top-in">
     <div class="brand">
-      <h1><a href="../" style="color:inherit;text-decoration:none">Footy<span>Predicts</span></a></h1>
+      <div class="brand-l"><h1><a href="../" style="color:inherit;text-decoration:none">Footy<span>Predicts</span></a></h1><span class="tag">Live scores &amp; predictions</span></div>
       <p>Champions League · 24 Nov – 25 Nov 2026 · updated 19 Nov, 06:03</p>
     </div>
     <nav class="leagues" aria-label="Leagues"><a href="../" class="lg">All leagues</a><a href="../premier-league/" class="lg">Premier League</a><a href="../la-liga/" class="lg">La Liga</a><a href="../bundesliga/" class="lg">Bundesliga</a><a href="../serie-a/" class="lg">Serie A</a><a href="../ligue-1/" class="lg">Ligue 1</a><a href="../champions-league/" class="lg on">Champions League</a><a href="../europa-league/" class="lg">Europa League</a><a href="../live/" class="lg">Live</a><a href="../quiz/" class="lg">Daily quiz</a><a href="../fantasy/" class="lg">Fantasy captains</a><a href="../track-record/" class="lg lg-tr">How we did</a></nav>
