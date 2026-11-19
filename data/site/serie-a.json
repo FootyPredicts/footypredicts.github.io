@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-19T20:38:06.482969+00:00",
+ "updated": "2026-11-19T21:26:22.091327+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -26,23 +26,28 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 7.2,
+     "defence_hit_pct": 8.0,
+     "key_out": [
+      "D. Frattesi",
+      "J. Šutalo",
+      "M. Zaccagni",
+      "Nuno Tavares"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 4.9,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 63.3,
-   "draw_pct": 23.8,
-   "away_pct": 12.8,
-   "xg_home": 1.81,
-   "xg_away": 0.69,
-   "over25": 45.5,
-   "btts": 42.5,
+   "home_pct": 59.8,
+   "draw_pct": 25.6,
+   "away_pct": 14.6,
+   "xg_home": 1.68,
+   "xg_away": 0.71,
+   "over25": 42.6,
+   "btts": 42.1,
    "cards5": 40.2,
    "cards": {
     "exp": 4.17,
@@ -925,9 +930,9 @@
       }
      ],
      "defender": {
-      "id": 41577,
-      "name": "Nuno Tavares",
-      "sot": 3
+      "id": 342651,
+      "name": "R. Floriani Mussolini",
+      "sot": 2
      },
      "cap": [
       {
@@ -955,12 +960,12 @@
        "inv": 37.3
       },
       {
-       "id": 41577,
-       "name": "Nuno Tavares",
-       "pos": "Defender",
-       "g": 9.1,
-       "a": 24.2,
-       "inv": 31.1
+       "id": 31173,
+       "name": "D. Frattesi",
+       "pos": "Midfielder",
+       "g": 25.9,
+       "a": 4.5,
+       "inv": 29.2
       }
      ]
     },
@@ -1026,14 +1031,6 @@
        "inv": 16.7
       },
       {
-       "id": 46170,
-       "name": "I. Ilić",
-       "pos": "Midfielder",
-       "g": 2.6,
-       "a": 12.7,
-       "inv": 15.0
-      },
-      {
        "id": 120,
        "name": "W. Geubbels",
        "pos": "Attacker",
@@ -1048,6 +1045,14 @@
        "g": 6.2,
        "a": 5.3,
        "inv": 11.2
+      },
+      {
+       "id": 8643,
+       "name": "K. N’Dri",
+       "pos": "Attacker",
+       "g": 9.4,
+       "a": 1.9,
+       "inv": 11.2
       }
      ]
     }
@@ -1055,13 +1060,68 @@
    "injuries": {
     "home": [
      {
-      "id": 1841,
-      "name": "Patric",
+      "id": 63934,
+      "name": "A. Furlanetto",
       "type": "Missing Fixture",
-      "reason": "Sprained Ankle"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 14701,
+      "name": "J. Sutalo",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 41577,
+      "name": "N. Tavares",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 31173,
+      "name": "D. Frattesi",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 1844,
+      "name": "A. Marusic",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 30937,
+      "name": "M. Zaccagni",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 46170,
+      "name": "I. Ilic",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 6662,
+      "name": "S. Pierotti",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 335071,
+      "name": "M. Berisha",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 277862,
+      "name": "J. Monteiro",
+      "type": "Questionable",
+      "reason": "Calf Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -1529,23 +1589,26 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 3.0,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "Assane Diao",
+      "T. Chalobah"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 2.6,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 61.5,
-   "draw_pct": 25.0,
-   "away_pct": 13.4,
-   "xg_home": 1.71,
+   "home_pct": 60.4,
+   "draw_pct": 25.7,
+   "away_pct": 13.9,
+   "xg_home": 1.66,
    "xg_away": 0.67,
-   "over25": 42.6,
-   "btts": 41.0,
+   "over25": 41.1,
+   "btts": 40.3,
    "cards5": 31.0,
    "cards": {
     "exp": 3.68,
@@ -2260,16 +2323,16 @@
    },
    "goals": {
     "home": {
-     "fh": 52.38894782528606,
+     "fh": 52.388947825286046,
      "sh": 61.22398967036751,
-     "any": 81.53833349068621
+     "any": 81.5383334906862
     },
     "away": {
      "fh": 38.70510860050871,
      "sh": 39.66532209344763,
      "any": 63.01792470094586
     },
-    "match_fh": 70.81685727535395,
+    "match_fh": 70.81685727535394,
     "match_sh": 76.60461906260477
    },
    "players": {
@@ -2455,13 +2518,68 @@
     }
    },
    "injuries": {
-    "home": [],
+    "home": [
+     {
+      "id": 877,
+      "name": "M. Kean",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
+     },
+     {
+      "id": 354533,
+      "name": "J. Addai",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 19720,
+      "name": "T. Chalobah",
+      "type": "Questionable",
+      "reason": "Injury"
+     },
+     {
+      "id": 400948,
+      "name": "A. Diao",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 443162,
+      "name": "J. Rodriguez",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ],
     "away": [
      {
-      "id": 383026,
-      "name": "Riyad Idrissi",
+      "id": 31734,
+      "name": "M. Felici",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 264477,
+      "name": "G. Aurelio",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 263699,
+      "name": "A. Fadera",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 2484,
+      "name": "Y. Mina",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 182,
+      "name": "H. Winks",
+      "type": "Questionable",
+      "reason": "Back Injury"
      }
     ]
    },
@@ -4587,22 +4705,28 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 3.0,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "G. Di Lorenzo",
+      "L. Spinazzola"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 3.4,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "N. Vlašić",
+      "R. Belghali"
+     ]
     }
    },
-   "home_pct": 60.0,
-   "draw_pct": 23.9,
-   "away_pct": 16.1,
-   "xg_home": 1.86,
-   "xg_away": 0.86,
-   "over25": 51.1,
+   "home_pct": 59.4,
+   "draw_pct": 24.1,
+   "away_pct": 16.4,
+   "xg_home": 1.84,
+   "xg_away": 0.87,
+   "over25": 50.7,
    "btts": 49.6,
    "cards5": 26.4,
    "cards": {
@@ -5608,18 +5732,84 @@
    "injuries": {
     "home": [
      {
+      "id": 310943,
+      "name": "Alisson Santos",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 95,
+      "name": "B. Badiashile",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
       "id": 31226,
       "name": "A. Buongiorno",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 47439,
+      "name": "S. Lobotka",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 552,
+      "name": "David Neres",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 31042,
+      "name": "G. Di Lorenzo",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 348532,
+      "name": "C. Favasuli",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 862,
+      "name": "L. Spinazzola",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
      }
     ],
     "away": [
      {
-      "id": 123,
-      "name": "P. Pellegri",
+      "id": 56266,
+      "name": "F. Israel",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Shoulder Injury"
+     },
+     {
+      "id": 303362,
+      "name": "R. Belghali",
+      "type": "Questionable",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 437093,
+      "name": "N. Fortini",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 1631,
+      "name": "R. Rodriguez",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 842,
+      "name": "N. Vlasic",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
      }
     ]
    },
