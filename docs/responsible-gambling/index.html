@@ -1077,11 +1077,11 @@ function model(m){
     var H = btn.getAttribute('data-h'), A = btn.getAttribute('data-a');
     function draw(live) {
       var T = {}; D.rows.forEach(function (r) { T[r.n] = Object.assign({ lv: false }, r); });
-      var n = 0, seen = {};
+      var n = 0;
       live.forEach(function (m) {
         if (m.lg !== D.lg || D.done.indexOf(m.id) > -1 || !T[m.home] || !T[m.away]) return;
-        if (['1H','HT','2H','ET','BT','P','LIVE','INT','SUSP'].indexOf(m.st) < 0) return;
-        n++;
+        if (['1H','HT','2H','ET','BT','P','LIVE','INT','FT','AET','PEN'].indexOf(m.st) < 0) return;
+        if (m.st !== 'FT' && m.st !== 'AET' && m.st !== 'PEN') n++;
         [[m.home, m.hg, m.ag], [m.away, m.ag, m.hg]].forEach(function (z) {
           var r = T[z[0]]; r.lv = true; r.p++; r.gf += z[1]; r.ga += z[2];
           if (z[1] > z[2]) r.w++; else if (z[1] === z[2]) r.d++; else r.l++;
@@ -1102,6 +1102,11 @@ function model(m){
     draw([]);
     if (D.url) fetch(D.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) { if (j && j.matches && document.body.contains(o)) draw(j.matches); }).catch(function () {});
+    var iv = setInterval(function () {
+      if (!document.body.contains(o)) { clearInterval(iv); return; }
+      if (D.url) fetch(D.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) { if (j && j.matches && document.body.contains(o)) draw(j.matches); }).catch(function () {});
+    }, 30000);
   }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   document.addEventListener('click', function (e) {

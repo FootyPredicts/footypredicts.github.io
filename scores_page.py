@@ -42,6 +42,8 @@ CSS = """
 .ls-x div { padding:1px 0; }
 .ls-p { grid-column:2 / 5; font-size:12px; color:var(--muted); }
 .ls-p b { color:var(--ink); }
+.ls-tbr { grid-column:2 / 5; }
+.ls-tbr .lt-btn { margin:0; padding:2px 9px; font-size:11px; }
 .ls-empty { background:#fff; border:1px dashed var(--line); border-radius:14px; padding:18px; color:var(--muted); }
 .ls-note { font-size:12px; color:var(--muted); margin:8px 0 0; }
 @media (max-width:520px) { .ls-m { grid-template-columns:56px 1fr auto 1fr; gap:6px; padding:9px 8px; } .ls-h, .ls-a { font-size:15px; } }
@@ -103,6 +105,52 @@ JS = r"""
     out.forEach(function (g) { g.ms.sort(function (a, b) { return (isLive(b) - isLive(a)) || a.ko.localeCompare(b.ko); }); });
     return out;
   }
+
+  var TB = CFG.tables || {};
+  var tbl = null;
+  function tbEsc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function tbDraw() {
+    if (!tbl) return;
+    if (!document.body.contains(tbl.o)) { tbl = null; return; }
+    var D = TB[tbl.lg]; if (!D) return;
+    var T = {}; D.rows.forEach(function (r) { T[r.n] = { n: r.n, p: r.p, w: r.w, d: r.d, l: r.l, gf: r.gf, ga: r.ga, lv: false }; });
+    var n = 0;
+    (st.date === today ? (st.data || []) : []).forEach(function (m) {
+      if (m.lg !== tbl.lg || D.done.indexOf(m.id) > -1 || !T[m.home] || !T[m.away]) return;
+      var live = isLive(m), fin = !!DONE[m.st];
+      if (!live && !fin) return;
+      if (m.hg == null || m.ag == null) return;
+      if (live) n++;
+      [[m.home, m.hg, m.ag], [m.away, m.ag, m.hg]].forEach(function (z) {
+        var r = T[z[0]]; if (live) r.lv = true; r.p++; r.gf += z[1]; r.ga += z[2];
+        if (z[1] > z[2]) r.w++; else if (z[1] === z[2]) r.d++; else r.l++;
+      });
+    });
+    var L = Object.keys(T).map(function (k) { var r = T[k]; r.pts = r.w * 3 + r.d; r.gd = r.gf - r.ga; return r; });
+    L.sort(function (a, b) { return b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.n.localeCompare(b.n); });
+    var html = '<div class="fm-title"><b>' + tbEsc(tbl.name) + ' table</b></div><p class="halves lt-note">' +
+      (n ? '<span class="lt-live">● Live</span> ' + n + ' match' + (n > 1 ? 'es' : '') + ' in play. The table updates by itself.' : 'Based on finished matches. It updates by itself when games are being played.') + '</p>' +
+      '<table class="lt"><thead><tr><th>#</th><th class="tl">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>';
+    L.forEach(function (r, i) {
+      html += '<tr class="' + (r.n === tbl.h || r.n === tbl.a ? 'lt-me' : '') + '"><td>' + (i + 1) + '</td><td class="tl">' + tbEsc(r.n) + (r.lv ? ' <span class="lt-dot">●</span>' : '') +
+        '</td><td>' + r.p + '</td><td>' + r.w + '</td><td>' + r.d + '</td><td>' + r.l + '</td><td>' + (r.gd > 0 ? '+' : '') + r.gd + '</td><td><b>' + r.pts + '</b></td></tr>';
+    });
+    var keep = tbl.body.parentNode.scrollTop;
+    tbl.body.innerHTML = html + '</tbody></table><p class="halves">Ties on points are split by goal difference, then goals scored.</p>';
+    tbl.body.parentNode.scrollTop = keep;
+    if (!tbl.sc) { tbl.sc = 1; var me = tbl.body.querySelector('.lt-me'); if (me && me.scrollIntoView) me.scrollIntoView({ block: 'center' }); }
+  }
+  function openTb(lg, name, hn, an) {
+    var old = document.querySelector('.fm-ov'); if (old) old.remove();
+    var o = h('div', 'fm-ov'); o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true');
+    var box = h('div', 'fm-box fm-wide'); var x = h('button', 'fm-x', '×'); x.type = 'button'; x.setAttribute('aria-label', 'Close');
+    var body = h('div'); box.appendChild(x); box.appendChild(body); o.appendChild(box); document.body.appendChild(o); x.focus();
+    tbl = { o: o, body: body, lg: lg, name: name, h: hn, a: an, sc: 0 }; tbDraw(); load();
+  }
+  function tbBtn(lg, name, hn, an, cls) {
+    var b = h('button', cls, '☰ League table'); b.type = 'button';
+    b.onclick = function (e) { e.stopPropagation(); openTb(lg, name, hn, an); }; return b;
+  }
   function row(m) {
     var wrap = document.createDocumentFragment();
     var r = h('div', 'ls-m');
@@ -126,6 +174,7 @@ JS = r"""
       });
       r.appendChild(x);
     }
+    if (TB[m.lg]) { var tr = h('div', 'ls-tbr'); tr.appendChild(tbBtn(m.lg, m.ln, m.home, m.away, 'lt-btn')); r.appendChild(tr); }
     r.onclick = function () { if (m.ev && m.ev.length) { st.open[m.id] = !st.open[m.id]; render(); } };
     wrap.appendChild(r); return wrap;
   }
@@ -195,7 +244,7 @@ JS = r"""
     var d = st.date;
     fetch(CFG.url + (CFG.url.indexOf('?') > -1 ? '&' : '?') + 'scope=world&date=' + d, { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-      .then(function (j) { busy = false; if (d !== st.date) return load(); if (j.error) { st.err = 'Scores are catching their breath. Trying again shortly.'; if (!st.data) st.data = null; } else { st.data = j.matches || []; st.err = ''; } render(); })
+      .then(function (j) { busy = false; if (d !== st.date) return load(); if (j.error) { st.err = 'Scores are catching their breath. Trying again shortly.'; if (!st.data) st.data = null; } else { st.data = j.matches || []; st.err = ''; } render(); tbDraw(); })
       .catch(function () { busy = false; if (!st.data) st.err = 'Could not load scores. Trying again shortly.'; render(); });
   }
   root.querySelector('.ls-q').addEventListener('input', function (e) { st.q = e.target.value; render(); });
@@ -207,8 +256,8 @@ JS = r"""
 """
 
 
-def scores_body(url, picks):
-    cfg = {"url": url, "picks": {k: {"pk": v["pk"], "h": v["h"], "a": v["a"], "hp": v["hp"], "dp": v["dp"], "ap": v["ap"]} for k, v in picks.items()}}
+def scores_body(url, picks, tables=None):
+    cfg = {"tables": tables or {}, "url": url, "picks": {k: {"pk": v["pk"], "h": v["h"], "a": v["a"], "hp": v["hp"], "dp": v["dp"], "ap": v["ap"]} for k, v in picks.items()}}
     html = """
 <section class="ls" id="ls">
   <div class="ls-head"><h2>Live scores</h2><a href="live/">Live pressure &rarr;</a></div>

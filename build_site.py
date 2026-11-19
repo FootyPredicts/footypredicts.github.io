@@ -484,11 +484,11 @@ FORM_JS = """<script>
     var H = btn.getAttribute('data-h'), A = btn.getAttribute('data-a');
     function draw(live) {
       var T = {}; D.rows.forEach(function (r) { T[r.n] = Object.assign({ lv: false }, r); });
-      var n = 0, seen = {};
+      var n = 0;
       live.forEach(function (m) {
         if (m.lg !== D.lg || D.done.indexOf(m.id) > -1 || !T[m.home] || !T[m.away]) return;
-        if (['1H','HT','2H','ET','BT','P','LIVE','INT','SUSP'].indexOf(m.st) < 0) return;
-        n++;
+        if (['1H','HT','2H','ET','BT','P','LIVE','INT','FT','AET','PEN'].indexOf(m.st) < 0) return;
+        if (m.st !== 'FT' && m.st !== 'AET' && m.st !== 'PEN') n++;
         [[m.home, m.hg, m.ag], [m.away, m.ag, m.hg]].forEach(function (z) {
           var r = T[z[0]]; r.lv = true; r.p++; r.gf += z[1]; r.ga += z[2];
           if (z[1] > z[2]) r.w++; else if (z[1] === z[2]) r.d++; else r.l++;
@@ -509,6 +509,11 @@ FORM_JS = """<script>
     draw([]);
     if (D.url) fetch(D.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) { if (j && j.matches && document.body.contains(o)) draw(j.matches); }).catch(function () {});
+    var iv = setInterval(function () {
+      if (!document.body.contains(o)) { clearInterval(iv); return; }
+      if (D.url) fetch(D.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) { if (j && j.matches && document.body.contains(o)) draw(j.matches); }).catch(function () {});
+    }, 30000);
   }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   document.addEventListener('click', function (e) {
@@ -572,13 +577,13 @@ from pipeline.config import LEAGUES as _LG
 LEAGUE_API = {k: v[1] for k, v in _LG.items()}
 
 
-def league_table_data(slug, api_id):
+def league_table_data(slug, api_id, raw=False):
     """Base standings from finished matches; the page adds in-play scores on top."""
     try:
         with open(os.path.join(BASE_DIR, "data", slug, "fixtures_2026.json"), encoding="utf-8") as fh:
             rows = json.load(fh)
     except Exception:
-        return ""
+        return {} if raw else ""
     t, done = {}, []
     for r in rows:
         if r.get("status") not in ("FT", "AET", "PEN") or r.get("hg") is None or r.get("ag") is None:
@@ -589,8 +594,10 @@ def league_table_data(slug, api_id):
             x["p"] += 1; x["gf"] += gf; x["ga"] += ga
             x["w" if gf > ga else "d" if gf == ga else "l"] += 1
     if not t:
-        return ""
+        return {} if raw else ""
     data = {"url": _live_url(), "lg": api_id, "rows": list(t.values()), "done": done}
+    if raw:
+        return data
     return '<script type="application/json" id="lt-data">' + json.dumps(data).replace("</", "<\\/") + "</script>"
 
 
@@ -1001,7 +1008,7 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS,
                                                        "league": path.rstrip("/") if (path.rstrip("/") in LEAGUE_ORDER or path.rstrip("/") in EURO_ORDER) else ""}).replace("</", "<\\/"))
     html = html.replace("__DECOR__", DECOR_DEFS).replace("__HEAD__", head_tags(esc(title), esc(desc), path))
-    html = html.replace("</body>", FORM_JS + "</body>", 1) if ("fchip" in html or "lt-btn" in html) else html
+    html = html.replace("</body>", FORM_JS + "</body>", 1) if ("fchip" in html or "lt-btn" in html or 'id="ls"' in html) else html
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
 
@@ -1127,7 +1134,12 @@ def quiz_page(leagues):
 
 def scores_block():
     import scores_page
-    return scores_page.scores_body(_live_url(), LIVE_PICKS)
+    tables = {}
+    for slug, api_id in LEAGUE_API.items():
+        d = league_table_data(slug, api_id, raw=True)
+        if d:
+            tables[api_id] = {"rows": d["rows"], "done": d["done"]}
+    return scores_page.scores_body(_live_url(), LIVE_PICKS, tables)
 
 
 def live_tab(leagues):
