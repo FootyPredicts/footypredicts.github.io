@@ -2172,7 +2172,7 @@ __PRESSURE_JS__
     strip.hidden = !here.length && !strip.childNodes.length;
     if (mine) {
       mine.textContent = '';
-      var fm = favs.map(function (id) { return state[id] || pre(id); }).filter(Boolean);
+      var fm = favs.map(function (id) { return state[id] || pre(id); }).filter(Boolean).filter(function (m) { return !m.pre || Date.parse(m.ko) - Date.now() <= 10 * 60000; });
       fm.sort(function (a, b) { return (a.pre ? 1 : 0) - (b.pre ? 1 : 0) || (a.pre ? Date.parse(a.ko) - Date.parse(b.ko) : 0); });
       if (fm.length) {
         mine.appendChild(el('p', 'lv-h', '★ My matches'));
@@ -2192,6 +2192,7 @@ __PRESSURE_JS__
     if (i > -1) favs.splice(i, 1); else favs.push(id);
     saveFavs(); render(); poll();
   });
+  setInterval(function () { if (!document.hidden) render(); }, 60000);
   function windowOpen() {
     var now = Date.now();
     if (Object.keys(state).some(function (k) { return !state[k].fin; })) return true;
