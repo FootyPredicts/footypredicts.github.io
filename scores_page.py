@@ -14,6 +14,17 @@ CSS = """
 .ls-f b { font-weight:700; opacity:.7; margin-left:4px; }
 .ls-tools { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 0 12px; }
 .ls-q { flex:1; min-width:180px; border:1px solid var(--line); border-radius:999px; padding:7px 14px; font:16px Barlow,sans-serif; background:#fff; }
+.ls-grid { display:grid; grid-template-columns:200px minmax(0,1fr); gap:16px; align-items:start; }
+.ls-side { position:sticky; top:12px; max-height:calc(100vh - 24px); overflow-y:auto; background:#fff; border:1px solid var(--line); border-radius:14px; padding:6px; }
+.ls-side h4 { margin:8px 8px 4px; font:700 11px Barlow,sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+.ls-c { display:flex; align-items:center; gap:6px; width:100%; border:0; background:none; text-align:left; padding:7px 8px; border-radius:8px; font:600 14px Barlow,sans-serif; color:var(--ink); cursor:pointer; }
+.ls-c:hover { background:#f1f4f0; }
+.ls-c[aria-pressed="true"] { background:var(--ink); color:#fff; }
+.ls-c .n { margin-left:auto; font-weight:500; opacity:.7; font-size:13px; }
+.ls-c .lsl { color:#c0392b; font-weight:700; margin-left:auto; font-size:13px; }
+.ls-c[aria-pressed="true"] .lsl { color:#ffb4a8; }
+.ls-sel { display:none; width:100%; border:1px solid var(--line); border-radius:999px; padding:8px 14px; font:16px Barlow,sans-serif; background:#fff; margin:0 0 10px; }
+@media (max-width:820px) { .ls-grid { grid-template-columns:minmax(0,1fr); } .ls-side { display:none; } .ls-sel { display:block; } }
 .ls-lg { background:#fff; border:1px solid var(--line); border-radius:14px; margin:0 0 10px; overflow:hidden; }
 .ls-lgh { display:flex; align-items:center; gap:8px; padding:9px 12px; background:#f1f4f0; cursor:pointer; font:700 14px Barlow,sans-serif; }
 .ls-lgh .cn { color:var(--muted); font-weight:500; }
@@ -51,7 +62,7 @@ JS = r"""
   var store = { fav: [], shut: {} };
   try { var s = JSON.parse(localStorage.getItem(KEY) || '{}'); if (s.fav) store.fav = s.fav; if (s.shut) store.shut = s.shut; } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
-  var st = { date: null, filter: 'all', q: '', data: null, open: {}, err: '' };
+  var st = { date: null, filter: 'all', q: '', data: null, open: {}, err: '', country: null };
   var tz = 'Europe/London';
   function ukDate(d) { return d.toLocaleDateString('sv-SE', { timeZone: tz }); }
   var today = ukDate(new Date());
@@ -74,6 +85,8 @@ JS = r"""
     var q = st.q.trim().toLowerCase();
     return (st.data || []).filter(function (m) {
       if (q && matchText(m).indexOf(q) < 0) return false;
+      if (st.country === '__top') { if (PRIORITY.indexOf(m.lg) < 0) return false; }
+      else if (st.country && m.cn !== st.country) return false;
       if (st.filter === 'live') return isLive(m);
       if (st.filter === 'fin') return !!DONE[m.st];
       if (st.filter === 'soon') return !isLive(m) && !DONE[m.st] && !OFF[m.st];
@@ -116,6 +129,33 @@ JS = r"""
     r.onclick = function () { if (m.ev && m.ev.length) { st.open[m.id] = !st.open[m.id]; render(); } };
     wrap.appendChild(r); return wrap;
   }
+  var HOME = ['England', 'Spain', 'Germany', 'Italy', 'France', 'Scotland', 'Netherlands', 'Portugal'];
+  function renderSide(data) {
+    var by = {};
+    data.forEach(function (m) { var c = by[m.cn] = by[m.cn] || { n: 0, live: 0 }; c.n++; if (isLive(m)) c.live++; });
+    var names = Object.keys(by).filter(function (n) { return n !== 'World'; });
+    names.sort(function (a, b) { var ia = HOME.indexOf(a), ib = HOME.indexOf(b); if (ia > -1 || ib > -1) return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib); return a.localeCompare(b); });
+    var top = data.filter(function (m) { return PRIORITY.indexOf(m.lg) > -1; });
+    var entries = [{ key: null, label: 'All matches', n: data.length, live: data.filter(isLive).length }];
+    if (top.length) entries.push({ key: '__top', label: 'Top leagues', n: top.length, live: top.filter(isLive).length });
+    if (by['World']) entries.push({ key: 'World', label: 'International', n: by['World'].n, live: by['World'].live });
+    names.forEach(function (n) { entries.push({ key: n, label: n, n: by[n].n, live: by[n].live }); });
+    var side = root.querySelector('.ls-side'); side.textContent = '';
+    side.appendChild(h('h4', '', 'Countries'));
+    entries.forEach(function (e) {
+      var b = h('button', 'ls-c'); b.type = 'button'; b.setAttribute('aria-pressed', st.country === e.key ? 'true' : 'false');
+      b.appendChild(h('span', '', e.label));
+      b.appendChild(h('span', e.live ? 'lsl' : 'n', e.live ? e.live + ' live' : e.n));
+      b.onclick = function () { st.country = e.key; render(); };
+      side.appendChild(b);
+    });
+    var sel = root.querySelector('.ls-sel'); sel.textContent = '';
+    entries.forEach(function (e) {
+      var o = h('option', '', e.label + ' (' + e.n + (e.live ? ', ' + e.live + ' live' : '') + ')'); o.value = e.key === null ? '' : e.key;
+      if (st.country === e.key) o.selected = true; sel.appendChild(o);
+    });
+    sel.onchange = function () { st.country = sel.value === '' ? null : sel.value; render(); };
+  }
   function render() {
     var data = st.data || [];
     var nLive = data.filter(isLive).length, nFin = data.filter(function (m) { return DONE[m.st]; }).length;
@@ -132,6 +172,7 @@ JS = r"""
       var b = h('button', 'ls-f', f[1]); var c = h('b', '', f[2]); b.appendChild(c); b.type = 'button';
       b.setAttribute('aria-pressed', st.filter === f[0] ? 'true' : 'false'); b.onclick = function () { st.filter = f[0]; render(); }; fl.appendChild(b);
     });
+    renderSide(data);
     var box = root.querySelector('.ls-list'); box.textContent = '';
     if (st.data === null) { box.appendChild(h('div', 'ls-empty', st.err || 'Loading scores…')); return; }
     var gs = groups(filtered());
@@ -174,7 +215,8 @@ def scores_body(url, picks):
   <div class="ls-days" role="group" aria-label="Day"></div>
   <div class="ls-tools"><div class="ls-fl" style="display:flex;gap:6px;flex-wrap:wrap"></div>
     <input class="ls-q" type="search" placeholder="Search team, league or country" aria-label="Search matches"></div>
-  <div class="ls-list" aria-live="polite"></div>
+  <select class="ls-sel" aria-label="Country"></select>
+  <div class="ls-grid"><nav class="ls-side" aria-label="Countries"></nav><div class="ls-list" aria-live="polite"></div></div>
   <p class="ls-note">Scores from every league in the world, updated about every 30 seconds. Tap a match with goals or cards to see them. Times are UK time.</p>
 </section>"""
     return CSS + html + JS.replace("__CFG__", json.dumps(cfg).replace("</", "<\\/"))

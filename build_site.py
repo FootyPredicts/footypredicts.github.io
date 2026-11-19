@@ -1298,9 +1298,9 @@ EXTRA_CSS = r"""
 .qp-side { gap:12px; }
 .qp-tag2 { background:var(--flood); color:var(--flood-ink); }
 .qp-side { display:none; }
-@media (min-width:1260px) {
+@media (min-width:1520px) {
   .qp-inline { display:none; }
-  .qp-side { display:grid; position:fixed; top:152px; width:250px; left:calc(50% - 464px - 290px); }
+  .qp-side { display:grid; position:fixed; top:152px; width:250px; left:calc(50% + 504px); }
 }
 
 
