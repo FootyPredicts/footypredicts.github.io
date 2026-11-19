@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Football predictions today | Premier League, La Liga, Champions League | FootyPredicts</title>
-<meta name="description" content="Free football predictions for today and this week: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.">
+<title>Live football scores and predictions today | FootyPredicts</title>
+<meta name="description" content="Live football scores from every league in the world, plus free predictions: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.">
 <link rel="canonical" href="https://footypredicts.com/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="FootyPredicts">
-<meta property="og:title" content="Football predictions today | Premier League, La Liga, Champions League | FootyPredicts"><meta property="og:description" content="Free football predictions for today and this week: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.">
+<meta property="og:title" content="Live football scores and predictions today | FootyPredicts"><meta property="og:description" content="Live football scores from every league in the world, plus free predictions: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.">
 <meta property="og:url" content="https://footypredicts.com/"><meta property="og:image" content="https://footypredicts.com/og.png">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Football predictions today | Premier League, La Liga, Champions League | FootyPredicts">
-<meta name="twitter:description" content="Free football predictions for today and this week: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League."><meta name="twitter:image" content="https://footypredicts.com/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Live football scores and predictions today | FootyPredicts">
+<meta name="twitter:description" content="Live football scores from every league in the world, plus free predictions: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League."><meta name="twitter:image" content="https://footypredicts.com/og.png">
 <meta name="theme-color" content="#0f3d2e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -590,6 +590,173 @@ a.chip { text-decoration:none; }
   </div>
 </header>
 <main><section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>
+<style>
+.ls { margin:0 0 28px; }
+.ls-head { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 8px; }
+.ls-head h2 { margin:0; font:800 30px/1 "Barlow Condensed",sans-serif; }
+.ls-head a { font-size:14px; }
+.ls-days { display:flex; gap:6px; margin:6px 0 10px; overflow-x:auto; }
+.ls-day, .ls-f { border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:999px; padding:6px 14px; font:600 14px Barlow,sans-serif; cursor:pointer; white-space:nowrap; }
+.ls-day[aria-pressed="true"], .ls-f[aria-pressed="true"] { background:var(--ink); color:#fff; border-color:var(--ink); }
+.ls-f b { font-weight:700; opacity:.7; margin-left:4px; }
+.ls-tools { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 0 12px; }
+.ls-q { flex:1; min-width:180px; border:1px solid var(--line); border-radius:999px; padding:7px 14px; font:16px Barlow,sans-serif; background:#fff; }
+.ls-lg { background:#fff; border:1px solid var(--line); border-radius:14px; margin:0 0 10px; overflow:hidden; }
+.ls-lgh { display:flex; align-items:center; gap:8px; padding:9px 12px; background:#f1f4f0; cursor:pointer; font:700 14px Barlow,sans-serif; }
+.ls-lgh .cn { color:var(--muted); font-weight:500; }
+.ls-lgh .n { margin-left:auto; color:var(--muted); font-weight:500; }
+.ls-star { border:0; background:none; font-size:18px; line-height:1; cursor:pointer; color:#b8a24a; padding:0 2px; }
+.ls-m { display:grid; grid-template-columns:58px 1fr auto 1fr; align-items:center; gap:8px; padding:9px 12px; border-top:1px solid var(--line); cursor:pointer; }
+.ls-t { font:700 13px Barlow,sans-serif; color:var(--muted); white-space:nowrap; }
+.ls-t.live { color:#c0392b; } .ls-t.live:before { content:""; display:inline-block; width:7px; height:7px; border-radius:50%; background:#c0392b; margin-right:4px; vertical-align:middle; animation:lspulse 1.4s infinite; }
+@keyframes lspulse { 50% { opacity:.25; } }
+.ls-h, .ls-a { font:600 16px/1.15 Barlow,sans-serif; }
+.ls-h { text-align:right; } .ls-a { text-align:left; }
+.ls-s { font:800 20px/1 "Barlow Condensed",sans-serif; min-width:54px; text-align:center; white-space:nowrap; }
+.ls-s.live { color:#c0392b; }
+.ls-x { grid-column:2 / 5; font-size:13px; color:var(--muted); }
+.ls-x div { padding:1px 0; }
+.ls-p { grid-column:2 / 5; font-size:12px; color:var(--muted); }
+.ls-p b { color:var(--ink); }
+.ls-empty { background:#fff; border:1px dashed var(--line); border-radius:14px; padding:18px; color:var(--muted); }
+.ls-note { font-size:12px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:520px) { .ls-m { grid-template-columns:56px 1fr auto 1fr; gap:6px; padding:9px 8px; } .ls-h, .ls-a { font-size:15px; } }
+</style>
+
+<section class="ls" id="ls">
+  <div class="ls-head"><h2>Live scores</h2><a href="live/">Live pressure &rarr;</a></div>
+  <div class="ls-days" role="group" aria-label="Day"></div>
+  <div class="ls-tools"><div class="ls-fl" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+    <input class="ls-q" type="search" placeholder="Search team, league or country" aria-label="Search matches"></div>
+  <div class="ls-list" aria-live="polite"></div>
+  <p class="ls-note">Scores from every league in the world, updated about every 30 seconds. Tap a match with goals or cards to see them. Times are UK time.</p>
+</section>
+<script>
+(function () {
+  var CFG = {"url": "https://live.footypredicts.com/", "picks": {"1575221": {"pk": "Home", "h": "Bayern M\u00fcnchen", "a": "1. FC K\u00f6ln", "hp": 91, "dp": 6, "ap": 3}, "1552827": {"pk": "Draw", "h": "Estac Troyes", "a": "Le Havre", "hp": 35, "dp": 33, "ap": 33}, "1557474": {"pk": "Home", "h": "Manchester City", "a": "Fulham", "hp": 62, "dp": 23, "ap": 15}, "1570459": {"pk": "Away", "h": "Racing Santander", "a": "Real Sociedad", "hp": 31, "dp": 20, "ap": 48}, "1575226": {"pk": "Away", "h": "Borussia M\u00f6nchengladbach", "a": "Borussia Dortmund", "hp": 17, "dp": 23, "ap": 59}, "1550202": {"pk": "Home", "h": "Lazio", "a": "Lecce", "hp": 63, "dp": 24, "ap": 13}, "1552824": {"pk": "Away", "h": "Nice", "a": "Paris Saint Germain", "hp": 21, "dp": 25, "ap": 54}, "1557468": {"pk": "Home", "h": "Bournemouth", "a": "Nottingham Forest", "hp": 47, "dp": 27, "ap": 25}, "1557476": {"pk": "Home", "h": "Tottenham", "a": "Ipswich", "hp": 54, "dp": 23, "ap": 23}, "1557470": {"pk": "Home", "h": "Chelsea", "a": "Leeds", "hp": 40, "dp": 29, "ap": 31}, "1570458": {"pk": "Home", "h": "Osasuna", "a": "Malaga", "hp": 60, "dp": 25, "ap": 15}, "1570456": {"pk": "Away", "h": "Getafe", "a": "Atletico Madrid", "hp": 20, "dp": 32, "ap": 48}, "1575222": {"pk": "Home", "h": "Bayer Leverkusen", "a": "SC Paderborn 07", "hp": 59, "dp": 26, "ap": 16}, "1575223": {"pk": "Home", "h": "Eintracht Frankfurt", "a": "1899 Hoffenheim", "hp": 47, "dp": 22, "ap": 32}, "1575225": {"pk": "Away", "h": "Union Berlin", "a": "RB Leipzig", "hp": 20, "dp": 23, "ap": 57}, "1575229": {"pk": "Home", "h": "SV Elversberg", "a": "SC Freiburg", "hp": 46, "dp": 22, "ap": 32}, "1550200": {"pk": "Home", "h": "Como", "a": "Cagliari", "hp": 62, "dp": 25, "ap": 13}, "1550205": {"pk": "Away", "h": "Parma", "a": "AS Roma", "hp": 11, "dp": 23, "ap": 66}, "1557467": {"pk": "Home", "h": "Aston Villa", "a": "Sunderland", "hp": 56, "dp": 25, "ap": 19}, "1570460": {"pk": "Home", "h": "Rayo Vallecano", "a": "Valencia", "hp": 48, "dp": 29, "ap": 23}, "1570453": {"pk": "Home", "h": "Alaves", "a": "Deportivo La Coruna", "hp": 39, "dp": 31, "ap": 30}, "1575228": {"pk": "Away", "h": "FC Schalke 04", "a": "VfB Stuttgart", "hp": 20, "dp": 32, "ap": 48}, "1550204": {"pk": "Home", "h": "Napoli", "a": "Torino", "hp": 60, "dp": 24, "ap": 16}, "1552820": {"pk": "Home", "h": "Lille", "a": "Lyon", "hp": 40, "dp": 33, "ap": 27}, "1550206": {"pk": "Home", "h": "Sassuolo", "a": "Genoa", "hp": 37, "dp": 28, "ap": 36}, "1552823": {"pk": "Home", "h": "Monaco", "a": "Auxerre", "hp": 60, "dp": 23, "ap": 17}, "1570457": {"pk": "Home", "h": "Levante", "a": "Elche", "hp": 46, "dp": 26, "ap": 28}, "1550197": {"pk": "Home", "h": "AC Milan", "a": "Frosinone", "hp": 41, "dp": 24, "ap": 35}, "1557471": {"pk": "Home", "h": "Coventry", "a": "Crystal Palace", "hp": 41, "dp": 26, "ap": 32}, "1557475": {"pk": "Away", "h": "Newcastle", "a": "Arsenal", "hp": 19, "dp": 28, "ap": 53}, "1557472": {"pk": "Away", "h": "Hull City", "a": "Brighton", "hp": 26, "dp": 30, "ap": 43}, "1557473": {"pk": "Home", "h": "Liverpool", "a": "Manchester United", "hp": 56, "dp": 22, "ap": 21}, "1557469": {"pk": "Home", "h": "Brentford", "a": "Everton", "hp": 47, "dp": 28, "ap": 25}, "1570455": {"pk": "Home", "h": "Barcelona", "a": "Villarreal", "hp": 76, "dp": 14, "ap": 10}, "1570454": {"pk": "Home", "h": "Athletic Club", "a": "Espanyol", "hp": 49, "dp": 29, "ap": 21}, "1570462": {"pk": "Away", "h": "Sevilla", "a": "Real Betis", "hp": 33, "dp": 26, "ap": 41}, "1570461": {"pk": "Home", "h": "Real Madrid", "a": "Celta Vigo", "hp": 71, "dp": 20, "ap": 10}, "1575224": {"pk": "Home", "h": "FC Augsburg", "a": "FSV Mainz 05", "hp": 43, "dp": 24, "ap": 33}, "1575227": {"pk": "Home", "h": "Werder Bremen", "a": "Hamburger SV", "hp": 51, "dp": 26, "ap": 23}, "1550199": {"pk": "Home", "h": "Bologna", "a": "Udinese", "hp": 52, "dp": 26, "ap": 22}, "1550198": {"pk": "Away", "h": "Atalanta", "a": "Inter", "hp": 22, "dp": 23, "ap": 56}, "1550203": {"pk": "Away", "h": "Monza", "a": "Fiorentina", "hp": 26, "dp": 23, "ap": 51}, "1552826": {"pk": "Home", "h": "Strasbourg", "a": "Stade Brestois 29", "hp": 53, "dp": 22, "ap": 25}, "1552819": {"pk": "Home", "h": "Lens", "a": "Toulouse", "hp": 48, "dp": 26, "ap": 26}, "1552825": {"pk": "Home", "h": "Paris FC", "a": "Angers", "hp": 66, "dp": 22, "ap": 11}, "1552821": {"pk": "Home", "h": "Lorient", "a": "Rennes", "hp": 45, "dp": 27, "ap": 29}, "1552822": {"pk": "Home", "h": "Marseille", "a": "Le Mans", "hp": 72, "dp": 16, "ap": 11}, "1575237": {"pk": "Home", "h": "Werder Bremen", "a": "Borussia M\u00f6nchengladbach", "hp": 51, "dp": 25, "ap": 24}, "1550201": {"pk": "Home", "h": "Juventus", "a": "Venezia", "hp": 66, "dp": 23, "ap": 11}, "1552830": {"pk": "Away", "h": "Stade Brestois 29", "a": "Paris FC", "hp": 35, "dp": 27, "ap": 38}, "1635641": {"pk": "Home", "h": "Bodo/Glimt", "a": "Lask Linz", "hp": 69, "dp": 17, "ap": 14}, "1635667": {"pk": "Away", "h": "Galatasaray", "a": "Aston Villa", "hp": 24, "dp": 23, "ap": 54}, "1635611": {"pk": "Home", "h": "Arsenal", "a": "Borussia Dortmund", "hp": 67, "dp": 22, "ap": 11}, "1635692": {"pk": "Home", "h": "Manchester City", "a": "Napoli", "hp": 70, "dp": 18, "ap": 12}, "1635713": {"pk": "Home", "h": "RB Leipzig", "a": "Lens", "hp": 57, "dp": 21, "ap": 22}, "1635663": {"pk": "Away", "h": "Feyenoord", "a": "FC Porto", "hp": 28, "dp": 26, "ap": 46}, "1635715": {"pk": "Home", "h": "Real Madrid", "a": "PSV Eindhoven", "hp": 67, "dp": 17, "ap": 16}, "1635731": {"pk": "Away", "h": "Slovan Bratislava", "a": "Real Betis", "hp": 11, "dp": 18, "ap": 72}, "1635649": {"pk": "Home", "h": "Como", "a": "AEK Athens FC", "hp": 63, "dp": 22, "ap": 15}, "1635728": {"pk": "Away", "h": "Slavia Praha", "a": "Villarreal", "hp": 36, "dp": 25, "ap": 39}, "1635718": {"pk": "Away", "h": "Sabah FA", "a": "Barcelona", "hp": 3, "dp": 6, "ap": 91}, "1635724": {"pk": "Away", "h": "Shakhtar Donetsk", "a": "Fenerbah\u00e7e", "hp": 35, "dp": 28, "ap": 38}, "1635682": {"pk": "Away", "h": "Lille", "a": "Bayern M\u00fcnchen", "hp": 18, "dp": 22, "ap": 61}, "1635703": {"pk": "Home", "h": "Paris Saint Germain", "a": "AS Roma", "hp": 58, "dp": 22, "ap": 20}, "1635735": {"pk": "Home", "h": "Sporting CP", "a": "Manchester United", "hp": 44, "dp": 24, "ap": 31}, "1635673": {"pk": "Home", "h": "Inter", "a": "VfB Stuttgart", "hp": 62, "dp": 20, "ap": 18}, "1635625": {"pk": "Home", "h": "Atletico Madrid", "a": "Viking", "hp": 62, "dp": 20, "ap": 17}, "1635642": {"pk": "Away", "h": "Club Brugge KV", "a": "Liverpool", "hp": 32, "dp": 23, "ap": 45}, "1636298": {"pk": "Home", "h": "Marseille", "a": "Levski Sofia", "hp": 66, "dp": 21, "ap": 13}, "1636244": {"pk": "Away", "h": "Celta Vigo", "a": "Bournemouth", "hp": 22, "dp": 26, "ap": 52}, "1636231": {"pk": "Home", "h": "Be\u015fikta\u015f", "a": "Hapoel Beer Sheva", "hp": 63, "dp": 21, "ap": 16}, "1636307": {"pk": "Draw", "h": "Olympiakos Piraeus", "a": "AC Milan", "hp": 34, "dp": 33, "ap": 33}, "1636315": {"pk": "Away", "h": "Plzen", "a": "Benfica", "hp": 15, "dp": 20, "ap": 65}, "1636334": {"pk": "Home", "h": "Red Bull Salzburg", "a": "Ararat-Armenia", "hp": 80, "dp": 13, "ap": 7}, "1636255": {"pk": "Away", "h": "Dinamo Zagreb", "a": "Bayer Leverkusen", "hp": 22, "dp": 22, "ap": 55}, "1636329": {"pk": "Home", "h": "Union St. Gilloise", "a": "Lech Poznan", "hp": 69, "dp": 19, "ap": 12}, "1636343": {"pk": "Home", "h": "Sunderland", "a": "Jagiellonia", "hp": 66, "dp": 22, "ap": 12}, "1636261": {"pk": "Home", "h": "Ferencvarosi TC", "a": "Celje", "hp": 70, "dp": 18, "ap": 11}, "1636336": {"pk": "Away", "h": "Sparta Praha", "a": "AZ Alkmaar", "hp": 36, "dp": 27, "ap": 37}, "1636277": {"pk": "Home", "h": "Juventus", "a": "Omonia Nicosia", "hp": 65, "dp": 22, "ap": 13}, "1636252": {"pk": "Home", "h": "Crystal Palace", "a": "Real Sociedad", "hp": 48, "dp": 25, "ap": 27}, "1636270": {"pk": "Home", "h": "1899 Hoffenheim", "a": "Sturm Graz", "hp": 60, "dp": 22, "ap": 18}, "1636294": {"pk": "Home", "h": "Lyon", "a": "Lillestrom", "hp": 71, "dp": 19, "ap": 10}, "1636305": {"pk": "Away", "h": "OFI", "a": "Anderlecht", "hp": 26, "dp": 27, "ap": 47}, "1636301": {"pk": "Away", "h": "NEC Nijmegen", "a": "Rennes", "hp": 35, "dp": 23, "ap": 42}, "1636349": {"pk": "Away", "h": "Torreense", "a": "Celtic", "hp": 36, "dp": 25, "ap": 39}}};
+  var root = document.getElementById('ls');
+  if (!root || !CFG.url) return;
+  var PRIORITY = [39, 2, 3, 140, 78, 135, 61, 848, 45, 48, 40, 41, 42, 179, 88, 94, 144, 203, 1, 4, 5, 9, 15, 960];
+  var LIVE = { '1H': 1, '2H': 1, 'ET': 1, 'BT': 1, 'P': 1, 'LIVE': 1, 'HT': 1, 'INT': 1 };
+  var DONE = { 'FT': 1, 'AET': 1, 'PEN': 1 };
+  var OFF = { 'PST': 'Postponed', 'CANC': 'Cancelled', 'ABD': 'Abandoned', 'AWD': 'Awarded', 'WO': 'Walkover', 'SUSP': 'Suspended' };
+  var KEY = 'fp-ls-v1';
+  var store = { fav: [], shut: {} };
+  try { var s = JSON.parse(localStorage.getItem(KEY) || '{}'); if (s.fav) store.fav = s.fav; if (s.shut) store.shut = s.shut; } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
+  var st = { date: null, filter: 'all', q: '', data: null, open: {}, err: '' };
+  var tz = 'Europe/London';
+  function ukDate(d) { return d.toLocaleDateString('sv-SE', { timeZone: tz }); }
+  var today = ukDate(new Date());
+  function shift(n) { var d = new Date(); d.setUTCDate(d.getUTCDate() + n); return ukDate(d); }
+  st.date = today;
+  function h(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  function isLive(m) { return !!LIVE[m.st]; }
+  function koTime(m) { try { return new Date(m.ko).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: tz }); } catch (e) { return ''; } }
+  function label(m) {
+    if (isLive(m)) { if (m.st === 'HT') return 'HT'; if (m.st === 'BT') return 'Break'; if (m.st === 'P') return 'Pens'; return (m.el || 0) + (m.ex ? '+' + m.ex : '') + "'"; }
+    if (DONE[m.st]) return m.st === 'FT' ? 'FT' : m.st;
+    if (OFF[m.st]) return OFF[m.st].slice(0, 5);
+    return koTime(m);
+  }
+  function score(m) { return (m.hg == null || m.ag == null) ? '' : m.hg + ' - ' + m.ag; }
+  function isFav(id) { return store.fav.indexOf(id) > -1; }
+  function matchText(m) { return (m.home + ' ' + m.away + ' ' + m.ln + ' ' + m.cn).toLowerCase(); }
+
+  function filtered() {
+    var q = st.q.trim().toLowerCase();
+    return (st.data || []).filter(function (m) {
+      if (q && matchText(m).indexOf(q) < 0) return false;
+      if (st.filter === 'live') return isLive(m);
+      if (st.filter === 'fin') return !!DONE[m.st];
+      if (st.filter === 'soon') return !isLive(m) && !DONE[m.st] && !OFF[m.st];
+      if (st.filter === 'fav') return isFav(m.lg);
+      return true;
+    });
+  }
+  function groups(list) {
+    var by = {};
+    list.forEach(function (m) { (by[m.lg] = by[m.lg] || { lg: m.lg, ln: m.ln, cn: m.cn, ms: [] }).ms.push(m); });
+    var out = Object.keys(by).map(function (k) { return by[k]; });
+    function rank(g) { var i = PRIORITY.indexOf(g.lg); return isFav(g.lg) ? -1 : (i < 0 ? 999 : i); }
+    out.sort(function (a, b) { return rank(a) - rank(b) || (a.cn || '').localeCompare(b.cn || '') || a.ln.localeCompare(b.ln); });
+    out.forEach(function (g) { g.ms.sort(function (a, b) { return (isLive(b) - isLive(a)) || a.ko.localeCompare(b.ko); }); });
+    return out;
+  }
+  function row(m) {
+    var wrap = document.createDocumentFragment();
+    var r = h('div', 'ls-m');
+    var t = h('span', 'ls-t' + (isLive(m) ? ' live' : ''), label(m));
+    r.appendChild(t); r.appendChild(h('span', 'ls-h', m.home));
+    r.appendChild(h('span', 'ls-s' + (isLive(m) ? ' live' : ''), score(m) || 'v'));
+    r.appendChild(h('span', 'ls-a', m.away));
+    var pk = CFG.picks[String(m.id)];
+    if (pk && !DONE[m.st]) {
+      var who = pk.pk === 'Home' ? pk.h : pk.pk === 'Away' ? pk.a : 'Draw';
+      var pc = pk.pk === 'Home' ? pk.hp : pk.pk === 'Away' ? pk.ap : pk.dp;
+      var p = h('div', 'ls-p'); p.innerHTML = 'FootyPredicts pick: <b></b>';
+      p.firstElementChild.textContent = who + ' ' + pc + '%'; r.appendChild(p);
+    }
+    if (st.open[m.id] && m.ev && m.ev.length) {
+      var x = h('div', 'ls-x');
+      m.ev.slice().sort(function (a, b) { return a.m - b.m; }).forEach(function (e) {
+        var side = e.s === 'h' ? m.home : m.away;
+        var d = h('div', '', (e.t === 'Goal' ? '⚽ ' : e.d === 'Red Card' ? '🟥 ' : '🟨 ') + e.m + (e.x ? '+' + e.x : '') + "' " + (e.p || '') + ' (' + side + ')' + (e.d === 'Own Goal' ? ' own goal' : e.d === 'Penalty' ? ' pen' : ''));
+        x.appendChild(d);
+      });
+      r.appendChild(x);
+    }
+    r.onclick = function () { if (m.ev && m.ev.length) { st.open[m.id] = !st.open[m.id]; render(); } };
+    wrap.appendChild(r); return wrap;
+  }
+  function render() {
+    var data = st.data || [];
+    var nLive = data.filter(isLive).length, nFin = data.filter(function (m) { return DONE[m.st]; }).length;
+    var nSoon = data.filter(function (m) { return !isLive(m) && !DONE[m.st] && !OFF[m.st]; }).length;
+    var nFav = data.filter(function (m) { return isFav(m.lg); }).length;
+    var days = root.querySelector('.ls-days'); days.textContent = '';
+    [[-1, 'Yesterday'], [0, 'Today'], [1, 'Tomorrow'], [2, '+2'], [3, '+3']].forEach(function (d) {
+      var v = shift(d[0]); var b = h('button', 'ls-day', d[0] === 2 || d[0] === 3 ? new Date(v + 'T12:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric' }) : d[1]);
+      b.type = 'button'; b.setAttribute('aria-pressed', st.date === v ? 'true' : 'false');
+      b.onclick = function () { st.date = v; st.data = null; st.open = {}; load(); render(); }; days.appendChild(b);
+    });
+    var fl = root.querySelector('.ls-fl'); fl.textContent = '';
+    [['all', 'All', data.length], ['live', 'Live', nLive], ['soon', 'Upcoming', nSoon], ['fin', 'Finished', nFin], ['fav', '★ My leagues', nFav]].forEach(function (f) {
+      var b = h('button', 'ls-f', f[1]); var c = h('b', '', f[2]); b.appendChild(c); b.type = 'button';
+      b.setAttribute('aria-pressed', st.filter === f[0] ? 'true' : 'false'); b.onclick = function () { st.filter = f[0]; render(); }; fl.appendChild(b);
+    });
+    var box = root.querySelector('.ls-list'); box.textContent = '';
+    if (st.data === null) { box.appendChild(h('div', 'ls-empty', st.err || 'Loading scores…')); return; }
+    var gs = groups(filtered());
+    if (!gs.length) { box.appendChild(h('div', 'ls-empty', st.filter === 'live' ? 'No matches in play right now.' : st.filter === 'fav' ? 'Tap the star next to a league to keep it here.' : 'No matches found.')); }
+    gs.forEach(function (g) {
+      var card = h('div', 'ls-lg'); var hd = h('div', 'ls-lgh');
+      var star = h('button', 'ls-star', isFav(g.lg) ? '★' : '☆'); star.type = 'button'; star.title = 'Keep this league at the top';
+      star.onclick = function (e) { e.stopPropagation(); var i = store.fav.indexOf(g.lg); if (i > -1) store.fav.splice(i, 1); else store.fav.push(g.lg); save(); render(); };
+      hd.appendChild(star); hd.appendChild(h('span', '', g.ln)); hd.appendChild(h('span', 'cn', g.cn)); hd.appendChild(h('span', 'n', g.ms.length));
+      var shut = !!store.shut[g.lg] && !st.q;
+      hd.onclick = function () { if (store.shut[g.lg]) delete store.shut[g.lg]; else store.shut[g.lg] = 1; save(); render(); };
+      card.appendChild(hd);
+      if (!shut) g.ms.forEach(function (m) { card.appendChild(row(m)); });
+      box.appendChild(card);
+    });
+  }
+  var busy = false;
+  function load() {
+    if (busy) return; busy = true;
+    var d = st.date;
+    fetch(CFG.url + (CFG.url.indexOf('?') > -1 ? '&' : '?') + 'scope=world&date=' + d, { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (j) { busy = false; if (d !== st.date) return load(); if (j.error) { st.err = 'Scores are catching their breath. Trying again shortly.'; if (!st.data) st.data = null; } else { st.data = j.matches || []; st.err = ''; } render(); })
+      .catch(function () { busy = false; if (!st.data) st.err = 'Could not load scores. Trying again shortly.'; render(); });
+  }
+  root.querySelector('.ls-q').addEventListener('input', function (e) { st.q = e.target.value; render(); });
+  setInterval(function () { if (!document.hidden && st.date === today) load(); }, 30000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) load(); });
+  render(); load();
+})();
+</script>
+
       <section class="potd">
         <span class="potd-tag">Pick of the day</span>
         <h2><a href="bundesliga/#m0">Bayern München <i>v</i> 1. FC Köln</a></h2>

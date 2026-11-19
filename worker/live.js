@@ -100,6 +100,34 @@ export default {
             m: e.time.elapsed, x: e.time.extra, s: e.team && e.team.id === f.teams.home.id ? "h" : "a", t: e.type, d: e.detail, p: e.player && e.player.name })),
         })) }, cors, 30);
       }
+      if (q.get("scope") === "world") {
+        // Every match in the world for one day (UK dates), with live matches overlaid. Cached, so visitors cost nothing extra.
+        const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/London" });
+        let d = q.get("date") || today;
+        const diff = (Date.parse(d) - Date.parse(today)) / 864e5;
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || !(diff >= -3 && diff <= 7)) d = today;
+        const hdr = { headers: { "x-apisports-key": env.API_FOOTBALL_KEY } };
+        const reqs = [fetch(`https://v3.football.api-sports.io/fixtures?date=${d}&timezone=Europe/London`, { ...hdr, cf: { cacheTtl: d === today ? 90 : 900, cacheEverything: true } })];
+        if (d === today) reqs.push(fetch("https://v3.football.api-sports.io/fixtures?live=all&timezone=Europe/London", { ...hdr, cf: { cacheTtl: 30, cacheEverything: true } }));
+        const rs = await Promise.all(reqs);
+        if (!rs[0].ok) return json({ ts: Date.now(), date: d, matches: [], error: "upstream " + rs[0].status }, cors, 10);
+        const day = (await rs[0].json()).response || [];
+        const live = rs[1] && rs[1].ok ? (await rs[1].json()).response || [] : [];
+        const compact = (f) => {
+          const o = {
+            id: f.fixture.id, lg: f.league.id, ln: f.league.name, cn: f.league.country, ko: f.fixture.date,
+            home: f.teams.home.name, away: f.teams.away.name, hid: f.teams.home.id,
+            hg: f.goals.home, ag: f.goals.away, st: f.fixture.status.short, el: f.fixture.status.elapsed, ex: f.fixture.status.extra,
+          };
+          const ev = (f.events || []).filter((e) => e.type === "Goal" || (e.type === "Card" && e.detail !== "Second Yellow card" ? true : e.type === "Card"));
+          if (ev.length) o.ev = ev.map((e) => ({ m: e.time.elapsed, x: e.time.extra, s: e.team && e.team.id === f.teams.home.id ? "h" : "a", t: e.type, d: e.detail, p: e.player && e.player.name }));
+          return o;
+        };
+        const map = new Map();
+        for (const f of day) map.set(f.fixture.id, compact(f));
+        for (const f of live) map.set(f.fixture.id, compact(f));
+        return json({ ts: Date.now(), date: d, matches: [...map.values()] }, cors, 30);
+      }
       const all = q.get("scope") === "all";
       const r = await fetch(`https://v3.football.api-sports.io/fixtures?live=${all ? LEAGUES_ALL : LEAGUES}`, {
         headers: { "x-apisports-key": env.API_FOOTBALL_KEY },

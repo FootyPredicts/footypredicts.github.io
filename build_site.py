@@ -1001,6 +1001,11 @@ def quiz_page(leagues):
                 league_nav(leagues, "quiz", "../"), "Daily quiz", "", quiz_build.quiz_body(quiz_build.build_pool(SQUADS)), "../", "quiz/")
 
 
+def scores_block():
+    import scores_page
+    return scores_page.scores_body(_live_url(), LIVE_PICKS)
+
+
 def live_tab(leagues):
     import live_page
     url = _live_url()
@@ -1100,10 +1105,10 @@ def build():
         <h2><a href="{d['league']}/">{esc(d['name'])}</a> <span class="sub">{esc(d['country'])}</span></h2>
         <div class="rows">{''.join(rows)}</div>{more}
       </section>""")
-    html = page("Football predictions today | Premier League, La Liga, Champions League | FootyPredicts",
-                "Free football predictions for today and this week: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.",
+    html = page("Live football scores and predictions today | FootyPredicts",
+                "Live football scores from every league in the world, plus free predictions: win chances, expected goals, likely scorers and cards for the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.",
                 league_nav(leagues, None, ""), f"Upcoming matches in Europe's top five leagues and the Champions League and Europa League · updated {upd}" if euro else f"Upcoming matches in Europe's top five leagues · updated {upd}",
-                "", pick_of_day(leagues) + quiz_promo(leagues) + "".join(sections), "", "")
+                "", scores_block() + pick_of_day(leagues) + quiz_promo(leagues) + "".join(sections), "", "")
     with open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(html)
     os.makedirs(os.path.join(OUT_DIR, "track-record"), exist_ok=True)
