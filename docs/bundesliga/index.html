@@ -108,6 +108,17 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.fm-wide { max-width:640px; }
+.lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
+.lt-btn:hover { border-color:var(--ink); }
+table.lt { width:100%; border-collapse:collapse; font-size:14px; }
+table.lt th, table.lt td { padding:6px 5px; text-align:center; border-top:1px solid var(--line); }
+table.lt th { font:600 11px Barlow,sans-serif; color:var(--muted); text-transform:uppercase; border-top:0; position:sticky; top:-18px; background:var(--paper); }
+table.lt .tl { text-align:left; }
+table.lt tr.lt-me td { background:#fff6c9; font-weight:600; }
+.lt-dot, .lt-live { color:#c0392b; font-weight:700; }
+.lt-dot { font-size:10px; }
+.lt-note { margin:0 0 8px; }
 .fm-x { position:absolute; top:8px; right:10px; border:0; background:none; font-size:26px; line-height:1; cursor:pointer; color:var(--muted); }
 .fm-title { font:700 20px/1.2 Barlow,sans-serif; margin:0 28px 6px 0; }
 .fW { background:#2e8b57; } .fD { background:#9aa5a0; } .fL { background:#c0392b; }
@@ -655,7 +666,7 @@ a.chip { text-decoration:none; }
 <main><section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>
     <article id="m0" class="match" role="tabpanel" data-fid="1575221" hidden>
       <header class="match-head">
-        <div class="kick">Fri 20 Nov · 19:30 <button type="button" class="fav-btn" data-fav="1575221" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Fri 20 Nov · 19:30 <button type="button" class="fav-btn" data-fav="1575221" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Bayern München" data-a="1. FC Köln">&#9776; League table</button></div>
         <h2 class="fixture"><span>Bayern München</span><span class="vs">v</span><span>1. FC Köln</span></h2>
         <p class="ref">Referee <b>R. Braun</b> <span class="ref-avg">(4.4 cards per game, 14 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -750,7 +761,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m1" class="match" role="tabpanel" data-fid="1575226" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575226" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575226" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Borussia Mönchengladbach" data-a="Borussia Dortmund">&#9776; League table</button></div>
         <h2 class="fixture"><span>Borussia Mönchengladbach</span><span class="vs">v</span><span>Borussia Dortmund</span></h2>
         <p class="ref">Referee <b>R. Hartmann</b> <span class="ref-avg">(4.0 cards per game, 30 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -845,7 +856,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m2" class="match" role="tabpanel" data-fid="1575222" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575222" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575222" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Bayer Leverkusen" data-a="SC Paderborn 07">&#9776; League table</button></div>
         <h2 class="fixture"><span>Bayer Leverkusen</span><span class="vs">v</span><span>SC Paderborn 07</span></h2>
         <p class="ref">Referee <b>T. Reichel</b> <span class="ref-avg">(4.0 cards per game, 28 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -939,7 +950,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m3" class="match" role="tabpanel" data-fid="1575223" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575223" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575223" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Eintracht Frankfurt" data-a="1899 Hoffenheim">&#9776; League table</button></div>
         <h2 class="fixture"><span>Eintracht Frankfurt</span><span class="vs">v</span><span>1899 Hoffenheim</span></h2>
         <p class="ref">Referee <b>M. Burda</b> <span class="ref-avg">(3.6 cards per game, 5 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -1034,7 +1045,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m4" class="match" role="tabpanel" data-fid="1575225" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575225" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575225" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Union Berlin" data-a="RB Leipzig">&#9776; League table</button></div>
         <h2 class="fixture"><span>Union Berlin</span><span class="vs">v</span><span>RB Leipzig</span></h2>
         <p class="ref">Referee <b>C. Dingert</b> <span class="ref-avg">(3.8 cards per game, 28 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -1129,7 +1140,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m5" class="match" role="tabpanel" data-fid="1575229" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575229" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575229" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="SV Elversberg" data-a="SC Freiburg">&#9776; League table</button></div>
         <h2 class="fixture"><span>SV Elversberg</span><span class="vs">v</span><span>SC Freiburg</span></h2>
         <p class="ref">Referee <b>R. Hempel</b> <span class="ref-avg">(5.0 cards per game, 3 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -1223,7 +1234,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m6" class="match" role="tabpanel" data-fid="1575228" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 17:30 <button type="button" class="fav-btn" data-fav="1575228" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 17:30 <button type="button" class="fav-btn" data-fav="1575228" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="FC Schalke 04" data-a="VfB Stuttgart">&#9776; League table</button></div>
         <h2 class="fixture"><span>FC Schalke 04</span><span class="vs">v</span><span>VfB Stuttgart</span></h2>
         <p class="ref">Referee <b>D. Siebert</b> <span class="ref-avg">(4.0 cards per game, 37 games)</span></p>
         <div class="threeway" aria-label="Result chances">
@@ -1317,7 +1328,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m7" class="match" role="tabpanel" data-fid="1575224" hidden>
       <header class="match-head">
-        <div class="kick">Sun 22 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575224" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sun 22 Nov · 14:30 <button type="button" class="fav-btn" data-fav="1575224" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="FC Augsburg" data-a="FSV Mainz 05">&#9776; League table</button></div>
         <h2 class="fixture"><span>FC Augsburg</span><span class="vs">v</span><span>FSV Mainz 05</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1412,7 +1423,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m8" class="match" role="tabpanel" data-fid="1575227" hidden>
       <header class="match-head">
-        <div class="kick">Sun 22 Nov · 16:30 <button type="button" class="fav-btn" data-fav="1575227" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sun 22 Nov · 16:30 <button type="button" class="fav-btn" data-fav="1575227" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Werder Bremen" data-a="Hamburger SV">&#9776; League table</button></div>
         <h2 class="fixture"><span>Werder Bremen</span><span class="vs">v</span><span>Hamburger SV</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1507,7 +1518,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m9" class="match" role="tabpanel" data-fid="1575237" hidden>
       <header class="match-head">
-        <div class="kick">Fri 27 Nov · 19:30 <button type="button" class="fav-btn" data-fav="1575237" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Fri 27 Nov · 19:30 <button type="button" class="fav-btn" data-fav="1575237" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Werder Bremen" data-a="Borussia Mönchengladbach">&#9776; League table</button></div>
         <h2 class="fixture"><span>Werder Bremen</span><span class="vs">v</span><span>Borussia Mönchengladbach</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1599,7 +1610,7 @@ a.chip { text-decoration:none; }
       </section>
       
       <section class="block"><h3>Last meetings</h3><p class="halves pm-tip">Tap a match for the full details.</p><div class="pm"><details class="pmx"><summary><span class="pm-date">31/01/2026</span><span class="pm-h">Werder Bremen</span><span class="pm-score">1–1</span><span class="pm-a">Borussia Mönchengladbach</span></summary><div class="pm-body"><p class="pm-meta">31/01/2026 · Half-time 0–0 · Referee F. Zwayer</p><table class="pm-ev"><tr><th>Werder Bremen</th><th>Borussia Mönchengladbach</th></tr><tr class="pm-sec"><td colspan="2">Goals</td></tr><tr><td>K. Topp 90&prime;</td><td>H. Tabakovic 61&prime;</td></tr><tr class="pm-sec"><td colspan="2">Cards</td></tr><tr><td><span class="none">–</span></td><td>&#128993; Rocco Reitz 44&prime;</td></tr></table><table class="mirror pm-stats"><tr class="names"><td>Werder Bremen</td><th></th><td>Borussia Mönchengladbach</td></tr><tr><td>68%</td><th>Possession</th><td>32%</td></tr><tr><td>1.2</td><th>Expected goals</th><td>0.9</td></tr><tr><td>18</td><th>Shots</th><td>7</td></tr><tr><td>6</td><th>Shots on target</th><td>2</td></tr><tr><td>7</td><th>Corners</th><td>3</td></tr><tr><td>10</td><th>Fouls</th><td>14</td></tr><tr><td>1</td><th>Offsides</th><td>3</td></tr><tr><td>1</td><th>Saves</th><td>5</td></tr><tr><td>85%</td><th>Pass accuracy</th><td>72%</td></tr><tr><td>0</td><th>Yellow cards</th><td>1</td></tr><tr><td>0</td><th>Red cards</th><td>0</td></tr></table></div></details><details class="pmx"><summary><span class="pm-date">14/09/2025</span><span class="pm-h">Borussia Mönchengladbach</span><span class="pm-score">0–4</span><span class="pm-a">Werder Bremen</span></summary><div class="pm-body"><p class="pm-meta">14/09/2025 · Half-time 0–2 · Referee M. Jollenbeck</p><table class="pm-ev"><tr><th>Borussia Mönchengladbach</th><th>Werder Bremen</th></tr><tr class="pm-sec"><td colspan="2">Goals</td></tr><tr><td><span class="none">–</span></td><td>S. Mbangula 15&prime;<br>J. Stage 26&prime;<br>R. Schmid 74&prime;<br>J. Njinmah 81&prime;</td></tr><tr class="pm-sec"><td colspan="2">Cards</td></tr><tr><td>&#128993; Shuto Machino 38&prime;</td><td><span class="none">–</span></td></tr></table><table class="mirror pm-stats"><tr class="names"><td>Borussia Mönchengladbach</td><th></th><td>Werder Bremen</td></tr><tr><td>55%</td><th>Possession</th><td>45%</td></tr><tr><td>1.5</td><th>Expected goals</th><td>2.1</td></tr><tr><td>19</td><th>Shots</th><td>12</td></tr><tr><td>3</td><th>Shots on target</th><td>7</td></tr><tr><td>9</td><th>Corners</th><td>4</td></tr><tr><td>12</td><th>Fouls</th><td>9</td></tr><tr><td>0</td><th>Offsides</th><td>1</td></tr><tr><td>3</td><th>Saves</th><td>2</td></tr><tr><td>85%</td><th>Pass accuracy</th><td>82%</td></tr><tr><td>1</td><th>Yellow cards</th><td>0</td></tr><tr><td>0</td><th>Red cards</th><td>0</td></tr></table></div></details><details class="pmx"><summary><span class="pm-date">15/03/2025</span><span class="pm-h">Werder Bremen</span><span class="pm-score">2–4</span><span class="pm-a">Borussia Mönchengladbach</span></summary><div class="pm-body"><p class="pm-meta">15/03/2025 · Half-time 2–2 · Referee T. Gerach</p><table class="pm-ev"><tr><th>Werder Bremen</th><th>Borussia Mönchengladbach</th></tr><tr class="pm-sec"><td colspan="2">Goals</td></tr><tr><td>R. Schmid 38&prime;<br>André Silva 45&prime;</td><td>A. Pléa 7&prime;<br>A. Pléa 28&prime;<br>A. Pléa 47&prime;<br>T. Kleindienst 81&prime;</td></tr><tr class="pm-sec"><td colspan="2">Cards</td></tr><tr><td>&#128993; Senne Lynen 21&prime;</td><td>&#128993; Tim Kleindienst 6&prime;<br>&#128993; Tim Kleindienst 90&prime;<br>&#128997; Tim Kleindienst 90&prime;</td></tr></table><table class="mirror pm-stats"><tr class="names"><td>Werder Bremen</td><th></th><td>Borussia Mönchengladbach</td></tr><tr><td>53%</td><th>Possession</th><td>47%</td></tr><tr><td>2.7</td><th>Expected goals</th><td>2.4</td></tr><tr><td>23</td><th>Shots</th><td>13</td></tr><tr><td>2</td><th>Shots on target</th><td>7</td></tr><tr><td>4</td><th>Corners</th><td>1</td></tr><tr><td>10</td><th>Fouls</th><td>7</td></tr><tr><td>3</td><th>Offsides</th><td>2</td></tr><tr><td>3</td><th>Saves</th><td>0</td></tr><tr><td>81%</td><th>Pass accuracy</th><td>82%</td></tr><tr><td>1</td><th>Yellow cards</th><td>2</td></tr><tr><td>0</td><th>Red cards</th><td>1</td></tr></table></div></details><details class="pmx"><summary><span class="pm-date">03/11/2024</span><span class="pm-h">Borussia Mönchengladbach</span><span class="pm-score">4–1</span><span class="pm-a">Werder Bremen</span></summary><div class="pm-body"><p class="pm-meta">03/11/2024 · Half-time 3–0 · Referee B. Dankert</p><table class="pm-ev"><tr><th>Borussia Mönchengladbach</th><th>Werder Bremen</th></tr><tr class="pm-sec"><td colspan="2">Goals</td></tr><tr><td>A. Pléa 11&prime;<br>F. Honorat 45&prime;<br>K. Stöger 66&prime;</td><td>K. Topp 75&prime;</td></tr><tr class="pm-sec"><td colspan="2">Cards</td></tr><tr><td>&#128993; Ko Itakura 79&prime;</td><td>&#128993; Felix Agu 18&prime;<br>&#128993; Mitchell Weiser 22&prime;<br>&#128993; Senne Lynen 53&prime;<br>&#128993; Mitchell Weiser 82&prime;<br>&#128997; Mitchell Weiser 82&prime;</td></tr></table><table class="mirror pm-stats"><tr class="names"><td>Borussia Mönchengladbach</td><th></th><td>Werder Bremen</td></tr><tr><td>47%</td><th>Possession</th><td>53%</td></tr><tr><td>2.5</td><th>Expected goals</th><td>1.5</td></tr><tr><td>16</td><th>Shots</th><td>15</td></tr><tr><td>8</td><th>Shots on target</th><td>5</td></tr><tr><td>7</td><th>Corners</th><td>7</td></tr><tr><td>12</td><th>Fouls</th><td>10</td></tr><tr><td>2</td><th>Offsides</th><td>1</td></tr><tr><td>4</td><th>Saves</th><td>4</td></tr><tr><td>81%</td><th>Pass accuracy</th><td>85%</td></tr><tr><td>1</td><th>Yellow cards</th><td>4</td></tr><tr><td>0</td><th>Red cards</th><td>1</td></tr></table></div></details></div></section>
-    </article>
+    </article><script type="application/json" id="lt-data">{"url": "https://live.footypredicts.com/", "lg": 78, "rows": [{"n": "Bayern M\u00fcnchen", "p": 9, "w": 6, "d": 3, "l": 0, "gf": 29, "ga": 9}, {"n": "VfB Stuttgart", "p": 9, "w": 4, "d": 0, "l": 5, "gf": 15, "ga": 15}, {"n": "FSV Mainz 05", "p": 9, "w": 3, "d": 1, "l": 5, "gf": 18, "ga": 19}, {"n": "SC Paderborn 07", "p": 9, "w": 2, "d": 4, "l": 3, "gf": 8, "ga": 11}, {"n": "RB Leipzig", "p": 9, "w": 6, "d": 0, "l": 3, "gf": 27, "ga": 13}, {"n": "Borussia M\u00f6nchengladbach", "p": 9, "w": 1, "d": 1, "l": 7, "gf": 12, "ga": 25}, {"n": "Union Berlin", "p": 9, "w": 1, "d": 4, "l": 4, "gf": 7, "ga": 21}, {"n": "Eintracht Frankfurt", "p": 9, "w": 3, "d": 3, "l": 3, "gf": 15, "ga": 20}, {"n": "1. FC K\u00f6ln", "p": 9, "w": 2, "d": 3, "l": 4, "gf": 10, "ga": 14}, {"n": "1899 Hoffenheim", "p": 9, "w": 4, "d": 0, "l": 5, "gf": 16, "ga": 17}, {"n": "SV Elversberg", "p": 9, "w": 4, "d": 1, "l": 4, "gf": 17, "ga": 18}, {"n": "Bayer Leverkusen", "p": 9, "w": 5, "d": 1, "l": 3, "gf": 20, "ga": 17}, {"n": "Borussia Dortmund", "p": 9, "w": 6, "d": 3, "l": 0, "gf": 16, "ga": 7}, {"n": "Hamburger SV", "p": 9, "w": 4, "d": 0, "l": 5, "gf": 10, "ga": 20}, {"n": "SC Freiburg", "p": 9, "w": 6, "d": 1, "l": 2, "gf": 20, "ga": 10}, {"n": "Werder Bremen", "p": 9, "w": 4, "d": 3, "l": 2, "gf": 17, "ga": 15}, {"n": "FC Augsburg", "p": 9, "w": 2, "d": 3, "l": 4, "gf": 20, "ga": 20}, {"n": "FC Schalke 04", "p": 9, "w": 1, "d": 3, "l": 5, "gf": 5, "ga": 11}], "done": [1575140, 1575146, 1575147, 1575148, 1575144, 1575143, 1575142, 1575145, 1575141, 1575149, 1575155, 1575153, 1575150, 1575151, 1575157, 1575156, 1575154, 1575152, 1575164, 1575161, 1575163, 1575158, 1575160, 1575162, 1575165, 1575159, 1575166, 1575167, 1575172, 1575174, 1575170, 1575171, 1575168, 1575169, 1575173, 1575175, 1575176, 1575181, 1575178, 1575180, 1575182, 1575184, 1575177, 1575183, 1575179, 1575187, 1575191, 1575192, 1575190, 1575188, 1575193, 1575185, 1575186, 1575189, 1575196, 1575200, 1575199, 1575195, 1575202, 1575201, 1575194, 1575197, 1575198, 1575211, 1575209, 1575208, 1575204, 1575206, 1575210, 1575203, 1575207, 1575205, 1575218, 1575217, 1575212, 1575213, 1575220, 1575214, 1575219, 1575216, 1575215]}</script>
 </main>
 <footer class="foot">
 <p><b>18+ only.</b> Gambling can be addictive. Please gamble responsibly and only with money you can afford to lose. Free, confidential help: <a href="https://www.begambleaware.org" rel="noopener">BeGambleAware.org</a> · National Gambling Helpline 0808 8020 133 · <a href="https://www.gamstop.co.uk" rel="noopener">GAMSTOP</a> · <a href="../responsible-gambling/">Responsible gambling and how this site is funded</a></p>
@@ -2035,10 +2046,49 @@ function model(m){
 <script>
 (function () {
   function close() { var o = document.querySelector('.fm-ov'); if (o) o.remove(); }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function openTable(btn) {
+    var el = document.getElementById('lt-data'); if (!el) return;
+    var D; try { D = JSON.parse(el.textContent); } catch (_) { return; }
+    close();
+    var o = document.createElement('div'); o.className = 'fm-ov'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true');
+    var box = document.createElement('div'); box.className = 'fm-box fm-wide';
+    var x = document.createElement('button'); x.type = 'button'; x.className = 'fm-x'; x.setAttribute('aria-label', 'Close'); x.textContent = '×';
+    var body = document.createElement('div'); box.appendChild(x); box.appendChild(body); o.appendChild(box); document.body.appendChild(o); x.focus();
+    var H = btn.getAttribute('data-h'), A = btn.getAttribute('data-a');
+    function draw(live) {
+      var T = {}; D.rows.forEach(function (r) { T[r.n] = Object.assign({ lv: false }, r); });
+      var n = 0, seen = {};
+      live.forEach(function (m) {
+        if (m.lg !== D.lg || D.done.indexOf(m.id) > -1 || !T[m.home] || !T[m.away]) return;
+        if (['1H','HT','2H','ET','BT','P','LIVE','INT','SUSP'].indexOf(m.st) < 0) return;
+        n++;
+        [[m.home, m.hg, m.ag], [m.away, m.ag, m.hg]].forEach(function (z) {
+          var r = T[z[0]]; r.lv = true; r.p++; r.gf += z[1]; r.ga += z[2];
+          if (z[1] > z[2]) r.w++; else if (z[1] === z[2]) r.d++; else r.l++;
+        });
+      });
+      var L = Object.keys(T).map(function (k) { var r = T[k]; r.pts = r.w * 3 + r.d; r.gd = r.gf - r.ga; return r; });
+      L.sort(function (a, b) { return b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.n.localeCompare(b.n); });
+      var h = '<div class="fm-title"><b>League table</b></div><p class="halves lt-note">' +
+        (n ? '<span class="lt-live">● Live</span> ' + n + ' match' + (n > 1 ? 'es' : '') + ' in play, scores counted as they stand.' : 'Based on finished matches. Live games are added while they are being played.') + '</p>' +
+        '<table class="lt"><thead><tr><th>#</th><th class="tl">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>';
+      L.forEach(function (r, i) {
+        h += '<tr class="' + (r.n === H || r.n === A ? 'lt-me' : '') + '"><td>' + (i + 1) + '</td><td class="tl">' + esc(r.n) + (r.lv ? ' <span class="lt-dot" title="Playing now">●</span>' : '') +
+          '</td><td>' + r.p + '</td><td>' + r.w + '</td><td>' + r.d + '</td><td>' + r.l + '</td><td>' + (r.gd > 0 ? '+' : '') + r.gd + '</td><td><b>' + r.pts + '</b></td></tr>';
+      });
+      body.innerHTML = h + '</tbody></table><p class="halves">Ties on points are split by goal difference, then goals scored.</p>';
+      var me = body.querySelector('.lt-me'); if (me && me.scrollIntoView && !body.getAttribute('data-s')) { body.setAttribute('data-s', 1); me.scrollIntoView({ block: 'center' }); }
+    }
+    draw([]);
+    if (D.url) fetch(D.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j && j.matches && document.body.contains(o)) draw(j.matches); }).catch(function () {});
+  }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   document.addEventListener('click', function (e) {
     var ov = e.target.closest('.fm-ov');
     if (ov && (e.target === ov || e.target.closest('.fm-x'))) { close(); return; }
+    var lb = e.target.closest('.lt-btn'); if (lb) { openTable(lb); return; }
     var b = e.target.closest('.fchip'); if (!b) return;
     var t = b.parentNode.querySelector('template'); if (!t) return;
     close();

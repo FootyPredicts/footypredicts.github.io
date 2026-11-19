@@ -472,10 +472,49 @@ _PM_LABELS = [("pos", "Possession", "%"), ("xg", "Expected goals", ""), ("sh", "
 FORM_JS = """<script>
 (function () {
   function close() { var o = document.querySelector('.fm-ov'); if (o) o.remove(); }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function openTable(btn) {
+    var el = document.getElementById('lt-data'); if (!el) return;
+    var D; try { D = JSON.parse(el.textContent); } catch (_) { return; }
+    close();
+    var o = document.createElement('div'); o.className = 'fm-ov'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true');
+    var box = document.createElement('div'); box.className = 'fm-box fm-wide';
+    var x = document.createElement('button'); x.type = 'button'; x.className = 'fm-x'; x.setAttribute('aria-label', 'Close'); x.textContent = '\u00d7';
+    var body = document.createElement('div'); box.appendChild(x); box.appendChild(body); o.appendChild(box); document.body.appendChild(o); x.focus();
+    var H = btn.getAttribute('data-h'), A = btn.getAttribute('data-a');
+    function draw(live) {
+      var T = {}; D.rows.forEach(function (r) { T[r.n] = Object.assign({ lv: false }, r); });
+      var n = 0, seen = {};
+      live.forEach(function (m) {
+        if (m.lg !== D.lg || D.done.indexOf(m.id) > -1 || !T[m.home] || !T[m.away]) return;
+        if (['1H','HT','2H','ET','BT','P','LIVE','INT','SUSP'].indexOf(m.st) < 0) return;
+        n++;
+        [[m.home, m.hg, m.ag], [m.away, m.ag, m.hg]].forEach(function (z) {
+          var r = T[z[0]]; r.lv = true; r.p++; r.gf += z[1]; r.ga += z[2];
+          if (z[1] > z[2]) r.w++; else if (z[1] === z[2]) r.d++; else r.l++;
+        });
+      });
+      var L = Object.keys(T).map(function (k) { var r = T[k]; r.pts = r.w * 3 + r.d; r.gd = r.gf - r.ga; return r; });
+      L.sort(function (a, b) { return b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.n.localeCompare(b.n); });
+      var h = '<div class="fm-title"><b>League table</b></div><p class="halves lt-note">' +
+        (n ? '<span class="lt-live">\u25cf Live</span> ' + n + ' match' + (n > 1 ? 'es' : '') + ' in play, scores counted as they stand.' : 'Based on finished matches. Live games are added while they are being played.') + '</p>' +
+        '<table class="lt"><thead><tr><th>#</th><th class="tl">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>';
+      L.forEach(function (r, i) {
+        h += '<tr class="' + (r.n === H || r.n === A ? 'lt-me' : '') + '"><td>' + (i + 1) + '</td><td class="tl">' + esc(r.n) + (r.lv ? ' <span class="lt-dot" title="Playing now">\u25cf</span>' : '') +
+          '</td><td>' + r.p + '</td><td>' + r.w + '</td><td>' + r.d + '</td><td>' + r.l + '</td><td>' + (r.gd > 0 ? '+' : '') + r.gd + '</td><td><b>' + r.pts + '</b></td></tr>';
+      });
+      body.innerHTML = h + '</tbody></table><p class="halves">Ties on points are split by goal difference, then goals scored.</p>';
+      var me = body.querySelector('.lt-me'); if (me && me.scrollIntoView && !body.getAttribute('data-s')) { body.setAttribute('data-s', 1); me.scrollIntoView({ block: 'center' }); }
+    }
+    draw([]);
+    if (D.url) fetch(D.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j && j.matches && document.body.contains(o)) draw(j.matches); }).catch(function () {});
+  }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   document.addEventListener('click', function (e) {
     var ov = e.target.closest('.fm-ov');
     if (ov && (e.target === ov || e.target.closest('.fm-x'))) { close(); return; }
+    var lb = e.target.closest('.lt-btn'); if (lb) { openTable(lb); return; }
     var b = e.target.closest('.fchip'); if (!b) return;
     var t = b.parentNode.querySelector('template'); if (!t) return;
     close();
@@ -528,6 +567,32 @@ def pm_body(m):
 
 
 # ---------------------------------------------------------------- match panel
+
+from pipeline.config import LEAGUES as _LG
+LEAGUE_API = {k: v[1] for k, v in _LG.items()}
+
+
+def league_table_data(slug, api_id):
+    """Base standings from finished matches; the page adds in-play scores on top."""
+    try:
+        with open(os.path.join(BASE_DIR, "data", slug, "fixtures_2026.json"), encoding="utf-8") as fh:
+            rows = json.load(fh)
+    except Exception:
+        return ""
+    t, done = {}, []
+    for r in rows:
+        if r.get("status") not in ("FT", "AET", "PEN") or r.get("hg") is None or r.get("ag") is None:
+            continue
+        done.append(r["id"])
+        for n, gf, ga in ((r["home"], r["hg"], r["ag"]), (r["away"], r["ag"], r["hg"])):
+            x = t.setdefault(n, {"n": n, "p": 0, "w": 0, "d": 0, "l": 0, "gf": 0, "ga": 0})
+            x["p"] += 1; x["gf"] += gf; x["ga"] += ga
+            x["w" if gf > ga else "d" if gf == ga else "l"] += 1
+    if not t:
+        return ""
+    data = {"url": _live_url(), "lg": api_id, "rows": list(t.values()), "done": done}
+    return '<script type="application/json" id="lt-data">' + json.dumps(data).replace("</", "<\\/") + "</script>"
+
 
 def render_match(f, i):
     day, time_, _ = kickoff(f)
@@ -648,7 +713,7 @@ def render_match(f, i):
     return f"""
     <article id="m{i}" class="match" role="tabpanel" data-fid="{f["id"]}" hidden>
       <header class="match-head">
-        <div class="kick">{esc(day)} · {esc(time_)} <button type="button" class="fav-btn" data-fav="{f["id"]}" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">{esc(day)} · {esc(time_)} <button type="button" class="fav-btn" data-fav="{f["id"]}" aria-pressed="false">&#9734; Track this match</button> {('<button type="button" class="lt-btn" data-h="' + esc(home) + '" data-a="' + esc(away) + '">&#9776; League table</button>') if not euro else ""}</div>
         <h2 class="fixture"><span>{esc(home)}</span><span class="vs">v</span><span>{esc(away)}</span></h2>
         {ref}
         <div class="threeway" aria-label="Result chances">
@@ -936,7 +1001,7 @@ def page(title, desc, nav, sub, chips, body, prefix, path=""):
     html = html.replace("__LIVEDATA__", json.dumps({"url": _live_url() if on_live else "", "picks": LIVE_PICKS,
                                                        "league": path.rstrip("/") if (path.rstrip("/") in LEAGUE_ORDER or path.rstrip("/") in EURO_ORDER) else ""}).replace("</", "<\\/"))
     html = html.replace("__DECOR__", DECOR_DEFS).replace("__HEAD__", head_tags(esc(title), esc(desc), path))
-    html = html.replace("</body>", FORM_JS + "</body>", 1) if "fchip" in html else html
+    html = html.replace("</body>", FORM_JS + "</body>", 1) if ("fchip" in html or "lt-btn" in html) else html
     return html.replace("__BOOKIES__", json.dumps(affiliate_config()).replace("</", "<\\/"))
 
 
@@ -1136,7 +1201,7 @@ def build():
                     f"{d['name']} predictions for {first:%d %b} to {last:%d %b %Y}: win chances, expected goals, likely scorers, cards and team news for every match.",
                     league_nav(leagues, d["league"], "../"), sub,
                     '<nav class="chips" role="tablist" aria-label="Fixtures">' + "".join(chip(f, i) for i, f in enumerate(fx)) + "</nav>",
-                    "".join(render_match(f, i) for i, f in enumerate(fx)), "../", d["league"] + "/")
+                    "".join(render_match(f, i) for i, f in enumerate(fx)) + league_table_data(d["league"], (LEAGUE_API.get(d["league"]) or 0)), "../", d["league"] + "/")
         os.makedirs(os.path.join(OUT_DIR, d["league"]), exist_ok=True)
         with open(os.path.join(OUT_DIR, d["league"], "index.html"), "w", encoding="utf-8") as fh:
             fh.write(html)
@@ -1290,6 +1355,17 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.fm-wide { max-width:640px; }
+.lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
+.lt-btn:hover { border-color:var(--ink); }
+table.lt { width:100%; border-collapse:collapse; font-size:14px; }
+table.lt th, table.lt td { padding:6px 5px; text-align:center; border-top:1px solid var(--line); }
+table.lt th { font:600 11px Barlow,sans-serif; color:var(--muted); text-transform:uppercase; border-top:0; position:sticky; top:-18px; background:var(--paper); }
+table.lt .tl { text-align:left; }
+table.lt tr.lt-me td { background:#fff6c9; font-weight:600; }
+.lt-dot, .lt-live { color:#c0392b; font-weight:700; }
+.lt-dot { font-size:10px; }
+.lt-note { margin:0 0 8px; }
 .fm-x { position:absolute; top:8px; right:10px; border:0; background:none; font-size:26px; line-height:1; cursor:pointer; color:var(--muted); }
 .fm-title { font:700 20px/1.2 Barlow,sans-serif; margin:0 28px 6px 0; }
 .fW { background:#2e8b57; } .fD { background:#9aa5a0; } .fL { background:#c0392b; }

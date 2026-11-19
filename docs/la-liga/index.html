@@ -108,6 +108,17 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.fm-wide { max-width:640px; }
+.lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
+.lt-btn:hover { border-color:var(--ink); }
+table.lt { width:100%; border-collapse:collapse; font-size:14px; }
+table.lt th, table.lt td { padding:6px 5px; text-align:center; border-top:1px solid var(--line); }
+table.lt th { font:600 11px Barlow,sans-serif; color:var(--muted); text-transform:uppercase; border-top:0; position:sticky; top:-18px; background:var(--paper); }
+table.lt .tl { text-align:left; }
+table.lt tr.lt-me td { background:#fff6c9; font-weight:600; }
+.lt-dot, .lt-live { color:#c0392b; font-weight:700; }
+.lt-dot { font-size:10px; }
+.lt-note { margin:0 0 8px; }
 .fm-x { position:absolute; top:8px; right:10px; border:0; background:none; font-size:26px; line-height:1; cursor:pointer; color:var(--muted); }
 .fm-title { font:700 20px/1.2 Barlow,sans-serif; margin:0 28px 6px 0; }
 .fW { background:#2e8b57; } .fD { background:#9aa5a0; } .fL { background:#c0392b; }
@@ -655,7 +666,7 @@ a.chip { text-decoration:none; }
 <main><section id="myfav" class="live" hidden></section><section id="live" class="live" aria-live="polite" hidden></section>
     <article id="m0" class="match" role="tabpanel" data-fid="1570454" hidden>
       <header class="match-head">
-        <div class="kick">Fri 20 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1570454" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Fri 20 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1570454" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Athletic Club" data-a="Espanyol">&#9776; League table</button></div>
         <h2 class="fixture"><span>Athletic Club</span><span class="vs">v</span><span>Espanyol</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -750,7 +761,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m1" class="match" role="tabpanel" data-fid="1570453" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 13:00 <button type="button" class="fav-btn" data-fav="1570453" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 13:00 <button type="button" class="fav-btn" data-fav="1570453" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Alaves" data-a="Deportivo La Coruna">&#9776; League table</button></div>
         <h2 class="fixture"><span>Alaves</span><span class="vs">v</span><span>Deportivo La Coruna</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -844,7 +855,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m2" class="match" role="tabpanel" data-fid="1570460" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 15:15 <button type="button" class="fav-btn" data-fav="1570460" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 15:15 <button type="button" class="fav-btn" data-fav="1570460" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Rayo Vallecano" data-a="Valencia">&#9776; League table</button></div>
         <h2 class="fixture"><span>Rayo Vallecano</span><span class="vs">v</span><span>Valencia</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -939,7 +950,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m3" class="match" role="tabpanel" data-fid="1570462" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 17:30 <button type="button" class="fav-btn" data-fav="1570462" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 17:30 <button type="button" class="fav-btn" data-fav="1570462" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Sevilla" data-a="Real Betis">&#9776; League table</button></div>
         <h2 class="fixture"><span>Sevilla</span><span class="vs">v</span><span>Real Betis</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1034,7 +1045,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m4" class="match" role="tabpanel" data-fid="1570461" hidden>
       <header class="match-head">
-        <div class="kick">Sat 21 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1570461" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sat 21 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1570461" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Real Madrid" data-a="Celta Vigo">&#9776; League table</button></div>
         <h2 class="fixture"><span>Real Madrid</span><span class="vs">v</span><span>Celta Vigo</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1129,7 +1140,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m5" class="match" role="tabpanel" data-fid="1570455" hidden>
       <header class="match-head">
-        <div class="kick">Sun 22 Nov · 13:00 <button type="button" class="fav-btn" data-fav="1570455" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sun 22 Nov · 13:00 <button type="button" class="fav-btn" data-fav="1570455" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Barcelona" data-a="Villarreal">&#9776; League table</button></div>
         <h2 class="fixture"><span>Barcelona</span><span class="vs">v</span><span>Villarreal</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1224,7 +1235,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m6" class="match" role="tabpanel" data-fid="1570459" hidden>
       <header class="match-head">
-        <div class="kick">Sun 22 Nov · 15:15 <button type="button" class="fav-btn" data-fav="1570459" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sun 22 Nov · 15:15 <button type="button" class="fav-btn" data-fav="1570459" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Racing Santander" data-a="Real Sociedad">&#9776; League table</button></div>
         <h2 class="fixture"><span>Racing Santander</span><span class="vs">v</span><span>Real Sociedad</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1318,7 +1329,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m7" class="match" role="tabpanel" data-fid="1570458" hidden>
       <header class="match-head">
-        <div class="kick">Sun 22 Nov · 17:30 <button type="button" class="fav-btn" data-fav="1570458" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sun 22 Nov · 17:30 <button type="button" class="fav-btn" data-fav="1570458" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Osasuna" data-a="Malaga">&#9776; League table</button></div>
         <h2 class="fixture"><span>Osasuna</span><span class="vs">v</span><span>Malaga</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1412,7 +1423,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m8" class="match" role="tabpanel" data-fid="1570456" hidden>
       <header class="match-head">
-        <div class="kick">Sun 22 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1570456" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Sun 22 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1570456" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Getafe" data-a="Atletico Madrid">&#9776; League table</button></div>
         <h2 class="fixture"><span>Getafe</span><span class="vs">v</span><span>Atletico Madrid</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1507,7 +1518,7 @@ a.chip { text-decoration:none; }
     </article>
     <article id="m9" class="match" role="tabpanel" data-fid="1570457" hidden>
       <header class="match-head">
-        <div class="kick">Mon 23 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1570457" aria-pressed="false">&#9734; Track this match</button></div>
+        <div class="kick">Mon 23 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1570457" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Levante" data-a="Elche">&#9776; League table</button></div>
         <h2 class="fixture"><span>Levante</span><span class="vs">v</span><span>Elche</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
@@ -1599,7 +1610,7 @@ a.chip { text-decoration:none; }
       </section>
       
       <section class="block"><h3>Last meetings</h3><p class="halves pm-tip">Tap a match for the full details.</p><div class="pm"><details class="pmx"><summary><span class="pm-date">23/01/2026</span><span class="pm-h">Levante</span><span class="pm-score">3–2</span><span class="pm-a">Elche</span></summary><div class="pm-body"><p class="pm-meta">23/01/2026 · Half-time 0–1 · Referee J. Munuera</p><table class="pm-ev"><tr><th>Levante</th><th>Elche</th></tr><tr class="pm-sec"><td colspan="2">Goals</td></tr><tr><td>P. Martinez 50&prime;<br>Dela 68&prime;<br>A. Matturro 90&prime;</td><td>A. Rodriguez 11&prime;<br>A. Boayar 90&prime;</td></tr><tr class="pm-sec"><td colspan="2">Cards</td></tr><tr><td>&#128993; Carlos Álvarez 38&prime;<br>&#128993; Iván Romero 84&prime;</td><td>&#128993; Léo Pétrot 55&prime;<br>&#128993; Aleix Febas 67&prime;<br>&#128993; André Silva 71&prime;</td></tr></table><table class="mirror pm-stats"><tr class="names"><td>Levante</td><th></th><td>Elche</td></tr><tr><td>41%</td><th>Possession</th><td>59%</td></tr><tr><td>2.6</td><th>Expected goals</th><td>0.7</td></tr><tr><td>26</td><th>Shots</th><td>6</td></tr><tr><td>6</td><th>Shots on target</th><td>3</td></tr><tr><td>9</td><th>Corners</th><td>1</td></tr><tr><td>13</td><th>Fouls</th><td>13</td></tr><tr><td>1</td><th>Offsides</th><td>0</td></tr><tr><td>1</td><th>Saves</th><td>2</td></tr><tr><td>76%</td><th>Pass accuracy</th><td>83%</td></tr><tr><td>2</td><th>Yellow cards</th><td>3</td></tr><tr><td>0</td><th>Red cards</th><td>0</td></tr></table></div></details><details class="pmx"><summary><span class="pm-date">29/08/2025</span><span class="pm-h">Elche</span><span class="pm-score">2–0</span><span class="pm-a">Levante</span></summary><div class="pm-body"><p class="pm-meta">29/08/2025 · Half-time 0–0 · Referee I. Galech Apezteguia</p><table class="pm-ev"><tr><th>Elche</th><th>Levante</th></tr><tr class="pm-sec"><td colspan="2">Goals</td></tr><tr><td>R. Mir 46&prime;<br>R. Mendoza 51&prime;</td><td><span class="none">–</span></td></tr><tr class="pm-sec"><td colspan="2">Cards</td></tr><tr><td>&#128993; Rodrigo Mendoza 58&prime;</td><td>&#128993; Adrián de la Fuente 39&prime;<br>&#128993; Jeremy Toljan 45&prime;</td></tr></table><table class="mirror pm-stats"><tr class="names"><td>Elche</td><th></th><td>Levante</td></tr><tr><td>67%</td><th>Possession</th><td>33%</td></tr><tr><td>1.1</td><th>Expected goals</th><td>1.0</td></tr><tr><td>16</td><th>Shots</th><td>11</td></tr><tr><td>5</td><th>Shots on target</th><td>1</td></tr><tr><td>4</td><th>Corners</th><td>2</td></tr><tr><td>14</td><th>Fouls</th><td>17</td></tr><tr><td>1</td><th>Offsides</th><td>1</td></tr><tr><td>1</td><th>Saves</th><td>3</td></tr><tr><td>89%</td><th>Pass accuracy</th><td>79%</td></tr><tr><td>1</td><th>Yellow cards</th><td>2</td></tr><tr><td>0</td><th>Red cards</th><td>0</td></tr></table></div></details></div></section>
-    </article>
+    </article><script type="application/json" id="lt-data">{"url": "https://live.footypredicts.com/", "lg": 140, "rows": [{"n": "Alaves", "p": 12, "w": 3, "d": 4, "l": 5, "gf": 15, "ga": 17}, {"n": "Getafe", "p": 12, "w": 3, "d": 3, "l": 6, "gf": 8, "ga": 18}, {"n": "Sevilla", "p": 12, "w": 5, "d": 3, "l": 4, "gf": 17, "ga": 19}, {"n": "Rayo Vallecano", "p": 11, "w": 3, "d": 3, "l": 5, "gf": 15, "ga": 21}, {"n": "Racing Santander", "p": 12, "w": 4, "d": 2, "l": 6, "gf": 17, "ga": 30}, {"n": "Villarreal", "p": 12, "w": 4, "d": 3, "l": 5, "gf": 17, "ga": 15}, {"n": "Espanyol", "p": 12, "w": 3, "d": 3, "l": 6, "gf": 13, "ga": 14}, {"n": "Levante", "p": 12, "w": 2, "d": 5, "l": 5, "gf": 16, "ga": 21}, {"n": "Deportivo La Coruna", "p": 12, "w": 3, "d": 6, "l": 3, "gf": 15, "ga": 14}, {"n": "Elche", "p": 12, "w": 2, "d": 4, "l": 6, "gf": 14, "ga": 20}, {"n": "Atletico Madrid", "p": 12, "w": 9, "d": 1, "l": 2, "gf": 23, "ga": 10}, {"n": "Malaga", "p": 12, "w": 0, "d": 5, "l": 7, "gf": 9, "ga": 23}, {"n": "Real Betis", "p": 12, "w": 8, "d": 2, "l": 2, "gf": 20, "ga": 15}, {"n": "Real Sociedad", "p": 12, "w": 7, "d": 1, "l": 4, "gf": 21, "ga": 20}, {"n": "Athletic Club", "p": 11, "w": 4, "d": 4, "l": 3, "gf": 15, "ga": 11}, {"n": "Valencia", "p": 12, "w": 2, "d": 3, "l": 7, "gf": 8, "ga": 20}, {"n": "Celta Vigo", "p": 12, "w": 2, "d": 7, "l": 3, "gf": 10, "ga": 10}, {"n": "Real Madrid", "p": 12, "w": 10, "d": 0, "l": 2, "gf": 31, "ga": 10}, {"n": "Barcelona", "p": 12, "w": 11, "d": 0, "l": 1, "gf": 48, "ga": 13}, {"n": "Osasuna", "p": 12, "w": 3, "d": 3, "l": 6, "gf": 12, "ga": 23}], "done": [1570333, 1570341, 1570339, 1570338, 1570337, 1570334, 1570351, 1570345, 1570343, 1570352, 1570347, 1570344, 1570348, 1570346, 1570350, 1570349, 1570342, 1570340, 1570336, 1570335, 1570359, 1570353, 1570357, 1570361, 1570362, 1570360, 1570356, 1570355, 1570358, 1570354, 1570392, 1570365, 1570364, 1570370, 1570372, 1570371, 1570369, 1570363, 1570367, 1570368, 1570366, 1570381, 1570378, 1570377, 1570373, 1570379, 1570374, 1570376, 1570375, 1570380, 1570382, 1570391, 1570383, 1570388, 1570384, 1570387, 1570385, 1570386, 1570390, 1570397, 1570399, 1570393, 1570395, 1570400, 1570398, 1570394, 1570402, 1570396, 1570401, 1570408, 1570403, 1570404, 1570411, 1570406, 1570412, 1570405, 1570409, 1570407, 1570415, 1570416, 1570422, 1570413, 1570421, 1570419, 1570414, 1570418, 1570420, 1570417, 1570389, 1570423, 1570429, 1570428, 1570432, 1570425, 1570424, 1570427, 1570430, 1570426, 1570431, 1570442, 1570439, 1570441, 1570435, 1570434, 1570438, 1570440, 1570437, 1570433, 1570436, 1570450, 1570447, 1570446, 1570448, 1570451, 1570445, 1570449, 1570452, 1570444, 1570443]}</script>
 </main>
 <footer class="foot">
 <p><b>18+ only.</b> Gambling can be addictive. Please gamble responsibly and only with money you can afford to lose. Free, confidential help: <a href="https://www.begambleaware.org" rel="noopener">BeGambleAware.org</a> · National Gambling Helpline 0808 8020 133 · <a href="https://www.gamstop.co.uk" rel="noopener">GAMSTOP</a> · <a href="../responsible-gambling/">Responsible gambling and how this site is funded</a></p>
@@ -2035,10 +2046,49 @@ function model(m){
 <script>
 (function () {
   function close() { var o = document.querySelector('.fm-ov'); if (o) o.remove(); }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function openTable(btn) {
+    var el = document.getElementById('lt-data'); if (!el) return;
+    var D; try { D = JSON.parse(el.textContent); } catch (_) { return; }
+    close();
+    var o = document.createElement('div'); o.className = 'fm-ov'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true');
+    var box = document.createElement('div'); box.className = 'fm-box fm-wide';
+    var x = document.createElement('button'); x.type = 'button'; x.className = 'fm-x'; x.setAttribute('aria-label', 'Close'); x.textContent = '×';
+    var body = document.createElement('div'); box.appendChild(x); box.appendChild(body); o.appendChild(box); document.body.appendChild(o); x.focus();
+    var H = btn.getAttribute('data-h'), A = btn.getAttribute('data-a');
+    function draw(live) {
+      var T = {}; D.rows.forEach(function (r) { T[r.n] = Object.assign({ lv: false }, r); });
+      var n = 0, seen = {};
+      live.forEach(function (m) {
+        if (m.lg !== D.lg || D.done.indexOf(m.id) > -1 || !T[m.home] || !T[m.away]) return;
+        if (['1H','HT','2H','ET','BT','P','LIVE','INT','SUSP'].indexOf(m.st) < 0) return;
+        n++;
+        [[m.home, m.hg, m.ag], [m.away, m.ag, m.hg]].forEach(function (z) {
+          var r = T[z[0]]; r.lv = true; r.p++; r.gf += z[1]; r.ga += z[2];
+          if (z[1] > z[2]) r.w++; else if (z[1] === z[2]) r.d++; else r.l++;
+        });
+      });
+      var L = Object.keys(T).map(function (k) { var r = T[k]; r.pts = r.w * 3 + r.d; r.gd = r.gf - r.ga; return r; });
+      L.sort(function (a, b) { return b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.n.localeCompare(b.n); });
+      var h = '<div class="fm-title"><b>League table</b></div><p class="halves lt-note">' +
+        (n ? '<span class="lt-live">● Live</span> ' + n + ' match' + (n > 1 ? 'es' : '') + ' in play, scores counted as they stand.' : 'Based on finished matches. Live games are added while they are being played.') + '</p>' +
+        '<table class="lt"><thead><tr><th>#</th><th class="tl">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>';
+      L.forEach(function (r, i) {
+        h += '<tr class="' + (r.n === H || r.n === A ? 'lt-me' : '') + '"><td>' + (i + 1) + '</td><td class="tl">' + esc(r.n) + (r.lv ? ' <span class="lt-dot" title="Playing now">●</span>' : '') +
+          '</td><td>' + r.p + '</td><td>' + r.w + '</td><td>' + r.d + '</td><td>' + r.l + '</td><td>' + (r.gd > 0 ? '+' : '') + r.gd + '</td><td><b>' + r.pts + '</b></td></tr>';
+      });
+      body.innerHTML = h + '</tbody></table><p class="halves">Ties on points are split by goal difference, then goals scored.</p>';
+      var me = body.querySelector('.lt-me'); if (me && me.scrollIntoView && !body.getAttribute('data-s')) { body.setAttribute('data-s', 1); me.scrollIntoView({ block: 'center' }); }
+    }
+    draw([]);
+    if (D.url) fetch(D.url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j && j.matches && document.body.contains(o)) draw(j.matches); }).catch(function () {});
+  }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   document.addEventListener('click', function (e) {
     var ov = e.target.closest('.fm-ov');
     if (ov && (e.target === ov || e.target.closest('.fm-x'))) { close(); return; }
+    var lb = e.target.closest('.lt-btn'); if (lb) { openTable(lb); return; }
     var b = e.target.closest('.fchip'); if (!b) return;
     var t = b.parentNode.querySelector('template'); if (!t) return;
     close();
