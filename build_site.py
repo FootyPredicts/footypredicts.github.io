@@ -1459,16 +1459,15 @@ def superfan_page(leagues, clubs):
     <section class="block">
       <h2 class="fixture"><span>Superfan</span></h2>
       <p>Pick a league, then your club, for its next match, injuries, form and news. Or open the whole league for all its news in one place.</p>
+      <div id="sf-alerts" class="sf-alerts" hidden>
+        <h3>Alerts</h3>
+        <p id="sf-al-text" class="halves">Get a notification when line-ups are announced for the clubs you follow, and when there is news about them or the leagues you tick. On iPhone, first add this site to your Home Screen.</p>
+        <button type="button" id="sf-al-btn" class="sf-all">Turn on alerts</button>
+      </div>
       <p id="sf-mine" class="halves" hidden></p>
       <div id="sf-leagues" class="sf-tiles"></div>
       <div id="sf-panel" class="sf-panel" hidden></div>
       <div id="sf-news" class="sf-mynews" hidden></div>
-      <div id="sf-alerts" class="sf-alerts" hidden>
-        <h3>Alerts</h3>
-        <p id="sf-al-text" class="halves">Get a notification when line-ups are announced for the clubs you follow, and when there is news about them or the leagues you tick.</p>
-        <button type="button" id="sf-al-btn" class="sf-all">Turn on alerts</button>
-        <p class="halves">Works on Android and computers. On iPhone, first add this site to your Home Screen. You can turn alerts off here at any time.</p>
-      </div>
     </section>
     {alerts_head()}
     <script>(function(){{
@@ -1848,7 +1847,7 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .sf-follow { display:flex; align-items:center; gap:6px; font:600 15px Barlow,sans-serif; margin:0 0 10px; cursor:pointer; } .sf-follow input { width:20px; height:20px; accent-color:var(--ink); }
 .sf-mynews { margin:18px 0 18px; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-mynews h3 { margin:0 0 6px; }
 .sf-star { margin-left:auto; font-size:18px; line-height:1; color:#b8a24a; padding:0 2px; } .sf-star:hover { color:var(--ink); }
-.sf-alerts { margin:18px 0; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-alerts h3 { margin:0 0 6px; }
+.sf-alerts { margin:12px 0 16px; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-alerts h3 { margin:0 0 6px; }
 .sf-all { border:0; background:var(--ink); color:#fff; border-radius:999px; padding:10px 18px; font:700 15px Barlow,sans-serif; cursor:pointer; margin:0 0 10px; }
 .club-news { list-style:none; margin:0; padding:0; } .club-news li { padding:9px 0; border-top:1px solid var(--line); font-size:16px; } .club-news li:first-child { border-top:0; } .club-src { display:block; font-size:13px; color:var(--muted); }
 .club-inj { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:6px 14px; } .club-inj .inj { display:block; padding:5px 0; font-size:16px; }
