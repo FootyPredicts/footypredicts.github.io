@@ -1641,7 +1641,7 @@ def build():
             rows.append(f"""
           <a class="row" href="{d['league']}/#m{i}">
             <span class="row-when">{esc(day)} {esc(time_)}</span>
-            <span class="row-teams">{tlogo(f['home'], 20)}{esc(f['home'])} <i>v</i> {tlogo(f['away'], 20)}{esc(f['away'])}</span>
+            <span class="row-teams"><span class="rt">{tlogo(f['home'], 20)}{esc(f['home'])}</span> <i>v</i> <span class="rt">{tlogo(f['away'], 20)}{esc(f['away'])}</span></span>
             <span class="row-bar"><span class="tw-h" style="flex:{f['home_pct']}"></span><span class="tw-d" style="flex:{f['draw_pct']}"></span><span class="tw-a" style="flex:{f['away_pct']}"></span></span>
             <span class="row-pick">{esc(short(team))} <b>{p:.0f}%</b>{'<em>draw risk</em>' if draw_risk(f) else ''}</span>
           </a>""")
@@ -2215,7 +2215,9 @@ a.chip { text-decoration:none; }
 @media (max-width:700px) {
   .row { grid-template-columns:1fr auto; gap:4px 10px; padding:10px 14px; }
   .row-when { grid-column:1 / 3; }
-  .row-teams { grid-column:1; }
+  .row-teams { grid-column:1; display:flex; flex-direction:column; gap:3px; }
+  .row-teams i { display:none; }
+  .row-teams .rt { display:flex; align-items:center; gap:6px; }
   .row-pick { grid-column:2; grid-row:2; }
   .row-bar { grid-column:1 / 3; }
 }
