@@ -45,8 +45,9 @@ CSS = """
 .ls-h { text-align:right; } .ls-a { text-align:left; }
 .ls-s { font:800 20px/1 "Barlow Condensed",sans-serif; min-width:54px; text-align:center; white-space:nowrap; }
 .ls-s.live { color:#c0392b; }
-.ls-x { grid-column:2 / 5; font-size:13px; color:var(--muted); }
+.ls-x { grid-column:2 / 5; font-size:13px; color:var(--muted); display:grid; grid-template-columns:1fr 1fr; column-gap:28px; }
 .ls-x div { padding:1px 0; }
+.ls-evh { grid-column:1; text-align:right; } .ls-eva { grid-column:2; text-align:left; }
 .ls-p { grid-column:2 / 5; font-size:12px; color:var(--muted); }
 .ls-p b { color:var(--ink); }
 .lt-grp { margin:12px 0 4px; font:700 13px Barlow,sans-serif; }
@@ -226,8 +227,10 @@ JS = r"""
     if (st.open[m.id] && m.ev && m.ev.length) {
       var x = h('div', 'ls-x');
       m.ev.slice().sort(function (a, b) { return a.m - b.m; }).forEach(function (e) {
-        var side = e.s === 'h' ? m.home : m.away;
-        var d = h('div', '', (e.t === 'Goal' ? '⚽ ' : e.d === 'Red Card' ? '🟥 ' : '🟨 ') + e.m + (e.x ? '+' + e.x : '') + "' " + (e.p || '') + ' (' + side + ')' + (e.d === 'Own Goal' ? ' own goal' : e.d === 'Penalty' ? ' pen' : ''));
+        var ic = e.t === 'Goal' ? '\u26BD' : e.d === 'Red Card' ? '\uD83D\uDFE5' : '\uD83D\uDFE8';
+        var tx = e.m + (e.x ? '+' + e.x : '') + "' " + (e.p || '') + (e.d === 'Own Goal' ? ' (og)' : e.d === 'Penalty' ? ' (pen)' : '');
+        var home = e.s === 'h';
+        var d = h('div', 'ls-ev ' + (home ? 'ls-evh' : 'ls-eva'), home ? tx + ' ' + ic : ic + ' ' + tx);
         x.appendChild(d);
       });
       r.appendChild(x);
