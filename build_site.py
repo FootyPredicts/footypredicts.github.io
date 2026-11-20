@@ -107,6 +107,7 @@ def news_block(f):
       </section>"""
 
 
+TEAM_ID = {}       # team name -> API-Football team id (for logos)
 LINEUPS = {}       # fixture id (str) -> {home: {formation, xi, subs}, away: {...}}
 PLAYER_NAMES = {}  # player id (str) -> name
 
@@ -114,8 +115,18 @@ PLAYER_NAMES = {}  # player id (str) -> name
 def load_squads():
     SQUADS.clear()
     LINEUPS.clear()
+    TEAM_ID.clear()
     PLAYER_NAMES.clear()
     for lg in LEAGUE_ORDER:
+        try:
+            with open(os.path.join("data", lg, "fixtures_2026.json"), encoding="utf-8") as fh:
+                for r in json.load(fh):
+                    if r.get("home_id"):
+                        TEAM_ID[r["home"]] = r["home_id"]
+                    if r.get("away_id"):
+                        TEAM_ID[r["away"]] = r["away_id"]
+        except (OSError, ValueError):
+            pass
         for fn, tgt in (("lineups.json", None), ("players_2026.json", None)):
             try:
                 with open(os.path.join("data", lg, fn), encoding="utf-8") as fh:
@@ -768,7 +779,7 @@ def render_match(f, i):
     <article id="m{i}" class="match" role="tabpanel" data-fid="{f["id"]}" hidden>
       <header class="match-head">
         <div class="kick">{esc(day)} · {esc(time_)} <button type="button" class="fav-btn" data-fav="{f["id"]}" aria-pressed="false">&#9734; Track this match</button> {('<button type="button" class="lt-btn" data-h="' + esc(home) + '" data-a="' + esc(away) + '">&#9776; League table</button>') if not euro else ""}</div>
-        <h2 class="fixture"><span>{esc(home)}</span><span class="vs">v</span><span>{esc(away)}</span></h2>
+        <h2 class="fixture"><span class="fx-t">{tlogo(home, 40, "tl tl-lg")}{esc(home)}</span><span class="vs">v</span><span class="fx-t">{tlogo(away, 40, "tl tl-lg")}{esc(away)}</span></h2>
         {ref}
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:{f['home_pct']}"></span><span class="tw-d" style="flex:{f['draw_pct']}"></span><span class="tw-a" style="flex:{f['away_pct']}"></span></div>
@@ -819,7 +830,7 @@ def chip(f, i, href="#"):
     return f"""
       <{tag} class="chip" {attr}>
         <span class="chip-when">{esc(day)} {esc(time_)}</span>
-        <span class="chip-teams">{esc(short(f['home']))} <i>v</i> {esc(short(f['away']))}</span>
+        <span class="chip-teams">{tlogo(f['home'], 16)}{esc(short(f['home']))} <i>v</i> {tlogo(f['away'], 16)}{esc(short(f['away']))}</span>
         <span class="chip-pick">{esc(short(team))} {p:.0f}%{risk}</span>
       </{tag}>"""
 
@@ -1192,6 +1203,25 @@ def scores_block():
     return scores_page.scores_body(_live_url(), LIVE_PICKS, tables)
 
 
+MEDIA = "https://media.api-sports.io/football/"
+
+
+def tlogo(name, size=22, cls="tl"):
+    """Club badge from API-Football's image service; removes itself if it cannot load."""
+    i = TEAM_ID.get(name)
+    if not i:
+        return ""
+    return (f'<img class="{cls}" src="{MEDIA}teams/{i}.png" alt="" width="{size}" height="{size}" loading="lazy" decoding="async" '
+            f'referrerpolicy="no-referrer" onerror="this.remove()">')
+
+
+def llogo(api_id, size=22, cls="tl"):
+    if not api_id:
+        return ""
+    return (f'<img class="{cls}" src="{MEDIA}leagues/{api_id}.png" alt="" width="{size}" height="{size}" loading="lazy" decoding="async" '
+            f'referrerpolicy="no-referrer" onerror="this.remove()">')
+
+
 def club_slug(name):
     t = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
     return re.sub(r"[^a-z0-9]+", "-", t).strip("-")
@@ -1241,7 +1271,7 @@ def club_page(name, c, leagues, upd):
         f'<span class="fchip-w"><span class="fchip f{"W" if gf > ga else "D" if gf == ga else "L"}" title="{"vs" if home else "at"} {esc(opp)} {gf}\u2013{ga}">{"W" if gf > ga else "D" if gf == ga else "L"}</span></span>'
         for _, opp, home, gf, ga in c["res"][-5:])
     last = "".join(
-        f'<tr><td>{esc(datetime.fromisoformat(dt).strftime("%d %b"))}</td><td>{"vs" if home else "at"} {esc(opp)}</td><td><b>{gf}\u2013{ga}</b></td></tr>'
+        f'<tr><td>{esc(datetime.fromisoformat(dt).strftime("%d %b"))}</td><td>{"vs" if home else "at"} {tlogo(opp, 18)}{esc(opp)}</td><td><b>{gf}\u2013{ga}</b></td></tr>'
         for dt, opp, home, gf, ga in reversed(c["res"][-5:]))
     st = c["st"]
     stand = ""
@@ -1270,7 +1300,7 @@ def club_page(name, c, leagues, upd):
             inj = (f'<h4>Injuries and suspensions</h4><div class="club-inj">{injury_list((f.get("injuries") or {}).get(side))}</div>')
             if str(fid) in LINEUPS:
                 inj += '<p class="halves">Line-ups are confirmed: see the match card in the <a href="../../' + c["lg"] + '/">' + esc(c["ln"]) + ' page</a>.</p>'
-        nxt = (f'<section class="block"><h3>Next match</h3><p class="club-next"><b>{esc(name)} {"v" if home else "at"} {esc(opp)}</b><br>'
+        nxt = (f'<section class="block"><h3>Next match</h3><p class="club-next"><b>{tlogo(name, 24)}{esc(name)} {"v" if home else "at"} {tlogo(opp, 24)}{esc(opp)}</b><br>'
                f'{when:%a %d %b} · {when:%H:%M}</p>{pick}{inj}</section>')
     news = TEAM_NEWS.get(name, [])
     items = "".join(
@@ -1281,8 +1311,8 @@ def club_page(name, c, leagues, upd):
     form_sec = (f'<section class="block"><h3>Recent form</h3><p>{chips}</p><table class="mirror pm-stats">{last}</table></section>' if c["res"] else "")
     body = f"""
     <section class="block club-head">
-      <h2 class="fixture"><span>{esc(name)}</span></h2>
-      <p class="halves"><a href="../../{c['lg']}/">{esc(c['ln'])}</a></p>
+      <h2 class="fixture"><span class="fx-t">{tlogo(name, 56, "tl tl-lg")}{esc(name)}</span></h2>
+      <p class="halves">{llogo(LEAGUE_API.get(c['lg']), 18)}<a href="../../{c['lg']}/">{esc(c['ln'])}</a></p>
       {stand}
       <button type="button" class="lt-btn club-mine" data-club="{esc(name)}" data-slug="{c['slug']}">&#9734; Make this my club</button>
     </section>
@@ -1312,7 +1342,7 @@ def superfan_page(leagues, clubs):
                 seen.add(sig)
                 feed.append({"t": it["t"], "u": it["u"], "s": it.get("s") or "", "d": (it.get("d") or "")[:10], "c": n, "k": c["slug"]})
         feed.sort(key=lambda x: x["d"], reverse=True)
-        data.append({"id": sl, "n": d["name"], "co": d.get("country", ""), "clubs": [[n, c["slug"], SHIRT_COLOUR.get(n, "#2f4a3a")] for n, c in mine], "news": feed[:60]})
+        data.append({"id": sl, "n": d["name"], "co": d.get("country", ""), "lid": LEAGUE_API.get(sl), "clubs": [[n, c["slug"], SHIRT_COLOUR.get(n, "#2f4a3a"), TEAM_ID.get(n)] for n, c in mine], "news": feed[:60]})
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     body = f"""
     <section class="block">
@@ -1326,7 +1356,9 @@ def superfan_page(leagues, clubs):
       var D={blob}, L=document.getElementById('sf-leagues'), P=document.getElementById('sf-panel'), M=document.getElementById('sf-mine');
       function el(t,c,x){{var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}}
       D.forEach(function(lg){{
-        var b=el('button','sf-tile');b.type='button';b.appendChild(el('span','sf-badge',lg.n.split(' ').map(function(w){{return w[0];}}).join('').slice(0,3)));
+        var b=el('button','sf-tile');b.type='button';var bd=el('span','sf-badge',lg.n.split(' ').map(function(w){{return w[0];}}).join('').slice(0,3));
+        if(lg.lid){{var im=new Image();im.alt='';im.src='https://media.api-sports.io/football/leagues/'+lg.lid+'.png';im.className='sf-logo';im.onload=function(){{bd.textContent='';bd.className='sf-badge sf-badge-img';bd.appendChild(im);}};}}
+        b.appendChild(bd);
         b.appendChild(el('b','',lg.n));b.appendChild(el('small','',lg.co));
         b.onclick=function(){{open(lg,b);}};L.appendChild(b);
       }});
@@ -1335,7 +1367,7 @@ def superfan_page(leagues, clubs):
         P.hidden=false;P.textContent='';
         P.appendChild(el('h3','',lg.n));
         var grid=el('div','sf-clubs');
-        lg.clubs.forEach(function(c){{var a=el('a','sf-club');a.href='../club/'+c[1]+'/';var dot=el('i');dot.style.background=c[2];a.appendChild(dot);a.appendChild(document.createTextNode(c[0]));grid.appendChild(a);}});
+        lg.clubs.forEach(function(c){{var a=el('a','sf-club');a.href='../club/'+c[1]+'/';var dot=el('i');dot.style.background=c[2];if(c[3]){{var im=new Image();im.alt='';im.width=22;im.height=22;im.src='https://media.api-sports.io/football/teams/'+c[3]+'.png';im.className='tl';im.onload=function(){{dot.replaceWith(im);}};}}a.appendChild(dot);a.appendChild(document.createTextNode(c[0]));grid.appendChild(a);}});
         P.appendChild(grid);
         var all=el('button','sf-all','All '+lg.n+' news');all.type='button';P.appendChild(all);
         var feed=el('ul','club-news');feed.hidden=true;P.appendChild(feed);
@@ -1441,7 +1473,7 @@ def build():
             rows.append(f"""
           <a class="row" href="{d['league']}/#m{i}">
             <span class="row-when">{esc(day)} {esc(time_)}</span>
-            <span class="row-teams">{esc(f['home'])} <i>v</i> {esc(f['away'])}</span>
+            <span class="row-teams">{tlogo(f['home'], 20)}{esc(f['home'])} <i>v</i> {tlogo(f['away'], 20)}{esc(f['away'])}</span>
             <span class="row-bar"><span class="tw-h" style="flex:{f['home_pct']}"></span><span class="tw-d" style="flex:{f['draw_pct']}"></span><span class="tw-a" style="flex:{f['away_pct']}"></span></span>
             <span class="row-pick">{esc(short(team))} <b>{p:.0f}%</b>{'<em>draw risk</em>' if draw_risk(f) else ''}</span>
           </a>""")
@@ -1600,7 +1632,7 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .lu-hot { background:#fff6c9; font-weight:600; }
 .lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
 @media (max-width:560px) { .lu { grid-template-columns:1fr; } }
-.sf-tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin:12px 0; }
+.tl { vertical-align:middle; margin-right:6px; object-fit:contain; } .tl-lg { margin-right:10px; } .fx-t { display:inline-flex; align-items:center; }\n.chip-teams .tl, .row-teams .tl { margin-right:5px; } .row-teams .tl:not(:first-child), .chip-teams .tl:not(:first-child) { margin-left:4px; }\n.sf-badge-img { background:#fff !important; border:1px solid var(--line); } .sf-logo { width:44px; height:44px; object-fit:contain; }\n.sf-tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin:12px 0; }
 .sf-tile { display:flex; flex-direction:column; align-items:center; gap:4px; padding:16px 10px; border:1px solid var(--line); background:var(--paper); border-radius:16px; cursor:pointer; font:600 15px Barlow,sans-serif; color:var(--ink); }
 .sf-tile small { color:var(--muted); font-weight:500; }
 .sf-tile:hover, .sf-tile[aria-pressed="true"] { border-color:var(--ink); box-shadow:0 0 0 2px var(--ink) inset; }

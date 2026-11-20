@@ -138,7 +138,7 @@ export default {
         const compact = (f) => {
           const o = {
             id: f.fixture.id, lg: f.league.id, ln: f.league.name, cn: f.league.country, ko: f.fixture.date,
-            home: f.teams.home.name, away: f.teams.away.name, hid: f.teams.home.id,
+            home: f.teams.home.name, away: f.teams.away.name, hid: f.teams.home.id, aid: f.teams.away.id, cf: f.league.flag,
             hg: f.goals.home, ag: f.goals.away, st: f.fixture.status.short, el: f.fixture.status.elapsed, ex: f.fixture.status.extra,
           };
           const ev = (f.events || []).filter((e) => e.type === "Goal" || (e.type === "Card" && e.detail !== "Second Yellow card" ? true : e.type === "Card"));

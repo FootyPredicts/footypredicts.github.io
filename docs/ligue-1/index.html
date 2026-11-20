@@ -115,7 +115,7 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .lu-hot { background:#fff6c9; font-weight:600; }
 .lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
 @media (max-width:560px) { .lu { grid-template-columns:1fr; } }
-.sf-tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin:12px 0; }
+.tl { vertical-align:middle; margin-right:6px; object-fit:contain; } .tl-lg { margin-right:10px; } .fx-t { display:inline-flex; align-items:center; }\n.chip-teams .tl, .row-teams .tl { margin-right:5px; } .row-teams .tl:not(:first-child), .chip-teams .tl:not(:first-child) { margin-left:4px; }\n.sf-badge-img { background:#fff !important; border:1px solid var(--line); } .sf-logo { width:44px; height:44px; object-fit:contain; }\n.sf-tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin:12px 0; }
 .sf-tile { display:flex; flex-direction:column; align-items:center; gap:4px; padding:16px 10px; border:1px solid var(--line); background:var(--paper); border-radius:16px; cursor:pointer; font:600 15px Barlow,sans-serif; color:var(--ink); }
 .sf-tile small { color:var(--muted); font-weight:500; }
 .sf-tile:hover, .sf-tile[aria-pressed="true"] { border-color:var(--ink); box-shadow:0 0 0 2px var(--ink) inset; }
@@ -630,52 +630,52 @@ a.chip { text-decoration:none; }
     <nav class="chips" role="tablist" aria-label="Fixtures">
       <button class="chip" role="tab" data-tab="m0" aria-controls="m0" aria-selected="false">
         <span class="chip-when">Fri 20 Nov 19:45</span>
-        <span class="chip-teams">Estac Troyes <i>v</i> Le Havre</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/110.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Estac Troyes <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/111.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Le Havre</span>
         <span class="chip-pick">Draw 33%</span>
       </button>
       <button class="chip" role="tab" data-tab="m1" aria-controls="m1" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 16:15</span>
-        <span class="chip-teams">Nice <i>v</i> Paris Saint</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/84.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Nice <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/85.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Paris Saint</span>
         <span class="chip-pick">Paris Saint 58%</span>
       </button>
       <button class="chip" role="tab" data-tab="m2" aria-controls="m2" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 19:45</span>
-        <span class="chip-teams">Lille <i>v</i> Lyon</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/79.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Lille <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/80.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Lyon</span>
         <span class="chip-pick">Lille 42%</span>
       </button>
       <button class="chip" role="tab" data-tab="m3" aria-controls="m3" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 19:45</span>
-        <span class="chip-teams">Monaco <i>v</i> Auxerre</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/91.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Monaco <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/108.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Auxerre</span>
         <span class="chip-pick">Monaco 60%</span>
       </button>
       <button class="chip" role="tab" data-tab="m4" aria-controls="m4" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 19:45</span>
-        <span class="chip-teams">Strasbourg <i>v</i> Stade Brestois</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/95.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Strasbourg <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/106.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Stade Brestois</span>
         <span class="chip-pick">Strasbourg 51%</span>
       </button>
       <button class="chip" role="tab" data-tab="m5" aria-controls="m5" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 19:45</span>
-        <span class="chip-teams">Lens <i>v</i> Toulouse</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/116.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Lens <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/96.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Toulouse</span>
         <span class="chip-pick">Lens 53%</span>
       </button>
       <button class="chip" role="tab" data-tab="m6" aria-controls="m6" aria-selected="false">
         <span class="chip-when">Sun 22 Nov 14:00</span>
-        <span class="chip-teams">Paris FC <i>v</i> Angers</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/114.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Paris FC <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/77.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Angers</span>
         <span class="chip-pick">Paris FC 68%</span>
       </button>
       <button class="chip" role="tab" data-tab="m7" aria-controls="m7" aria-selected="false">
         <span class="chip-when">Sun 22 Nov 16:15</span>
-        <span class="chip-teams">Lorient <i>v</i> Rennes</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/97.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Lorient <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/94.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Rennes</span>
         <span class="chip-pick">Lorient 43%</span>
       </button>
       <button class="chip" role="tab" data-tab="m8" aria-controls="m8" aria-selected="false">
         <span class="chip-when">Sun 22 Nov 19:45</span>
-        <span class="chip-teams">Marseille <i>v</i> Le Mans</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/81.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Marseille <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/1298.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Le Mans</span>
         <span class="chip-pick">Marseille 73%</span>
       </button>
       <button class="chip" role="tab" data-tab="m9" aria-controls="m9" aria-selected="false">
         <span class="chip-when">Fri 27 Nov 19:45</span>
-        <span class="chip-teams">Stade Brestois <i>v</i> Paris FC</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/106.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Stade Brestois <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/114.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Paris FC</span>
         <span class="chip-pick">Paris FC 38%</span>
       </button></nav>
   </div>
@@ -684,7 +684,7 @@ a.chip { text-decoration:none; }
     <article id="m0" class="match" role="tabpanel" data-fid="1552827" hidden>
       <header class="match-head">
         <div class="kick">Fri 20 Nov · 19:45 <button type="button" class="fav-btn" data-fav="1552827" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Estac Troyes" data-a="Le Havre">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Estac Troyes</span><span class="vs">v</span><span>Le Havre</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/110.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Estac Troyes</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/111.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Le Havre</span></h2>
         <p class="ref">Referee <b>J. Pignard</b> <span class="ref-avg">(4.5 cards per game, 40 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:34.4"></span><span class="tw-d" style="flex:33.0"></span><span class="tw-a" style="flex:32.6"></span></div>
@@ -783,7 +783,7 @@ a.chip { text-decoration:none; }
     <article id="m1" class="match" role="tabpanel" data-fid="1552824" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 16:15 <button type="button" class="fav-btn" data-fav="1552824" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Nice" data-a="Paris Saint Germain">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Nice</span><span class="vs">v</span><span>Paris Saint Germain</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/84.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Nice</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/85.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Paris Saint Germain</span></h2>
         <p class="ref">Referee <b>J. Brisard</b> <span class="ref-avg">(4.2 cards per game, 40 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:18.6"></span><span class="tw-d" style="flex:23.7"></span><span class="tw-a" style="flex:57.7"></span></div>
@@ -883,7 +883,7 @@ a.chip { text-decoration:none; }
     <article id="m2" class="match" role="tabpanel" data-fid="1552820" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 19:45 <button type="button" class="fav-btn" data-fav="1552820" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Lille" data-a="Lyon">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Lille</span><span class="vs">v</span><span>Lyon</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/79.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Lille</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/80.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Lyon</span></h2>
         <p class="ref">Referee <b>F. Letexier</b> <span class="ref-avg">(4.2 cards per game, 38 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:41.7"></span><span class="tw-d" style="flex:32.2"></span><span class="tw-a" style="flex:26.1"></span></div>
@@ -983,7 +983,7 @@ a.chip { text-decoration:none; }
     <article id="m3" class="match" role="tabpanel" data-fid="1552823" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 19:45 <button type="button" class="fav-btn" data-fav="1552823" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Monaco" data-a="Auxerre">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Monaco</span><span class="vs">v</span><span>Auxerre</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/91.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Monaco</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/108.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Auxerre</span></h2>
         <p class="ref">Referee <b>J. Stinat</b> <span class="ref-avg">(4.2 cards per game, 39 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:60.2"></span><span class="tw-d" style="flex:22.8"></span><span class="tw-a" style="flex:16.9"></span></div>
@@ -1083,7 +1083,7 @@ a.chip { text-decoration:none; }
     <article id="m4" class="match" role="tabpanel" data-fid="1552826" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 19:45 <button type="button" class="fav-btn" data-fav="1552826" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Strasbourg" data-a="Stade Brestois 29">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Strasbourg</span><span class="vs">v</span><span>Stade Brestois 29</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/95.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Strasbourg</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/106.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Stade Brestois 29</span></h2>
         <p class="ref">Referee <b>A. Souifi</b> <span class="ref-avg">(3.2 cards per game, 4 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:50.9"></span><span class="tw-d" style="flex:22.3"></span><span class="tw-a" style="flex:26.9"></span></div>
@@ -1183,7 +1183,7 @@ a.chip { text-decoration:none; }
     <article id="m5" class="match" role="tabpanel" data-fid="1552819" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 19:45 <button type="button" class="fav-btn" data-fav="1552819" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Lens" data-a="Toulouse">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Lens</span><span class="vs">v</span><span>Toulouse</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/116.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Lens</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/96.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Toulouse</span></h2>
         <p class="ref">Referee <b>B. Dechepy</b> <span class="ref-avg">(4.6 cards per game, 34 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:52.8"></span><span class="tw-d" style="flex:25.2"></span><span class="tw-a" style="flex:22.0"></span></div>
@@ -1283,7 +1283,7 @@ a.chip { text-decoration:none; }
     <article id="m6" class="match" role="tabpanel" data-fid="1552825" hidden>
       <header class="match-head">
         <div class="kick">Sun 22 Nov · 14:00 <button type="button" class="fav-btn" data-fav="1552825" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Paris FC" data-a="Angers">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Paris FC</span><span class="vs">v</span><span>Angers</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/114.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Paris FC</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/77.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Angers</span></h2>
         <p class="ref">Referee <b>A. Petit</b> <span class="ref-avg">(2.5 cards per game, 4 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:68.0"></span><span class="tw-d" style="flex:21.4"></span><span class="tw-a" style="flex:10.5"></span></div>
@@ -1383,7 +1383,7 @@ a.chip { text-decoration:none; }
     <article id="m7" class="match" role="tabpanel" data-fid="1552821" hidden>
       <header class="match-head">
         <div class="kick">Sun 22 Nov · 16:15 <button type="button" class="fav-btn" data-fav="1552821" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Lorient" data-a="Rennes">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Lorient</span><span class="vs">v</span><span>Rennes</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/97.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Lorient</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/94.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Rennes</span></h2>
         <p class="ref">Referee <b>M. Bollengier</b> <span class="ref-avg">(4.1 cards per game, 39 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:43.2"></span><span class="tw-d" style="flex:26.6"></span><span class="tw-a" style="flex:30.2"></span></div>
@@ -1483,7 +1483,7 @@ a.chip { text-decoration:none; }
     <article id="m8" class="match" role="tabpanel" data-fid="1552822" hidden>
       <header class="match-head">
         <div class="kick">Sun 22 Nov · 19:45 <button type="button" class="fav-btn" data-fav="1552822" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Marseille" data-a="Le Mans">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Marseille</span><span class="vs">v</span><span>Le Mans</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/81.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Marseille</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/1298.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Le Mans</span></h2>
         <p class="ref">Referee <b>E. Wattellier</b> <span class="ref-avg">(3.5 cards per game, 42 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:73.4"></span><span class="tw-d" style="flex:15.9"></span><span class="tw-a" style="flex:10.7"></span></div>
@@ -1582,7 +1582,7 @@ a.chip { text-decoration:none; }
     <article id="m9" class="match" role="tabpanel" data-fid="1552830" hidden>
       <header class="match-head">
         <div class="kick">Fri 27 Nov · 19:45 <button type="button" class="fav-btn" data-fav="1552830" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Stade Brestois 29" data-a="Paris FC">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Stade Brestois 29</span><span class="vs">v</span><span>Paris FC</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/106.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Stade Brestois 29</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/114.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Paris FC</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:35.1"></span><span class="tw-d" style="flex:26.9"></span><span class="tw-a" style="flex:38.0"></span></div>

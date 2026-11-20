@@ -115,7 +115,7 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .lu-hot { background:#fff6c9; font-weight:600; }
 .lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
 @media (max-width:560px) { .lu { grid-template-columns:1fr; } }
-.sf-tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin:12px 0; }
+.tl { vertical-align:middle; margin-right:6px; object-fit:contain; } .tl-lg { margin-right:10px; } .fx-t { display:inline-flex; align-items:center; }\n.chip-teams .tl, .row-teams .tl { margin-right:5px; } .row-teams .tl:not(:first-child), .chip-teams .tl:not(:first-child) { margin-left:4px; }\n.sf-badge-img { background:#fff !important; border:1px solid var(--line); } .sf-logo { width:44px; height:44px; object-fit:contain; }\n.sf-tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin:12px 0; }
 .sf-tile { display:flex; flex-direction:column; align-items:center; gap:4px; padding:16px 10px; border:1px solid var(--line); background:var(--paper); border-radius:16px; cursor:pointer; font:600 15px Barlow,sans-serif; color:var(--ink); }
 .sf-tile small { color:var(--muted); font-weight:500; }
 .sf-tile:hover, .sf-tile[aria-pressed="true"] { border-color:var(--ink); box-shadow:0 0 0 2px var(--ink) inset; }
@@ -630,52 +630,52 @@ a.chip { text-decoration:none; }
     <nav class="chips" role="tablist" aria-label="Fixtures">
       <button class="chip" role="tab" data-tab="m0" aria-controls="m0" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 12:30</span>
-        <span class="chip-teams">Man City <i>v</i> Fulham</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/50.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Man City <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/36.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Fulham</span>
         <span class="chip-pick">Man City 61%</span>
       </button>
       <button class="chip" role="tab" data-tab="m1" aria-controls="m1" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams">Bournemouth <i>v</i> Nottingham Forest</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/35.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Bournemouth <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/65.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Nottingham Forest</span>
         <span class="chip-pick">Bournemouth 48%</span>
       </button>
       <button class="chip" role="tab" data-tab="m2" aria-controls="m2" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams">Tottenham <i>v</i> Ipswich</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/47.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Tottenham <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/57.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Ipswich</span>
         <span class="chip-pick">Tottenham 53%</span>
       </button>
       <button class="chip" role="tab" data-tab="m3" aria-controls="m3" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams">Chelsea <i>v</i> Leeds</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/49.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Chelsea <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/63.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Leeds</span>
         <span class="chip-pick">Chelsea 43%</span>
       </button>
       <button class="chip" role="tab" data-tab="m4" aria-controls="m4" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams">Aston Villa <i>v</i> Sunderland</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/66.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Aston Villa <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/746.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Sunderland</span>
         <span class="chip-pick">Aston Villa 56%</span>
       </button>
       <button class="chip" role="tab" data-tab="m5" aria-controls="m5" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams">Coventry <i>v</i> Crystal Palace</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/1346.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Coventry <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/52.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Crystal Palace</span>
         <span class="chip-pick">Coventry 42%</span>
       </button>
       <button class="chip" role="tab" data-tab="m6" aria-controls="m6" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 17:30</span>
-        <span class="chip-teams">Newcastle <i>v</i> Arsenal</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/34.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Newcastle <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/42.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Arsenal</span>
         <span class="chip-pick">Arsenal 53%</span>
       </button>
       <button class="chip" role="tab" data-tab="m7" aria-controls="m7" aria-selected="false">
         <span class="chip-when">Sun 22 Nov 14:00</span>
-        <span class="chip-teams">Hull City <i>v</i> Brighton</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/64.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Hull City <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/51.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Brighton</span>
         <span class="chip-pick">Brighton 43%</span>
       </button>
       <button class="chip" role="tab" data-tab="m8" aria-controls="m8" aria-selected="false">
         <span class="chip-when">Sun 22 Nov 16:30</span>
-        <span class="chip-teams">Liverpool <i>v</i> Man United</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/40.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Liverpool <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/33.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Man United</span>
         <span class="chip-pick">Liverpool 57%</span>
       </button>
       <button class="chip" role="tab" data-tab="m9" aria-controls="m9" aria-selected="false">
         <span class="chip-when">Mon 23 Nov 20:00</span>
-        <span class="chip-teams">Brentford <i>v</i> Everton</span>
+        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/55.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Brentford <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/45.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Everton</span>
         <span class="chip-pick">Brentford 47%</span>
       </button></nav>
   </div>
@@ -684,7 +684,7 @@ a.chip { text-decoration:none; }
     <article id="m0" class="match" role="tabpanel" data-fid="1557474" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 12:30 <button type="button" class="fav-btn" data-fav="1557474" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Manchester City" data-a="Fulham">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Manchester City</span><span class="vs">v</span><span>Fulham</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/50.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Manchester City</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/36.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Fulham</span></h2>
         <p class="ref">Referee <b>T. Bramall</b> <span class="ref-avg">(3.9 cards per game, 38 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:61.2"></span><span class="tw-d" style="flex:23.5"></span><span class="tw-a" style="flex:15.2"></span></div>
@@ -784,7 +784,7 @@ a.chip { text-decoration:none; }
     <article id="m1" class="match" role="tabpanel" data-fid="1557468" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 15:00 <button type="button" class="fav-btn" data-fav="1557468" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Bournemouth" data-a="Nottingham Forest">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Bournemouth</span><span class="vs">v</span><span>Nottingham Forest</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/35.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Bournemouth</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/65.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Nottingham Forest</span></h2>
         <p class="ref">Referee <b>A. Herczeg</b> <span class="ref-avg">(3.5 cards per game, 2 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:47.7"></span><span class="tw-d" style="flex:27.4"></span><span class="tw-a" style="flex:24.9"></span></div>
@@ -884,7 +884,7 @@ a.chip { text-decoration:none; }
     <article id="m2" class="match" role="tabpanel" data-fid="1557476" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 15:00 <button type="button" class="fav-btn" data-fav="1557476" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Tottenham" data-a="Ipswich">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Tottenham</span><span class="vs">v</span><span>Ipswich</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/47.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Tottenham</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/57.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Ipswich</span></h2>
         <p class="ref">Referee <b>R. Jones</b> <span class="ref-avg">(4.2 cards per game, 46 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:52.6"></span><span class="tw-d" style="flex:23.8"></span><span class="tw-a" style="flex:23.6"></span></div>
@@ -984,7 +984,7 @@ a.chip { text-decoration:none; }
     <article id="m3" class="match" role="tabpanel" data-fid="1557470" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 15:00 <button type="button" class="fav-btn" data-fav="1557470" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Chelsea" data-a="Leeds">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Chelsea</span><span class="vs">v</span><span>Leeds</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/49.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Chelsea</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/63.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Leeds</span></h2>
         <p class="ref">Referee <b>M. Oliver</b> <span class="ref-avg">(3.9 cards per game, 63 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:42.7"></span><span class="tw-d" style="flex:28.3"></span><span class="tw-a" style="flex:29.1"></span></div>
@@ -1084,7 +1084,7 @@ a.chip { text-decoration:none; }
     <article id="m4" class="match" role="tabpanel" data-fid="1557467" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 15:00 <button type="button" class="fav-btn" data-fav="1557467" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Aston Villa" data-a="Sunderland">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Aston Villa</span><span class="vs">v</span><span>Sunderland</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/66.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Aston Villa</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/746.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Sunderland</span></h2>
         <p class="ref">Referee <b>A. Madley</b> <span class="ref-avg">(3.7 cards per game, 46 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:56.4"></span><span class="tw-d" style="flex:25.4"></span><span class="tw-a" style="flex:18.2"></span></div>
@@ -1184,7 +1184,7 @@ a.chip { text-decoration:none; }
     <article id="m5" class="match" role="tabpanel" data-fid="1557471" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 15:00 <button type="button" class="fav-btn" data-fav="1557471" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Coventry" data-a="Crystal Palace">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Coventry</span><span class="vs">v</span><span>Crystal Palace</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/1346.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Coventry</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/52.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Crystal Palace</span></h2>
         <p class="ref">Referee <b>D. England</b> <span class="ref-avg">(4.4 cards per game, 49 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:41.5"></span><span class="tw-d" style="flex:26.7"></span><span class="tw-a" style="flex:31.8"></span></div>
@@ -1283,7 +1283,7 @@ a.chip { text-decoration:none; }
     <article id="m6" class="match" role="tabpanel" data-fid="1557475" hidden>
       <header class="match-head">
         <div class="kick">Sat 21 Nov · 17:30 <button type="button" class="fav-btn" data-fav="1557475" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Newcastle" data-a="Arsenal">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Newcastle</span><span class="vs">v</span><span>Arsenal</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/34.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Newcastle</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/42.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Arsenal</span></h2>
         <p class="ref">Referee <b>C. Kavanagh</b> <span class="ref-avg">(4.6 cards per game, 62 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:19.0"></span><span class="tw-d" style="flex:27.6"></span><span class="tw-a" style="flex:53.4"></span></div>
@@ -1383,7 +1383,7 @@ a.chip { text-decoration:none; }
     <article id="m7" class="match" role="tabpanel" data-fid="1557472" hidden>
       <header class="match-head">
         <div class="kick">Sun 22 Nov · 14:00 <button type="button" class="fav-btn" data-fav="1557472" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Hull City" data-a="Brighton">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Hull City</span><span class="vs">v</span><span>Brighton</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/64.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Hull City</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/51.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Brighton</span></h2>
         <p class="ref">Referee <b>P. Bankes</b> <span class="ref-avg">(4.2 cards per game, 51 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:26.5"></span><span class="tw-d" style="flex:30.4"></span><span class="tw-a" style="flex:43.0"></span></div>
@@ -1482,7 +1482,7 @@ a.chip { text-decoration:none; }
     <article id="m8" class="match" role="tabpanel" data-fid="1557473" hidden>
       <header class="match-head">
         <div class="kick">Sun 22 Nov · 16:30 <button type="button" class="fav-btn" data-fav="1557473" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Liverpool" data-a="Manchester United">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Liverpool</span><span class="vs">v</span><span>Manchester United</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/40.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Liverpool</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/33.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Manchester United</span></h2>
         <p class="ref">Referee <b>S. Barrott</b> <span class="ref-avg">(4.1 cards per game, 54 games)</span></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:57.3"></span><span class="tw-d" style="flex:22.3"></span><span class="tw-a" style="flex:20.5"></span></div>
@@ -1582,7 +1582,7 @@ a.chip { text-decoration:none; }
     <article id="m9" class="match" role="tabpanel" data-fid="1557469" hidden>
       <header class="match-head">
         <div class="kick">Mon 23 Nov · 20:00 <button type="button" class="fav-btn" data-fav="1557469" aria-pressed="false">&#9734; Track this match</button> <button type="button" class="lt-btn" data-h="Brentford" data-a="Everton">&#9776; League table</button></div>
-        <h2 class="fixture"><span>Brentford</span><span class="vs">v</span><span>Everton</span></h2>
+        <h2 class="fixture"><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/55.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Brentford</span><span class="vs">v</span><span class="fx-t"><img class="tl tl-lg" src="https://media.api-sports.io/football/teams/45.png" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Everton</span></h2>
         <p class="ref">Referee <b>to be confirmed</b></p>
         <div class="threeway" aria-label="Result chances">
           <div class="tw-bar"><span class="tw-h" style="flex:47.2"></span><span class="tw-d" style="flex:28.0"></span><span class="tw-a" style="flex:24.7"></span></div>

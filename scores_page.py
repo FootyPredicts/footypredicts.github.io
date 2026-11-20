@@ -31,6 +31,8 @@ CSS = """
 .ls-lgh .n { margin-left:auto; color:var(--muted); font-weight:500; }
 .ls-star { border:0; background:none; font-size:18px; line-height:1; cursor:pointer; color:#b8a24a; padding:0 2px; }
 .ls-m { display:grid; grid-template-columns:58px 1fr auto 1fr; align-items:center; gap:8px; padding:9px 12px; border-top:1px solid var(--line); cursor:pointer; }
+.tl { vertical-align:middle; object-fit:contain; margin:0 6px; }
+.ls-lgh .tl { margin:0 2px 0 0; }
 .ls-t { font:700 13px Barlow,sans-serif; color:var(--muted); white-space:nowrap; }
 .ls-t.live { color:#c0392b; } .ls-t.live:before { content:""; display:inline-block; width:7px; height:7px; border-radius:50%; background:#c0392b; margin-right:4px; vertical-align:middle; animation:lspulse 1.4s infinite; }
 @keyframes lspulse { 50% { opacity:.25; } }
@@ -99,7 +101,7 @@ JS = r"""
   }
   function groups(list) {
     var by = {};
-    list.forEach(function (m) { (by[m.lg] = by[m.lg] || { lg: m.lg, ln: m.ln, cn: m.cn, ms: [] }).ms.push(m); });
+    list.forEach(function (m) { (by[m.lg] = by[m.lg] || { lg: m.lg, ln: m.ln, cn: m.cn, cf: m.cf, ms: [] }).ms.push(m); });
     var out = Object.keys(by).map(function (k) { return by[k]; });
     function rank(g) { var i = PRIORITY.indexOf(g.lg); return isFav(g.lg) ? -1 : (i < 0 ? 999 : i); }
     out.sort(function (a, b) { return rank(a) - rank(b) || (a.cn || '').localeCompare(b.cn || '') || a.ln.localeCompare(b.ln); });
@@ -190,13 +192,25 @@ JS = r"""
     var b = h('button', cls, '☰ League table'); b.type = 'button';
     b.onclick = function (e) { e.stopPropagation(); openTb(lg, name, hn, an); }; return b;
   }
+  function logo(kind, id, size) {
+    if (!id) return null;
+    var im = new Image(); im.alt = ''; im.width = size; im.height = size; im.loading = 'lazy'; im.className = 'tl'; im.referrerPolicy = 'no-referrer';
+    im.src = 'https://media.api-sports.io/football/' + kind + '/' + id + '.png'; im.onerror = function () { im.remove(); }; return im;
+  }
+  function sideEl(cls, name, id, logoAfter) {
+    var s = h('span', cls); var lg = logo('teams', id, 20);
+    if (lg && !logoAfter) s.appendChild(lg);
+    s.appendChild(document.createTextNode(name));
+    if (lg && logoAfter) s.appendChild(lg);
+    return s;
+  }
   function row(m) {
     var wrap = document.createDocumentFragment();
     var r = h('div', 'ls-m');
     var t = h('span', 'ls-t' + (isLive(m) ? ' live' : ''), label(m));
-    r.appendChild(t); r.appendChild(h('span', 'ls-h', m.home));
+    r.appendChild(t); r.appendChild(sideEl('ls-h', m.home, m.hid, true));
     r.appendChild(h('span', 'ls-s' + (isLive(m) ? ' live' : ''), score(m) || 'v'));
-    r.appendChild(h('span', 'ls-a', m.away));
+    r.appendChild(sideEl('ls-a', m.away, m.aid, false));
     var pk = CFG.picks[String(m.id)];
     if (pk && !DONE[m.st]) {
       var who = pk.pk === 'Home' ? pk.h : pk.pk === 'Away' ? pk.a : 'Draw';
@@ -268,7 +282,9 @@ JS = r"""
       var card = h('div', 'ls-lg'); var hd = h('div', 'ls-lgh');
       var star = h('button', 'ls-star', isFav(g.lg) ? '★' : '☆'); star.type = 'button'; star.title = 'Keep this league at the top';
       star.onclick = function (e) { e.stopPropagation(); var i = store.fav.indexOf(g.lg); if (i > -1) store.fav.splice(i, 1); else store.fav.push(g.lg); save(); render(); };
-      hd.appendChild(star); hd.appendChild(h('span', '', g.ln)); hd.appendChild(h('span', 'cn', g.cn));
+      hd.appendChild(star);
+      var llg = logo('leagues', g.lg, 22); if (llg) hd.appendChild(llg);
+      hd.appendChild(h('span', '', g.ln)); hd.appendChild(h('span', 'cn', g.cn));
       var cnt = h('span', 'n', g.ms.length);
       if (!/friendl|cup|copa|coupe|pokal|qualif|play-?off|trophy|\bu-?\d\d|nations|super ?cup/i.test(g.ln)) { var tb = tbBtn(g.lg, g.ln, '', '', 'lt-btn ls-tbh'); tb.style.marginLeft = 'auto'; hd.appendChild(tb); cnt.style.marginLeft = '0'; }
       hd.appendChild(cnt);
