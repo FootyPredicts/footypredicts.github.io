@@ -14,7 +14,7 @@ def run():
     if not key:
         sys.exit("API_FOOTBALL_KEY is not set")
     season = current_season()
-    for slug, (name, lid, country) in EXTRA_LEAGUES.items():
+    for slug, (name, lid, country, _kind) in EXTRA_LEAGUES.items():
         data = api_get("fixtures", {"league": lid, "season": season}, key)
         rows = []
         for f in data.get("response", []):

@@ -154,7 +154,7 @@ DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw ris
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
 SHOW_EUROPE = True      # switch on again once the European model has more data
 from pipeline.config import EXTRA_LEAGUES as _EX
-EXTRA = {k: {"name": v[0], "api": v[1], "country": v[2]} for k, v in _EX.items()}
+EXTRA = {k: {"name": v[0], "api": v[1], "country": v[2], "kind": v[3]} for k, v in _EX.items()}
 ALL_SLUGS = LEAGUE_ORDER + list(EXTRA)
 EURO_ORDER = ["champions-league", "europa-league"]
 
@@ -1232,7 +1232,7 @@ def club_slug(name):
 
 
 def club_data(leagues):
-    """team -> {league name, league slug, results, upcoming, position, points, played}"""
+    """team -> {league name, league slug, results, upcoming, position, points, played, comps}"""
     teams, tables = {}, {}
     names = {d["league"]: d["name"] for d in leagues}
     names.update({k: v["name"] for k, v in EXTRA.items()})
@@ -1243,18 +1243,24 @@ def club_data(leagues):
         except (OSError, ValueError):
             continue
         t = {}
+        cup = EXTRA.get(slug, {}).get("kind") == "cup"
         for r in rows:
             for side in ("home", "away"):
-                teams.setdefault(r[side], {"lg": slug, "ln": names.get(slug, slug), "res": [], "up": []})
-            if r.get("status") in ("FT", "AET", "PEN") and r.get("hg") is not None:
-                for side, other, gf, ga in (("home", "away", r["hg"], r["ag"]), ("away", "home", r["ag"], r["hg"])):
-                    teams[r[side]]["res"].append((r["date"], r[other], side == "home", gf, ga))
-                    x = t.setdefault(r[side], {"n": r[side], "p": 0, "pts": 0, "gf": 0, "ga": 0})
-                    x["p"] += 1; x["gf"] += gf; x["ga"] += ga
-                    x["pts"] += 3 if gf > ga else 1 if gf == ga else 0
-            elif r.get("status") in ("NS", "TBD") or not r.get("status"):
-                for side, other in (("home", "away"), ("away", "home")):
-                    teams[r[side]]["up"].append((r["date"], r[other], side == "home", r["id"]))
+                tm = teams.setdefault(r[side], {"lg": slug, "ln": names.get(slug, slug), "res": [], "up": [], "comps": set()})
+                tm["comps"].add(slug)
+            for side, other in (("home", "away"), ("away", "home")):
+                me = r[side]
+                if teams[me]["lg"] != slug:      # a club with a league keeps its league form, not its cup games
+                    continue
+                if r.get("status") in ("FT", "AET", "PEN") and r.get("hg") is not None:
+                    gf, ga = (r["hg"], r["ag"]) if side == "home" else (r["ag"], r["hg"])
+                    teams[me]["res"].append((r["date"], r[other], side == "home", gf, ga))
+                    if not cup:
+                        x = t.setdefault(me, {"n": me, "p": 0, "pts": 0, "gf": 0, "ga": 0})
+                        x["p"] += 1; x["gf"] += gf; x["ga"] += ga
+                        x["pts"] += 3 if gf > ga else 1 if gf == ga else 0
+                elif r.get("status") in ("NS", "TBD") or not r.get("status"):
+                    teams[me]["up"].append((r["date"], r[other], side == "home", r["id"]))
         order = sorted(t.values(), key=lambda x: (-x["pts"], -(x["gf"] - x["ga"]), -x["gf"], x["n"]))
         tables[slug] = {x["n"]: (i + 1, x) for i, x in enumerate(order)}
     for name, c in teams.items():
@@ -1340,7 +1346,7 @@ def superfan_page(leagues, clubs):
     lst += [{"league": k, "name": v["name"], "country": v["country"]} for k, v in EXTRA.items()]
     for d in lst:
         sl = d["league"]
-        mine = sorted((n, c) for n, c in clubs.items() if c["lg"] == sl)
+        mine = sorted((n, c) for n, c in clubs.items() if sl in c["comps"])
         if not mine:
             continue
         feed, seen = [], set()

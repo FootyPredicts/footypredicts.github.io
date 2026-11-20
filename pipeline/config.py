@@ -14,7 +14,12 @@ LEAGUES = {
 
 # Leagues with club pages, news and form only (no predictions): slug -> (name, API-Football league id, country)
 EXTRA_LEAGUES = {
-    "scottish-premiership": ("Scottish Premiership", 179, "Scotland"),
+    "championship": ("Championship", 40, "England", "league"),
+    "league-one": ("League One", 41, "England", "league"),
+    "league-two": ("League Two", 42, "England", "league"),
+    "scottish-premiership": ("Scottish Premiership", 179, "Scotland", "league"),
+    "uefa-champions-league": ("Champions League", 2, "Europe", "cup"),
+    "uefa-europa-league": ("Europa League", 3, "Europe", "cup"),
 }
 
 # How many past seasons to keep for the models (besides the current one)
