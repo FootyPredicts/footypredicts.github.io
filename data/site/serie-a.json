@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-20T20:38:03.569205+00:00",
+ "updated": "2026-11-20T21:08:10.824881+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -26,28 +26,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 7.2,
+     "goals_lost_pct": 8.0,
      "defence_hit_pct": 8.0,
      "key_out": [
-      "D. Frattesi",
       "J. Šutalo",
       "M. Zaccagni",
       "Nuno Tavares"
      ]
     },
     "away": {
-     "goals_lost_pct": 4.9,
+     "goals_lost_pct": 3.7,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 59.8,
-   "draw_pct": 25.6,
-   "away_pct": 14.6,
-   "xg_home": 1.68,
-   "xg_away": 0.71,
-   "over25": 42.6,
-   "btts": 42.1,
+   "home_pct": 59.2,
+   "draw_pct": 25.8,
+   "away_pct": 15.0,
+   "xg_home": 1.66,
+   "xg_away": 0.72,
+   "over25": 42.5,
+   "btts": 42.4,
    "cards5": 40.2,
    "cards": {
     "exp": 4.17,
@@ -879,21 +878,6 @@
     "home": {
      "scorers": [
       {
-       "id": 30937,
-       "name": "M. Zaccagni",
-       "p": 32.8,
-       "gl": 2,
-       "as": 5,
-       "ap": 10,
-       "price": {
-        "odd": 2.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.5
-        }
-       }
-      },
-      {
        "id": 133729,
        "name": "T. Noslin",
        "p": 32.4,
@@ -905,6 +889,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 2.2
+        }
+       }
+      },
+      {
+       "id": 135519,
+       "name": "G. Isaksen",
+       "p": 28.8,
+       "gl": 4,
+       "as": 1,
+       "ap": 11,
+       "price": {
+        "odd": 2.3,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.3
         }
        }
       }
@@ -920,12 +919,12 @@
        "price": null
       },
       {
-       "id": 30937,
-       "name": "M. Zaccagni",
-       "p": 23.7,
-       "yc": 3,
+       "id": 38749,
+       "name": "K. Taylor",
+       "p": 17.8,
+       "yc": 2,
        "rc": 0,
-       "ap": 10,
+       "ap": 11,
        "price": null
       }
      ],
@@ -935,14 +934,6 @@
       "sot": 2
      },
      "cap": [
-      {
-       "id": 30937,
-       "name": "M. Zaccagni",
-       "pos": "Attacker",
-       "g": 32.8,
-       "a": 41.8,
-       "inv": 60.9
-      },
       {
        "id": 133729,
        "name": "T. Noslin",
@@ -966,6 +957,14 @@
        "g": 25.9,
        "a": 4.5,
        "inv": 29.2
+      },
+      {
+       "id": 38749,
+       "name": "K. Taylor",
+       "pos": "Midfielder",
+       "g": 17.0,
+       "a": 12.7,
+       "inv": 27.6
       }
      ]
     },
@@ -1066,6 +1065,12 @@
       "reason": "Knee Injury"
      },
      {
+      "id": 1844,
+      "name": "A. Marusic",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
       "id": 14701,
       "name": "J. Sutalo",
       "type": "Missing Fixture",
@@ -1078,22 +1083,16 @@
       "reason": "Muscle Injury"
      },
      {
-      "id": 31173,
-      "name": "D. Frattesi",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 1844,
-      "name": "A. Marusic",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
       "id": 30937,
       "name": "M. Zaccagni",
-      "type": "Questionable",
+      "type": "Missing Fixture",
       "reason": "Thigh Injury"
+     },
+     {
+      "id": 1852,
+      "name": "D. Cataldi",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
      }
     ],
     "away": [
@@ -1114,12 +1113,6 @@
       "name": "M. Berisha",
       "type": "Questionable",
       "reason": "Thigh Injury"
-     },
-     {
-      "id": 277862,
-      "name": "J. Monteiro",
-      "type": "Questionable",
-      "reason": "Calf Injury"
      }
     ]
    },
@@ -1601,26 +1594,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 3.0,
-     "defence_hit_pct": 2.0,
+     "goals_lost_pct": 5.4,
+     "defence_hit_pct": 0.0,
      "key_out": [
-      "Assane Diao",
-      "T. Chalobah"
+      "Assane Diao"
      ]
     },
     "away": {
-     "goals_lost_pct": 2.6,
+     "goals_lost_pct": 2.3,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 60.4,
-   "draw_pct": 25.7,
-   "away_pct": 13.9,
-   "xg_home": 1.66,
-   "xg_away": 0.67,
-   "over25": 41.1,
-   "btts": 40.3,
+   "home_pct": 59.7,
+   "draw_pct": 26.2,
+   "away_pct": 14.0,
+   "xg_home": 1.62,
+   "xg_away": 0.66,
+   "over25": 39.7,
+   "btts": 39.5,
    "cards5": 31.0,
    "cards": {
     "exp": 3.68,
@@ -2377,18 +2369,18 @@
      ],
      "bookings": [
       {
-       "id": 400948,
-       "name": "Assane Diao",
-       "p": 18.1,
-       "yc": 2,
-       "rc": 0,
-       "ap": 6,
-       "price": null
-      },
-      {
        "id": 197448,
        "name": "Yan Couto",
        "p": 15.8,
+       "yc": 2,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      },
+      {
+       "id": 295026,
+       "name": "M. Baturina",
+       "p": 13.3,
        "yc": 2,
        "rc": 0,
        "ap": 10,
@@ -2418,20 +2410,20 @@
        "inv": 31.7
       },
       {
-       "id": 400948,
-       "name": "Assane Diao",
-       "pos": "Attacker",
-       "g": 20.9,
-       "a": 12.5,
-       "inv": 30.8
-      },
-      {
        "id": 295026,
        "name": "M. Baturina",
        "pos": "Midfielder",
        "g": 15.2,
        "a": 7.9,
        "inv": 22.0
+      },
+      {
+       "id": 197448,
+       "name": "Yan Couto",
+       "pos": "Defender",
+       "g": 3.9,
+       "a": 13.7,
+       "inv": 17.1
       }
      ]
     },
@@ -2532,33 +2524,27 @@
    "injuries": {
     "home": [
      {
+      "id": 354533,
+      "name": "J. Addai",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 400948,
+      "name": "A. Diao",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
       "id": 877,
       "name": "M. Kean",
       "type": "Missing Fixture",
       "reason": "Leg Injury"
      },
      {
-      "id": 354533,
-      "name": "J. Addai",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 19720,
-      "name": "T. Chalobah",
-      "type": "Questionable",
-      "reason": "Injury"
-     },
-     {
-      "id": 400948,
-      "name": "A. Diao",
-      "type": "Questionable",
-      "reason": "Thigh Injury"
-     },
-     {
       "id": 443162,
       "name": "J. Rodriguez",
-      "type": "Questionable",
+      "type": "Missing Fixture",
       "reason": "Injury"
      }
     ],
@@ -2570,27 +2556,21 @@
       "reason": "Knee Injury"
      },
      {
-      "id": 264477,
-      "name": "G. Aurelio",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 263699,
-      "name": "A. Fadera",
-      "type": "Questionable",
-      "reason": "Thigh Injury"
+      "id": 417892,
+      "name": "J. Liteta",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
      },
      {
       "id": 2484,
       "name": "Y. Mina",
-      "type": "Questionable",
+      "type": "Missing Fixture",
       "reason": "Thigh Injury"
      },
      {
       "id": 182,
       "name": "H. Winks",
-      "type": "Questionable",
+      "type": "Missing Fixture",
       "reason": "Back Injury"
      }
     ]
@@ -4727,12 +4707,11 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 3.0,
-     "defence_hit_pct": 11.0,
+     "goals_lost_pct": 2.6,
+     "defence_hit_pct": 9.0,
      "key_out": [
       "A. Meret",
-      "G. Di Lorenzo",
-      "L. Spinazzola"
+      "G. Di Lorenzo"
      ]
     },
     "away": {
@@ -4744,13 +4723,13 @@
      ]
     }
    },
-   "home_pct": 58.0,
-   "draw_pct": 24.3,
-   "away_pct": 17.8,
+   "home_pct": 58.5,
+   "draw_pct": 24.2,
+   "away_pct": 17.3,
    "xg_home": 1.84,
-   "xg_away": 0.92,
-   "over25": 52.1,
-   "btts": 51.6,
+   "xg_away": 0.91,
+   "over25": 51.9,
+   "btts": 51.1,
    "cards5": 26.4,
    "cards": {
     "exp": 3.42,
@@ -5795,18 +5774,6 @@
       "name": "G. Di Lorenzo",
       "type": "Questionable",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 348532,
-      "name": "C. Favasuli",
-      "type": "Questionable",
-      "reason": "Thigh Injury"
-     },
-     {
-      "id": 862,
-      "name": "L. Spinazzola",
-      "type": "Questionable",
-      "reason": "Thigh Injury"
      }
     ],
     "away": [
