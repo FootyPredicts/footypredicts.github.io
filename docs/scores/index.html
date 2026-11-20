@@ -792,7 +792,6 @@ a.chip { text-decoration:none; }
       });
       r.appendChild(x);
     }
-    if (TB[m.lg]) { var tr = h('div', 'ls-tbr'); tr.appendChild(tbBtn(m.lg, m.ln, m.home, m.away, 'lt-btn')); r.appendChild(tr); }
     r.onclick = function () { if (m.ev && m.ev.length) { st.open[m.id] = !st.open[m.id]; render(); } };
     wrap.appendChild(r); return wrap;
   }
@@ -848,7 +847,10 @@ a.chip { text-decoration:none; }
       var card = h('div', 'ls-lg'); var hd = h('div', 'ls-lgh');
       var star = h('button', 'ls-star', isFav(g.lg) ? '★' : '☆'); star.type = 'button'; star.title = 'Keep this league at the top';
       star.onclick = function (e) { e.stopPropagation(); var i = store.fav.indexOf(g.lg); if (i > -1) store.fav.splice(i, 1); else store.fav.push(g.lg); save(); render(); };
-      hd.appendChild(star); hd.appendChild(h('span', '', g.ln)); hd.appendChild(h('span', 'cn', g.cn)); hd.appendChild(h('span', 'n', g.ms.length));
+      hd.appendChild(star); hd.appendChild(h('span', '', g.ln)); hd.appendChild(h('span', 'cn', g.cn));
+      var cnt = h('span', 'n', g.ms.length);
+      if (TB[g.lg]) { var tb = tbBtn(g.lg, g.ln, '', '', 'lt-btn ls-tbh'); tb.style.marginLeft = 'auto'; hd.appendChild(tb); cnt.style.marginLeft = '0'; }
+      hd.appendChild(cnt);
       var shut = !!store.shut[g.lg] && !st.q;
       hd.onclick = function () { if (store.shut[g.lg]) delete store.shut[g.lg]; else store.shut[g.lg] = 1; save(); render(); };
       card.appendChild(hd);
