@@ -1349,9 +1349,9 @@ def superfan_page(leagues, clubs):
       <h2 class="fixture"><span>Superfan</span></h2>
       <p>Pick a league, then your club, for its next match, injuries, form and news. Or open the whole league for all its news in one place.</p>
       <p id="sf-mine" class="halves" hidden></p>
-      <div id="sf-news" class="sf-mynews" hidden></div>
       <div id="sf-leagues" class="sf-tiles"></div>
       <div id="sf-panel" class="sf-panel" hidden></div>
+      <div id="sf-news" class="sf-mynews" hidden></div>
     </section>
     <script>(function(){{
       var D={blob}, L=document.getElementById('sf-leagues'), P=document.getElementById('sf-panel'), M=document.getElementById('sf-mine');
@@ -1372,7 +1372,7 @@ def superfan_page(leagues, clubs):
         P.appendChild(grid);
         var fl=el('label','sf-follow');var cb=document.createElement('input');cb.type='checkbox';cb.checked=F.leagues.indexOf(lg.id)>-1;
         cb.onchange=function(){{var i=F.leagues.indexOf(lg.id);if(cb.checked&&i<0)F.leagues.push(lg.id);if(!cb.checked&&i>-1)F.leagues.splice(i,1);saveF();mineNews();}};
-        fl.appendChild(cb);fl.appendChild(document.createTextNode(' Follow all '+lg.n+' news (shown at the top of this page)'));P.appendChild(fl);
+        fl.appendChild(cb);fl.appendChild(document.createTextNode(' Follow all '+lg.n+' news (shown below)'));P.appendChild(fl);
         var all=el('button','sf-all','All '+lg.n+' news');all.type='button';P.appendChild(all);
         var feed=el('ul','club-news');feed.hidden=true;P.appendChild(feed);
         all.onclick=function(){{
@@ -1668,7 +1668,7 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .sf-club { display:flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid var(--line); background:var(--paper); border-radius:999px; text-decoration:none; color:var(--ink); font:600 15px Barlow,sans-serif; }
 .sf-club:hover { border-color:var(--ink); } .sf-club i { width:12px; height:12px; border-radius:50%; border:1px solid rgba(0,0,0,.25); flex:0 0 auto; }
 .sf-follow { display:flex; align-items:center; gap:6px; font:600 15px Barlow,sans-serif; margin:0 0 10px; cursor:pointer; } .sf-follow input { width:20px; height:20px; accent-color:var(--ink); }
-.sf-mynews { margin:0 0 18px; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-mynews h3 { margin:0 0 6px; }
+.sf-mynews { margin:18px 0 18px; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-mynews h3 { margin:0 0 6px; }
 .sf-all { border:0; background:var(--ink); color:#fff; border-radius:999px; padding:10px 18px; font:700 15px Barlow,sans-serif; cursor:pointer; margin:0 0 10px; }
 .club-news { list-style:none; margin:0; padding:0; } .club-news li { padding:9px 0; border-top:1px solid var(--line); font-size:16px; } .club-news li:first-child { border-top:0; } .club-src { display:block; font-size:13px; color:var(--muted); }
 .club-inj { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:6px 14px; } .club-inj .inj { display:block; padding:5px 0; font-size:16px; }
