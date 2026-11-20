@@ -42,6 +42,7 @@ CSS = """
 .ls-x div { padding:1px 0; }
 .ls-p { grid-column:2 / 5; font-size:12px; color:var(--muted); }
 .ls-p b { color:var(--ink); }
+.lt-grp { margin:12px 0 4px; font:700 13px Barlow,sans-serif; }
 .ls-tbr { grid-column:2 / 5; }
 .ls-tbr .lt-btn { margin:0; padding:2px 9px; font-size:11px; }
 .ls-empty { background:#fff; border:1px dashed var(--line); border-radius:14px; padding:18px; color:var(--muted); }
@@ -109,10 +110,48 @@ JS = r"""
   var TB = CFG.tables || {};
   var tbl = null;
   function tbEsc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function tbDrawApi() {
+    var G = tbl.api;
+    if (!G) { tbl.body.innerHTML = '<div class="fm-title"><b>' + tbEsc(tbl.name) + ' table</b></div><p class="halves lt-note">' + (tbl.err || 'Loading table\u2026') + '</p>'; return; }
+    var live = (st.date === today ? (st.data || []) : []).filter(function (m) { return m.lg === tbl.lg && isLive(m) && m.hg != null && m.ag != null; });
+    var n = live.length, html = '<div class="fm-title"><b>' + tbEsc(tbl.name) + ' table</b></div><p class="halves lt-note">' +
+      (n ? '<span class="lt-live">\u25cf Live</span> ' + n + ' match' + (n > 1 ? 'es' : '') + ' in play. The table updates by itself.' : 'Updates by itself while games are being played.') + '</p>';
+    G.forEach(function (g) {
+      var T = g.rows.map(function (r) { return { n: r.n, p: r.p, w: r.w, d: r.d, l: r.l, gf: r.gf, ga: r.ga, pts: r.pts, lv: false, r: r.r }; });
+      var by = {}; T.forEach(function (r) { by[r.n] = r; });
+      var hit = false;
+      live.forEach(function (m) {
+        if (!by[m.home] || !by[m.away]) return; hit = true;
+        [[m.home, m.hg, m.ag], [m.away, m.ag, m.hg]].forEach(function (z) {
+          var r = by[z[0]]; r.lv = true; r.p++; r.gf += z[1]; r.ga += z[2];
+          if (z[1] > z[2]) { r.w++; r.pts += 3; } else if (z[1] === z[2]) { r.d++; r.pts++; } else r.l++;
+        });
+      });
+      if (hit) T.sort(function (a, b) { return b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf || a.n.localeCompare(b.n); });
+      if (G.length > 1 && g.name) html += '<h4 class="lt-grp">' + tbEsc(g.name) + '</h4>';
+      html += '<table class="lt"><thead><tr><th>#</th><th class="tl">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>';
+      T.forEach(function (r, i) {
+        var gd = r.gf - r.ga;
+        html += '<tr><td>' + (hit ? i + 1 : r.r) + '</td><td class="tl">' + tbEsc(r.n) + (r.lv ? ' <span class="lt-dot">\u25cf</span>' : '') + '</td><td>' + r.p + '</td><td>' + r.w + '</td><td>' + r.d + '</td><td>' + r.l + '</td><td>' + (gd > 0 ? '+' : '') + gd + '</td><td><b>' + r.pts + '</b></td></tr>';
+      });
+      html += '</tbody></table>';
+    });
+    var keep = tbl.body.parentNode.scrollTop; tbl.body.innerHTML = html; tbl.body.parentNode.scrollTop = keep;
+  }
+  function tbFetch() {
+    var t = tbl; if (!t || !t.url) return;
+    fetch(CFG.url + (CFG.url.indexOf('?') > -1 ? '&' : '?') + 'standings=' + t.lg, { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (tbl !== t) return;
+        if (j && j.groups && j.groups.length) t.api = j.groups; else t.err = (j && j.error) ? 'The table is not available right now.' : 'No league table is available for this competition.';
+        tbDraw();
+      }).catch(function () { if (tbl === t) { t.err = 'Could not load the table.'; tbDraw(); } });
+  }
   function tbDraw() {
     if (!tbl) return;
     if (!document.body.contains(tbl.o)) { tbl = null; return; }
-    var D = TB[tbl.lg]; if (!D) return;
+    var D = TB[tbl.lg]; if (!D) return tbDrawApi();
     var T = {}; D.rows.forEach(function (r) { T[r.n] = { n: r.n, p: r.p, w: r.w, d: r.d, l: r.l, gf: r.gf, ga: r.ga, lv: false }; });
     var n = 0;
     (st.date === today ? (st.data || []) : []).forEach(function (m) {
@@ -145,7 +184,7 @@ JS = r"""
     var o = h('div', 'fm-ov'); o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true');
     var box = h('div', 'fm-box fm-wide'); var x = h('button', 'fm-x', '×'); x.type = 'button'; x.setAttribute('aria-label', 'Close');
     var body = h('div'); box.appendChild(x); box.appendChild(body); o.appendChild(box); document.body.appendChild(o); x.focus();
-    tbl = { o: o, body: body, lg: lg, name: name, h: hn, a: an, sc: 0 }; tbDraw(); load();
+    tbl = { o: o, body: body, lg: lg, name: name, h: hn, a: an, sc: 0, url: !TB[lg] }; tbDraw(); tbFetch(); load();
   }
   function tbBtn(lg, name, hn, an, cls) {
     var b = h('button', cls, '☰ League table'); b.type = 'button';
@@ -231,7 +270,7 @@ JS = r"""
       star.onclick = function (e) { e.stopPropagation(); var i = store.fav.indexOf(g.lg); if (i > -1) store.fav.splice(i, 1); else store.fav.push(g.lg); save(); render(); };
       hd.appendChild(star); hd.appendChild(h('span', '', g.ln)); hd.appendChild(h('span', 'cn', g.cn));
       var cnt = h('span', 'n', g.ms.length);
-      if (TB[g.lg]) { var tb = tbBtn(g.lg, g.ln, '', '', 'lt-btn ls-tbh'); tb.style.marginLeft = 'auto'; hd.appendChild(tb); cnt.style.marginLeft = '0'; }
+      if (!/friendl|cup|copa|coupe|pokal|qualif|play-?off|trophy|\bu-?\d\d|nations|super ?cup/i.test(g.ln)) { var tb = tbBtn(g.lg, g.ln, '', '', 'lt-btn ls-tbh'); tb.style.marginLeft = 'auto'; hd.appendChild(tb); cnt.style.marginLeft = '0'; }
       hd.appendChild(cnt);
       var shut = !!store.shut[g.lg] && !st.q;
       hd.onclick = function () { if (store.shut[g.lg]) delete store.shut[g.lg]; else store.shut[g.lg] = 1; save(); render(); };
