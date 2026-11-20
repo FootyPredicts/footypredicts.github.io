@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-20T18:38:19.052847+00:00",
+ "updated": "2026-11-20T19:08:13.878901+00:00",
  "matches_used": 705,
  "fixtures": [
   {
@@ -1292,20 +1292,18 @@
      ]
     },
     "away": {
-     "goals_lost_pct": 7.1,
-     "defence_hit_pct": 2.0,
-     "key_out": [
-      "Marquinhos"
-     ]
+     "goals_lost_pct": 2.7,
+     "defence_hit_pct": 0.0,
+     "key_out": []
     }
    },
-   "home_pct": 18.6,
-   "draw_pct": 23.7,
-   "away_pct": 57.7,
-   "xg_home": 1.01,
-   "xg_away": 1.91,
-   "over25": 55.9,
-   "btts": 54.9,
+   "home_pct": 17.2,
+   "draw_pct": 22.7,
+   "away_pct": 60.1,
+   "xg_home": 0.99,
+   "xg_away": 2.0,
+   "over25": 57.5,
+   "btts": 55.1,
    "cards5": 30.2,
    "cards": {
     "exp": 3.64,
@@ -2382,30 +2380,6 @@
       "id": 606062,
       "name": "A. Longoni",
       "type": "Missing Fixture",
-      "reason": "Thigh Injury"
-     },
-     {
-      "id": 274300,
-      "name": "M. Akliouche",
-      "type": "Questionable",
-      "reason": "Calf Injury"
-     },
-     {
-      "id": 343027,
-      "name": "D. Doue",
-      "type": "Questionable",
-      "reason": "Hamstring Injury"
-     },
-     {
-      "id": 491087,
-      "name": "D. Fernandez",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 257,
-      "name": "Marquinhos",
-      "type": "Questionable",
       "reason": "Thigh Injury"
      }
     ]
@@ -9293,30 +9267,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 2.6,
-     "defence_hit_pct": 8.0,
+     "goals_lost_pct": 0.9,
+     "defence_hit_pct": 2.0,
      "key_out": [
-      "A. Camara",
       "S. Chergui"
      ]
     },
     "away": {
-     "goals_lost_pct": 8.7,
-     "defence_hit_pct": 6.0,
+     "goals_lost_pct": 0.5,
+     "defence_hit_pct": 4.0,
      "key_out": [
-      "A. El Ouazzani",
-      "J. Lefort",
-      "O. Camara"
+      "J. Lefort"
      ]
     }
    },
-   "home_pct": 68.0,
-   "draw_pct": 21.4,
-   "away_pct": 10.5,
+   "home_pct": 67.5,
+   "draw_pct": 21.6,
+   "away_pct": 10.9,
    "xg_home": 1.98,
-   "xg_away": 0.65,
-   "over25": 48.9,
-   "btts": 42.0,
+   "xg_away": 0.67,
+   "over25": 49.3,
+   "btts": 42.8,
    "cards5": 26.1,
    "cards": {
     "exp": 3.42,
@@ -10149,19 +10120,19 @@
        "price": null
       },
       {
-       "id": 266013,
-       "name": "Otávio",
-       "p": 17.4,
+       "id": 20869,
+       "name": "S. Chergui",
+       "p": 19.8,
        "yc": 2,
        "rc": 0,
-       "ap": 7,
+       "ap": 6,
        "price": null
       }
      ],
      "defender": {
-      "id": 2202,
-      "name": "H. Traoré",
-      "sot": 1
+      "id": 84218,
+      "name": "A. Camara",
+      "sot": 2
      },
      "cap": [
       {
@@ -10201,6 +10172,21 @@
     "away": {
      "scorers": [
       {
+       "id": 193188,
+       "name": "A. El Ouazzani",
+       "p": 13.0,
+       "gl": 2,
+       "as": 2,
+       "ap": 8,
+       "price": {
+        "odd": 5.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 5.5
+        }
+       }
+      },
+      {
        "id": 457541,
        "name": "P. Peter",
        "p": 11.2,
@@ -10212,21 +10198,6 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 5.5
-        }
-       }
-      },
-      {
-       "id": 191289,
-       "name": "A. Sbaï",
-       "p": 7.6,
-       "gl": 1,
-       "as": 1,
-       "ap": 10,
-       "price": {
-        "odd": 6.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 6.5
         }
        }
       }
@@ -10258,6 +10229,14 @@
      },
      "cap": [
       {
+       "id": 193188,
+       "name": "A. El Ouazzani",
+       "pos": "Attacker",
+       "g": 13.0,
+       "a": 11.7,
+       "inv": 23.2
+      },
+      {
        "id": 191289,
        "name": "A. Sbaï",
        "pos": "Midfielder",
@@ -10280,14 +10259,6 @@
        "g": 5.1,
        "a": 6.8,
        "inv": 11.5
-      },
-      {
-       "id": 409558,
-       "name": "J. Kalulu",
-       "pos": "Defender",
-       "g": 1.5,
-       "a": 5.9,
-       "inv": 7.3
       }
      ]
     }
@@ -10295,21 +10266,15 @@
    "injuries": {
     "home": [
      {
-      "id": 84218,
-      "name": "A. Camara",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury"
-     },
-     {
       "id": 20869,
       "name": "S. Chergui",
-      "type": "Missing Fixture",
+      "type": "Questionable",
       "reason": "Knee Injury"
      },
      {
       "id": 389322,
       "name": "N. Sangui",
-      "type": "Missing Fixture",
+      "type": "Questionable",
       "reason": "Muscle Injury"
      }
     ],
@@ -10321,22 +10286,10 @@
       "reason": "Ankle Injury"
      },
      {
-      "id": 193188,
-      "name": "A. El Ouazzani",
-      "type": "Missing Fixture",
-      "reason": "Groin Injury"
-     },
-     {
       "id": 21381,
       "name": "J. Lefort",
       "type": "Missing Fixture",
       "reason": "Yellow Cards"
-     },
-     {
-      "id": 271540,
-      "name": "O. Camara",
-      "type": "Questionable",
-      "reason": "Injury"
      }
     ]
    },
