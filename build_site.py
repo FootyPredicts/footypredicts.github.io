@@ -1342,13 +1342,14 @@ def superfan_page(leagues, clubs):
                 seen.add(sig)
                 feed.append({"t": it["t"], "u": it["u"], "s": it.get("s") or "", "d": (it.get("d") or "")[:10], "c": n, "k": c["slug"]})
         feed.sort(key=lambda x: x["d"], reverse=True)
-        data.append({"id": sl, "n": d["name"], "co": d.get("country", ""), "lid": LEAGUE_API.get(sl), "clubs": [[n, c["slug"], SHIRT_COLOUR.get(n, "#2f4a3a"), TEAM_ID.get(n)] for n, c in mine], "news": feed[:60]})
+        data.append({"id": sl, "n": d["name"], "co": d.get("country", ""), "kn": {c["slug"]: [{"t": it["t"], "u": it["u"], "s": it.get("s") or "", "d": (it.get("d") or "")[:10], "c": n, "k": c["slug"]} for it in TEAM_NEWS.get(n, []) if str(it.get("u", "")).startswith(("http://", "https://"))] for n, c in mine}, "lid": LEAGUE_API.get(sl), "clubs": [[n, c["slug"], SHIRT_COLOUR.get(n, "#2f4a3a"), TEAM_ID.get(n)] for n, c in mine], "news": feed[:60]})
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     body = f"""
     <section class="block">
       <h2 class="fixture"><span>Superfan</span></h2>
       <p>Pick a league, then your club, for its next match, injuries, form and news. Or open the whole league for all its news in one place.</p>
       <p id="sf-mine" class="halves" hidden></p>
+      <div id="sf-news" class="sf-mynews" hidden></div>
       <div id="sf-leagues" class="sf-tiles"></div>
       <div id="sf-panel" class="sf-panel" hidden></div>
     </section>
@@ -1369,6 +1370,9 @@ def superfan_page(leagues, clubs):
         var grid=el('div','sf-clubs');
         lg.clubs.forEach(function(c){{var a=el('a','sf-club');a.href='../club/'+c[1]+'/';var dot=el('i');dot.style.background=c[2];if(c[3]){{var im=new Image();im.alt='';im.width=22;im.height=22;im.src='https://media.api-sports.io/football/teams/'+c[3]+'.png';im.className='tl';im.onload=function(){{dot.replaceWith(im);}};}}a.appendChild(dot);a.appendChild(document.createTextNode(c[0]));grid.appendChild(a);}});
         P.appendChild(grid);
+        var fl=el('label','sf-follow');var cb=document.createElement('input');cb.type='checkbox';cb.checked=F.leagues.indexOf(lg.id)>-1;
+        cb.onchange=function(){{var i=F.leagues.indexOf(lg.id);if(cb.checked&&i<0)F.leagues.push(lg.id);if(!cb.checked&&i>-1)F.leagues.splice(i,1);saveF();mineNews();}};
+        fl.appendChild(cb);fl.appendChild(document.createTextNode(' Follow all '+lg.n+' news (shown at the top of this page)'));P.appendChild(fl);
         var all=el('button','sf-all','All '+lg.n+' news');all.type='button';P.appendChild(all);
         var feed=el('ul','club-news');feed.hidden=true;P.appendChild(feed);
         all.onclick=function(){{
@@ -1379,6 +1383,25 @@ def superfan_page(leagues, clubs):
         }};
         P.scrollIntoView({{behavior:'smooth',block:'nearest'}});
       }}
+      var F={{leagues:[]}};try{{var raw=JSON.parse(localStorage.getItem('fp-follow')||'{{}}');if(raw.leagues)F.leagues=raw.leagues;}}catch(e){{}}
+      function saveF(){{try{{localStorage.setItem('fp-follow',JSON.stringify(F));}}catch(e){{}}}}
+      function mineNews(){{
+        var box=document.getElementById('sf-news');box.textContent='';var seen={{}},items=[];
+        var mine=null;try{{mine=localStorage.getItem('fp-club');}}catch(e){{}}
+        D.forEach(function(lg){{
+          if(F.leagues.indexOf(lg.id)>-1)lg.news.forEach(function(n){{items.push(n);}});
+          if(mine&&lg.kn[mine])lg.kn[mine].forEach(function(n){{items.push(n);}});
+        }});
+        items=items.filter(function(n){{if(seen[n.u])return false;seen[n.u]=1;return true;}});
+        items.sort(function(a,b){{return a.d<b.d?1:a.d>b.d?-1:0;}});
+        if(!items.length){{box.hidden=true;return;}}
+        box.hidden=false;box.appendChild(el('h3','','My news'));
+        var ul=el('ul','club-news');
+        items.slice(0,40).forEach(function(n){{var li=el('li');var a=el('a','',n.t);a.href=n.u;a.target='_blank';a.rel='noopener nofollow';li.appendChild(a);
+          var sp=el('span','club-src');sp.textContent=n.c+' \u00b7 '+n.s+(n.d?' \u00b7 '+n.d:'');li.appendChild(sp);ul.appendChild(li);}});
+        box.appendChild(ul);
+      }}
+      mineNews();
       var v=null;try{{v=localStorage.getItem('fp-club');}}catch(e){{}}
       if(v)D.forEach(function(lg){{lg.clubs.forEach(function(c){{if(c[1]===v){{M.hidden=false;M.innerHTML='Your club: <a href="../club/'+v+'/"><b></b></a>';M.querySelector('b').textContent=c[0];}}}});}});
     }})();</script>"""
@@ -1644,6 +1667,8 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .sf-clubs { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:8px; margin:0 0 12px; }
 .sf-club { display:flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid var(--line); background:var(--paper); border-radius:999px; text-decoration:none; color:var(--ink); font:600 15px Barlow,sans-serif; }
 .sf-club:hover { border-color:var(--ink); } .sf-club i { width:12px; height:12px; border-radius:50%; border:1px solid rgba(0,0,0,.25); flex:0 0 auto; }
+.sf-follow { display:flex; align-items:center; gap:6px; font:600 15px Barlow,sans-serif; margin:0 0 10px; cursor:pointer; } .sf-follow input { width:20px; height:20px; accent-color:var(--ink); }
+.sf-mynews { margin:0 0 18px; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-mynews h3 { margin:0 0 6px; }
 .sf-all { border:0; background:var(--ink); color:#fff; border-radius:999px; padding:10px 18px; font:700 15px Barlow,sans-serif; cursor:pointer; margin:0 0 10px; }
 .club-news { list-style:none; margin:0; padding:0; } .club-news li { padding:9px 0; border-top:1px solid var(--line); font-size:16px; } .club-news li:first-child { border-top:0; } .club-src { display:block; font-size:13px; color:var(--muted); }
 .club-inj { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:6px 14px; } .club-inj .inj { display:block; padding:5px 0; font-size:16px; }
