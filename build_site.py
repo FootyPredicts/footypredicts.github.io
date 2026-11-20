@@ -1267,6 +1267,7 @@ def ordinal(n):
 
 def club_page(name, c, leagues, upd):
     fx_by_id = {f["id"]: (d, f) for d in leagues for f in d["fixtures"]}
+    fx_idx = {f["id"]: i for d in leagues for i, f in enumerate(d["fixtures"])}
     chips = "".join(
         f'<span class="fchip-w"><span class="fchip f{"W" if gf > ga else "D" if gf == ga else "L"}" title="{"vs" if home else "at"} {esc(opp)} {gf}\u2013{ga}">{"W" if gf > ga else "D" if gf == ga else "L"}</span></span>'
         for _, opp, home, gf, ga in c["res"][-5:])
@@ -1292,14 +1293,14 @@ def club_page(name, c, leagues, upd):
         if pk:
             who = pk["h"] if pk["pk"] == "Home" else pk["a"] if pk["pk"] == "Away" else "Draw"
             pc = pk["hp"] if pk["pk"] == "Home" else pk["ap"] if pk["pk"] == "Away" else pk["dp"]
-            pick = f'<p>Our pick: <b>{esc(who)} {pc}%</b> · <a href="../../{c["lg"]}/">full prediction</a></p>'
+            pick = f'<p>Our pick: <b>{esc(who)} {pc}%</b> · <a href="../../{c["lg"]}/#m{fx_idx.get(fid, 0)}">full prediction</a></p>'
         inj = ""
         if fid in fx_by_id:
             _, f = fx_by_id[fid]
             side = "home" if home else "away"
             inj = (f'<h4>Injuries and suspensions</h4><div class="club-inj">{injury_list((f.get("injuries") or {}).get(side))}</div>')
             if str(fid) in LINEUPS:
-                inj += '<p class="halves">Line-ups are confirmed: see the match card in the <a href="../../' + c["lg"] + '/">' + esc(c["ln"]) + ' page</a>.</p>'
+                inj += '<p class="halves">Line-ups are confirmed: see the match card in the <a href="../../' + c["lg"] + '/#m' + str(fx_idx.get(fid, 0)) + '">' + esc(c["ln"]) + ' page</a>.</p>'
         nxt = (f'<section class="block"><h3>Next match</h3><p class="club-next"><b>{tlogo(name, 24)}{esc(name)} {"v" if home else "at"} {tlogo(opp, 24)}{esc(opp)}</b><br>'
                f'{when:%a %d %b} · {when:%H:%M}</p>{pick}{inj}</section>')
     news = TEAM_NEWS.get(name, [])
