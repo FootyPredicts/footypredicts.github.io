@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-20T20:08:01.893431+00:00",
+ "updated": "2026-11-20T20:38:03.569205+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -6300,28 +6300,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.7,
+     "goals_lost_pct": 5.5,
      "defence_hit_pct": 6.0,
      "key_out": [
+      "N. González",
       "P. Kalulu",
       "Z. Çelik"
      ]
     },
     "away": {
-     "goals_lost_pct": 2.9,
+     "goals_lost_pct": 0.2,
      "defence_hit_pct": 0.0,
-     "key_out": [
-      "J. Yeboah"
-     ]
+     "key_out": []
     }
    },
-   "home_pct": 65.3,
-   "draw_pct": 23.4,
-   "away_pct": 11.3,
-   "xg_home": 1.81,
-   "xg_away": 0.62,
-   "over25": 43.9,
-   "btts": 39.5,
+   "home_pct": 62.8,
+   "draw_pct": 24.7,
+   "away_pct": 12.5,
+   "xg_home": 1.72,
+   "xg_away": 0.64,
+   "over25": 42.0,
+   "btts": 39.6,
    "cards5": 26.1,
    "cards": {
     "exp": 3.41,
@@ -7170,21 +7169,6 @@
     "home": {
      "scorers": [
       {
-       "id": 26315,
-       "name": "N. González",
-       "p": 23.0,
-       "gl": 1,
-       "as": 0,
-       "ap": 6,
-       "price": {
-        "odd": 2.88,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.88
-        }
-       }
-      },
-      {
        "id": 395559,
        "name": "Kerim-Sam Alajbegović",
        "p": 20.1,
@@ -7196,6 +7180,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 2.38
+        }
+       }
+      },
+      {
+       "id": 21104,
+       "name": "R. Kolo Muani",
+       "p": 18.7,
+       "gl": 1,
+       "as": 2,
+       "ap": 11,
+       "price": {
+        "odd": 2.2,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.2
         }
        }
       }
@@ -7357,6 +7356,12 @@
    "injuries": {
     "home": [
      {
+      "id": 26315,
+      "name": "N. Gonzalez",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
       "id": 15573,
       "name": "K. Grabara",
       "type": "Missing Fixture",
@@ -7407,34 +7412,28 @@
     ],
     "away": [
      {
-      "id": 212,
-      "name": "A. Adorante",
-      "type": "Missing Fixture",
-      "reason": "Hernia"
-     },
-     {
-      "id": 14704,
-      "name": "B. Franjic",
-      "type": "Missing Fixture",
-      "reason": "Shoulder Injury"
-     },
-     {
       "id": 26095,
       "name": "M. Sverko",
       "type": "Missing Fixture",
       "reason": "Hip Injury"
      },
      {
+      "id": 212,
+      "name": "A. Adorante",
+      "type": "Questionable",
+      "reason": "Hernia"
+     },
+     {
+      "id": 14704,
+      "name": "B. Franjic",
+      "type": "Questionable",
+      "reason": "Shoulder Injury"
+     },
+     {
       "id": 31390,
       "name": "P. Mazzocchi",
       "type": "Questionable",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 25414,
-      "name": "J. Yeboah",
-      "type": "Questionable",
-      "reason": "Injury"
      }
     ]
    },
