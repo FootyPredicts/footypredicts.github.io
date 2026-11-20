@@ -105,13 +105,16 @@ export default {
         // League table for any league. Cached for 10 minutes, so visitors cost almost nothing.
         const now = new Date();
         const cur = now.getUTCMonth() >= 6 ? now.getUTCFullYear() : now.getUTCFullYear() - 1;
+        const dbgS = [];
         for (const season of [cur, cur - 1]) {
           const rs = await fetch(`https://v3.football.api-sports.io/standings?league=${sid}&season=${season}`, {
             headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
             cf: { cacheTtl: 600, cacheEverything: true },
           });
           if (!rs.ok) return json({ ts: Date.now(), groups: [], error: "upstream " + rs.status }, cors, 10);
-          const lg = (((await rs.json()).response || [])[0] || {}).league;
+          const body = await rs.json();
+          dbgS.push({ season, results: body.results, errors: body.errors });
+          const lg = ((body.response || [])[0] || {}).league;
           if (lg && lg.standings && lg.standings.length) {
             const groups = lg.standings.map((g) => ({
               name: (g[0] && g[0].group) || "",
@@ -120,7 +123,7 @@ export default {
             return json({ ts: Date.now(), name: lg.name, season, groups }, cors, 300);
           }
         }
-        return json({ ts: Date.now(), groups: [] }, cors, 60);
+        return json({ ts: Date.now(), groups: [], dbg: dbgS }, cors, 60);
       }
       if (q.get("scope") === "world") {
         // Every match in the world for one day (UK dates), with live matches overlaid. Cached, so visitors cost nothing extra.
