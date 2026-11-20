@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-19T21:38:17.932572+00:00",
+ "updated": "2026-11-20T00:54:56.741336+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -2323,16 +2323,16 @@
    },
    "goals": {
     "home": {
-     "fh": 52.38894782528606,
+     "fh": 52.388947825286046,
      "sh": 61.22398967036751,
-     "any": 81.53833349068621
+     "any": 81.5383334906862
     },
     "away": {
      "fh": 38.70510860050871,
      "sh": 39.66532209344763,
      "any": 63.01792470094586
     },
-    "match_fh": 70.81685727535395,
+    "match_fh": 70.81685727535394,
     "match_sh": 76.60461906260477
    },
    "players": {
@@ -4706,8 +4706,9 @@
    "injury_effect": {
     "home": {
      "goals_lost_pct": 3.0,
-     "defence_hit_pct": 4.0,
+     "defence_hit_pct": 11.0,
      "key_out": [
+      "A. Meret",
       "G. Di Lorenzo",
       "L. Spinazzola"
      ]
@@ -4721,13 +4722,13 @@
      ]
     }
    },
-   "home_pct": 59.4,
-   "draw_pct": 24.1,
-   "away_pct": 16.4,
+   "home_pct": 58.0,
+   "draw_pct": 24.3,
+   "away_pct": 17.8,
    "xg_home": 1.84,
-   "xg_away": 0.87,
-   "over25": 50.7,
-   "btts": 49.6,
+   "xg_away": 0.92,
+   "over25": 52.1,
+   "btts": 51.6,
    "cards5": 26.4,
    "cards": {
     "exp": 3.42,
@@ -5756,6 +5757,12 @@
       "reason": "Ankle Injury"
      },
      {
+      "id": 312,
+      "name": "A. Meret",
+      "type": "Missing Fixture",
+      "reason": "Back Injury"
+     },
+     {
       "id": 552,
       "name": "David Neres",
       "type": "Questionable",
@@ -5798,12 +5805,6 @@
       "name": "N. Fortini",
       "type": "Questionable",
       "reason": "Thigh Injury"
-     },
-     {
-      "id": 1631,
-      "name": "R. Rodriguez",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
      },
      {
       "id": 842,
@@ -7716,8 +7717,8 @@
    "referee": "",
    "ref_cards": null,
    "ref_games": null,
-   "pick": "Home",
-   "model_pick": "Home",
+   "pick": "Away",
+   "model_pick": "Away",
    "call_reason": "",
    "low_data": false,
    "market": {
@@ -7727,23 +7728,28 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 7.2,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "C. Volpato",
+      "D. Berardi",
+      "F. Leysen",
+      "Vasilije Adžić"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 0.5,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 36.6,
-   "draw_pct": 27.6,
-   "away_pct": 35.8,
-   "xg_home": 1.37,
-   "xg_away": 1.35,
-   "over25": 51.3,
-   "btts": 56.4,
+   "home_pct": 33.2,
+   "draw_pct": 27.9,
+   "away_pct": 39.0,
+   "xg_home": 1.28,
+   "xg_away": 1.4,
+   "over25": 50.1,
+   "btts": 55.3,
    "cards5": 36.3,
    "cards": {
     "exp": 3.96,
@@ -8794,42 +8800,54 @@
    "injuries": {
     "home": [
      {
+      "id": 291780,
+      "name": "D. Boloca",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
       "id": 328046,
-      "name": "I. Koné",
+      "name": "I. Kone",
       "type": "Missing Fixture",
       "reason": "Broken Leg"
      },
      {
-      "id": 342055,
-      "name": "E. Pieragnolo",
+      "id": 290546,
+      "name": "F. Leysen",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
-     },
-     {
-      "id": 41371,
-      "name": "Fali Candé",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
-     },
-     {
-      "id": 291780,
-      "name": "D. Boloca",
-      "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Knee Injury"
      },
      {
       "id": 59513,
       "name": "Y. Paz",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 339872,
+      "name": "V. Adzic",
+      "type": "Questionable",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 30537,
+      "name": "D. Berardi",
+      "type": "Questionable",
+      "reason": "Inactive"
+     },
+     {
+      "id": 342035,
+      "name": "C. Volpato",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
      }
     ],
     "away": [
      {
-      "id": 452033,
-      "name": "L. Venturino",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "id": 15881,
+      "name": "M. Frendrup",
+      "type": "Questionable",
+      "reason": "Ankle Injury"
      }
     ]
    },
@@ -10717,9 +10735,12 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 3.8,
+     "defence_hit_pct": 7.5,
+     "key_out": [
+      "M. Maignan",
+      "S. Pavlović"
+     ]
     },
     "away": {
      "goals_lost_pct": 10.0,
@@ -10730,13 +10751,13 @@
      ]
     }
    },
-   "home_pct": 46.4,
-   "draw_pct": 23.6,
-   "away_pct": 30.0,
-   "xg_home": 1.91,
-   "xg_away": 1.51,
-   "over25": 66.5,
-   "btts": 67.2,
+   "home_pct": 42.4,
+   "draw_pct": 23.8,
+   "away_pct": 33.8,
+   "xg_home": 1.84,
+   "xg_away": 1.63,
+   "over25": 67.3,
+   "btts": 68.3,
    "cards5": 36.7,
    "cards": {
     "exp": 3.98,
@@ -11681,15 +11702,6 @@
      ],
      "bookings": [
       {
-       "id": 45826,
-       "name": "S. Pavlović",
-       "p": 23.1,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      },
-      {
        "id": 162141,
        "name": "K. De Winter",
        "p": 21.7,
@@ -11697,12 +11709,21 @@
        "rc": 0,
        "ap": 11,
        "price": null
+      },
+      {
+       "id": 162952,
+       "name": "Mario Gila",
+       "p": 18.5,
+       "yc": 2,
+       "rc": 0,
+       "ap": 9,
+       "price": null
       }
      ],
      "defender": {
-      "id": 45826,
-      "name": "S. Pavlović",
-      "sot": 3
+      "id": 162952,
+      "name": "Mario Gila",
+      "sot": 2
      },
      "cap": [
       {
@@ -11834,7 +11855,56 @@
     }
    },
    "injuries": {
-    "home": [],
+    "home": [
+     {
+      "id": 1696,
+      "name": "S. Chukwueze",
+      "type": "Missing Fixture",
+      "reason": "Hip Injury"
+     },
+     {
+      "id": 56473,
+      "name": "M. Gabbia",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 2292,
+      "name": "R. Loftus-Cheek",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 45826,
+      "name": "S. Pavlovic",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
+      "id": 1417,
+      "name": "A. Saelemaekers",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 30394,
+      "name": "P. Terracciano",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
+      "id": 19209,
+      "name": "F. Tomori",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 22221,
+      "name": "M. Maignan",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     }
+    ],
     "away": [
      {
       "id": 379504,
@@ -12008,23 +12078,26 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 2.4,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 7.0,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "M. Akanji",
+      "M. Thuram"
+     ]
     }
    },
-   "home_pct": 21.8,
-   "draw_pct": 22.7,
-   "away_pct": 55.6,
-   "xg_home": 1.24,
-   "xg_away": 2.06,
-   "over25": 63.9,
-   "btts": 62.6,
+   "home_pct": 23.6,
+   "draw_pct": 23.9,
+   "away_pct": 52.5,
+   "xg_home": 1.23,
+   "xg_away": 1.91,
+   "over25": 60.8,
+   "btts": 61.2,
    "cards5": 27.1,
    "cards": {
     "exp": 3.46,
@@ -12953,27 +13026,21 @@
     "away": {
      "scorers": [
       {
-       "id": 21509,
-       "name": "M. Thuram",
-       "p": 37.1,
-       "gl": 6,
-       "as": 2,
-       "ap": 10,
-       "price": {
-        "odd": 1.91,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 1.91
-        }
-       }
-      },
-      {
        "id": 217,
        "name": "Lautaro Martínez",
        "p": 36.2,
        "gl": 4,
        "as": 0,
        "ap": 5,
+       "price": null
+      },
+      {
+       "id": 345808,
+       "name": "F. Esposito",
+       "p": 22.3,
+       "gl": 3,
+       "as": 1,
+       "ap": 11,
        "price": null
       }
      ],
@@ -13004,14 +13071,6 @@
      },
      "cap": [
       {
-       "id": 21509,
-       "name": "M. Thuram",
-       "pos": "Attacker",
-       "g": 37.1,
-       "a": 17.0,
-       "inv": 47.8
-      },
-      {
        "id": 217,
        "name": "Lautaro Martínez",
        "pos": "Attacker",
@@ -13034,13 +13093,71 @@
        "g": 22.3,
        "a": 9.1,
        "inv": 29.3
+      },
+      {
+       "id": 30558,
+       "name": "N. Barella",
+       "pos": "Midfielder",
+       "g": 14.3,
+       "a": 17.5,
+       "inv": 29.3
       }
      ]
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 325,
+      "name": "G. Gaetano",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 137976,
+      "name": "I. Hien",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 48119,
+      "name": "O. Kossounou",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 281495,
+      "name": "T. Kristensen",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 275651,
+      "name": "A. Bonny",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 342230,
+      "name": "A. Stankovic",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 21509,
+      "name": "M. Thuram",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 5,
+      "name": "M. Akanji",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [

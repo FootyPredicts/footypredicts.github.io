@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-19T21:38:08.018474+00:00",
+ "updated": "2026-11-20T00:54:46.322491+00:00",
  "matches_used": 860,
  "fixtures": [
   {
@@ -7793,23 +7793,27 @@
    "market": null,
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.6,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 2.9,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "B. Thomas"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.4,
+     "goals_lost_pct": 6.1,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "J. Strand Larsen"
+     ]
     }
    },
-   "home_pct": 41.3,
-   "draw_pct": 26.3,
-   "away_pct": 32.4,
-   "xg_home": 1.57,
-   "xg_away": 1.37,
-   "over25": 56.4,
-   "btts": 60.0,
+   "home_pct": 41.5,
+   "draw_pct": 26.7,
+   "away_pct": 31.8,
+   "xg_home": 1.53,
+   "xg_away": 1.32,
+   "over25": 54.3,
+   "btts": 58.4,
    "cards5": 31.3,
    "cards": {
     "exp": 3.68,
@@ -8778,39 +8782,69 @@
       "id": 19984,
       "name": "J. Eccles",
       "type": "Missing Fixture",
-      "reason": "Sprained Ankle"
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 18404,
+      "name": "E. Mason-Clark",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
      },
      {
       "id": 17714,
       "name": "L. Woolfenden",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
      },
      {
       "id": 427,
       "name": "H. Wright",
       "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 264437,
+      "name": "B. Thomas",
+      "type": "Questionable",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 475575,
+      "name": "C. Yirenkyi",
+      "type": "Questionable",
+      "reason": "Injury"
      }
     ],
     "away": [
      {
-      "id": 2218,
-      "name": "I. Sarr",
+      "id": 25927,
+      "name": "J. Mateta",
       "type": "Missing Fixture",
-      "reason": "Groin Injury"
-     },
-     {
-      "id": 2597,
-      "name": "T. Tomiyasu",
-      "type": "Missing Fixture",
-      "reason": "Calf Injury"
+      "reason": "Red Card"
      },
      {
       "id": 278898,
       "name": "C. Riad",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 2032,
+      "name": "J. Larsen",
+      "type": "Questionable",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 2218,
+      "name": "I. Sarr",
+      "type": "Questionable",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 2597,
+      "name": "T. Tomiyasu",
+      "type": "Questionable",
+      "reason": "Calf Injury"
      }
     ]
    },
@@ -11336,7 +11370,7 @@
      "any": 65.35441896699426
     },
     "away": {
-     "fh": 49.01731957886318,
+     "fh": 49.01731957886317,
      "sh": 51.78373068411148,
      "any": 75.4180535036859
     },
