@@ -108,6 +108,13 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.lu { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.lu-t h4 { margin:0 0 6px; font:700 16px Barlow,sans-serif; }
+.lu-t ul { list-style:none; margin:0; padding:0; }
+.lu-p { display:flex; align-items:center; gap:8px; padding:4px 6px; border-radius:6px; font-size:15px; }
+.lu-hot { background:#fff6c9; font-weight:600; }
+.lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:560px) { .lu { grid-template-columns:1fr; } }
 .fm-wide { max-width:640px; }
 .lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
 .lt-btn:hover { border-color:var(--ink); }
@@ -745,6 +752,7 @@ a.chip { text-decoration:none; }
       
       
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>Marseille</td><th></th><td>Levski Sofia</td></tr><tr><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>9</b></span>A. Gouiri <small>35%</small> <small class="rec">8 goals, 3 assists in 14</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>77</b></span>A. Harit <small>19%</small> <small class="rec">3 goals, 1 assist in 12</small></span></td><th>To score</th><td><span class="pl">Reinaldo <small>20%</small> <small class="rec">5 goals, 1 assist in 12</small></span><span class="pl">Everton Bala <small>7%</small> <small class="rec">1 goal, 1 assist in 12</small></span></td></tr><tr><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>22</b></span>T. Weah <small>19%</small> <small class="rec">3 yellow in 13</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>7</b></span>A. Gomes <small>17%</small> <small class="rec">3 yellow in 13</small></span></td><th>To be booked</th><td><span class="pl">N. Serafimov <small>22%</small> <small class="rec">3 yellow in 8</small></span><span class="pl">Aldair <small>19%</small> <small class="rec">3 yellow in 11</small></span></td></tr><tr><td><span><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>22</b></span>T. Weah <small>4 on target</small></span></td><th>Defender shot on target</th><td><span>Maicon <small>2 on target</small></span></td></tr></table>
@@ -801,6 +809,7 @@ a.chip { text-decoration:none; }
       
       
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>Celta Vigo</td><th></th><td>Bournemouth</td></tr><tr><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#8AC3EE;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>11</b></span>Pablo Durán <small>25%</small> <small class="rec">3 goals, 0 assists in 12</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#8AC3EE;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>20</b></span>Javi Rodríguez <small>14%</small> <small class="rec">3 goals, 1 assist in 12</small></span></td><th>To score</th><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#DA291C;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>9</b></span>Evanilson <small>28%</small> <small class="rec">7 goals, 5 assists in 14</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#DA291C;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>16</b></span>M. Tavernier <small>25%</small> <small class="rec">6 goals, 0 assists in 14</small></span></td></tr><tr><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#8AC3EE;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>18</b></span>Yoel Lago <small>24%</small> <small class="rec">4 yellow in 13</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#8AC3EE;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>3</b></span>Marcos Alonso <small>19%</small> <small class="rec">2 yellow 1 red in 13</small></span></td><th>To be booked</th><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#DA291C;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>14</b></span>António Silva <small>24%</small> <small class="rec">4 yellow in 13</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#DA291C;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>15</b></span>A. Smith <small>23%</small> <small class="rec">4 yellow in 13</small></span></td></tr><tr><td><span><span class="shirt" title="Shirt number" style="--c:#8AC3EE;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>20</b></span>Javi Rodríguez <small>5 on target</small></span></td><th>Defender shot on target</th><td><span><span class="shirt" title="Shirt number" style="--c:#DA291C;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>5</b></span>J. Hill <small>2 on target</small></span></td></tr></table>
@@ -854,6 +863,7 @@ a.chip { text-decoration:none; }
         </div>
       </header>
       <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries and referee cards are not included yet.</p>
+      
       
       
       
@@ -917,6 +927,7 @@ a.chip { text-decoration:none; }
         <p class='vm-note'><b>Called a draw:</b> the match is too close to separate.</p>
       </section>
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>Olympiakos Piraeus</td><th></th><td>AC Milan</td></tr><tr><td><span class="pl">A. González <small>18%</small> <small class="rec">1 goal, 0 assists in 4</small></span><span class="pl">R. Yaremchuk <small>16%</small> <small class="rec">1 goal, 0 assists in 4</small></span></td><th>To score</th><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FB090B;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>70</b></span>A. Cissè <small>30%</small> <small class="rec">8 goals, 0 assists in 12</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FB090B;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>22</b></span>Diego Moreira <small>21%</small> <small class="rec">4 goals, 3 assists in 10</small></span></td></tr><tr><td><span class="pl">S. Onyemaechi <small>23%</small> <small class="rec">2 yellow in 6</small></span><span class="pl">S. Hezze <small>17%</small> <small class="rec">1 yellow in 5</small></span></td><th>To be booked</th><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FB090B;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>5</b></span>K. De Winter <small>26%</small> <small class="rec">5 yellow in 15</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FB090B;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>31</b></span>S. Pavlović <small>24%</small> <small class="rec">4 yellow in 13</small></span></td></tr><tr><td><span>P. Retsos <small>1 on target</small></span></td><th>Defender shot on target</th><td><span><span class="shirt" title="Shirt number" style="--c:#FB090B;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>31</b></span>S. Pavlović <small>3 on target</small></span></td></tr></table>
@@ -970,6 +981,7 @@ a.chip { text-decoration:none; }
         </div>
       </header>
       <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries and referee cards are not included yet.</p>
+      
       
       
       
@@ -1029,6 +1041,7 @@ a.chip { text-decoration:none; }
       
       
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>Red Bull Salzburg</td><th></th><td>Ararat-Armenia</td></tr><tr><td><span class="pl">H. Tabaković <small>14%</small> <small class="rec">1 goal, 0 assists in 8</small></span><span class="pl">G. Diakité <small>5%</small> <small class="rec">0 goals, 0 assists in 4</small></span></td><th>To score</th><td><span class="pl">Sandro Lima <small>13%</small> <small class="rec">2 goals, 1 assist in 12</small></span><span class="pl">Bruno Wilson <small>7%</small> <small class="rec">2 goals, 0 assists in 12</small></span></td></tr><tr><td><span class="pl">A. Barry <small>15%</small> <small class="rec">2 yellow in 8</small></span><span class="pl">B. Mazurek <small>14%</small> <small class="rec">2 yellow in 8</small></span></td><th>To be booked</th><td><span class="pl">Bruno Wilson <small>26%</small> <small class="rec">5 yellow in 12</small></span><span class="pl">E. Grigoryan <small>14%</small> <small class="rec">2 yellow in 11</small></span></td></tr><tr><td><span>D. Schmid <small>1 on target</small></span></td><th>Defender shot on target</th><td><span>Bruno Wilson <small>2 on target</small></span></td></tr></table>
@@ -1082,6 +1095,7 @@ a.chip { text-decoration:none; }
         </div>
       </header>
       <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries and referee cards are not included yet.</p>
+      
       
       
       
@@ -1141,6 +1155,7 @@ a.chip { text-decoration:none; }
       
       
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>Union St. Gilloise</td><th></th><td>Lech Poznan</td></tr><tr><td><span class="pl">R. Mofokeng <small>24%</small> <small class="rec">1 goal, 1 assist in 5</small></span><span class="pl">Guilherme Henriques da Silva Carvalho <small>23%</small> <small class="rec">3 goals, 0 assists in 6</small></span></td><th>To score</th><td><span class="pl">M. Ishak <small>15%</small> <small class="rec">1 goal, 0 assists in 7</small></span><span class="pl">P. Wålemark <small>14%</small> <small class="rec">2 goals, 0 assists in 10</small></span></td></tr><tr><td><span class="pl">K. Van de Perre <small>31%</small> <small class="rec">3 yellow in 5</small></span><span class="pl">Guilherme Henriques da Silva Carvalho <small>29%</small> <small class="rec">3 yellow in 6</small></span></td><th>To be booked</th><td><span class="pl">R. Murawski <small>29%</small> <small class="rec">4 yellow 1 red in 9</small></span><span class="pl">M. Skrzypczak <small>17%</small> <small class="rec">2 yellow in 6</small></span></td></tr><tr><td><span>N. Havenaar <small>1 on target</small></span></td><th>Defender shot on target</th><td><span>M. Gurgul <small>5 on target</small></span></td></tr></table>
@@ -1194,6 +1209,7 @@ a.chip { text-decoration:none; }
         </div>
       </header>
       <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries and referee cards are not included yet.</p>
+      
       
       
       
@@ -1253,6 +1269,7 @@ a.chip { text-decoration:none; }
       
       
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>Ferencvarosi TC</td><th></th><td>Celje</td></tr><tr><td><span class="pl">K. Zachariassen <small>14%</small> <small class="rec">3 goals, 4 assists in 12</small></span><span class="pl">B. Yusuf <small>12%</small> <small class="rec">2 goals, 2 assists in 12</small></span></td><th>To score</th><td><span class="pl">B. Kramer <small>17%</small> <small class="rec">1 goal, 0 assists in 4</small></span><span class="pl">S. Sešlar <small>14%</small> <small class="rec">3 goals, 1 assist in 10</small></span></td></tr><tr><td><span class="pl">A. Osváth <small>22%</small> <small class="rec">4 yellow in 10</small></span><span class="pl">B. Yusuf <small>17%</small> <small class="rec">3 yellow 1 red in 12</small></span></td><th>To be booked</th><td><span class="pl">A. Tutyškinas <small>36%</small> <small class="rec">6 yellow in 9</small></span><span class="pl">M. Avdyli <small>25%</small> <small class="rec">4 yellow in 10</small></span></td></tr><tr><td><span>M. Gómez <small>3 on target</small></span></td><th>Defender shot on target</th><td><span>M. Avdyli <small>1 on target</small></span></td></tr></table>
@@ -1306,6 +1323,7 @@ a.chip { text-decoration:none; }
         </div>
       </header>
       <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries and referee cards are not included yet.</p>
+      
       
       
       
@@ -1366,6 +1384,7 @@ a.chip { text-decoration:none; }
       
       
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>Juventus</td><th></th><td>Omonia Nicosia</td></tr><tr><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>27</b></span>N. Woltemade <small>23%</small> <small class="rec">4 goals, 2 assists in 13</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>9</b></span>R. Kolo Muani <small>21%</small> <small class="rec">4 goals, 4 assists in 15</small></span></td><th>To score</th><td><span class="pl">L. Diony <small>25%</small> <small class="rec">5 goals, 0 assists in 9</small></span><span class="pl">J. Montnor <small>13%</small> <small class="rec">1 goal, 1 assist in 9</small></span></td></tr><tr><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>26</b></span>J. Lucumí <small>22%</small> <small class="rec">4 yellow in 14</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>12</b></span>Douglas Luiz <small>17%</small> <small class="rec">3 yellow in 15</small></span></td><th>To be booked</th><td><span class="pl">S. Coulibaly <small>32%</small> <small class="rec">4 yellow in 8</small></span><span class="pl">M. Marić <small>17%</small> <small class="rec">2 yellow in 10</small></span></td></tr><tr><td><span><span class="shirt" title="Shirt number" style="--c:#FFFFFF;--t:#16231b"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>3</b></span>Bremer <small>4 on target</small></span></td><th>Defender shot on target</th><td><span>S. Coulibaly <small>2 on target</small></span></td></tr></table>
@@ -1419,6 +1438,7 @@ a.chip { text-decoration:none; }
         </div>
       </header>
       <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries and referee cards are not included yet.</p>
+      
       
       
       
@@ -1478,6 +1498,7 @@ a.chip { text-decoration:none; }
       
       
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>1899 Hoffenheim</td><th></th><td>Sturm Graz</td></tr><tr><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#1961B5;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>10</b></span>A. Hložek <small>23%</small> <small class="rec">3 goals, 1 assist in 12</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#1961B5;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>22</b></span>A. Prass <small>22%</small> <small class="rec">3 goals, 1 assist in 7</small></span></td><th>To score</th><td><span class="pl">O. Diakité <small>24%</small> <small class="rec">3 goals, 0 assists in 4</small></span><span class="pl">S. Jatta <small>14%</small> <small class="rec">0 goals, 0 assists in 4</small></span></td></tr><tr><td><span class="pl"><span class="shirt" title="Shirt number" style="--c:#1961B5;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>18</b></span>W. Burger <small>29%</small> <small class="rec">5 yellow in 12</small></span><span class="pl"><span class="shirt" title="Shirt number" style="--c:#1961B5;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>5</b></span>O. Kabak <small>28%</small> <small class="rec">5 yellow in 13</small></span></td><th>To be booked</th><td><span class="pl">J. Gorenc Stankovič <small>25%</small> <small class="rec">3 yellow in 8</small></span><span class="pl">A. Vallci <small>19%</small> <small class="rec">2 yellow in 6</small></span></td></tr><tr><td><span><span class="shirt" title="Shirt number" style="--c:#1961B5;--t:#ffffff"><svg viewBox="0 0 32 30" aria-hidden="true"><path d="M11 2 L5 5 L1 11 L6 14 L8 12 L8 28 L24 28 L24 12 L26 14 L31 11 L27 5 L21 2 Q16 6 11 2 Z"/></svg><b>22</b></span>A. Prass <small>8 on target</small></span></td><th>Defender shot on target</th><td><span>J. Heil <small>2 on target</small></span></td></tr></table>
@@ -1531,6 +1552,7 @@ a.chip { text-decoration:none; }
         </div>
       </header>
       <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries and referee cards are not included yet.</p>
+      
       
       
       
@@ -1590,6 +1612,7 @@ a.chip { text-decoration:none; }
       
       
       
+      
       <section class="block">
         <h3>Players to watch</h3>
         <table class="mirror players"><tr class="names"><td>OFI</td><th></th><td>Anderlecht</td></tr><tr><td><span class="pl">T. Fountas <small>15%</small> <small class="rec">2 goals, 0 assists in 6</small></span><span class="pl">K. Kodro <small>14%</small> <small class="rec">0 goals, 1 assist in 4</small></span></td><th>To score</th><td><span class="pl">M. Winkler <small>18%</small> <small class="rec">2 goals, 0 assists in 6</small></span><span class="pl">T. Aasgaard <small>17%</small> <small class="rec">0 goals, 0 assists in 3</small></span></td></tr><tr><td><span class="pl">K. Krizmanić <small>16%</small> <small class="rec">1 yellow in 5</small></span><span class="pl">D. Nikolaou <small>13%</small> <small class="rec">1 yellow in 4</small></span></td><th>To be booked</th><td><span class="pl">M. Stroeykens <small>21%</small> <small class="rec">1 yellow in 3</small></span><span class="pl">T. Aasgaard <small>18%</small> <small class="rec">1 yellow in 3</small></span></td></tr><tr><td><span>A. Poungouras <small>1 on target</small></span></td><th>Defender shot on target</th><td><span>L. Augustinsson <small>1 on target</small></span></td></tr></table>
@@ -1643,6 +1666,7 @@ a.chip { text-decoration:none; }
         </div>
       </header>
       <p class="halves euro-note"><b>European match.</b> Predictions use results only, with league strength adjusted. Injuries and referee cards are not included yet.</p>
+      
       
       
       
@@ -1705,6 +1729,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p>
       </section>
+      
       
       <section class="block">
         <h3>Players to watch</h3>

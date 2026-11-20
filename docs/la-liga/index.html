@@ -108,6 +108,13 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.lu { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.lu-t h4 { margin:0 0 6px; font:700 16px Barlow,sans-serif; }
+.lu-t ul { list-style:none; margin:0; padding:0; }
+.lu-p { display:flex; align-items:center; gap:8px; padding:4px 6px; border-radius:6px; font-size:15px; }
+.lu-hot { background:#fff6c9; font-weight:600; }
+.lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:560px) { .lu { grid-template-columns:1fr; } }
 .fm-wide { max-width:640px; }
 .lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
 .lt-btn:hover { border-color:var(--ink); }
@@ -724,6 +731,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Athletic Club</th><th>Draw</th><th>Espanyol</th></tr><tr><th>Our model</th><td>48%</td><td>30%</td><td>21%</td></tr><tr><th>Bookmakers</th><td>64%</td><td>22%</td><td>14%</td></tr></table><p class='vm-note'><b>Athletic Club:</b> injuries and suspensions counted in the model, scoring cut by about 4%.</p><p class='vm-note'><b>Espanyol:</b> injuries and suspensions counted in the model, scoring cut by about 4%.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -819,6 +827,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Alaves</th><th>Draw</th><th>Deportivo La</th></tr><tr><th>Our model</th><td>41%</td><td>31%</td><td>28%</td></tr><tr><th>Bookmakers</th><td>43%</td><td>29%</td><td>28%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>Deportivo La Coruna:</b> injuries and suspensions counted in the model, scoring cut by about 5%; opponent's goals up about 2% (defence/keeper out) – key absentees: B. Ede, P. Aubameyang.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -913,6 +922,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Rayo Vallecano</th><th>Draw</th><th>Valencia</th></tr><tr><th>Our model</th><td>49%</td><td>29%</td><td>22%</td></tr><tr><th>Bookmakers</th><td>49%</td><td>27%</td><td>23%</td></tr></table><p class='vm-note'><b>Rayo Vallecano:</b> injuries and suspensions counted in the model, scoring cut by about 3% – key absentees: Álvaro García.</p><p class='vm-note'><b>Valencia:</b> injuries and suspensions counted in the model, scoring cut by about 3%; opponent's goals up about 4% (defence/keeper out) – key absentees: José Gayà.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1008,6 +1018,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Sevilla</th><th>Draw</th><th>Real Betis</th></tr><tr><th>Our model</th><td>32%</td><td>27%</td><td>40%</td></tr><tr><th>Bookmakers</th><td>32%</td><td>28%</td><td>40%</td></tr></table><p class='vm-note'><b>Sevilla:</b> injuries and suspensions counted in the model, scoring cut by about 4% – key absentees: Miguel Ángel.</p><p class='vm-note'><b>Real Betis:</b> injuries and suspensions counted in the model, scoring cut by about 3% – key absentees: C. Hernández.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1103,6 +1114,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Real Madrid</th><th>Draw</th><th>Celta Vigo</th></tr><tr><th>Our model</th><td>71%</td><td>19%</td><td>9%</td></tr><tr><th>Bookmakers</th><td>82%</td><td>12%</td><td>6%</td></tr></table><p class='vm-note'><b>Celta Vigo:</b> injuries and suspensions counted in the model, scoring cut by about 4%.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1198,6 +1210,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Barcelona</th><th>Draw</th><th>Villarreal</th></tr><tr><th>Our model</th><td>77%</td><td>14%</td><td>10%</td></tr><tr><th>Bookmakers</th><td>79%</td><td>13%</td><td>8%</td></tr></table><p class='vm-note'><b>Barcelona:</b> injuries and suspensions counted in the model, scoring cut by about 4%; opponent's goals up about 4% (defence/keeper out) – key absentees: X. Espart.</p><p class='vm-note'><b>Villarreal:</b> injuries and suspensions counted in the model, scoring cut by about 5%; opponent's goals up about 4% (defence/keeper out) – key absentees: J. Foyth.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1293,6 +1306,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Racing Santander</th><th>Draw</th><th>Real Sociedad</th></tr><tr><th>Our model</th><td>32%</td><td>21%</td><td>47%</td></tr><tr><th>Bookmakers</th><td>30%</td><td>23%</td><td>47%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>Racing Santander:</b> injuries and suspensions counted in the model, scoring cut by about 4%; opponent's goals up about 4% (defence/keeper out) – key absentees: Andrés Martín, Álvaro Mantilla.</p><p class='vm-note'><b>Real Sociedad:</b> injuries and suspensions counted in the model, scoring cut by about 8%; opponent's goals up about 2% (defence/keeper out) – key absentees: L. Sučić, M. Sarr.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1387,6 +1401,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Osasuna</th><th>Draw</th><th>Malaga</th></tr><tr><th>Our model</th><td>60%</td><td>24%</td><td>16%</td></tr><tr><th>Bookmakers</th><td>52%</td><td>26%</td><td>21%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>Osasuna:</b> injuries and suspensions counted in the model, opponent's goals up about 11% (defence/keeper out) – key absentees: Abel Bretones, Aitor Fernández.</p><p class='vm-note'><b>Malaga:</b> injuries and suspensions counted in the model, scoring cut by about 2%; opponent's goals up about 4% (defence/keeper out) – key absentees: Rafita.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1481,6 +1496,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Getafe</th><th>Draw</th><th>Atletico Madrid</th></tr><tr><th>Our model</th><td>21%</td><td>32%</td><td>47%</td></tr><tr><th>Bookmakers</th><td>16%</td><td>24%</td><td>60%</td></tr></table><p class='vm-note'><b>Getafe:</b> injuries and suspensions counted in the model, scoring cut by about 2%; opponent's goals up about 4% (defence/keeper out) – key absentees: Z. Romero.</p><p class='vm-note'><b>Atletico Madrid:</b> injuries and suspensions counted in the model, scoring cut by about 5%; opponent's goals up about 6% (defence/keeper out) – key absentees: C. Romero, Marc Pubill.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1576,6 +1592,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Levante</th><th>Draw</th><th>Elche</th></tr><tr><th>Our model</th><td>46%</td><td>26%</td><td>28%</td></tr><tr><th>Bookmakers</th><td>44%</td><td>26%</td><td>30%</td></tr></table>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>

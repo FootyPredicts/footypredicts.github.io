@@ -108,6 +108,13 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.lu { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.lu-t h4 { margin:0 0 6px; font:700 16px Barlow,sans-serif; }
+.lu-t ul { list-style:none; margin:0; padding:0; }
+.lu-p { display:flex; align-items:center; gap:8px; padding:4px 6px; border-radius:6px; font-size:15px; }
+.lu-hot { background:#fff6c9; font-weight:600; }
+.lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:560px) { .lu { grid-template-columns:1fr; } }
 .fm-wide { max-width:640px; }
 .lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
 .lt-btn:hover { border-color:var(--ink); }
@@ -724,6 +731,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Bayern München</th><th>Draw</th><th>1. FC Köln</th></tr><tr><th>Our model</th><td>88%</td><td>8%</td><td>4%</td></tr><tr><th>Bookmakers</th><td>89%</td><td>7%</td><td>4%</td></tr></table><p class='vm-note'><b>Bayern München:</b> injuries and suspensions counted in the model, scoring cut by about 10%; opponent's goals up about 11% (defence/keeper out) – key absentees: A. Davies, L. Díaz, M. Neuer.</p><p class='vm-note'><b>1. FC Köln:</b> injuries and suspensions counted in the model, scoring cut by about 1%.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -819,6 +827,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Borussia Mönchengladbach</th><th>Draw</th><th>Borussia Dortmund</th></tr><tr><th>Our model</th><td>16%</td><td>22%</td><td>62%</td></tr><tr><th>Bookmakers</th><td>19%</td><td>22%</td><td>60%</td></tr></table><p class='vm-note'><b>Borussia Mönchengladbach:</b> injuries and suspensions counted in the model, scoring cut by about 4%; opponent's goals up about 10% (defence/keeper out) – key absentees: D. Hashioka, H. Bolin, K. Itakura, L. Ullrich.</p><p class='vm-note'><b>Borussia Dortmund:</b> injuries and suspensions counted in the model, scoring cut by about 4%; opponent's goals up about 2% (defence/keeper out) – key absentees: S. Guirassy, W. Anton.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -914,6 +923,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Bayer Leverkusen</th><th>Draw</th><th>SC Paderborn 07</th></tr><tr><th>Our model</th><td>57%</td><td>27%</td><td>16%</td></tr><tr><th>Bookmakers</th><td>74%</td><td>15%</td><td>11%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>Bayer Leverkusen:</b> injuries and suspensions counted in the model, scoring cut by about 6% – key absentees: Christian Kofane, I. Maza, M. Diaby.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1008,6 +1018,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Eintracht Frankfurt</th><th>Draw</th><th>1899 Hoffenheim</th></tr><tr><th>Our model</th><td>46%</td><td>22%</td><td>32%</td></tr><tr><th>Bookmakers</th><td>41%</td><td>24%</td><td>35%</td></tr></table><p class='vm-note'><b>Eintracht Frankfurt:</b> injuries and suspensions counted in the model, scoring cut by about 3%; opponent's goals up about 4% (defence/keeper out) – key absentees: C. Uzun, Elias Baum.</p><p class='vm-note'><b>1899 Hoffenheim:</b> injuries and suspensions counted in the model, scoring cut by about 5% – key absentees: A. Prass, B. Conté.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1103,6 +1114,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Union Berlin</th><th>Draw</th><th>RB Leipzig</th></tr><tr><th>Our model</th><td>18%</td><td>22%</td><td>59%</td></tr><tr><th>Bookmakers</th><td>17%</td><td>20%</td><td>62%</td></tr></table><p class='vm-note'><b>Union Berlin:</b> injuries and suspensions counted in the model, scoring cut by about 3%; opponent's goals up about 4% (defence/keeper out) – key absentees: F. Uduokhai, Livan Burcu.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1198,6 +1210,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>SV Elversberg</th><th>Draw</th><th>SC Freiburg</th></tr><tr><th>Our model</th><td>44%</td><td>22%</td><td>33%</td></tr><tr><th>Bookmakers</th><td>27%</td><td>25%</td><td>48%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>SV Elversberg:</b> injuries and suspensions counted in the model, opponent's goals up about 4% (defence/keeper out) – key absentees: L. Pinckert.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1292,6 +1305,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>FC Schalke 04</th><th>Draw</th><th>VfB Stuttgart</th></tr><tr><th>Our model</th><td>18%</td><td>31%</td><td>50%</td></tr><tr><th>Bookmakers</th><td>24%</td><td>23%</td><td>53%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>FC Schalke 04:</b> injuries and suspensions counted in the model, scoring cut by about 2%; opponent's goals up about 6% (defence/keeper out) – key absentees: R. Gosens, T. Becker.</p><p class='vm-note'><b>VfB Stuttgart:</b> injuries and suspensions counted in the model, scoring cut by about 1%.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1386,6 +1400,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>FC Augsburg</th><th>Draw</th><th>FSV Mainz 05</th></tr><tr><th>Our model</th><td>39%</td><td>24%</td><td>36%</td></tr><tr><th>Bookmakers</th><td>35%</td><td>24%</td><td>40%</td></tr></table><p class='vm-note'><b>FC Augsburg:</b> injuries and suspensions counted in the model, scoring cut by about 3%; opponent's goals up about 8% (defence/keeper out) – key absentees: C. Brackelmann, C. Matsima.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1481,6 +1496,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Werder Bremen</th><th>Draw</th><th>Hamburger SV</th></tr><tr><th>Our model</th><td>52%</td><td>26%</td><td>22%</td></tr><tr><th>Bookmakers</th><td>57%</td><td>23%</td><td>21%</td></tr></table><p class='vm-note'><b>Werder Bremen:</b> injuries and suspensions counted in the model, scoring cut by about 5% – key absentees: M. Grüll.</p><p class='vm-note'><b>Hamburger SV:</b> injuries and suspensions counted in the model, scoring cut by about 8%; opponent's goals up about 2% (defence/keeper out) – key absentees: J. Torunarigha, Y. Poulsen.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1576,6 +1592,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Werder Bremen</th><th>Draw</th><th>Borussia Mönchengladbach</th></tr><tr><th>Our model</th><td>51%</td><td>25%</td><td>24%</td></tr><tr><th>Bookmakers</th><td>54%</td><td>23%</td><td>24%</td></tr></table>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>

@@ -108,6 +108,13 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.lu { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.lu-t h4 { margin:0 0 6px; font:700 16px Barlow,sans-serif; }
+.lu-t ul { list-style:none; margin:0; padding:0; }
+.lu-p { display:flex; align-items:center; gap:8px; padding:4px 6px; border-radius:6px; font-size:15px; }
+.lu-hot { background:#fff6c9; font-weight:600; }
+.lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:560px) { .lu { grid-template-columns:1fr; } }
 .fm-wide { max-width:640px; }
 .lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
 .lt-btn:hover { border-color:var(--ink); }
@@ -724,6 +731,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Man City</th><th>Draw</th><th>Fulham</th></tr><tr><th>Our model</th><td>61%</td><td>24%</td><td>15%</td></tr><tr><th>Bookmakers</th><td>68%</td><td>18%</td><td>13%</td></tr></table><p class='vm-note'><b>Manchester City:</b> injuries and suspensions counted in the model, scoring cut by about 4%; opponent's goals up about 2% (defence/keeper out) – key absentees: A. Khusanov.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -819,6 +827,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Bournemouth</th><th>Draw</th><th>Nottingham Forest</th></tr><tr><th>Our model</th><td>48%</td><td>27%</td><td>25%</td></tr><tr><th>Bookmakers</th><td>49%</td><td>26%</td><td>24%</td></tr></table><p class='vm-note'><b>Nottingham Forest:</b> injuries and suspensions counted in the model, scoring cut by about 2%.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -914,6 +923,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Tottenham</th><th>Draw</th><th>Ipswich</th></tr><tr><th>Our model</th><td>53%</td><td>24%</td><td>24%</td></tr><tr><th>Bookmakers</th><td>62%</td><td>22%</td><td>17%</td></tr></table><p class='vm-note'><b>Tottenham:</b> injuries and suspensions counted in the model, scoring cut by about 4%.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1009,6 +1019,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Chelsea</th><th>Draw</th><th>Leeds</th></tr><tr><th>Our model</th><td>43%</td><td>28%</td><td>29%</td></tr><tr><th>Bookmakers</th><td>50%</td><td>26%</td><td>24%</td></tr></table><p class='vm-note'><b>Chelsea:</b> injuries and suspensions counted in the model, scoring cut by about 7%; opponent's goals up about 2% (defence/keeper out) – key absentees: João Pedro, M. Lacroix.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1104,6 +1115,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Aston Villa</th><th>Draw</th><th>Sunderland</th></tr><tr><th>Our model</th><td>56%</td><td>25%</td><td>18%</td></tr><tr><th>Bookmakers</th><td>54%</td><td>25%</td><td>21%</td></tr></table><p class='vm-note'><b>Aston Villa:</b> injuries and suspensions counted in the model, scoring cut by about 3%; opponent's goals up about 4% (defence/keeper out) – key absentees: J. Manzambi, M. Cash.</p><p class='vm-note'><b>Sunderland:</b> injuries and suspensions counted in the model, scoring cut by about 11%; opponent's goals up about 4% (defence/keeper out) – key absentees: B. Brobbey, D. Ballard.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1199,6 +1211,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Coventry</th><th>Draw</th><th>Crystal Palace</th></tr><tr><th>Our model</th><td>42%</td><td>27%</td><td>32%</td></tr><tr><th>Bookmakers</th><td>39%</td><td>27%</td><td>34%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>Coventry:</b> injuries and suspensions counted in the model, scoring cut by about 3%; opponent's goals up about 2% (defence/keeper out) – key absentees: B. Thomas.</p><p class='vm-note'><b>Crystal Palace:</b> injuries and suspensions counted in the model, scoring cut by about 6% – key absentees: J. Strand Larsen.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1293,6 +1306,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Newcastle</th><th>Draw</th><th>Arsenal</th></tr><tr><th>Our model</th><td>19%</td><td>28%</td><td>53%</td></tr><tr><th>Bookmakers</th><td>17%</td><td>23%</td><td>60%</td></tr></table><p class='vm-note'><b>Newcastle:</b> injuries and suspensions counted in the model, scoring cut by about 1%.</p><p class='vm-note'><b>Arsenal:</b> injuries and suspensions counted in the model, scoring cut by about 7% – key absentees: B. Saka.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1388,6 +1402,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Hull City</th><th>Draw</th><th>Brighton</th></tr><tr><th>Our model</th><td>26%</td><td>30%</td><td>43%</td></tr><tr><th>Bookmakers</th><td>15%</td><td>22%</td><td>63%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>Brighton:</b> injuries and suspensions counted in the model, scoring cut by about 1%.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1482,6 +1497,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Liverpool</th><th>Draw</th><th>Man United</th></tr><tr><th>Our model</th><td>57%</td><td>22%</td><td>20%</td></tr><tr><th>Bookmakers</th><td>55%</td><td>23%</td><td>22%</td></tr></table><p class='vm-note'><b>Manchester United:</b> injuries and suspensions counted in the model, scoring cut by about 6%; opponent's goals up about 4% (defence/keeper out) – key absentees: H. Maguire, L. Shaw.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1577,6 +1593,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Brentford</th><th>Draw</th><th>Everton</th></tr><tr><th>Our model</th><td>47%</td><td>28%</td><td>25%</td></tr><tr><th>Bookmakers</th><td>44%</td><td>27%</td><td>29%</td></tr></table>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>

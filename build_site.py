@@ -107,8 +107,26 @@ def news_block(f):
       </section>"""
 
 
+LINEUPS = {}       # fixture id (str) -> {home: {formation, xi, subs}, away: {...}}
+PLAYER_NAMES = {}  # player id (str) -> name
+
+
 def load_squads():
     SQUADS.clear()
+    LINEUPS.clear()
+    PLAYER_NAMES.clear()
+    for lg in LEAGUE_ORDER:
+        for fn, tgt in (("lineups.json", None), ("players_2026.json", None)):
+            try:
+                with open(os.path.join("data", lg, fn), encoding="utf-8") as fh:
+                    obj = json.load(fh)
+            except (FileNotFoundError, ValueError):
+                continue
+            if fn == "lineups.json":
+                LINEUPS.update(obj)
+            else:
+                for p in obj:
+                    PLAYER_NAMES[str(p["id"])] = p["name"]
     for lg in LEAGUE_ORDER:
         try:
             with open(os.path.join("data", lg, "squads.json"), encoding="utf-8") as fh:
@@ -601,6 +619,35 @@ def league_table_data(slug, api_id, raw=False):
     return '<script type="application/json" id="lt-data">' + json.dumps(data).replace("</", "<\\/") + "</script>"
 
 
+def lineup_section(f):
+    """Starting XI for both teams, shown once the line-ups are confirmed."""
+    lu = LINEUPS.get(str(f["id"]))
+    home, away = f["home"], f["away"]
+    if not lu or not lu.get("home") or not lu.get("away") or not lu["home"].get("xi"):
+        return (f'<section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>')
+    picked = set()
+    for side in ("home", "away"):
+        for k in ("scorers", "bookings"):
+            for p in (f["players"][side].get(k) or []):
+                picked.add(str(p.get("id")))
+    order = {"G": 0, "D": 1, "M": 2, "F": 3}
+    def col(side, team):
+        t = lu[side]
+        rows = []
+        for p in sorted(t["xi"], key=lambda q: order.get(q.get("pos"), 9)):
+            n = shirt(p["id"])
+            tag = shirt_html(n, team) if n is not None else ""
+            hot = " lu-hot" if str(p["id"]) in picked else ""
+            rows.append(f'<li class="lu-p{hot}">{tag}<span>{esc(p["name"])}</span></li>')
+        subs = [PLAYER_NAMES.get(str(i)) for i in (t.get("subs") or [])]
+        subs = [x for x in subs if x]
+        sub_html = f'<p class="lu-subs"><b>Subs:</b> {esc(", ".join(subs))}</p>' if subs else ""
+        form = f' <span class="sub">{esc(t["formation"])}</span>' if t.get("formation") else ""
+        return f'<div class="lu-t"><h4>{esc(team)}{form}</h4><ul>{"".join(rows)}</ul>{sub_html}</div>'
+    return (f'<section class="block"><h3>Confirmed line-ups <span class="sub">starting players, highlighted = one of our picks</span></h3>'
+            f'<div class="lu">{col("home", home)}{col("away", away)}</div></section>')
+
+
 def render_match(f, i):
     day, time_, _ = kickoff(f)
     home, away = f["home"], f["away"]
@@ -752,6 +799,7 @@ def render_match(f, i):
       {euro_note}
       {news_block(f)}
       {view_block(f)}
+      {lineup_section(f) if not euro else ""}
       {players_sec}
       {bookie_table(f)}
       {inj_sec}
@@ -1373,6 +1421,13 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.lu { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.lu-t h4 { margin:0 0 6px; font:700 16px Barlow,sans-serif; }
+.lu-t ul { list-style:none; margin:0; padding:0; }
+.lu-p { display:flex; align-items:center; gap:8px; padding:4px 6px; border-radius:6px; font-size:15px; }
+.lu-hot { background:#fff6c9; font-weight:600; }
+.lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:560px) { .lu { grid-template-columns:1fr; } }
 .fm-wide { max-width:640px; }
 .lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
 .lt-btn:hover { border-color:var(--ink); }

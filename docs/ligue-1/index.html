@@ -108,6 +108,13 @@ td:last-child button.fchip:hover:after, td:last-child button.fchip:focus-visible
 button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-tip); position:absolute; bottom:calc(100% + 6px); left:0; background:var(--ink); color:#fff; font:600 12px Barlow,sans-serif; padding:5px 8px; border-radius:6px; white-space:nowrap; z-index:5; pointer-events:none; }
 .fm-ov { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
 .fm-box { background:var(--paper,#fff); border-radius:16px; max-width:560px; width:100%; max-height:85vh; overflow:auto; padding:18px 18px 12px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.lu { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.lu-t h4 { margin:0 0 6px; font:700 16px Barlow,sans-serif; }
+.lu-t ul { list-style:none; margin:0; padding:0; }
+.lu-p { display:flex; align-items:center; gap:8px; padding:4px 6px; border-radius:6px; font-size:15px; }
+.lu-hot { background:#fff6c9; font-weight:600; }
+.lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:560px) { .lu { grid-template-columns:1fr; } }
 .fm-wide { max-width:640px; }
 .lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
 .lt-btn:hover { border-color:var(--ink); }
@@ -724,6 +731,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Estac Troyes</th><th>Draw</th><th>Le Havre</th></tr><tr><th>Our model</th><td>34%</td><td>33%</td><td>33%</td></tr><tr><th>Bookmakers</th><td>44%</td><td>27%</td><td>29%</td></tr></table><p class='vm-note'><b>Called a draw:</b> the match is too close to separate (too close to call, low data).</p><p class='vm-note'><b>Estac Troyes:</b> injuries and suspensions counted in the model, scoring cut by about 2%; opponent's goals up about 4% (defence/keeper out) – key absentees: M. Diaz.</p><p class='vm-note'><b>Le Havre:</b> injuries and suspensions counted in the model, scoring cut by about 6%.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -818,6 +826,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Nice</th><th>Draw</th><th>Paris Saint</th></tr><tr><th>Our model</th><td>19%</td><td>24%</td><td>58%</td></tr><tr><th>Bookmakers</th><td>16%</td><td>19%</td><td>65%</td></tr></table><p class='vm-note'><b>Nice:</b> injuries and suspensions counted in the model, opponent's goals up about 4% (defence/keeper out) – key absentees: Mohamed Abdelmonem.</p><p class='vm-note'><b>Paris Saint Germain:</b> injuries and suspensions counted in the model, scoring cut by about 7%; opponent's goals up about 2% (defence/keeper out) – key absentees: Marquinhos.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -913,6 +922,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Lille</th><th>Draw</th><th>Lyon</th></tr><tr><th>Our model</th><td>42%</td><td>32%</td><td>26%</td></tr><tr><th>Bookmakers</th><td>42%</td><td>29%</td><td>29%</td></tr></table><p class='vm-note'><b>Lille:</b> injuries and suspensions counted in the model, scoring cut by about 7%; opponent's goals up about 4% (defence/keeper out) – key absentees: A. Ueda, Tiago Santos.</p><p class='vm-note'><b>Lyon:</b> injuries and suspensions counted in the model, scoring cut by about 9% – key absentees: L. Openda.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1008,6 +1018,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Monaco</th><th>Draw</th><th>Auxerre</th></tr><tr><th>Our model</th><td>60%</td><td>23%</td><td>17%</td></tr><tr><th>Bookmakers</th><td>67%</td><td>19%</td><td>14%</td></tr></table><p class='vm-note'><b>Monaco:</b> injuries and suspensions counted in the model, scoring cut by about 7% – key absentees: S. Idumbo-Muzambo.</p><p class='vm-note'><b>Auxerre:</b> injuries and suspensions counted in the model, scoring cut by about 4%; opponent's goals up about 2% (defence/keeper out) – key absentees: C. Makosso, D. Namaso.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1103,6 +1114,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Strasbourg</th><th>Draw</th><th>Stade Brestois</th></tr><tr><th>Our model</th><td>51%</td><td>22%</td><td>27%</td></tr><tr><th>Bookmakers</th><td>43%</td><td>25%</td><td>32%</td></tr></table><p class='vm-note'><b>Strasbourg:</b> injuries and suspensions counted in the model, scoring cut by about 2%; opponent's goals up about 4% (defence/keeper out) – key absentees: F. Jörgensen, G. Reyna.</p><p class='vm-note'><b>Stade Brestois 29:</b> injuries and suspensions counted in the model, opponent's goals up about 4% (defence/keeper out) – key absentees: R. Le Guen.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1198,6 +1210,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Lens</th><th>Draw</th><th>Toulouse</th></tr><tr><th>Our model</th><td>53%</td><td>25%</td><td>22%</td></tr><tr><th>Bookmakers</th><td>51%</td><td>24%</td><td>25%</td></tr></table><p class='vm-note'><b>Lens:</b> injuries and suspensions counted in the model, scoring cut by about 5% – key absentees: A. Sima.</p><p class='vm-note'><b>Toulouse:</b> injuries and suspensions counted in the model, scoring cut by about 3% – key absentees: T. Jørgensen.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1293,6 +1306,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Paris FC</th><th>Draw</th><th>Angers</th></tr><tr><th>Our model</th><td>68%</td><td>21%</td><td>10%</td></tr><tr><th>Bookmakers</th><td>72%</td><td>18%</td><td>10%</td></tr></table><p class='vm-note'><b>Paris FC:</b> injuries and suspensions counted in the model, scoring cut by about 3%; opponent's goals up about 8% (defence/keeper out) – key absentees: A. Camara, S. Chergui.</p><p class='vm-note'><b>Angers:</b> injuries and suspensions counted in the model, scoring cut by about 9%; opponent's goals up about 6% (defence/keeper out) – key absentees: A. El Ouazzani, J. Lefort, O. Camara.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1388,6 +1402,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Lorient</th><th>Draw</th><th>Rennes</th></tr><tr><th>Our model</th><td>43%</td><td>27%</td><td>30%</td></tr><tr><th>Bookmakers</th><td>33%</td><td>27%</td><td>39%</td></tr></table><p class='vm-note'><b>Lorient:</b> injuries and suspensions counted in the model, scoring cut by about 3%; opponent's goals up about 4% (defence/keeper out) – key absentees: S. Touré.</p><p class='vm-note'><b>Rennes:</b> injuries and suspensions counted in the model, scoring cut by about 12%; opponent's goals up about 2% (defence/keeper out) – key absentees: E. Lepaul, P. Frankowski.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1483,6 +1498,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Marseille</th><th>Draw</th><th>Le Mans</th></tr><tr><th>Our model</th><td>73%</td><td>16%</td><td>11%</td></tr><tr><th>Bookmakers</th><td>65%</td><td>20%</td><td>15%</td></tr></table><p class='vm-note'><b>Low data:</b> one of these teams has fewer than 15 matches of recent league history, so its rating is a rough guess.</p><p class='vm-note'><b>Marseille:</b> injuries and suspensions counted in the model, opponent's goals up about 4% (defence/keeper out) – key absentees: Emerson.</p><p class='vm-note'><b>Le Mans:</b> injuries and suspensions counted in the model, scoring cut by about 7%; opponent's goals up about 2% (defence/keeper out) – key absentees: A. Bourabaa, S. Yohou.</p>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
@@ -1577,6 +1593,7 @@ a.chip { text-decoration:none; }
         <h3>Model v bookmakers <span class="sub">where we agree and disagree</span></h3>
         <table class="bk vm"><tr><th></th><th>Stade Brestois</th><th>Draw</th><th>Paris FC</th></tr><tr><th>Our model</th><td>35%</td><td>27%</td><td>38%</td></tr><tr><th>Bookmakers</th><td>31%</td><td>28%</td><td>42%</td></tr></table>
       </section>
+      <section class="block"><h3>Line-ups</h3><p class="halves">Confirmed line-ups appear here about an hour before kick-off.</p></section>
       
       <section class="block">
         <h3>Players to watch</h3>
