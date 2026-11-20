@@ -65,8 +65,129 @@ async function dispatch(env, file) {
   return r.status;
 }
 
+
+// ---------------------------------------------------------------- Alerts (web push)
+// Needs: a KV namespace bound as ALERTS, and the secret VAPID_PRIVATE_JWK.
+// Pushes carry no text: the browser wakes our service worker, which asks ?push=msg for what is new for that person.
+const SITE = "https://footypredicts.com";
+const VAPID_PUBLIC = "BB5-VWMp0PQzam8Qnnok8QdP07wLgs1iGtacsKSumJbR-DOe6E_WqWPRSUePJU2QG5GWbtRVuTZ_7Q6ryMlBSTE";
+
+const b64u = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+async function sha(s) {
+  const h = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+  return [...new Uint8Array(h)].map((b) => b.toString(16).padStart(2, "0")).join("").slice(0, 32);
+}
+async function vapidAuth(env, endpoint) {
+  const key = await crypto.subtle.importKey("jwk", JSON.parse(env.VAPID_PRIVATE_JWK), { name: "ECDSA", namedCurve: "P-256" }, false, ["sign"]);
+  const enc = (o) => b64u(new TextEncoder().encode(JSON.stringify(o)));
+  const input = enc({ typ: "JWT", alg: "ES256" }) + "." + enc({ aud: new URL(endpoint).origin, exp: Math.floor(Date.now() / 1000) + 12 * 3600, sub: SITE });
+  const sig = await crypto.subtle.sign({ name: "ECDSA", hash: "SHA-256" }, key, new TextEncoder().encode(input));
+  return `vapid t=${input}.${b64u(sig)}, k=${VAPID_PUBLIC}`;
+}
+async function sendPush(env, endpoint) {
+  try {
+    const r = await fetch(endpoint, { method: "POST", headers: { Authorization: await vapidAuth(env, endpoint), TTL: "3600", Urgency: "normal", "Content-Length": "0" } });
+    return r.status;
+  } catch (e) { return 0; }
+}
+const kvj = async (env, k, d) => (await env.ALERTS.get(k, "json")) || d;
+
+async function pushApi(request, env, cors, q) {
+  const mode = q.get("push");
+  if (mode === "msg") {
+    const id = (q.get("id") || "").slice(0, 40), since = Number(q.get("since")) || 0;
+    const subs = await kvj(env, "subs", {});
+    const me = subs[id];
+    if (!me) return json({ ts: Date.now(), messages: [] }, cors, 0);
+    const st = await kvj(env, "state", { events: [] });
+    const msgs = st.events.filter((e) => e.ts > since && ((e.clubs || []).some((c) => me.c.includes(c)) || (e.news && e.lg && me.l.includes(e.lg))));
+    return json({ ts: Date.now(), messages: msgs.slice(-5).map((e) => ({ id: e.id, title: e.title, body: e.body, url: e.url })) }, cors, 0);
+  }
+  if (request.method !== "POST") return new Response("Method not allowed", { status: 405, headers: cors });
+  const text = await request.text();
+  if (text.length > 6000) return json({ ok: false, error: "too big" }, cors, 0);
+  let b; try { b = JSON.parse(text); } catch (e) { return json({ ok: false, error: "bad json" }, cors, 0); }
+  const ep = b && b.endpoint;
+  if (typeof ep !== "string" || !ep.startsWith("https://") || ep.length > 1000) return json({ ok: false, error: "bad endpoint" }, cors, 0);
+  const id = await sha(ep);
+  const subs = await kvj(env, "subs", {});
+  if (mode === "unsub") { delete subs[id]; await env.ALERTS.put("subs", JSON.stringify(subs)); return json({ ok: true }, cors, 0); }
+  const ok = (a, n) => (Array.isArray(a) ? a : []).filter((x) => typeof x === "string" && /^[a-z0-9-]{1,60}$/.test(x)).slice(0, n);
+  if (!subs[id] && Object.keys(subs).length >= 20000) return json({ ok: false, error: "full" }, cors, 0);
+  subs[id] = { e: ep, c: ok(b.clubs, 60), l: ok(b.leagues, 20), t: Date.now() };
+  await env.ALERTS.put("subs", JSON.stringify(subs));
+  return json({ ok: true, id }, cors, 0);
+}
+
+async function siteJson(path) {
+  try { const r = await fetch(SITE + path, { cf: { cacheTtl: 120, cacheEverything: true } }); return r.ok ? await r.json() : null; } catch (e) { return null; }
+}
+
+async function alerts(env) {
+  if (!env.ALERTS || !env.VAPID_PRIVATE_JWK) return;
+  const subs = await kvj(env, "subs", {});
+  const list = Object.entries(subs);
+  if (!list.length) return;
+  const wantClub = new Set(), wantLeague = new Set();
+  list.forEach(([, s]) => { s.c.forEach((c) => wantClub.add(c)); s.l.forEach((l) => wantLeague.add(l)); });
+  const st = await kvj(env, "state", { events: [], sent: {}, nc: {} });
+  st.events = st.events || []; st.sent = st.sent || {}; st.nc = st.nc || {};
+  const now = Date.now(), fresh = [];
+
+  // 1. line-ups: a match kicking off within ~95 minutes whose clubs someone follows
+  const nx = await siteJson("/api/next.json");
+  for (const f of ((nx && nx.fx) || [])) {
+    const ko = Date.parse(f.ko), mins = (ko - now) / 60000;
+    if (mins > 95 || mins < -10 || st.sent["lu" + f.id]) continue;
+    if (!(wantClub.has(f.hs) || wantClub.has(f.as))) continue;
+    const r = await fetch(`https://v3.football.api-sports.io/fixtures/lineups?fixture=${f.id}`, { headers: { "x-apisports-key": env.API_FOOTBALL_KEY }, cf: { cacheTtl: 120, cacheEverything: true } });
+    const j = r.ok ? await r.json() : null;
+    if (j && (j.response || []).length >= 2) {
+      st.sent["lu" + f.id] = now;
+      fresh.push({ id: "lu" + f.id, ts: now, clubs: [f.hs, f.as], title: "Line-ups are in", body: `${f.h} v ${f.a}`, url: f.u || SITE + "/" });
+    }
+  }
+
+  // 2. news: newest headline per club, max 3 a day per club, none overnight (UK)
+  const hour = Number(new Date().toLocaleString("en-GB", { hour: "2-digit", hour12: false, timeZone: "Europe/London" }));
+  const nw = await siteJson("/api/news.json");
+  if (nw && nw.clubs && hour >= 7 && hour < 22) {
+    const day = new Date().toISOString().slice(0, 10);
+    for (const [slug, c] of Object.entries(nw.clubs)) {
+      if (!(wantClub.has(slug) || wantLeague.has(c.lg))) continue;
+      for (const it of c.i || []) {
+        const when = Date.parse((it.d || "").replace(" ", "T") + ":00Z");
+        if (!when || now - when > 12 * 3600e3) continue;
+        const key = "nw" + (await sha(it.u)).slice(0, 12);
+        if (st.sent[key]) continue;
+        const nk = slug + day;
+        if ((st.nc[nk] || 0) >= 3) break;
+        st.sent[key] = now; st.nc[nk] = (st.nc[nk] || 0) + 1;
+        fresh.push({ id: key, ts: now, clubs: [slug], lg: c.lg, news: 1, title: c.n + " news", body: it.t, url: SITE + "/club/" + slug + "/" });
+        break;
+      }
+    }
+  }
+  if (!fresh.length) return;
+  st.events = st.events.concat(fresh).filter((e) => now - e.ts < 2 * 86400e3).slice(-200);
+  for (const k of Object.keys(st.sent)) if (now - st.sent[k] > 3 * 86400e3) delete st.sent[k];
+  for (const k of Object.keys(st.nc)) if (!k.endsWith(new Date().toISOString().slice(0, 10))) delete st.nc[k];
+  await env.ALERTS.put("state", JSON.stringify(st));
+
+  // wake the browsers of everyone affected
+  let sent = 0, dropped = false;
+  for (const [id, s] of list) {
+    if (sent >= 300) break;
+    if (!fresh.some((e) => e.clubs.some((c) => s.c.includes(c)) || (e.news && s.l.includes(e.lg)))) continue;
+    const code = await sendPush(env, s.e); sent++;
+    if (code === 404 || code === 410) { delete subs[id]; dropped = true; }
+  }
+  if (dropped) await env.ALERTS.put("subs", JSON.stringify(subs));
+}
+
 export default {
   async scheduled(event, env, ctx) {
+    ctx.waitUntil(alerts(env).catch((e) => console.log("alerts failed", String(e))));
     if (!env.GITHUB_TOKEN) { console.log("GITHUB_TOKEN not set"); return; }
     ctx.waitUntil(Promise.all((JOBS[event.cron] || []).map((f) => dispatch(env, f))));
   },
@@ -77,7 +198,11 @@ export default {
       "Vary": "Origin",
     };
     if (request.method === "OPTIONS") {
-      return new Response(null, { headers: { ...cors, "Access-Control-Allow-Methods": "GET", "Access-Control-Max-Age": "86400" } });
+      return new Response(null, { headers: { ...cors, "Access-Control-Allow-Methods": "GET, POST", "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Max-Age": "86400" } });
+    }
+    if (new URL(request.url).searchParams.get("push")) {
+      if (!env.ALERTS) return json({ ok: false, error: "alerts not set up" }, cors, 0);
+      return pushApi(request, env, cors, new URL(request.url).searchParams);
     }
     if (request.method !== "GET") return new Response("Method not allowed", { status: 405, headers: cors });
     if (!env.API_FOOTBALL_KEY) return json({ ts: Date.now(), matches: [], error: "not configured" }, cors, 10);

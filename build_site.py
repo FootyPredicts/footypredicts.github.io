@@ -501,6 +501,91 @@ _PM_LABELS = [("pos", "Possession", "%"), ("xg", "Expected goals", ""), ("sh", "
               ("pp", "Pass accuracy", "%"), ("yc", "Yellow cards", ""), ("rc", "Red cards", "")]
 
 
+VAPID_PUBLIC = "BB5-VWMp0PQzam8Qnnok8QdP07wLgs1iGtacsKSumJbR-DOe6E_WqWPRSUePJU2QG5GWbtRVuTZ_7Q6ryMlBSTE"
+
+SW_JS = r"""// FootyPredicts alerts: wakes up on a push, asks the relay what is new for this browser, shows it.
+const RELAY = new URL(self.location.href).searchParams.get('r') || '';
+async function sha(s) {
+  const h = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return Array.from(new Uint8Array(h)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('').slice(0, 32);
+}
+async function getSince() { try { const c = await caches.open('fp-push'); const r = await c.match('since'); return r ? Number(await r.text()) || 0 : 0; } catch (e) { return 0; } }
+async function setSince(t) { try { const c = await caches.open('fp-push'); await c.put('since', new Response(String(t))); } catch (e) {} }
+self.addEventListener('install', function () { self.skipWaiting(); });
+self.addEventListener('activate', function (e) { e.waitUntil(self.clients.claim()); });
+self.addEventListener('push', function (e) {
+  e.waitUntil((async function () {
+    let msgs = [];
+    try {
+      const sub = await self.registration.pushManager.getSubscription();
+      if (sub && RELAY) {
+        const id = await sha(sub.endpoint), since = await getSince();
+        const r = await fetch(RELAY + (RELAY.indexOf('?') > -1 ? '&' : '?') + 'push=msg&id=' + id + '&since=' + since, { cache: 'no-store' });
+        if (r.ok) { const j = await r.json(); msgs = j.messages || []; await setSince(j.ts || Date.now()); }
+      }
+    } catch (err) {}
+    if (!msgs.length) msgs = [{ title: 'FootyPredicts', body: 'There is an update for the clubs you follow.', url: '/superfan/' }];
+    if (msgs.length > 3) msgs = msgs.slice(0, 2).concat([{ title: 'FootyPredicts', body: (msgs.length - 2) + ' more updates for your clubs', url: '/superfan/' }]);
+    for (const m of msgs) await self.registration.showNotification(m.title, { body: m.body, tag: m.id || undefined, data: { url: m.url || '/' } });
+  })());
+});
+self.addEventListener('notificationclick', function (e) {
+  e.notification.close();
+  const url = (e.notification.data && e.notification.data.url) || '/';
+  e.waitUntil(self.clients.matchAll({ type: 'window' }).then(function (list) {
+    for (const c of list) { if (c.url === url && 'focus' in c) return c.focus(); }
+    return self.clients.openWindow(url);
+  }));
+});
+"""
+
+ALERTS_JS = r"""(function () {
+  var C = window.FP_PUSH || {}; if (!C.url) return;
+  function b64(s) { var p = '='.repeat((4 - s.length % 4) % 4), r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')); var o = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) o[i] = r.charCodeAt(i); return o; }
+  function prefs() {
+    var clubs = [], leagues = [];
+    try { clubs = JSON.parse(localStorage.getItem('fp-clubs') || 'null') || []; if (!clubs.length) { var o = localStorage.getItem('fp-club'); if (o) clubs = [o]; } } catch (e) {}
+    try { leagues = (JSON.parse(localStorage.getItem('fp-follow') || '{}').leagues) || []; } catch (e) {}
+    return { clubs: clubs, leagues: leagues };
+  }
+  function supported() { return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; }
+  function post(mode, body) {
+    return fetch(C.url + (C.url.indexOf('?') > -1 ? '&' : '?') + 'push=' + mode, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(body) }).then(function (r) { return r.json(); });
+  }
+  function reg() { return navigator.serviceWorker.register('/sw.js?r=' + encodeURIComponent(C.url)).then(function () { return navigator.serviceWorker.ready; }); }
+  var A = {
+    supported: supported,
+    on: function () { try { return localStorage.getItem('fp-alerts') === '1'; } catch (e) { return false; } },
+    sync: function () {
+      if (!A.on() || !supported()) return Promise.resolve();
+      return reg().then(function (r) { return r.pushManager.getSubscription(); }).then(function (s) {
+        if (!s) return; var p = prefs(); return post('sub', { endpoint: s.endpoint, clubs: p.clubs, leagues: p.leagues });
+      }).catch(function () {});
+    },
+    enable: function () {
+      if (!supported()) return Promise.reject(new Error('unsupported'));
+      return Notification.requestPermission().then(function (perm) {
+        if (perm !== 'granted') throw new Error('denied');
+        return reg();
+      }).then(function (r) {
+        return r.pushManager.getSubscription().then(function (s) { return s || r.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64(C.key) }); });
+      }).then(function (s) {
+        var p = prefs(); return post('sub', { endpoint: s.endpoint, clubs: p.clubs, leagues: p.leagues });
+      }).then(function (j) { if (!j || !j.ok) throw new Error('server'); try { localStorage.setItem('fp-alerts', '1'); } catch (e) {} });
+    },
+    disable: function () {
+      try { localStorage.removeItem('fp-alerts'); } catch (e) {}
+      if (!supported()) return Promise.resolve();
+      return navigator.serviceWorker.getRegistration('/').then(function (r) { return r && r.pushManager.getSubscription(); }).then(function (s) {
+        if (!s) return; var ep = s.endpoint; return s.unsubscribe().then(function () { return post('unsub', { endpoint: ep }); });
+      }).catch(function () {});
+    }
+  };
+  window.FPAlerts = A;
+  A.sync();
+})();
+"""
+
 FORM_JS = """<script>
 (function () {
   function close() { var o = document.querySelector('.fm-ov'); if (o) o.remove(); }
@@ -1226,6 +1311,13 @@ def llogo(api_id, size=22, cls="tl"):
             f'referrerpolicy="no-referrer" onerror="this.remove()">')
 
 
+def alerts_head():
+    url = _live_url()
+    if not url:
+        return ""
+    return ('<script>window.FP_PUSH=' + json.dumps({"url": url, "key": VAPID_PUBLIC}) + ';</script><script src="/alerts.js" defer></script>')
+
+
 def club_slug(name):
     t = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
     return re.sub(r"[^a-z0-9]+", "-", t).strip("-")
@@ -1331,11 +1423,12 @@ def club_page(name, c, leagues, upd):
       <button type="button" class="lt-btn club-mine" data-club="{esc(name)}" data-slug="{c['slug']}">&#9734; Follow this club</button>
     </section>
     {nxt}{form_sec}{news_sec}
+    {alerts_head()}
     <script>(function(){{var b=document.querySelector('.club-mine');if(!b)return;
       function get(){{var l=[];try{{l=JSON.parse(localStorage.getItem('fp-clubs')||'null');if(!l){{l=[];var o=localStorage.getItem('fp-club');if(o)l=[o];}}}}catch(e){{l=[];}}return l;}}
       function put(l){{try{{localStorage.setItem('fp-clubs',JSON.stringify(l));}}catch(e){{}}}}
       function paint(){{b.textContent=get().indexOf(b.dataset.slug)>-1?'\u2605 Following this club':'\u2606 Follow this club';}}
-      b.onclick=function(){{var l=get(),i=l.indexOf(b.dataset.slug);if(i>-1)l.splice(i,1);else l.push(b.dataset.slug);put(l);paint();}};paint();}})();
+      b.onclick=function(){{var l=get(),i=l.indexOf(b.dataset.slug);if(i>-1)l.splice(i,1);else l.push(b.dataset.slug);put(l);paint();if(window.FPAlerts)window.FPAlerts.sync();}};paint();}})();
     </script>"""
     return page(f"{name} news, injuries and next match | FootyPredicts",
                 f"{name}: latest news, injuries, form, league position and our prediction for the next match.",
@@ -1370,7 +1463,14 @@ def superfan_page(leagues, clubs):
       <div id="sf-leagues" class="sf-tiles"></div>
       <div id="sf-panel" class="sf-panel" hidden></div>
       <div id="sf-news" class="sf-mynews" hidden></div>
+      <div id="sf-alerts" class="sf-alerts" hidden>
+        <h3>Alerts</h3>
+        <p id="sf-al-text" class="halves">Get a notification when line-ups are announced for the clubs you follow, and when there is news about them or the leagues you tick.</p>
+        <button type="button" id="sf-al-btn" class="sf-all">Turn on alerts</button>
+        <p class="halves">Works on Android and computers. On iPhone, first add this site to your Home Screen. You can turn alerts off here at any time.</p>
+      </div>
     </section>
+    {alerts_head()}
     <script>(function(){{
       var D={blob}, L=document.getElementById('sf-leagues'), P=document.getElementById('sf-panel'), M=document.getElementById('sf-mine');
       function el(t,c,x){{var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}}
@@ -1388,11 +1488,11 @@ def superfan_page(leagues, clubs):
         var grid=el('div','sf-clubs');
         lg.clubs.forEach(function(c){{var a=el('a','sf-club');a.href='../club/'+c[1]+'/';var dot=el('i');dot.style.background=c[2];if(c[3]){{var im=new Image();im.alt='';im.width=22;im.height=22;im.src='https://media.api-sports.io/football/teams/'+c[3]+'.png';im.className='tl';im.onload=function(){{dot.replaceWith(im);}};}}a.appendChild(dot);a.appendChild(document.createTextNode(c[0]));
           var st=el('span','sf-star');st.setAttribute('role','button');st.title='Follow this club';st.textContent=getC().indexOf(c[1])>-1?'\u2605':'\u2606';
-          st.onclick=function(e){{e.preventDefault();e.stopPropagation();var l=getC(),i=l.indexOf(c[1]);if(i>-1)l.splice(i,1);else l.push(c[1]);putC(l);st.textContent=i>-1?'\u2606':'\u2605';mineNews();showMine();}};
+          st.onclick=function(e){{e.preventDefault();e.stopPropagation();var l=getC(),i=l.indexOf(c[1]);if(i>-1)l.splice(i,1);else l.push(c[1]);putC(l);st.textContent=i>-1?'\u2606':'\u2605';mineNews();showMine();if(window.FPAlerts)window.FPAlerts.sync();}};
           a.appendChild(st);grid.appendChild(a);}});
         P.appendChild(grid);
         var fl=el('label','sf-follow');var cb=document.createElement('input');cb.type='checkbox';cb.checked=F.leagues.indexOf(lg.id)>-1;
-        cb.onchange=function(){{var i=F.leagues.indexOf(lg.id);if(cb.checked&&i<0)F.leagues.push(lg.id);if(!cb.checked&&i>-1)F.leagues.splice(i,1);saveF();mineNews();}};
+        cb.onchange=function(){{var i=F.leagues.indexOf(lg.id);if(cb.checked&&i<0)F.leagues.push(lg.id);if(!cb.checked&&i>-1)F.leagues.splice(i,1);saveF();mineNews();if(window.FPAlerts)window.FPAlerts.sync();}};
         fl.appendChild(cb);fl.appendChild(document.createTextNode(' Follow all '+lg.n+' news (shown below)'));P.appendChild(fl);
         var all=el('button','sf-all','All '+lg.n+' news');all.type='button';P.appendChild(all);
         var feed=el('ul','club-news');feed.hidden=true;P.appendChild(feed);
@@ -1433,6 +1533,23 @@ def superfan_page(leagues, clubs):
       }}
       mineNews();
       showMine();
+      (function(){{
+        var box=document.getElementById('sf-alerts'),btn=document.getElementById('sf-al-btn'),tx=document.getElementById('sf-al-text');
+        function ready(f){{if(window.FPAlerts)f();else window.addEventListener('load',function(){{if(window.FPAlerts)f();}});}}
+        ready(function(){{
+          var A=window.FPAlerts;box.hidden=false;
+          function paint(){{
+            if(!A.supported()){{btn.hidden=true;tx.textContent='This browser cannot receive alerts. On iPhone, add the site to your Home Screen first, then open it from there.';return;}}
+            btn.textContent=A.on()?'Turn alerts off':'Turn on alerts';
+          }}
+          btn.onclick=function(){{
+            if(A.on()){{A.disable().then(paint);return;}}
+            btn.disabled=true;
+            A.enable().then(function(){{tx.textContent='Alerts are on for the clubs you follow and the leagues you ticked.';}}).catch(function(e){{tx.textContent=e&&e.message==='denied'?'Notifications are blocked for this site. Allow them in your browser settings and try again.':'Could not turn alerts on. Please try again.';}}).then(function(){{btn.disabled=false;paint();}});
+          }};
+          paint();
+        }});
+      }})();
     }})();</script>"""
     return page("Superfan: your club's news, injuries and predictions | FootyPredicts",
                 "Choose your league and club to see its next match, injuries, form, league position and the latest news.",
@@ -1564,6 +1681,31 @@ def build():
         os.makedirs(os.path.join(OUT_DIR, "club", c["slug"]), exist_ok=True)
         with open(os.path.join(OUT_DIR, "club", c["slug"], "index.html"), "w", encoding="utf-8") as fh:
             fh.write(club_page(cname, c, leagues, upd))
+    os.makedirs(os.path.join(OUT_DIR, "api"), exist_ok=True)
+    with open(os.path.join(OUT_DIR, "sw.js"), "w", encoding="utf-8") as fh:
+        fh.write(SW_JS)
+    with open(os.path.join(OUT_DIR, "alerts.js"), "w", encoding="utf-8") as fh:
+        fh.write(ALERTS_JS)
+    fx_idx_all = {f["id"]: (d["league"], i) for d in leagues for i, f in enumerate(d["fixtures"])}
+    seen_fx, fxl, newsd = set(), [], {}
+    for cname, c in clubs.items():
+        for dt, opp, home, fid in c["up"][:1]:
+            if fid in seen_fx:
+                continue
+            seen_fx.add(fid)
+            hn, an = (cname, opp) if home else (opp, cname)
+            hs, as_ = (c["slug"], club_slug(opp)) if home else (club_slug(opp), c["slug"])
+            lg_i = fx_idx_all.get(fid)
+            fxl.append({"id": fid, "ko": dt, "h": hn, "a": an, "hs": hs, "as": as_,
+                        "u": SITE_URL + (f"{lg_i[0]}/#m{lg_i[1]}" if lg_i else f"club/{c['slug']}/")})
+        items = [{"t": n["t"], "u": n["u"], "s": n.get("s") or "", "d": n.get("d") or ""} for n in TEAM_NEWS.get(cname, [])[:3]
+                 if str(n.get("u", "")).startswith(("http://", "https://"))]
+        if items:
+            newsd[c["slug"]] = {"n": cname, "lg": c["lg"], "i": items}
+    with open(os.path.join(OUT_DIR, "api", "next.json"), "w", encoding="utf-8") as fh:
+        json.dump({"fx": fxl}, fh, ensure_ascii=False)
+    with open(os.path.join(OUT_DIR, "api", "news.json"), "w", encoding="utf-8") as fh:
+        json.dump({"clubs": newsd}, fh, ensure_ascii=False)
     os.makedirs(os.path.join(OUT_DIR, "superfan"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "superfan", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(superfan_page(leagues, clubs))
@@ -1706,6 +1848,7 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .sf-follow { display:flex; align-items:center; gap:6px; font:600 15px Barlow,sans-serif; margin:0 0 10px; cursor:pointer; } .sf-follow input { width:20px; height:20px; accent-color:var(--ink); }
 .sf-mynews { margin:18px 0 18px; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-mynews h3 { margin:0 0 6px; }
 .sf-star { margin-left:auto; font-size:18px; line-height:1; color:#b8a24a; padding:0 2px; } .sf-star:hover { color:var(--ink); }
+.sf-alerts { margin:18px 0; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-alerts h3 { margin:0 0 6px; }
 .sf-all { border:0; background:var(--ink); color:#fff; border-radius:999px; padding:10px 18px; font:700 15px Barlow,sans-serif; cursor:pointer; margin:0 0 10px; }
 .club-news { list-style:none; margin:0; padding:0; } .club-news li { padding:9px 0; border-top:1px solid var(--line); font-size:16px; } .club-news li:first-child { border-top:0; } .club-src { display:block; font-size:13px; color:var(--muted); }
 .club-inj { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:6px 14px; } .club-inj .inj { display:block; padding:5px 0; font-size:16px; }
