@@ -117,7 +117,7 @@ def load_squads():
     LINEUPS.clear()
     TEAM_ID.clear()
     PLAYER_NAMES.clear()
-    for lg in LEAGUE_ORDER:
+    for lg in ALL_SLUGS:
         try:
             with open(os.path.join("data", lg, "fixtures_2026.json"), encoding="utf-8") as fh:
                 for r in json.load(fh):
@@ -153,6 +153,9 @@ SITE_URL = os.environ.get("SITE_URL", "https://footypredicts.com/").rstrip("/") 
 DRAW_RISK_GAP = 8   # draw within this many points of the favourite -> "Draw risk"
 LEAGUE_ORDER = ["premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1"]
 SHOW_EUROPE = True      # switch on again once the European model has more data
+from pipeline.config import EXTRA_LEAGUES as _EX
+EXTRA = {k: {"name": v[0], "api": v[1], "country": v[2]} for k, v in _EX.items()}
+ALL_SLUGS = LEAGUE_ORDER + list(EXTRA)
 EURO_ORDER = ["champions-league", "europa-league"]
 
 
@@ -604,6 +607,7 @@ def pm_body(m):
 
 from pipeline.config import LEAGUES as _LG
 LEAGUE_API = {k: v[1] for k, v in _LG.items()}
+LEAGUE_API.update({k: v["api"] for k, v in EXTRA.items()})
 
 
 def league_table_data(slug, api_id, raw=False):
@@ -1231,7 +1235,8 @@ def club_data(leagues):
     """team -> {league name, league slug, results, upcoming, position, points, played}"""
     teams, tables = {}, {}
     names = {d["league"]: d["name"] for d in leagues}
-    for slug in LEAGUE_ORDER:
+    names.update({k: v["name"] for k, v in EXTRA.items()})
+    for slug in ALL_SLUGS:
         try:
             with open(os.path.join(BASE_DIR, "data", slug, "fixtures_2026.json"), encoding="utf-8") as fh:
                 rows = json.load(fh)
@@ -1313,7 +1318,7 @@ def club_page(name, c, leagues, upd):
     body = f"""
     <section class="block club-head">
       <h2 class="fixture"><span class="fx-t">{tlogo(name, 56, "tl tl-lg")}{esc(name)}</span></h2>
-      <p class="halves">{llogo(LEAGUE_API.get(c['lg']), 18)}<a href="../../{c['lg']}/">{esc(c['ln'])}</a></p>
+      <p class="halves">{llogo(LEAGUE_API.get(c['lg']), 18)}{('<a href="../../' + c['lg'] + '/">' + esc(c['ln']) + '</a>') if c['lg'] not in EXTRA else esc(c['ln'])}</p>
       {stand}
       <button type="button" class="lt-btn club-mine" data-club="{esc(name)}" data-slug="{c['slug']}">&#9734; Follow this club</button>
     </section>
@@ -1331,7 +1336,9 @@ def club_page(name, c, leagues, upd):
 
 def superfan_page(leagues, clubs):
     data = []
-    for d in leagues:
+    lst = [{"league": d["league"], "name": d["name"], "country": d.get("country", "")} for d in leagues]
+    lst += [{"league": k, "name": v["name"], "country": v["country"]} for k, v in EXTRA.items()]
+    for d in lst:
         sl = d["league"]
         mine = sorted((n, c) for n, c in clubs.items() if c["lg"] == sl)
         if not mine:

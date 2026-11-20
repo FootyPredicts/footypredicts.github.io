@@ -12,6 +12,11 @@ LEAGUES = {
     "ligue-1":        ("Ligue 1", 61, "France", "ligue-1"),
 }
 
+# Leagues with club pages, news and form only (no predictions): slug -> (name, API-Football league id, country)
+EXTRA_LEAGUES = {
+    "scottish-premiership": ("Scottish Premiership", 179, "Scotland"),
+}
+
 # How many past seasons to keep for the models (besides the current one)
 PAST_SEASONS = 2
 # How many upcoming fixtures to predict per league
