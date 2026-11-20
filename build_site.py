@@ -1297,24 +1297,61 @@ def club_page(name, c, leagues, upd):
 
 
 def superfan_page(leagues, clubs):
-    groups = {}
-    for name, c in sorted(clubs.items()):
-        groups.setdefault(c["ln"], []).append((name, c["slug"]))
-    opts = "".join(f'<optgroup label="{esc(ln)}">' + "".join(f'<option value="{s}">{esc(n)}</option>' for n, s in v) + "</optgroup>"
-                   for ln, v in groups.items())
+    data = []
+    for d in leagues:
+        sl = d["league"]
+        mine = sorted((n, c) for n, c in clubs.items() if c["lg"] == sl)
+        if not mine:
+            continue
+        feed, seen = [], set()
+        for n, c in mine:
+            for it in TEAM_NEWS.get(n, []):
+                sig = re.sub(r"[^a-z]", "", it["t"].lower())[:40]
+                if sig in seen or not str(it.get("u", "")).startswith(("http://", "https://")):
+                    continue
+                seen.add(sig)
+                feed.append({"t": it["t"], "u": it["u"], "s": it.get("s") or "", "d": (it.get("d") or "")[:10], "c": n, "k": c["slug"]})
+        feed.sort(key=lambda x: x["d"], reverse=True)
+        data.append({"id": sl, "n": d["name"], "co": d.get("country", ""), "clubs": [[n, c["slug"], SHIRT_COLOUR.get(n, "#2f4a3a")] for n, c in mine], "news": feed[:60]})
+    blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     body = f"""
     <section class="block">
       <h2 class="fixture"><span>Superfan</span></h2>
-      <p>Pick your club and get its page: next match and our prediction, injuries, form, league position and the latest news.</p>
-      <p><select id="sf-sel" class="ls-sel" style="display:block;max-width:360px"><option value="">Choose your club&hellip;</option>{opts}</select></p>
+      <p>Pick a league, then your club, for its next match, injuries, form and news. Or open the whole league for all its news in one place.</p>
       <p id="sf-mine" class="halves" hidden></p>
+      <div id="sf-leagues" class="sf-tiles"></div>
+      <div id="sf-panel" class="sf-panel" hidden></div>
     </section>
-    <script>(function(){{var s=document.getElementById('sf-sel'),m=document.getElementById('sf-mine');
-      s.onchange=function(){{if(s.value)location.href='../club/'+s.value+'/';}};
+    <script>(function(){{
+      var D={blob}, L=document.getElementById('sf-leagues'), P=document.getElementById('sf-panel'), M=document.getElementById('sf-mine');
+      function el(t,c,x){{var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}}
+      D.forEach(function(lg){{
+        var b=el('button','sf-tile');b.type='button';b.appendChild(el('span','sf-badge',lg.n.split(' ').map(function(w){{return w[0];}}).join('').slice(0,3)));
+        b.appendChild(el('b','',lg.n));b.appendChild(el('small','',lg.co));
+        b.onclick=function(){{open(lg,b);}};L.appendChild(b);
+      }});
+      function open(lg,btn){{
+        Array.prototype.forEach.call(L.children,function(x){{x.setAttribute('aria-pressed',x===btn?'true':'false');}});
+        P.hidden=false;P.textContent='';
+        P.appendChild(el('h3','',lg.n));
+        var grid=el('div','sf-clubs');
+        lg.clubs.forEach(function(c){{var a=el('a','sf-club');a.href='../club/'+c[1]+'/';var dot=el('i');dot.style.background=c[2];a.appendChild(dot);a.appendChild(document.createTextNode(c[0]));grid.appendChild(a);}});
+        P.appendChild(grid);
+        var all=el('button','sf-all','All '+lg.n+' news');all.type='button';P.appendChild(all);
+        var feed=el('ul','club-news');feed.hidden=true;P.appendChild(feed);
+        all.onclick=function(){{
+          feed.hidden=!feed.hidden;if(feed.hidden||feed.childNodes.length)return;
+          if(!lg.news.length){{feed.appendChild(el('li','','No recent headlines yet.'));return;}}
+          lg.news.forEach(function(n){{var li=el('li');var a=el('a','',n.t);a.href=n.u;a.target='_blank';a.rel='noopener nofollow';li.appendChild(a);
+            var sp=el('span','club-src');sp.textContent=n.c+' \u00b7 '+n.s+(n.d?' \u00b7 '+n.d:'');li.appendChild(sp);feed.appendChild(li);}});
+        }};
+        P.scrollIntoView({{behavior:'smooth',block:'nearest'}});
+      }}
       var v=null;try{{v=localStorage.getItem('fp-club');}}catch(e){{}}
-      if(v){{var o=s.querySelector('option[value="'+v+'"]');if(o){{m.hidden=false;m.innerHTML='Your club: <a href="../club/'+v+'/"><b>'+o.textContent+'</b></a>';}}}}}})();</script>"""
+      if(v)D.forEach(function(lg){{lg.clubs.forEach(function(c){{if(c[1]===v){{M.hidden=false;M.innerHTML='Your club: <a href="../club/'+v+'/"><b></b></a>';M.querySelector('b').textContent=c[0];}}}});}});
+    }})();</script>"""
     return page("Superfan: your club's news, injuries and predictions | FootyPredicts",
-                "Choose your club to see its next match, injuries, form, league position and the latest news.",
+                "Choose your league and club to see its next match, injuries, form, league position and the latest news.",
                 league_nav(leagues, "superfan", "../"), "Superfan · pick your club", "", body, "../", "superfan/")
 
 
@@ -1563,6 +1600,16 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .lu-hot { background:#fff6c9; font-weight:600; }
 .lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
 @media (max-width:560px) { .lu { grid-template-columns:1fr; } }
+.sf-tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin:12px 0; }
+.sf-tile { display:flex; flex-direction:column; align-items:center; gap:4px; padding:16px 10px; border:1px solid var(--line); background:var(--paper); border-radius:16px; cursor:pointer; font:600 15px Barlow,sans-serif; color:var(--ink); }
+.sf-tile small { color:var(--muted); font-weight:500; }
+.sf-tile:hover, .sf-tile[aria-pressed="true"] { border-color:var(--ink); box-shadow:0 0 0 2px var(--ink) inset; }
+.sf-badge { display:flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:50%; background:var(--ink); color:#fff; font:800 20px "Barlow Condensed",sans-serif; letter-spacing:.04em; }
+.sf-panel { margin-top:8px; } .sf-panel h3 { margin:0 0 10px; }
+.sf-clubs { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:8px; margin:0 0 12px; }
+.sf-club { display:flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid var(--line); background:var(--paper); border-radius:999px; text-decoration:none; color:var(--ink); font:600 15px Barlow,sans-serif; }
+.sf-club:hover { border-color:var(--ink); } .sf-club i { width:12px; height:12px; border-radius:50%; border:1px solid rgba(0,0,0,.25); flex:0 0 auto; }
+.sf-all { border:0; background:var(--ink); color:#fff; border-radius:999px; padding:10px 18px; font:700 15px Barlow,sans-serif; cursor:pointer; margin:0 0 10px; }
 .club-news { list-style:none; margin:0; padding:0; } .club-news li { padding:9px 0; border-top:1px solid var(--line); font-size:16px; } .club-news li:first-child { border-top:0; } .club-src { display:block; font-size:13px; color:var(--muted); }\n.club-inj { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:6px 14px; } .club-inj .inj { display:block; padding:5px 0; font-size:16px; }\n.club-stand { font-size:16px; margin:4px 0 10px; } .club-next { font-size:18px; margin:0 0 6px; } .club-mine { margin:0; }\n.fm-wide { max-width:640px; }
 .lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
 .lt-btn:hover { border-color:var(--ink); }
