@@ -1245,6 +1245,8 @@ def club_data(leagues):
         t = {}
         cup = EXTRA.get(slug, {}).get("kind") == "cup"
         for r in rows:
+            if cup and any(w in (r.get("round") or "") for w in ("Qualifying", "Preliminary")):
+                continue      # qualifying rounds are left out: the club lists show the main competition only
             for side in ("home", "away"):
                 tm = teams.setdefault(r[side], {"lg": slug, "ln": names.get(slug, slug), "res": [], "up": [], "comps": set()})
                 tm["comps"].add(slug)
@@ -1551,6 +1553,13 @@ def build():
                       "Live football scores from every league in the world: goals, cards, league tables and kick-off times, updated about every 30 seconds.",
                       league_nav(leagues, "scores", "../"), "Live scores · every league in the world", "", scores_block(), "../", "scores/"))
     clubs = club_data(leagues)
+    import shutil
+    keep = {c["slug"] for c in clubs.values()}
+    cdir = os.path.join(OUT_DIR, "club")
+    if os.path.isdir(cdir):
+        for d_ in os.listdir(cdir):
+            if d_ not in keep:
+                shutil.rmtree(os.path.join(cdir, d_), ignore_errors=True)
     for cname, c in clubs.items():
         os.makedirs(os.path.join(OUT_DIR, "club", c["slug"]), exist_ok=True)
         with open(os.path.join(OUT_DIR, "club", c["slug"], "index.html"), "w", encoding="utf-8") as fh:

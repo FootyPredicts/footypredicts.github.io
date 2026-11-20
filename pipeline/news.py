@@ -29,6 +29,15 @@ USER_AGENT = "FootyPredicts news fetcher (+https://footypredicts.com)"
 # publishers that are mostly betting tips, and other sports / teams that share a club's name
 BLOCK_SRC = ("bet", "odds", "casino", "gambl", "tips", "poker", "prediction", "msn", "yahoo finance")
 BLOCK_WORDS = (" women", " wsl", "lfc women", "rugby", "hull fc", "hull kr", " u21", " u18", " u19", " u23", "academy", "ladies", "fantasy", "betting", "odds", "prediction")
+ALIASES = {
+    "Athletic Club": "Athletic Bilbao", "SC Freiburg": "Freiburg", "Stade Brestois 29": "Brest", "Alaves": "Alavés",
+    "Slavia Praha": "Slavia Prague", "AEK Athens FC": "AEK Athens", "FK Crvena Zvezda": "Red Star Belgrade",
+    "Ferencvarosi TC": "Ferencvaros", "Gornik Zabrze": "Gornik Zabrze", "Hradec Králové": "Hradec Kralove",
+    "Lask Linz": "LASK", "Mjallby AIF": "Mjallby", "Hammarby FF": "Hammarby", "FC Midtjylland": "Midtjylland",
+    "St. Truiden": "Sint-Truiden", "Universitatea Cluj": "Universitatea Cluj", "Žilina": "Zilina", "Tromso": "Tromsø",
+    "Accrington ST": "Accrington Stanley", "Fleetwood Town": "Fleetwood Town", "AZ Alkmaar": "AZ Alkmaar",
+    "Hamburger SV": "Hamburg", "Borussia Mönchengladbach": "Borussia Monchengladbach", "FC Augsburg": "Augsburg", "AC Milan": "AC Milan",
+}
 GENERIC = {"city", "united", "town", "real", "sporting", "athletic", "club", "football", "borussia", "saint", "stade", "olympique", "rovers", "wanderers", "albion", "county", "forest"}
 
 
@@ -49,12 +58,25 @@ def keys_for(team):
     t = team.lower()
     words = [re.sub(r"[^a-z]", "", w) for w in re.split(r"[\s\-]+", t)]
     ks = {t}
+    al = ALIASES.get(team)
+    if al:
+        ks.add(al.lower())
+        words += [re.sub(r"[^a-z]", "", w) for w in re.split(r"[\s\-]+", al.lower())]
     ks.update(w for w in words if len(w) >= 4 and w not in GENERIC)
     return ks
 
 
 def fetch_team(team, session):
-    q = quote(f'"{team}" football {TOPICS}')
+    name = ALIASES.get(team, team)
+    for q in (quote(f'"{name}" football {TOPICS}'), quote(f'"{name}" football')):
+        items = fetch_query(team, q, session)
+        if items:
+            return items
+        time.sleep(PAUSE)
+    return []
+
+
+def fetch_query(team, q, session):
     try:
         r = session.get(FEED.format(q=q), timeout=30)
         if r.status_code != 200:
