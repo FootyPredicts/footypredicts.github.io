@@ -660,6 +660,7 @@ a.chip { text-decoration:none; }
 .ls-star { border:0; background:none; font-size:18px; line-height:1; cursor:pointer; color:#b8a24a; padding:0 2px; }
 .ls-m { display:grid; grid-template-columns:58px 1fr auto 1fr; align-items:center; gap:8px; padding:9px 12px; border-top:1px solid var(--line); cursor:pointer; }
 .tl { vertical-align:middle; object-fit:contain; margin:0 6px; }
+.ls-flag { border-radius:2px; object-fit:cover; margin:0 -2px 0 2px; }
 .ls-lgh .tl { margin:0 2px 0 0; }
 .ls-t { font:700 13px Barlow,sans-serif; color:var(--muted); white-space:nowrap; }
 .ls-t.live { color:#c0392b; } .ls-t.live:before { content:""; display:inline-block; width:7px; height:7px; border-radius:50%; background:#c0392b; margin-right:4px; vertical-align:middle; animation:lspulse 1.4s infinite; }
@@ -919,7 +920,8 @@ a.chip { text-decoration:none; }
       star.onclick = function (e) { e.stopPropagation(); var i = store.fav.indexOf(g.lg); if (i > -1) store.fav.splice(i, 1); else store.fav.push(g.lg); save(); render(); };
       hd.appendChild(star);
       var llg = logo('leagues', g.lg, 22); if (llg) hd.appendChild(llg);
-      hd.appendChild(h('span', '', g.ln)); hd.appendChild(h('span', 'cn', g.cn));
+      hd.appendChild(h('span', '', g.ln)); if (g.cf) { var fl = new Image(); fl.alt = ''; fl.width = 16; fl.height = 12; fl.className = 'ls-flag'; fl.referrerPolicy = 'no-referrer'; fl.src = g.cf; fl.onerror = function () { fl.remove(); }; hd.appendChild(fl); }
+      hd.appendChild(h('span', 'cn', g.cn));
       var cnt = h('span', 'n', g.ms.length);
       if (!/friendl|cup|copa|coupe|pokal|qualif|play-?off|trophy|\bu-?\d\d|nations|super ?cup/i.test(g.ln)) { var tb = tbBtn(g.lg, g.ln, '', '', 'lt-btn ls-tbh'); tb.style.marginLeft = 'auto'; hd.appendChild(tb); cnt.style.marginLeft = '0'; }
       hd.appendChild(cnt);
