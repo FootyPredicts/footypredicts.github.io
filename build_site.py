@@ -833,6 +833,7 @@ def league_nav(leagues, current, prefix):
         on = " on" if current == d["league"] else ""
         links.append(f'<a href="{prefix}{d["league"]}/" class="lg{on}">{esc(d["name"])}</a>')
     links.append(f'<a href="{prefix}live/" class="lg{" on" if current == "live" else ""}">Live</a>')
+    links.append(f'<a href="{prefix}superfan/" class="lg{" on" if current == "superfan" else ""}">Superfan</a>')
     links.append(f'<a href="{prefix}quiz/" class="lg{" on" if current == "quiz" else ""}">Daily quiz</a>')
     links.append(f'<a href="{prefix}fantasy/" class="lg{" on" if current == "fantasy" else ""}">Fantasy captains</a>')
     links.append(f'<a href="{prefix}track-record/" class="lg lg-tr{" on" if current == "track-record" else ""}">How we did</a>')
@@ -1191,6 +1192,132 @@ def scores_block():
     return scores_page.scores_body(_live_url(), LIVE_PICKS, tables)
 
 
+def club_slug(name):
+    t = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+
+
+def club_data(leagues):
+    """team -> {league name, league slug, results, upcoming, position, points, played}"""
+    teams, tables = {}, {}
+    names = {d["league"]: d["name"] for d in leagues}
+    for slug in LEAGUE_ORDER:
+        try:
+            with open(os.path.join(BASE_DIR, "data", slug, "fixtures_2026.json"), encoding="utf-8") as fh:
+                rows = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        t = {}
+        for r in rows:
+            for side in ("home", "away"):
+                teams.setdefault(r[side], {"lg": slug, "ln": names.get(slug, slug), "res": [], "up": []})
+            if r.get("status") in ("FT", "AET", "PEN") and r.get("hg") is not None:
+                for side, other, gf, ga in (("home", "away", r["hg"], r["ag"]), ("away", "home", r["ag"], r["hg"])):
+                    teams[r[side]]["res"].append((r["date"], r[other], side == "home", gf, ga))
+                    x = t.setdefault(r[side], {"n": r[side], "p": 0, "pts": 0, "gf": 0, "ga": 0})
+                    x["p"] += 1; x["gf"] += gf; x["ga"] += ga
+                    x["pts"] += 3 if gf > ga else 1 if gf == ga else 0
+            elif r.get("status") in ("NS", "TBD") or not r.get("status"):
+                for side, other in (("home", "away"), ("away", "home")):
+                    teams[r[side]]["up"].append((r["date"], r[other], side == "home", r["id"]))
+        order = sorted(t.values(), key=lambda x: (-x["pts"], -(x["gf"] - x["ga"]), -x["gf"], x["n"]))
+        tables[slug] = {x["n"]: (i + 1, x) for i, x in enumerate(order)}
+    for name, c in teams.items():
+        c["res"].sort(); c["up"].sort()
+        pos = tables.get(c["lg"], {}).get(name)
+        c["pos"], c["st"] = (pos[0], pos[1]) if pos else (None, None)
+        c["slug"] = club_slug(name)
+        c["total"] = len(tables.get(c["lg"], {}))
+    return teams
+
+
+def ordinal(n):
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
+def club_page(name, c, leagues, upd):
+    fx_by_id = {f["id"]: (d, f) for d in leagues for f in d["fixtures"]}
+    chips = "".join(
+        f'<span class="fchip-w"><span class="fchip f{"W" if gf > ga else "D" if gf == ga else "L"}" title="{"vs" if home else "at"} {esc(opp)} {gf}\u2013{ga}">{"W" if gf > ga else "D" if gf == ga else "L"}</span></span>'
+        for _, opp, home, gf, ga in c["res"][-5:])
+    last = "".join(
+        f'<tr><td>{esc(datetime.fromisoformat(dt).strftime("%d %b"))}</td><td>{"vs" if home else "at"} {esc(opp)}</td><td><b>{gf}\u2013{ga}</b></td></tr>'
+        for dt, opp, home, gf, ga in reversed(c["res"][-5:]))
+    st = c["st"]
+    stand = ""
+    if c["pos"] and st:
+        stand = (f'<p class="club-stand"><b>{ordinal(c["pos"])}</b> in the {esc(c["ln"])} · {st["pts"]} points from {st["p"]} games · '
+                 f'goal difference {st["gf"] - st["ga"]:+d}</p>')
+    nxt = ""
+    if c["up"]:
+        dt, opp, home, fid = c["up"][0]
+        when = datetime.fromisoformat(dt).astimezone(timezone.utc)
+        try:
+            from zoneinfo import ZoneInfo
+            when = when.astimezone(ZoneInfo("Europe/London"))
+        except Exception:
+            pass
+        pk = LIVE_PICKS.get(str(fid))
+        pick = ""
+        if pk:
+            who = pk["h"] if pk["pk"] == "Home" else pk["a"] if pk["pk"] == "Away" else "Draw"
+            pc = pk["hp"] if pk["pk"] == "Home" else pk["ap"] if pk["pk"] == "Away" else pk["dp"]
+            pick = f'<p>Our pick: <b>{esc(who)} {pc}%</b> · <a href="../../{c["lg"]}/">full prediction</a></p>'
+        inj = ""
+        if fid in fx_by_id:
+            _, f = fx_by_id[fid]
+            side = "home" if home else "away"
+            inj = (f'<h4>Injuries and suspensions</h4><div class="club-inj">{injury_list((f.get("injuries") or {}).get(side))}</div>')
+            if str(fid) in LINEUPS:
+                inj += '<p class="halves">Line-ups are confirmed: see the match card in the <a href="../../' + c["lg"] + '/">' + esc(c["ln"]) + ' page</a>.</p>'
+        nxt = (f'<section class="block"><h3>Next match</h3><p class="club-next"><b>{esc(name)} {"v" if home else "at"} {esc(opp)}</b><br>'
+               f'{when:%a %d %b} · {when:%H:%M}</p>{pick}{inj}</section>')
+    news = TEAM_NEWS.get(name, [])
+    items = "".join(
+        f'<li><a href="{esc(n["u"])}" rel="noopener nofollow" target="_blank">{esc(n["t"])}</a> <span class="club-src">{esc(n.get("s") or "")}{(" · " + n["d"][:10]) if n.get("d") else ""}</span></li>'
+        for n in news if str(n.get("u", "")).startswith(("http://", "https://")))
+    news_sec = (f'<section class="block"><h3>Latest news <span class="sub">headlines link to the original publishers</span></h3><ul class="club-news">{items}</ul></section>'
+                if items else '<section class="block"><h3>Latest news</h3><p class="halves">No recent headlines found for this club yet.</p></section>')
+    form_sec = (f'<section class="block"><h3>Recent form</h3><p>{chips}</p><table class="mirror pm-stats">{last}</table></section>' if c["res"] else "")
+    body = f"""
+    <section class="block club-head">
+      <h2 class="fixture"><span>{esc(name)}</span></h2>
+      <p class="halves"><a href="../../{c['lg']}/">{esc(c['ln'])}</a></p>
+      {stand}
+      <button type="button" class="lt-btn club-mine" data-club="{esc(name)}" data-slug="{c['slug']}">&#9734; Make this my club</button>
+    </section>
+    {nxt}{form_sec}{news_sec}
+    <script>(function(){{var b=document.querySelector('.club-mine');if(!b)return;var k='fp-club';
+      function cur(){{try{{return localStorage.getItem(k);}}catch(e){{return null;}}}}
+      function paint(){{b.textContent=cur()===b.dataset.slug?'\u2605 This is my club':'\u2606 Make this my club';}}
+      b.onclick=function(){{try{{if(cur()===b.dataset.slug)localStorage.removeItem(k);else localStorage.setItem(k,b.dataset.slug);}}catch(e){{}}paint();}};paint();}})();</script>"""
+    return page(f"{name} news, injuries and next match | FootyPredicts",
+                f"{name}: latest news, injuries, form, league position and our prediction for the next match.",
+                league_nav(leagues, "superfan", "../../"), f"{name} · club page · updated {upd}", "", body, "../../", "club/" + c["slug"] + "/")
+
+
+def superfan_page(leagues, clubs):
+    groups = {}
+    for name, c in sorted(clubs.items()):
+        groups.setdefault(c["ln"], []).append((name, c["slug"]))
+    opts = "".join(f'<optgroup label="{esc(ln)}">' + "".join(f'<option value="{s}">{esc(n)}</option>' for n, s in v) + "</optgroup>"
+                   for ln, v in groups.items())
+    body = f"""
+    <section class="block">
+      <h2 class="fixture"><span>Superfan</span></h2>
+      <p>Pick your club and get its page: next match and our prediction, injuries, form, league position and the latest news.</p>
+      <p><select id="sf-sel" class="ls-sel" style="display:block;max-width:360px"><option value="">Choose your club&hellip;</option>{opts}</select></p>
+      <p id="sf-mine" class="halves" hidden></p>
+    </section>
+    <script>(function(){{var s=document.getElementById('sf-sel'),m=document.getElementById('sf-mine');
+      s.onchange=function(){{if(s.value)location.href='../club/'+s.value+'/';}};
+      var v=null;try{{v=localStorage.getItem('fp-club');}}catch(e){{}}
+      if(v){{var o=s.querySelector('option[value="'+v+'"]');if(o){{m.hidden=false;m.innerHTML='Your club: <a href="../club/'+v+'/"><b>'+o.textContent+'</b></a>';}}}}}})();</script>"""
+    return page("Superfan: your club's news, injuries and predictions | FootyPredicts",
+                "Choose your club to see its next match, injuries, form, league position and the latest news.",
+                league_nav(leagues, "superfan", "../"), "Superfan · pick your club", "", body, "../", "superfan/")
+
+
 def live_tab(leagues):
     import live_page
     url = _live_url()
@@ -1304,6 +1431,14 @@ def build():
         fh.write(page("Live football scores today, every league | FootyPredicts",
                       "Live football scores from every league in the world: goals, cards, league tables and kick-off times, updated about every 30 seconds.",
                       league_nav(leagues, "scores", "../"), "Live scores · every league in the world", "", scores_block(), "../", "scores/"))
+    clubs = club_data(leagues)
+    for cname, c in clubs.items():
+        os.makedirs(os.path.join(OUT_DIR, "club", c["slug"]), exist_ok=True)
+        with open(os.path.join(OUT_DIR, "club", c["slug"], "index.html"), "w", encoding="utf-8") as fh:
+            fh.write(club_page(cname, c, leagues, upd))
+    os.makedirs(os.path.join(OUT_DIR, "superfan"), exist_ok=True)
+    with open(os.path.join(OUT_DIR, "superfan", "index.html"), "w", encoding="utf-8") as fh:
+        fh.write(superfan_page(leagues, clubs))
     os.makedirs(os.path.join(OUT_DIR, "live"), exist_ok=True)
     with open(os.path.join(OUT_DIR, "live", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(live_tab(leagues))
@@ -1317,7 +1452,7 @@ def build():
     with open(os.path.join(OUT_DIR, "responsible-gambling", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(responsible_page(leagues))
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    paths = ["", "scores/"] + [d["league"] + "/" for d in leagues] + ["live/", "quiz/", "fantasy/", "track-record/", "responsible-gambling/"]
+    paths = ["", "scores/", "superfan/"] + ["club/" + c["slug"] + "/" for c in clubs.values()] + [d["league"] + "/" for d in leagues] + ["live/", "quiz/", "fantasy/", "track-record/", "responsible-gambling/"]
     with open(os.path.join(OUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as fh:
         fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                  + "".join(f"  <url><loc>{SITE_URL}{x}</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq></url>\n" for x in paths)
@@ -1428,7 +1563,7 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .lu-hot { background:#fff6c9; font-weight:600; }
 .lu-subs { font-size:13px; color:var(--muted); margin:8px 0 0; }
 @media (max-width:560px) { .lu { grid-template-columns:1fr; } }
-.fm-wide { max-width:640px; }
+.club-news { list-style:none; margin:0; padding:0; } .club-news li { padding:9px 0; border-top:1px solid var(--line); font-size:16px; } .club-news li:first-child { border-top:0; } .club-src { display:block; font-size:13px; color:var(--muted); }\n.club-inj { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:6px 14px; } .club-inj .inj { display:block; padding:5px 0; font-size:16px; }\n.club-stand { font-size:16px; margin:4px 0 10px; } .club-next { font-size:18px; margin:0 0 6px; } .club-mine { margin:0; }\n.fm-wide { max-width:640px; }
 .lt-btn { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:3px 10px; font:600 12px Barlow,sans-serif; cursor:pointer; margin-left:6px; color:var(--ink); }
 .lt-btn:hover { border-color:var(--ink); }
 table.lt { width:100%; border-collapse:collapse; font-size:14px; }
