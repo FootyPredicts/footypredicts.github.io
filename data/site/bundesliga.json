@@ -3,1375 +3,9 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-20T21:38:20.778066+00:00",
+ "updated": "2026-11-20T23:57:47.907380+00:00",
  "matches_used": 697,
  "fixtures": [
-  {
-   "id": 1575221,
-   "kickoff": "2026-11-20T19:30:00",
-   "round": "Regular Season - 10",
-   "home": "Bayern München",
-   "away": "1. FC Köln",
-   "referee": "R. Braun",
-   "ref_cards": 4.43,
-   "ref_games": 14,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 87.7,
-    "draw": 7.7,
-    "away": 4.6
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 9.5,
-     "defence_hit_pct": 11.0,
-     "key_out": [
-      "A. Davies",
-      "L. Díaz",
-      "M. Neuer"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 1.4,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 87.5,
-   "draw_pct": 8.4,
-   "away_pct": 4.1,
-   "xg_home": 3.76,
-   "xg_away": 0.85,
-   "over25": 83.8,
-   "btts": 56.3,
-   "cards5": 36.7,
-   "cards": {
-    "exp": 3.98,
-    "home": 1.61,
-    "away": 2.37,
-    "over": {
-     "2.5": 72.4,
-     "3.5": 54.1,
-     "4.5": 36.7,
-     "5.5": 22.9,
-     "6.5": 13.2
-    }
-   },
-   "form": {
-    "home": {
-     "played": 4,
-     "win": 75.0,
-     "over25": 100.0,
-     "btts": 75.0
-    },
-    "away": {
-     "played": 4,
-     "win": 0.0,
-     "over25": 50.0,
-     "btts": 75.0
-    }
-   },
-   "venue": {
-    "home": {
-     "games": [
-      {
-       "date": "28/08/2026",
-       "home": "Bayern München",
-       "away": "VfB Stuttgart",
-       "hg": 5,
-       "ag": 1,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "S. Storks",
-       "sx": {
-        "h": {
-         "pos": 59.0,
-         "xg": 4.06,
-         "sh": 21.0,
-         "sot": 9.0,
-         "co": 9.0,
-         "fo": 10.0,
-         "of": 3.0,
-         "sv": 3.0,
-         "pp": 82.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 41.0,
-         "xg": 0.79,
-         "sh": 11.0,
-         "sot": 4.0,
-         "co": 3.0,
-         "fo": 17.0,
-         "of": 1.0,
-         "sv": 5.0,
-         "pp": 76.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "D. Upamecano",
-         "t": "h",
-         "m": 21
-        },
-        {
-         "n": "J. Vagnoman",
-         "t": "a",
-         "m": 52
-        },
-        {
-         "n": "M. Olise",
-         "t": "h",
-         "m": 55
-        },
-        {
-         "n": "A. Pavlovic",
-         "t": "h",
-         "m": 82
-        },
-        {
-         "n": "L. Diaz",
-         "t": "h",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Jeff Chabot",
-         "t": "a",
-         "m": 62,
-         "r": false
-        },
-        {
-         "n": "Finn Jeltsch",
-         "t": "a",
-         "m": 68,
-         "r": false
-        },
-        {
-         "n": "Kim Min-jae",
-         "t": "h",
-         "m": 81,
-         "r": false
-        },
-        {
-         "n": "Grischa Prömel",
-         "t": "a",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "18/09/2026",
-       "home": "Bayern München",
-       "away": "Union Berlin",
-       "hg": 7,
-       "ag": 0,
-       "ht": [
-        3,
-        0
-       ],
-       "ref": "B. Brand",
-       "sx": {
-        "h": {
-         "pos": 68.0,
-         "xg": 3.71,
-         "sh": 23.0,
-         "sot": 15.0,
-         "co": 9.0,
-         "fo": 12.0,
-         "of": 2.0,
-         "sv": 2.0,
-         "pp": 91.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 32.0,
-         "xg": 0.34,
-         "sh": 3.0,
-         "sot": 2.0,
-         "co": 2.0,
-         "fo": 9.0,
-         "of": 2.0,
-         "sv": 6.0,
-         "pp": 75.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Jamal Musiala",
-         "t": "h",
-         "m": 18
-        },
-        {
-         "n": "Harry Kane",
-         "t": "h",
-         "m": 39
-        },
-        {
-         "n": "Michael Olise",
-         "t": "h",
-         "m": 43
-        },
-        {
-         "n": "Harry Kane",
-         "t": "h",
-         "m": 54
-        },
-        {
-         "n": "Ismael Saibari",
-         "t": "h",
-         "m": 70
-        },
-        {
-         "n": "Michael Olise",
-         "t": "h",
-         "m": 73
-        },
-        {
-         "n": "Michael Olise",
-         "t": "h",
-         "m": 76
-        }
-       ],
-       "cards": [
-        {
-         "n": "Felix Uduokhai",
-         "t": "a",
-         "m": 38,
-         "r": false
-        },
-        {
-         "n": "Rani Khedira",
-         "t": "a",
-         "m": 42,
-         "r": false
-        },
-        {
-         "n": "Dayot Upamecano",
-         "t": "h",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Livan Burcu",
-         "t": "a",
-         "m": 78,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "17/10/2026",
-       "home": "Bayern München",
-       "away": "RB Leipzig",
-       "hg": 6,
-       "ag": 1,
-       "ht": [
-        3,
-        0
-       ],
-       "ref": "T. Stieler",
-       "sx": {
-        "h": {
-         "pos": 62.0,
-         "xg": 3.48,
-         "sh": 29.0,
-         "sot": 17.0,
-         "co": 11.0,
-         "fo": 15.0,
-         "of": 4.0,
-         "sv": 3.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 38.0,
-         "xg": 0.9,
-         "sh": 12.0,
-         "sot": 4.0,
-         "co": 3.0,
-         "fo": 6.0,
-         "of": 2.0,
-         "sv": 11.0,
-         "yc": 0.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Luis Díaz",
-         "t": "h",
-         "m": 12
-        },
-        {
-         "n": "Aleksandar Pavlović",
-         "t": "h",
-         "m": 26
-        },
-        {
-         "n": "Michael Olise",
-         "t": "h",
-         "m": 34
-        },
-        {
-         "n": "Luis Díaz",
-         "t": "h",
-         "m": 47
-        },
-        {
-         "n": "Harry Kane",
-         "t": "h",
-         "m": 53
-        },
-        {
-         "n": "Luis Díaz",
-         "t": "h",
-         "m": 69
-        },
-        {
-         "n": "Andrija Maksimović",
-         "t": "a",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Konrad Laimer",
-         "t": "h",
-         "m": 51,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "31/10/2026",
-       "home": "Bayern München",
-       "away": "Borussia Dortmund",
-       "hg": 2,
-       "ag": 2,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "T. Stieler",
-       "sx": {
-        "h": {
-         "pos": 56.0,
-         "xg": 4.53,
-         "sh": 23.0,
-         "sot": 5.0,
-         "co": 5.0,
-         "fo": 11.0,
-         "of": 3.0,
-         "sv": 4.0,
-         "yc": 2.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 44.0,
-         "xg": 0.77,
-         "sh": 12.0,
-         "sot": 6.0,
-         "co": 2.0,
-         "fo": 6.0,
-         "of": 3.0,
-         "sv": 3.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Konrad Laimer",
-         "t": "h",
-         "m": 38
-        },
-        {
-         "n": "Serhou Guirassy",
-         "t": "a",
-         "m": 60
-        },
-        {
-         "n": "Dayot Upamecano",
-         "t": "h",
-         "m": 66
-        },
-        {
-         "n": "Fábio Silva",
-         "t": "a",
-         "m": 89
-        }
-       ],
-       "cards": [
-        {
-         "n": "Jobe Bellingham",
-         "t": "a",
-         "m": 6,
-         "r": false
-        },
-        {
-         "n": "Josip Stanišić",
-         "t": "h",
-         "m": 53,
-         "r": false
-        },
-        {
-         "n": "Konrad Laimer",
-         "t": "h",
-         "m": 74,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 4,
-     "w": 3,
-     "d": 1,
-     "l": 0,
-     "last5": "WWWD",
-     "gf": 5.0,
-     "ga": 1.0,
-     "cs": 25,
-     "fts": 0,
-     "sh": 24.0,
-     "sot": 11.5,
-     "co": 8.5,
-     "yc": 1.2
-    },
-    "away": {
-     "games": [
-      {
-       "date": "04/09/2026",
-       "home": "VfB Stuttgart",
-       "away": "1. FC Köln",
-       "hg": 4,
-       "ag": 1,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "C. Dingert",
-       "sx": {
-        "h": {
-         "pos": 58.0,
-         "xg": 3.47,
-         "sh": 22.0,
-         "sot": 8.0,
-         "co": 10.0,
-         "fo": 5.0,
-         "of": 1.0,
-         "sv": 3.0,
-         "pp": 86.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 42.0,
-         "xg": 2.86,
-         "sh": 18.0,
-         "sot": 5.0,
-         "co": 8.0,
-         "fo": 6.0,
-         "of": 0.0,
-         "sv": 4.0,
-         "pp": 84.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Bilal El Khannouss",
-         "t": "h",
-         "m": 39
-        },
-        {
-         "n": "Grischa Prömel",
-         "t": "h",
-         "m": 60
-        },
-        {
-         "n": "Ermedin Demirović",
-         "t": "h",
-         "m": 75
-        },
-        {
-         "n": "Marius Bülter",
-         "t": "a",
-         "m": 81
-        },
-        {
-         "n": "Josha Vagnoman",
-         "t": "h",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Jahmai Simpson-Pusey",
-         "t": "a",
-         "m": 41,
-         "r": false
-        },
-        {
-         "n": "Maximilian Mittelstädt",
-         "t": "h",
-         "m": 51,
-         "r": false
-        },
-        {
-         "n": "Tom Krauß",
-         "t": "a",
-         "m": 85,
-         "r": false
-        },
-        {
-         "n": "Alessio Castro-Montes",
-         "t": "a",
-         "m": 86,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "19/09/2026",
-       "home": "Hamburger SV",
-       "away": "1. FC Köln",
-       "hg": 2,
-       "ag": 1,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "M. Jollenbeck",
-       "sx": {
-        "h": {
-         "pos": 32.0,
-         "xg": 1.45,
-         "sh": 12.0,
-         "sot": 7.0,
-         "co": 3.0,
-         "fo": 12.0,
-         "of": 2.0,
-         "sv": 4.0,
-         "pp": 75.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 68.0,
-         "xg": 1.41,
-         "sh": 18.0,
-         "sot": 5.0,
-         "co": 5.0,
-         "fo": 14.0,
-         "of": 1.0,
-         "sv": 5.0,
-         "pp": 88.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "N. Capaldo",
-         "t": "h",
-         "m": 44
-        },
-        {
-         "n": "Y. Poulsen",
-         "t": "h",
-         "m": 49
-        },
-        {
-         "n": "R. Ache",
-         "t": "a",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Albert Grønbæk",
-         "t": "h",
-         "m": 10,
-         "r": false
-        },
-        {
-         "n": "Gideon Mensah",
-         "t": "a",
-         "m": 54,
-         "r": false
-        },
-        {
-         "n": "Ísak Bergmann Jóhannesson",
-         "t": "a",
-         "m": 77,
-         "r": false
-        },
-        {
-         "n": "Ellyes Skhiri",
-         "t": "a",
-         "m": 84,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "16/10/2026",
-       "home": "Eintracht Frankfurt",
-       "away": "1. FC Köln",
-       "hg": 1,
-       "ag": 0,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "B. Brand",
-       "sx": {
-        "h": {
-         "pos": 56.0,
-         "xg": 1.84,
-         "sh": 15.0,
-         "sot": 7.0,
-         "co": 7.0,
-         "fo": 8.0,
-         "of": 1.0,
-         "sv": 3.0,
-         "yc": 2.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 44.0,
-         "xg": 0.82,
-         "sh": 9.0,
-         "sot": 3.0,
-         "co": 3.0,
-         "fo": 17.0,
-         "of": 0.0,
-         "sv": 6.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Younes Ebnoutalib",
-         "t": "h",
-         "m": 77
-        }
-       ],
-       "cards": [
-        {
-         "n": "Mario Götze",
-         "t": "h",
-         "m": 24,
-         "r": false
-        },
-        {
-         "n": "Lilian Brassier",
-         "t": "h",
-         "m": 39,
-         "r": false
-        },
-        {
-         "n": "Ísak Bergmann Jóhannesson",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Borna Sosa",
-         "t": "a",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "01/11/2026",
-       "home": "Union Berlin",
-       "away": "1. FC Köln",
-       "hg": 1,
-       "ag": 1,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "R. Hempel",
-       "sx": {
-        "h": {
-         "pos": 37.0,
-         "xg": 0.91,
-         "sh": 5.0,
-         "sot": 2.0,
-         "co": 2.0,
-         "fo": 11.0,
-         "of": 1.0,
-         "sv": 1.0,
-         "yc": 4.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 63.0,
-         "xg": 1.22,
-         "sh": 14.0,
-         "sot": 2.0,
-         "co": 6.0,
-         "fo": 10.0,
-         "of": 2.0,
-         "sv": 1.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Janik Haberer",
-         "t": "h",
-         "m": 10
-        },
-        {
-         "n": "Malek El Mala",
-         "t": "a",
-         "m": 79
-        }
-       ],
-       "cards": [
-        {
-         "n": "Zeno Van Den Bosch",
-         "t": "h",
-         "m": 37,
-         "r": false
-        },
-        {
-         "n": "Jahmai Simpson-Pusey",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Paul Okon-Engstler",
-         "t": "a",
-         "m": 53,
-         "r": false
-        },
-        {
-         "n": "Kastriot Imeri",
-         "t": "h",
-         "m": 54,
-         "r": false
-        },
-        {
-         "n": "Linton Maina",
-         "t": "a",
-         "m": 69,
-         "r": false
-        },
-        {
-         "n": "Aljoscha Kemlein",
-         "t": "h",
-         "m": 76,
-         "r": false
-        },
-        {
-         "n": "Derrick Köhn",
-         "t": "h",
-         "m": 77,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 4,
-     "w": 0,
-     "d": 1,
-     "l": 3,
-     "last5": "LLLD",
-     "gf": 0.75,
-     "ga": 2.0,
-     "cs": 0,
-     "fts": 25,
-     "sh": 14.8,
-     "sot": 3.8,
-     "co": 5.5,
-     "yc": 2.8
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 67.41154564426161,
-     "sh": 82.43731911409644,
-     "any": 94.27659375585333
-    },
-    "away": {
-     "fh": 39.53045299886706,
-     "sh": 51.96946989102007,
-     "any": 70.95615602085708
-    },
-    "match_fh": 80.29390927641403,
-    "match_sh": 91.56455126915203
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 19617,
-       "name": "M. Olise",
-       "p": 36.7,
-       "gl": 6,
-       "as": 3,
-       "ap": 9,
-       "price": {
-        "odd": 1.91,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 1.91
-        }
-       }
-      },
-      {
-       "id": 184,
-       "name": "H. Kane",
-       "p": 29.6,
-       "gl": 4,
-       "as": 8,
-       "ap": 9,
-       "price": {
-        "odd": 1.25,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 1.25
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 1157,
-       "name": "K. Laimer",
-       "p": 31.8,
-       "yc": 3,
-       "rc": 0,
-       "ap": 6,
-       "price": null
-      },
-      {
-       "id": 1149,
-       "name": "D. Upamecano",
-       "p": 19.5,
-       "yc": 2,
-       "rc": 0,
-       "ap": 9,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 1149,
-      "name": "D. Upamecano",
-      "sot": 7
-     },
-     "cap": [
-      {
-       "id": 184,
-       "name": "H. Kane",
-       "pos": "Attacker",
-       "g": 29.6,
-       "a": 45.7,
-       "inv": 61.8
-      },
-      {
-       "id": 19617,
-       "name": "M. Olise",
-       "pos": "Midfielder",
-       "g": 36.7,
-       "a": 22.5,
-       "inv": 51.0
-      },
-      {
-       "id": 502,
-       "name": "J. Kimmich",
-       "pos": "Midfielder",
-       "g": 11.6,
-       "a": 23.9,
-       "inv": 32.7
-      },
-      {
-       "id": 280074,
-       "name": "N. Brown",
-       "pos": "Midfielder",
-       "g": 12.1,
-       "a": 14.7,
-       "inv": 25.0
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 432310,
-       "name": "S. El Mala",
-       "p": 18.3,
-       "gl": 3,
-       "as": 0,
-       "ap": 8,
-       "price": {
-        "odd": 5.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.0
-        }
-       }
-      },
-      {
-       "id": 25242,
-       "name": "M. Bülter",
-       "p": 12.2,
-       "gl": 1,
-       "as": 0,
-       "ap": 9,
-       "price": {
-        "odd": 5.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.5
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 404656,
-       "name": "Jahmai Simpson-Pusey",
-       "p": 26.1,
-       "yc": 3,
-       "rc": 0,
-       "ap": 9,
-       "price": null
-      },
-      {
-       "id": 1156,
-       "name": "T. Krauß",
-       "p": 25.3,
-       "yc": 3,
-       "rc": 0,
-       "ap": 9,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 26303,
-      "name": "B. Sosa",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 432310,
-       "name": "S. El Mala",
-       "pos": "Attacker",
-       "g": 18.3,
-       "a": 2.8,
-       "inv": 20.5
-      },
-      {
-       "id": 25380,
-       "name": "L. Maina",
-       "pos": "Midfielder",
-       "g": 7.0,
-       "a": 11.0,
-       "inv": 17.3
-      },
-      {
-       "id": 25242,
-       "name": "M. Bülter",
-       "pos": "Attacker",
-       "g": 12.2,
-       "a": 2.4,
-       "inv": 14.3
-      },
-      {
-       "id": 37439,
-       "name": "R. Ache",
-       "pos": "Attacker",
-       "g": 10.3,
-       "a": 3.1,
-       "inv": 13.1
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 509,
-      "name": "A. Davies",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury"
-     },
-     {
-      "id": 2489,
-      "name": "L. Diaz",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 510,
-      "name": "S. Gnabry",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 497,
-      "name": "M. Neuer",
-      "type": "Missing Fixture",
-      "reason": "Foot Injury"
-     },
-     {
-      "id": 161897,
-      "name": "I. Saibari",
-      "type": "Missing Fixture",
-      "reason": "Ankle Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 93016,
-      "name": "T. Dallinga",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 90641,
-      "name": "T. Hubers",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 80497,
-      "name": "I. Rondic",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 21587,
-      "name": "E. Skhiri",
-      "type": "Missing Fixture",
-      "reason": "Ankle Injury"
-     },
-     {
-      "id": 287916,
-      "name": "R. van den Berg",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     }
-    ]
-   },
-   "lineup_confirmed": true,
-   "previous": [
-    {
-     "date": "16/05/2026",
-     "home": "Bayern München",
-     "away": "1. FC Köln",
-     "hg": 5,
-     "ag": 1,
-     "ht": [
-      3,
-      1
-     ],
-     "ref": "D. Aytekin",
-     "sx": {
-      "h": {
-       "pos": 69.0,
-       "xg": 3.05,
-       "sh": 19.0,
-       "sot": 7.0,
-       "co": 5.0,
-       "fo": 6.0,
-       "of": 5.0,
-       "sv": 1.0,
-       "pp": 91.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 31.0,
-       "xg": 0.98,
-       "sh": 9.0,
-       "sot": 2.0,
-       "co": 5.0,
-       "fo": 4.0,
-       "of": 1.0,
-       "sv": 2.0,
-       "pp": 81.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "H. Kane",
-       "t": "h",
-       "m": 10
-      },
-      {
-       "n": "H. Kane",
-       "t": "h",
-       "m": 13
-      },
-      {
-       "n": "S. El Mala",
-       "t": "a",
-       "m": 18
-      },
-      {
-       "n": "T. Bischof",
-       "t": "h",
-       "m": 22
-      },
-      {
-       "n": "H. Kane",
-       "t": "h",
-       "m": 69
-      },
-      {
-       "n": "N. Jackson",
-       "t": "h",
-       "m": 83
-      }
-     ],
-     "cards": [
-      {
-       "n": "Joel Schmied",
-       "t": "a",
-       "m": 34,
-       "r": false
-      },
-      {
-       "n": "Konrad Laimer",
-       "t": "h",
-       "m": 37,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "14/01/2026",
-     "home": "1. FC Köln",
-     "away": "Bayern München",
-     "hg": 1,
-     "ag": 3,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "P. Ittrich",
-     "sx": {
-      "h": {
-       "pos": 28.0,
-       "xg": 0.72,
-       "sh": 8.0,
-       "sot": 3.0,
-       "co": 4.0,
-       "fo": 3.0,
-       "of": 3.0,
-       "sv": 5.0,
-       "pp": 70.0,
-       "yc": 0.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 72.0,
-       "xg": 1.5,
-       "sh": 19.0,
-       "sot": 8.0,
-       "co": 6.0,
-       "fo": 4.0,
-       "of": 5.0,
-       "sv": 2.0,
-       "pp": 89.0,
-       "yc": 0.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "L. Maina",
-       "t": "h",
-       "m": 41
-      },
-      {
-       "n": "S. Gnabry",
-       "t": "a",
-       "m": 45
-      },
-      {
-       "n": "Kim Min-Jae",
-       "t": "a",
-       "m": 71
-      },
-      {
-       "n": "L. Karl",
-       "t": "a",
-       "m": 84
-      }
-     ],
-     "cards": []
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 1.12,
-     "bookie": "Betano",
-     "books": {
-      "William Hill": 1.08,
-      "Bet365": 1.07,
-      "Betfair": 1.07,
-      "BetVictor": 1.06
-     }
-    },
-    "draw": {
-     "odd": 15.0,
-     "bookie": "Betfair",
-     "books": {
-      "William Hill": 11.0,
-      "Bet365": 13.0,
-      "Betfair": 15.0,
-      "BetVictor": 9.5
-     }
-    },
-    "away": {
-     "odd": 27.0,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 21.0,
-      "Bet365": 17.0,
-      "Betfair": 26.0,
-      "BetVictor": 18.0
-     }
-    },
-    "over25": {
-     "odd": 1.16,
-     "bookie": "Betano",
-     "books": {
-      "Bet365": 1.14,
-      "Betfair": 1.1,
-      "BetVictor": 1.11
-     }
-    },
-    "under25": {
-     "odd": 6.0,
-     "bookie": "Betfair",
-     "books": {
-      "Bet365": 5.5,
-      "Betfair": 6.0,
-      "BetVictor": 6.0
-     }
-    },
-    "btts_yes": {
-     "odd": 1.76,
-     "bookie": "Marathonbet",
-     "books": {
-      "William Hill": 1.7,
-      "Bet365": 1.75,
-      "Betfair": 1.73,
-      "BetVictor": 1.7
-     }
-    },
-    "btts_no": {
-     "odd": 2.1,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 2.1,
-      "Bet365": 2.0,
-      "Betfair": 2.05,
-      "BetVictor": 2.0
-     }
-    },
-    "cards_over45": {
-     "odd": 4.05,
-     "bookie": "Betano",
-     "books": {}
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.76,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.67
-       }
-      },
-      "under": {
-       "odd": 2.1,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 2.1
-       }
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 2.66,
-       "bookie": "Pinnacle",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.47,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 4.05,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.22,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 6.4,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.09,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 9.5,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.04,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1575226,
    "kickoff": "2026-11-21T14:30:00",
@@ -13823,6 +12457,1411 @@
       "Bet365": 2.5,
       "Betfair": 2.55,
       "BetVictor": 2.55
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1575234,
+   "kickoff": "2026-11-28T14:30:00",
+   "round": "Regular Season - 11",
+   "home": "FSV Mainz 05",
+   "away": "Union Berlin",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 62.2,
+    "draw": 21.6,
+    "away": 16.2
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 57.7,
+   "draw_pct": 23.6,
+   "away_pct": 18.7,
+   "xg_home": 1.92,
+   "xg_away": 1.01,
+   "over25": 56.1,
+   "btts": 55.1,
+   "cards5": 37.5,
+   "cards": {
+    "exp": 4.03,
+    "home": 1.98,
+    "away": 2.05,
+    "over": {
+     "2.5": 73.0,
+     "3.5": 54.8,
+     "4.5": 37.5,
+     "5.5": 23.5,
+     "6.5": 13.7
+    }
+   },
+   "form": {
+    "home": {
+     "played": 5,
+     "win": 0.0,
+     "over25": 80.0,
+     "btts": 80.0
+    },
+    "away": {
+     "played": 4,
+     "win": 0.0,
+     "over25": 50.0,
+     "btts": 25.0
+    }
+   },
+   "venue": {
+    "home": {
+     "games": [
+      {
+       "date": "29/08/2026",
+       "home": "FSV Mainz 05",
+       "away": "SC Paderborn 07",
+       "hg": 0,
+       "ag": 0,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "T. Stieler",
+       "sx": {
+        "h": {
+         "pos": 51.0,
+         "xg": 1.23,
+         "sh": 21.0,
+         "sot": 4.0,
+         "co": 11.0,
+         "fo": 8.0,
+         "of": 1.0,
+         "sv": 0.0,
+         "pp": 84.0,
+         "yc": 1.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 49.0,
+         "xg": 0.73,
+         "sh": 10.0,
+         "sot": 0.0,
+         "co": 2.0,
+         "fo": 10.0,
+         "of": 1.0,
+         "sv": 4.0,
+         "pp": 84.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [],
+       "cards": [
+        {
+         "n": "Santiago Castañeda",
+         "t": "a",
+         "m": 38,
+         "r": false
+        },
+        {
+         "n": "Mattes Hansen",
+         "t": "a",
+         "m": 72,
+         "r": false
+        },
+        {
+         "n": "Phillipp Mwene",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "12/09/2026",
+       "home": "FSV Mainz 05",
+       "away": "Eintracht Frankfurt",
+       "hg": 1,
+       "ag": 3,
+       "ht": [
+        0,
+        2
+       ],
+       "ref": "F. Zwayer",
+       "sx": {
+        "h": {
+         "pos": 55.0,
+         "xg": 2.12,
+         "sh": 18.0,
+         "sot": 5.0,
+         "co": 4.0,
+         "fo": 11.0,
+         "of": 1.0,
+         "sv": 2.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 45.0,
+         "xg": 2.04,
+         "sh": 11.0,
+         "sot": 5.0,
+         "co": 5.0,
+         "fo": 9.0,
+         "of": 3.0,
+         "sv": 4.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "C. Uzun",
+         "t": "a",
+         "m": 9
+        },
+        {
+         "n": "J. Burkardt",
+         "t": "a",
+         "m": 45
+        },
+        {
+         "n": "C. Uzun",
+         "t": "a",
+         "m": 60
+        },
+        {
+         "n": "P. Tietz",
+         "t": "h",
+         "m": 89
+        }
+       ],
+       "cards": [
+        {
+         "n": "Raphael Onyedika",
+         "t": "a",
+         "m": 41,
+         "r": false
+        },
+        {
+         "n": "Mario Götze",
+         "t": "a",
+         "m": 70,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "10/10/2026",
+       "home": "FSV Mainz 05",
+       "away": "Bayer Leverkusen",
+       "hg": 3,
+       "ag": 4,
+       "ht": [
+        2,
+        2
+       ],
+       "ref": "M. Burda",
+       "sx": {
+        "h": {
+         "pos": 47.0,
+         "xg": 2.87,
+         "sh": 23.0,
+         "sot": 5.0,
+         "co": 4.0,
+         "fo": 11.0,
+         "of": 0.0,
+         "sv": 3.0,
+         "pp": 83.0,
+         "yc": 3.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 53.0,
+         "xg": 1.69,
+         "sh": 16.0,
+         "sot": 7.0,
+         "co": 3.0,
+         "fo": 10.0,
+         "of": 1.0,
+         "sv": 1.0,
+         "pp": 85.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "R. Andrich",
+         "t": "a",
+         "m": 5
+        },
+        {
+         "n": "P. Schick",
+         "t": "a",
+         "m": 9
+        },
+        {
+         "n": "A. Caci",
+         "t": "h",
+         "m": 33
+        },
+        {
+         "n": "A. Caci",
+         "t": "h",
+         "m": 42
+        },
+        {
+         "n": "J. Quansah",
+         "t": "a",
+         "m": 55
+        },
+        {
+         "n": "M. Diaby",
+         "t": "a",
+         "m": 65
+        },
+        {
+         "n": "B. Hollerbach",
+         "t": "h",
+         "m": 90
+        }
+       ],
+       "cards": [
+        {
+         "n": "Phillip Tietz",
+         "t": "h",
+         "m": 20,
+         "r": false
+        },
+        {
+         "n": "Sheraldo Becker",
+         "t": "h",
+         "m": 35,
+         "r": false
+        },
+        {
+         "n": "Jae-sung Lee",
+         "t": "h",
+         "m": 76,
+         "r": false
+        },
+        {
+         "n": "Jarell Quansah",
+         "t": "a",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "24/10/2026",
+       "home": "FSV Mainz 05",
+       "away": "Werder Bremen",
+       "hg": 2,
+       "ag": 3,
+       "ht": [
+        1,
+        2
+       ],
+       "ref": "F. Badstubner",
+       "sx": {
+        "h": {
+         "pos": 53.0,
+         "xg": 1.73,
+         "sh": 18.0,
+         "sot": 8.0,
+         "co": 6.0,
+         "fo": 7.0,
+         "of": 2.0,
+         "sv": 6.0,
+         "yc": 3.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 47.0,
+         "xg": 2.58,
+         "sh": 17.0,
+         "sot": 8.0,
+         "co": 7.0,
+         "fo": 5.0,
+         "of": 0.0,
+         "sv": 6.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Niclas Füllkrug",
+         "t": "a",
+         "m": 7
+        },
+        {
+         "n": "Niclas Füllkrug",
+         "t": "a",
+         "m": 25
+        },
+        {
+         "n": "Anthony Caci",
+         "t": "h",
+         "m": 33
+        },
+        {
+         "n": "Ludovit Reis",
+         "t": "a",
+         "m": 61
+        },
+        {
+         "n": "Lee Jae-Sung",
+         "t": "h",
+         "m": 63
+        }
+       ],
+       "cards": [
+        {
+         "n": "Ludovit Reis",
+         "t": "a",
+         "m": 38,
+         "r": false
+        },
+        {
+         "n": "Phillipp Mwene",
+         "t": "h",
+         "m": 69,
+         "r": false
+        },
+        {
+         "n": "Benedict Hollerbach",
+         "t": "h",
+         "m": 88,
+         "r": false
+        },
+        {
+         "n": "Marco Grüll",
+         "t": "a",
+         "m": 89,
+         "r": false
+        },
+        {
+         "n": "Alexander Schwolow",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "07/11/2026",
+       "home": "FSV Mainz 05",
+       "away": "Bayern München",
+       "hg": 1,
+       "ag": 2,
+       "ht": [
+        0,
+        1
+       ],
+       "ref": "R. Schroder",
+       "sx": {
+        "h": {
+         "pos": 31.0,
+         "xg": 0.64,
+         "sh": 10.0,
+         "sot": 1.0,
+         "co": 7.0,
+         "fo": 8.0,
+         "of": 3.0,
+         "sv": 6.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 69.0,
+         "xg": 2.7,
+         "sh": 26.0,
+         "sot": 9.0,
+         "co": 8.0,
+         "fo": 8.0,
+         "of": 1.0,
+         "sv": 0.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Joshua Kimmich",
+         "t": "a",
+         "m": 14
+        },
+        {
+         "n": "Lennart Karl",
+         "t": "a",
+         "m": 57
+        },
+        {
+         "n": "Phillip Tietz",
+         "t": "h",
+         "m": 90
+        }
+       ],
+       "cards": [
+        {
+         "n": "Konrad Laimer",
+         "t": "a",
+         "m": 76,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 5,
+     "w": 0,
+     "d": 1,
+     "l": 4,
+     "last5": "DLLLL",
+     "gf": 1.4,
+     "ga": 2.4,
+     "cs": 20,
+     "fts": 20,
+     "sh": 18.0,
+     "sot": 4.6,
+     "co": 6.4,
+     "yc": 1.4
+    },
+    "away": {
+     "games": [
+      {
+       "date": "05/09/2026",
+       "home": "Bayer Leverkusen",
+       "away": "Union Berlin",
+       "hg": 4,
+       "ag": 0,
+       "ht": [
+        2,
+        0
+       ],
+       "ref": "R. Braun",
+       "sx": {
+        "h": {
+         "pos": 64.0,
+         "xg": 3.11,
+         "sh": 21.0,
+         "sot": 10.0,
+         "co": 11.0,
+         "fo": 11.0,
+         "of": 3.0,
+         "sv": 0.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 36.0,
+         "xg": 0.39,
+         "sh": 5.0,
+         "sot": 0.0,
+         "co": 1.0,
+         "fo": 12.0,
+         "of": 3.0,
+         "sv": 6.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "E. Fernandez",
+         "t": "h",
+         "m": 1
+        },
+        {
+         "n": "F. Medina",
+         "t": "h",
+         "m": 28
+        },
+        {
+         "n": "P. Schick",
+         "t": "h",
+         "m": 48
+        },
+        {
+         "n": "I. Maza",
+         "t": "h",
+         "m": 66
+        }
+       ],
+       "cards": [
+        {
+         "n": "Felix Uduokhai",
+         "t": "a",
+         "m": 4,
+         "r": false
+        },
+        {
+         "n": "Zeno Van Den Bosch",
+         "t": "a",
+         "m": 47,
+         "r": false
+        },
+        {
+         "n": "Miguel Gutiérrez",
+         "t": "h",
+         "m": 61,
+         "r": false
+        },
+        {
+         "n": "Ibrahim Maza",
+         "t": "h",
+         "m": 88,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "18/09/2026",
+       "home": "Bayern München",
+       "away": "Union Berlin",
+       "hg": 7,
+       "ag": 0,
+       "ht": [
+        3,
+        0
+       ],
+       "ref": "B. Brand",
+       "sx": {
+        "h": {
+         "pos": 68.0,
+         "xg": 3.71,
+         "sh": 23.0,
+         "sot": 15.0,
+         "co": 9.0,
+         "fo": 12.0,
+         "of": 2.0,
+         "sv": 2.0,
+         "pp": 91.0,
+         "yc": 1.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 32.0,
+         "xg": 0.34,
+         "sh": 3.0,
+         "sot": 2.0,
+         "co": 2.0,
+         "fo": 9.0,
+         "of": 2.0,
+         "sv": 6.0,
+         "pp": 75.0,
+         "yc": 3.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Jamal Musiala",
+         "t": "h",
+         "m": 18
+        },
+        {
+         "n": "Harry Kane",
+         "t": "h",
+         "m": 39
+        },
+        {
+         "n": "Michael Olise",
+         "t": "h",
+         "m": 43
+        },
+        {
+         "n": "Harry Kane",
+         "t": "h",
+         "m": 54
+        },
+        {
+         "n": "Ismael Saibari",
+         "t": "h",
+         "m": 70
+        },
+        {
+         "n": "Michael Olise",
+         "t": "h",
+         "m": 73
+        },
+        {
+         "n": "Michael Olise",
+         "t": "h",
+         "m": 76
+        }
+       ],
+       "cards": [
+        {
+         "n": "Felix Uduokhai",
+         "t": "a",
+         "m": 38,
+         "r": false
+        },
+        {
+         "n": "Rani Khedira",
+         "t": "a",
+         "m": 42,
+         "r": false
+        },
+        {
+         "n": "Dayot Upamecano",
+         "t": "h",
+         "m": 45,
+         "r": false
+        },
+        {
+         "n": "Livan Burcu",
+         "t": "a",
+         "m": 78,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "24/10/2026",
+       "home": "FC Augsburg",
+       "away": "Union Berlin",
+       "hg": 1,
+       "ag": 1,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "R. Braun",
+       "sx": {
+        "h": {
+         "pos": 69.0,
+         "xg": 1.91,
+         "sh": 25.0,
+         "sot": 5.0,
+         "co": 5.0,
+         "fo": 10.0,
+         "of": 0.0,
+         "sv": 0.0,
+         "yc": 0.0,
+         "rc": 1.0
+        },
+        "a": {
+         "pos": 31.0,
+         "xg": 1.24,
+         "sh": 6.0,
+         "sot": 1.0,
+         "co": 1.0,
+         "fo": 9.0,
+         "of": 2.0,
+         "sv": 4.0,
+         "yc": 3.0,
+         "rc": 1.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Han-Noah Massengo",
+         "t": "h",
+         "m": 71
+        },
+        {
+         "n": "Janik Haberer",
+         "t": "a",
+         "m": 74
+        }
+       ],
+       "cards": [
+        {
+         "n": "Felix Uduokhai",
+         "t": "a",
+         "m": 19,
+         "r": true
+        },
+        {
+         "n": "Janik Haberer",
+         "t": "a",
+         "m": 31,
+         "r": false
+        },
+        {
+         "n": "Leopold Querfeld",
+         "t": "a",
+         "m": 36,
+         "r": false
+        },
+        {
+         "n": "Juma Bah",
+         "t": "h",
+         "m": 63,
+         "r": true
+        },
+        {
+         "n": "Mekhi Gray",
+         "t": "a",
+         "m": 77,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "08/11/2026",
+       "home": "SC Freiburg",
+       "away": "Union Berlin",
+       "hg": 2,
+       "ag": 0,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "S. Stegemann",
+       "sx": {
+        "h": {
+         "pos": 59.0,
+         "xg": 2.62,
+         "sh": 20.0,
+         "sot": 9.0,
+         "co": 5.0,
+         "fo": 10.0,
+         "of": 0.0,
+         "sv": 1.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 41.0,
+         "xg": 0.37,
+         "sh": 4.0,
+         "sot": 0.0,
+         "co": 1.0,
+         "fo": 17.0,
+         "of": 3.0,
+         "sv": 8.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Yuito Suzuki",
+         "t": "h",
+         "m": 67
+        }
+       ],
+       "cards": [
+        {
+         "n": "Igor Matanović",
+         "t": "h",
+         "m": 2,
+         "r": false
+        },
+        {
+         "n": "Zeno Van Den Bosch",
+         "t": "a",
+         "m": 19,
+         "r": false
+        },
+        {
+         "n": "Yannick Engelhardt",
+         "t": "h",
+         "m": 27,
+         "r": false
+        },
+        {
+         "n": "Woo-Yeong Jeong",
+         "t": "a",
+         "m": 89,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 4,
+     "w": 0,
+     "d": 1,
+     "l": 3,
+     "last5": "LLDL",
+     "gf": 0.25,
+     "ga": 3.5,
+     "cs": 0,
+     "fts": 75,
+     "sh": 4.5,
+     "sot": 0.8,
+     "co": 1.2,
+     "yc": 2.5
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 54.98693787105471,
+     "sh": 58.1444064775316,
+     "any": 81.1595156832925
+    },
+    "away": {
+     "fh": 37.13440322297289,
+     "sh": 58.26361065037921,
+     "any": 73.76216976217731
+    },
+    "match_fh": 71.70226986502458,
+    "match_sh": 82.53098652286793
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 26171,
+       "name": "P. Tietz",
+       "p": 48.7,
+       "gl": 6,
+       "as": 0,
+       "ap": 9,
+       "price": {
+        "odd": 2.3,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.3
+        }
+       }
+      },
+      {
+       "id": 37938,
+       "name": "S. Becker",
+       "p": 32.8,
+       "gl": 2,
+       "as": 4,
+       "ap": 9,
+       "price": {
+        "odd": 2.3,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.3
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 25915,
+       "name": "P. Mwene",
+       "p": 37.1,
+       "yc": 5,
+       "rc": 0,
+       "ap": 8,
+       "price": null
+      },
+      {
+       "id": 711,
+       "name": "S. Posch",
+       "p": 28.4,
+       "yc": 2,
+       "rc": 1,
+       "ap": 7,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 442546,
+      "name": "K. Potulski",
+      "sot": 1
+     },
+     "cap": [
+      {
+       "id": 37938,
+       "name": "S. Becker",
+       "pos": "Attacker",
+       "g": 32.8,
+       "a": 38.1,
+       "inv": 58.4
+      },
+      {
+       "id": 26171,
+       "name": "P. Tietz",
+       "pos": "Attacker",
+       "g": 48.7,
+       "a": 5.8,
+       "inv": 51.7
+      },
+      {
+       "id": 22244,
+       "name": "A. Caci",
+       "pos": "Midfielder",
+       "g": 23.8,
+       "a": 31.0,
+       "inv": 47.5
+      },
+      {
+       "id": 25915,
+       "name": "P. Mwene",
+       "pos": "Midfielder",
+       "g": 15.5,
+       "a": 16.4,
+       "inv": 29.4
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 32137,
+       "name": "E. Latte Lath",
+       "p": 16.2,
+       "gl": 1,
+       "as": 0,
+       "ap": 6,
+       "price": {
+        "odd": 3.75,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.75
+        }
+       }
+      },
+      {
+       "id": 24910,
+       "name": "T. Skarke",
+       "p": 15.6,
+       "gl": 2,
+       "as": 1,
+       "ap": 9,
+       "price": {
+        "odd": 5.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 5.5
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 25406,
+       "name": "F. Uduokhai",
+       "p": 35.7,
+       "yc": 3,
+       "rc": 1,
+       "ap": 6,
+       "price": null
+      },
+      {
+       "id": 303679,
+       "name": "Z. Van Den Bosch",
+       "p": 31.4,
+       "yc": 4,
+       "rc": 0,
+       "ap": 8,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 324957,
+      "name": "T. Rothe",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 288206,
+       "name": "L. Querfeld",
+       "pos": "Defender",
+       "g": 10.4,
+       "a": 15.5,
+       "inv": 24.3
+      },
+      {
+       "id": 24910,
+       "name": "T. Skarke",
+       "pos": "Midfielder",
+       "g": 15.6,
+       "a": 9.7,
+       "inv": 23.8
+      },
+      {
+       "id": 32137,
+       "name": "E. Latte Lath",
+       "pos": "Attacker",
+       "g": 16.2,
+       "a": 4.6,
+       "inv": 20.1
+      },
+      {
+       "id": 26249,
+       "name": "J. Haberer",
+       "pos": "Midfielder",
+       "g": 14.5,
+       "a": 3.8,
+       "inv": 17.8
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "lineup_confirmed": false,
+   "previous": [
+    {
+     "date": "10/05/2026",
+     "home": "FSV Mainz 05",
+     "away": "Union Berlin",
+     "hg": 1,
+     "ag": 3,
+     "ht": [
+      0,
+      1
+     ],
+     "ref": "F. Exner",
+     "sx": {
+      "h": {
+       "pos": 53.0,
+       "xg": 1.57,
+       "sh": 14.0,
+       "sot": 3.0,
+       "co": 7.0,
+       "fo": 11.0,
+       "of": 2.0,
+       "sv": 6.0,
+       "pp": 84.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 47.0,
+       "xg": 2.68,
+       "sh": 16.0,
+       "sot": 9.0,
+       "co": 8.0,
+       "fo": 10.0,
+       "of": 0.0,
+       "sv": 2.0,
+       "pp": 82.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "A. Ilic",
+       "t": "a",
+       "m": 38
+      },
+      {
+       "n": "S. Becker",
+       "t": "h",
+       "m": 48
+      },
+      {
+       "n": "O. Burke",
+       "t": "a",
+       "m": 88
+      },
+      {
+       "n": "J. Juranovic",
+       "t": "a",
+       "m": 90
+      }
+     ],
+     "cards": [
+      {
+       "n": "Anthony Caci",
+       "t": "h",
+       "m": 7,
+       "r": false
+      },
+      {
+       "n": "Jae-sung Lee",
+       "t": "h",
+       "m": 75,
+       "r": false
+      },
+      {
+       "n": "Derrick Köhn",
+       "t": "a",
+       "m": 80,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "10/01/2026",
+     "home": "Union Berlin",
+     "away": "FSV Mainz 05",
+     "hg": 2,
+     "ag": 2,
+     "ht": [
+      0,
+      1
+     ],
+     "ref": "B. Dankert",
+     "sx": {
+      "h": {
+       "pos": 57.0,
+       "xg": 3.35,
+       "sh": 17.0,
+       "sot": 5.0,
+       "co": 2.0,
+       "fo": 9.0,
+       "of": 0.0,
+       "sv": 4.0,
+       "pp": 73.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 43.0,
+       "xg": 1.01,
+       "sh": 9.0,
+       "sot": 6.0,
+       "co": 1.0,
+       "fo": 8.0,
+       "of": 1.0,
+       "sv": 3.0,
+       "pp": 66.0,
+       "yc": 0.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "N. Amiri",
+       "t": "a",
+       "m": 30
+      },
+      {
+       "n": "B. Hollerbach",
+       "t": "a",
+       "m": 69
+      },
+      {
+       "n": "Jeong Woo-Yeong",
+       "t": "h",
+       "m": 77
+      },
+      {
+       "n": "M. Ljubicic",
+       "t": "h",
+       "m": 86
+      }
+     ],
+     "cards": [
+      {
+       "n": "Diogo Leite",
+       "t": "h",
+       "m": 19,
+       "r": false
+      },
+      {
+       "n": "Danilho Doekhi",
+       "t": "h",
+       "m": 57,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "19/01/2025",
+     "home": "Union Berlin",
+     "away": "FSV Mainz 05",
+     "hg": 2,
+     "ag": 1,
+     "ht": [
+      2,
+      1
+     ],
+     "ref": "F. Exner",
+     "sx": {
+      "h": {
+       "pos": 33.0,
+       "xg": 2.08,
+       "sh": 12.0,
+       "sot": 4.0,
+       "co": 2.0,
+       "fo": 12.0,
+       "of": 5.0,
+       "sv": 0.0,
+       "pp": 64.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 67.0,
+       "xg": 1.69,
+       "sh": 9.0,
+       "sot": 1.0,
+       "co": 2.0,
+       "fo": 10.0,
+       "of": 3.0,
+       "sv": 2.0,
+       "pp": 81.0,
+       "yc": 2.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "B. Hollerbach",
+       "t": "h",
+       "m": 1
+      },
+      {
+       "n": "N. Amiri",
+       "t": "a",
+       "m": 5
+      },
+      {
+       "n": "R. Skov",
+       "t": "h",
+       "m": 24
+      }
+     ],
+     "cards": [
+      {
+       "n": "Anthony Caci",
+       "t": "a",
+       "m": 26,
+       "r": false
+      },
+      {
+       "n": "Aljoscha Kemlein",
+       "t": "h",
+       "m": 32,
+       "r": false
+      },
+      {
+       "n": "Stefan Bell",
+       "t": "a",
+       "m": 32,
+       "r": false
+      },
+      {
+       "n": "Leopold Querfeld",
+       "t": "h",
+       "m": 86,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "24/08/2024",
+     "home": "FSV Mainz 05",
+     "away": "Union Berlin",
+     "hg": 1,
+     "ag": 1,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "H. Osmers",
+     "sx": {
+      "h": {
+       "pos": 54.0,
+       "xg": 1.44,
+       "sh": 14.0,
+       "sot": 3.0,
+       "co": 8.0,
+       "fo": 10.0,
+       "of": 1.0,
+       "sv": 4.0,
+       "pp": 78.0,
+       "yc": 1.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 46.0,
+       "xg": 0.5,
+       "sh": 15.0,
+       "sot": 5.0,
+       "co": 9.0,
+       "fo": 15.0,
+       "of": 1.0,
+       "sv": 3.0,
+       "pp": 72.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     }
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 1.51,
+     "bookie": "Marathonbet",
+     "books": {
+      "Bet365": 1.5
+     }
+    },
+    "draw": {
+     "odd": 4.7,
+     "bookie": "Marathonbet",
+     "books": {
+      "Bet365": 4.33
+     }
+    },
+    "away": {
+     "odd": 5.95,
+     "bookie": "Marathonbet",
+     "books": {
+      "Bet365": 5.75
+     }
+    },
+    "over25": {
+     "odd": 1.57,
+     "bookie": "Bet365",
+     "books": {
+      "Bet365": 1.57
+     }
+    },
+    "under25": {
+     "odd": 2.48,
+     "bookie": "Pinnacle",
+     "books": {
+      "Bet365": 2.38
+     }
+    },
+    "btts_yes": {
+     "odd": 1.67,
+     "bookie": "Bet365",
+     "books": {
+      "Bet365": 1.67
+     }
+    },
+    "btts_no": {
+     "odd": 2.16,
+     "bookie": "Marathonbet",
+     "books": {
+      "Bet365": 2.1
      }
     },
     "cards_over45": null,
