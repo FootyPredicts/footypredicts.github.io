@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-20T19:08:13.878901+00:00",
+ "updated": "2026-11-20T19:38:19.822486+00:00",
  "matches_used": 705,
  "fixtures": [
   {
@@ -1121,7 +1121,7 @@
      }
     ]
    },
-   "lineup_confirmed": false,
+   "lineup_confirmed": true,
    "previous": [],
    "odds": {
     "home": {
@@ -2859,10 +2859,9 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 6.7,
+     "goals_lost_pct": 3.7,
      "defence_hit_pct": 4.0,
      "key_out": [
-      "A. Ueda",
       "Tiago Santos"
      ]
     },
@@ -2874,13 +2873,13 @@
      ]
     }
    },
-   "home_pct": 41.7,
-   "draw_pct": 32.2,
-   "away_pct": 26.1,
-   "xg_home": 1.17,
+   "home_pct": 42.8,
+   "draw_pct": 31.7,
+   "away_pct": 25.4,
+   "xg_home": 1.21,
    "xg_away": 0.87,
-   "over25": 33.3,
-   "btts": 41.0,
+   "over25": 34.3,
+   "btts": 41.7,
    "cards5": 41.2,
    "cards": {
     "exp": 4.21,
@@ -3855,12 +3854,6 @@
       "name": "T. Santos",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 72155,
-      "name": "A. Ueda",
-      "type": "Questionable",
-      "reason": "Foot Injury"
      }
     ],
     "away": [
@@ -7588,20 +7581,18 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 3.0,
+     "goals_lost_pct": 0.7,
      "defence_hit_pct": 0.0,
-     "key_out": [
-      "T. Jørgensen"
-     ]
+     "key_out": []
     }
    },
-   "home_pct": 53.6,
-   "draw_pct": 24.8,
-   "away_pct": 21.5,
+   "home_pct": 53.0,
+   "draw_pct": 24.9,
+   "away_pct": 22.1,
    "xg_home": 1.8,
-   "xg_away": 1.07,
-   "over25": 54.8,
-   "btts": 55.7,
+   "xg_away": 1.1,
+   "over25": 55.4,
+   "btts": 56.5,
    "cards5": 41.8,
    "cards": {
     "exp": 4.25,
@@ -8716,12 +8707,6 @@
       "name": "R. Messali",
       "type": "Missing Fixture",
       "reason": "Thigh Injury"
-     },
-     {
-      "id": 386277,
-      "name": "T. Jorgensen",
-      "type": "Questionable",
-      "reason": "Injury"
      }
     ]
    },
@@ -10582,28 +10567,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 3.1,
+     "goals_lost_pct": 3.4,
      "defence_hit_pct": 4.0,
      "key_out": [
       "S. Touré"
      ]
     },
     "away": {
-     "goals_lost_pct": 12.1,
-     "defence_hit_pct": 2.0,
+     "goals_lost_pct": 1.1,
+     "defence_hit_pct": 4.0,
      "key_out": [
-      "E. Lepaul",
       "P. Frankowski"
      ]
     }
    },
-   "home_pct": 43.2,
-   "draw_pct": 26.6,
-   "away_pct": 30.2,
-   "xg_home": 1.57,
-   "xg_away": 1.28,
-   "over25": 54.2,
-   "btts": 58.0,
+   "home_pct": 40.5,
+   "draw_pct": 25.8,
+   "away_pct": 33.7,
+   "xg_home": 1.59,
+   "xg_away": 1.44,
+   "over25": 58.4,
+   "btts": 61.7,
    "cards5": 34.0,
    "cards": {
     "exp": 3.84,
@@ -11530,17 +11514,32 @@
        "inv": 30.0
       },
       {
-       "id": 384112,
-       "name": "P. Katseris",
-       "pos": "Defender",
-       "g": 3.0,
-       "a": 27.6,
-       "inv": 29.8
+       "id": 274278,
+       "name": "I. Baldé",
+       "pos": "Attacker",
+       "g": 19.2,
+       "a": 6.0,
+       "inv": 24.1
       }
      ]
     },
     "away": {
      "scorers": [
+      {
+       "id": 163004,
+       "name": "E. Lepaul",
+       "p": 33.1,
+       "gl": 7,
+       "as": 0,
+       "ap": 7,
+       "price": {
+        "odd": 2.6,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.6
+        }
+       }
+      },
       {
        "id": 22015,
        "name": "B. Dia",
@@ -11553,21 +11552,6 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 2.6
-        }
-       }
-      },
-      {
-       "id": 40403,
-       "name": "S. Szymański",
-       "p": 13.5,
-       "gl": 4,
-       "as": 1,
-       "ap": 8,
-       "price": {
-        "odd": 5.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.0
         }
        }
       }
@@ -11599,6 +11583,14 @@
      },
      "cap": [
       {
+       "id": 163004,
+       "name": "E. Lepaul",
+       "pos": "Attacker",
+       "g": 33.1,
+       "a": 3.1,
+       "inv": 35.1
+      },
+      {
        "id": 40403,
        "name": "S. Szymański",
        "pos": "Midfielder",
@@ -11621,14 +11613,6 @@
        "g": 7.1,
        "a": 9.9,
        "inv": 16.3
-      },
-      {
-       "id": 3007,
-       "name": "P. Frankowski",
-       "pos": "Defender",
-       "g": 3.6,
-       "a": 9.6,
-       "inv": 12.9
       }
      ]
     }
@@ -11636,29 +11620,29 @@
    "injuries": {
     "home": [
      {
-      "id": 195893,
-      "name": "I. Toure",
+      "id": 162018,
+      "name": "B. Fadiga",
       "type": "Missing Fixture",
-      "reason": "Groin Injury"
+      "reason": "Muscle Injury"
      },
      {
       "id": 384112,
       "name": "P. Katseris",
-      "type": "Questionable",
+      "type": "Missing Fixture",
       "reason": "Muscle Injury"
+     },
+     {
+      "id": 195893,
+      "name": "I. Toure",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
      }
     ],
     "away": [
      {
-      "id": 163004,
-      "name": "E. Lepaul",
-      "type": "Missing Fixture",
-      "reason": "Ankle Injury"
-     },
-     {
       "id": 3007,
       "name": "P. Frankowski",
-      "type": "Questionable",
+      "type": "Missing Fixture",
       "reason": "Muscle Injury"
      }
     ]
