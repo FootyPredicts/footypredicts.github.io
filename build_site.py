@@ -1315,13 +1315,15 @@ def club_page(name, c, leagues, upd):
       <h2 class="fixture"><span class="fx-t">{tlogo(name, 56, "tl tl-lg")}{esc(name)}</span></h2>
       <p class="halves">{llogo(LEAGUE_API.get(c['lg']), 18)}<a href="../../{c['lg']}/">{esc(c['ln'])}</a></p>
       {stand}
-      <button type="button" class="lt-btn club-mine" data-club="{esc(name)}" data-slug="{c['slug']}">&#9734; Make this my club</button>
+      <button type="button" class="lt-btn club-mine" data-club="{esc(name)}" data-slug="{c['slug']}">&#9734; Follow this club</button>
     </section>
     {nxt}{form_sec}{news_sec}
-    <script>(function(){{var b=document.querySelector('.club-mine');if(!b)return;var k='fp-club';
-      function cur(){{try{{return localStorage.getItem(k);}}catch(e){{return null;}}}}
-      function paint(){{b.textContent=cur()===b.dataset.slug?'\u2605 This is my club':'\u2606 Make this my club';}}
-      b.onclick=function(){{try{{if(cur()===b.dataset.slug)localStorage.removeItem(k);else localStorage.setItem(k,b.dataset.slug);}}catch(e){{}}paint();}};paint();}})();</script>"""
+    <script>(function(){{var b=document.querySelector('.club-mine');if(!b)return;
+      function get(){{var l=[];try{{l=JSON.parse(localStorage.getItem('fp-clubs')||'null');if(!l){{l=[];var o=localStorage.getItem('fp-club');if(o)l=[o];}}}}catch(e){{l=[];}}return l;}}
+      function put(l){{try{{localStorage.setItem('fp-clubs',JSON.stringify(l));}}catch(e){{}}}}
+      function paint(){{b.textContent=get().indexOf(b.dataset.slug)>-1?'\u2605 Following this club':'\u2606 Follow this club';}}
+      b.onclick=function(){{var l=get(),i=l.indexOf(b.dataset.slug);if(i>-1)l.splice(i,1);else l.push(b.dataset.slug);put(l);paint();}};paint();}})();
+    </script>"""
     return page(f"{name} news, injuries and next match | FootyPredicts",
                 f"{name}: latest news, injuries, form, league position and our prediction for the next match.",
                 league_nav(leagues, "superfan", "../../"), f"{name} · club page · updated {upd}", "", body, "../../", "club/" + c["slug"] + "/")
@@ -1369,7 +1371,10 @@ def superfan_page(leagues, clubs):
         P.hidden=false;P.textContent='';
         P.appendChild(el('h3','',lg.n));
         var grid=el('div','sf-clubs');
-        lg.clubs.forEach(function(c){{var a=el('a','sf-club');a.href='../club/'+c[1]+'/';var dot=el('i');dot.style.background=c[2];if(c[3]){{var im=new Image();im.alt='';im.width=22;im.height=22;im.src='https://media.api-sports.io/football/teams/'+c[3]+'.png';im.className='tl';im.onload=function(){{dot.replaceWith(im);}};}}a.appendChild(dot);a.appendChild(document.createTextNode(c[0]));grid.appendChild(a);}});
+        lg.clubs.forEach(function(c){{var a=el('a','sf-club');a.href='../club/'+c[1]+'/';var dot=el('i');dot.style.background=c[2];if(c[3]){{var im=new Image();im.alt='';im.width=22;im.height=22;im.src='https://media.api-sports.io/football/teams/'+c[3]+'.png';im.className='tl';im.onload=function(){{dot.replaceWith(im);}};}}a.appendChild(dot);a.appendChild(document.createTextNode(c[0]));
+          var st=el('span','sf-star');st.setAttribute('role','button');st.title='Follow this club';st.textContent=getC().indexOf(c[1])>-1?'\u2605':'\u2606';
+          st.onclick=function(e){{e.preventDefault();e.stopPropagation();var l=getC(),i=l.indexOf(c[1]);if(i>-1)l.splice(i,1);else l.push(c[1]);putC(l);st.textContent=i>-1?'\u2606':'\u2605';mineNews();showMine();}};
+          a.appendChild(st);grid.appendChild(a);}});
         P.appendChild(grid);
         var fl=el('label','sf-follow');var cb=document.createElement('input');cb.type='checkbox';cb.checked=F.leagues.indexOf(lg.id)>-1;
         cb.onchange=function(){{var i=F.leagues.indexOf(lg.id);if(cb.checked&&i<0)F.leagues.push(lg.id);if(!cb.checked&&i>-1)F.leagues.splice(i,1);saveF();mineNews();}};
@@ -1386,12 +1391,21 @@ def superfan_page(leagues, clubs):
       }}
       var F={{leagues:[]}};try{{var raw=JSON.parse(localStorage.getItem('fp-follow')||'{{}}');if(raw.leagues)F.leagues=raw.leagues;}}catch(e){{}}
       function saveF(){{try{{localStorage.setItem('fp-follow',JSON.stringify(F));}}catch(e){{}}}}
+      function getC(){{var l=[];try{{l=JSON.parse(localStorage.getItem('fp-clubs')||'null');if(!l){{l=[];var o=localStorage.getItem('fp-club');if(o)l=[o];}}}}catch(e){{l=[];}}return l;}}
+      function putC(l){{try{{localStorage.setItem('fp-clubs',JSON.stringify(l));}}catch(e){{}}}}
+      function nameOf(slug){{var r=null;D.forEach(function(lg){{lg.clubs.forEach(function(c){{if(c[1]===slug)r=c[0];}});}});return r;}}
+      function showMine(){{
+        var l=getC();M.textContent='';
+        if(!l.length){{M.hidden=true;return;}}
+        M.hidden=false;M.appendChild(document.createTextNode('Your clubs: '));
+        l.forEach(function(sl,i){{var n=nameOf(sl);if(!n)return;if(i)M.appendChild(document.createTextNode(', '));var a=el('a','',n);a.href='../club/'+sl+'/';a.style.fontWeight='700';M.appendChild(a);}});
+      }}
       function mineNews(){{
         var box=document.getElementById('sf-news');box.textContent='';var seen={{}},items=[];
-        var mine=null;try{{mine=localStorage.getItem('fp-club');}}catch(e){{}}
+        var mine=getC();
         D.forEach(function(lg){{
           if(F.leagues.indexOf(lg.id)>-1)lg.news.forEach(function(n){{items.push(n);}});
-          if(mine&&lg.kn[mine])lg.kn[mine].forEach(function(n){{items.push(n);}});
+          mine.forEach(function(m){{if(lg.kn[m])lg.kn[m].forEach(function(n){{items.push(n);}});}});
         }});
         items=items.filter(function(n){{if(seen[n.u])return false;seen[n.u]=1;return true;}});
         items.sort(function(a,b){{return a.d<b.d?1:a.d>b.d?-1:0;}});
@@ -1403,8 +1417,7 @@ def superfan_page(leagues, clubs):
         box.appendChild(ul);
       }}
       mineNews();
-      var v=null;try{{v=localStorage.getItem('fp-club');}}catch(e){{}}
-      if(v)D.forEach(function(lg){{lg.clubs.forEach(function(c){{if(c[1]===v){{M.hidden=false;M.innerHTML='Your club: <a href="../club/'+v+'/"><b></b></a>';M.querySelector('b').textContent=c[0];}}}});}});
+      showMine();
     }})();</script>"""
     return page("Superfan: your club's news, injuries and predictions | FootyPredicts",
                 "Choose your league and club to see its next match, injuries, form, league position and the latest news.",
@@ -1670,6 +1683,7 @@ button.fchip:hover:after, button.fchip:focus-visible:after { content:attr(data-t
 .sf-club:hover { border-color:var(--ink); } .sf-club i { width:12px; height:12px; border-radius:50%; border:1px solid rgba(0,0,0,.25); flex:0 0 auto; }
 .sf-follow { display:flex; align-items:center; gap:6px; font:600 15px Barlow,sans-serif; margin:0 0 10px; cursor:pointer; } .sf-follow input { width:20px; height:20px; accent-color:var(--ink); }
 .sf-mynews { margin:18px 0 18px; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:14px; } .sf-mynews h3 { margin:0 0 6px; }
+.sf-star { margin-left:auto; font-size:18px; line-height:1; color:#b8a24a; padding:0 2px; } .sf-star:hover { color:var(--ink); }
 .sf-all { border:0; background:var(--ink); color:#fff; border-radius:999px; padding:10px 18px; font:700 15px Barlow,sans-serif; cursor:pointer; margin:0 0 10px; }
 .club-news { list-style:none; margin:0; padding:0; } .club-news li { padding:9px 0; border-top:1px solid var(--line); font-size:16px; } .club-news li:first-child { border-top:0; } .club-src { display:block; font-size:13px; color:var(--muted); }
 .club-inj { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:6px 14px; } .club-inj .inj { display:block; padding:5px 0; font-size:16px; }
