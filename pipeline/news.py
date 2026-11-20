@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Recent team-news headlines for every club with a match in the next few days.
+Recent news headlines for every club in the leagues we cover.
 
-Source: the GDELT DOC API (free and open; it indexes news articles from around the world). We keep only the
-headline, the publisher's name and the link, and the site shows them as links to the original article.
-No article text is copied.  Writes data/team_news.json:  {team: [{"t": title, "u": url, "s": source, "d": "YYYY-MM-DD HH:MM"}]}
+Source: Google News RSS searches (one per club). We keep only the headline, the publisher's name, the date and the link,
+and the site shows them as links to the original article. No article text is copied.
+Writes data/team_news.json:  {"updated": ..., "teams": {team: [{"t": title, "u": url, "s": source, "d": "YYYY-MM-DD HH:MM"}]}}
 Usage: python -m pipeline.news
 """
 import glob
@@ -12,84 +12,84 @@ import json
 import os
 import re
 import time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
-from urllib.parse import urlparse
+from email.utils import parsedate_to_datetime
+from urllib.parse import quote
 
 import requests
 
 from .config import DATA_DIR
 
-API = "https://api.gdeltproject.org/api/v2/doc/doc"
-TOPICS = '(injury OR injured OR "team news" OR "ruled out" OR suspended OR doubt OR "return" OR lineup OR "starting XI" OR manager OR press conference)'
-PER_TEAM = 4
-DAYS_AHEAD = 4
-PAUSE = 5.5          # GDELT asks for at most one request every 5 seconds
+FEED = "https://news.google.com/rss/search?q={q}+when:7d&hl=en-GB&gl=GB&ceid=GB:en"
+TOPICS = "(injury OR injured OR transfer OR signing OR \"ruled out\" OR \"team news\" OR suspended OR contract OR manager OR \"press conference\")"
+PER_TEAM = 8
+PAUSE = 0.6
 USER_AGENT = "FootyPredicts news fetcher (+https://footypredicts.com)"
-# publishers that are mostly betting tips or scraped copies: leave out
-BLOCK = ("bet", "odds", "casino", "gambl", "tips", "poker", "prediction", "msn.com", "yahoo.com/news/amp")
+# publishers that are mostly betting tips, and other sports / teams that share a club's name
+BLOCK_SRC = ("bet", "odds", "casino", "gambl", "tips", "poker", "prediction", "msn", "yahoo finance")
+BLOCK_WORDS = (" women", " wsl", "lfc women", "rugby", "hull fc", "hull kr", " u21", " u18", " u19", " u23", "academy", "ladies", "fantasy", "betting", "odds", "prediction")
+GENERIC = {"city", "united", "town", "real", "sporting", "athletic", "club", "football", "borussia", "saint", "stade", "olympique", "rovers", "wanderers", "albion", "county", "forest"}
 
 
 def teams_to_cover():
-    now = datetime.now(timezone.utc)
     out = set()
-    for path in glob.glob(os.path.join(DATA_DIR, "site", "*.json")):
-        with open(path, encoding="utf-8") as fh:
-            d = json.load(fh)
-        for f in d.get("fixtures", []):
-            ko = datetime.fromisoformat(f["kickoff"]).replace(tzinfo=timezone.utc)
-            if now - timedelta(hours=3) <= ko <= now + timedelta(days=DAYS_AHEAD):
-                out.update((f["home"], f["away"]))
+    for path in glob.glob(os.path.join(DATA_DIR, "*", "fixtures_2026.json")):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                for r in json.load(fh):
+                    out.update((r["home"], r["away"]))
+        except (OSError, ValueError):
+            continue
     return sorted(out)
 
 
-def clean_title(t):
-    t = re.sub(r"\s+", " ", t or "").strip()
-    return t
+def keys_for(team):
+    """Lower-case strings, any of which must appear in a headline for it to count as about this club."""
+    t = team.lower()
+    words = [re.sub(r"[^a-z]", "", w) for w in re.split(r"[\s\-]+", t)]
+    ks = {t}
+    ks.update(w for w in words if len(w) >= 4 and w not in GENERIC)
+    return ks
 
 
 def fetch_team(team, session):
-    q = f'"{team}" football {TOPICS} sourcelang:eng'
-    params = {"query": q, "mode": "artlist", "maxrecords": 25, "format": "json", "timespan": "3d", "sort": "datedesc"}
-    for attempt in range(3):
-        try:
-            r = session.get(API, params=params, timeout=40)
-        except requests.RequestException:
-            time.sleep(5 * (attempt + 1))
-            continue
-        if r.status_code == 429:
-            time.sleep(15 * (attempt + 1))
-            continue
-        if r.status_code != 200 or not r.text.strip().startswith("{"):
+    q = quote(f'"{team}" football {TOPICS}')
+    try:
+        r = session.get(FEED.format(q=q), timeout=30)
+        if r.status_code != 200:
             return []
+        root = ET.fromstring(r.content)
+    except (requests.RequestException, ET.ParseError):
+        return []
+    ks, items, seen = keys_for(team), [], set()
+    cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+    for it in root.iter("item"):
+        raw = re.sub(r"\s+", " ", it.findtext("title") or "").strip()
+        src = (it.findtext("source") or "").strip()
+        title = raw[: -len(src) - 3].strip() if src and raw.endswith(" - " + src) else raw
+        url = (it.findtext("link") or "").strip()
+        low = " " + title.lower() + " "
+        if not url.startswith(("http://", "https://")) or len(title) < 20:
+            continue
+        if any(b in src.lower() for b in BLOCK_SRC) or any(b in low for b in BLOCK_WORDS):
+            continue
+        if not any(k in low for k in ks):
+            continue
+        sig = re.sub(r"[^a-z]", "", title.lower())[:40]
+        if sig in seen:
+            continue
+        seen.add(sig)
         try:
-            arts = r.json().get("articles", [])
-        except ValueError:
-            return []
-        items, seen = [], set()
-        key = re.sub(r"[^a-z]", "", team.lower())
-        for a in arts:
-            url, title = a.get("url", ""), clean_title(a.get("title"))
-            host = urlparse(url).netloc.lower()
-            if not url.startswith(("http://", "https://")) or not title or len(title) < 20:
+            when = parsedate_to_datetime(it.findtext("pubDate"))
+            if when < cutoff:
                 continue
-            if any(b in host or b in url.lower() for b in BLOCK):
-                continue
-            short = re.sub(r"[^a-z]", "", title.lower())
-            if key[:6] not in short:       # the club must be named in the headline
-                continue
-            if short[:40] in seen:
-                continue
-            seen.add(short[:40])
-            d = a.get("seendate", "")  # 20261103T061500Z
-            try:
-                when = datetime.strptime(d, "%Y%m%dT%H%M%SZ").strftime("%Y-%m-%d %H:%M")
-            except ValueError:
-                when = ""
-            items.append({"t": title, "u": url, "s": a.get("domain") or host.replace("www.", ""), "d": when})
-            if len(items) >= PER_TEAM:
-                break
-        return items
-    return []
+            ds = when.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M")
+        except (TypeError, ValueError):
+            ds = ""
+        items.append({"t": title, "u": url, "s": src, "d": ds})
+    items.sort(key=lambda x: x["d"], reverse=True)
+    return items[:PER_TEAM]
 
 
 def main():
@@ -106,10 +106,9 @@ def main():
     old = {}
     try:
         with open(path, encoding="utf-8") as fh:
-            old = json.load(fh)
+            old = json.load(fh).get("teams", {})
     except (OSError, ValueError):
         pass
-    # keep what we had for a club if this run found nothing (e.g. a rate-limit hiccup)
     merged = {t: (out.get(t) or old.get(t) or []) for t in teams}
     with open(path, "w", encoding="utf-8") as fh:
         json.dump({"updated": datetime.now(timezone.utc).isoformat(), "teams": merged}, fh, ensure_ascii=False, indent=1)
