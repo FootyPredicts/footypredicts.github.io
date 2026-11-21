@@ -38,17 +38,18 @@ body { margin:0; font:16px/1.5 Barlow,system-ui,sans-serif; color:var(--ink); ba
 .brand p { margin:0; color:rgba(255,255,255,.72); font-size:14px; }
 
 /* fixture chips */
-.chips { display:flex; gap:8px; overflow-x:auto; padding:18px 0 16px; scroll-snap-type:x proximity; scrollbar-width:thin; }
-.chip { flex:0 0 auto; scroll-snap-align:start; display:grid; gap:1px; text-align:left; cursor:pointer;
-  padding:9px 12px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.16);
+.chips { display:grid; grid-template-columns:repeat(auto-fill,minmax(138px,1fr)); gap:6px; padding:14px 0 14px; }
+.chip { display:grid; gap:1px; text-align:left; cursor:pointer; min-width:0;
+  padding:6px 9px 7px; border-radius:10px; border:1px solid rgba(255,255,255,.16);
   background:rgba(255,255,255,.06); color:#fff; font:inherit; }
 .chip:hover { background:rgba(255,255,255,.12); }
 .chip[aria-selected="true"] { background:#fff; color:var(--ink); border-color:#fff; }
 .chip:focus-visible, .match :focus-visible { outline:3px solid var(--flood); outline-offset:2px; }
-.chip-when { font-size:12px; opacity:.75; }
-.chip-teams { font:700 17px/1.15 "Barlow Condensed",sans-serif; white-space:nowrap; }
-.chip-teams i { font-style:normal; opacity:.55; font-weight:500; }
-.chip-pick { font-size:12px; font-weight:600; color:var(--flood); }
+.chip-when { font-size:11px; opacity:.75; }
+.chip-teams { font:700 15px/1.2 "Barlow Condensed",sans-serif; display:flex; flex-direction:column; }
+.chip-teams i { display:none; }
+.chip-teams .ct { display:flex; align-items:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.chip-pick { font-size:11px; font-weight:600; color:var(--flood); }
 .chip[aria-selected="true"] .chip-pick { color:#8a6d00; }
 
 /* match */
@@ -642,52 +643,52 @@ a.chip { text-decoration:none; }
     <nav class="chips" role="tablist" aria-label="Fixtures">
       <button class="chip" role="tab" data-tab="m0" aria-controls="m0" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 12:30</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/50.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Man City <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/36.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Fulham</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/50.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Man City</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/36.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Fulham</span></span>
         <span class="chip-pick">Man City 61%</span>
       </button>
       <button class="chip" role="tab" data-tab="m1" aria-controls="m1" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/35.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Bournemouth <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/65.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Nottingham Forest</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/35.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Bournemouth</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/65.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Nottingham Forest</span></span>
         <span class="chip-pick">Bournemouth 48%</span>
       </button>
       <button class="chip" role="tab" data-tab="m2" aria-controls="m2" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/47.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Tottenham <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/57.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Ipswich</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/47.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Tottenham</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/57.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Ipswich</span></span>
         <span class="chip-pick">Tottenham 53%</span>
       </button>
       <button class="chip" role="tab" data-tab="m3" aria-controls="m3" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/49.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Chelsea <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/63.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Leeds</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/49.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Chelsea</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/63.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Leeds</span></span>
         <span class="chip-pick">Chelsea 40%</span>
       </button>
       <button class="chip" role="tab" data-tab="m4" aria-controls="m4" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/66.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Aston Villa <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/746.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Sunderland</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/66.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Aston Villa</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/746.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Sunderland</span></span>
         <span class="chip-pick">Aston Villa 57%</span>
       </button>
       <button class="chip" role="tab" data-tab="m5" aria-controls="m5" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 15:00</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/1346.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Coventry <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/52.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Crystal Palace</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/1346.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Coventry</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/52.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Crystal Palace</span></span>
         <span class="chip-pick">Coventry 42%</span>
       </button>
       <button class="chip" role="tab" data-tab="m6" aria-controls="m6" aria-selected="false">
         <span class="chip-when">Sat 21 Nov 17:30</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/34.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Newcastle <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/42.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Arsenal</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/34.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Newcastle</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/42.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Arsenal</span></span>
         <span class="chip-pick">Arsenal 53%</span>
       </button>
       <button class="chip" role="tab" data-tab="m7" aria-controls="m7" aria-selected="false">
         <span class="chip-when">Sun 22 Nov 14:00</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/64.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Hull City <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/51.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Brighton</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/64.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Hull City</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/51.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Brighton</span></span>
         <span class="chip-pick">Brighton 43%</span>
       </button>
       <button class="chip" role="tab" data-tab="m8" aria-controls="m8" aria-selected="false">
         <span class="chip-when">Sun 22 Nov 16:30</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/40.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Liverpool <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/33.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Man United</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/40.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Liverpool</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/33.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Man United</span></span>
         <span class="chip-pick">Liverpool 56%</span>
       </button>
       <button class="chip" role="tab" data-tab="m9" aria-controls="m9" aria-selected="false">
         <span class="chip-when">Mon 23 Nov 20:00</span>
-        <span class="chip-teams"><img class="tl" src="https://media.api-sports.io/football/teams/55.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Brentford <i>v</i> <img class="tl" src="https://media.api-sports.io/football/teams/45.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Everton</span>
+        <span class="chip-teams"><span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/55.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Brentford</span> <i>v</i> <span class="ct"><img class="tl" src="https://media.api-sports.io/football/teams/45.png" alt="" width="16" height="16" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">Everton</span></span>
         <span class="chip-pick">Brentford 45%</span>
       </button></nav>
   </div>
