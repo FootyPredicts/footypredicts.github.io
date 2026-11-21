@@ -3,1314 +3,9 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-21T15:07:54.110073+00:00",
+ "updated": "2026-11-21T15:38:01.348184+00:00",
  "matches_used": 860,
  "fixtures": [
-  {
-   "id": 1557474,
-   "kickoff": "2026-11-21T12:30:00",
-   "round": "Regular Season - 11",
-   "home": "Manchester City",
-   "away": "Fulham",
-   "referee": "T. Bramall",
-   "ref_cards": 3.87,
-   "ref_games": 38,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": null,
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    },
-    "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 63.5,
-   "draw_pct": 22.5,
-   "away_pct": 14.0,
-   "xg_home": 1.97,
-   "xg_away": 0.82,
-   "over25": 52.8,
-   "btts": 48.9,
-   "cards5": 34.6,
-   "cards": {
-    "exp": 3.86,
-    "home": 1.79,
-    "away": 2.07,
-    "over": {
-     "2.5": 71.6,
-     "3.5": 52.4,
-     "4.5": 34.6,
-     "5.5": 20.7,
-     "6.5": 11.4
-    }
-   },
-   "form": {
-    "home": {
-     "played": 5,
-     "win": 80.0,
-     "over25": 60.0,
-     "btts": 60.0
-    },
-    "away": {
-     "played": 5,
-     "win": 20.0,
-     "over25": 20.0,
-     "btts": 40.0
-    }
-   },
-   "venue": {
-    "home": {
-     "games": [
-      {
-       "date": "23/08/2026",
-       "home": "Manchester City",
-       "away": "Bournemouth",
-       "hg": 2,
-       "ag": 1,
-       "ht": [
-        0,
-        1
-       ],
-       "ref": "J. Gillett",
-       "sx": {
-        "h": {
-         "pos": 66.0,
-         "xg": 2.25,
-         "sh": 13.0,
-         "sot": 6.0,
-         "co": 8.0,
-         "fo": 11.0,
-         "of": 2.0,
-         "sv": 3.0,
-         "pp": 89.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 34.0,
-         "xg": 0.65,
-         "sh": 5.0,
-         "sot": 4.0,
-         "co": 3.0,
-         "fo": 11.0,
-         "of": 1.0,
-         "sv": 4.0,
-         "pp": 78.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "M. Tavernier",
-         "t": "a",
-         "m": 26
-        },
-        {
-         "n": "M. Guehi",
-         "t": "h",
-         "m": 84
-        },
-        {
-         "n": "J. Gvardiol",
-         "t": "h",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Evanilson",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Phil Foden",
-         "t": "h",
-         "m": 78,
-         "r": false
-        },
-        {
-         "n": "António Silva",
-         "t": "a",
-         "m": 85,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "05/09/2026",
-       "home": "Manchester City",
-       "away": "Coventry",
-       "hg": 1,
-       "ag": 0,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "P. Tierney",
-       "sx": {
-        "h": {
-         "pos": 78.0,
-         "xg": 2.12,
-         "sh": 15.0,
-         "sot": 4.0,
-         "co": 4.0,
-         "fo": 7.0,
-         "of": 5.0,
-         "sv": 3.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 22.0,
-         "xg": 1.37,
-         "sh": 12.0,
-         "sot": 3.0,
-         "co": 5.0,
-         "fo": 17.0,
-         "of": 2.0,
-         "sv": 2.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "E. Haaland",
-         "t": "h",
-         "m": 26
-        }
-       ],
-       "cards": [
-        {
-         "n": "Milan van Ewijk",
-         "t": "a",
-         "m": 19,
-         "r": false
-        },
-        {
-         "n": "Abdukodir Khusanov",
-         "t": "h",
-         "m": 90,
-         "r": false
-        },
-        {
-         "n": "Ethan Pinnock",
-         "t": "a",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "20/09/2026",
-       "home": "Manchester City",
-       "away": "Sunderland",
-       "hg": 5,
-       "ag": 3,
-       "ht": [
-        3,
-        2
-       ],
-       "ref": "R. Jones",
-       "sx": {
-        "h": {
-         "pos": 55.0,
-         "xg": 2.82,
-         "sh": 16.0,
-         "sot": 6.0,
-         "co": 6.0,
-         "fo": 14.0,
-         "of": 0.0,
-         "sv": 4.0,
-         "pp": 85.0,
-         "yc": 0.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 45.0,
-         "xg": 3.57,
-         "sh": 17.0,
-         "sot": 9.0,
-         "co": 5.0,
-         "fo": 14.0,
-         "of": 0.0,
-         "sv": 1.0,
-         "pp": 81.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "E. Fernandez",
-         "t": "h",
-         "m": 9
-        },
-        {
-         "n": "B. Brobbey",
-         "t": "a",
-         "m": 12
-        },
-        {
-         "n": "R. Cherki",
-         "t": "h",
-         "m": 29
-        },
-        {
-         "n": "B. Brobbey",
-         "t": "a",
-         "m": 33
-        },
-        {
-         "n": "A. Semenyo",
-         "t": "h",
-         "m": 43
-        },
-        {
-         "n": "A. Semenyo",
-         "t": "h",
-         "m": 57
-        },
-        {
-         "n": "B. Brobbey",
-         "t": "a",
-         "m": 59
-        },
-        {
-         "n": "E. Haaland",
-         "t": "h",
-         "m": 81
-        }
-       ],
-       "cards": [
-        {
-         "n": "Dayann Methalie",
-         "t": "a",
-         "m": 8,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "17/10/2026",
-       "home": "Manchester City",
-       "away": "Ipswich",
-       "hg": 3,
-       "ag": 2,
-       "ht": [
-        2,
-        1
-       ],
-       "ref": "F. Hallam",
-       "sx": {
-        "h": {
-         "pos": 70.0,
-         "xg": 3.61,
-         "sh": 19.0,
-         "sot": 6.0,
-         "co": 2.0,
-         "fo": 8.0,
-         "of": 2.0,
-         "sv": 1.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 30.0,
-         "xg": 1.72,
-         "sh": 8.0,
-         "sot": 3.0,
-         "co": 3.0,
-         "fo": 16.0,
-         "of": 5.0,
-         "sv": 4.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Phil Foden",
-         "t": "h",
-         "m": 19
-        },
-        {
-         "n": "Daizen Maeda",
-         "t": "a",
-         "m": 21
-        },
-        {
-         "n": "Erling Haaland",
-         "t": "h",
-         "m": 34
-        },
-        {
-         "n": "Erling Haaland",
-         "t": "h",
-         "m": 69
-        },
-        {
-         "n": "Zian Flemming",
-         "t": "a",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Abdoul Ouattara",
-         "t": "a",
-         "m": 73,
-         "r": false
-        },
-        {
-         "n": "Josko Gvardiol",
-         "t": "h",
-         "m": 90,
-         "r": false
-        },
-        {
-         "n": "Leif Davis",
-         "t": "a",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "31/10/2026",
-       "home": "Manchester City",
-       "away": "Brighton",
-       "hg": 0,
-       "ag": 1,
-       "ht": [
-        0,
-        1
-       ],
-       "ref": "C. Pawson",
-       "sx": {
-        "h": {
-         "pos": 62.0,
-         "xg": 1.68,
-         "sh": 21.0,
-         "sot": 6.0,
-         "co": 8.0,
-         "fo": 9.0,
-         "of": 2.0,
-         "sv": 2.0,
-         "yc": 0.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 38.0,
-         "xg": 1.02,
-         "sh": 7.0,
-         "sot": 3.0,
-         "co": 2.0,
-         "fo": 13.0,
-         "of": 2.0,
-         "sv": 7.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Yasin Ayari",
-         "t": "a",
-         "m": 11
-        }
-       ],
-       "cards": [
-        {
-         "n": "Chema Andrés",
-         "t": "a",
-         "m": 20,
-         "r": false
-        },
-        {
-         "n": "Maxim De Cuyper",
-         "t": "a",
-         "m": 49,
-         "r": false
-        },
-        {
-         "n": "Pascal Groß",
-         "t": "a",
-         "m": 81,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 5,
-     "w": 4,
-     "d": 0,
-     "l": 1,
-     "last5": "WWWWL",
-     "gf": 2.2,
-     "ga": 1.4,
-     "cs": 20,
-     "fts": 20,
-     "sh": 16.8,
-     "sot": 5.6,
-     "co": 5.6,
-     "yc": 0.6
-    },
-    "away": {
-     "games": [
-      {
-       "date": "30/08/2026",
-       "home": "Sunderland",
-       "away": "Fulham",
-       "hg": 1,
-       "ag": 0,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "M. Salisbury",
-       "sx": {
-        "h": {
-         "pos": 41.0,
-         "xg": 2.02,
-         "sh": 12.0,
-         "sot": 4.0,
-         "co": 3.0,
-         "fo": 10.0,
-         "of": 1.0,
-         "sv": 0.0,
-         "pp": 84.0,
-         "yc": 0.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 59.0,
-         "xg": 0.95,
-         "sh": 11.0,
-         "sot": 0.0,
-         "co": 4.0,
-         "fo": 15.0,
-         "of": 1.0,
-         "sv": 3.0,
-         "pp": 84.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Wilson Isidor",
-         "t": "h",
-         "m": 75
-        }
-       ],
-       "cards": [
-        {
-         "n": "Joachim Andersen",
-         "t": "a",
-         "m": 35,
-         "r": false
-        },
-        {
-         "n": "César Palacios",
-         "t": "a",
-         "m": 59,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "12/09/2026",
-       "home": "Liverpool",
-       "away": "Fulham",
-       "hg": 0,
-       "ag": 0,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "T. Bramall",
-       "sx": {
-        "h": {
-         "pos": 56.0,
-         "xg": 1.28,
-         "sh": 14.0,
-         "sot": 3.0,
-         "co": 5.0,
-         "fo": 11.0,
-         "of": 1.0,
-         "sv": 3.0,
-         "pp": 83.0,
-         "yc": 0.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 44.0,
-         "xg": 0.7,
-         "sh": 10.0,
-         "sot": 4.0,
-         "co": 8.0,
-         "fo": 8.0,
-         "of": 1.0,
-         "sv": 3.0,
-         "pp": 77.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [],
-       "cards": [
-        {
-         "n": "Kenny Tete",
-         "t": "a",
-         "m": 81,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "10/10/2026",
-       "home": "Ipswich",
-       "away": "Fulham",
-       "hg": 2,
-       "ag": 1,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "L. Smith",
-       "sx": {
-        "h": {
-         "pos": 48.0,
-         "xg": 1.15,
-         "sh": 11.0,
-         "sot": 5.0,
-         "co": 2.0,
-         "fo": 8.0,
-         "of": 0.0,
-         "sv": 3.0,
-         "pp": 86.0,
-         "yc": 2.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 52.0,
-         "xg": 1.81,
-         "sh": 13.0,
-         "sot": 5.0,
-         "co": 5.0,
-         "fo": 10.0,
-         "of": 1.0,
-         "sv": 3.0,
-         "pp": 83.0,
-         "yc": 4.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "R. Sessegnon",
-         "t": "a",
-         "m": 55
-        },
-        {
-         "n": "A. Ouattara",
-         "t": "h",
-         "m": 88
-        },
-        {
-         "n": "D. O'Shea",
-         "t": "h",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Leif Davis",
-         "t": "h",
-         "m": 19,
-         "r": false
-        },
-        {
-         "n": "Josh King",
-         "t": "a",
-         "m": 44,
-         "r": false
-        },
-        {
-         "n": "Calvin Bassey",
-         "t": "a",
-         "m": 51,
-         "r": false
-        },
-        {
-         "n": "Manuel Ángel Morán",
-         "t": "a",
-         "m": 84,
-         "r": false
-        },
-        {
-         "n": "Christian Walton",
-         "t": "h",
-         "m": 90,
-         "r": false
-        },
-        {
-         "n": "Emile Smith Rowe",
-         "t": "a",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "24/10/2026",
-       "home": "Coventry",
-       "away": "Fulham",
-       "hg": 0,
-       "ag": 1,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "A. Herczeg",
-       "sx": {
-        "h": {
-         "pos": 36.0,
-         "xg": 0.58,
-         "sh": 13.0,
-         "sot": 2.0,
-         "co": 4.0,
-         "fo": 9.0,
-         "of": 1.0,
-         "sv": 2.0,
-         "yc": 0.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 64.0,
-         "xg": 0.61,
-         "sh": 12.0,
-         "sot": 3.0,
-         "co": 6.0,
-         "fo": 11.0,
-         "of": 3.0,
-         "sv": 2.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Oscar Bobb",
-         "t": "a",
-         "m": 80
-        }
-       ],
-       "cards": [
-        {
-         "n": "Shea Charles",
-         "t": "a",
-         "m": 36,
-         "r": false
-        },
-        {
-         "n": "Antonee Robinson",
-         "t": "a",
-         "m": 82,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "31/10/2026",
-       "home": "Aston Villa",
-       "away": "Fulham",
-       "hg": 1,
-       "ag": 1,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "S. Barrott",
-       "sx": {
-        "h": {
-         "pos": 45.0,
-         "xg": 1.87,
-         "sh": 16.0,
-         "sot": 3.0,
-         "co": 7.0,
-         "fo": 7.0,
-         "of": 2.0,
-         "sv": 4.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 55.0,
-         "xg": 2.26,
-         "sh": 14.0,
-         "sot": 5.0,
-         "co": 7.0,
-         "fo": 12.0,
-         "of": 4.0,
-         "sv": 2.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Nicolas Jackson",
-         "t": "h",
-         "m": 39
-        }
-       ],
-       "cards": [
-        {
-         "n": "David Affengruber",
-         "t": "a",
-         "m": 30,
-         "r": false
-        },
-        {
-         "n": "Calvin Bassey",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Matty Cash",
-         "t": "h",
-         "m": 76,
-         "r": false
-        },
-        {
-         "n": "Tom Cairney",
-         "t": "a",
-         "m": 77,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 5,
-     "w": 1,
-     "d": 2,
-     "l": 2,
-     "last5": "LDLWD",
-     "gf": 0.6,
-     "ga": 0.8,
-     "cs": 40,
-     "fts": 40,
-     "sh": 12.0,
-     "sot": 3.4,
-     "co": 6.0,
-     "yc": 2.4
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 56.95036788637404,
-     "sh": 59.21560098415269,
-     "any": 82.44246626392444
-    },
-    "away": {
-     "fh": 34.86668373860162,
-     "sh": 51.424376945319786,
-     "any": 68.36108580985038
-    },
-    "match_fh": 71.96034696606348,
-    "match_sh": 80.1887240689453
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 1100,
-       "name": "E. Haaland",
-       "p": 43.6,
-       "gl": 9,
-       "as": 0,
-       "ap": 10
-      },
-      {
-       "id": 156477,
-       "name": "R. Cherki",
-       "p": 22.9,
-       "gl": 5,
-       "as": 2,
-       "ap": 9
-      }
-     ],
-     "bookings": [
-      {
-       "id": 138908,
-       "name": "E. Anderson",
-       "p": 15.9,
-       "yc": 2,
-       "rc": 0,
-       "ap": 10
-      },
-      {
-       "id": 156477,
-       "name": "R. Cherki",
-       "p": 15.8,
-       "yc": 2,
-       "rc": 0,
-       "ap": 9
-      }
-     ],
-     "defender": {
-      "id": 129033,
-      "name": "J. Gvardiol",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 1100,
-       "name": "E. Haaland",
-       "pos": "Attacker",
-       "g": 43.6,
-       "a": 3.7,
-       "inv": 45.7
-      },
-      {
-       "id": 156477,
-       "name": "R. Cherki",
-       "pos": "Midfielder",
-       "g": 22.9,
-       "a": 15.0,
-       "inv": 34.4
-      },
-      {
-       "id": 1422,
-       "name": "J. Doku",
-       "pos": "Attacker",
-       "g": 15.8,
-       "a": 12.1,
-       "inv": 26.0
-      },
-      {
-       "id": 129033,
-       "name": "J. Gvardiol",
-       "pos": "Defender",
-       "g": 6.7,
-       "a": 18.4,
-       "inv": 23.9
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 389315,
-       "name": "Joshua King",
-       "p": 17.5,
-       "gl": 2,
-       "as": 1,
-       "ap": 10
-      },
-      {
-       "id": 336711,
-       "name": "Gonzalo García",
-       "p": 13.6,
-       "gl": 1,
-       "as": 0,
-       "ap": 10
-      }
-     ],
-     "bookings": [
-      {
-       "id": 152967,
-       "name": "C. Bassey",
-       "p": 22.0,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10
-      },
-      {
-       "id": 389315,
-       "name": "Joshua King",
-       "p": 21.4,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10
-      }
-     ],
-     "defender": {
-      "id": 2920,
-      "name": "T. Castagne",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 389315,
-       "name": "Joshua King",
-       "pos": "Midfielder",
-       "g": 17.5,
-       "a": 8.9,
-       "inv": 24.8
-      },
-      {
-       "id": 336711,
-       "name": "Gonzalo García",
-       "pos": "Attacker",
-       "g": 13.6,
-       "a": 3.4,
-       "inv": 16.6
-      },
-      {
-       "id": 1934,
-       "name": "S. Berge",
-       "pos": "Midfielder",
-       "g": 4.5,
-       "a": 8.7,
-       "inv": 12.8
-      },
-      {
-       "id": 278133,
-       "name": "Oscar Bobb",
-       "pos": "Midfielder",
-       "g": 9.8,
-       "a": 3.0,
-       "inv": 12.5
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [],
-    "away": []
-   },
-   "lineup_confirmed": true,
-   "previous": [
-    {
-     "date": "11/02/2026",
-     "home": "Manchester City",
-     "away": "Fulham",
-     "hg": 3,
-     "ag": 0,
-     "ht": [
-      3,
-      0
-     ],
-     "ref": "P. Tierney",
-     "sx": {
-      "h": {
-       "pos": 56.0,
-       "xg": 1.37,
-       "sh": 13.0,
-       "sot": 5.0,
-       "co": 4.0,
-       "fo": 8.0,
-       "of": 3.0,
-       "sv": 3.0,
-       "pp": 91.0,
-       "yc": 3.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 44.0,
-       "xg": 1.42,
-       "sh": 14.0,
-       "sot": 3.0,
-       "co": 4.0,
-       "fo": 10.0,
-       "of": 1.0,
-       "sv": 2.0,
-       "pp": 85.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "A. Semenyo",
-       "t": "h",
-       "m": 24
-      },
-      {
-       "n": "N. O'Reilly",
-       "t": "h",
-       "m": 30
-      },
-      {
-       "n": "E. Haaland",
-       "t": "h",
-       "m": 39
-      }
-     ],
-     "cards": [
-      {
-       "n": "Joachim Andersen",
-       "t": "a",
-       "m": 30,
-       "r": false
-      },
-      {
-       "n": "Bernardo Silva",
-       "t": "h",
-       "m": 41,
-       "r": false
-      },
-      {
-       "n": "Phil Foden",
-       "t": "h",
-       "m": 66,
-       "r": false
-      },
-      {
-       "n": "Nico González",
-       "t": "h",
-       "m": 83,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "02/12/2025",
-     "home": "Fulham",
-     "away": "Manchester City",
-     "hg": 4,
-     "ag": 5,
-     "ht": [
-      1,
-      3
-     ],
-     "ref": "C. Pawson",
-     "sx": {
-      "h": {
-       "pos": 57.0,
-       "xg": 0.91,
-       "sh": 12.0,
-       "sot": 6.0,
-       "co": 7.0,
-       "fo": 9.0,
-       "of": 4.0,
-       "sv": 0.0,
-       "pp": 88.0,
-       "yc": 0.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 43.0,
-       "xg": 2.17,
-       "sh": 11.0,
-       "sot": 4.0,
-       "co": 2.0,
-       "fo": 7.0,
-       "of": 1.0,
-       "sv": 1.0,
-       "pp": 84.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "E. Haaland",
-       "t": "a",
-       "m": 17
-      },
-      {
-       "n": "T. Reijnders",
-       "t": "a",
-       "m": 37
-      },
-      {
-       "n": "P. Foden",
-       "t": "a",
-       "m": 44
-      },
-      {
-       "n": "E. Smith Rowe",
-       "t": "h",
-       "m": 45
-      },
-      {
-       "n": "P. Foden",
-       "t": "a",
-       "m": 48
-      },
-      {
-       "n": "A. Iwobi",
-       "t": "h",
-       "m": 57
-      },
-      {
-       "n": "S. Chukwueze",
-       "t": "h",
-       "m": 72
-      },
-      {
-       "n": "S. Chukwueze",
-       "t": "h",
-       "m": 78
-      }
-     ],
-     "cards": [
-      {
-       "n": "Rayan Cherki",
-       "t": "a",
-       "m": 90,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "25/05/2025",
-     "home": "Fulham",
-     "away": "Manchester City",
-     "hg": 0,
-     "ag": 2,
-     "ht": [
-      0,
-      1
-     ],
-     "ref": "A. Madley",
-     "sx": {
-      "h": {
-       "pos": 47.0,
-       "xg": 1.28,
-       "sh": 13.0,
-       "sot": 3.0,
-       "co": 1.0,
-       "fo": 11.0,
-       "of": 2.0,
-       "sv": 3.0,
-       "pp": 85.0,
-       "yc": 0.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 53.0,
-       "xg": 2.99,
-       "sh": 20.0,
-       "sot": 5.0,
-       "co": 6.0,
-       "fo": 5.0,
-       "of": 0.0,
-       "sv": 3.0,
-       "pp": 86.0,
-       "yc": 0.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "İ. Gündoğan",
-       "t": "a",
-       "m": 21
-      },
-      {
-       "n": "E. Haaland",
-       "t": "a",
-       "m": 72
-      }
-     ],
-     "cards": []
-    },
-    {
-     "date": "05/10/2024",
-     "home": "Manchester City",
-     "away": "Fulham",
-     "hg": 3,
-     "ag": 2,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "P. Bankes",
-     "sx": {
-      "h": {
-       "pos": 58.0,
-       "xg": 1.57,
-       "sh": 20.0,
-       "sot": 7.0,
-       "co": 8.0,
-       "fo": 4.0,
-       "of": 0.0,
-       "sv": 2.0,
-       "pp": 91.0,
-       "yc": 2.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 42.0,
-       "xg": 2.6,
-       "sh": 11.0,
-       "sot": 4.0,
-       "co": 3.0,
-       "fo": 10.0,
-       "of": 3.0,
-       "sv": 4.0,
-       "pp": 87.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "Andreas Pereira",
-       "t": "a",
-       "m": 26
-      },
-      {
-       "n": "M. Kovačić",
-       "t": "h",
-       "m": 32
-      },
-      {
-       "n": "M. Kovačić",
-       "t": "h",
-       "m": 47
-      },
-      {
-       "n": "J. Doku",
-       "t": "h",
-       "m": 82
-      },
-      {
-       "n": "Rodrigo Muniz",
-       "t": "a",
-       "m": 88
-      }
-     ],
-     "cards": [
-      {
-       "n": "Calvin Bassey",
-       "t": "a",
-       "m": 64,
-       "r": false
-      },
-      {
-       "n": "Bernardo Silva",
-       "t": "h",
-       "m": 90,
-       "r": false
-      },
-      {
-       "n": "Ederson",
-       "t": "h",
-       "m": 90,
-       "r": false
-      }
-     ]
-    }
-   ],
-   "odds": null
-  },
   {
    "id": 1557468,
    "kickoff": "2026-11-21T15:00:00",
@@ -11334,7 +10029,7 @@
      "any": 65.35441896699426
     },
     "away": {
-     "fh": 49.01731957886318,
+     "fh": 49.01731957886317,
      "sh": 51.78373068411148,
      "any": 75.4180535036859
     },
@@ -14938,6 +13633,1596 @@
        "bookie": "Betano",
        "books": {}
       }
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1557485,
+   "kickoff": "2026-11-27T20:00:00",
+   "round": "Regular Season - 12",
+   "home": "Nottingham Forest",
+   "away": "Chelsea",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 34.3,
+    "draw": 26.8,
+    "away": 38.9
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 37.9,
+   "draw_pct": 27.4,
+   "away_pct": 34.7,
+   "xg_home": 1.42,
+   "xg_away": 1.34,
+   "over25": 52.1,
+   "btts": 57.0,
+   "cards5": 41.9,
+   "cards": {
+    "exp": 4.27,
+    "home": 1.75,
+    "away": 2.52,
+    "over": {
+     "2.5": 77.2,
+     "3.5": 59.7,
+     "4.5": 41.9,
+     "5.5": 26.9,
+     "6.5": 15.9
+    }
+   },
+   "form": {
+    "home": {
+     "played": 5,
+     "win": 20.0,
+     "over25": 20.0,
+     "btts": 20.0
+    },
+    "away": {
+     "played": 5,
+     "win": 40.0,
+     "over25": 60.0,
+     "btts": 40.0
+    }
+   },
+   "venue": {
+    "home": {
+     "games": [
+      {
+       "date": "22/08/2026",
+       "home": "Nottingham Forest",
+       "away": "Leeds",
+       "hg": 0,
+       "ag": 1,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "R. Jones",
+       "sx": {
+        "h": {
+         "pos": 56.0,
+         "xg": 0.66,
+         "sh": 12.0,
+         "sot": 2.0,
+         "co": 3.0,
+         "fo": 15.0,
+         "of": 3.0,
+         "sv": 2.0,
+         "pp": 78.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 44.0,
+         "xg": 0.47,
+         "sh": 11.0,
+         "sot": 3.0,
+         "co": 2.0,
+         "fo": 14.0,
+         "of": 3.0,
+         "sv": 3.0,
+         "pp": 71.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Anton Stach",
+         "t": "a",
+         "m": 88
+        }
+       ],
+       "cards": [
+        {
+         "n": "Ola Aina",
+         "t": "h",
+         "m": 18,
+         "r": false
+        },
+        {
+         "n": "Dominic Calvert-Lewin",
+         "t": "a",
+         "m": 32,
+         "r": false
+        },
+        {
+         "n": "Jair",
+         "t": "h",
+         "m": 52,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "05/09/2026",
+       "home": "Nottingham Forest",
+       "away": "Tottenham",
+       "hg": 0,
+       "ag": 0,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "C. Pawson",
+       "sx": {
+        "h": {
+         "pos": 41.0,
+         "xg": 0.92,
+         "sh": 12.0,
+         "sot": 2.0,
+         "co": 2.0,
+         "fo": 22.0,
+         "of": 2.0,
+         "sv": 0.0,
+         "pp": 77.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 59.0,
+         "xg": 1.06,
+         "sh": 11.0,
+         "sot": 0.0,
+         "co": 10.0,
+         "fo": 14.0,
+         "of": 1.0,
+         "sv": 1.0,
+         "pp": 84.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [],
+       "cards": [
+        {
+         "n": "Destiny Udogie",
+         "t": "a",
+         "m": 45,
+         "r": false
+        },
+        {
+         "n": "Nikola Milenković",
+         "t": "h",
+         "m": 52,
+         "r": false
+        },
+        {
+         "n": "James McAtee",
+         "t": "h",
+         "m": 78,
+         "r": false
+        },
+        {
+         "n": "Mateus Fernandes",
+         "t": "a",
+         "m": 84,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "19/09/2026",
+       "home": "Nottingham Forest",
+       "away": "Coventry",
+       "hg": 0,
+       "ag": 1,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "J. Gillett",
+       "sx": {
+        "h": {
+         "pos": 62.0,
+         "xg": 1.1,
+         "sh": 24.0,
+         "sot": 3.0,
+         "co": 6.0,
+         "fo": 12.0,
+         "of": 2.0,
+         "sv": 2.0,
+         "pp": 84.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 38.0,
+         "xg": 0.67,
+         "sh": 10.0,
+         "sot": 3.0,
+         "co": 2.0,
+         "fo": 10.0,
+         "of": 2.0,
+         "sv": 2.0,
+         "pp": 76.0,
+         "yc": 0.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "J. Dasilva",
+         "t": "a",
+         "m": 55
+        }
+       ],
+       "cards": [
+        {
+         "n": "Liam Delap",
+         "t": "h",
+         "m": 59,
+         "r": false
+        },
+        {
+         "n": "Jair",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "18/10/2026",
+       "home": "Nottingham Forest",
+       "away": "Arsenal",
+       "hg": 0,
+       "ag": 1,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "M. Oliver",
+       "sx": {
+        "h": {
+         "pos": 26.0,
+         "xg": 0.94,
+         "sh": 14.0,
+         "sot": 2.0,
+         "co": 8.0,
+         "fo": 14.0,
+         "of": 2.0,
+         "sv": 0.0,
+         "yc": 1.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 74.0,
+         "xg": 1.16,
+         "sh": 9.0,
+         "sot": 1.0,
+         "co": 6.0,
+         "fo": 8.0,
+         "of": 1.0,
+         "sv": 2.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Noni Madueke",
+         "t": "a",
+         "m": 80
+        }
+       ],
+       "cards": [
+        {
+         "n": "Neco Williams",
+         "t": "h",
+         "m": 17,
+         "r": false
+        },
+        {
+         "n": "Noni Madueke",
+         "t": "a",
+         "m": 53,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "07/11/2026",
+       "home": "Nottingham Forest",
+       "away": "Manchester City",
+       "hg": 3,
+       "ag": 1,
+       "ht": [
+        2,
+        0
+       ],
+       "ref": "S. Barrott",
+       "sx": {
+        "h": {
+         "pos": 22.0,
+         "xg": 1.1,
+         "sh": 11.0,
+         "sot": 5.0,
+         "co": 3.0,
+         "fo": 13.0,
+         "of": 2.0,
+         "sv": 2.0,
+         "yc": 4.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 78.0,
+         "xg": 1.78,
+         "sh": 12.0,
+         "sot": 4.0,
+         "co": 7.0,
+         "fo": 7.0,
+         "of": 0.0,
+         "sv": 2.0,
+         "yc": 0.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Jair Cunha",
+         "t": "h",
+         "m": 6
+        },
+        {
+         "n": "Liam Delap",
+         "t": "h",
+         "m": 18
+        },
+        {
+         "n": "Rayan Cherki",
+         "t": "a",
+         "m": 52
+        },
+        {
+         "n": "Liam Delap",
+         "t": "h",
+         "m": 73
+        }
+       ],
+       "cards": [
+        {
+         "n": "James Mcatee",
+         "t": "h",
+         "m": 64,
+         "r": false
+        },
+        {
+         "n": "Dan Ndoye",
+         "t": "h",
+         "m": 69,
+         "r": false
+        },
+        {
+         "n": "Luca Netz",
+         "t": "h",
+         "m": 90,
+         "r": false
+        },
+        {
+         "n": "Igor Jesus",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 5,
+     "w": 1,
+     "d": 1,
+     "l": 3,
+     "last5": "LDLLW",
+     "gf": 0.6,
+     "ga": 0.8,
+     "cs": 20,
+     "fts": 80,
+     "sh": 14.6,
+     "sot": 2.8,
+     "co": 4.4,
+     "yc": 2.2
+    },
+    "away": {
+     "games": [
+      {
+       "date": "24/08/2026",
+       "home": "Fulham",
+       "away": "Chelsea",
+       "hg": 2,
+       "ag": 3,
+       "ht": [
+        1,
+        2
+       ],
+       "ref": "J. Brooks",
+       "sx": {
+        "h": {
+         "pos": 62.0,
+         "xg": 1.33,
+         "sh": 14.0,
+         "sot": 6.0,
+         "co": 6.0,
+         "fo": 12.0,
+         "of": 0.0,
+         "sv": 3.0,
+         "pp": 87.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 38.0,
+         "xg": 2.24,
+         "sh": 18.0,
+         "sot": 6.0,
+         "co": 4.0,
+         "fo": 7.0,
+         "of": 3.0,
+         "sv": 4.0,
+         "pp": 82.0,
+         "yc": 3.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Joao Pedro",
+         "t": "a",
+         "m": 1
+        },
+        {
+         "n": "J. King",
+         "t": "h",
+         "m": 23
+        },
+        {
+         "n": "M. Rogers",
+         "t": "a",
+         "m": 41
+        },
+        {
+         "n": "C. Palmer",
+         "t": "a",
+         "m": 49
+        },
+        {
+         "n": "G. Garcia",
+         "t": "h",
+         "m": 54
+        }
+       ],
+       "cards": [
+        {
+         "n": "Levi Colwill",
+         "t": "a",
+         "m": 5,
+         "r": false
+        },
+        {
+         "n": "Roméo Lavia",
+         "t": "a",
+         "m": 12,
+         "r": false
+        },
+        {
+         "n": "Reece James",
+         "t": "a",
+         "m": 75,
+         "r": false
+        },
+        {
+         "n": "Calvin Bassey",
+         "t": "h",
+         "m": 76,
+         "r": false
+        },
+        {
+         "n": "Timothy Castagne",
+         "t": "h",
+         "m": 88,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "06/09/2026",
+       "home": "Arsenal",
+       "away": "Chelsea",
+       "hg": 2,
+       "ag": 1,
+       "ht": [
+        1,
+        1
+       ],
+       "ref": "C. Kavanagh",
+       "sx": {
+        "h": {
+         "pos": 55.0,
+         "xg": 2.05,
+         "sh": 16.0,
+         "sot": 9.0,
+         "co": 5.0,
+         "fo": 13.0,
+         "of": 3.0,
+         "sv": 4.0,
+         "pp": 85.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 45.0,
+         "xg": 0.39,
+         "sh": 13.0,
+         "sot": 5.0,
+         "co": 3.0,
+         "fo": 16.0,
+         "of": 0.0,
+         "sv": 8.0,
+         "pp": 82.0,
+         "yc": 4.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Morgan Rogers",
+         "t": "a",
+         "m": 2
+        },
+        {
+         "n": "Kai Havertz",
+         "t": "h",
+         "m": 25
+        },
+        {
+         "n": "Martin Ødegaard",
+         "t": "h",
+         "m": 50
+        }
+       ],
+       "cards": [
+        {
+         "n": "João Pedro",
+         "t": "a",
+         "m": 14,
+         "r": false
+        },
+        {
+         "n": "Cole Palmer",
+         "t": "a",
+         "m": 45,
+         "r": false
+        },
+        {
+         "n": "Christos Tzolis",
+         "t": "h",
+         "m": 58,
+         "r": false
+        },
+        {
+         "n": "Maxence Lacroix",
+         "t": "a",
+         "m": 58,
+         "r": false
+        },
+        {
+         "n": "Morgan Rogers",
+         "t": "a",
+         "m": 83,
+         "r": false
+        },
+        {
+         "n": "Mikel Merino",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "18/09/2026",
+       "home": "Brentford",
+       "away": "Chelsea",
+       "hg": 3,
+       "ag": 0,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "A. Madley",
+       "sx": {
+        "h": {
+         "pos": 40.0,
+         "xg": 2.65,
+         "sh": 13.0,
+         "sot": 6.0,
+         "co": 4.0,
+         "fo": 10.0,
+         "of": 2.0,
+         "sv": 2.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 60.0,
+         "xg": 0.83,
+         "sh": 12.0,
+         "sot": 2.0,
+         "co": 12.0,
+         "fo": 7.0,
+         "of": 2.0,
+         "sv": 3.0,
+         "yc": 0.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "J. Anthony",
+         "t": "h",
+         "m": 61
+        },
+        {
+         "n": "I. Thiago",
+         "t": "h",
+         "m": 83
+        },
+        {
+         "n": "F. Carvalho",
+         "t": "h",
+         "m": 90
+        }
+       ],
+       "cards": [
+        {
+         "n": "Igor Thiago",
+         "t": "h",
+         "m": 84,
+         "r": false
+        },
+        {
+         "n": "Mamadou Sangare",
+         "t": "h",
+         "m": 85,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "17/10/2026",
+       "home": "Everton",
+       "away": "Chelsea",
+       "hg": 0,
+       "ag": 2,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "P. Tierney",
+       "sx": {
+        "h": {
+         "pos": 47.0,
+         "xg": 0.54,
+         "sh": 6.0,
+         "sot": 5.0,
+         "co": 5.0,
+         "fo": 8.0,
+         "of": 4.0,
+         "sv": 4.0,
+         "yc": 3.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 53.0,
+         "xg": 1.59,
+         "sh": 18.0,
+         "sot": 7.0,
+         "co": 7.0,
+         "fo": 15.0,
+         "of": 1.0,
+         "sv": 5.0,
+         "yc": 4.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Pedro Neto",
+         "t": "a",
+         "m": 46
+        },
+        {
+         "n": "Pedro Neto",
+         "t": "a",
+         "m": 90
+        }
+       ],
+       "cards": [
+        {
+         "n": "Harrison Armstrong",
+         "t": "h",
+         "m": 23,
+         "r": false
+        },
+        {
+         "n": "Pedro Neto",
+         "t": "a",
+         "m": 27,
+         "r": false
+        },
+        {
+         "n": "Josh Acheampong",
+         "t": "a",
+         "m": 32,
+         "r": false
+        },
+        {
+         "n": "James Tarkowski",
+         "t": "h",
+         "m": 34,
+         "r": false
+        },
+        {
+         "n": "Morgan Rogers",
+         "t": "a",
+         "m": 34,
+         "r": false
+        },
+        {
+         "n": "Cole Palmer",
+         "t": "a",
+         "m": 65,
+         "r": false
+        },
+        {
+         "n": "Christian Nørgaard",
+         "t": "h",
+         "m": 89,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "08/11/2026",
+       "home": "Sunderland",
+       "away": "Chelsea",
+       "hg": 1,
+       "ag": 0,
+       "ht": [
+        1,
+        0
+       ],
+       "ref": "J. Gillett",
+       "sx": {
+        "h": {
+         "pos": 31.0,
+         "xg": 2.58,
+         "sh": 9.0,
+         "sot": 2.0,
+         "co": 2.0,
+         "fo": 17.0,
+         "of": 2.0,
+         "sv": 4.0,
+         "yc": 5.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 69.0,
+         "xg": 0.55,
+         "sh": 10.0,
+         "sot": 4.0,
+         "co": 2.0,
+         "fo": 8.0,
+         "of": 0.0,
+         "sv": 1.0,
+         "yc": 4.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Enzo Le Fée",
+         "t": "h",
+         "m": 36
+        }
+       ],
+       "cards": [
+        {
+         "n": "Jules Ahoka",
+         "t": "h",
+         "m": 21,
+         "r": false
+        },
+        {
+         "n": "Levi Colwill",
+         "t": "a",
+         "m": 35,
+         "r": false
+        },
+        {
+         "n": "Thomas Meunier",
+         "t": "h",
+         "m": 50,
+         "r": false
+        },
+        {
+         "n": "Brian Brobbey",
+         "t": "h",
+         "m": 53,
+         "r": false
+        },
+        {
+         "n": "Pedro Neto",
+         "t": "a",
+         "m": 55,
+         "r": false
+        },
+        {
+         "n": "Moises Caicedo",
+         "t": "a",
+         "m": 76,
+         "r": false
+        },
+        {
+         "n": "Luke O'Nien",
+         "t": "h",
+         "m": 90,
+         "r": false
+        },
+        {
+         "n": "Régis Le Bris",
+         "t": "h",
+         "m": 90,
+         "r": false
+        },
+        {
+         "n": "Nilson Angulo",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 5,
+     "w": 2,
+     "d": 0,
+     "l": 3,
+     "last5": "WLLWL",
+     "gf": 1.2,
+     "ga": 1.6,
+     "cs": 20,
+     "fts": 40,
+     "sh": 14.2,
+     "sot": 4.8,
+     "co": 5.6,
+     "yc": 3.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 43.9511956431081,
+     "sh": 55.53760079975043,
+     "any": 75.07935685987185
+    },
+    "away": {
+     "fh": 47.657860933887505,
+     "sh": 53.13479749835618,
+     "any": 75.46975053297436
+    },
+    "match_fh": 70.66285687862232,
+    "match_sh": 79.16260657771377
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 161948,
+       "name": "L. Delap",
+       "p": 27.7,
+       "gl": 3,
+       "as": 0,
+       "ap": 9,
+       "price": {
+        "odd": 3.1,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.1
+        }
+       }
+      },
+      {
+       "id": 18746,
+       "name": "M. Gibbs-White",
+       "p": 20.7,
+       "gl": 1,
+       "as": 3,
+       "ap": 9,
+       "price": {
+        "odd": 3.1,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.1
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 2771,
+       "name": "O. Aina",
+       "p": 28.6,
+       "yc": 3,
+       "rc": 0,
+       "ap": 6,
+       "price": null
+      },
+      {
+       "id": 158697,
+       "name": "J. McAtee",
+       "p": 27.9,
+       "yc": 4,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 363695,
+      "name": "Murillo",
+      "sot": 5
+     },
+     "cap": [
+      {
+       "id": 18746,
+       "name": "M. Gibbs-White",
+       "pos": "Attacker",
+       "g": 20.7,
+       "a": 29.3,
+       "inv": 43.9
+      },
+      {
+       "id": 161948,
+       "name": "L. Delap",
+       "pos": "Attacker",
+       "g": 27.7,
+       "a": 5.0,
+       "inv": 31.4
+      },
+      {
+       "id": 48648,
+       "name": "D. Ndoye",
+       "pos": "Attacker",
+       "g": 20.7,
+       "a": 4.4,
+       "inv": 24.1
+      },
+      {
+       "id": 9366,
+       "name": "Igor Jesus",
+       "pos": "Attacker",
+       "g": 19.0,
+       "a": 4.8,
+       "inv": 22.9
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 10329,
+       "name": "João Pedro",
+       "p": 35.3,
+       "gl": 5,
+       "as": 3,
+       "ap": 6,
+       "price": {
+        "odd": 2.6,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.6
+        }
+       }
+      },
+      {
+       "id": 19170,
+       "name": "M. Rogers",
+       "p": 26.9,
+       "gl": 5,
+       "as": 1,
+       "ap": 10,
+       "price": {
+        "odd": 3.6,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.6
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 152982,
+       "name": "C. Palmer",
+       "p": 26.9,
+       "yc": 4,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      },
+      {
+       "id": 19170,
+       "name": "M. Rogers",
+       "p": 21.5,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 20995,
+      "name": "M. Lacroix",
+      "sot": 1
+     },
+     "cap": [
+      {
+       "id": 10329,
+       "name": "João Pedro",
+       "pos": "Attacker",
+       "g": 35.3,
+       "a": 26.7,
+       "inv": 52.6
+      },
+      {
+       "id": 152982,
+       "name": "C. Palmer",
+       "pos": "Attacker",
+       "g": 23.6,
+       "a": 20.1,
+       "inv": 39.0
+      },
+      {
+       "id": 19170,
+       "name": "M. Rogers",
+       "pos": "Attacker",
+       "g": 26.9,
+       "a": 9.3,
+       "inv": 33.7
+      },
+      {
+       "id": 1864,
+       "name": "Pedro Neto",
+       "pos": "Attacker",
+       "g": 24.6,
+       "a": 8.9,
+       "inv": 31.3
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [
+     {
+      "id": 181806,
+      "name": "N. Savona",
+      "type": "Missing Fixture",
+      "reason": "Jumpers Knee"
+     }
+    ],
+    "away": []
+   },
+   "lineup_confirmed": false,
+   "previous": [
+    {
+     "date": "04/05/2026",
+     "home": "Chelsea",
+     "away": "Nottingham Forest",
+     "hg": 1,
+     "ag": 3,
+     "ht": [
+      0,
+      2
+     ],
+     "ref": "A. Taylor",
+     "sx": {
+      "h": {
+       "pos": 67.0,
+       "xg": 2.15,
+       "sh": 21.0,
+       "sot": 5.0,
+       "co": 10.0,
+       "fo": 12.0,
+       "of": 1.0,
+       "sv": 1.0,
+       "pp": 91.0,
+       "yc": 3.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 33.0,
+       "xg": 2.05,
+       "sh": 6.0,
+       "sot": 4.0,
+       "co": 1.0,
+       "fo": 10.0,
+       "of": 2.0,
+       "sv": 4.0,
+       "pp": 80.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "T. Awoniyi",
+       "t": "a",
+       "m": 2
+      },
+      {
+       "n": "Igor Jesus",
+       "t": "a",
+       "m": 15
+      },
+      {
+       "n": "T. Awoniyi",
+       "t": "a",
+       "m": 52
+      },
+      {
+       "n": "Joao Pedro",
+       "t": "h",
+       "m": 90
+      }
+     ],
+     "cards": [
+      {
+       "n": "Morato",
+       "t": "a",
+       "m": 10,
+       "r": false
+      },
+      {
+       "n": "Malo Gusto",
+       "t": "h",
+       "m": 14,
+       "r": false
+      },
+      {
+       "n": "Liam Delap",
+       "t": "h",
+       "m": 78,
+       "r": false
+      },
+      {
+       "n": "Moisés Caicedo",
+       "t": "h",
+       "m": 78,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "18/10/2025",
+     "home": "Nottingham Forest",
+     "away": "Chelsea",
+     "hg": 0,
+     "ag": 3,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "C. Kavanagh",
+     "sx": {
+      "h": {
+       "pos": 50.0,
+       "xg": 2.35,
+       "sh": 12.0,
+       "sot": 2.0,
+       "co": 5.0,
+       "fo": 13.0,
+       "of": 1.0,
+       "sv": 3.0,
+       "pp": 82.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 50.0,
+       "xg": 1.67,
+       "sh": 17.0,
+       "sot": 6.0,
+       "co": 2.0,
+       "fo": 16.0,
+       "of": 2.0,
+       "sv": 2.0,
+       "pp": 86.0,
+       "yc": 4.0,
+       "rc": 1.0
+      }
+     },
+     "goals": [
+      {
+       "n": "J. Acheampong",
+       "t": "a",
+       "m": 49
+      },
+      {
+       "n": "P. Neto",
+       "t": "a",
+       "m": 52
+      },
+      {
+       "n": "R. James",
+       "t": "a",
+       "m": 84
+      }
+     ],
+     "cards": [
+      {
+       "n": "Morato",
+       "t": "h",
+       "m": 41,
+       "r": false
+      },
+      {
+       "n": "Malo Gusto",
+       "t": "a",
+       "m": 54,
+       "r": false
+      },
+      {
+       "n": "Ibrahim Sangaré",
+       "t": "h",
+       "m": 80,
+       "r": false
+      },
+      {
+       "n": "Malo Gusto",
+       "t": "a",
+       "m": 87,
+       "r": false
+      },
+      {
+       "n": "Malo Gusto",
+       "t": "a",
+       "m": 87,
+       "r": true
+      },
+      {
+       "n": "Estêvão",
+       "t": "a",
+       "m": 89,
+       "r": false
+      },
+      {
+       "n": "Robert Sánchez",
+       "t": "a",
+       "m": 90,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "25/05/2025",
+     "home": "Nottingham Forest",
+     "away": "Chelsea",
+     "hg": 0,
+     "ag": 1,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "A. Taylor",
+     "sx": {
+      "h": {
+       "pos": 52.0,
+       "xg": 1.2,
+       "sh": 10.0,
+       "sot": 2.0,
+       "co": 7.0,
+       "fo": 10.0,
+       "of": 5.0,
+       "sv": 1.0,
+       "pp": 84.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 48.0,
+       "xg": 1.09,
+       "sh": 6.0,
+       "sot": 2.0,
+       "co": 4.0,
+       "fo": 11.0,
+       "of": 1.0,
+       "sv": 2.0,
+       "pp": 80.0,
+       "yc": 2.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "L. Colwill",
+       "t": "a",
+       "m": 50
+      }
+     ],
+     "cards": [
+      {
+       "n": "Elliot Anderson",
+       "t": "h",
+       "m": 32,
+       "r": false
+      },
+      {
+       "n": "Moisés Caicedo",
+       "t": "a",
+       "m": 56,
+       "r": false
+      },
+      {
+       "n": "Ola Aina",
+       "t": "h",
+       "m": 79,
+       "r": false
+      },
+      {
+       "n": "Tosin Adarabioyo",
+       "t": "a",
+       "m": 79,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "06/10/2024",
+     "home": "Chelsea",
+     "away": "Nottingham Forest",
+     "hg": 1,
+     "ag": 1,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "C. Kavanagh",
+     "sx": {
+      "h": {
+       "pos": 66.0,
+       "xg": 2.46,
+       "sh": 22.0,
+       "sot": 8.0,
+       "co": 11.0,
+       "fo": 12.0,
+       "of": 1.0,
+       "sv": 8.0,
+       "pp": 88.0,
+       "yc": 6.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 34.0,
+       "xg": 0.87,
+       "sh": 16.0,
+       "sot": 9.0,
+       "co": 3.0,
+       "fo": 11.0,
+       "of": 3.0,
+       "sv": 7.0,
+       "pp": 76.0,
+       "yc": 4.0,
+       "rc": 1.0
+      }
+     },
+     "goals": [
+      {
+       "n": "C. Wood",
+       "t": "a",
+       "m": 49
+      },
+      {
+       "n": "N. Madueke",
+       "t": "h",
+       "m": 57
+      }
+     ],
+     "cards": [
+      {
+       "n": "Moisés Caicedo",
+       "t": "h",
+       "m": 21,
+       "r": false
+      },
+      {
+       "n": "James Ward-Prowse",
+       "t": "a",
+       "m": 36,
+       "r": false
+      },
+      {
+       "n": "Cole Palmer",
+       "t": "h",
+       "m": 75,
+       "r": false
+      },
+      {
+       "n": "James Ward-Prowse",
+       "t": "a",
+       "m": 78,
+       "r": false
+      },
+      {
+       "n": "James Ward-Prowse",
+       "t": "a",
+       "m": 78,
+       "r": true
+      },
+      {
+       "n": "Levi Colwill",
+       "t": "h",
+       "m": 89,
+       "r": false
+      },
+      {
+       "n": "Marc Cucurella",
+       "t": "h",
+       "m": 89,
+       "r": false
+      },
+      {
+       "n": "Neco Williams",
+       "t": "a",
+       "m": 89,
+       "r": false
+      },
+      {
+       "n": "Wesley Fofana",
+       "t": "h",
+       "m": 90,
+       "r": false
+      },
+      {
+       "n": "Pedro Neto",
+       "t": "h",
+       "m": 90,
+       "r": false
+      },
+      {
+       "n": "Matz Sels",
+       "t": "a",
+       "m": 90,
+       "r": false
+      }
+     ]
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 2.87,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 2.75,
+      "Bet365": 2.7,
+      "Betfair": 2.7,
+      "BetVictor": 2.7
+     }
+    },
+    "draw": {
+     "odd": 3.76,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.5,
+      "Bet365": 3.4,
+      "Betfair": 3.5,
+      "BetVictor": 3.5
+     }
+    },
+    "away": {
+     "odd": 2.51,
+     "bookie": "Pinnacle",
+     "books": {
+      "William Hill": 2.4,
+      "Bet365": 2.4,
+      "Betfair": 2.4,
+      "BetVictor": 2.38
+     }
+    },
+    "over25": {
+     "odd": 1.79,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.73,
+      "Betfair": 1.65,
+      "BetVictor": 1.69
+     }
+    },
+    "under25": {
+     "odd": 2.18,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.1,
+      "Betfair": 2.1,
+      "BetVictor": 2.01
+     }
+    },
+    "btts_yes": {
+     "odd": 1.62,
+     "bookie": "Bet365",
+     "books": {
+      "William Hill": 1.57,
+      "Bet365": 1.62,
+      "Betfair": 1.57,
+      "BetVictor": 1.55
+     }
+    },
+    "btts_no": {
+     "odd": 2.38,
+     "bookie": "Betfair",
+     "books": {
+      "William Hill": 2.3,
+      "Bet365": 2.2,
+      "Betfair": 2.38,
+      "BetVictor": 2.25
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
      },
      "6.5": {
       "over": null,
