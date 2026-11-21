@@ -1,0 +1,18 @@
+name: live-probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe
+        env:
+          K: ${{ secrets.API_FOOTBALL_KEY }}
+        run: |
+          B=https://v3.football.api-sports.io
+          A="39-140-78-135-61-2-3-848-40-41-42-179-88-94-144-197-203-79-136-141-62"
+          for L in "$A" "39-140-78-135-61-2-3" "40-41-42"; do
+            echo "== live=$L"
+            curl -s -D /tmp/h -o /tmp/b -H "x-apisports-key: $K" "$B/fixtures?live=$L"
+            grep -i "HTTP/\|x-ratelimit-remaining" /tmp/h | tr -d '\r' | tr '\n' ' '; echo
+            python3 -c "import json;d=json.load(open('/tmp/b'));print('errors',d.get('errors'),'results',d.get('results'))"
+          done
