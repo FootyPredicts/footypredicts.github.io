@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-21T06:02:06.900027+00:00",
+ "updated": "2026-11-21T09:08:19.959731+00:00",
  "matches_used": 706,
  "fixtures": [
   {
@@ -2627,12 +2627,6 @@
       "name": "P. Sulc",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 497617,
-      "name": "R. Himbert",
-      "type": "Questionable",
-      "reason": "Inactive"
      }
     ]
    },
@@ -4850,10 +4844,11 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 2.2,
-     "defence_hit_pct": 0.0,
+     "goals_lost_pct": 5.4,
+     "defence_hit_pct": 4.0,
      "key_out": [
-      "G. Reyna"
+      "G. Reyna",
+      "Oso"
      ]
     },
     "away": {
@@ -4864,13 +4859,13 @@
      ]
     }
    },
-   "home_pct": 52.2,
-   "draw_pct": 22.3,
-   "away_pct": 25.5,
-   "xg_home": 2.12,
-   "xg_away": 1.45,
-   "over25": 69.3,
-   "btts": 68.1,
+   "home_pct": 49.6,
+   "draw_pct": 22.7,
+   "away_pct": 27.7,
+   "xg_home": 2.05,
+   "xg_away": 1.51,
+   "over25": 69.1,
+   "btts": 68.7,
    "cards5": 31.3,
    "cards": {
     "exp": 3.7,
@@ -5684,9 +5679,9 @@
       }
      ],
      "defender": {
-      "id": 341453,
-      "name": "Oso",
-      "sot": 2
+      "id": 297583,
+      "name": "J. Mitchell",
+      "sot": 1
      },
      "cap": [
       {
@@ -5820,21 +5815,27 @@
    "injuries": {
     "home": [
      {
+      "id": 380939,
+      "name": "F. Balde",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
+     },
+     {
+      "id": 341453,
+      "name": "Oso",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
       "id": 390742,
       "name": "J. Panichelli",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
      },
      {
-      "id": 380939,
-      "name": "F. Balde",
-      "type": "Questionable",
-      "reason": "Leg Injury"
-     },
-     {
       "id": 161921,
       "name": "G. Reyna",
-      "type": "Questionable",
+      "type": "Missing Fixture",
       "reason": "Muscle Injury"
      }
     ],
@@ -9000,12 +9001,6 @@
       "name": "S. Chergui",
       "type": "Questionable",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 389322,
-      "name": "N. Sangui",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
      }
     ],
     "away": [
