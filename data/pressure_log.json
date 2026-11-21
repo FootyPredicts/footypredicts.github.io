@@ -5297,7 +5297,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 90,
+     "side": "home",
+     "player": "Ilija Despotovic",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-21T01:36:39Z"
   },
   {
    "id": 1570454,
@@ -5327,7 +5337,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T01:36:39Z"
   },
   {
    "id": 1552531,
@@ -5357,7 +5370,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 86,
+     "side": "away",
+     "player": "Luís Semedo",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T01:36:39Z"
   },
   {
    "id": 1564415,
@@ -5387,7 +5410,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T01:36:39Z"
   },
   {
    "id": 1570025,
@@ -5417,7 +5443,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T01:36:40Z"
   },
   {
    "id": 1552534,
@@ -5480,39 +5509,42 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T01:36:40Z"
   }
  ],
  "summary": {
   "by_minute": {
    "0-30": {
-    "flags": 29,
-    "wins": 9,
-    "avg_model_chance": 0.452
+    "flags": 23,
+    "wins": 5,
+    "avg_model_chance": 0.459
    },
    "30-60": {
-    "flags": 47,
+    "flags": 50,
     "wins": 24,
-    "avg_model_chance": 0.461
+    "avg_model_chance": 0.458
    },
    "60-75": {
-    "flags": 33,
-    "wins": 14,
-    "avg_model_chance": 0.469
+    "flags": 31,
+    "wins": 13,
+    "avg_model_chance": 0.463
    },
    "75+": {
-    "flags": 46,
-    "wins": 16,
-    "avg_model_chance": 0.378
+    "flags": 48,
+    "wins": 18,
+    "avg_model_chance": 0.381
    }
   },
   "flags": 152,
-  "resolved": 146,
-  "wins": 58,
-  "hit_rate": 0.397,
+  "resolved": 152,
+  "wins": 60,
+  "hit_rate": 0.395,
   "avg_model_chance": 0.435,
-  "side_flags": 124,
-  "side_scored": 33,
-  "updated": "2026-11-20T20:55:01Z"
+  "side_flags": 128,
+  "side_scored": 34,
+  "updated": "2026-11-21T03:30:51Z"
  }
 }
