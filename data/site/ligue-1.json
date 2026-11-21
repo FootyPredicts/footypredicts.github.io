@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-21T10:08:19.298316+00:00",
+ "updated": "2026-11-21T10:38:15.258570+00:00",
  "matches_used": 706,
  "fixtures": [
   {
@@ -6322,23 +6322,23 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.4,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 0.7,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 54.5,
-   "draw_pct": 24.3,
-   "away_pct": 21.3,
-   "xg_home": 1.86,
-   "xg_away": 1.1,
-   "over25": 56.8,
-   "btts": 57.1,
+   "home_pct": 53.2,
+   "draw_pct": 24.9,
+   "away_pct": 22.0,
+   "xg_home": 1.8,
+   "xg_away": 1.09,
+   "over25": 55.1,
+   "btts": 56.2,
    "cards5": 41.9,
    "cards": {
     "exp": 4.25,
@@ -7427,8 +7427,34 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 394950,
+      "name": "A. Bulatovic",
+      "type": "Missing Fixture",
+      "reason": "Neck Injury"
+     },
+     {
+      "id": 1135,
+      "name": "O. Edouard",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 178708,
+      "name": "M. Nawrocki",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 334952,
+      "name": "R. Messali",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
