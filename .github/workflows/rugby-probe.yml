@@ -1,0 +1,27 @@
+name: rugby-probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe rugby API
+        env:
+          K: ${{ secrets.API_FOOTBALL_KEY }}
+        run: |
+          H="x-apisports-key: $K"
+          B=https://v1.rugby.api-sports.io
+          echo "== status"; curl -s -H "$H" $B/status | python3 -c "import sys,json;d=json.load(sys.stdin);print(json.dumps({k:d.get(k) for k in ('errors','results')}), json.dumps((d.get('response') or {}).get('subscription') if isinstance(d.get('response'),dict) else d.get('response'))[:200], json.dumps((d.get('response') or {}).get('requests') if isinstance(d.get('response'),dict) else ''))"
+          echo "== leagues"; curl -s -H "$H" "$B/leagues" | python3 -c "
+          import sys,json
+          d=json.load(sys.stdin); print('errors',d.get('errors'),'results',d.get('results'))
+          want=['premiership','top 14','united rugby','six nations','world cup','champions cup','challenge cup','autumn','international','super rugby','rugby championship']
+          for l in d.get('response',[]):
+              n=l.get('name','').lower()
+              if any(w in n for w in want): print(l['id'],l['name'],'|',(l.get('country') or {}).get('name'),'|',l.get('type'))
+          "
+          echo "== today games"; curl -s -H "$H" "$B/games?date=$(date -u +%F)" | python3 -c "
+          import sys,json
+          d=json.load(sys.stdin); print('errors',d.get('errors'),'results',d.get('results'))
+          for g in d.get('response',[])[:25]:
+              print(g['league']['name'],'|',g['teams']['home']['name'],'v',g['teams']['away']['name'],'|',g['status']['short'],g['scores'])
+          "
