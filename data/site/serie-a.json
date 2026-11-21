@@ -3,1697 +3,9 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-21T19:38:14.757532+00:00",
+ "updated": "2026-11-21T20:08:13.444201+00:00",
  "matches_used": 870,
  "fixtures": [
-  {
-   "id": 1550205,
-   "kickoff": "2026-11-21T17:00:00",
-   "round": "Regular Season - 12",
-   "home": "Parma",
-   "away": "AS Roma",
-   "referee": "S. Sozza",
-   "ref_cards": 3.95,
-   "ref_games": 38,
-   "pick": "Away",
-   "model_pick": "Away",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 8.1,
-    "draw": 14.8,
-    "away": 77.1
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 7.6,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "D. Drobnic",
-      "D. Romero"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 0.1,
-     "defence_hit_pct": 0.0,
-     "key_out": []
-    }
-   },
-   "home_pct": 9.4,
-   "draw_pct": 21.4,
-   "away_pct": 69.2,
-   "xg_home": 0.57,
-   "xg_away": 1.94,
-   "over25": 45.9,
-   "btts": 38.1,
-   "cards5": 32.9,
-   "cards": {
-    "exp": 3.78,
-    "home": 1.8,
-    "away": 1.97,
-    "over": {
-     "2.5": 71.6,
-     "3.5": 51.6,
-     "4.5": 32.9,
-     "5.5": 18.7,
-     "6.5": 9.6
-    }
-   },
-   "form": {
-    "home": {
-     "played": 6,
-     "win": 16.666666666666664,
-     "over25": 50.0,
-     "btts": 50.0
-    },
-    "away": {
-     "played": 5,
-     "win": 60.0,
-     "over25": 60.0,
-     "btts": 40.0
-    }
-   },
-   "venue": {
-    "home": {
-     "games": [
-      {
-       "date": "06/09/2026",
-       "home": "Parma",
-       "away": "Monza",
-       "hg": 1,
-       "ag": 1,
-       "ht": [
-        0,
-        1
-       ],
-       "ref": "F. La Penna",
-       "sx": {
-        "h": {
-         "pos": 46.0,
-         "xg": 0.73,
-         "sh": 7.0,
-         "sot": 3.0,
-         "co": 6.0,
-         "fo": 16.0,
-         "of": 0.0,
-         "sv": 4.0,
-         "pp": 78.0,
-         "yc": 2.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 54.0,
-         "xg": 1.72,
-         "sh": 16.0,
-         "sot": 5.0,
-         "co": 3.0,
-         "fo": 16.0,
-         "of": 4.0,
-         "sv": 2.0,
-         "pp": 84.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "J. Robinson",
-         "t": "a",
-         "m": 38
-        },
-        {
-         "n": "S. Lontani",
-         "t": "h",
-         "m": 60
-        }
-       ],
-       "cards": [
-        {
-         "n": "Michael Folorunsho",
-         "t": "a",
-         "m": 41,
-         "r": false
-        },
-        {
-         "n": "Mandela Keita",
-         "t": "h",
-         "m": 66,
-         "r": false
-        },
-        {
-         "n": "Leonardo Colombo",
-         "t": "a",
-         "m": 68,
-         "r": false
-        },
-        {
-         "n": "Pontus Almqvist",
-         "t": "h",
-         "m": 83,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "20/09/2026",
-       "home": "Parma",
-       "away": "Genoa",
-       "hg": 2,
-       "ag": 1,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "M. Mariani",
-       "sx": {
-        "h": {
-         "pos": 43.0,
-         "xg": 0.53,
-         "sh": 5.0,
-         "sot": 2.0,
-         "co": 2.0,
-         "fo": 17.0,
-         "of": 3.0,
-         "sv": 4.0,
-         "pp": 79.0,
-         "yc": 3.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 57.0,
-         "xg": 0.7,
-         "sh": 12.0,
-         "sot": 5.0,
-         "co": 5.0,
-         "fo": 14.0,
-         "of": 1.0,
-         "sv": 0.0,
-         "pp": 85.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "D. Romero",
-         "t": "h",
-         "m": 38
-        },
-        {
-         "n": "M. Osmajic",
-         "t": "a",
-         "m": 70
-        },
-        {
-         "n": "P. Almqvist",
-         "t": "h",
-         "m": 80
-        }
-       ],
-       "cards": [
-        {
-         "n": "Dominik Drobnic ",
-         "t": "h",
-         "m": 9,
-         "r": false
-        },
-        {
-         "n": "Sebastian Otoa",
-         "t": "a",
-         "m": 14,
-         "r": false
-        },
-        {
-         "n": "Alessandro Marcandalli",
-         "t": "a",
-         "m": 44,
-         "r": false
-        },
-        {
-         "n": "Enrico Delprato",
-         "t": "h",
-         "m": 85,
-         "r": false
-        },
-        {
-         "n": "Mariano Troilo",
-         "t": "h",
-         "m": 90,
-         "r": false
-        },
-        {
-         "n": "Mikael Ellertsson",
-         "t": "a",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "19/10/2026",
-       "home": "Parma",
-       "away": "Torino",
-       "hg": 0,
-       "ag": 3,
-       "ht": [
-        0,
-        2
-       ],
-       "ref": "G. Ayroldi",
-       "sx": {
-        "h": {
-         "pos": 51.0,
-         "xg": 1.61,
-         "sh": 25.0,
-         "sot": 8.0,
-         "co": 6.0,
-         "fo": 7.0,
-         "of": 2.0,
-         "sv": 0.0,
-         "yc": 3.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 49.0,
-         "xg": 1.58,
-         "sh": 9.0,
-         "sot": 3.0,
-         "co": 2.0,
-         "fo": 16.0,
-         "of": 3.0,
-         "sv": 8.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Giovanni Simeone",
-         "t": "a",
-         "m": 4
-        },
-        {
-         "n": "Che Adams",
-         "t": "a",
-         "m": 24
-        },
-        {
-         "n": "Giovanni Simeone",
-         "t": "a",
-         "m": 69
-        }
-       ],
-       "cards": [
-        {
-         "n": "Diego Carlos",
-         "t": "h",
-         "m": 28,
-         "r": false
-        },
-        {
-         "n": "Ardian Ismajli",
-         "t": "a",
-         "m": 37,
-         "r": false
-        },
-        {
-         "n": "Sascha Britschgi",
-         "t": "h",
-         "m": 54,
-         "r": false
-        },
-        {
-         "n": "Pietro Comuzzo",
-         "t": "a",
-         "m": 75,
-         "r": false
-        },
-        {
-         "n": "Mariano Troilo",
-         "t": "h",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "28/10/2026",
-       "home": "Parma",
-       "away": "Udinese",
-       "hg": 0,
-       "ag": 0,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "D. Massa",
-       "sx": {
-        "h": {
-         "pos": 42.0,
-         "xg": 1.2,
-         "sh": 8.0,
-         "sot": 2.0,
-         "co": 3.0,
-         "fo": 12.0,
-         "of": 0.0,
-         "sv": 4.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 58.0,
-         "xg": 1.43,
-         "sh": 20.0,
-         "sot": 5.0,
-         "co": 6.0,
-         "fo": 14.0,
-         "of": 1.0,
-         "sv": 2.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [],
-       "cards": [
-        {
-         "n": "Alberto Gilardino",
-         "t": "h",
-         "m": 29,
-         "r": false
-        },
-        {
-         "n": "Jesper Karlstrom",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Nicolo Zaniolo",
-         "t": "a",
-         "m": 81,
-         "r": false
-        },
-        {
-         "n": "Simone Lontani",
-         "t": "h",
-         "m": 81,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "07/11/2026",
-       "home": "Parma",
-       "away": "Bologna",
-       "hg": 1,
-       "ag": 2,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "L. Zufferli",
-       "sx": {
-        "h": {
-         "pos": 31.0,
-         "xg": 1.52,
-         "sh": 11.0,
-         "sot": 2.0,
-         "co": 1.0,
-         "fo": 11.0,
-         "of": 0.0,
-         "sv": 8.0,
-         "yc": 3.0,
-         "rc": 1.0
-        },
-        "a": {
-         "pos": 69.0,
-         "xg": 3.58,
-         "sh": 33.0,
-         "sot": 10.0,
-         "co": 15.0,
-         "fo": 13.0,
-         "of": 1.0,
-         "sv": 1.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Arthur Theate",
-         "t": "a",
-         "m": 53
-        },
-        {
-         "n": "Riccardo Orsolini",
-         "t": "a",
-         "m": 72
-        },
-        {
-         "n": "Vincent Sierro",
-         "t": "h",
-         "m": 81
-        }
-       ],
-       "cards": [
-        {
-         "n": "Abdoulaye Niakhate Ndiaye",
-         "t": "h",
-         "m": 9,
-         "r": true
-        },
-        {
-         "n": "José David Romero",
-         "t": "h",
-         "m": 14,
-         "r": false
-        },
-        {
-         "n": "Nicolo Casale",
-         "t": "a",
-         "m": 20,
-         "r": false
-        },
-        {
-         "n": "Mariano Troilo",
-         "t": "h",
-         "m": 42,
-         "r": false
-        },
-        {
-         "n": "Enrico DelPrato",
-         "t": "h",
-         "m": 72,
-         "r": false
-        },
-        {
-         "n": "Martin Vitik",
-         "t": "a",
-         "m": 80,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 6,
-     "w": 1,
-     "d": 2,
-     "l": 3,
-     "last5": "DWLDL",
-     "gf": 0.67,
-     "ga": 1.33,
-     "cs": 17,
-     "fts": 50,
-     "sh": 11.5,
-     "sot": 3.2,
-     "co": 3.5,
-     "yc": 2.0
-    },
-    "away": {
-     "games": [
-      {
-       "date": "31/08/2026",
-       "home": "Lecce",
-       "away": "AS Roma",
-       "hg": 0,
-       "ag": 4,
-       "ht": [
-        0,
-        3
-       ],
-       "ref": "D. Chiffi",
-       "sx": {
-        "h": {
-         "pos": 35.0,
-         "xg": 0.8,
-         "sh": 7.0,
-         "sot": 3.0,
-         "co": 2.0,
-         "fo": 9.0,
-         "of": 0.0,
-         "sv": 4.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 65.0,
-         "xg": 3.27,
-         "sh": 15.0,
-         "sot": 8.0,
-         "co": 1.0,
-         "fo": 8.0,
-         "of": 9.0,
-         "sv": 2.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "D. Malen",
-         "t": "a",
-         "m": 4
-        },
-        {
-         "n": "D. Malen",
-         "t": "a",
-         "m": 23
-        },
-        {
-         "n": "M. Soule",
-         "t": "a",
-         "m": 25
-        },
-        {
-         "n": "R. Mora",
-         "t": "a",
-         "m": 65
-        }
-       ],
-       "cards": [
-        {
-         "n": "Donyell Malen",
-         "t": "a",
-         "m": 9,
-         "r": false
-        },
-        {
-         "n": "Ivan Ilić",
-         "t": "h",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "14/09/2026",
-       "home": "Torino",
-       "away": "AS Roma",
-       "hg": 0,
-       "ag": 2,
-       "ht": [
-        0,
-        1
-       ],
-       "ref": "F. Maresca",
-       "sx": {
-        "h": {
-         "pos": 52.0,
-         "xg": 0.86,
-         "sh": 8.0,
-         "sot": 3.0,
-         "co": 1.0,
-         "fo": 7.0,
-         "of": 0.0,
-         "sv": 3.0,
-         "yc": 0.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 48.0,
-         "xg": 1.85,
-         "sh": 14.0,
-         "sot": 5.0,
-         "co": 8.0,
-         "fo": 20.0,
-         "of": 2.0,
-         "sv": 3.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "D. Malen",
-         "t": "a",
-         "m": 40
-        },
-        {
-         "n": "N. Pisilli",
-         "t": "a",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Mario Hermoso",
-         "t": "a",
-         "m": 61,
-         "r": false
-        },
-        {
-         "n": "Niccolò Pisilli",
-         "t": "a",
-         "m": 72,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "11/10/2026",
-       "home": "Como",
-       "away": "AS Roma",
-       "hg": 0,
-       "ag": 0,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "M. Fabbri",
-       "sx": {
-        "h": {
-         "pos": 66.0,
-         "xg": 1.35,
-         "sh": 19.0,
-         "sot": 4.0,
-         "co": 6.0,
-         "fo": 9.0,
-         "of": 0.0,
-         "sv": 2.0,
-         "pp": 91.0,
-         "yc": 2.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 34.0,
-         "xg": 1.08,
-         "sh": 9.0,
-         "sot": 2.0,
-         "co": 2.0,
-         "fo": 9.0,
-         "of": 3.0,
-         "sv": 4.0,
-         "pp": 78.0,
-         "yc": 3.0,
-         "rc": 1.0
-        }
-       },
-       "goals": [],
-       "cards": [
-        {
-         "n": "Assane Diao",
-         "t": "h",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Marten de Roon",
-         "t": "a",
-         "m": 46,
-         "r": false
-        },
-        {
-         "n": "Donyell Malen",
-         "t": "a",
-         "m": 53,
-         "r": true
-        },
-        {
-         "n": "Manu Koné",
-         "t": "a",
-         "m": 57,
-         "r": false
-        },
-        {
-         "n": "Matías Soulé",
-         "t": "a",
-         "m": 62,
-         "r": false
-        },
-        {
-         "n": "Martin Baturina",
-         "t": "h",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "24/10/2026",
-       "home": "Napoli",
-       "away": "AS Roma",
-       "hg": 3,
-       "ag": 3,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "A. Colombo",
-       "sx": {
-        "h": {
-         "pos": 40.0,
-         "xg": 2.51,
-         "sh": 15.0,
-         "sot": 9.0,
-         "co": 2.0,
-         "fo": 6.0,
-         "of": 0.0,
-         "sv": 1.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 60.0,
-         "xg": 1.96,
-         "sh": 24.0,
-         "sot": 4.0,
-         "co": 11.0,
-         "fo": 11.0,
-         "of": 1.0,
-         "sv": 5.0,
-         "yc": 4.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Frank Anguissa",
-         "t": "h",
-         "m": 28
-        },
-        {
-         "n": "Scott McTominay",
-         "t": "h",
-         "m": 48
-        },
-        {
-         "n": "Matias Soule",
-         "t": "a",
-         "m": 69
-        },
-        {
-         "n": "Leonardo Balerdi",
-         "t": "a",
-         "m": 74
-        },
-        {
-         "n": "Scott McTominay",
-         "t": "h",
-         "m": 83
-        },
-        {
-         "n": "Leonardo Balerdi",
-         "t": "a",
-         "m": 89
-        }
-       ],
-       "cards": [
-        {
-         "n": "Rafael Marin Zamora",
-         "t": "h",
-         "m": 4,
-         "r": false
-        },
-        {
-         "n": "Bryan Cristante",
-         "t": "a",
-         "m": 30,
-         "r": false
-        },
-        {
-         "n": "Devyne Rensch",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Leonardo Balerdi",
-         "t": "a",
-         "m": 61,
-         "r": false
-        },
-        {
-         "n": "Marten de Roon",
-         "t": "a",
-         "m": 86,
-         "r": false
-        },
-        {
-         "n": "Massimiliano Allegri",
-         "t": "h",
-         "m": 90,
-         "r": true
-        }
-       ]
-      },
-      {
-       "date": "31/10/2026",
-       "home": "Udinese",
-       "away": "AS Roma",
-       "hg": 2,
-       "ag": 5,
-       "ht": [
-        0,
-        4
-       ],
-       "ref": "F. Maresca",
-       "sx": {
-        "h": {
-         "pos": 46.0,
-         "xg": 1.85,
-         "sh": 15.0,
-         "sot": 7.0,
-         "co": 7.0,
-         "fo": 11.0,
-         "of": 1.0,
-         "sv": 4.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 54.0,
-         "xg": 2.82,
-         "sh": 14.0,
-         "sot": 9.0,
-         "co": 4.0,
-         "fo": 9.0,
-         "of": 0.0,
-         "sv": 5.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Bryan Cristante",
-         "t": "a",
-         "m": 10
-        },
-        {
-         "n": "Rodrigo Mora",
-         "t": "a",
-         "m": 31
-        },
-        {
-         "n": "Donyell Malen",
-         "t": "a",
-         "m": 33
-        },
-        {
-         "n": "Evan Ndicka",
-         "t": "a",
-         "m": 37
-        },
-        {
-         "n": "Nicolo Zaniolo",
-         "t": "h",
-         "m": 50
-        },
-        {
-         "n": "Matteo Palma",
-         "t": "h",
-         "m": 78
-        },
-        {
-         "n": "Daniele Ghilardi",
-         "t": "a",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Lennon Miller",
-         "t": "h",
-         "m": 23,
-         "r": false
-        },
-        {
-         "n": "Bryan Cristante",
-         "t": "a",
-         "m": 60,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 5,
-     "w": 3,
-     "d": 2,
-     "l": 0,
-     "last5": "WWDDW",
-     "gf": 2.8,
-     "ga": 1.0,
-     "cs": 60,
-     "fts": 20,
-     "sh": 15.2,
-     "sot": 5.6,
-     "co": 5.2,
-     "yc": 2.2
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 21.81980615483914,
-     "sh": 45.95670035134659,
-     "any": 57.74884357436163
-    },
-    "away": {
-     "fh": 54.370483381883794,
-     "sh": 62.062524737609046,
-     "any": 82.6893134206536
-    },
-    "match_fh": 64.32675545734686,
-    "match_sh": 79.49733656481229
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 483670,
-       "name": "S. Lontani",
-       "p": 13.1,
-       "gl": 3,
-       "as": 0,
-       "ap": 11,
-       "price": {
-        "odd": 5.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.0
-        }
-       }
-      },
-      {
-       "id": 194750,
-       "name": "E. Touré",
-       "p": 10.6,
-       "gl": 0,
-       "as": 1,
-       "ap": 11,
-       "price": {
-        "odd": 5.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.5
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 428237,
-       "name": "M. Troilo",
-       "p": 27.0,
-       "yc": 4,
-       "rc": 0,
-       "ap": 11,
-       "price": null
-      },
-      {
-       "id": 30420,
-       "name": "E. Del Prato",
-       "p": 21.9,
-       "yc": 3,
-       "rc": 0,
-       "ap": 11,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 91358,
-      "name": "E. Valeri",
-      "sot": 2
-     },
-     "cap": [
-      {
-       "id": 194750,
-       "name": "E. Touré",
-       "pos": "Attacker",
-       "g": 10.6,
-       "a": 7.2,
-       "inv": 17.0
-      },
-      {
-       "id": 483670,
-       "name": "S. Lontani",
-       "pos": "Attacker",
-       "g": 13.1,
-       "a": 2.3,
-       "inv": 15.1
-      },
-      {
-       "id": 48491,
-       "name": "V. Sierro",
-       "pos": "Midfielder",
-       "g": 7.1,
-       "a": 8.4,
-       "inv": 14.9
-      },
-      {
-       "id": 322630,
-       "name": "G. Fabbian",
-       "pos": "Midfielder",
-       "g": 4.7,
-       "a": 10.2,
-       "inv": 14.4
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 249,
-       "name": "D. Malen",
-       "p": 37.8,
-       "gl": 8,
-       "as": 2,
-       "ap": 10,
-       "price": {
-        "odd": 1.57,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 1.57
-        }
-       }
-      },
-      {
-       "id": 323936,
-       "name": "M. Soulé",
-       "p": 23.7,
-       "gl": 3,
-       "as": 3,
-       "ap": 11,
-       "price": {
-        "odd": 2.25,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.25
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 22147,
-       "name": "M. Koné",
-       "p": 19.8,
-       "yc": 2,
-       "rc": 0,
-       "ap": 7,
-       "price": null
-      },
-      {
-       "id": 778,
-       "name": "B. Cristante",
-       "p": 18.6,
-       "yc": 2,
-       "rc": 0,
-       "ap": 9,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 6,
-      "name": "L. Balerdi",
-      "sot": 4
-     },
-     "cap": [
-      {
-       "id": 249,
-       "name": "D. Malen",
-       "pos": "Attacker",
-       "g": 37.8,
-       "a": 14.1,
-       "inv": 46.6
-      },
-      {
-       "id": 875,
-       "name": "P. Dybala",
-       "pos": "Attacker",
-       "g": 17.7,
-       "a": 33.4,
-       "inv": 45.2
-      },
-      {
-       "id": 323936,
-       "name": "M. Soulé",
-       "pos": "Attacker",
-       "g": 23.7,
-       "a": 18.4,
-       "inv": 37.7
-      },
-      {
-       "id": 404097,
-       "name": "Rodrigo Mora",
-       "pos": "Attacker",
-       "g": 20.9,
-       "a": 3.0,
-       "inv": 23.2
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 576948,
-      "name": "D. Drobnic",
-      "type": "Missing Fixture",
-      "reason": "Foot Injury"
-     },
-     {
-      "id": 203483,
-      "name": "A. Ndiaye",
-      "type": "Missing Fixture",
-      "reason": "Red Card"
-     },
-     {
-      "id": 194905,
-      "name": "D. Romero",
-      "type": "Missing Fixture",
-      "reason": "Shoulder Injury"
-     },
-     {
-      "id": 6221,
-      "name": "L. Valenti",
-      "type": "Missing Fixture",
-      "reason": "Coach's decision"
-     }
-    ],
-    "away": [
-     {
-      "id": 782,
-      "name": "L. Pellegrini",
-      "type": "Missing Fixture",
-      "reason": "Thigh Injury"
-     },
-     {
-      "id": 162452,
-      "name": "D. Rensch",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 81012,
-      "name": "D. S. Vasquez Llach",
-      "type": "Missing Fixture",
-      "reason": "Inactive"
-     }
-    ]
-   },
-   "lineup_confirmed": true,
-   "previous": [
-    {
-     "date": "10/05/2026",
-     "home": "Parma",
-     "away": "AS Roma",
-     "hg": 2,
-     "ag": 3,
-     "ht": [
-      0,
-      1
-     ],
-     "ref": "D. Chiffi",
-     "sx": {
-      "h": {
-       "pos": 34.0,
-       "xg": 0.73,
-       "sh": 11.0,
-       "sot": 3.0,
-       "co": 3.0,
-       "fo": 14.0,
-       "of": 4.0,
-       "sv": 4.0,
-       "pp": 78.0,
-       "yc": 4.0,
-       "rc": 1.0
-      },
-      "a": {
-       "pos": 66.0,
-       "xg": 2.62,
-       "sh": 15.0,
-       "sot": 7.0,
-       "co": 6.0,
-       "fo": 8.0,
-       "of": 4.0,
-       "sv": 1.0,
-       "pp": 88.0,
-       "yc": 0.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "D. Malen",
-       "t": "a",
-       "m": 22
-      },
-      {
-       "n": "G. Strefezza",
-       "t": "h",
-       "m": 47
-      },
-      {
-       "n": "M. Keita",
-       "t": "h",
-       "m": 87
-      },
-      {
-       "n": "D. Rensch",
-       "t": "a",
-       "m": 90
-      },
-      {
-       "n": "D. Malen",
-       "t": "a",
-       "m": 90
-      }
-     ],
-     "cards": [
-      {
-       "n": "Gabriel Strefezza",
-       "t": "h",
-       "m": 48,
-       "r": false
-      },
-      {
-       "n": "Mariano Troilo",
-       "t": "h",
-       "m": 65,
-       "r": false
-      },
-      {
-       "n": "Sascha Britschgi",
-       "t": "h",
-       "m": 76,
-       "r": false
-      },
-      {
-       "n": "Sascha Britschgi",
-       "t": "h",
-       "m": 90,
-       "r": false
-      },
-      {
-       "n": "Sascha Britschgi",
-       "t": "h",
-       "m": 90,
-       "r": true
-      }
-     ]
-    },
-    {
-     "date": "29/10/2025",
-     "home": "AS Roma",
-     "away": "Parma",
-     "hg": 2,
-     "ag": 1,
-     "ht": [
-      0,
-      0
-     ],
-     "ref": "V. Crezzini",
-     "sx": {
-      "h": {
-       "pos": 60.0,
-       "xg": 1.01,
-       "sh": 18.0,
-       "sot": 6.0,
-       "co": 9.0,
-       "fo": 8.0,
-       "of": 3.0,
-       "sv": 4.0,
-       "pp": 85.0,
-       "yc": 0.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 40.0,
-       "xg": 1.21,
-       "sh": 8.0,
-       "sot": 5.0,
-       "co": 2.0,
-       "fo": 9.0,
-       "of": 2.0,
-       "sv": 4.0,
-       "pp": 75.0,
-       "yc": 4.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "M. Hermoso",
-       "t": "h",
-       "m": 63
-      },
-      {
-       "n": "A. Dovbyk",
-       "t": "h",
-       "m": 81
-      },
-      {
-       "n": "A. Circati",
-       "t": "a",
-       "m": 86
-      }
-     ],
-     "cards": [
-      {
-       "n": "Mariano Troilo",
-       "t": "a",
-       "m": -5,
-       "r": false
-      },
-      {
-       "n": "Mateo Pellegrino",
-       "t": "a",
-       "m": 38,
-       "r": false
-      },
-      {
-       "n": "Enrico Del Prato",
-       "t": "a",
-       "m": 90,
-       "r": false
-      },
-      {
-       "n": "Christian Ordoñez",
-       "t": "a",
-       "m": 90,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "16/02/2025",
-     "home": "Parma",
-     "away": "AS Roma",
-     "hg": 0,
-     "ag": 1,
-     "ht": [
-      0,
-      1
-     ],
-     "ref": "D. Chiffi",
-     "sx": {
-      "h": {
-       "pos": 28.0,
-       "xg": 0.26,
-       "sh": 5.0,
-       "sot": 1.0,
-       "co": 1.0,
-       "fo": 11.0,
-       "of": 1.0,
-       "sv": 3.0,
-       "pp": 73.0,
-       "yc": 2.0,
-       "rc": 1.0
-      },
-      "a": {
-       "pos": 72.0,
-       "xg": 1.12,
-       "sh": 16.0,
-       "sot": 4.0,
-       "co": 10.0,
-       "fo": 5.0,
-       "of": 3.0,
-       "sv": 1.0,
-       "pp": 92.0,
-       "yc": 3.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "M. Soulé",
-       "t": "a",
-       "m": 33
-      }
-     ],
-     "cards": [
-      {
-       "n": "Giovanni Leoni",
-       "t": "h",
-       "m": 31,
-       "r": true
-      },
-      {
-       "n": "Matías Soulé",
-       "t": "a",
-       "m": 34,
-       "r": false
-      },
-      {
-       "n": "Lorenzo Pellegrini",
-       "t": "a",
-       "m": 55,
-       "r": false
-      },
-      {
-       "n": "Lucas Gourna-Douath",
-       "t": "a",
-       "m": 63,
-       "r": false
-      },
-      {
-       "n": "Botond Balogh",
-       "t": "h",
-       "m": 82,
-       "r": false
-      },
-      {
-       "n": "Pontus Almqvist",
-       "t": "h",
-       "m": 85,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "22/12/2024",
-     "home": "AS Roma",
-     "away": "Parma",
-     "hg": 5,
-     "ag": 0,
-     "ht": [
-      2,
-      0
-     ],
-     "ref": "M. Di Bello",
-     "sx": {
-      "h": {
-       "pos": 59.0,
-       "xg": 5.44,
-       "sh": 19.0,
-       "sot": 9.0,
-       "co": 5.0,
-       "fo": 10.0,
-       "of": 4.0,
-       "sv": 3.0,
-       "pp": 89.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 41.0,
-       "xg": 0.39,
-       "sh": 9.0,
-       "sot": 3.0,
-       "co": 2.0,
-       "fo": 9.0,
-       "of": 0.0,
-       "sv": 4.0,
-       "pp": 85.0,
-       "yc": 2.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "P. Dybala",
-       "t": "h",
-       "m": 8
-      },
-      {
-       "n": "A. Saelemaekers",
-       "t": "h",
-       "m": 13
-      },
-      {
-       "n": "P. Dybala",
-       "t": "h",
-       "m": 51
-      },
-      {
-       "n": "L. Paredes",
-       "t": "h",
-       "m": 74
-      },
-      {
-       "n": "A. Dovbyk",
-       "t": "h",
-       "m": 83
-      }
-     ],
-     "cards": [
-      {
-       "n": "Ange-Yoan Bonny",
-       "t": "a",
-       "m": 23,
-       "r": false
-      },
-      {
-       "n": "Pontus Almqvist",
-       "t": "a",
-       "m": 50,
-       "r": false
-      },
-      {
-       "n": "Angeliño",
-       "t": "h",
-       "m": 64,
-       "r": false
-      }
-     ]
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 13.6,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 11.0,
-      "Bet365": 11.0,
-      "Betfair": 13.0,
-      "BetVictor": 11.5
-     }
-    },
-    "draw": {
-     "odd": 7.29,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 6.0,
-      "Bet365": 6.25,
-      "Betfair": 6.5,
-      "BetVictor": 6.5
-     }
-    },
-    "away": {
-     "odd": 1.26,
-     "bookie": "SBO",
-     "books": {
-      "William Hill": 1.22,
-      "Bet365": 1.22,
-      "Betfair": 1.22,
-      "BetVictor": 1.2
-     }
-    },
-    "over25": {
-     "odd": 1.47,
-     "bookie": "Betano",
-     "books": {
-      "Bet365": 1.44,
-      "Betfair": 1.4,
-      "BetVictor": 1.43
-     }
-    },
-    "under25": {
-     "odd": 2.88,
-     "bookie": "Betfair",
-     "books": {
-      "Bet365": 2.75,
-      "Betfair": 2.88,
-      "BetVictor": 2.57
-     }
-    },
-    "btts_yes": {
-     "odd": 1.95,
-     "bookie": "Bet365",
-     "books": {
-      "William Hill": 1.8,
-      "Bet365": 1.95,
-      "Betfair": 1.87,
-      "BetVictor": 1.85
-     }
-    },
-    "btts_no": {
-     "odd": 1.95,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 1.95,
-      "Bet365": 1.8,
-      "Betfair": 1.87,
-      "BetVictor": 1.83
-     }
-    },
-    "cards_over45": {
-     "odd": 3.7,
-     "bookie": "Betano",
-     "books": {}
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.65,
-       "bookie": "Betano",
-       "books": {
-        "Bet365": 1.62
-       }
-      },
-      "under": {
-       "odd": 2.35,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.2
-       }
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 2.53,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.1
-       }
-      },
-      "under": {
-       "odd": 1.67,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 1.67
-       }
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 3.7,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.25,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 5.8,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.11,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 8.5,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.05,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1550204,
    "kickoff": "2026-11-21T19:45:00",
@@ -7317,6 +5629,12 @@
       "reason": "Thigh Injury"
      },
      {
+      "id": 349185,
+      "name": "J. Enem",
+      "type": "Missing Fixture",
+      "reason": "Achilles Tendon Injury"
+     },
+     {
       "id": 39254,
       "name": "T. Heggem",
       "type": "Missing Fixture",
@@ -7333,12 +5651,6 @@
       "name": "J. Miranda",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 349185,
-      "name": "J. Enem",
-      "type": "Questionable",
-      "reason": "Achilles Tendon Injury"
      }
     ],
     "away": [
@@ -7772,11 +6084,9 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 3.4,
-     "defence_hit_pct": 2.0,
-     "key_out": [
-      "S. Pavlović"
-     ]
+     "goals_lost_pct": 3.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
     },
     "away": {
      "goals_lost_pct": 10.0,
@@ -7787,13 +6097,13 @@
      ]
     }
    },
-   "home_pct": 44.3,
+   "home_pct": 45.0,
    "draw_pct": 24.0,
-   "away_pct": 31.8,
-   "xg_home": 1.84,
-   "xg_away": 1.54,
-   "over25": 65.8,
-   "btts": 67.0,
+   "away_pct": 31.0,
+   "xg_home": 1.85,
+   "xg_away": 1.51,
+   "over25": 65.4,
+   "btts": 66.5,
    "cards5": 36.7,
    "cards": {
     "exp": 3.98,
@@ -8921,12 +7231,6 @@
       "name": "F. Tomori",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 45826,
-      "name": "S. Pavlovic",
-      "type": "Questionable",
-      "reason": "Injury"
      }
     ],
     "away": [
@@ -9125,20 +7429,18 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 1.2,
-     "defence_hit_pct": 2.0,
-     "key_out": [
-      "M. Akanji"
-     ]
+     "goals_lost_pct": 1.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
     }
    },
-   "home_pct": 22.3,
-   "draw_pct": 22.9,
-   "away_pct": 54.8,
-   "xg_home": 1.25,
-   "xg_away": 2.03,
-   "over25": 63.7,
-   "btts": 62.7,
+   "home_pct": 21.7,
+   "draw_pct": 22.8,
+   "away_pct": 55.5,
+   "xg_home": 1.22,
+   "xg_away": 2.04,
+   "over25": 63.2,
+   "btts": 62.1,
    "cards5": 32.5,
    "cards": {
     "exp": 3.75,
@@ -10185,12 +8487,6 @@
       "name": "A. Bonny",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 5,
-      "name": "M. Akanji",
-      "type": "Questionable",
-      "reason": "Injury"
      },
      {
       "id": 342230,
@@ -14617,6 +12913,1404 @@
      }
     }
    }
+  },
+  {
+   "id": 1550214,
+   "kickoff": "2026-11-28T17:00:00",
+   "round": "Regular Season - 13",
+   "home": "Torino",
+   "away": "Lazio",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": false,
+   "market": null,
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 22.7,
+   "draw_pct": 26.3,
+   "away_pct": 51.0,
+   "xg_home": 1.03,
+   "xg_away": 1.65,
+   "over25": 50.3,
+   "btts": 53.0,
+   "cards5": 34.8,
+   "cards": {
+    "exp": 3.88,
+    "home": 1.69,
+    "away": 2.19,
+    "over": {
+     "2.5": 73.2,
+     "3.5": 53.6,
+     "4.5": 34.8,
+     "5.5": 20.2,
+     "6.5": 10.6
+    }
+   },
+   "form": {
+    "home": {
+     "played": 6,
+     "win": 33.33333333333333,
+     "over25": 66.66666666666666,
+     "btts": 83.33333333333334
+    },
+    "away": {
+     "played": 6,
+     "win": 83.33333333333334,
+     "over25": 50.0,
+     "btts": 50.0
+    }
+   },
+   "venue": {
+    "home": {
+     "games": [
+      {
+       "date": "14/09/2026",
+       "home": "Torino",
+       "away": "AS Roma",
+       "hg": 0,
+       "ag": 2,
+       "ht": [
+        0,
+        1
+       ],
+       "ref": "F. Maresca",
+       "sx": {
+        "h": {
+         "pos": 52.0,
+         "xg": 0.86,
+         "sh": 8.0,
+         "sot": 3.0,
+         "co": 1.0,
+         "fo": 7.0,
+         "of": 0.0,
+         "sv": 3.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 48.0,
+         "xg": 1.85,
+         "sh": 14.0,
+         "sot": 5.0,
+         "co": 8.0,
+         "fo": 20.0,
+         "of": 2.0,
+         "sv": 3.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "D. Malen",
+         "t": "a",
+         "m": 40
+        },
+        {
+         "n": "N. Pisilli",
+         "t": "a",
+         "m": 90
+        }
+       ],
+       "cards": [
+        {
+         "n": "Mario Hermoso",
+         "t": "a",
+         "m": 61,
+         "r": false
+        },
+        {
+         "n": "Niccolò Pisilli",
+         "t": "a",
+         "m": 72,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "12/10/2026",
+       "home": "Torino",
+       "away": "Udinese",
+       "hg": 2,
+       "ag": 1,
+       "ht": [
+        1,
+        1
+       ],
+       "ref": "V. Crezzini",
+       "sx": {
+        "h": {
+         "pos": 38.0,
+         "xg": 2.66,
+         "sh": 12.0,
+         "sot": 4.0,
+         "co": 4.0,
+         "fo": 4.0,
+         "of": 7.0,
+         "sv": 0.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 62.0,
+         "xg": 0.79,
+         "sh": 15.0,
+         "sot": 1.0,
+         "co": 3.0,
+         "fo": 10.0,
+         "of": 0.0,
+         "sv": 2.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Daniel Bragança",
+         "t": "h",
+         "m": 36
+        },
+        {
+         "n": "Jurgen Ekkelenkamp",
+         "t": "a",
+         "m": 43
+        },
+        {
+         "n": "Sandro Kulenović",
+         "t": "h",
+         "m": 67
+        }
+       ],
+       "cards": [
+        {
+         "n": "Nicolo Bertola",
+         "t": "a",
+         "m": 89,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "23/10/2026",
+       "home": "Torino",
+       "away": "Monza",
+       "hg": 3,
+       "ag": 2,
+       "ht": [
+        1,
+        0
+       ],
+       "ref": "M. Marchetti",
+       "sx": {
+        "h": {
+         "pos": 51.0,
+         "xg": 1.4,
+         "sh": 17.0,
+         "sot": 7.0,
+         "co": 3.0,
+         "fo": 8.0,
+         "of": 1.0,
+         "sv": 2.0,
+         "yc": 1.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 49.0,
+         "xg": 0.68,
+         "sh": 7.0,
+         "sot": 3.0,
+         "co": 4.0,
+         "fo": 4.0,
+         "of": 2.0,
+         "sv": 4.0,
+         "yc": 0.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Kian Fitz-Jim",
+         "t": "h",
+         "m": 39
+        },
+        {
+         "n": "Gustavo Varela",
+         "t": "a",
+         "m": 47
+        },
+        {
+         "n": "Rafik Belghali",
+         "t": "h",
+         "m": 61
+        },
+        {
+         "n": "Nikola Vlašić",
+         "t": "h",
+         "m": 72
+        }
+       ],
+       "cards": [
+        {
+         "n": "Ardian Ismajli",
+         "t": "h",
+         "m": 34,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "27/10/2026",
+       "home": "Torino",
+       "away": "Como",
+       "hg": 1,
+       "ag": 3,
+       "ht": [
+        1,
+        0
+       ],
+       "ref": "G. Collu",
+       "sx": {
+        "h": {
+         "pos": 28.0,
+         "xg": 1.17,
+         "sh": 11.0,
+         "sot": 5.0,
+         "co": 5.0,
+         "fo": 10.0,
+         "of": 3.0,
+         "sv": 3.0,
+         "yc": 1.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 72.0,
+         "xg": 2.28,
+         "sh": 18.0,
+         "sot": 5.0,
+         "co": 6.0,
+         "fo": 3.0,
+         "of": 3.0,
+         "sv": 4.0,
+         "yc": 0.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Che Adams",
+         "t": "h",
+         "m": 24
+        },
+        {
+         "n": "Jacobo Ramón",
+         "t": "a",
+         "m": 81
+        },
+        {
+         "n": "Nico Paz",
+         "t": "a",
+         "m": 87
+        },
+        {
+         "n": "Martin Baturina",
+         "t": "a",
+         "m": 90
+        }
+       ],
+       "cards": [
+        {
+         "n": "Rafik Belghali",
+         "t": "h",
+         "m": 72,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "07/11/2026",
+       "home": "Torino",
+       "away": "Lecce",
+       "hg": 1,
+       "ag": 1,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "E. Feliciani",
+       "sx": {
+        "h": {
+         "pos": 64.0,
+         "xg": 0.97,
+         "sh": 9.0,
+         "sot": 2.0,
+         "co": 4.0,
+         "fo": 11.0,
+         "of": 1.0,
+         "sv": 1.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 36.0,
+         "xg": 0.31,
+         "sh": 6.0,
+         "sot": 1.0,
+         "co": 5.0,
+         "fo": 16.0,
+         "of": 0.0,
+         "sv": 2.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [],
+       "cards": [
+        {
+         "n": "Youssef Maleh",
+         "t": "a",
+         "m": 45,
+         "r": false
+        },
+        {
+         "n": "Amar Fatah",
+         "t": "a",
+         "m": 84,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 6,
+     "w": 2,
+     "d": 1,
+     "l": 3,
+     "last5": "LWWLD",
+     "gf": 1.33,
+     "ga": 1.83,
+     "cs": 0,
+     "fts": 17,
+     "sh": 10.8,
+     "sot": 3.7,
+     "co": 3.2,
+     "yc": 0.3
+    },
+    "away": {
+     "games": [
+      {
+       "date": "07/09/2026",
+       "home": "Udinese",
+       "away": "Lazio",
+       "hg": 1,
+       "ag": 2,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "P. Tremolada",
+       "sx": {
+        "h": {
+         "pos": 40.0,
+         "xg": 0.85,
+         "sh": 10.0,
+         "sot": 6.0,
+         "co": 2.0,
+         "fo": 13.0,
+         "of": 1.0,
+         "sv": 4.0,
+         "yc": 5.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 60.0,
+         "xg": 1.83,
+         "sh": 19.0,
+         "sot": 6.0,
+         "co": 8.0,
+         "fo": 9.0,
+         "of": 1.0,
+         "sv": 5.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "J. Karlstrom",
+         "t": "h",
+         "m": 49
+        },
+        {
+         "n": "D. Frattesi",
+         "t": "a",
+         "m": 75
+        },
+        {
+         "n": "A. Gudmundsson",
+         "t": "a",
+         "m": 88
+        }
+       ],
+       "cards": [
+        {
+         "n": "Jakub Piotrowski",
+         "t": "h",
+         "m": 13,
+         "r": false
+        },
+        {
+         "n": "Lennon Miller",
+         "t": "h",
+         "m": 23,
+         "r": false
+        },
+        {
+         "n": "Gustav Isaksen",
+         "t": "a",
+         "m": 25,
+         "r": false
+        },
+        {
+         "n": "Jesper Karlström",
+         "t": "h",
+         "m": 45,
+         "r": false
+        },
+        {
+         "n": "Vakoun Issouf Bayo",
+         "t": "h",
+         "m": 67,
+         "r": false
+        },
+        {
+         "n": "Nicolò Bertola",
+         "t": "h",
+         "m": 84,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "19/09/2026",
+       "home": "Venezia",
+       "away": "Lazio",
+       "hg": 0,
+       "ag": 2,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "S. Sozza",
+       "sx": {
+        "h": {
+         "pos": 49.0,
+         "xg": 1.89,
+         "sh": 17.0,
+         "sot": 6.0,
+         "co": 7.0,
+         "fo": 14.0,
+         "of": 2.0,
+         "sv": 0.0,
+         "pp": 86.0,
+         "yc": 6.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 51.0,
+         "xg": 1.6,
+         "sh": 12.0,
+         "sot": 2.0,
+         "co": 2.0,
+         "fo": 8.0,
+         "of": 0.0,
+         "sv": 7.0,
+         "pp": 87.0,
+         "yc": 0.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "M. Zaccagni",
+         "t": "a",
+         "m": 51
+        },
+        {
+         "n": "T. Noslin",
+         "t": "a",
+         "m": 60
+        }
+       ],
+       "cards": [
+        {
+         "n": "Kike Pérez",
+         "t": "h",
+         "m": 29,
+         "r": false
+        },
+        {
+         "n": "Juan Jesus",
+         "t": "h",
+         "m": 59,
+         "r": false
+        },
+        {
+         "n": "Thierry Correia",
+         "t": "h",
+         "m": 74,
+         "r": false
+        },
+        {
+         "n": "Matias Moreno",
+         "t": "h",
+         "m": 90,
+         "r": false
+        },
+        {
+         "n": "Joel Schingtienne",
+         "t": "h",
+         "m": 90,
+         "r": false
+        },
+        {
+         "n": "Toni Fernández",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "18/10/2026",
+       "home": "Juventus",
+       "away": "Lazio",
+       "hg": 0,
+       "ag": 3,
+       "ht": [
+        0,
+        1
+       ],
+       "ref": "D. Massa",
+       "sx": {
+        "h": {
+         "pos": 58.0,
+         "xg": 0.79,
+         "sh": 9.0,
+         "sot": 2.0,
+         "co": 5.0,
+         "fo": 7.0,
+         "of": 6.0,
+         "sv": 0.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 42.0,
+         "xg": 0.59,
+         "sh": 9.0,
+         "sot": 3.0,
+         "co": 7.0,
+         "fo": 7.0,
+         "of": 1.0,
+         "sv": 2.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Oliver Provstgaard",
+         "t": "a",
+         "m": 37
+        },
+        {
+         "n": "Gustav Isaksen",
+         "t": "a",
+         "m": 66
+        },
+        {
+         "n": "Fisayo Dele-Bashiru",
+         "t": "a",
+         "m": 89
+        }
+       ],
+       "cards": [
+        {
+         "n": "Kenneth Taylor",
+         "t": "a",
+         "m": 41,
+         "r": false
+        },
+        {
+         "n": "Mattia Zaccagni",
+         "t": "a",
+         "m": 48,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "27/10/2026",
+       "home": "Sassuolo",
+       "away": "Lazio",
+       "hg": 2,
+       "ag": 6,
+       "ht": [
+        2,
+        4
+       ],
+       "ref": "L. Zufferli",
+       "sx": {
+        "h": {
+         "pos": 42.0,
+         "xg": 0.8,
+         "sh": 9.0,
+         "sot": 1.0,
+         "co": 2.0,
+         "fo": 7.0,
+         "of": 3.0,
+         "sv": 2.0,
+         "yc": 1.0,
+         "rc": 1.0
+        },
+        "a": {
+         "pos": 58.0,
+         "xg": 3.59,
+         "sh": 16.0,
+         "sot": 8.0,
+         "co": 1.0,
+         "fo": 13.0,
+         "of": 1.0,
+         "sv": 0.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Kenneth Taylor",
+         "t": "a",
+         "m": 2
+        },
+        {
+         "n": "Gustav Isaksen",
+         "t": "a",
+         "m": 13
+        },
+        {
+         "n": "Romano Floriani Mussolini",
+         "t": "a",
+         "m": 16
+        },
+        {
+         "n": "Sebastiano Esposito",
+         "t": "h",
+         "m": 43
+        },
+        {
+         "n": "Mattia Zaccagni",
+         "t": "a",
+         "m": 45
+        },
+        {
+         "n": "Tijjani Noslin",
+         "t": "a",
+         "m": 55
+        },
+        {
+         "n": "Tijjani Noslin",
+         "t": "a",
+         "m": 65
+        }
+       ],
+       "cards": [
+        {
+         "n": "Kenneth Taylor",
+         "t": "a",
+         "m": 28,
+         "r": false
+        },
+        {
+         "n": "Kristian Thorstvedt",
+         "t": "h",
+         "m": 31,
+         "r": true
+        },
+        {
+         "n": "Domenico Berardi",
+         "t": "h",
+         "m": 54,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "08/11/2026",
+       "home": "Napoli",
+       "away": "Lazio",
+       "hg": 1,
+       "ag": 1,
+       "ht": [
+        0,
+        1
+       ],
+       "ref": "L. Pairetto",
+       "sx": {
+        "h": {
+         "pos": 48.0,
+         "xg": 2.44,
+         "sh": 15.0,
+         "sot": 6.0,
+         "co": 6.0,
+         "fo": 12.0,
+         "of": 2.0,
+         "sv": 5.0,
+         "yc": 3.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 52.0,
+         "xg": 0.92,
+         "sh": 15.0,
+         "sot": 6.0,
+         "co": 6.0,
+         "fo": 11.0,
+         "of": 1.0,
+         "sv": 6.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Davide Frattesi",
+         "t": "a",
+         "m": 28
+        }
+       ],
+       "cards": [
+        {
+         "n": "Noa Lang",
+         "t": "h",
+         "m": 44,
+         "r": false
+        },
+        {
+         "n": "Antonio Vergara",
+         "t": "h",
+         "m": 65,
+         "r": false
+        },
+        {
+         "n": "Billy Gilmour",
+         "t": "h",
+         "m": 65,
+         "r": false
+        },
+        {
+         "n": "Alfonso Pedraza",
+         "t": "a",
+         "m": 78,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 6,
+     "w": 5,
+     "d": 1,
+     "l": 0,
+     "last5": "WWWWD",
+     "gf": 2.5,
+     "ga": 0.67,
+     "cs": 50,
+     "fts": 0,
+     "sh": 13.5,
+     "sot": 4.7,
+     "co": 5.0,
+     "yc": 1.5
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 39.657179212306524,
+     "sh": 50.30795053311397,
+     "any": 70.01441564446498
+    },
+    "away": {
+     "fh": 42.89759131780168,
+     "sh": 60.495078988503806,
+     "any": 77.4417385544358
+    },
+    "match_fh": 65.54279586344475,
+    "match_sh": 80.36919510911305
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 19524,
+       "name": "C. Adams",
+       "p": 19.9,
+       "gl": 4,
+       "as": 0,
+       "ap": 9
+      },
+      {
+       "id": 30414,
+       "name": "G. Simeone",
+       "p": 14.1,
+       "gl": 2,
+       "as": 1,
+       "ap": 11
+      }
+     ],
+     "bookings": [
+      {
+       "id": 303362,
+       "name": "R. Belghali",
+       "p": 17.0,
+       "yc": 2,
+       "rc": 0,
+       "ap": 9
+      },
+      {
+       "id": 14329,
+       "name": "A. Ismajli",
+       "p": 16.6,
+       "yc": 2,
+       "rc": 0,
+       "ap": 10
+      }
+     ],
+     "defender": {
+      "id": 396637,
+      "name": "P. Comuzzo",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 19524,
+       "name": "C. Adams",
+       "pos": "Attacker",
+       "g": 19.9,
+       "a": 2.9,
+       "inv": 22.2
+      },
+      {
+       "id": 30810,
+       "name": "R. Mandragora",
+       "pos": "Midfielder",
+       "g": 11.6,
+       "a": 10.3,
+       "inv": 20.6
+      },
+      {
+       "id": 303362,
+       "name": "R. Belghali",
+       "pos": "Defender",
+       "g": 5.7,
+       "a": 15.6,
+       "inv": 20.4
+      },
+      {
+       "id": 30414,
+       "name": "G. Simeone",
+       "pos": "Attacker",
+       "g": 14.1,
+       "a": 7.2,
+       "inv": 20.3
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 30937,
+       "name": "M. Zaccagni",
+       "p": 23.2,
+       "gl": 2,
+       "as": 5,
+       "ap": 10
+      },
+      {
+       "id": 133729,
+       "name": "T. Noslin",
+       "p": 22.9,
+       "gl": 4,
+       "as": 4,
+       "ap": 10
+      }
+     ],
+     "bookings": [
+      {
+       "id": 350857,
+       "name": "O. Provstgaard",
+       "p": 22.5,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10
+      },
+      {
+       "id": 30937,
+       "name": "M. Zaccagni",
+       "p": 21.2,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10
+      }
+     ],
+     "defender": {
+      "id": 41577,
+      "name": "Nuno Tavares",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 30937,
+       "name": "M. Zaccagni",
+       "pos": "Attacker",
+       "g": 23.2,
+       "a": 30.3,
+       "inv": 46.5
+      },
+      {
+       "id": 133729,
+       "name": "T. Noslin",
+       "pos": "Attacker",
+       "g": 22.9,
+       "a": 24.0,
+       "inv": 41.4
+      },
+      {
+       "id": 135519,
+       "name": "G. Isaksen",
+       "pos": "Attacker",
+       "g": 20.2,
+       "a": 8.1,
+       "inv": 26.7
+      },
+      {
+       "id": 41577,
+       "name": "Nuno Tavares",
+       "pos": "Defender",
+       "g": 6.1,
+       "a": 16.9,
+       "inv": 21.9
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "lineup_confirmed": false,
+   "previous": [
+    {
+     "date": "01/03/2026",
+     "home": "Torino",
+     "away": "Lazio",
+     "hg": 2,
+     "ag": 0,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "R. Abisso",
+     "sx": {
+      "h": {
+       "pos": 45.0,
+       "xg": 0.71,
+       "sh": 13.0,
+       "sot": 5.0,
+       "co": 6.0,
+       "fo": 13.0,
+       "of": 0.0,
+       "sv": 2.0,
+       "pp": 86.0,
+       "yc": 4.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 55.0,
+       "xg": 1.05,
+       "sh": 12.0,
+       "sot": 3.0,
+       "co": 9.0,
+       "fo": 5.0,
+       "of": 2.0,
+       "sv": 3.0,
+       "pp": 88.0,
+       "yc": 1.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "G. Simeone",
+       "t": "h",
+       "m": 21
+      },
+      {
+       "n": "D. Zapata",
+       "t": "h",
+       "m": 53
+      }
+     ],
+     "cards": [
+      {
+       "n": "Gvidas Gineitis",
+       "t": "h",
+       "m": 45,
+       "r": false
+      },
+      {
+       "n": "Nikola Vlašić",
+       "t": "h",
+       "m": 79,
+       "r": false
+      },
+      {
+       "n": "Sandro Kulenović",
+       "t": "h",
+       "m": 90,
+       "r": false
+      },
+      {
+       "n": "Adrien Tameze",
+       "t": "h",
+       "m": 90,
+       "r": false
+      },
+      {
+       "n": "Nuno Tavares",
+       "t": "a",
+       "m": 90,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "04/10/2025",
+     "home": "Lazio",
+     "away": "Torino",
+     "hg": 3,
+     "ag": 3,
+     "ht": [
+      2,
+      1
+     ],
+     "ref": "M. Piccinini",
+     "sx": {
+      "h": {
+       "pos": 49.0,
+       "xg": 1.35,
+       "sh": 9.0,
+       "sot": 4.0,
+       "co": 3.0,
+       "fo": 13.0,
+       "of": 1.0,
+       "sv": 5.0,
+       "pp": 81.0,
+       "yc": 3.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 51.0,
+       "xg": 1.76,
+       "sh": 16.0,
+       "sot": 8.0,
+       "co": 5.0,
+       "fo": 22.0,
+       "of": 1.0,
+       "sv": 1.0,
+       "pp": 83.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "G. Simeone",
+       "t": "a",
+       "m": 16
+      },
+      {
+       "n": "M. Cancellieri",
+       "t": "h",
+       "m": 24
+      },
+      {
+       "n": "M. Cancellieri",
+       "t": "h",
+       "m": 40
+      },
+      {
+       "n": "C. Adams",
+       "t": "a",
+       "m": 73
+      },
+      {
+       "n": "S. Coco",
+       "t": "a",
+       "m": 90
+      },
+      {
+       "n": "D. Cataldi",
+       "t": "h",
+       "m": 90
+      }
+     ],
+     "cards": [
+      {
+       "n": "Kristjan Asllani",
+       "t": "a",
+       "m": 32,
+       "r": false
+      },
+      {
+       "n": "Alessio Romagnoli",
+       "t": "h",
+       "m": 47,
+       "r": false
+      },
+      {
+       "n": "Cesare Casadei",
+       "t": "a",
+       "m": 60,
+       "r": false
+      },
+      {
+       "n": "Danilo Cataldi",
+       "t": "h",
+       "m": 87,
+       "r": false
+      },
+      {
+       "n": "Valentín Castellanos",
+       "t": "h",
+       "m": 90,
+       "r": false
+      },
+      {
+       "n": "Guillermo Maripán",
+       "t": "a",
+       "m": 90,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "31/03/2025",
+     "home": "Lazio",
+     "away": "Torino",
+     "hg": 1,
+     "ag": 1,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "D. Massa",
+     "sx": {
+      "h": {
+       "pos": 59.0,
+       "xg": 1.2,
+       "sh": 16.0,
+       "sot": 6.0,
+       "co": 5.0,
+       "fo": 9.0,
+       "of": 0.0,
+       "sv": 1.0,
+       "pp": 86.0,
+       "yc": 3.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 41.0,
+       "xg": 0.39,
+       "sh": 7.0,
+       "sot": 2.0,
+       "co": 3.0,
+       "fo": 20.0,
+       "of": 1.0,
+       "sv": 5.0,
+       "pp": 81.0,
+       "yc": 4.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "A. Marušić",
+       "t": "h",
+       "m": 57
+      },
+      {
+       "n": "G. Gineitis",
+       "t": "a",
+       "m": 82
+      }
+     ],
+     "cards": [
+      {
+       "n": "Valentino Lazaro",
+       "t": "a",
+       "m": 7,
+       "r": false
+      },
+      {
+       "n": "Mattia Zaccagni",
+       "t": "h",
+       "m": 40,
+       "r": false
+      },
+      {
+       "n": "Guillermo Maripán",
+       "t": "a",
+       "m": 45,
+       "r": false
+      },
+      {
+       "n": "Samuele Ricci",
+       "t": "a",
+       "m": 57,
+       "r": false
+      },
+      {
+       "n": "Sebastian Walukiewicz",
+       "t": "a",
+       "m": 65,
+       "r": false
+      },
+      {
+       "n": "Mattéo Guendouzi",
+       "t": "h",
+       "m": 69,
+       "r": false
+      },
+      {
+       "n": "Alessio Romagnoli",
+       "t": "h",
+       "m": 90,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "29/09/2024",
+     "home": "Torino",
+     "away": "Lazio",
+     "hg": 2,
+     "ag": 3,
+     "ht": [
+      0,
+      1
+     ],
+     "ref": "S. Sozza",
+     "sx": {
+      "h": {
+       "pos": 58.0,
+       "xg": 0.68,
+       "sh": 12.0,
+       "sot": 7.0,
+       "co": 3.0,
+       "fo": 10.0,
+       "of": 0.0,
+       "sv": 4.0,
+       "pp": 85.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 42.0,
+       "xg": 2.07,
+       "sh": 13.0,
+       "sot": 7.0,
+       "co": 1.0,
+       "fo": 13.0,
+       "of": 1.0,
+       "sv": 5.0,
+       "pp": 77.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "M. Guendouzi",
+       "t": "a",
+       "m": 8
+      },
+      {
+       "n": "B. Dia",
+       "t": "a",
+       "m": 60
+      },
+      {
+       "n": "C. Adams",
+       "t": "h",
+       "m": 67
+      },
+      {
+       "n": "T. Noslin",
+       "t": "a",
+       "m": 89
+      },
+      {
+       "n": "Saúl Coco",
+       "t": "h",
+       "m": 90
+      }
+     ],
+     "cards": [
+      {
+       "n": "Antonio Sanabria",
+       "t": "h",
+       "m": 54,
+       "r": false
+      },
+      {
+       "n": "Gustav Isaksen",
+       "t": "a",
+       "m": 62,
+       "r": false
+      },
+      {
+       "n": "Ivan Ilić",
+       "t": "h",
+       "m": 72,
+       "r": false
+      },
+      {
+       "n": "Mario Gila Fuentes",
+       "t": "a",
+       "m": 72,
+       "r": false
+      },
+      {
+       "n": "Mattia Zaccagni",
+       "t": "a",
+       "m": 75,
+       "r": false
+      }
+     ]
+    }
+   ],
+   "odds": null
   }
  ]
 }
