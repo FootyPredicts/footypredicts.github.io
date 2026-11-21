@@ -300,7 +300,7 @@ export default {
       }
       const all = q.get("scope") === "all";
       const r = await apif(env, `fixtures?live=${all ? LEAGUES_ALL : LEAGUES}`, 30);
-      if (!r.ok) return json({ ts: Date.now(), matches: [], error: r.status === 429 ? "busy, retrying" : "upstream " + r.status }, cors, 10);
+      if (!r.ok) return json({ ts: Date.now(), matches: [], error: r.status === 429 ? "busy, retrying" : "upstream " + r.status, detail: (await r.text()).slice(0, 300) }, cors, 10);
       const j = await r.json();
       const matches = (j.response || []).map((f) => ({
         id: f.fixture.id,
