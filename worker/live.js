@@ -231,6 +231,16 @@ export default {
       return pushApi(request, env, cors, new URL(request.url).searchParams);
     }
     if (request.method !== "GET") return new Response("Method not allowed", { status: 405, headers: cors });
+    if (new URL(request.url).searchParams.get("probe") && env.API_FOOTBALL_KEY) {
+      // Diagnostics: what does API-Football say to this worker? Rate-limit numbers only, no account details.
+      const out = [];
+      for (let i = 0; i < 3; i++) {
+        const r = await fetch("https://v3.football.api-sports.io/fixtures?live=39", { headers: { "x-apisports-key": env.API_FOOTBALL_KEY } });
+        let e = null; try { e = (await r.json()).errors; } catch (x) { e = "unreadable"; }
+        out.push({ status: r.status, minLimit: r.headers.get("x-ratelimit-limit"), minLeft: r.headers.get("x-ratelimit-remaining"), dayLeft: r.headers.get("x-ratelimit-requests-remaining"), retry: r.headers.get("retry-after"), cfRay: (r.headers.get("cf-ray") || "").slice(-3), errors: e });
+      }
+      return json({ ts: Date.now(), probe: out }, cors, 0);
+    }
     if (!env.API_FOOTBALL_KEY) return json({ ts: Date.now(), matches: [], error: "not configured" }, cors, 10);
 
     try {
