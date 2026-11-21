@@ -5641,7 +5641,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:22Z"
   },
   {
    "id": 1584466,
@@ -5711,7 +5714,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 62,
+     "side": "home",
+     "player": "Lucas Boyé",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-21T16:01:23Z"
   },
   {
    "id": 1601604,
@@ -5741,7 +5754,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 23,
+     "side": "home",
+     "player": "Don Bolsius",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:24Z"
   },
   {
    "id": 1601606,
@@ -5771,7 +5794,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:25Z"
   },
   {
    "id": 1601610,
@@ -5801,7 +5827,23 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 15,
+     "side": "away",
+     "player": "Leonardo Sernicola",
+     "own": false
+    },
+    {
+     "min": 22,
+     "side": "home",
+     "player": "Lorenzo Insigne",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:25Z"
   },
   {
    "id": 1563268,
@@ -5831,7 +5873,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:26Z"
   },
   {
    "id": 1563870,
@@ -5861,7 +5906,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:27Z"
   },
   {
    "id": 1564416,
@@ -5891,7 +5939,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:27Z"
   },
   {
    "id": 1564426,
@@ -5921,7 +5972,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:27Z"
   },
   {
    "id": 1563868,
@@ -5951,7 +6005,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 90,
+     "side": "home",
+     "player": "Garath McCleary",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:29Z"
   },
   {
    "id": 1570034,
@@ -5981,39 +6045,897 @@
      "xg": null
     }
    },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:01:29Z"
+  },
+  {
+   "id": 1570460,
+   "lg": 140,
+   "home": "Rayo Vallecano",
+   "away": "Valencia",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:01:20Z",
+   "min": 44,
+   "sh": 0,
+   "sa": 1,
+   "who": "home",
+   "who_name": "Rayo Vallecano",
+   "ratio": 1.27,
+   "P": 0.389,
+   "stats": {
+    "h": {
+     "sh": 10,
+     "sot": 4,
+     "co": 5,
+     "xg": null
+    },
+    "a": {
+     "sh": 6,
+     "sot": 1,
+     "co": 3,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1575222,
+   "lg": 78,
+   "home": "Bayer Leverkusen",
+   "away": "SC Paderborn 07",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:01:20Z",
+   "min": 73,
+   "sh": 4,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Bayer Leverkusen",
+   "ratio": 1.29,
+   "P": 0.408,
+   "stats": {
+    "h": {
+     "sh": 15,
+     "sot": 9,
+     "co": 7,
+     "xg": null
+    },
+    "a": {
+     "sh": 3,
+     "sot": 1,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:16:50Z"
+  },
+  {
+   "id": 1575225,
+   "lg": 78,
+   "home": "Union Berlin",
+   "away": "RB Leipzig",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:01:20Z",
+   "min": 69,
+   "sh": 1,
+   "sa": 2,
+   "who": "home",
+   "who_name": "Union Berlin",
+   "ratio": 1.35,
+   "P": 0.513,
+   "stats": {
+    "h": {
+     "sh": 11,
+     "sot": 7,
+     "co": 4,
+     "xg": null
+    },
+    "a": {
+     "sh": 20,
+     "sot": 5,
+     "co": 5,
+     "xg": null
+    }
+   },
+   "result": "win",
+   "goals": [
+    {
+     "min": 72,
+     "side": "away",
+     "player": "Brajan Gruda",
+     "own": false
+    },
+    {
+     "min": 76,
+     "side": "away",
+     "player": "Rocco Reitz",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:16:51Z"
+  },
+  {
+   "id": 1563871,
+   "lg": 42,
+   "home": "Northampton",
+   "away": "Rochdale",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:02:59Z",
+   "min": 46,
+   "sh": 1,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Northampton",
+   "ratio": 1.27,
+   "P": 0.418,
+   "stats": {
+    "h": {
+     "sh": 15,
+     "sot": 6,
+     "co": 7,
+     "xg": null
+    },
+    "a": {
+     "sh": 3,
+     "sot": 1,
+     "co": 0,
+     "xg": null
+    }
+   },
+   "result": "win",
+   "goals": [
+    {
+     "min": 51,
+     "side": "away",
+     "player": "Edward Francis",
+     "own": false
+    },
+    {
+     "min": 53,
+     "side": "away",
+     "player": "Cian Hayes",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:18:23Z"
+  },
+  {
+   "id": 1556710,
+   "lg": 179,
+   "home": "Kilmarnock",
+   "away": "Aberdeen",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:04:30Z",
+   "min": 46,
+   "sh": 1,
+   "sa": 3,
+   "who": "both sides",
+   "who_name": "both sides",
+   "ratio": 1.4,
+   "P": 0.448,
+   "stats": {
+    "h": {
+     "sh": 11,
+     "sot": 4,
+     "co": 7,
+     "xg": null
+    },
+    "a": {
+     "sh": 7,
+     "sot": 4,
+     "co": 1,
+     "xg": null
+    }
+   },
+   "result": "win",
+   "goals": [
+    {
+     "min": 57,
+     "side": "home",
+     "player": "Tyreece John-Jules",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T16:19:54Z"
+  },
+  {
+   "id": 1556708,
+   "lg": 179,
+   "home": "Falkirk",
+   "away": "ST Johnstone",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:06:03Z",
+   "min": 50,
+   "sh": 2,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Falkirk",
+   "ratio": 1.27,
+   "P": 0.417,
+   "stats": {
+    "h": {
+     "sh": 7,
+     "sot": 4,
+     "co": 1,
+     "xg": null
+    },
+    "a": {
+     "sh": 5,
+     "sot": 1,
+     "co": 3,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563865,
+   "lg": 42,
+   "home": "Cheltenham",
+   "away": "Bristol Rovers",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:07:34Z",
+   "min": 49,
+   "sh": 0,
+   "sa": 3,
+   "who": "away",
+   "who_name": "Bristol Rovers",
+   "ratio": 1.69,
+   "P": 0.512,
+   "stats": {
+    "h": {
+     "sh": 1,
+     "sot": 0,
+     "co": 2,
+     "xg": null
+    },
+    "a": {
+     "sh": 12,
+     "sot": 7,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563869,
+   "lg": 42,
+   "home": "Grimsby",
+   "away": "Rotherham",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:07:34Z",
+   "min": 50,
+   "sh": 0,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Grimsby",
+   "ratio": 1.64,
+   "P": 0.503,
+   "stats": {
+    "h": {
+     "sh": 9,
+     "sot": 4,
+     "co": 3,
+     "xg": null
+    },
+    "a": {
+     "sh": 5,
+     "sot": 1,
+     "co": 3,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563873,
+   "lg": 42,
+   "home": "Tranmere",
+   "away": "Colchester",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:07:34Z",
+   "min": 51,
+   "sh": 1,
+   "sa": 1,
+   "who": "home",
+   "who_name": "Tranmere",
+   "ratio": 1.55,
+   "P": 0.482,
+   "stats": {
+    "h": {
+     "sh": 11,
+     "sot": 4,
+     "co": 4,
+     "xg": null
+    },
+    "a": {
+     "sh": 3,
+     "sot": 1,
+     "co": 0,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563271,
+   "lg": 40,
+   "home": "Stoke City",
+   "away": "Birmingham",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:09:06Z",
+   "min": 50,
+   "sh": 1,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Stoke City",
+   "ratio": 1.33,
+   "P": 0.431,
+   "stats": {
+    "h": {
+     "sh": 12,
+     "sot": 3,
+     "co": 7,
+     "xg": null
+    },
+    "a": {
+     "sh": 2,
+     "sot": 2,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563867,
+   "lg": 42,
+   "home": "Crawley Town",
+   "away": "Fleetwood Town",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:09:06Z",
+   "min": 51,
+   "sh": 2,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Crawley Town",
+   "ratio": 1.31,
+   "P": 0.426,
+   "stats": {
+    "h": {
+     "sh": 6,
+     "sot": 3,
+     "co": 0,
+     "xg": null
+    },
+    "a": {
+     "sh": 8,
+     "sot": 1,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563272,
+   "lg": 40,
+   "home": "Swansea",
+   "away": "West Brom",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:10:38Z",
+   "min": 48,
+   "sh": 2,
+   "sa": 2,
+   "who": "away",
+   "who_name": "West Brom",
+   "ratio": 1.45,
+   "P": 0.459,
+   "stats": {
+    "h": {
+     "sh": 8,
+     "sot": 5,
+     "co": 1,
+     "xg": null
+    },
+    "a": {
+     "sh": 9,
+     "sot": 6,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1564421,
+   "lg": 41,
+   "home": "Leyton Orient",
+   "away": "AFC Wimbledon",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:10:38Z",
+   "min": 53,
+   "sh": 3,
+   "sa": 0,
+   "who": "away",
+   "who_name": "AFC Wimbledon",
+   "ratio": 1.38,
+   "P": 0.445,
+   "stats": {
+    "h": {
+     "sh": 9,
+     "sot": 5,
+     "co": 0,
+     "xg": null
+    },
+    "a": {
+     "sh": 5,
+     "sot": 1,
+     "co": 6,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1564422,
+   "lg": 41,
+   "home": "Mansfield Town",
+   "away": "Milton Keynes Dons",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:10:38Z",
+   "min": 53,
+   "sh": 1,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Mansfield Town",
+   "ratio": 1.37,
+   "P": 0.441,
+   "stats": {
+    "h": {
+     "sh": 9,
+     "sot": 4,
+     "co": 5,
+     "xg": null
+    },
+    "a": {
+     "sh": 2,
+     "sot": 2,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1575223,
+   "lg": 78,
+   "home": "Eintracht Frankfurt",
+   "away": "1899 Hoffenheim",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:10:38Z",
+   "min": 81,
+   "sh": 1,
+   "sa": 0,
+   "who": "both sides",
+   "who_name": "both sides",
+   "ratio": 1.37,
+   "P": 0.578,
+   "stats": {
+    "h": {
+     "sh": 20,
+     "sot": 6,
+     "co": 7,
+     "xg": null
+    },
+    "a": {
+     "sh": 14,
+     "sot": 3,
+     "co": 5,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1557476,
+   "lg": 39,
+   "home": "Tottenham",
+   "away": "Ipswich",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:12:11Z",
+   "min": 54,
+   "sh": 2,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Tottenham",
+   "ratio": 1.25,
+   "P": 0.486,
+   "stats": {
+    "h": {
+     "sh": 14,
+     "sot": 8,
+     "co": 6,
+     "xg": null
+    },
+    "a": {
+     "sh": 4,
+     "sot": 2,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1556709,
+   "lg": 179,
+   "home": "Hibernian",
+   "away": "Dundee Utd",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:13:42Z",
+   "min": 56,
+   "sh": 0,
+   "sa": 3,
+   "who": "away",
+   "who_name": "Dundee Utd",
+   "ratio": 1.25,
+   "P": 0.413,
+   "stats": {
+    "h": {
+     "sh": 5,
+     "sot": 1,
+     "co": 2,
+     "xg": null
+    },
+    "a": {
+     "sh": 9,
+     "sot": 6,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563266,
+   "lg": 40,
+   "home": "Middlesbrough",
+   "away": "Bristol City",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:13:42Z",
+   "min": 57,
+   "sh": 2,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Middlesbrough",
+   "ratio": 1.37,
+   "P": 0.442,
+   "stats": {
+    "h": {
+     "sh": 8,
+     "sot": 4,
+     "co": 4,
+     "xg": null
+    },
+    "a": {
+     "sh": 3,
+     "sot": 1,
+     "co": 1,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563274,
+   "lg": 40,
+   "home": "Wolves",
+   "away": "Charlton",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:13:42Z",
+   "min": 57,
+   "sh": 2,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Wolves",
+   "ratio": 1.27,
+   "P": 0.416,
+   "stats": {
+    "h": {
+     "sh": 10,
+     "sot": 3,
+     "co": 5,
+     "xg": null
+    },
+    "a": {
+     "sh": 0,
+     "sot": 0,
+     "co": 3,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563866,
+   "lg": 42,
+   "home": "Chesterfield",
+   "away": "Shrewsbury",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:13:42Z",
+   "min": 56,
+   "sh": 3,
+   "sa": 1,
+   "who": "away",
+   "who_name": "Shrewsbury",
+   "ratio": 1.32,
+   "P": 0.431,
+   "stats": {
+    "h": {
+     "sh": 8,
+     "sot": 4,
+     "co": 2,
+     "xg": null
+    },
+    "a": {
+     "sh": 5,
+     "sot": 4,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1556706,
+   "lg": 179,
+   "home": "Celtic",
+   "away": "ST Mirren",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:15:17Z",
+   "min": 55,
+   "sh": 3,
+   "sa": 0,
+   "who": "away",
+   "who_name": "ST Mirren",
+   "ratio": 1.44,
+   "P": 0.458,
+   "stats": {
+    "h": {
+     "sh": 14,
+     "sot": 5,
+     "co": 2,
+     "xg": null
+    },
+    "a": {
+     "sh": 6,
+     "sot": 2,
+     "co": 4,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1557470,
+   "lg": 39,
+   "home": "Chelsea",
+   "away": "Leeds",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:16:50Z",
+   "min": 55,
+   "sh": 1,
+   "sa": 2,
+   "who": "away",
+   "who_name": "Leeds",
+   "ratio": 1.45,
+   "P": 0.455,
+   "stats": {
+    "h": {
+     "sh": 7,
+     "sot": 2,
+     "co": 0,
+     "xg": null
+    },
+    "a": {
+     "sh": 13,
+     "sot": 6,
+     "co": 1,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1557471,
+   "lg": 39,
+   "home": "Coventry",
+   "away": "Crystal Palace",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:16:50Z",
+   "min": 55,
+   "sh": 2,
+   "sa": 2,
+   "who": "home",
+   "who_name": "Coventry",
+   "ratio": 1.42,
+   "P": 0.49,
+   "stats": {
+    "h": {
+     "sh": 6,
+     "sot": 5,
+     "co": 2,
+     "xg": null
+    },
+    "a": {
+     "sh": 8,
+     "sot": 4,
+     "co": 3,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1575222,
+   "lg": 78,
+   "home": "Bayer Leverkusen",
+   "away": "SC Paderborn 07",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:16:50Z",
+   "min": 88,
+   "sh": 4,
+   "sa": 0,
+   "who": "home",
+   "who_name": "Bayer Leverkusen",
+   "ratio": 1.46,
+   "P": 0.242,
+   "stats": {
+    "h": {
+     "sh": 17,
+     "sot": 10,
+     "co": 8,
+     "xg": null
+    },
+    "a": {
+     "sh": 6,
+     "sot": 1,
+     "co": 2,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1575225,
+   "lg": 78,
+   "home": "Union Berlin",
+   "away": "RB Leipzig",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:16:50Z",
+   "min": 85,
+   "sh": 1,
+   "sa": 4,
+   "who": "away",
+   "who_name": "RB Leipzig",
+   "ratio": 1.94,
+   "P": 0.498,
+   "stats": {
+    "h": {
+     "sh": 12,
+     "sot": 7,
+     "co": 4,
+     "xg": null
+    },
+    "a": {
+     "sh": 27,
+     "sot": 8,
+     "co": 7,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1563871,
+   "lg": 42,
+   "home": "Northampton",
+   "away": "Rochdale",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:18:22Z",
+   "min": 62,
+   "sh": 1,
+   "sa": 2,
+   "who": "home",
+   "who_name": "Northampton",
+   "ratio": 2.43,
+   "P": 0.644,
+   "stats": {
+    "h": {
+     "sh": 19,
+     "sot": 8,
+     "co": 10,
+     "xg": null
+    },
+    "a": {
+     "sh": 5,
+     "sot": 3,
+     "co": 1,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1556710,
+   "lg": 179,
+   "home": "Kilmarnock",
+   "away": "Aberdeen",
+   "date": "2026-11-21",
+   "at": "2026-11-21T16:19:53Z",
+   "min": 61,
+   "sh": 2,
+   "sa": 3,
+   "who": "home",
+   "who_name": "Kilmarnock",
+   "ratio": 2.17,
+   "P": 0.602,
+   "stats": {
+    "h": {
+     "sh": 16,
+     "sot": 6,
+     "co": 10,
+     "xg": null
+    },
+    "a": {
+     "sh": 8,
+     "sot": 5,
+     "co": 1,
+     "xg": null
+    }
+   },
    "result": "open"
   }
  ],
  "summary": {
   "by_minute": {
    "0-30": {
-    "flags": 24,
-    "wins": 5,
-    "avg_model_chance": 0.459
+    "flags": 27,
+    "wins": 7,
+    "avg_model_chance": 0.457
    },
    "30-60": {
-    "flags": 51,
-    "wins": 25,
-    "avg_model_chance": 0.458
+    "flags": 55,
+    "wins": 28,
+    "avg_model_chance": 0.456
    },
    "60-75": {
-    "flags": 33,
-    "wins": 13,
+    "flags": 35,
+    "wins": 14,
     "avg_model_chance": 0.461
    },
    "75+": {
-    "flags": 48,
-    "wins": 18,
-    "avg_model_chance": 0.381
+    "flags": 54,
+    "wins": 19,
+    "avg_model_chance": 0.377
    }
   },
-  "flags": 167,
-  "resolved": 156,
-  "wins": 61,
-  "hit_rate": 0.391,
-  "avg_model_chance": 0.435,
-  "side_flags": 131,
-  "side_scored": 35,
-  "updated": "2026-11-21T14:21:09Z"
+  "flags": 194,
+  "resolved": 171,
+  "wins": 68,
+  "hit_rate": 0.398,
+  "avg_model_chance": 0.432,
+  "side_flags": 144,
+  "side_scored": 36,
+  "updated": "2026-11-21T16:19:54Z"
  }
 }
