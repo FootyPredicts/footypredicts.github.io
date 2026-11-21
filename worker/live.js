@@ -90,6 +90,32 @@ async function sendPush(env, endpoint) {
     return r.status;
   } catch (e) { return 0; }
 }
+
+// One shared way to call API-Football: cached at the edge, but a failed answer (rate limit etc.) is never cached,
+// so one bad minute cannot keep the site empty for longer than that minute.
+async function apif(env, path, ttl) {
+  const ck = new Request("https://cache.footypredicts.invalid/" + path);
+  const cache = caches.default;
+  const hit = await cache.match(ck);
+  if (hit) return hit;
+  const r = await fetch("https://v3.football.api-sports.io/" + path, { headers: { "x-apisports-key": env.API_FOOTBALL_KEY } });
+  if (!r.ok) return r;
+  const txt = await r.text();
+  let bad = false;
+  try { const e = JSON.parse(txt).errors; bad = !!e && (Array.isArray(e) ? e.length > 0 : Object.keys(e).length > 0); } catch (e) { bad = true; }
+  const sk = new Request("https://cache.footypredicts.invalid/stale/" + path);
+  if (bad) {
+    // Rate limited or upstream trouble: serve the last good answer (up to 10 minutes old) rather than nothing.
+    const old = await cache.match(sk);
+    if (old) return old;
+    return new Response(txt, { status: 429, headers: { "Content-Type": "application/json" } });
+  }
+  const out = new Response(txt, { status: 200, headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=" + ttl } });
+  await cache.put(ck, out.clone());
+  await cache.put(sk, new Response(txt, { status: 200, headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=600" } }));
+  return out;
+}
+
 const kvj = async (env, k, d) => (await env.ALERTS.get(k, "json")) || d;
 
 async function pushApi(request, env, cors, q) {
@@ -140,7 +166,7 @@ async function alerts(env) {
     const ko = Date.parse(f.ko), mins = (ko - now) / 60000;
     if (mins > 95 || mins < -10 || st.sent["lu" + f.id]) continue;
     if (!(wantClub.has(f.hs) || wantClub.has(f.as))) continue;
-    const r = await fetch(`https://v3.football.api-sports.io/fixtures/lineups?fixture=${f.id}`, { headers: { "x-apisports-key": env.API_FOOTBALL_KEY }, cf: { cacheTtl: 120, cacheEverything: true } });
+    const r = await apif(env, `fixtures/lineups?fixture=${f.id}`, 120);
     const j = r.ok ? await r.json() : null;
     if (j && (j.response || []).length >= 2) {
       st.sent["lu" + f.id] = now;
@@ -213,10 +239,7 @@ export default {
       const want = (q.get("ids") || "").split("-").filter((x) => /^\d+$/.test(x)).slice(0, 20);
       if (want.length) {
         // Final scores for matches that have just left the live feed.
-        const rf = await fetch(`https://v3.football.api-sports.io/fixtures?ids=${want.join("-")}`, {
-          headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
-          cf: { cacheTtl: 60, cacheEverything: true },
-        });
+        const rf = await apif(env, `fixtures?ids=${want.join("-")}`, 60);
         if (!rf.ok) return json({ ts: Date.now(), matches: [], error: "upstream " + rf.status }, cors, 10);
         const jf = await rf.json();
         return json({ ts: Date.now(), matches: (jf.response || []).map((f) => ({
@@ -232,10 +255,7 @@ export default {
         const cur = now.getUTCMonth() >= 6 ? now.getUTCFullYear() : now.getUTCFullYear() - 1;
         const dbgS = [];
         for (const season of [cur, cur - 1]) {
-          const rs = await fetch(`https://v3.football.api-sports.io/standings?league=${sid}&season=${season}`, {
-            headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
-            cf: { cacheTtl: 600, cacheEverything: true },
-          });
+          const rs = await apif(env, `standings?league=${sid}&season=${season}`, 600);
           if (!rs.ok) return json({ ts: Date.now(), groups: [], error: "upstream " + rs.status }, cors, 10);
           const body = await rs.json();
           dbgS.push({ season, results: body.results, errors: body.errors });
@@ -257,8 +277,8 @@ export default {
         const diff = (Date.parse(d) - Date.parse(today)) / 864e5;
         if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || !(diff >= -3 && diff <= 7)) d = today;
         const hdr = { headers: { "x-apisports-key": env.API_FOOTBALL_KEY } };
-        const reqs = [fetch(`https://v3.football.api-sports.io/fixtures?date=${d}&timezone=Europe/London`, { ...hdr, cf: { cacheTtl: d === today ? 90 : 900, cacheEverything: true } })];
-        if (d === today) reqs.push(fetch("https://v3.football.api-sports.io/fixtures?live=all&timezone=Europe/London", { ...hdr, cf: { cacheTtl: 30, cacheEverything: true } }));
+        const reqs = [apif(env, `fixtures?date=${d}&timezone=Europe/London`, d === today ? 90 : 900)];
+        if (d === today) reqs.push(apif(env, "fixtures?live=all&timezone=Europe/London", 30));
         const rs = await Promise.all(reqs);
         if (!rs[0].ok) return json({ ts: Date.now(), date: d, matches: [], error: "upstream " + rs[0].status }, cors, 10);
         const day = (await rs[0].json()).response || [];
@@ -279,11 +299,8 @@ export default {
         return json({ ts: Date.now(), date: d, matches: [...map.values()] }, cors, 30);
       }
       const all = q.get("scope") === "all";
-      const r = await fetch(`https://v3.football.api-sports.io/fixtures?live=${all ? LEAGUES_ALL : LEAGUES}`, {
-        headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
-        cf: { cacheTtl: 30, cacheEverything: true },
-      });
-      if (!r.ok) return json({ ts: Date.now(), matches: [], error: "upstream " + r.status }, cors, 10);
+      const r = await apif(env, `fixtures?live=${all ? LEAGUES_ALL : LEAGUES}`, 30);
+      if (!r.ok) return json({ ts: Date.now(), matches: [], error: r.status === 429 ? "busy, retrying" : "upstream " + r.status }, cors, 10);
       const j = await r.json();
       const matches = (j.response || []).map((f) => ({
         id: f.fixture.id,
@@ -315,11 +332,9 @@ export default {
       const dbg = { bulk: [], single: 0 };
       await Promise.all(chunks.map(async (chunk) => {
         try {
-          const r2 = await fetch(`https://v3.football.api-sports.io/fixtures?ids=${chunk.join("-")}`, {
-            headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
-            cf: { cacheTtl: 60, cacheEverything: true },
-          });
+          const r2 = await apif(env, `fixtures?ids=${chunk.join("-")}`, 60);
           dbg.bulk.push(r2.status);
+          if (r2.status === 429) dbg.limited = true;
           if (r2.ok) {
             const j2 = await r2.json();
             for (const f of j2.response || []) {
@@ -330,13 +345,10 @@ export default {
         } catch (e) { dbg.bulk.push("err"); }
       }));
       // Fallback: for any match the bulk call gave no statistics for, ask the statistics endpoint for that match alone.
-      const missing = matches.filter((m) => !m.sx).slice(0, 12);
+      const missing = dbg.limited ? [] : matches.filter((m) => !m.sx).slice(0, 4);
       await Promise.all(missing.map(async (m) => {
         try {
-          const r3 = await fetch(`https://v3.football.api-sports.io/fixtures/statistics?fixture=${m.id}`, {
-            headers: { "x-apisports-key": env.API_FOOTBALL_KEY },
-            cf: { cacheTtl: 60, cacheEverything: true },
-          });
+          const r3 = await apif(env, `fixtures/statistics?fixture=${m.id}`, 60);
           dbg.single++;
           if (r3.ok) {
             const j3 = await r3.json();
