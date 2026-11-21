@@ -3,1645 +3,9 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-21T18:08:05.592953+00:00",
+ "updated": "2026-11-21T18:38:12.749130+00:00",
  "matches_used": 880,
  "fixtures": [
-  {
-   "id": 1570460,
-   "kickoff": "2026-11-21T15:15:00",
-   "round": "Regular Season - 13",
-   "home": "Rayo Vallecano",
-   "away": "Valencia",
-   "referee": "J. Luis Munuera Montero",
-   "ref_cards": 5.0,
-   "ref_games": 9,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 49.0,
-    "draw": 27.3,
-    "away": 23.7
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 3.1,
-     "defence_hit_pct": 0.0,
-     "key_out": [
-      "Álvaro García"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 1.2,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "José Gayà"
-     ]
-    }
-   },
-   "home_pct": 48.4,
-   "draw_pct": 29.0,
-   "away_pct": 22.6,
-   "xg_home": 1.43,
-   "xg_away": 0.9,
-   "over25": 41.0,
-   "btts": 46.0,
-   "cards5": 55.5,
-   "cards": {
-    "exp": 5.11,
-    "home": 2.91,
-    "away": 2.2,
-    "over": {
-     "2.5": 85.2,
-     "3.5": 71.4,
-     "4.5": 55.5,
-     "5.5": 40.0,
-     "6.5": 26.9
-    }
-   },
-   "form": {
-    "home": {
-     "played": 5,
-     "win": 60.0,
-     "over25": 80.0,
-     "btts": 60.0
-    },
-    "away": {
-     "played": 5,
-     "win": 40.0,
-     "over25": 40.0,
-     "btts": 40.0
-    }
-   },
-   "venue": {
-    "home": {
-     "games": [
-      {
-       "date": "20/08/2026",
-       "home": "Rayo Vallecano",
-       "away": "Alaves",
-       "hg": 1,
-       "ag": 1,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "J. Munuera",
-       "sx": {
-        "h": {
-         "pos": 48.0,
-         "xg": 0.42,
-         "sh": 8.0,
-         "sot": 3.0,
-         "co": 9.0,
-         "fo": 14.0,
-         "of": 1.0,
-         "sv": 2.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 52.0,
-         "xg": 2.0,
-         "sh": 15.0,
-         "sot": 3.0,
-         "co": 7.0,
-         "fo": 13.0,
-         "of": 0.0,
-         "sv": 2.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "S. Camello",
-         "t": "h",
-         "m": 48
-        },
-        {
-         "n": "M. Diaz",
-         "t": "a",
-         "m": 84
-        }
-       ],
-       "cards": [
-        {
-         "n": "Nahuel Tenaglia",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Sergio Camello",
-         "t": "h",
-         "m": 73,
-         "r": false
-        },
-        {
-         "n": "Nicolás Valentini",
-         "t": "a",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "05/09/2026",
-       "home": "Rayo Vallecano",
-       "away": "Racing Santander",
-       "hg": 3,
-       "ag": 2,
-       "ht": [
-        2,
-        2
-       ],
-       "ref": "A. Quintero",
-       "sx": {
-        "h": {
-         "pos": 49.0,
-         "xg": 1.61,
-         "sh": 16.0,
-         "sot": 10.0,
-         "co": 9.0,
-         "fo": 15.0,
-         "of": 1.0,
-         "sv": 2.0,
-         "yc": 3.0,
-         "rc": 2.0
-        },
-        "a": {
-         "pos": 51.0,
-         "xg": 0.48,
-         "sh": 9.0,
-         "sot": 4.0,
-         "co": 6.0,
-         "fo": 12.0,
-         "of": 2.0,
-         "sv": 6.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "S. Canales",
-         "t": "a",
-         "m": 4
-        },
-        {
-         "n": "A. Ratiu",
-         "t": "h",
-         "m": 17
-        },
-        {
-         "n": "P. Garcia",
-         "t": "a",
-         "m": 28
-        },
-        {
-         "n": "S. Camello",
-         "t": "h",
-         "m": 43
-        },
-        {
-         "n": "S. Camello",
-         "t": "h",
-         "m": 47
-        }
-       ],
-       "cards": [
-        {
-         "n": "Jorge de Frutos",
-         "t": "h",
-         "m": -5,
-         "r": true
-        },
-        {
-         "n": "Óscar Valentín",
-         "t": "h",
-         "m": 2,
-         "r": false
-        },
-        {
-         "n": "Yassir Zabiri",
-         "t": "a",
-         "m": 25,
-         "r": false
-        },
-        {
-         "n": "Iñigo Vicente",
-         "t": "a",
-         "m": 35,
-         "r": false
-        },
-        {
-         "n": "Sergio Camello",
-         "t": "h",
-         "m": 39,
-         "r": false
-        },
-        {
-         "n": "Florian Lejeune",
-         "t": "h",
-         "m": 66,
-         "r": false
-        },
-        {
-         "n": "Fran Pérez",
-         "t": "h",
-         "m": 85,
-         "r": true
-        }
-       ]
-      },
-      {
-       "date": "15/09/2026",
-       "home": "Rayo Vallecano",
-       "away": "Espanyol",
-       "hg": 2,
-       "ag": 1,
-       "ht": [
-        2,
-        0
-       ],
-       "ref": "I. Diaz",
-       "sx": {
-        "h": {
-         "pos": 54.0,
-         "xg": 1.52,
-         "sh": 16.0,
-         "sot": 2.0,
-         "co": 3.0,
-         "fo": 10.0,
-         "of": 0.0,
-         "sv": 3.0,
-         "yc": 5.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 46.0,
-         "xg": 1.49,
-         "sh": 19.0,
-         "sot": 5.0,
-         "co": 5.0,
-         "fo": 15.0,
-         "of": 2.0,
-         "sv": 0.0,
-         "yc": 1.0,
-         "rc": 1.0
-        }
-       },
-       "goals": [
-        {
-         "n": "A. Garcia",
-         "t": "h",
-         "m": 3
-        },
-        {
-         "n": "A. Pedrosa",
-         "t": "h",
-         "m": 26
-        },
-        {
-         "n": "R. Fernandez Jaen",
-         "t": "a",
-         "m": 54
-        }
-       ],
-       "cards": [
-        {
-         "n": "Unai López",
-         "t": "h",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Marcos Fernández",
-         "t": "a",
-         "m": 63,
-         "r": false
-        },
-        {
-         "n": "Giorgi Tsitaishvili",
-         "t": "h",
-         "m": 67,
-         "r": false
-        },
-        {
-         "n": "Pathé Ismaël Ciss",
-         "t": "h",
-         "m": 70,
-         "r": false
-        },
-        {
-         "n": "Gnangoro Bouaré",
-         "t": "h",
-         "m": 80,
-         "r": false
-        },
-        {
-         "n": "Alemão",
-         "t": "h",
-         "m": 90,
-         "r": false
-        },
-        {
-         "n": "Omar El Hilali",
-         "t": "a",
-         "m": 90,
-         "r": true
-        }
-       ]
-      },
-      {
-       "date": "24/10/2026",
-       "home": "Rayo Vallecano",
-       "away": "Elche",
-       "hg": 0,
-       "ag": 3,
-       "ht": [
-        0,
-        2
-       ],
-       "ref": "M. Sesma",
-       "sx": {
-        "h": {
-         "pos": 57.0,
-         "xg": 1.61,
-         "sh": 18.0,
-         "sot": 5.0,
-         "co": 3.0,
-         "fo": 15.0,
-         "of": 4.0,
-         "sv": 6.0,
-         "yc": 3.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 43.0,
-         "xg": 2.63,
-         "sh": 16.0,
-         "sot": 9.0,
-         "co": 3.0,
-         "fo": 11.0,
-         "of": 2.0,
-         "sv": 4.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Federico Redondo Solari",
-         "t": "a",
-         "m": 23
-        },
-        {
-         "n": "Fernando Niño Rodríguez",
-         "t": "a",
-         "m": 36
-        },
-        {
-         "n": "Germán Valera",
-         "t": "a",
-         "m": 68
-        }
-       ],
-       "cards": [
-        {
-         "n": "Javier Morcillo Rodrigálvarez",
-         "t": "a",
-         "m": 10,
-         "r": false
-        },
-        {
-         "n": "Gonzalo Villar",
-         "t": "a",
-         "m": 30,
-         "r": false
-        },
-        {
-         "n": "Federico Redondo Solari",
-         "t": "a",
-         "m": 30,
-         "r": false
-        },
-        {
-         "n": "Pathé Ciss",
-         "t": "h",
-         "m": 35,
-         "r": false
-        },
-        {
-         "n": "Adrià Pedrosa",
-         "t": "h",
-         "m": 54,
-         "r": false
-        },
-        {
-         "n": "Álvaro García",
-         "t": "h",
-         "m": 81,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "31/10/2026",
-       "home": "Rayo Vallecano",
-       "away": "Celta Vigo",
-       "hg": 3,
-       "ag": 0,
-       "ht": [
-        1,
-        0
-       ],
-       "ref": "M. Orellana",
-       "sx": {
-        "h": {
-         "pos": 53.0,
-         "xg": 1.13,
-         "sh": 14.0,
-         "sot": 8.0,
-         "co": 4.0,
-         "fo": 11.0,
-         "of": 1.0,
-         "sv": 0.0,
-         "yc": 2.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 47.0,
-         "xg": 1.41,
-         "sh": 11.0,
-         "sot": 0.0,
-         "co": 3.0,
-         "fo": 16.0,
-         "of": 2.0,
-         "sv": 6.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Jorge De Frutos",
-         "t": "h",
-         "m": 36
-        },
-        {
-         "n": "Jorge De Frutos",
-         "t": "h",
-         "m": 55
-        },
-        {
-         "n": "Unai López",
-         "t": "h",
-         "m": 73
-        }
-       ],
-       "cards": [
-        {
-         "n": "Unai López",
-         "t": "h",
-         "m": 26,
-         "r": false
-        },
-        {
-         "n": "Gnangoro Bouare",
-         "t": "h",
-         "m": 72,
-         "r": false
-        },
-        {
-         "n": "Williot Swedberg",
-         "t": "a",
-         "m": 82,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 5,
-     "w": 3,
-     "d": 1,
-     "l": 1,
-     "last5": "DWWLW",
-     "gf": 1.8,
-     "ga": 1.4,
-     "cs": 20,
-     "fts": 20,
-     "sh": 14.4,
-     "sot": 5.6,
-     "co": 5.6,
-     "yc": 2.8
-    },
-    "away": {
-     "games": [
-      {
-       "date": "30/08/2026",
-       "home": "Deportivo La Coruna",
-       "away": "Valencia",
-       "hg": 3,
-       "ag": 1,
-       "ht": [
-        2,
-        1
-       ],
-       "ref": "M. Ortiz",
-       "sx": {
-        "h": {
-         "pos": 45.0,
-         "xg": 1.42,
-         "sh": 11.0,
-         "sot": 4.0,
-         "co": 5.0,
-         "fo": 14.0,
-         "of": 1.0,
-         "sv": 3.0,
-         "pp": 83.0,
-         "yc": 2.0,
-         "rc": 1.0
-        },
-        "a": {
-         "pos": 55.0,
-         "xg": 1.4,
-         "sh": 12.0,
-         "sot": 4.0,
-         "co": 5.0,
-         "fo": 5.0,
-         "of": 3.0,
-         "sv": 3.0,
-         "pp": 86.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "P. Aubameyang",
-         "t": "h",
-         "m": 17
-        },
-        {
-         "n": "U. Sadiq",
-         "t": "a",
-         "m": 26
-        }
-       ],
-       "cards": [
-        {
-         "n": "Mouctar Diakhaby",
-         "t": "a",
-         "m": 65,
-         "r": false
-        },
-        {
-         "n": "Adrià Altimira",
-         "t": "h",
-         "m": 90,
-         "r": false
-        },
-        {
-         "n": "Adrià Altimira",
-         "t": "h",
-         "m": 90,
-         "r": false
-        },
-        {
-         "n": "Adrià Altimira",
-         "t": "h",
-         "m": 90,
-         "r": true
-        }
-       ]
-      },
-      {
-       "date": "11/09/2026",
-       "home": "Sevilla",
-       "away": "Valencia",
-       "hg": 1,
-       "ag": 0,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "M. Busquets",
-       "sx": {
-        "h": {
-         "pos": 46.0,
-         "xg": 0.93,
-         "sh": 13.0,
-         "sot": 4.0,
-         "co": 6.0,
-         "fo": 8.0,
-         "of": 2.0,
-         "sv": 0.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 54.0,
-         "xg": 0.1,
-         "sh": 3.0,
-         "sot": 0.0,
-         "co": 4.0,
-         "fo": 12.0,
-         "of": 1.0,
-         "sv": 3.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "J. Iglesias",
-         "t": "h",
-         "m": 81
-        }
-       ],
-       "cards": [
-        {
-         "n": "Ryunosuke Sato",
-         "t": "a",
-         "m": 27,
-         "r": false
-        },
-        {
-         "n": "Chidera Ejuke",
-         "t": "h",
-         "m": 67,
-         "r": false
-        },
-        {
-         "n": "Pablo Maffeo",
-         "t": "a",
-         "m": 88,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "15/09/2026",
-       "home": "Alaves",
-       "away": "Valencia",
-       "hg": 0,
-       "ag": 1,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "M. Sesma",
-       "sx": {
-        "h": {
-         "pos": 43.0,
-         "xg": 1.05,
-         "sh": 15.0,
-         "sot": 3.0,
-         "co": 2.0,
-         "fo": 7.0,
-         "of": 3.0,
-         "sv": 2.0,
-         "pp": 79.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 57.0,
-         "xg": 0.65,
-         "sh": 10.0,
-         "sot": 3.0,
-         "co": 5.0,
-         "fo": 14.0,
-         "of": 4.0,
-         "sv": 3.0,
-         "pp": 82.0,
-         "yc": 4.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "L. Rioja",
-         "t": "a",
-         "m": 78
-        }
-       ],
-       "cards": [
-        {
-         "n": "Antonio Blanco",
-         "t": "h",
-         "m": 21,
-         "r": false
-        },
-        {
-         "n": "Javier Guerra",
-         "t": "a",
-         "m": 21,
-         "r": false
-        },
-        {
-         "n": "Pepelu",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Aaron Mayol",
-         "t": "a",
-         "m": 52,
-         "r": false
-        },
-        {
-         "n": "Guido Rodríguez",
-         "t": "a",
-         "m": 61,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "11/10/2026",
-       "home": "Racing Santander",
-       "away": "Valencia",
-       "hg": 2,
-       "ag": 2,
-       "ht": [
-        1,
-        1
-       ],
-       "ref": "L. Bestard Servera",
-       "sx": {
-        "h": {
-         "pos": 54.0,
-         "xg": 1.31,
-         "sh": 20.0,
-         "sot": 11.0,
-         "co": 8.0,
-         "fo": 15.0,
-         "of": 1.0,
-         "sv": 0.0,
-         "pp": 85.0,
-         "yc": 3.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 46.0,
-         "xg": 1.7,
-         "sh": 10.0,
-         "sot": 2.0,
-         "co": 3.0,
-         "fo": 10.0,
-         "of": 1.0,
-         "sv": 9.0,
-         "pp": 78.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "D. Raba",
-         "t": "a",
-         "m": 2
-        },
-        {
-         "n": "Y. Zabiri",
-         "t": "h",
-         "m": 32
-        },
-        {
-         "n": "I. Martin",
-         "t": "h",
-         "m": 47
-        },
-        {
-         "n": "D. Otorbi",
-         "t": "a",
-         "m": 65
-        }
-       ],
-       "cards": [
-        {
-         "n": "Pablo Ramón",
-         "t": "h",
-         "m": 22,
-         "r": false
-        },
-        {
-         "n": "Jorge Salinas",
-         "t": "h",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Dani Raba",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Guido Rodríguez",
-         "t": "a",
-         "m": 45,
-         "r": false
-        },
-        {
-         "n": "Pablo Maffeo",
-         "t": "a",
-         "m": 72,
-         "r": false
-        },
-        {
-         "n": "Iván Martín",
-         "t": "h",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "01/11/2026",
-       "home": "Elche",
-       "away": "Valencia",
-       "hg": 0,
-       "ag": 1,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "L. Bestard Servera",
-       "sx": {
-        "h": {
-         "pos": 69.0,
-         "xg": 1.33,
-         "sh": 16.0,
-         "sot": 3.0,
-         "co": 6.0,
-         "fo": 9.0,
-         "of": 2.0,
-         "sv": 2.0,
-         "yc": 3.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 31.0,
-         "xg": 0.96,
-         "sh": 5.0,
-         "sot": 3.0,
-         "co": 2.0,
-         "fo": 15.0,
-         "of": 6.0,
-         "sv": 3.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Umar Sadiq",
-         "t": "a",
-         "m": 69
-        }
-       ],
-       "cards": [
-        {
-         "n": "Germán Valera",
-         "t": "h",
-         "m": 36,
-         "r": false
-        },
-        {
-         "n": "Víctor Chust",
-         "t": "h",
-         "m": 42,
-         "r": false
-        },
-        {
-         "n": "Facundo Buonanotte",
-         "t": "h",
-         "m": 62,
-         "r": false
-        },
-        {
-         "n": "Javi Guerra",
-         "t": "a",
-         "m": 73,
-         "r": false
-        },
-        {
-         "n": "Stole Dimitrievski",
-         "t": "a",
-         "m": 90,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 5,
-     "w": 2,
-     "d": 1,
-     "l": 2,
-     "last5": "LLWDW",
-     "gf": 1.0,
-     "ga": 1.2,
-     "cs": 40,
-     "fts": 20,
-     "sh": 8.0,
-     "sot": 2.4,
-     "co": 3.8,
-     "yc": 2.4
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 41.756666156180536,
-     "sh": 52.35507301193354,
-     "any": 72.25000611469642
-    },
-    "away": {
-     "fh": 36.855469644926984,
-     "sh": 53.7243724032306,
-     "any": 70.7794722851574
-    },
-    "match_fh": 63.22252038118291,
-    "match_sh": 77.95201101824969
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 52,
-       "name": "Sergio Camello",
-       "p": 38.9,
-       "gl": 7,
-       "as": 2,
-       "ap": 12,
-       "price": {
-        "odd": 2.4,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.4
-        }
-       }
-      },
-      {
-       "id": 47543,
-       "name": "Álvaro García",
-       "p": 19.2,
-       "gl": 3,
-       "as": 2,
-       "ap": 11,
-       "price": {
-        "odd": 3.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.0
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 41552,
-       "name": "P. Ciss",
-       "p": 36.5,
-       "yc": 6,
-       "rc": 0,
-       "ap": 11,
-       "price": null
-      },
-      {
-       "id": 47285,
-       "name": "Unai López",
-       "p": 20.4,
-       "yc": 3,
-       "rc": 0,
-       "ap": 12,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 18895,
-      "name": "F. Lejeune",
-      "sot": 4
-     },
-     "cap": [
-      {
-       "id": 52,
-       "name": "Sergio Camello",
-       "pos": "Attacker",
-       "g": 38.9,
-       "a": 16.7,
-       "inv": 49.1
-      },
-      {
-       "id": 128582,
-       "name": "Jorge de Frutos",
-       "pos": "Midfielder",
-       "g": 18.9,
-       "a": 18.8,
-       "inv": 34.2
-      },
-      {
-       "id": 47543,
-       "name": "Álvaro García",
-       "pos": "Midfielder",
-       "g": 19.2,
-       "a": 17.8,
-       "inv": 33.6
-      },
-      {
-       "id": 47285,
-       "name": "Unai López",
-       "pos": "Midfielder",
-       "g": 11.2,
-       "a": 23.2,
-       "inv": 31.8
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 31406,
-       "name": "U. Sadiq",
-       "p": 27.2,
-       "gl": 2,
-       "as": 0,
-       "ap": 5,
-       "price": null
-      },
-      {
-       "id": 1708,
-       "name": "Dani Raba",
-       "p": 15.1,
-       "gl": 1,
-       "as": 0,
-       "ap": 5,
-       "price": {
-        "odd": 3.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.5
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 2476,
-       "name": "G. Rodríguez",
-       "p": 30.3,
-       "yc": 4,
-       "rc": 0,
-       "ap": 9,
-       "price": null
-      },
-      {
-       "id": 26302,
-       "name": "Pablo Maffeo",
-       "p": 25.2,
-       "yc": 4,
-       "rc": 0,
-       "ap": 11,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 333672,
-      "name": "César Tárrega",
-      "sot": 1
-     },
-     "cap": [
-      {
-       "id": 31406,
-       "name": "U. Sadiq",
-       "pos": "Attacker",
-       "g": 27.2,
-       "a": 5.4,
-       "inv": 31.2
-      },
-      {
-       "id": 315699,
-       "name": "Javi Guerra",
-       "pos": "Midfielder",
-       "g": 6.7,
-       "a": 17.2,
-       "inv": 22.8
-      },
-      {
-       "id": 1708,
-       "name": "Dani Raba",
-       "pos": "Attacker",
-       "g": 15.1,
-       "a": 4.6,
-       "inv": 19.0
-      },
-      {
-       "id": 46933,
-       "name": "Luis Rioja",
-       "pos": "Attacker",
-       "g": 14.0,
-       "a": 4.3,
-       "inv": 17.7
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 11379,
-      "name": "A. Batalla",
-      "type": "Missing Fixture",
-      "reason": "Broken calfbone"
-     },
-     {
-      "id": 30924,
-      "name": "M. Kumbulla",
-      "type": "Missing Fixture",
-      "reason": "Injury"
-     },
-     {
-      "id": 1847,
-      "name": "Luiz Felipe",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 47109,
-      "name": "O. Valentin",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 47543,
-      "name": "A. Garcia",
-      "type": "Questionable",
-      "reason": "Hamstring Injury"
-     },
-     {
-      "id": 314006,
-      "name": "J. Vertrouwd",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 19352,
-      "name": "S. Canos",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 918,
-      "name": "J. Gaya",
-      "type": "Missing Fixture",
-      "reason": "Red Card"
-     },
-     {
-      "id": 162127,
-      "name": "D. Lopez",
-      "type": "Missing Fixture",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 162175,
-      "name": "J. Vazquez",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     }
-    ]
-   },
-   "lineup_confirmed": true,
-   "previous": [
-    {
-     "date": "14/05/2026",
-     "home": "Valencia",
-     "away": "Rayo Vallecano",
-     "hg": 1,
-     "ag": 1,
-     "ht": [
-      1,
-      1
-     ],
-     "ref": "A. Quintero",
-     "sx": {
-      "h": {
-       "pos": 53.0,
-       "xg": 0.76,
-       "sh": 12.0,
-       "sot": 3.0,
-       "co": 5.0,
-       "fo": 9.0,
-       "of": 1.0,
-       "sv": 2.0,
-       "pp": 79.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 47.0,
-       "xg": 1.16,
-       "sh": 6.0,
-       "sot": 3.0,
-       "co": 1.0,
-       "fo": 20.0,
-       "of": 2.0,
-       "sv": 2.0,
-       "pp": 77.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "F. Lejeune",
-       "t": "a",
-       "m": 20
-      },
-      {
-       "n": "D. Lopez",
-       "t": "h",
-       "m": 40
-      }
-     ],
-     "cards": [
-      {
-       "n": "Renzo Saravia",
-       "t": "h",
-       "m": 6,
-       "r": false
-      },
-      {
-       "n": "Randy Nteka",
-       "t": "a",
-       "m": 56,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "01/12/2025",
-     "home": "Rayo Vallecano",
-     "away": "Valencia",
-     "hg": 1,
-     "ag": 1,
-     "ht": [
-      1,
-      0
-     ],
-     "ref": "J. Alberola Rojas",
-     "sx": {
-      "h": {
-       "pos": 56.0,
-       "xg": 1.57,
-       "sh": 19.0,
-       "sot": 7.0,
-       "co": 10.0,
-       "fo": 11.0,
-       "of": 1.0,
-       "sv": 0.0,
-       "pp": 85.0,
-       "yc": 1.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 44.0,
-       "xg": 0.63,
-       "sh": 10.0,
-       "sot": 2.0,
-       "co": 5.0,
-       "fo": 9.0,
-       "of": 0.0,
-       "sv": 5.0,
-       "pp": 81.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "N. Mendy",
-       "t": "h",
-       "m": 37
-      },
-      {
-       "n": "D. Lopez",
-       "t": "a",
-       "m": 64
-      }
-     ],
-     "cards": [
-      {
-       "n": "Thierry Correia",
-       "t": "a",
-       "m": 71,
-       "r": false
-      },
-      {
-       "n": "Alemão",
-       "t": "h",
-       "m": 90,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "19/04/2025",
-     "home": "Rayo Vallecano",
-     "away": "Valencia",
-     "hg": 1,
-     "ag": 1,
-     "ht": [
-      1,
-      0
-     ],
-     "ref": "A. Quintero",
-     "sx": {
-      "h": {
-       "pos": 57.0,
-       "xg": 0.56,
-       "sh": 11.0,
-       "sot": 4.0,
-       "co": 5.0,
-       "fo": 18.0,
-       "of": 2.0,
-       "sv": 2.0,
-       "pp": 83.0,
-       "yc": 3.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 43.0,
-       "xg": 1.94,
-       "sh": 10.0,
-       "sot": 3.0,
-       "co": 2.0,
-       "fo": 13.0,
-       "of": 1.0,
-       "sv": 4.0,
-       "pp": 79.0,
-       "yc": 1.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "U. Sadiq",
-       "t": "a",
-       "m": 75
-      }
-     ],
-     "cards": [
-      {
-       "n": "Pathé Ismaël Ciss",
-       "t": "h",
-       "m": 28,
-       "r": false
-      },
-      {
-       "n": "Florian Lejeune",
-       "t": "h",
-       "m": 49,
-       "r": false
-      },
-      {
-       "n": "Josep Chavarría",
-       "t": "h",
-       "m": 82,
-       "r": false
-      },
-      {
-       "n": "Umar Sadiq",
-       "t": "a",
-       "m": 90,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "07/12/2024",
-     "home": "Valencia",
-     "away": "Rayo Vallecano",
-     "hg": 0,
-     "ag": 1,
-     "ht": [
-      0,
-      1
-     ],
-     "ref": "J. Munuera",
-     "sx": {
-      "h": {
-       "pos": 61.0,
-       "xg": 1.22,
-       "sh": 14.0,
-       "sot": 6.0,
-       "co": 9.0,
-       "fo": 5.0,
-       "of": 2.0,
-       "sv": 0.0,
-       "pp": 82.0,
-       "yc": 2.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 39.0,
-       "xg": 0.9,
-       "sh": 6.0,
-       "sot": 1.0,
-       "co": 4.0,
-       "fo": 12.0,
-       "of": 3.0,
-       "sv": 5.0,
-       "pp": 67.0,
-       "yc": 2.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "P. Ciss",
-       "t": "a",
-       "m": 7
-      }
-     ],
-     "cards": [
-      {
-       "n": "Giorgi Mamardashvili",
-       "t": "h",
-       "m": 52,
-       "r": false
-      },
-      {
-       "n": "Randy Nteka",
-       "t": "a",
-       "m": 52,
-       "r": false
-      },
-      {
-       "n": "Isi Palazón",
-       "t": "a",
-       "m": 71,
-       "r": false
-      },
-      {
-       "n": "Yarek Gasiorowski",
-       "t": "h",
-       "m": 72,
-       "r": false
-      }
-     ]
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 2.0,
-     "bookie": "Betano",
-     "books": {
-      "William Hill": 1.85,
-      "Bet365": 1.91,
-      "Betfair": 1.95,
-      "BetVictor": 1.91
-     }
-    },
-    "draw": {
-     "odd": 3.7,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.4,
-      "Bet365": 3.5,
-      "Betfair": 3.5,
-      "BetVictor": 3.3
-     }
-    },
-    "away": {
-     "odd": 4.22,
-     "bookie": "Pinnacle",
-     "books": {
-      "William Hill": 3.9,
-      "Bet365": 4.0,
-      "Betfair": 4.1,
-      "BetVictor": 3.75
-     }
-    },
-    "over25": {
-     "odd": 2.07,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 2.0,
-      "Betfair": 2.0,
-      "BetVictor": 1.93
-     }
-    },
-    "under25": {
-     "odd": 1.88,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.8,
-      "Betfair": 1.8,
-      "BetVictor": 1.75
-     }
-    },
-    "btts_yes": {
-     "odd": 1.85,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 1.85,
-      "Bet365": 1.8,
-      "Betfair": 1.8,
-      "BetVictor": 1.8
-     }
-    },
-    "btts_no": {
-     "odd": 1.95,
-     "bookie": "Bet365",
-     "books": {
-      "William Hill": 1.91,
-      "Bet365": 1.95,
-      "Betfair": 1.95,
-      "BetVictor": 1.9
-     }
-    },
-    "cards_over45": {
-     "odd": 1.81,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 1.62
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.13,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 5.4,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.32,
-       "bookie": "Pinnacle",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.26,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 1.81,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 1.62
-       }
-      },
-      "under": {
-       "odd": 2.2,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 2.2
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 2.61,
-       "bookie": "Pinnacle",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.65,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 3.0,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.36,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1570462,
    "kickoff": "2026-11-21T17:30:00",
@@ -7818,7 +6182,7 @@
    },
    "goals": {
     "home": {
-     "fh": 52.38894782528606,
+     "fh": 52.388947825286046,
      "sh": 54.23172165403884,
      "any": 78.20924111723613
     },
@@ -12173,8 +10537,8 @@
     },
     "away": {
      "fh": 46.262152178244186,
-     "sh": 54.59162761654973,
-     "any": 75.59851795024531
+     "sh": 54.59162761654972,
+     "any": 75.5985179502453
     },
     "match_fh": 68.58531530162855,
     "match_sh": 80.94603056523239
@@ -15673,6 +14037,1259 @@
       "Bet365": 2.1,
       "Betfair": 2.2,
       "BetVictor": 2.15
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1570469,
+   "kickoff": "2026-11-28T15:15:00",
+   "round": "Regular Season - 14",
+   "home": "Malaga",
+   "away": "Athletic Club",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Away",
+   "model_pick": "Away",
+   "call_reason": "",
+   "low_data": true,
+   "market": {
+    "home": 21.3,
+    "draw": 25.8,
+    "away": 52.9
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    },
+    "away": {
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 20.9,
+   "draw_pct": 29.1,
+   "away_pct": 49.9,
+   "xg_home": 0.83,
+   "xg_away": 1.42,
+   "over25": 39.0,
+   "btts": 43.7,
+   "cards5": 47.2,
+   "cards": {
+    "exp": 4.59,
+    "home": 2.37,
+    "away": 2.22,
+    "over": {
+     "2.5": 80.4,
+     "3.5": 64.3,
+     "4.5": 47.2,
+     "5.5": 31.9,
+     "6.5": 20.0
+    }
+   },
+   "form": {
+    "home": {
+     "played": 6,
+     "win": 0.0,
+     "over25": 50.0,
+     "btts": 83.33333333333334
+    },
+    "away": {
+     "played": 5,
+     "win": 20.0,
+     "over25": 20.0,
+     "btts": 40.0
+    }
+   },
+   "venue": {
+    "home": {
+     "games": [
+      {
+       "date": "06/09/2026",
+       "home": "Malaga",
+       "away": "Levante",
+       "hg": 0,
+       "ag": 0,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "L. Bestard Servera",
+       "sx": {
+        "h": {
+         "pos": 63.0,
+         "xg": 1.46,
+         "sh": 10.0,
+         "sot": 3.0,
+         "co": 6.0,
+         "fo": 15.0,
+         "of": 3.0,
+         "sv": 3.0,
+         "pp": 88.0,
+         "yc": 4.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 37.0,
+         "xg": 0.81,
+         "sh": 11.0,
+         "sot": 3.0,
+         "co": 4.0,
+         "fo": 11.0,
+         "of": 0.0,
+         "sv": 3.0,
+         "pp": 79.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [],
+       "cards": [
+        {
+         "n": "Dani Lorenzo",
+         "t": "h",
+         "m": 25,
+         "r": false
+        },
+        {
+         "n": "Rafa Garrido",
+         "t": "h",
+         "m": 34,
+         "r": false
+        },
+        {
+         "n": "Pablo Martínez",
+         "t": "h",
+         "m": 45,
+         "r": false
+        },
+        {
+         "n": "Adrián de la Fuente",
+         "t": "a",
+         "m": 70,
+         "r": false
+        },
+        {
+         "n": "Carlos Puga",
+         "t": "h",
+         "m": 90,
+         "r": false
+        },
+        {
+         "n": "Aïssa Mandi",
+         "t": "a",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "17/09/2026",
+       "home": "Malaga",
+       "away": "Villarreal",
+       "hg": 1,
+       "ag": 3,
+       "ht": [
+        1,
+        2
+       ],
+       "ref": "M. Ortiz",
+       "sx": {
+        "h": {
+         "pos": 37.0,
+         "xg": 0.63,
+         "sh": 5.0,
+         "sot": 1.0,
+         "co": 4.0,
+         "fo": 17.0,
+         "of": 1.0,
+         "sv": 3.0,
+         "pp": 81.0,
+         "yc": 5.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 63.0,
+         "xg": 3.33,
+         "sh": 16.0,
+         "sot": 7.0,
+         "co": 8.0,
+         "fo": 10.0,
+         "of": 3.0,
+         "sv": 0.0,
+         "pp": 90.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "C. Dotor",
+         "t": "h",
+         "m": 12
+        },
+        {
+         "n": "A. Moleiro",
+         "t": "a",
+         "m": 40
+        },
+        {
+         "n": "P. Gueye",
+         "t": "a",
+         "m": 45
+        },
+        {
+         "n": "P. Gueye",
+         "t": "a",
+         "m": 86
+        }
+       ],
+       "cards": [
+        {
+         "n": "Jose Salinas",
+         "t": "h",
+         "m": 34,
+         "r": false
+        },
+        {
+         "n": "Ilias Akhomach",
+         "t": "a",
+         "m": 42,
+         "r": false
+        },
+        {
+         "n": "David Larrubia",
+         "t": "h",
+         "m": 68,
+         "r": false
+        },
+        {
+         "n": "Einar Galilea",
+         "t": "h",
+         "m": 70,
+         "r": false
+        },
+        {
+         "n": "Ramón Enríquez",
+         "t": "h",
+         "m": 79,
+         "r": false
+        },
+        {
+         "n": "Alfonso Herrero",
+         "t": "h",
+         "m": 85,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "09/10/2026",
+       "home": "Malaga",
+       "away": "Espanyol",
+       "hg": 1,
+       "ag": 1,
+       "ht": [
+        0,
+        1
+       ],
+       "ref": "F. Maeso",
+       "sx": {
+        "h": {
+         "pos": 58.0,
+         "xg": 0.69,
+         "sh": 15.0,
+         "sot": 7.0,
+         "co": 8.0,
+         "fo": 10.0,
+         "of": 2.0,
+         "sv": 2.0,
+         "pp": 88.0,
+         "yc": 4.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 42.0,
+         "xg": 1.08,
+         "sh": 9.0,
+         "sot": 4.0,
+         "co": 2.0,
+         "fo": 15.0,
+         "of": 1.0,
+         "sv": 6.0,
+         "pp": 79.0,
+         "yc": 5.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "B. Zaragoza",
+         "t": "a",
+         "m": 13
+        },
+        {
+         "n": "A. Nino",
+         "t": "h",
+         "m": 90
+        }
+       ],
+       "cards": [
+        {
+         "n": "Javier Hernández",
+         "t": "a",
+         "m": 24,
+         "r": false
+        },
+        {
+         "n": "Carlos Puga",
+         "t": "h",
+         "m": 28,
+         "r": false
+        },
+        {
+         "n": "Bryan Zaragoza",
+         "t": "a",
+         "m": 28,
+         "r": false
+        },
+        {
+         "n": "Chupete",
+         "t": "h",
+         "m": 41,
+         "r": false
+        },
+        {
+         "n": "Omar El Hilali",
+         "t": "a",
+         "m": 60,
+         "r": false
+        },
+        {
+         "n": "Carlos Dotor",
+         "t": "h",
+         "m": 66,
+         "r": false
+        },
+        {
+         "n": "Clemens Riedel",
+         "t": "a",
+         "m": 84,
+         "r": false
+        },
+        {
+         "n": "Roger Hinojo",
+         "t": "a",
+         "m": 87,
+         "r": false
+        },
+        {
+         "n": "Adam Aznou",
+         "t": "h",
+         "m": 89,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "18/10/2026",
+       "home": "Malaga",
+       "away": "Real Sociedad",
+       "hg": 2,
+       "ag": 5,
+       "ht": [
+        0,
+        2
+       ],
+       "ref": "L. Bestard Servera",
+       "sx": {
+        "h": {
+         "pos": 45.0,
+         "xg": 1.28,
+         "sh": 17.0,
+         "sot": 6.0,
+         "co": 4.0,
+         "fo": 4.0,
+         "of": 2.0,
+         "sv": 4.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 55.0,
+         "xg": 2.46,
+         "sh": 21.0,
+         "sot": 9.0,
+         "co": 5.0,
+         "fo": 9.0,
+         "of": 2.0,
+         "sv": 4.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Takefusa Kubo",
+         "t": "a",
+         "m": 3
+        },
+        {
+         "n": "Orri Steinn Óskarsson",
+         "t": "a",
+         "m": 26
+        },
+        {
+         "n": "Adrian Nino",
+         "t": "h",
+         "m": 54
+        },
+        {
+         "n": "Mikel Oyarzabal",
+         "t": "a",
+         "m": 59
+        },
+        {
+         "n": "Pablo Martínez Andrés",
+         "t": "h",
+         "m": 66
+        },
+        {
+         "n": "Mikel Oyarzabal",
+         "t": "a",
+         "m": 67
+        },
+        {
+         "n": "Gonçalo Guedes",
+         "t": "a",
+         "m": 73
+        }
+       ],
+       "cards": [
+        {
+         "n": "Jon Martin",
+         "t": "a",
+         "m": 37,
+         "r": false
+        },
+        {
+         "n": "Mamadou Sarr",
+         "t": "a",
+         "m": 62,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "07/11/2026",
+       "home": "Malaga",
+       "away": "Racing Santander",
+       "hg": 1,
+       "ag": 2,
+       "ht": [
+        1,
+        0
+       ],
+       "ref": "I. Diaz",
+       "sx": {
+        "h": {
+         "pos": 46.0,
+         "xg": 2.08,
+         "sh": 16.0,
+         "sot": 8.0,
+         "co": 6.0,
+         "fo": 11.0,
+         "of": 2.0,
+         "sv": 5.0,
+         "yc": 4.0,
+         "rc": 1.0
+        },
+        "a": {
+         "pos": 54.0,
+         "xg": 2.44,
+         "sh": 21.0,
+         "sot": 7.0,
+         "co": 3.0,
+         "fo": 5.0,
+         "of": 3.0,
+         "sv": 7.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Carlos Dotor",
+         "t": "h",
+         "m": 28
+        },
+        {
+         "n": "Iker Luque",
+         "t": "a",
+         "m": 50
+        },
+        {
+         "n": "Yassir Zabiri",
+         "t": "a",
+         "m": 60
+        }
+       ],
+       "cards": [
+        {
+         "n": "Julen Agirrezabala",
+         "t": "a",
+         "m": 31,
+         "r": false
+        },
+        {
+         "n": "Adam Aznou",
+         "t": "h",
+         "m": 38,
+         "r": false
+        },
+        {
+         "n": "Einar Galilea",
+         "t": "h",
+         "m": 45,
+         "r": false
+        },
+        {
+         "n": "Adam Aznou",
+         "t": "h",
+         "m": 64,
+         "r": true
+        },
+        {
+         "n": "Adrián Niño",
+         "t": "h",
+         "m": 76,
+         "r": false
+        },
+        {
+         "n": "Carlos Ruiz Rubio",
+         "t": "h",
+         "m": 80,
+         "r": false
+        },
+        {
+         "n": "Giorgi Guliashvili",
+         "t": "a",
+         "m": 90,
+         "r": false
+        },
+        {
+         "n": "Carlos Dotor",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 6,
+     "w": 0,
+     "d": 3,
+     "l": 3,
+     "last5": "DLDLL",
+     "gf": 1.0,
+     "ga": 2.0,
+     "cs": 17,
+     "fts": 17,
+     "sh": 12.7,
+     "sot": 4.5,
+     "co": 5.8,
+     "yc": 3.0
+    },
+    "away": {
+     "games": [
+      {
+       "date": "27/08/2026",
+       "home": "Barcelona",
+       "away": "Athletic Club",
+       "hg": 2,
+       "ag": 0,
+       "ht": [
+        1,
+        0
+       ],
+       "ref": "M. Ortiz",
+       "sx": {
+        "h": {
+         "pos": 70.0,
+         "xg": 4.23,
+         "sh": 22.0,
+         "sot": 10.0,
+         "co": 12.0,
+         "fo": 13.0,
+         "of": 8.0,
+         "sv": 0.0,
+         "pp": 90.0,
+         "yc": 1.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 30.0,
+         "xg": 0.25,
+         "sh": 5.0,
+         "sot": 0.0,
+         "co": 5.0,
+         "fo": 6.0,
+         "of": 5.0,
+         "sv": 8.0,
+         "pp": 73.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Raphinha",
+         "t": "h",
+         "m": 37
+        },
+        {
+         "n": "Fermin",
+         "t": "h",
+         "m": 82
+        }
+       ],
+       "cards": [
+        {
+         "n": "Xavi Espart",
+         "t": "h",
+         "m": 27,
+         "r": false
+        },
+        {
+         "n": "Gorka Guruzeta",
+         "t": "a",
+         "m": 48,
+         "r": false
+        },
+        {
+         "n": "Johaneko Louis Jean",
+         "t": "a",
+         "m": 61,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "30/08/2026",
+       "home": "Celta Vigo",
+       "away": "Athletic Club",
+       "hg": 0,
+       "ag": 2,
+       "ht": [
+        0,
+        2
+       ],
+       "ref": "M. Busquets",
+       "sx": {
+        "h": {
+         "pos": 54.0,
+         "xg": 0.75,
+         "sh": 8.0,
+         "sot": 2.0,
+         "co": 4.0,
+         "fo": 8.0,
+         "of": 3.0,
+         "sv": 5.0,
+         "pp": 88.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 46.0,
+         "xg": 2.78,
+         "sh": 17.0,
+         "sot": 7.0,
+         "co": 7.0,
+         "fo": 17.0,
+         "of": 0.0,
+         "sv": 2.0,
+         "pp": 87.0,
+         "yc": 3.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "A. Berenguer",
+         "t": "a",
+         "m": 20
+        },
+        {
+         "n": "R. Navarro",
+         "t": "a",
+         "m": 22
+        }
+       ],
+       "cards": [
+        {
+         "n": "Yuri Berchiche",
+         "t": "a",
+         "m": 48,
+         "r": false
+        },
+        {
+         "n": "Robert Navarro",
+         "t": "a",
+         "m": 61,
+         "r": false
+        },
+        {
+         "n": "Beñat Gerenabarrena",
+         "t": "a",
+         "m": 71,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "17/10/2026",
+       "home": "Valencia",
+       "away": "Athletic Club",
+       "hg": 0,
+       "ag": 0,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "A. Cordero",
+       "sx": {
+        "h": {
+         "pos": 37.0,
+         "xg": 1.49,
+         "sh": 16.0,
+         "sot": 3.0,
+         "co": 2.0,
+         "fo": 14.0,
+         "of": 2.0,
+         "sv": 1.0,
+         "yc": 3.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 63.0,
+         "xg": 0.65,
+         "sh": 9.0,
+         "sot": 2.0,
+         "co": 6.0,
+         "fo": 13.0,
+         "of": 1.0,
+         "sv": 3.0,
+         "yc": 3.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [],
+       "cards": [
+        {
+         "n": "Daniel Raba Antolín",
+         "t": "h",
+         "m": 19,
+         "r": false
+        },
+        {
+         "n": "Aymeric Laporte",
+         "t": "a",
+         "m": 38,
+         "r": false
+        },
+        {
+         "n": "Beñat Gerenabarrena",
+         "t": "a",
+         "m": 42,
+         "r": false
+        },
+        {
+         "n": "Iñigo Ruiz De Galarreta",
+         "t": "a",
+         "m": 57,
+         "r": false
+        },
+        {
+         "n": "José Luis García Vayá",
+         "t": "h",
+         "m": 87,
+         "r": false
+        },
+        {
+         "n": "César Tárrega Requeni",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "21/10/2026",
+       "home": "Levante",
+       "away": "Athletic Club",
+       "hg": 3,
+       "ag": 1,
+       "ht": [
+        2,
+        0
+       ],
+       "ref": "A. Quintero",
+       "sx": {
+        "h": {
+         "pos": 38.0,
+         "xg": 2.04,
+         "sh": 12.0,
+         "sot": 7.0,
+         "co": 3.0,
+         "fo": 13.0,
+         "sv": 3.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 62.0,
+         "xg": 1.95,
+         "sh": 21.0,
+         "sot": 4.0,
+         "co": 9.0,
+         "fo": 12.0,
+         "sv": 4.0,
+         "yc": 1.0,
+         "rc": 1.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Roger Brugué",
+         "t": "h",
+         "m": 20
+        },
+        {
+         "n": "Roger Brugué",
+         "t": "h",
+         "m": 22
+        },
+        {
+         "n": "Alex Berenguer",
+         "t": "a",
+         "m": 67
+        }
+       ],
+       "cards": [
+        {
+         "n": "Aïssa Mandi",
+         "t": "h",
+         "m": 67,
+         "r": false
+        },
+        {
+         "n": "Aymeric Laporte",
+         "t": "a",
+         "m": 73,
+         "r": true
+        },
+        {
+         "n": "Karl Etta Eyong",
+         "t": "h",
+         "m": 77,
+         "r": false
+        },
+        {
+         "n": "Jeremy Toljan",
+         "t": "h",
+         "m": 80,
+         "r": false
+        },
+        {
+         "n": "Yuri Berchiche",
+         "t": "a",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "07/11/2026",
+       "home": "Osasuna",
+       "away": "Athletic Club",
+       "hg": 1,
+       "ag": 1,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "M. Sesma",
+       "sx": {
+        "h": {
+         "pos": 40.0,
+         "xg": 0.73,
+         "sh": 17.0,
+         "sot": 5.0,
+         "co": 6.0,
+         "fo": 19.0,
+         "of": 2.0,
+         "sv": 3.0,
+         "yc": 3.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 60.0,
+         "xg": 2.33,
+         "sh": 16.0,
+         "sot": 4.0,
+         "co": 4.0,
+         "fo": 10.0,
+         "of": 1.0,
+         "sv": 4.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Nico Williams",
+         "t": "a",
+         "m": 84
+        },
+        {
+         "n": "Alejandro Catena",
+         "t": "h",
+         "m": 90
+        }
+       ],
+       "cards": [
+        {
+         "n": "Jon Moncayola",
+         "t": "h",
+         "m": 45,
+         "r": false
+        },
+        {
+         "n": "Ante Budimir",
+         "t": "h",
+         "m": 54,
+         "r": false
+        },
+        {
+         "n": "Iker Muñoz Cameros",
+         "t": "h",
+         "m": 90,
+         "r": false
+        },
+        {
+         "n": "Oihan Sancet",
+         "t": "a",
+         "m": 90,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 5,
+     "w": 1,
+     "d": 2,
+     "l": 2,
+     "last5": "LWDLD",
+     "gf": 0.8,
+     "ga": 1.2,
+     "cs": 40,
+     "fts": 40,
+     "sh": 13.6,
+     "sot": 3.4,
+     "co": 6.2,
+     "yc": 2.0
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 37.070673743071566,
+     "sh": 44.39194411800528,
+     "any": 65.00622508888445
+    },
+    "away": {
+     "fh": 50.341469620859044,
+     "sh": 54.75067604344315,
+     "any": 77.5298507166773
+    },
+    "match_fh": 68.75022140331446,
+    "match_sh": 74.83773064801305
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 386850,
+       "name": "Adrián Niño Heredia",
+       "p": 26.2,
+       "gl": 5,
+       "as": 1,
+       "ap": 8,
+       "price": null
+      },
+      {
+       "id": 376401,
+       "name": "Chupe",
+       "p": 12.5,
+       "gl": 1,
+       "as": 0,
+       "ap": 12,
+       "price": null
+      }
+     ],
+     "bookings": [
+      {
+       "id": 431921,
+       "name": "Adam Aznou Ben Cheikh",
+       "p": 28.2,
+       "yc": 2,
+       "rc": 1,
+       "ap": 5,
+       "price": null
+      },
+      {
+       "id": 190253,
+       "name": "David Larrubia",
+       "p": 24.6,
+       "yc": 4,
+       "rc": 0,
+       "ap": 12,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 316115,
+      "name": "Ángel Recio",
+      "sot": 1
+     },
+     "cap": [
+      {
+       "id": 386850,
+       "name": "Adrián Niño Heredia",
+       "pos": "Attacker",
+       "g": 26.2,
+       "a": 7.9,
+       "inv": 32.1
+      },
+      {
+       "id": 104949,
+       "name": "Pablo Martínez",
+       "pos": "Midfielder",
+       "g": 7.5,
+       "a": 12.8,
+       "inv": 19.3
+      },
+      {
+       "id": 376401,
+       "name": "Chupe",
+       "pos": "Attacker",
+       "g": 12.5,
+       "a": 2.5,
+       "inv": 14.6
+      },
+      {
+       "id": 162034,
+       "name": "Carlos Dotor",
+       "pos": "Midfielder",
+       "g": 10.7,
+       "a": 2.4,
+       "inv": 12.9
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 30510,
+       "name": "Álex Berenguer",
+       "p": 25.2,
+       "gl": 4,
+       "as": 4,
+       "ap": 13,
+       "price": {
+        "odd": 4.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.0
+        }
+       }
+      },
+      {
+       "id": 47294,
+       "name": "I. Williams",
+       "p": 21.2,
+       "gl": 3,
+       "as": 2,
+       "ap": 12,
+       "price": {
+        "odd": 2.6,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.6
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 47273,
+       "name": "Yuri",
+       "p": 27.3,
+       "yc": 3,
+       "rc": 1,
+       "ap": 10,
+       "price": null
+      },
+      {
+       "id": 332307,
+       "name": "Beñat Gerenabarrena",
+       "p": 26.5,
+       "yc": 4,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 47273,
+      "name": "Yuri",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 30510,
+       "name": "Álex Berenguer",
+       "pos": "Attacker",
+       "g": 25.2,
+       "a": 26.4,
+       "inv": 45.0
+      },
+      {
+       "id": 47294,
+       "name": "I. Williams",
+       "pos": "Midfielder",
+       "g": 21.2,
+       "a": 16.5,
+       "inv": 34.1
+      },
+      {
+       "id": 183799,
+       "name": "Nico Williams",
+       "pos": "Midfielder",
+       "g": 15.0,
+       "a": 11.2,
+       "inv": 24.5
+      },
+      {
+       "id": 84086,
+       "name": "Robert Navarro",
+       "pos": "Midfielder",
+       "g": 19.5,
+       "a": 4.1,
+       "inv": 22.8
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [],
+    "away": []
+   },
+   "lineup_confirmed": false,
+   "previous": [],
+   "odds": {
+    "home": {
+     "odd": 4.82,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 4.33,
+      "Bet365": 4.5,
+      "Betfair": 4.33,
+      "BetVictor": 4.33
+     }
+    },
+    "draw": {
+     "odd": 3.84,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.5,
+      "Bet365": 3.6,
+      "Betfair": 3.7,
+      "BetVictor": 3.6
+     }
+    },
+    "away": {
+     "odd": 1.83,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 1.75,
+      "Bet365": 1.8,
+      "Betfair": 1.75,
+      "BetVictor": 1.73
+     }
+    },
+    "over25": {
+     "odd": 1.97,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.91,
+      "Betfair": 1.85,
+      "BetVictor": 1.84
+     }
+    },
+    "under25": {
+     "odd": 1.97,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.91,
+      "Betfair": 1.85,
+      "BetVictor": 1.83
+     }
+    },
+    "btts_yes": {
+     "odd": 1.8,
+     "bookie": "William Hill",
+     "books": {
+      "William Hill": 1.8,
+      "Bet365": 1.8,
+      "Betfair": 1.8,
+      "BetVictor": 1.78
+     }
+    },
+    "btts_no": {
+     "odd": 1.95,
+     "bookie": "William Hill",
+     "books": {
+      "William Hill": 1.95,
+      "Bet365": 1.95,
+      "Betfair": 1.91,
+      "BetVictor": 1.93
      }
     },
     "cards_over45": null,
