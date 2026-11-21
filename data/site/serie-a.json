@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-21T21:38:12.817809+00:00",
+ "updated": "2026-11-21T22:10:24.902777+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -3039,11 +3039,10 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 7.2,
+     "goals_lost_pct": 8.2,
      "defence_hit_pct": 4.0,
      "key_out": [
       "C. Volpato",
-      "D. Berardi",
       "F. Leysen",
       "Vasilije Adžić"
      ]
@@ -3054,13 +3053,13 @@
      "key_out": []
     }
    },
-   "home_pct": 33.2,
+   "home_pct": 32.8,
    "draw_pct": 27.9,
-   "away_pct": 39.0,
-   "xg_home": 1.28,
+   "away_pct": 39.3,
+   "xg_home": 1.26,
    "xg_away": 1.4,
-   "over25": 50.1,
-   "btts": 55.3,
+   "over25": 49.7,
+   "btts": 55.0,
    "cards5": 36.3,
    "cards": {
     "exp": 3.96,
@@ -4005,12 +4004,12 @@
        "inv": 25.7
       },
       {
-       "id": 339872,
-       "name": "Vasilije Adžić",
+       "id": 455245,
+       "name": "D. Bakola",
        "pos": "Midfielder",
-       "g": 15.6,
-       "a": 9.0,
-       "inv": 23.2
+       "g": 5.5,
+       "a": 16.7,
+       "inv": 21.3
       }
      ]
     },
@@ -4111,6 +4110,18 @@
    "injuries": {
     "home": [
      {
+      "id": 339872,
+      "name": "V. Adzic",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 291780,
+      "name": "D. Boloca",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
       "id": 328046,
       "name": "I. Kone",
       "type": "Missing Fixture",
@@ -4123,21 +4134,9 @@
       "reason": "Knee Injury"
      },
      {
-      "id": 339872,
-      "name": "V. Adzic",
-      "type": "Questionable",
-      "reason": "Knee Injury"
-     },
-     {
-      "id": 30537,
-      "name": "D. Berardi",
-      "type": "Questionable",
-      "reason": "Inactive"
-     },
-     {
-      "id": 291780,
-      "name": "D. Boloca",
-      "type": "Questionable",
+      "id": 342035,
+      "name": "C. Volpato",
+      "type": "Missing Fixture",
       "reason": "Muscle Injury"
      },
      {
@@ -4145,12 +4144,6 @@
       "name": "Y. Paz",
       "type": "Questionable",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 342035,
-      "name": "C. Volpato",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
      }
     ],
     "away": [
