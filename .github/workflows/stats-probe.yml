@@ -18,15 +18,10 @@ jobs:
               if g['league']['id'] in (39,40,140,78,135,61): ids.append(g['fixture']['id']); print(g['fixture']['id'],g['league']['name'],g['teams']['home']['name'],g['fixture']['status']['elapsed'],'stats_in_fixture:',len(g.get('statistics') or []))
           open('/tmp/ids','w').write(' '.join(map(str,ids[:3])))
           "
-          for i in $(cat /tmp/ids); do
-            echo "== statistics fixture=$i"
-            curl -s -H "$H" "$B/fixtures/statistics?fixture=$i" | python3 -c "
+          IDS=$(python3 -c "print('-'.join(sorted(open('/tmp/ids').read().split(), key=int)))")
+          echo "== multi ids=$IDS"
+          curl -s -H "$H" "$B/fixtures?ids=$IDS" | python3 -c "
           import sys,json
-          d=json.load(sys.stdin); print('errors',d.get('errors'),'results',d.get('results'),'paging',d.get('paging'))
-          for t in d.get('response',[]): print(t['team']['name'],[(s['type'],s['value']) for s in t['statistics']][:8])
+          d=json.load(sys.stdin); print('errors',d.get('errors'),'results',d.get('results'))
+          for g in d.get('response',[]): print(g['fixture']['id'],g['teams']['home']['name'],'stats',len(g.get('statistics') or []),[ (s['type'],s['value']) for s in (g.get('statistics') or [{'statistics':[]}])[0]['statistics']][:20])
           "
-            echo "== ids= bulk"; curl -s -H "$H" "$B/fixtures?ids=$i" | python3 -c "
-          import sys,json
-          d=json.load(sys.stdin); g=(d.get('response') or [{}])[0]; print('errors',d.get('errors'),'stats',len(g.get('statistics') or []),'events',len(g.get('events') or []),'status',(g.get('fixture') or {}).get('status'))
-          "
-          done
