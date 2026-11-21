@@ -3,7 +3,7 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-21T15:38:15.756848+00:00",
+ "updated": "2026-11-21T16:08:15.659351+00:00",
  "matches_used": 698,
  "fixtures": [
   {
@@ -26,8 +26,8 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 4.3,
-     "defence_hit_pct": 10.0,
+     "goals_lost_pct": 7.0,
+     "defence_hit_pct": 12.0,
      "key_out": [
       "D. Hashioka",
       "H. Bolin",
@@ -36,21 +36,20 @@
      ]
     },
     "away": {
-     "goals_lost_pct": 4.6,
-     "defence_hit_pct": 2.0,
+     "goals_lost_pct": 8.9,
+     "defence_hit_pct": 0.0,
      "key_out": [
-      "S. Guirassy",
-      "W. Anton"
+      "S. Guirassy"
      ]
     }
    },
-   "home_pct": 15.7,
-   "draw_pct": 22.1,
-   "away_pct": 62.2,
-   "xg_home": 0.94,
-   "xg_away": 2.04,
-   "over25": 57.3,
-   "btts": 53.7,
+   "home_pct": 15.4,
+   "draw_pct": 22.6,
+   "away_pct": 62.1,
+   "xg_home": 0.89,
+   "xg_away": 1.99,
+   "over25": 55.0,
+   "btts": 51.8,
    "cards5": 36.7,
    "cards": {
     "exp": 3.98,
@@ -1073,6 +1072,18 @@
    "injuries": {
     "home": [
      {
+      "id": 335095,
+      "name": "H. Bolin",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 33095,
+      "name": "D. Hashioka",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
       "id": 38114,
       "name": "K. Itakura",
       "type": "Missing Fixture",
@@ -1091,28 +1102,16 @@
       "reason": "Knee Injury"
      },
      {
+      "id": 462217,
+      "name": "J. Leszczynski",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
       "id": 327646,
       "name": "L. Ullrich",
       "type": "Missing Fixture",
       "reason": "Broken collarbone"
-     },
-     {
-      "id": 335095,
-      "name": "H. Bolin",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 33095,
-      "name": "D. Hashioka",
-      "type": "Questionable",
-      "reason": "Injury"
-     },
-     {
-      "id": 462217,
-      "name": "J. Leszczynski",
-      "type": "Questionable",
-      "reason": "Knee Injury"
      }
     ],
     "away": [
@@ -1121,6 +1120,18 @@
       "name": "E. Can",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
+     },
+     {
+      "id": 138935,
+      "name": "C. Chukwuemeka",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 21393,
+      "name": "S. Guirassy",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
      },
      {
       "id": 478991,
@@ -1139,24 +1150,6 @@
       "name": "J. Lerma",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 25368,
-      "name": "W. Anton",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 138935,
-      "name": "C. Chukwuemeka",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 21393,
-      "name": "S. Guirassy",
-      "type": "Questionable",
-      "reason": "Thigh Injury"
      }
     ]
    },
@@ -1652,18 +1645,18 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.7,
+     "goals_lost_pct": 0.0,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 58.9,
+   "home_pct": 58.8,
    "draw_pct": 25.6,
-   "away_pct": 15.5,
+   "away_pct": 15.6,
    "xg_home": 1.69,
-   "xg_away": 0.75,
-   "over25": 44.1,
-   "btts": 44.0,
+   "xg_away": 0.76,
+   "over25": 44.3,
+   "btts": 44.2,
    "cards5": 39.6,
    "cards": {
     "exp": 4.15,
@@ -2596,12 +2589,6 @@
       "name": "M. Hoffmeier",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 25059,
-      "name": "T. Baack",
-      "type": "Questionable",
-      "reason": "Injury"
      }
     ]
    },
@@ -4204,7 +4191,7 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 3.2,
+     "goals_lost_pct": 5.5,
      "defence_hit_pct": 4.0,
      "key_out": [
       "F. Uduokhai",
@@ -4217,13 +4204,13 @@
      "key_out": []
     }
    },
-   "home_pct": 18.3,
-   "draw_pct": 22.1,
-   "away_pct": 59.6,
-   "xg_home": 1.1,
+   "home_pct": 17.8,
+   "draw_pct": 22.0,
+   "away_pct": 60.2,
+   "xg_home": 1.07,
    "xg_away": 2.1,
-   "over25": 61.8,
-   "btts": 59.1,
+   "over25": 61.3,
+   "btts": 58.4,
    "cards5": 30.7,
    "cards": {
     "exp": 3.63,
@@ -5215,6 +5202,12 @@
    "injuries": {
     "home": [
      {
+      "id": 430354,
+      "name": "L. Burcu",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
       "id": 14330,
       "name": "J. Juranovic",
       "type": "Missing Fixture",
@@ -5243,12 +5236,6 @@
       "name": "F. Uduokhai",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 430354,
-      "name": "L. Burcu",
-      "type": "Questionable",
-      "reason": "Injury"
      }
     ],
     "away": [
@@ -5741,11 +5728,9 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.3,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "L. Pinckert"
-     ]
+     "goals_lost_pct": 0.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
     },
     "away": {
      "goals_lost_pct": 0.0,
@@ -5753,13 +5738,13 @@
      "key_out": []
     }
    },
-   "home_pct": 44.1,
-   "draw_pct": 22.1,
-   "away_pct": 33.8,
-   "xg_home": 2.07,
-   "xg_away": 1.81,
-   "over25": 74.5,
-   "btts": 73.8,
+   "home_pct": 45.6,
+   "draw_pct": 22.2,
+   "away_pct": 32.2,
+   "xg_home": 2.08,
+   "xg_away": 1.74,
+   "over25": 73.5,
+   "btts": 72.8,
    "cards5": 34.9,
    "cards": {
     "exp": 3.88,
@@ -6725,12 +6710,6 @@
       "name": "N. Mickelson",
       "type": "Missing Fixture",
       "reason": "Injury"
-     },
-     {
-      "id": 177731,
-      "name": "L. Pinckert",
-      "type": "Missing Fixture",
-      "reason": "Ankle Injury"
      },
      {
       "id": 583807,
@@ -12049,7 +12028,7 @@
    "goals": {
     "home": {
      "fh": 42.04217212151905,
-     "sh": 58.47140163222194,
+     "sh": 58.471401632221955,
      "any": 75.93092643765755
     },
     "away": {
@@ -12058,7 +12037,7 @@
      "any": 76.22091174667689
     },
     "match_fh": 69.6974825855674,
-    "match_sh": 81.11243971624381
+    "match_sh": 81.11243971624383
    },
    "players": {
     "home": {
