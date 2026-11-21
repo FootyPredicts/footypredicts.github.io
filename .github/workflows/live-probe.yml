@@ -1,0 +1,17 @@
+name: live-probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe
+        env:
+          K: ${{ secrets.API_FOOTBALL_KEY }}
+        run: |
+          B=https://v3.football.api-sports.io
+          for P in "fixtures?date=$(date -u +%F)&timezone=Europe/London" "standings?league=39&season=2026" "fixtures?live=all&timezone=Europe/London"; do
+            echo "== $P"
+            curl -s -D /tmp/h -o /tmp/b -H "x-apisports-key: $K" "$B/$P"
+            grep -i "HTTP/\|x-ratelimit-remaining\|content-length" /tmp/h | tr -d '\r' | tr '\n' ' '; echo
+            python3 -c "import json;d=json.load(open('/tmp/b'));print('errors',d.get('errors'),'results',d.get('results'))"
+          done
