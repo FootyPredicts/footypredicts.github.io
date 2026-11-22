@@ -7380,7 +7380,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T23:29:03Z"
   },
   {
    "id": 1558686,
@@ -7410,7 +7413,23 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 32,
+     "side": "away",
+     "player": "F. Lemarechal",
+     "own": false
+    },
+    {
+     "min": 36,
+     "side": "away",
+     "player": "N. Tresoldi",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-21T23:29:03Z"
   },
   {
    "id": 1558688,
@@ -7440,7 +7459,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T23:29:03Z"
   },
   {
    "id": 1576240,
@@ -7470,7 +7492,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 47,
+     "side": "home",
+     "player": "Tomoya Ando",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T23:29:03Z"
   },
   {
    "id": 1556711,
@@ -7500,7 +7532,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 21,
+     "side": "home",
+     "player": "Jake Max Girdwood-Reich",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T23:29:04Z"
   },
   {
    "id": 1570461,
@@ -7530,7 +7572,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T23:29:04Z"
   },
   {
    "id": 1550204,
@@ -7560,7 +7605,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T23:29:04Z"
   },
   {
    "id": 1552231,
@@ -7590,7 +7638,23 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 22,
+     "side": "away",
+     "player": "Dylan Mbayo",
+     "own": false
+    },
+    {
+     "min": 31,
+     "side": "away",
+     "player": "Dylan Mbayo",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-21T23:29:04Z"
   },
   {
    "id": 1552538,
@@ -7620,7 +7684,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T23:29:05Z"
   },
   {
    "id": 1552826,
@@ -7650,25 +7717,28 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-21T23:29:05Z"
   }
  ],
  "summary": {
   "by_minute": {
    "0-30": {
-    "flags": 29,
-    "wins": 7,
-    "avg_model_chance": 0.459
+    "flags": 35,
+    "wins": 10,
+    "avg_model_chance": 0.464
    },
    "30-60": {
-    "flags": 75,
-    "wins": 34,
-    "avg_model_chance": 0.454
+    "flags": 78,
+    "wins": 35,
+    "avg_model_chance": 0.457
    },
    "60-75": {
-    "flags": 38,
+    "flags": 39,
     "wins": 16,
-    "avg_model_chance": 0.474
+    "avg_model_chance": 0.473
    },
    "75+": {
     "flags": 61,
@@ -7677,12 +7747,12 @@
    }
   },
   "flags": 213,
-  "resolved": 203,
-  "wins": 77,
-  "hit_rate": 0.379,
-  "avg_model_chance": 0.435,
-  "side_flags": 174,
-  "side_scored": 43,
-  "updated": "2026-11-21T20:21:10Z"
+  "resolved": 213,
+  "wins": 81,
+  "hit_rate": 0.38,
+  "avg_model_chance": 0.438,
+  "side_flags": 182,
+  "side_scored": 45,
+  "updated": "2026-11-22T01:23:35Z"
  }
 }
