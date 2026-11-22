@@ -7856,7 +7856,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:01:16Z"
   },
   {
    "id": 1576234,
@@ -7886,7 +7889,23 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 89,
+     "side": "away",
+     "player": "Deyovaisio Zeefuik",
+     "own": false
+    },
+    {
+     "min": 90,
+     "side": "away",
+     "player": "Gustaf Nilsson",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-22T16:01:17Z"
   },
   {
    "id": 1558681,
@@ -7916,7 +7935,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:01:18Z"
   },
   {
    "id": 1570030,
@@ -7946,7 +7968,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 59,
+     "side": "home",
+     "player": "Diego Bri",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:01:19Z"
   },
   {
    "id": 1584471,
@@ -7976,7 +8008,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:01:19Z"
   },
   {
    "id": 1584473,
@@ -8006,7 +8041,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 63,
+     "side": "home",
+     "player": "E. Destan",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-22T16:01:19Z"
   },
   {
    "id": 1552225,
@@ -8036,7 +8081,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:01:19Z"
   },
   {
    "id": 1576237,
@@ -8066,7 +8114,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:01:20Z"
   },
   {
    "id": 1576238,
@@ -8096,7 +8147,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:01:21Z"
   },
   {
    "id": 1601605,
@@ -8126,39 +8180,172 @@
      "xg": null
     }
    },
+   "result": "win",
+   "goals": [
+    {
+     "min": 31,
+     "side": "home",
+     "player": "Walid Cheddira",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:01:22Z"
+  },
+  {
+   "id": 1575224,
+   "lg": 78,
+   "home": "FC Augsburg",
+   "away": "FSV Mainz 05",
+   "date": "2026-11-22",
+   "at": "2026-11-22T16:04:24Z",
+   "min": 73,
+   "sh": 3,
+   "sa": 1,
+   "who": "home",
+   "who_name": "FC Augsburg",
+   "ratio": 1.43,
+   "P": 0.555,
+   "stats": {
+    "h": {
+     "sh": 16,
+     "sot": 8,
+     "co": 5,
+     "xg": null
+    },
+    "a": {
+     "sh": 5,
+     "sot": 2,
+     "co": 0,
+     "xg": null
+    }
+   },
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T16:19:29Z"
+  },
+  {
+   "id": 1593363,
+   "lg": 197,
+   "home": "Panathinaikos",
+   "away": "OFI",
+   "date": "2026-11-22",
+   "at": "2026-11-22T16:10:25Z",
+   "min": 31,
+   "sh": 0,
+   "sa": 0,
+   "who": "both sides",
+   "who_name": "both sides",
+   "ratio": 1.42,
+   "P": 0.453,
+   "stats": {
+    "h": {
+     "sh": 4,
+     "sot": 2,
+     "co": 1,
+     "xg": null
+    },
+    "a": {
+     "sh": 1,
+     "sot": 1,
+     "co": 1,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1558685,
+   "lg": 144,
+   "home": "Kortrijk",
+   "away": "Union St. Gilloise",
+   "date": "2026-11-22",
+   "at": "2026-11-22T16:19:29Z",
+   "min": 58,
+   "sh": 0,
+   "sa": 0,
+   "who": "away",
+   "who_name": "Union St. Gilloise",
+   "ratio": 1.42,
+   "P": 0.453,
+   "stats": {
+    "h": {
+     "sh": 8,
+     "sot": 2,
+     "co": 4,
+     "xg": null
+    },
+    "a": {
+     "sh": 7,
+     "sot": 1,
+     "co": 1,
+     "xg": null
+    }
+   },
+   "result": "open"
+  },
+  {
+   "id": 1575224,
+   "lg": 78,
+   "home": "FC Augsburg",
+   "away": "FSV Mainz 05",
+   "date": "2026-11-22",
+   "at": "2026-11-22T16:19:29Z",
+   "min": 88,
+   "sh": 3,
+   "sa": 1,
+   "who": "away",
+   "who_name": "FSV Mainz 05",
+   "ratio": 1.39,
+   "P": 0.306,
+   "stats": {
+    "h": {
+     "sh": 18,
+     "sot": 8,
+     "co": 5,
+     "xg": null
+    },
+    "a": {
+     "sh": 7,
+     "sot": 4,
+     "co": 0,
+     "xg": null
+    }
+   },
    "result": "open"
   }
  ],
  "summary": {
   "by_minute": {
    "0-30": {
-    "flags": 35,
-    "wins": 10,
-    "avg_model_chance": 0.464
+    "flags": 37,
+    "wins": 11,
+    "avg_model_chance": 0.466
    },
    "30-60": {
-    "flags": 78,
-    "wins": 35,
-    "avg_model_chance": 0.457
+    "flags": 82,
+    "wins": 37,
+    "avg_model_chance": 0.46
    },
    "60-75": {
-    "flags": 41,
+    "flags": 42,
     "wins": 17,
-    "avg_model_chance": 0.472
+    "avg_model_chance": 0.474
    },
    "75+": {
-    "flags": 62,
-    "wins": 20,
-    "avg_model_chance": 0.376
+    "flags": 66,
+    "wins": 21,
+    "avg_model_chance": 0.377
    }
   },
-  "flags": 226,
-  "resolved": 216,
-  "wins": 82,
-  "hit_rate": 0.38,
-  "avg_model_chance": 0.438,
-  "side_flags": 184,
-  "side_scored": 45,
-  "updated": "2026-11-22T14:20:58Z"
+  "flags": 230,
+  "resolved": 227,
+  "wins": 86,
+  "hit_rate": 0.379,
+  "avg_model_chance": 0.439,
+  "side_flags": 194,
+  "side_scored": 47,
+  "updated": "2026-11-22T16:21:00Z"
  }
 }
