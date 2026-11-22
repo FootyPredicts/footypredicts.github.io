@@ -3,1434 +3,9 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-22T19:08:22.942786+00:00",
+ "updated": "2026-11-22T19:38:09.085305+00:00",
  "matches_used": 711,
  "fixtures": [
-  {
-   "id": 1552821,
-   "kickoff": "2026-11-22T16:15:00",
-   "round": "Regular Season - 11",
-   "home": "Lorient",
-   "away": "Rennes",
-   "referee": "M. Bollengier",
-   "ref_cards": 4.1,
-   "ref_games": 39,
-   "pick": "Home",
-   "model_pick": "Home",
-   "call_reason": "",
-   "low_data": false,
-   "market": {
-    "home": 31.9,
-    "draw": 28.6,
-    "away": 39.5
-   },
-   "injury_effect": {
-    "home": {
-     "goals_lost_pct": 3.4,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "S. Touré"
-     ]
-    },
-    "away": {
-     "goals_lost_pct": 1.1,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "P. Frankowski"
-     ]
-    }
-   },
-   "home_pct": 40.3,
-   "draw_pct": 25.8,
-   "away_pct": 33.9,
-   "xg_home": 1.6,
-   "xg_away": 1.45,
-   "over25": 58.6,
-   "btts": 61.8,
-   "cards5": 33.9,
-   "cards": {
-    "exp": 3.84,
-    "home": 1.67,
-    "away": 2.16,
-    "over": {
-     "2.5": 73.3,
-     "3.5": 53.1,
-     "4.5": 33.9,
-     "5.5": 19.2,
-     "6.5": 9.7
-    }
-   },
-   "form": {
-    "home": {
-     "played": 5,
-     "win": 40.0,
-     "over25": 40.0,
-     "btts": 40.0
-    },
-    "away": {
-     "played": 4,
-     "win": 25.0,
-     "over25": 100.0,
-     "btts": 75.0
-    }
-   },
-   "venue": {
-    "home": {
-     "games": [
-      {
-       "date": "29/08/2026",
-       "home": "Lorient",
-       "away": "Estac Troyes",
-       "hg": 1,
-       "ag": 2,
-       "ht": [
-        0,
-        2
-       ],
-       "ref": "A. Souifi",
-       "sx": {
-        "h": {
-         "pos": 67.0,
-         "xg": 1.15,
-         "sh": 15.0,
-         "sot": 6.0,
-         "co": 2.0,
-         "fo": 9.0,
-         "of": 0.0,
-         "sv": 0.0,
-         "pp": 88.0,
-         "yc": 0.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 33.0,
-         "xg": 2.12,
-         "sh": 11.0,
-         "sot": 2.0,
-         "co": 5.0,
-         "fo": 11.0,
-         "of": 3.0,
-         "sv": 4.0,
-         "pp": 75.0,
-         "yc": 0.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Renaud Ripart",
-         "t": "a",
-         "m": 29
-        },
-        {
-         "n": "Lucas Maronnier",
-         "t": "a",
-         "m": 38
-        },
-        {
-         "n": "Jean Victor Makengo",
-         "t": "h",
-         "m": 51
-        }
-       ],
-       "cards": []
-      },
-      {
-       "date": "12/09/2026",
-       "home": "Lorient",
-       "away": "Toulouse",
-       "hg": 2,
-       "ag": 2,
-       "ht": [
-        2,
-        0
-       ],
-       "ref": "A. Petit",
-       "sx": {
-        "h": {
-         "pos": 41.0,
-         "xg": 0.93,
-         "sh": 10.0,
-         "sot": 3.0,
-         "co": 4.0,
-         "fo": 8.0,
-         "of": 2.0,
-         "sv": 2.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 59.0,
-         "xg": 1.63,
-         "sh": 13.0,
-         "sot": 4.0,
-         "co": 3.0,
-         "fo": 18.0,
-         "of": 1.0,
-         "sv": 1.0,
-         "yc": 0.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "I. Balde",
-         "t": "h",
-         "m": 37
-        },
-        {
-         "n": "N. Mbamba",
-         "t": "h",
-         "m": 39
-        },
-        {
-         "n": "C. Tengstedt",
-         "t": "a",
-         "m": 48
-        },
-        {
-         "n": "T. Jorgensen",
-         "t": "a",
-         "m": 69
-        }
-       ],
-       "cards": [
-        {
-         "n": "Panos Katseris",
-         "t": "h",
-         "m": 17,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "10/10/2026",
-       "home": "Lorient",
-       "away": "Paris FC",
-       "hg": 1,
-       "ag": 0,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "J. Brisard",
-       "sx": {
-        "h": {
-         "pos": 40.0,
-         "xg": 0.6,
-         "sh": 8.0,
-         "sot": 5.0,
-         "co": 3.0,
-         "fo": 9.0,
-         "of": 0.0,
-         "sv": 3.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 60.0,
-         "xg": 0.99,
-         "sh": 17.0,
-         "sot": 3.0,
-         "co": 9.0,
-         "fo": 13.0,
-         "of": 3.0,
-         "sv": 3.0,
-         "yc": 5.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Gabin Bernardeau",
-         "t": "h",
-         "m": 68
-        }
-       ],
-       "cards": [
-        {
-         "n": "Lassine Sinayoko",
-         "t": "a",
-         "m": 52,
-         "r": false
-        },
-        {
-         "n": "Samir Chergui",
-         "t": "a",
-         "m": 58,
-         "r": false
-        },
-        {
-         "n": "Hamari Traore",
-         "t": "a",
-         "m": 58,
-         "r": false
-        },
-        {
-         "n": "Montassar Talbi",
-         "t": "h",
-         "m": 70,
-         "r": false
-        },
-        {
-         "n": "Patrick Zabi",
-         "t": "a",
-         "m": 74,
-         "r": false
-        },
-        {
-         "n": "Maxime López",
-         "t": "a",
-         "m": 90,
-         "r": false
-        },
-        {
-         "n": "A. Dujeux",
-         "t": "h",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "18/10/2026",
-       "home": "Lorient",
-       "away": "Monaco",
-       "hg": 1,
-       "ag": 0,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "M. Bollengier",
-       "sx": {
-        "h": {
-         "pos": 42.0,
-         "xg": 1.78,
-         "sh": 9.0,
-         "sot": 3.0,
-         "co": 3.0,
-         "fo": 10.0,
-         "of": 1.0,
-         "sv": 4.0,
-         "yc": 2.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 58.0,
-         "xg": 0.63,
-         "sh": 15.0,
-         "sot": 4.0,
-         "co": 4.0,
-         "fo": 17.0,
-         "of": 0.0,
-         "sv": 2.0,
-         "yc": 4.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Noah Cadiou",
-         "t": "h",
-         "m": 61
-        }
-       ],
-       "cards": [
-        {
-         "n": "Mohammed Salisu",
-         "t": "a",
-         "m": 57,
-         "r": false
-        },
-        {
-         "n": "Denis Zakaria",
-         "t": "a",
-         "m": 60,
-         "r": false
-        },
-        {
-         "n": "Flavio Nazinho",
-         "t": "a",
-         "m": 60,
-         "r": false
-        },
-        {
-         "n": "Noah Cadiou",
-         "t": "h",
-         "m": 66,
-         "r": false
-        },
-        {
-         "n": "Arsène Kouassi",
-         "t": "h",
-         "m": 76,
-         "r": false
-        },
-        {
-         "n": "Christian Mawissa",
-         "t": "a",
-         "m": 80,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "02/11/2026",
-       "home": "Lorient",
-       "away": "Stade Brestois 29",
-       "hg": 0,
-       "ag": 2,
-       "ht": [
-        0,
-        0
-       ],
-       "ref": "J. Pignard",
-       "sx": {
-        "h": {
-         "pos": 52.0,
-         "xg": 1.78,
-         "sh": 15.0,
-         "sot": 0.0,
-         "co": 8.0,
-         "fo": 11.0,
-         "of": 1.0,
-         "sv": 2.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 48.0,
-         "xg": 1.33,
-         "sh": 12.0,
-         "sot": 4.0,
-         "co": 2.0,
-         "fo": 16.0,
-         "of": 0.0,
-         "sv": 0.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Ludovic Ajorque",
-         "t": "a",
-         "m": 69
-        },
-        {
-         "n": "Noah Edjouma",
-         "t": "a",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Mama Baldé",
-         "t": "a",
-         "m": 41,
-         "r": false
-        },
-        {
-         "n": "Isaak Touré",
-         "t": "h",
-         "m": 58,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 5,
-     "w": 2,
-     "d": 1,
-     "l": 2,
-     "last5": "LDWWL",
-     "gf": 1.0,
-     "ga": 1.2,
-     "cs": 40,
-     "fts": 20,
-     "sh": 11.4,
-     "sot": 3.4,
-     "co": 4.0,
-     "yc": 1.0
-    },
-    "away": {
-     "games": [
-      {
-       "date": "06/09/2026",
-       "home": "Angers",
-       "away": "Rennes",
-       "hg": 1,
-       "ag": 2,
-       "ht": [
-        1,
-        2
-       ],
-       "ref": "G. Kubler",
-       "sx": {
-        "h": {
-         "pos": 44.0,
-         "xg": 1.66,
-         "sh": 19.0,
-         "sot": 3.0,
-         "co": 12.0,
-         "fo": 10.0,
-         "of": 0.0,
-         "sv": 4.0,
-         "yc": 1.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 56.0,
-         "xg": 1.54,
-         "sh": 17.0,
-         "sot": 5.0,
-         "co": 6.0,
-         "fo": 15.0,
-         "of": 2.0,
-         "sv": 2.0,
-         "yc": 1.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "P. Frankowski",
-         "t": "a",
-         "m": 9
-        },
-        {
-         "n": "C. Arcus",
-         "t": "h",
-         "m": 35
-        }
-       ],
-       "cards": [
-        {
-         "n": "Charlie Cresswell",
-         "t": "a",
-         "m": 58,
-         "r": false
-        },
-        {
-         "n": "Joseph Kalulu",
-         "t": "h",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "19/09/2026",
-       "home": "Lyon",
-       "away": "Rennes",
-       "hg": 4,
-       "ag": 0,
-       "ht": [
-        2,
-        0
-       ],
-       "ref": "M. Vernice",
-       "sx": {
-        "h": {
-         "pos": 45.0,
-         "xg": 3.13,
-         "sh": 15.0,
-         "sot": 9.0,
-         "co": 3.0,
-         "fo": 13.0,
-         "of": 2.0,
-         "sv": 4.0,
-         "pp": 84.0,
-         "yc": 4.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 55.0,
-         "xg": 1.37,
-         "sh": 13.0,
-         "sot": 4.0,
-         "co": 8.0,
-         "fo": 14.0,
-         "of": 0.0,
-         "sv": 5.0,
-         "pp": 84.0,
-         "yc": 2.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Ernest Nuamah",
-         "t": "h",
-         "m": 7
-        },
-        {
-         "n": "Ernest Nuamah",
-         "t": "h",
-         "m": 30
-        },
-        {
-         "n": "Zachary Athekame",
-         "t": "h",
-         "m": 48
-        },
-        {
-         "n": "Corentin Tolisso",
-         "t": "h",
-         "m": 76
-        }
-       ],
-       "cards": [
-        {
-         "n": "Moussa Niakhaté",
-         "t": "h",
-         "m": 2,
-         "r": false
-        },
-        {
-         "n": "Quentin Merlin",
-         "t": "a",
-         "m": 16,
-         "r": false
-        },
-        {
-         "n": "Pavel Šulc",
-         "t": "h",
-         "m": 60,
-         "r": false
-        },
-        {
-         "n": "Valentin Rongier",
-         "t": "a",
-         "m": 81,
-         "r": false
-        },
-        {
-         "n": "Zachary Athekame",
-         "t": "h",
-         "m": 86,
-         "r": false
-        },
-        {
-         "n": "Noah Nartey",
-         "t": "h",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "18/10/2026",
-       "home": "Paris FC",
-       "away": "Rennes",
-       "hg": 4,
-       "ag": 3,
-       "ht": [
-        2,
-        1
-       ],
-       "ref": "B. Dechepy",
-       "sx": {
-        "h": {
-         "pos": 53.0,
-         "xg": 3.65,
-         "sh": 19.0,
-         "sot": 9.0,
-         "co": 3.0,
-         "fo": 13.0,
-         "of": 1.0,
-         "sv": 4.0,
-         "yc": 3.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 47.0,
-         "xg": 3.37,
-         "sh": 12.0,
-         "sot": 7.0,
-         "co": 4.0,
-         "fo": 16.0,
-         "of": 0.0,
-         "sv": 4.0,
-         "yc": 4.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Maxime López",
-         "t": "h",
-         "m": 14
-        },
-        {
-         "n": "Esteban Lepaul",
-         "t": "a",
-         "m": 29
-        },
-        {
-         "n": "Maxime López",
-         "t": "h",
-         "m": 45
-        },
-        {
-         "n": "Esteban Lepaul",
-         "t": "a",
-         "m": 74
-        },
-        {
-         "n": "Lassine Sinayoko",
-         "t": "h",
-         "m": 76
-        },
-        {
-         "n": "Esteban Lepaul",
-         "t": "a",
-         "m": 88
-        },
-        {
-         "n": "Lassine Sinayoko",
-         "t": "h",
-         "m": 90
-        }
-       ],
-       "cards": [
-        {
-         "n": "Przemysław Frankowski",
-         "t": "a",
-         "m": 23,
-         "r": false
-        },
-        {
-         "n": "Djaoui Cissé",
-         "t": "a",
-         "m": 32,
-         "r": false
-        },
-        {
-         "n": "Adrien Thomasson",
-         "t": "a",
-         "m": 36,
-         "r": false
-        },
-        {
-         "n": "Anthony Rouault",
-         "t": "a",
-         "m": 36,
-         "r": false
-        },
-        {
-         "n": "Samir Chergui",
-         "t": "h",
-         "m": 42,
-         "r": false
-        },
-        {
-         "n": "Ilan Kebbal",
-         "t": "h",
-         "m": 67,
-         "r": false
-        },
-        {
-         "n": "Hamari Traore",
-         "t": "h",
-         "m": 90,
-         "r": false
-        }
-       ]
-      },
-      {
-       "date": "30/10/2026",
-       "home": "Nice",
-       "away": "Rennes",
-       "hg": 5,
-       "ag": 2,
-       "ht": [
-        3,
-        1
-       ],
-       "ref": "E. Wattellier",
-       "sx": {
-        "h": {
-         "pos": 47.0,
-         "xg": 3.52,
-         "sh": 17.0,
-         "sot": 8.0,
-         "co": 4.0,
-         "fo": 8.0,
-         "of": 2.0,
-         "sv": 7.0,
-         "yc": 4.0,
-         "rc": 0.0
-        },
-        "a": {
-         "pos": 53.0,
-         "xg": 2.67,
-         "sh": 18.0,
-         "sot": 9.0,
-         "co": 7.0,
-         "fo": 10.0,
-         "of": 3.0,
-         "sv": 3.0,
-         "yc": 3.0,
-         "rc": 0.0
-        }
-       },
-       "goals": [
-        {
-         "n": "Sepe Elye Wahi",
-         "t": "h",
-         "m": 12
-        },
-        {
-         "n": "Sebastian Szymański",
-         "t": "a",
-         "m": 15
-        },
-        {
-         "n": "Sepe Elye Wahi",
-         "t": "h",
-         "m": 34
-        },
-        {
-         "n": "Jonathan Clauss",
-         "t": "h",
-         "m": 45
-        },
-        {
-         "n": "Mohamed Amoura",
-         "t": "h",
-         "m": 52
-        },
-        {
-         "n": "Boulaye Dia",
-         "t": "a",
-         "m": 58
-        },
-        {
-         "n": "Sepe Elye Wahi",
-         "t": "h",
-         "m": 73
-        }
-       ],
-       "cards": [
-        {
-         "n": "Anthony Rouault",
-         "t": "a",
-         "m": 61,
-         "r": false
-        },
-        {
-         "n": "Sepe Elye Wahi",
-         "t": "h",
-         "m": 62,
-         "r": false
-        },
-        {
-         "n": "Charlie Cresswell",
-         "t": "a",
-         "m": 84,
-         "r": false
-        },
-        {
-         "n": "Mohamed Abdelmoneim",
-         "t": "h",
-         "m": 84,
-         "r": false
-        },
-        {
-         "n": "Mahdi Camara",
-         "t": "a",
-         "m": 84,
-         "r": false
-        },
-        {
-         "n": "Youssouf Ndayishimiye",
-         "t": "h",
-         "m": 84,
-         "r": false
-        },
-        {
-         "n": "Mohamed Amoura",
-         "t": "h",
-         "m": 88,
-         "r": false
-        }
-       ]
-      }
-     ],
-     "played": 4,
-     "w": 1,
-     "d": 0,
-     "l": 3,
-     "last5": "WLLL",
-     "gf": 1.75,
-     "ga": 3.5,
-     "cs": 0,
-     "fts": 25,
-     "sh": 15.0,
-     "sot": 6.2,
-     "co": 6.2,
-     "yc": 2.5
-    }
-   },
-   "goals": {
-    "home": {
-     "fh": 47.13876957340026,
-     "sh": 56.99053593599377,
-     "any": 77.26466809588007
-    },
-    "away": {
-     "fh": 51.263892328638086,
-     "sh": 56.72088500420127,
-     "any": 78.907443916435
-    },
-    "match_fh": 74.23749382288563,
-    "match_sh": 81.38588458866202
-   },
-   "players": {
-    "home": {
-     "scorers": [
-      {
-       "id": 22171,
-       "name": "J. Makengo",
-       "p": 27.6,
-       "gl": 2,
-       "as": 0,
-       "ap": 10,
-       "price": {
-        "odd": 5.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 5.5
-        }
-       }
-      },
-      {
-       "id": 608028,
-       "name": "M. Kone",
-       "p": 21.9,
-       "gl": 1,
-       "as": 1,
-       "ap": 9,
-       "price": {
-        "odd": 3.4,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.4
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 402386,
-       "name": "K. Kouassi",
-       "p": 17.9,
-       "yc": 2,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      },
-      {
-       "id": 214310,
-       "name": "N. Adjei",
-       "p": 17.8,
-       "yc": 2,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 50030,
-      "name": "M. Talbi",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 608028,
-       "name": "M. Kone",
-       "pos": "Attacker",
-       "g": 21.9,
-       "a": 12.7,
-       "inv": 31.8
-      },
-      {
-       "id": 22171,
-       "name": "J. Makengo",
-       "pos": "Attacker",
-       "g": 27.6,
-       "a": 5.8,
-       "inv": 31.7
-      },
-      {
-       "id": 402386,
-       "name": "K. Kouassi",
-       "pos": "Midfielder",
-       "g": 8.1,
-       "a": 23.8,
-       "inv": 30.0
-      },
-      {
-       "id": 274278,
-       "name": "I. Baldé",
-       "pos": "Attacker",
-       "g": 19.2,
-       "a": 6.0,
-       "inv": 24.1
-      }
-     ]
-    },
-    "away": {
-     "scorers": [
-      {
-       "id": 163004,
-       "name": "E. Lepaul",
-       "p": 33.1,
-       "gl": 7,
-       "as": 0,
-       "ap": 7,
-       "price": {
-        "odd": 2.62,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.62
-        }
-       }
-      },
-      {
-       "id": 22015,
-       "name": "B. Dia",
-       "p": 16.0,
-       "gl": 5,
-       "as": 0,
-       "ap": 8,
-       "price": {
-        "odd": 2.62,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.62
-        }
-       }
-      }
-     ],
-     "bookings": [
-      {
-       "id": 129681,
-       "name": "A. Rouault",
-       "p": 24.1,
-       "yc": 2,
-       "rc": 0,
-       "ap": 6,
-       "price": null
-      },
-      {
-       "id": 22261,
-       "name": "A. Thomasson",
-       "p": 21.4,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      }
-     ],
-     "defender": {
-      "id": 438281,
-      "name": "M. Nagida",
-      "sot": 3
-     },
-     "cap": [
-      {
-       "id": 163004,
-       "name": "E. Lepaul",
-       "pos": "Attacker",
-       "g": 33.1,
-       "a": 3.1,
-       "inv": 35.1
-      },
-      {
-       "id": 40403,
-       "name": "S. Szymański",
-       "pos": "Midfielder",
-       "g": 13.5,
-       "a": 6.9,
-       "inv": 19.5
-      },
-      {
-       "id": 22015,
-       "name": "B. Dia",
-       "pos": "Attacker",
-       "g": 16.0,
-       "a": 2.1,
-       "inv": 17.7
-      },
-      {
-       "id": 22261,
-       "name": "A. Thomasson",
-       "pos": "Midfielder",
-       "g": 7.1,
-       "a": 9.9,
-       "inv": 16.3
-      }
-     ]
-    }
-   },
-   "injuries": {
-    "home": [
-     {
-      "id": 162018,
-      "name": "B. Fadiga",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 384112,
-      "name": "P. Katseris",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
-      "id": 195893,
-      "name": "I. Toure",
-      "type": "Missing Fixture",
-      "reason": "Groin Injury"
-     }
-    ],
-    "away": [
-     {
-      "id": 3007,
-      "name": "P. Frankowski",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     }
-    ]
-   },
-   "lineup_confirmed": true,
-   "previous": [
-    {
-     "date": "24/01/2026",
-     "home": "Rennes",
-     "away": "Lorient",
-     "hg": 0,
-     "ag": 2,
-     "ht": [
-      0,
-      1
-     ],
-     "ref": "C. Turpin",
-     "sx": {
-      "h": {
-       "pos": 69.0,
-       "xg": 1.76,
-       "sh": 22.0,
-       "sot": 5.0,
-       "co": 9.0,
-       "fo": 18.0,
-       "of": 3.0,
-       "sv": 2.0,
-       "pp": 88.0,
-       "yc": 2.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 31.0,
-       "xg": 1.29,
-       "sh": 6.0,
-       "sot": 4.0,
-       "co": 3.0,
-       "fo": 7.0,
-       "of": 1.0,
-       "sv": 5.0,
-       "pp": 68.0,
-       "yc": 0.0,
-       "rc": 0.0
-      }
-     },
-     "goals": [
-      {
-       "n": "J. Makengo",
-       "t": "a",
-       "m": 3
-      },
-      {
-       "n": "P. Pagis",
-       "t": "a",
-       "m": 77
-      }
-     ],
-     "cards": [
-      {
-       "n": "Esteban Lepaul",
-       "t": "h",
-       "m": 19,
-       "r": false
-      },
-      {
-       "n": "Valentin Rongier",
-       "t": "h",
-       "m": 32,
-       "r": false
-      }
-     ]
-    },
-    {
-     "date": "24/08/2025",
-     "home": "Lorient",
-     "away": "Rennes",
-     "hg": 4,
-     "ag": 0,
-     "ht": [
-      1,
-      0
-     ],
-     "ref": "J. Brisard",
-     "sx": {
-      "h": {
-       "pos": 51.0,
-       "xg": 3.04,
-       "sh": 22.0,
-       "sot": 7.0,
-       "co": 3.0,
-       "fo": 18.0,
-       "of": 4.0,
-       "sv": 1.0,
-       "pp": 88.0,
-       "yc": 6.0,
-       "rc": 0.0
-      },
-      "a": {
-       "pos": 49.0,
-       "xg": 0.08,
-       "sh": 4.0,
-       "sot": 1.0,
-       "co": 2.0,
-       "fo": 7.0,
-       "of": 2.0,
-       "sv": 3.0,
-       "pp": 87.0,
-       "yc": 0.0,
-       "rc": 2.0
-      }
-     },
-     "goals": [
-      {
-       "n": "S. Soumano",
-       "t": "h",
-       "m": 45
-      },
-      {
-       "n": "A. Tosin",
-       "t": "h",
-       "m": 47
-      },
-      {
-       "n": "P. Pagis",
-       "t": "h",
-       "m": 65
-      },
-      {
-       "n": "T. Le Bris",
-       "t": "h",
-       "m": 69
-      }
-     ],
-     "cards": [
-      {
-       "n": "Mahdi Camara",
-       "t": "a",
-       "m": 6,
-       "r": true
-      },
-      {
-       "n": "Christopher Wooh",
-       "t": "a",
-       "m": 11,
-       "r": true
-      },
-      {
-       "n": "Karim Dermane",
-       "t": "h",
-       "m": 35,
-       "r": false
-      },
-      {
-       "n": "Formose Mendy",
-       "t": "h",
-       "m": 41,
-       "r": false
-      },
-      {
-       "n": "Sambou Soumano",
-       "t": "h",
-       "m": 45,
-       "r": false
-      },
-      {
-       "n": "Arsène Kouassi",
-       "t": "h",
-       "m": 71,
-       "r": false
-      },
-      {
-       "n": "Panos Katseris",
-       "t": "h",
-       "m": 84,
-       "r": false
-      },
-      {
-       "n": "Laurent Abergel",
-       "t": "h",
-       "m": 86,
-       "r": false
-      }
-     ]
-    }
-   ],
-   "odds": {
-    "home": {
-     "odd": 3.12,
-     "bookie": "Pinnacle",
-     "books": {
-      "William Hill": 2.9,
-      "Bet365": 2.9,
-      "Betfair": 3.0,
-      "BetVictor": 2.9
-     }
-    },
-    "draw": {
-     "odd": 3.53,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 3.25,
-      "Bet365": 3.3,
-      "Betfair": 3.3,
-      "BetVictor": 3.2
-     }
-    },
-    "away": {
-     "odd": 2.49,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 2.3,
-      "Bet365": 2.45,
-      "Betfair": 2.4,
-      "BetVictor": 2.3
-     }
-    },
-    "over25": {
-     "odd": 2.14,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 2.0,
-      "Betfair": 2.1,
-      "BetVictor": 1.97
-     }
-    },
-    "under25": {
-     "odd": 1.86,
-     "bookie": "1xBet",
-     "books": {
-      "Bet365": 1.8,
-      "Betfair": 1.73,
-      "BetVictor": 1.72
-     }
-    },
-    "btts_yes": {
-     "odd": 1.83,
-     "bookie": "William Hill",
-     "books": {
-      "William Hill": 1.83,
-      "Bet365": 1.8,
-      "Betfair": 1.8,
-      "BetVictor": 1.78
-     }
-    },
-    "btts_no": {
-     "odd": 1.96,
-     "bookie": "1xBet",
-     "books": {
-      "William Hill": 1.95,
-      "Bet365": 1.95,
-      "Betfair": 1.95,
-      "BetVictor": 1.93
-     }
-    },
-    "cards_over45": {
-     "odd": 2.53,
-     "bookie": "Pinnacle",
-     "books": {
-      "Bet365": 2.1
-     }
-    },
-    "cards": {
-     "2.5": {
-      "over": {
-       "odd": 1.31,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 3.25,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "3.5": {
-      "over": {
-       "odd": 1.7,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 2.22,
-       "bookie": "Pinnacle",
-       "books": {}
-      }
-     },
-     "4.5": {
-      "over": {
-       "odd": 2.53,
-       "bookie": "Pinnacle",
-       "books": {
-        "Bet365": 2.1
-       }
-      },
-      "under": {
-       "odd": 1.67,
-       "bookie": "Bet365",
-       "books": {
-        "Bet365": 1.67
-       }
-      }
-     },
-     "5.5": {
-      "over": {
-       "odd": 3.4,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.29,
-       "bookie": "Betano",
-       "books": {}
-      }
-     },
-     "6.5": {
-      "over": {
-       "odd": 5.1,
-       "bookie": "Betano",
-       "books": {}
-      },
-      "under": {
-       "odd": 1.15,
-       "bookie": "Betano",
-       "books": {}
-      }
-     }
-    }
-   }
-  },
   {
    "id": 1552822,
    "kickoff": "2026-11-22T19:45:00",
@@ -1451,7 +26,7 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 2.3,
+     "goals_lost_pct": 0.5,
      "defence_hit_pct": 4.0,
      "key_out": [
       "Emerson"
@@ -1465,13 +40,13 @@
      ]
     }
    },
-   "home_pct": 70.7,
-   "draw_pct": 17.2,
-   "away_pct": 12.1,
-   "xg_home": 2.61,
+   "home_pct": 71.4,
+   "draw_pct": 16.8,
+   "away_pct": 11.7,
+   "xg_home": 2.66,
    "xg_away": 1.03,
-   "over25": 70.4,
-   "btts": 60.1,
+   "over25": 71.2,
+   "btts": 60.3,
    "cards5": 35.1,
    "cards": {
     "exp": 3.9,
@@ -2595,12 +1170,12 @@
        "inv": 14.5
       },
       {
-       "id": 20535,
-       "name": "H. Diallo",
-       "pos": "Attacker",
-       "g": 11.2,
-       "a": 3.2,
-       "inv": 14.0
+       "id": 274254,
+       "name": "L. Bretelle",
+       "pos": "Midfielder",
+       "g": 3.0,
+       "a": 9.3,
+       "inv": 12.1
       }
      ]
     }
@@ -2618,12 +1193,6 @@
       "name": "Emerson",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 2735,
-      "name": "P. Hojbjerg",
-      "type": "Questionable",
-      "reason": "Illness"
      }
     ],
     "away": [
@@ -2641,7 +1210,7 @@
      }
     ]
    },
-   "lineup_confirmed": false,
+   "lineup_confirmed": true,
    "previous": [],
    "odds": {
     "home": {
@@ -13770,6 +12339,1492 @@
       "William Hill": 2.5,
       "Bet365": 2.5,
       "Betfair": 2.55
+     }
+    },
+    "cards_over45": null,
+    "cards": {
+     "2.5": {
+      "over": null,
+      "under": null
+     },
+     "3.5": {
+      "over": null,
+      "under": null
+     },
+     "4.5": {
+      "over": null,
+      "under": null
+     },
+     "5.5": {
+      "over": null,
+      "under": null
+     },
+     "6.5": {
+      "over": null,
+      "under": null
+     }
+    }
+   }
+  },
+  {
+   "id": 1552833,
+   "kickoff": "2026-11-29T19:45:00",
+   "round": "Regular Season - 12",
+   "home": "Lyon",
+   "away": "Monaco",
+   "referee": "",
+   "ref_cards": null,
+   "ref_games": null,
+   "pick": "Home",
+   "model_pick": "Home",
+   "call_reason": "",
+   "low_data": false,
+   "market": {
+    "home": 41.1,
+    "draw": 26.8,
+    "away": 32.1
+   },
+   "injury_effect": {
+    "home": {
+     "goals_lost_pct": 8.1,
+     "defence_hit_pct": 0.0,
+     "key_out": [
+      "L. Openda"
+     ]
+    },
+    "away": {
+     "goals_lost_pct": 3.4,
+     "defence_hit_pct": 0.0,
+     "key_out": []
+    }
+   },
+   "home_pct": 45.7,
+   "draw_pct": 27.6,
+   "away_pct": 26.7,
+   "xg_home": 1.51,
+   "xg_away": 1.1,
+   "over25": 48.5,
+   "btts": 53.0,
+   "cards5": 35.7,
+   "cards": {
+    "exp": 3.92,
+    "home": 1.83,
+    "away": 2.09,
+    "over": {
+     "2.5": 74.6,
+     "3.5": 54.9,
+     "4.5": 35.7,
+     "5.5": 20.6,
+     "6.5": 10.6
+    }
+   },
+   "form": {
+    "home": {
+     "played": 5,
+     "win": 80.0,
+     "over25": 60.0,
+     "btts": 60.0
+    },
+    "away": {
+     "played": 6,
+     "win": 33.33333333333333,
+     "over25": 33.33333333333333,
+     "btts": 66.66666666666666
+    }
+   },
+   "venue": {
+    "home": {
+     "games": [
+      {
+       "date": "29/08/2026",
+       "home": "Lyon",
+       "away": "Le Havre",
+       "hg": 1,
+       "ag": 1,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "F. Letexier",
+       "sx": {
+        "h": {
+         "pos": 57.0,
+         "xg": 1.75,
+         "sh": 15.0,
+         "sot": 5.0,
+         "co": 5.0,
+         "fo": 7.0,
+         "of": 5.0,
+         "sv": 3.0,
+         "pp": 85.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 43.0,
+         "xg": 0.69,
+         "sh": 12.0,
+         "sot": 4.0,
+         "co": 5.0,
+         "fo": 16.0,
+         "of": 3.0,
+         "sv": 5.0,
+         "pp": 82.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Ally Samatta",
+         "t": "a",
+         "m": 74
+        },
+        {
+         "n": "Loïs Openda",
+         "t": "h",
+         "m": 87
+        }
+       ],
+       "cards": [
+        {
+         "n": "Ayumu Seko",
+         "t": "a",
+         "m": 41,
+         "r": false
+        },
+        {
+         "n": "Fodé Doucouré",
+         "t": "a",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "04/09/2026",
+       "home": "Lyon",
+       "away": "Auxerre",
+       "hg": 3,
+       "ag": 1,
+       "ht": [
+        2,
+        1
+       ],
+       "ref": "R. Buquet",
+       "sx": {
+        "h": {
+         "pos": 63.0,
+         "xg": 2.85,
+         "sh": 21.0,
+         "sot": 7.0,
+         "co": 9.0,
+         "fo": 11.0,
+         "of": 2.0,
+         "sv": 2.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 37.0,
+         "xg": 0.71,
+         "sh": 8.0,
+         "sot": 3.0,
+         "co": 5.0,
+         "fo": 8.0,
+         "of": 0.0,
+         "sv": 5.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "F. Bacher",
+         "t": "h",
+         "m": 28
+        },
+        {
+         "n": "Z. Athekame",
+         "t": "h",
+         "m": 31
+        },
+        {
+         "n": "C. Archer",
+         "t": "a",
+         "m": 42
+        },
+        {
+         "n": "E. Nuamah",
+         "t": "h",
+         "m": 53
+        }
+       ],
+       "cards": [
+        {
+         "n": "Arthur Piedfort",
+         "t": "a",
+         "m": 26,
+         "r": false
+        },
+        {
+         "n": "Felix Bacher",
+         "t": "h",
+         "m": 62,
+         "r": false
+        },
+        {
+         "n": "Rayan Mandengue",
+         "t": "a",
+         "m": 68,
+         "r": false
+        },
+        {
+         "n": "Tyler Morton",
+         "t": "h",
+         "m": 77,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "19/09/2026",
+       "home": "Lyon",
+       "away": "Rennes",
+       "hg": 4,
+       "ag": 0,
+       "ht": [
+        2,
+        0
+       ],
+       "ref": "M. Vernice",
+       "sx": {
+        "h": {
+         "pos": 45.0,
+         "xg": 3.13,
+         "sh": 15.0,
+         "sot": 9.0,
+         "co": 3.0,
+         "fo": 13.0,
+         "of": 2.0,
+         "sv": 4.0,
+         "pp": 84.0,
+         "yc": 4.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 55.0,
+         "xg": 1.37,
+         "sh": 13.0,
+         "sot": 4.0,
+         "co": 8.0,
+         "fo": 14.0,
+         "of": 0.0,
+         "sv": 5.0,
+         "pp": 84.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Ernest Nuamah",
+         "t": "h",
+         "m": 7
+        },
+        {
+         "n": "Ernest Nuamah",
+         "t": "h",
+         "m": 30
+        },
+        {
+         "n": "Zachary Athekame",
+         "t": "h",
+         "m": 48
+        },
+        {
+         "n": "Corentin Tolisso",
+         "t": "h",
+         "m": 76
+        }
+       ],
+       "cards": [
+        {
+         "n": "Moussa Niakhaté",
+         "t": "h",
+         "m": 2,
+         "r": false
+        },
+        {
+         "n": "Quentin Merlin",
+         "t": "a",
+         "m": 16,
+         "r": false
+        },
+        {
+         "n": "Pavel Šulc",
+         "t": "h",
+         "m": 60,
+         "r": false
+        },
+        {
+         "n": "Valentin Rongier",
+         "t": "a",
+         "m": 81,
+         "r": false
+        },
+        {
+         "n": "Zachary Athekame",
+         "t": "h",
+         "m": 86,
+         "r": false
+        },
+        {
+         "n": "Noah Nartey",
+         "t": "h",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "18/10/2026",
+       "home": "Lyon",
+       "away": "Nice",
+       "hg": 2,
+       "ag": 1,
+       "ht": [
+        2,
+        1
+       ],
+       "ref": "F. Letexier",
+       "sx": {
+        "h": {
+         "pos": 48.0,
+         "xg": 1.59,
+         "sh": 8.0,
+         "sot": 4.0,
+         "co": 1.0,
+         "fo": 6.0,
+         "of": 0.0,
+         "sv": 3.0,
+         "yc": 0.0,
+         "rc": 1.0
+        },
+        "a": {
+         "pos": 52.0,
+         "xg": 1.61,
+         "sh": 12.0,
+         "sot": 5.0,
+         "co": 9.0,
+         "fo": 14.0,
+         "of": 3.0,
+         "sv": 2.0,
+         "yc": 4.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Sepe Elye Wahi",
+         "t": "a",
+         "m": 18
+        },
+        {
+         "n": "Pavel Šulc",
+         "t": "h",
+         "m": 32
+        },
+        {
+         "n": "Tanner Tessmann",
+         "t": "h",
+         "m": 36
+        }
+       ],
+       "cards": [
+        {
+         "n": "Niels Nkounkou",
+         "t": "a",
+         "m": 10,
+         "r": false
+        },
+        {
+         "n": "Mohamed Abdelmoneim",
+         "t": "a",
+         "m": 48,
+         "r": false
+        },
+        {
+         "n": "Mohamed Amoura",
+         "t": "a",
+         "m": 65,
+         "r": false
+        },
+        {
+         "n": "Keito Nakamura",
+         "t": "h",
+         "m": 70,
+         "r": true
+        },
+        {
+         "n": "Sepe Elye Wahi",
+         "t": "a",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "01/11/2026",
+       "home": "Lyon",
+       "away": "Angers",
+       "hg": 2,
+       "ag": 0,
+       "ht": [
+        1,
+        0
+       ],
+       "ref": "M. Bollengier",
+       "sx": {
+        "h": {
+         "pos": 64.0,
+         "xg": 2.44,
+         "sh": 22.0,
+         "sot": 5.0,
+         "co": 4.0,
+         "fo": 16.0,
+         "of": 1.0,
+         "sv": 2.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 36.0,
+         "xg": 0.81,
+         "sh": 8.0,
+         "sot": 2.0,
+         "co": 3.0,
+         "fo": 6.0,
+         "of": 1.0,
+         "sv": 3.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Ernest Nuamah",
+         "t": "h",
+         "m": 38
+        },
+        {
+         "n": "Corentin Tolisso",
+         "t": "h",
+         "m": 86
+        }
+       ],
+       "cards": [
+        {
+         "n": "Jordan Lefort",
+         "t": "a",
+         "m": 88,
+         "r": false
+        }
+       ]
+      }
+     ],
+     "played": 5,
+     "w": 4,
+     "d": 1,
+     "l": 0,
+     "last5": "DWWWW",
+     "gf": 2.4,
+     "ga": 0.6,
+     "cs": 40,
+     "fts": 0,
+     "sh": 16.2,
+     "sot": 6.0,
+     "co": 4.4,
+     "yc": 1.2
+    },
+    "away": {
+     "games": [
+      {
+       "date": "04/09/2026",
+       "home": "Paris Saint Germain",
+       "away": "Monaco",
+       "hg": 1,
+       "ag": 2,
+       "ht": [
+        1,
+        0
+       ],
+       "ref": "J. Brisard",
+       "sx": {
+        "h": {
+         "pos": 68.0,
+         "xg": 2.32,
+         "sh": 23.0,
+         "sot": 10.0,
+         "co": 6.0,
+         "fo": 9.0,
+         "of": 5.0,
+         "sv": 0.0,
+         "pp": 91.0,
+         "yc": 1.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 32.0,
+         "xg": 0.51,
+         "sh": 4.0,
+         "sot": 2.0,
+         "co": 0.0,
+         "fo": 11.0,
+         "of": 2.0,
+         "sv": 9.0,
+         "pp": 83.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Marquinhos",
+         "t": "h",
+         "m": 31
+        },
+        {
+         "n": "Nazinho",
+         "t": "a",
+         "m": 58
+        },
+        {
+         "n": "S. Idumbo",
+         "t": "a",
+         "m": 72
+        }
+       ],
+       "cards": [
+        {
+         "n": "Lucas Hernández",
+         "t": "h",
+         "m": 68,
+         "r": false
+        },
+        {
+         "n": "Jordan Teze",
+         "t": "a",
+         "m": 68,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "12/09/2026",
+       "home": "Strasbourg",
+       "away": "Monaco",
+       "hg": 1,
+       "ag": 1,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "E. Wattellier",
+       "sx": {
+        "h": {
+         "pos": 44.0,
+         "xg": 1.02,
+         "sh": 13.0,
+         "sot": 2.0,
+         "co": 2.0,
+         "fo": 9.0,
+         "of": 0.0,
+         "sv": 2.0,
+         "pp": 84.0,
+         "yc": 1.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 56.0,
+         "xg": 1.05,
+         "sh": 12.0,
+         "sot": 3.0,
+         "co": 7.0,
+         "fo": 10.0,
+         "of": 3.0,
+         "sv": 2.0,
+         "pp": 91.0,
+         "yc": 1.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "P. Brunner",
+         "t": "a",
+         "m": 72
+        }
+       ],
+       "cards": [
+        {
+         "n": "Pape Diop",
+         "t": "h",
+         "m": 78,
+         "r": false
+        },
+        {
+         "n": "Aleksandr Golovin",
+         "t": "a",
+         "m": 90,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "18/10/2026",
+       "home": "Lorient",
+       "away": "Monaco",
+       "hg": 1,
+       "ag": 0,
+       "ht": [
+        0,
+        0
+       ],
+       "ref": "M. Bollengier",
+       "sx": {
+        "h": {
+         "pos": 42.0,
+         "xg": 1.78,
+         "sh": 9.0,
+         "sot": 3.0,
+         "co": 3.0,
+         "fo": 10.0,
+         "of": 1.0,
+         "sv": 4.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 58.0,
+         "xg": 0.63,
+         "sh": 15.0,
+         "sot": 4.0,
+         "co": 4.0,
+         "fo": 17.0,
+         "of": 0.0,
+         "sv": 2.0,
+         "yc": 4.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Noah Cadiou",
+         "t": "h",
+         "m": 61
+        }
+       ],
+       "cards": [
+        {
+         "n": "Mohammed Salisu",
+         "t": "a",
+         "m": 57,
+         "r": false
+        },
+        {
+         "n": "Denis Zakaria",
+         "t": "a",
+         "m": 60,
+         "r": false
+        },
+        {
+         "n": "Flavio Nazinho",
+         "t": "a",
+         "m": 60,
+         "r": false
+        },
+        {
+         "n": "Noah Cadiou",
+         "t": "h",
+         "m": 66,
+         "r": false
+        },
+        {
+         "n": "Arsène Kouassi",
+         "t": "h",
+         "m": 76,
+         "r": false
+        },
+        {
+         "n": "Christian Mawissa",
+         "t": "a",
+         "m": 80,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "01/11/2026",
+       "home": "Paris FC",
+       "away": "Monaco",
+       "hg": 3,
+       "ag": 1,
+       "ht": [
+        2,
+        0
+       ],
+       "ref": "J. Stinat",
+       "sx": {
+        "h": {
+         "pos": 44.0,
+         "xg": 2.19,
+         "sh": 19.0,
+         "sot": 10.0,
+         "co": 3.0,
+         "fo": 13.0,
+         "of": 1.0,
+         "sv": 2.0,
+         "yc": 2.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 56.0,
+         "xg": 0.69,
+         "sh": 9.0,
+         "sot": 2.0,
+         "co": 2.0,
+         "fo": 15.0,
+         "of": 1.0,
+         "sv": 7.0,
+         "yc": 2.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Lassine Sinayoko",
+         "t": "h",
+         "m": 38
+        },
+        {
+         "n": "Lassine Sinayoko",
+         "t": "h",
+         "m": 44
+        },
+        {
+         "n": "Folarin Balogun",
+         "t": "a",
+         "m": 65
+        },
+        {
+         "n": "Pablo Pagis",
+         "t": "h",
+         "m": 74
+        }
+       ],
+       "cards": [
+        {
+         "n": "Vanderson",
+         "t": "a",
+         "m": 68,
+         "r": false
+        },
+        {
+         "n": "Hamari Traore",
+         "t": "h",
+         "m": 85,
+         "r": false
+        },
+        {
+         "n": "Lamine Camara",
+         "t": "a",
+         "m": 88,
+         "r": false
+        },
+        {
+         "n": "Pablo Pagis",
+         "t": "h",
+         "m": 88,
+         "r": false
+        }
+       ]
+      },
+      {
+       "date": "08/11/2026",
+       "home": "Le Mans",
+       "away": "Monaco",
+       "hg": 1,
+       "ag": 1,
+       "ht": [
+        0,
+        1
+       ],
+       "ref": "B. Dechepy",
+       "sx": {
+        "h": {
+         "pos": 48.0,
+         "xg": 1.53,
+         "sh": 19.0,
+         "sot": 5.0,
+         "co": 8.0,
+         "fo": 16.0,
+         "of": 2.0,
+         "sv": 2.0,
+         "yc": 0.0,
+         "rc": 0.0
+        },
+        "a": {
+         "pos": 52.0,
+         "xg": 1.02,
+         "sh": 6.0,
+         "sot": 3.0,
+         "co": 7.0,
+         "fo": 8.0,
+         "of": 3.0,
+         "sv": 4.0,
+         "yc": 0.0,
+         "rc": 0.0
+        }
+       },
+       "goals": [
+        {
+         "n": "Mamadou Coulibaly",
+         "t": "a",
+         "m": 40
+        },
+        {
+         "n": "Erwan Colas",
+         "t": "h",
+         "m": 90
+        }
+       ],
+       "cards": []
+      }
+     ],
+     "played": 6,
+     "w": 2,
+     "d": 2,
+     "l": 2,
+     "last5": "WDLLD",
+     "gf": 1.0,
+     "ga": 1.17,
+     "cs": 17,
+     "fts": 17,
+     "sh": 10.2,
+     "sot": 3.5,
+     "co": 4.0,
+     "yc": 1.7
+    }
+   },
+   "goals": {
+    "home": {
+     "fh": 48.34618138383075,
+     "sh": 55.608457197810765,
+     "any": 77.07007300003804
+    },
+    "away": {
+     "fh": 40.25899289168697,
+     "sh": 55.33860062327537,
+     "any": 73.31883022367887
+    },
+    "match_fh": 69.14148854879922,
+    "match_sh": 80.17411577962461
+   },
+   "players": {
+    "home": {
+     "scorers": [
+      {
+       "id": 350856,
+       "name": "E. Nuamah",
+       "p": 24.8,
+       "gl": 4,
+       "as": 1,
+       "ap": 8,
+       "price": {
+        "odd": 3.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.5
+        }
+       }
+      },
+      {
+       "id": 519,
+       "name": "C. Tolisso",
+       "p": 13.5,
+       "gl": 2,
+       "as": 3,
+       "ap": 11,
+       "price": {
+        "odd": 3.6,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.6
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 519,
+       "name": "C. Tolisso",
+       "p": 15.7,
+       "yc": 2,
+       "rc": 0,
+       "ap": 11,
+       "price": null
+      },
+      {
+       "id": 162590,
+       "name": "T. Morton",
+       "p": 13.3,
+       "yc": 1,
+       "rc": 0,
+       "ap": 7,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 7147,
+      "name": "F. Bacher",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 350856,
+       "name": "E. Nuamah",
+       "pos": "Attacker",
+       "g": 24.8,
+       "a": 9.1,
+       "inv": 31.6
+      },
+      {
+       "id": 519,
+       "name": "C. Tolisso",
+       "pos": "Midfielder",
+       "g": 13.5,
+       "a": 16.5,
+       "inv": 27.8
+      },
+      {
+       "id": 396380,
+       "name": "Z. Athekame",
+       "pos": "Defender",
+       "g": 8.2,
+       "a": 15.9,
+       "inv": 22.8
+      },
+      {
+       "id": 7147,
+       "name": "F. Bacher",
+       "pos": "Defender",
+       "g": 6.0,
+       "a": 6.7,
+       "inv": 12.3
+      }
+     ]
+    },
+    "away": {
+     "scorers": [
+      {
+       "id": 386276,
+       "name": "Paris Josua  Brunner",
+       "p": 19.4,
+       "gl": 4,
+       "as": 0,
+       "ap": 9,
+       "price": {
+        "odd": 2.62,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.62
+        }
+       }
+      },
+      {
+       "id": 374361,
+       "name": "E. Diop",
+       "p": 10.7,
+       "gl": 3,
+       "as": 1,
+       "ap": 6,
+       "price": {
+        "odd": 5.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 5.5
+        }
+       }
+      }
+     ],
+     "bookings": [
+      {
+       "id": 109,
+       "name": "A. Golovin",
+       "p": 22.8,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10,
+       "price": null
+      },
+      {
+       "id": 374058,
+       "name": "L. Camara",
+       "p": 21.8,
+       "yc": 3,
+       "rc": 0,
+       "ap": 11,
+       "price": null
+      }
+     ],
+     "defender": {
+      "id": 291649,
+      "name": "Vanderson",
+      "sot": 3
+     },
+     "cap": [
+      {
+       "id": 386276,
+       "name": "Paris Josua  Brunner",
+       "pos": "Attacker",
+       "g": 19.4,
+       "a": 2.6,
+       "inv": 21.5
+      },
+      {
+       "id": 109,
+       "name": "A. Golovin",
+       "pos": "Midfielder",
+       "g": 5.5,
+       "a": 14.9,
+       "inv": 19.5
+      },
+      {
+       "id": 374361,
+       "name": "E. Diop",
+       "pos": "Midfielder",
+       "g": 10.7,
+       "a": 6.8,
+       "inv": 16.7
+      },
+      {
+       "id": 161622,
+       "name": "M. Abline",
+       "pos": "Attacker",
+       "g": 9.7,
+       "a": 6.1,
+       "inv": 15.2
+      }
+     ]
+    }
+   },
+   "injuries": {
+    "home": [
+     {
+      "id": 86,
+      "name": "L. Openda",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
+     },
+     {
+      "id": 412049,
+      "name": "M. Ouédraogo",
+      "type": "Missing Fixture",
+      "reason": "Jumpers Knee"
+     },
+     {
+      "id": 66387,
+      "name": "P. Šulc",
+      "type": "Missing Fixture",
+      "reason": "Jumpers Knee"
+     }
+    ],
+    "away": [
+     {
+      "id": 340152,
+      "name": "S. Idumbo-Muzambo",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
+     }
+    ]
+   },
+   "lineup_confirmed": false,
+   "previous": [
+    {
+     "date": "22/03/2026",
+     "home": "Lyon",
+     "away": "Monaco",
+     "hg": 1,
+     "ag": 2,
+     "ht": [
+      1,
+      0
+     ],
+     "ref": "F. Letexier",
+     "sx": {
+      "h": {
+       "pos": 57.0,
+       "xg": 1.51,
+       "sh": 15.0,
+       "sot": 4.0,
+       "co": 2.0,
+       "fo": 11.0,
+       "of": 2.0,
+       "sv": 6.0,
+       "pp": 82.0,
+       "yc": 0.0,
+       "rc": 1.0
+      },
+      "a": {
+       "pos": 43.0,
+       "xg": 3.28,
+       "sh": 21.0,
+       "sot": 7.0,
+       "co": 6.0,
+       "fo": 19.0,
+       "of": 0.0,
+       "sv": 2.0,
+       "pp": 78.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "P. Sulc",
+       "t": "h",
+       "m": 42
+      },
+      {
+       "n": "M. Akliouche",
+       "t": "a",
+       "m": 62
+      },
+      {
+       "n": "F. Balogun",
+       "t": "a",
+       "m": 72
+      }
+     ],
+     "cards": [
+      {
+       "n": "Aleksandr Golovin",
+       "t": "a",
+       "m": 40,
+       "r": false
+      },
+      {
+       "n": "Wout Faes",
+       "t": "a",
+       "m": 53,
+       "r": false
+      },
+      {
+       "n": "Krépin Diatta",
+       "t": "a",
+       "m": 86,
+       "r": false
+      },
+      {
+       "n": "Nicolás Tagliafico",
+       "t": "h",
+       "m": 89,
+       "r": true
+      }
+     ]
+    },
+    {
+     "date": "03/01/2026",
+     "home": "Monaco",
+     "away": "Lyon",
+     "hg": 1,
+     "ag": 3,
+     "ht": [
+      1,
+      1
+     ],
+     "ref": "J. Brisard",
+     "sx": {
+      "h": {
+       "pos": 45.0,
+       "xg": 0.69,
+       "sh": 6.0,
+       "sot": 2.0,
+       "co": 7.0,
+       "fo": 14.0,
+       "of": 0.0,
+       "sv": 6.0,
+       "pp": 82.0,
+       "yc": 2.0,
+       "rc": 1.0
+      },
+      "a": {
+       "pos": 55.0,
+       "xg": 1.4,
+       "sh": 13.0,
+       "sot": 9.0,
+       "co": 2.0,
+       "fo": 12.0,
+       "of": 0.0,
+       "sv": 1.0,
+       "pp": 85.0,
+       "yc": 3.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "P. Sulc",
+       "t": "a",
+       "m": 38
+      },
+      {
+       "n": "M. Coulibaly",
+       "t": "h",
+       "m": 45
+      },
+      {
+       "n": "P. Sulc",
+       "t": "a",
+       "m": 57
+      },
+      {
+       "n": "Abner Vinicius",
+       "t": "a",
+       "m": 79
+      }
+     ],
+     "cards": [
+      {
+       "n": "Thilo Kehrer",
+       "t": "h",
+       "m": 7,
+       "r": false
+      },
+      {
+       "n": "Clinton Mata",
+       "t": "a",
+       "m": 35,
+       "r": false
+      },
+      {
+       "n": "Mamadou Coulibaly",
+       "t": "h",
+       "m": 70,
+       "r": true
+      },
+      {
+       "n": "Corentin Tolisso",
+       "t": "a",
+       "m": 70,
+       "r": false
+      },
+      {
+       "n": "Ruben Kluivert",
+       "t": "a",
+       "m": 70,
+       "r": false
+      },
+      {
+       "n": "Folarin Balogun",
+       "t": "h",
+       "m": 78,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "10/05/2025",
+     "home": "Monaco",
+     "away": "Lyon",
+     "hg": 2,
+     "ag": 0,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "B. Bastien",
+     "sx": {
+      "h": {
+       "pos": 51.0,
+       "xg": 1.16,
+       "sh": 11.0,
+       "sot": 5.0,
+       "co": 3.0,
+       "fo": 16.0,
+       "of": 0.0,
+       "sv": 4.0,
+       "pp": 85.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 49.0,
+       "xg": 0.39,
+       "sh": 9.0,
+       "sot": 4.0,
+       "co": 5.0,
+       "fo": 18.0,
+       "of": 3.0,
+       "sv": 3.0,
+       "pp": 82.0,
+       "yc": 4.0,
+       "rc": 0.0
+      }
+     },
+     "goals": [
+      {
+       "n": "T. Minamino",
+       "t": "h",
+       "m": 62
+      },
+      {
+       "n": "D. Zakaria",
+       "t": "h",
+       "m": 68
+      }
+     ],
+     "cards": [
+      {
+       "n": "Clinton Mata",
+       "t": "a",
+       "m": 9,
+       "r": false
+      },
+      {
+       "n": "Thiago Almada",
+       "t": "a",
+       "m": 45,
+       "r": false
+      },
+      {
+       "n": "Lamine Camara",
+       "t": "h",
+       "m": 59,
+       "r": false
+      },
+      {
+       "n": "Krépin Diatta",
+       "t": "h",
+       "m": 88,
+       "r": false
+      },
+      {
+       "n": "Moussa Niakhaté",
+       "t": "a",
+       "m": 90,
+       "r": false
+      },
+      {
+       "n": "Nicolás Tagliafico",
+       "t": "a",
+       "m": 90,
+       "r": false
+      }
+     ]
+    },
+    {
+     "date": "24/08/2024",
+     "home": "Lyon",
+     "away": "Monaco",
+     "hg": 0,
+     "ag": 2,
+     "ht": [
+      0,
+      0
+     ],
+     "ref": "S. Frappart",
+     "sx": {
+      "h": {
+       "pos": 39.0,
+       "xg": 0.03,
+       "sh": 1.0,
+       "sot": 0.0,
+       "co": 0.0,
+       "fo": 19.0,
+       "of": 4.0,
+       "sv": 4.0,
+       "pp": 78.0,
+       "yc": 2.0,
+       "rc": 0.0
+      },
+      "a": {
+       "pos": 61.0,
+       "xg": 2.26,
+       "sh": 21.0,
+       "sot": 6.0,
+       "co": 6.0,
+       "fo": 9.0,
+       "of": 1.0,
+       "sv": 0.0,
+       "pp": 86.0,
+       "yc": 3.0,
+       "rc": 1.0
+      }
+     }
+    }
+   ],
+   "odds": {
+    "home": {
+     "odd": 2.33,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 2.25,
+      "Bet365": 2.3,
+      "Betfair": 2.25
+     }
+    },
+    "draw": {
+     "odd": 3.74,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 3.4,
+      "Bet365": 3.5,
+      "Betfair": 3.5
+     }
+    },
+    "away": {
+     "odd": 3.13,
+     "bookie": "1xBet",
+     "books": {
+      "William Hill": 2.9,
+      "Bet365": 2.9,
+      "Betfair": 2.9
+     }
+    },
+    "over25": {
+     "odd": 1.84,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 1.8,
+      "Betfair": 1.73
+     }
+    },
+    "under25": {
+     "odd": 2.12,
+     "bookie": "1xBet",
+     "books": {
+      "Bet365": 2.0,
+      "Betfair": 2.0
+     }
+    },
+    "btts_yes": {
+     "odd": 1.65,
+     "bookie": "Betano",
+     "books": {
+      "William Hill": 1.62,
+      "Bet365": 1.62,
+      "Betfair": 1.6
+     }
+    },
+    "btts_no": {
+     "odd": 2.2,
+     "bookie": "William Hill",
+     "books": {
+      "William Hill": 2.2,
+      "Bet365": 2.2,
+      "Betfair": 2.2
      }
     },
     "cards_over45": null,
