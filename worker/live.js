@@ -93,19 +93,33 @@ async function sendPush(env, endpoint) {
 
 // One shared way to call API-Football: cached at the edge, but a failed answer (rate limit etc.) is never cached,
 // so one bad minute cannot keep the site empty for longer than that minute.
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// API-Football refuses bursts of calls, so every upstream call in this worker goes through one queue with a short gap.
+let gate = Promise.resolve();
+function queued(fn) {
+  const run = gate.then(fn);
+  gate = run.catch(() => {}).then(() => sleep(300));
+  return run;
+}
 async function apif(env, path, ttl) {
   const ck = new Request("https://cache.footypredicts.invalid/" + path);
   const cache = caches.default;
   const hit = await cache.match(ck);
   if (hit) return hit;
-  const r = await fetch("https://v3.football.api-sports.io/" + path, { headers: { "x-apisports-key": env.API_FOOTBALL_KEY } });
-  if (!r.ok) return r;
-  const txt = await r.text();
-  let bad = false;
-  try { const e = JSON.parse(txt).errors; bad = !!e && (Array.isArray(e) ? e.length > 0 : Object.keys(e).length > 0); } catch (e) { bad = true; }
+  let r, txt = "", bad = true;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    r = await queued(() => fetch("https://v3.football.api-sports.io/" + path, { headers: { "x-apisports-key": env.API_FOOTBALL_KEY } }));
+    if (!r.ok) return r;
+    txt = await r.text();
+    bad = false;
+    try { const e = JSON.parse(txt).errors; bad = !!e && (Array.isArray(e) ? e.length > 0 : Object.keys(e).length > 0); } catch (e) { bad = true; }
+    // Refused for going too fast: wait a moment and try again. Any other error is final.
+    if (bad && /rateLimit/i.test(txt) && attempt < 2) { await sleep(1200 * (attempt + 1)); continue; }
+    break;
+  }
   const sk = new Request("https://cache.footypredicts.invalid/stale/" + path);
   if (bad) {
-    // Rate limited or upstream trouble: serve the last good answer (up to 10 minutes old) rather than nothing.
+    // Still refused: serve the last good answer (up to 10 minutes old) rather than nothing.
     const old = await cache.match(sk);
     if (old) return old;
     return new Response(txt, { status: 429, headers: { "Content-Type": "application/json" } });
@@ -235,7 +249,8 @@ export default {
       // Diagnostics: what does API-Football say to this worker? Rate-limit numbers only, no account details.
       const out = [];
       for (let i = 0; i < 3; i++) {
-        const r = await fetch("https://v3.football.api-sports.io/fixtures?live=39", { headers: { "x-apisports-key": env.API_FOOTBALL_KEY } });
+        if (i) await sleep(400);
+        const r = await fetch("https://v3.football.api-sports.io/fixtures?live=all", { headers: { "x-apisports-key": env.API_FOOTBALL_KEY } });
         let e = null; try { e = (await r.json()).errors; } catch (x) { e = "unreadable"; }
         out.push({ status: r.status, minLimit: r.headers.get("x-ratelimit-limit"), minLeft: r.headers.get("x-ratelimit-remaining"), dayLeft: r.headers.get("x-ratelimit-requests-remaining"), retry: r.headers.get("retry-after"), cfRay: (r.headers.get("cf-ray") || "").slice(-3), errors: e });
       }
