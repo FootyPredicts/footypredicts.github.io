@@ -8458,7 +8458,17 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 35,
+     "side": "home",
+     "player": "Elif  Elmas",
+     "own": false
+    }
+   ],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T23:40:35Z"
   },
   {
    "id": 1570026,
@@ -8488,7 +8498,10 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "loss",
+   "goals": [],
+   "by_flagged_side": false,
+   "resolved_at": "2026-11-22T23:40:35Z"
   },
   {
    "id": 1570456,
@@ -8518,24 +8531,34 @@
      "xg": null
     }
    },
-   "result": "open"
+   "result": "win",
+   "goals": [
+    {
+     "min": 30,
+     "side": "away",
+     "player": "Johnny Cardoso",
+     "own": false
+    }
+   ],
+   "by_flagged_side": true,
+   "resolved_at": "2026-11-22T23:40:35Z"
   }
  ],
  "summary": {
   "by_minute": {
    "0-30": {
-    "flags": 40,
-    "wins": 11,
-    "avg_model_chance": 0.463
+    "flags": 41,
+    "wins": 12,
+    "avg_model_chance": 0.466
    },
    "30-60": {
-    "flags": 84,
-    "wins": 37,
-    "avg_model_chance": 0.46
+    "flags": 85,
+    "wins": 38,
+    "avg_model_chance": 0.461
    },
    "60-75": {
-    "flags": 49,
-    "wins": 19,
+    "flags": 42,
+    "wins": 17,
     "avg_model_chance": 0.474
    },
    "75+": {
@@ -8544,13 +8567,13 @@
     "avg_model_chance": 0.377
    }
   },
-  "flags": 255,
-  "resolved": 252,
-  "wins": 93,
-  "hit_rate": 0.369,
-  "avg_model_chance": 0.439,
-  "side_flags": 214,
-  "side_scored": 52,
-  "updated": "2026-11-22T20:29:35Z"
+  "flags": 236,
+  "resolved": 236,
+  "wins": 89,
+  "hit_rate": 0.377,
+  "avg_model_chance": 0.44,
+  "side_flags": 201,
+  "side_scored": 48,
+  "updated": "2026-11-23T01:35:04Z"
  }
 }
