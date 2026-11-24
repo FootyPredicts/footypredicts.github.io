@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-24T15:38:10.405935+00:00",
+ "updated": "2026-11-24T15:54:48.338662+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -2708,10 +2708,10 @@
       {
        "id": 178077,
        "name": "K. Schade",
-       "p": 23.7,
+       "p": 21.9,
        "gl": 3,
        "as": 0,
-       "ap": 10,
+       "ap": 11,
        "price": {
         "odd": 3.6,
         "bookie": "Bet365",
@@ -2725,10 +2725,10 @@
       {
        "id": 25073,
        "name": "V. Janelt",
-       "p": 40.2,
+       "p": 37.9,
        "yc": 6,
        "rc": 0,
-       "ap": 9,
+       "ap": 10,
        "price": null
       },
       {
@@ -2744,9 +2744,17 @@
      "defender": {
       "id": 106725,
       "name": "K. Lewis-Potter",
-      "sot": 3
+      "sot": 5
      },
      "cap": [
+      {
+       "id": 196855,
+       "name": "J. Anthony",
+       "pos": "Attacker",
+       "g": 17.2,
+       "a": 30.3,
+       "inv": 42.3
+      },
       {
        "id": 196156,
        "name": "Thiago",
@@ -2756,28 +2764,20 @@
        "inv": 39.8
       },
       {
-       "id": 196855,
-       "name": "J. Anthony",
-       "pos": "Attacker",
-       "g": 17.8,
-       "a": 19.0,
-       "inv": 33.5
+       "id": 106725,
+       "name": "K. Lewis-Potter",
+       "pos": "Defender",
+       "g": 21.5,
+       "a": 9.8,
+       "inv": 29.2
       },
       {
        "id": 178077,
        "name": "K. Schade",
        "pos": "Midfielder",
-       "g": 23.7,
-       "a": 4.5,
-       "inv": 27.1
-      },
-      {
-       "id": 106725,
-       "name": "K. Lewis-Potter",
-       "pos": "Defender",
-       "g": 13.4,
-       "a": 10.5,
-       "inv": 22.4
+       "g": 21.9,
+       "a": 4.2,
+       "inv": 25.2
       }
      ]
     }
@@ -6830,10 +6830,10 @@
       {
        "id": 343684,
        "name": "T. Barry",
-       "p": 29.3,
+       "p": 28.1,
        "gl": 6,
        "as": 1,
-       "ap": 10,
+       "ap": 11,
        "price": {
         "odd": 3.4,
         "bookie": "Bet365",
@@ -6845,10 +6845,10 @@
       {
        "id": 148099,
        "name": "K. Dewsbury-Hall",
-       "p": 15.8,
+       "p": 14.7,
        "gl": 3,
        "as": 1,
-       "ap": 10,
+       "ap": 11,
        "price": {
         "odd": 4.75,
         "bookie": "Bet365",
@@ -6860,21 +6860,21 @@
      ],
      "bookings": [
       {
-       "id": 405360,
-       "name": "H. Armstrong",
-       "p": 22.9,
+       "id": 2165,
+       "name": "V. Mykolenko",
+       "p": 23.0,
        "yc": 3,
        "rc": 0,
        "ap": 10,
        "price": null
       },
       {
-       "id": 895,
-       "name": "J. Garner",
-       "p": 22.3,
+       "id": 405360,
+       "name": "H. Armstrong",
+       "p": 21.6,
        "yc": 3,
        "rc": 0,
-       "ap": 10,
+       "ap": 11,
        "price": null
       }
      ],
@@ -6888,17 +6888,17 @@
        "id": 343684,
        "name": "T. Barry",
        "pos": "Attacker",
-       "g": 29.3,
-       "a": 8.0,
-       "inv": 35.0
+       "g": 28.1,
+       "a": 7.4,
+       "inv": 33.5
       },
       {
        "id": 148099,
        "name": "K. Dewsbury-Hall",
        "pos": "Midfielder",
-       "g": 15.8,
-       "a": 7.9,
-       "inv": 22.4
+       "g": 14.7,
+       "a": 7.3,
+       "inv": 21.0
       },
       {
        "id": 1456,
@@ -6912,8 +6912,8 @@
        "id": 405360,
        "name": "H. Armstrong",
        "pos": "Midfielder",
-       "g": 4.8,
-       "a": 7.8,
+       "g": 5.2,
+       "a": 7.3,
        "inv": 12.2
       }
      ]
@@ -14332,8 +14332,8 @@
     },
     "away": {
      "fh": 50.74247844530747,
-     "sh": 55.55024833179435,
-     "any": 78.1051539910263
+     "sh": 55.550248331794336,
+     "any": 78.10515399102628
     },
     "match_fh": 72.22631179945513,
     "match_sh": 81.68220688763593
