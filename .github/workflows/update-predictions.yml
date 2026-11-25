@@ -70,6 +70,10 @@ jobs:
       - name: Scottish Premiership fixtures (club pages)
         run: python -m pipeline.extra_leagues || echo "::warning::Extra leagues not refreshed"
 
+      - name: European goal scorers and cards (results page)
+        if: always()
+        run: python -m pipeline.euro_events || echo "::warning::European events not refreshed"
+
       - name: Update results page data
         if: always()
         run: python check_predictions.py || echo "::warning::Results update failed"

@@ -158,6 +158,7 @@ def main():
         results, events, stats, ids_by_name = {}, {}, {}, {}
         if lg in EURO:
             hist = os.path.join(BASE, "data", "history")
+            events = load(os.path.join(hist, f"events_{lg}.json"), {})
             for name in (os.listdir(hist) if os.path.isdir(hist) else []):
                 if name.startswith(lg + "_"):
                     for x in load(os.path.join(hist, name), []):
@@ -187,10 +188,10 @@ def main():
     # rows scored earlier may lack the goal/card lists: fill them in from the saved match events
     ev_cache = {}
     for r in rows:
-        if "goal_events" not in r:
+        if "goal_events" not in r or (r["league"] in EURO and not r["goal_events"] and not r["card_events"]):
             lg = r["league"]
             if lg not in ev_cache:
-                ev_cache[lg] = load(os.path.join(BASE, "data", lg, "match_events.json"), {})  # none for European competitions
+                ev_cache[lg] = load(os.path.join(BASE, "data", "history" if lg in EURO else lg, f"events_{lg}.json" if lg in EURO else "match_events.json"), {})
             r.update(event_lists(ev_cache[lg].get(str(r["id"]))))
     rows.sort(key=lambda r: r["kickoff"], reverse=True)
     by = defaultdict(list)
