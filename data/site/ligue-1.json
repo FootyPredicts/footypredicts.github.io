@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-24T21:38:23.440960+00:00",
+ "updated": "2026-11-25T03:32:49.501137+00:00",
  "matches_used": 714,
  "fixtures": [
   {
@@ -26,9 +26,12 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 3.8,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "K. Doumbia",
+      "K. Lala"
+     ]
     },
     "away": {
      "goals_lost_pct": 0.0,
@@ -36,13 +39,13 @@
      "key_out": []
     }
    },
-   "home_pct": 33.6,
+   "home_pct": 31.7,
    "draw_pct": 27.0,
-   "away_pct": 39.4,
-   "xg_home": 1.34,
-   "xg_away": 1.47,
-   "over25": 53.5,
-   "btts": 57.9,
+   "away_pct": 41.2,
+   "xg_home": 1.29,
+   "xg_away": 1.5,
+   "over25": 53.0,
+   "btts": 57.4,
    "cards5": 33.9,
    "cards": {
     "exp": 3.83,
@@ -1154,14 +1157,32 @@
       "name": "B. Chardonnet",
       "type": "Missing Fixture",
       "reason": "Calf Injury"
+     },
+     {
+      "id": 498791,
+      "name": "R. Le Guen",
+      "type": "Missing Fixture",
+      "reason": "Broken Leg"
+     },
+     {
+      "id": 326068,
+      "name": "K. Doumbia",
+      "type": "Questionable",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 22247,
+      "name": "K. Lala",
+      "type": "Questionable",
+      "reason": "Knee Injury"
      }
     ],
     "away": [
      {
       "id": 389322,
       "name": "N. Sangui",
-      "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "type": "Questionable",
+      "reason": "Muscle Injury"
      }
     ]
    },

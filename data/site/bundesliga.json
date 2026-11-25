@@ -3,7 +3,7 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-24T21:38:16.777676+00:00",
+ "updated": "2026-11-25T03:32:42.645294+00:00",
  "matches_used": 706,
  "fixtures": [
   {
@@ -26,23 +26,29 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 5.3,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "M. Grüll"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 6.1,
+     "defence_hit_pct": 8.0,
+     "key_out": [
+      "D. Hashioka",
+      "H. Bolin",
+      "L. Ullrich"
+     ]
     }
    },
-   "home_pct": 54.3,
-   "draw_pct": 23.9,
-   "away_pct": 21.8,
-   "xg_home": 1.91,
-   "xg_away": 1.14,
-   "over25": 58.8,
-   "btts": 58.9,
+   "home_pct": 56.9,
+   "draw_pct": 23.4,
+   "away_pct": 19.7,
+   "xg_home": 1.95,
+   "xg_away": 1.07,
+   "over25": 58.2,
+   "btts": 57.3,
    "cards5": 37.9,
    "cards": {
     "exp": 4.05,
@@ -980,17 +986,17 @@
        }
       },
       {
-       "id": 7073,
-       "name": "M. Grüll",
-       "p": 30.6,
+       "id": 202526,
+       "name": "E. Dinkçi",
+       "p": 24.2,
        "gl": 2,
-       "as": 6,
-       "ap": 9,
+       "as": 1,
+       "ap": 10,
        "price": {
-        "odd": 2.88,
+        "odd": 3.4,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.88
+         "Bet365": 3.4
         }
        }
       }
@@ -1030,14 +1036,6 @@
        "inv": 69.2
       },
       {
-       "id": 7073,
-       "name": "M. Grüll",
-       "pos": "Attacker",
-       "g": 30.6,
-       "a": 53.0,
-       "inv": 67.4
-      },
-      {
        "id": 202526,
        "name": "E. Dinkçi",
        "pos": "Attacker",
@@ -1052,26 +1050,19 @@
        "g": 14.3,
        "a": 22.5,
        "inv": 33.6
+      },
+      {
+       "id": 38124,
+       "name": "L. Reis",
+       "pos": "Midfielder",
+       "g": 21.1,
+       "a": 14.9,
+       "inv": 32.8
       }
      ]
     },
     "away": {
      "scorers": [
-      {
-       "id": 335095,
-       "name": "H. Bolin",
-       "p": 15.7,
-       "gl": 2,
-       "as": 0,
-       "ap": 7,
-       "price": {
-        "odd": 4.33,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.33
-        }
-       }
-      },
       {
        "id": 106851,
        "name": "S. Machino",
@@ -1084,6 +1075,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 3.25
+        }
+       }
+      },
+      {
+       "id": 50852,
+       "name": "J. Scally",
+       "p": 12.7,
+       "gl": 3,
+       "as": 2,
+       "ap": 10,
+       "price": {
+        "odd": 7.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 7.5
         }
        }
       }
@@ -1131,27 +1137,113 @@
        "inv": 20.5
       },
       {
-       "id": 335095,
-       "name": "H. Bolin",
-       "pos": "Midfielder",
-       "g": 15.7,
-       "a": 3.7,
-       "inv": 18.8
-      },
-      {
        "id": 501906,
        "name": "W. Mohya",
        "pos": "Midfielder",
        "g": 11.0,
        "a": 7.6,
        "inv": 17.8
+      },
+      {
+       "id": 20784,
+       "name": "F. Honorat",
+       "pos": "Midfielder",
+       "g": 4.4,
+       "a": 13.6,
+       "inv": 17.4
       }
      ]
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 26319,
+      "name": "F. Agu",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 193720,
+      "name": "S. Alvero",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 7073,
+      "name": "M. Grull",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 432519,
+      "name": "S. Musah",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 175415,
+      "name": "M. N'Diaye",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 15592,
+      "name": "J. Stage",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 334334,
+      "name": "K. Topp",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 38798,
+      "name": "S. Lynen",
+      "type": "Questionable",
+      "reason": "Illness"
+     }
+    ],
+    "away": [
+     {
+      "id": 335095,
+      "name": "H. Bolin",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 33095,
+      "name": "D. Hashioka",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
+      "id": 26256,
+      "name": "T. Kleindienst",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 178250,
+      "name": "E. Leopold",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 462217,
+      "name": "J. Leszczynski",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 327646,
+      "name": "L. Ullrich",
+      "type": "Missing Fixture",
+      "reason": "Broken collarbone"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -6387,7 +6479,7 @@
    },
    "goals": {
     "home": {
-     "fh": 35.74771773288427,
+     "fh": 35.747717732884254,
      "sh": 65.92037842931839,
      "any": 78.1030653528408
     },
@@ -7565,8 +7657,8 @@
    "goals": {
     "home": {
      "fh": 59.32128651858255,
-     "sh": 65.93859795391542,
-     "any": 86.14425985391959
+     "sh": 65.9385979539154,
+     "any": 86.14425985391958
     },
     "away": {
      "fh": 47.36091229464453,
@@ -7574,7 +7666,7 @@
      "any": 78.70888998130168
     },
     "match_fh": 78.58709633310642,
-    "match_sh": 86.22306939638467
+    "match_sh": 86.22306939638466
    },
    "players": {
     "home": {

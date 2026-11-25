@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-24T21:38:20.153526+00:00",
+ "updated": "2026-11-25T03:32:46.083776+00:00",
  "matches_used": 880,
  "fixtures": [
   {
@@ -26,23 +26,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 5.2,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 1.1,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "Juan Miranda"
+     ]
     }
    },
    "home_pct": 17.1,
-   "draw_pct": 26.7,
-   "away_pct": 56.2,
-   "xg_home": 0.78,
-   "xg_away": 1.61,
-   "over25": 42.9,
-   "btts": 44.4,
+   "draw_pct": 26.9,
+   "away_pct": 56.0,
+   "xg_home": 0.77,
+   "xg_away": 1.59,
+   "over25": 42.1,
+   "btts": 43.8,
    "cards5": 29.3,
    "cards": {
     "exp": 3.58,
@@ -1024,14 +1026,6 @@
      },
      "cap": [
       {
-       "id": 134,
-       "name": "Juan Miranda",
-       "pos": "Defender",
-       "g": 3.7,
-       "a": 34.7,
-       "inv": 37.1
-      },
-      {
        "id": 873,
        "name": "F. Bernardeschi",
        "pos": "Attacker",
@@ -1054,6 +1048,14 @@
        "g": 10.3,
        "a": 17.9,
        "inv": 26.3
+      },
+      {
+       "id": 346866,
+       "name": "S. Mbangula",
+       "pos": "Attacker",
+       "g": 19.7,
+       "a": 3.6,
+       "inv": 22.5
       }
      ]
     }
@@ -1061,13 +1063,68 @@
    "injuries": {
     "home": [
      {
+      "id": 212,
+      "name": "A. Adorante",
+      "type": "Missing Fixture",
+      "reason": "Hernia"
+     },
+     {
+      "id": 1266,
+      "name": "T. Basic",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 1482,
+      "name": "T. Correia",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 14704,
+      "name": "B. Franjic",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
+      "id": 31390,
+      "name": "P. Mazzocchi",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
       "id": 26095,
-      "name": "M. Šverko",
+      "name": "M. Sverko",
       "type": "Missing Fixture",
       "reason": "Hip Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 319919,
+      "name": "O. El Azzouzi",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 349185,
+      "name": "J. Enem",
+      "type": "Missing Fixture",
+      "reason": "Achilles Tendon Injury"
+     },
+     {
+      "id": 47985,
+      "name": "E. Holm",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 134,
+      "name": "J. Miranda",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -13485,7 +13542,7 @@
      "any": 63.58743979384309
     },
     "away": {
-     "fh": 45.73745805649756,
+     "fh": 45.73745805649755,
      "sh": 60.59092589899945,
      "any": 78.61563463639862
     },

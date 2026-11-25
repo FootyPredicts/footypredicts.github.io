@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-24T21:38:10.089099+00:00",
+ "updated": "2026-11-25T03:32:35.836625+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -31,18 +31,21 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 10.6,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "João Pedro",
+      "M. Lacroix"
+     ]
     }
    },
-   "home_pct": 39.7,
+   "home_pct": 44.3,
    "draw_pct": 27.1,
-   "away_pct": 33.2,
-   "xg_home": 1.48,
-   "xg_away": 1.33,
-   "over25": 53.3,
-   "btts": 57.7,
+   "away_pct": 28.6,
+   "xg_home": 1.54,
+   "xg_away": 1.19,
+   "over25": 51.3,
+   "btts": 55.6,
    "cards5": 42.4,
    "cards": {
     "exp": 4.3,
@@ -1015,21 +1018,6 @@
     "away": {
      "scorers": [
       {
-       "id": 10329,
-       "name": "João Pedro",
-       "p": 36.4,
-       "gl": 5,
-       "as": 3,
-       "ap": 6,
-       "price": {
-        "odd": 2.62,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.62
-        }
-       }
-      },
-      {
        "id": 19170,
        "name": "M. Rogers",
        "p": 26.9,
@@ -1041,6 +1029,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 3.6
+        }
+       }
+      },
+      {
+       "id": 1864,
+       "name": "Pedro Neto",
+       "p": 23.7,
+       "gl": 3,
+       "as": 1,
+       "ap": 11,
+       "price": {
+        "odd": 4.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.5
         }
        }
       }
@@ -1066,19 +1069,11 @@
       }
      ],
      "defender": {
-      "id": 20995,
-      "name": "M. Lacroix",
+      "id": 22094,
+      "name": "W. Fofana",
       "sot": 1
      },
      "cap": [
-      {
-       "id": 10329,
-       "name": "João Pedro",
-       "pos": "Attacker",
-       "g": 36.4,
-       "a": 27.6,
-       "inv": 53.9
-      },
       {
        "id": 152982,
        "name": "C. Palmer",
@@ -1102,6 +1097,14 @@
        "g": 23.7,
        "a": 8.5,
        "inv": 30.2
+      },
+      {
+       "id": 292,
+       "name": "J. Henderson",
+       "pos": "Midfielder",
+       "g": 16.0,
+       "a": 12.8,
+       "inv": 26.8
       }
      ]
     }
@@ -1109,13 +1112,62 @@
    "injuries": {
     "home": [
      {
+      "id": 6056,
+      "name": "N. Dominguez",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 2298,
+      "name": "C. Hudson-Odoi",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
       "id": 181806,
       "name": "N. Savona",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "type": "Questionable",
+      "reason": "Knee Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 286894,
+      "name": "J. Gittens",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 341642,
+      "name": "J. Hato",
+      "type": "Missing Fixture",
+      "reason": "Back Injury"
+     },
+     {
+      "id": 19545,
+      "name": "R. James",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 10329,
+      "name": "Joao Pedro",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 20995,
+      "name": "M. Lacroix",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 116117,
+      "name": "M. Caicedo",
+      "type": "Questionable",
+      "reason": "Back Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -14332,8 +14384,8 @@
     },
     "away": {
      "fh": 50.74247844530747,
-     "sh": 55.55024833179435,
-     "any": 78.1051539910263
+     "sh": 55.550248331794336,
+     "any": 78.10515399102628
     },
     "match_fh": 72.22631179945513,
     "match_sh": 81.68220688763593
