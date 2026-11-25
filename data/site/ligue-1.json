@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-25T03:32:49.501137+00:00",
+ "updated": "2026-11-25T06:02:01.928213+00:00",
  "matches_used": 714,
  "fixtures": [
   {
@@ -1387,7 +1387,7 @@
      "bookie": "1xBet",
      "books": {
       "Bet365": 1.8,
-      "Betfair": 1.8
+      "Betfair": 1.87
      }
     },
     "under25": {
@@ -1395,7 +1395,7 @@
      "bookie": "1xBet",
      "books": {
       "Bet365": 2.0,
-      "Betfair": 1.91
+      "Betfair": 1.9
      }
     },
     "btts_yes": {
@@ -1416,27 +1416,71 @@
       "Betfair": 2.25
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 2.2,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.28,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 3.5,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.62,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.22,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.2,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.62,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 3.2,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.32,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 4.7,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.17,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -1455,9 +1499,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 21.6,
-    "draw": 23.5,
-    "away": 54.9
+    "home": 20.9,
+    "draw": 23.2,
+    "away": 55.8
    },
    "injury_effect": {
     "home": {
@@ -2312,10 +2356,10 @@
        "as": 2,
        "ap": 9,
        "price": {
-        "odd": 3.75,
+        "odd": 4.0,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.75
+         "Bet365": 4.0
         }
        }
       },
@@ -2327,10 +2371,10 @@
        "as": 0,
        "ap": 10,
        "price": {
-        "odd": 3.5,
+        "odd": 3.75,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.5
+         "Bet365": 3.75
         }
        }
       }
@@ -2405,10 +2449,10 @@
        "as": 7,
        "ap": 11,
        "price": {
-        "odd": 2.5,
+        "odd": 2.6,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.5
+         "Bet365": 2.6
         }
        }
       },
@@ -2420,10 +2464,10 @@
        "as": 0,
        "ap": 7,
        "price": {
-        "odd": 2.38,
+        "odd": 2.4,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.38
+         "Bet365": 2.4
         }
        }
       }
@@ -2768,12 +2812,12 @@
    ],
    "odds": {
     "home": {
-     "odd": 4.72,
+     "odd": 4.82,
      "bookie": "Pinnacle",
      "books": {
-      "William Hill": 4.2,
-      "Bet365": 4.33,
-      "Betfair": 4.5
+      "William Hill": 4.33,
+      "Bet365": 4.5,
+      "Betfair": 4.6
      }
     },
     "draw": {
@@ -2782,21 +2826,21 @@
      "books": {
       "William Hill": 3.9,
       "Bet365": 4.0,
-      "Betfair": 4.1
+      "Betfair": 4.2
      }
     },
     "away": {
      "odd": 1.76,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 1.7,
-      "Bet365": 1.7,
-      "Betfair": 1.73
+      "William Hill": 1.67,
+      "Bet365": 1.67,
+      "Betfair": 1.7
      }
     },
     "over25": {
-     "odd": 1.68,
-     "bookie": "Pinnacle",
+     "odd": 1.67,
+     "bookie": "Bet365",
      "books": {
       "Bet365": 1.67,
       "Betfair": 1.6
@@ -2816,7 +2860,7 @@
      "books": {
       "William Hill": 1.6,
       "Bet365": 1.67,
-      "Betfair": 1.6
+      "Betfair": 1.62
      }
     },
     "btts_no": {
@@ -2825,30 +2869,74 @@
      "books": {
       "William Hill": 2.25,
       "Bet365": 2.1,
-      "Betfair": 2.25
+      "Betfair": 2.2
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 2.3,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.3,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 3.3,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.65,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.15,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.3,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.57,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 3.3,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.3,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 4.9,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.15,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -3948,8 +4036,8 @@
    "previous": [],
    "odds": {
     "home": {
-     "odd": 1.72,
-     "bookie": "Betano",
+     "odd": 1.71,
+     "bookie": "Dafabet",
      "books": {
       "William Hill": 1.62,
       "Bet365": 1.65,
@@ -4008,27 +4096,71 @@
       "Betfair": 2.15
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 2.12,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.26,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 3.65,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.57,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.3,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.12,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.67,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 3.05,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.35,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 4.5,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.18,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -4047,7 +4179,7 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 77.7,
+    "home": 77.6,
     "draw": 14.1,
     "away": 8.3
    },
@@ -5166,13 +5298,13 @@
      "odd": 1.25,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 1.2,
+      "William Hill": 1.22,
       "Bet365": 1.22,
       "Betfair": 1.2
      }
     },
     "draw": {
-     "odd": 7.88,
+     "odd": 7.69,
      "bookie": "Pinnacle",
      "books": {
       "William Hill": 6.5,
@@ -5198,7 +5330,7 @@
      }
     },
     "under25": {
-     "odd": 2.8,
+     "odd": 2.81,
      "bookie": "Pinnacle",
      "books": {
       "Bet365": 2.75,
@@ -5223,27 +5355,71 @@
       "Betfair": 1.73
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 2.2,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.27,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 3.55,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.6,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.25,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.2,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.62,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 3.2,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.32,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 4.75,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.16,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -6737,27 +6913,71 @@
       "Betfair": 2.5
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 2.2,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.28,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 3.45,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.62,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.22,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.2,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.62,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 3.15,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.33,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 4.7,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.17,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -6776,9 +6996,9 @@
    "call_reason": "",
    "low_data": true,
    "market": {
-    "home": 24.9,
-    "draw": 27.3,
-    "away": 47.7
+    "home": 25.3,
+    "draw": 27.8,
+    "away": 46.8
    },
    "injury_effect": {
     "home": {
@@ -7871,34 +8091,34 @@
    "previous": [],
    "odds": {
     "home": {
-     "odd": 4.06,
-     "bookie": "1xBet",
+     "odd": 3.9,
+     "bookie": "Betfair",
      "books": {
-      "William Hill": 3.6,
-      "Bet365": 3.8,
+      "William Hill": 3.5,
+      "Bet365": 3.7,
       "Betfair": 3.9
      }
     },
     "draw": {
-     "odd": 3.7,
+     "odd": 3.65,
      "bookie": "1xBet",
      "books": {
-      "William Hill": 3.4,
-      "Bet365": 3.5,
+      "William Hill": 3.3,
+      "Bet365": 3.4,
       "Betfair": 3.4
      }
     },
     "away": {
-     "odd": 2.05,
+     "odd": 2.09,
      "bookie": "Pinnacle",
      "books": {
-      "William Hill": 1.95,
-      "Bet365": 1.95,
+      "William Hill": 2.0,
+      "Bet365": 2.0,
       "Betfair": 2.0
      }
     },
     "over25": {
-     "odd": 2.12,
+     "odd": 2.13,
      "bookie": "Pinnacle",
      "books": {
       "Bet365": 2.0,
@@ -7914,11 +8134,11 @@
      }
     },
     "btts_yes": {
-     "odd": 1.91,
-     "bookie": "Bet365",
+     "odd": 1.83,
+     "bookie": "Marathonbet",
      "books": {
       "William Hill": 1.73,
-      "Bet365": 1.91,
+      "Bet365": 1.8,
       "Betfair": 1.83
      }
     },
@@ -7927,31 +8147,75 @@
      "bookie": "William Hill",
      "books": {
       "William Hill": 2.0,
-      "Bet365": 1.91,
+      "Bet365": 1.95,
       "Betfair": 1.91
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 2.12,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.26,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 3.6,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.57,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.3,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.12,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.67,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 3.05,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.35,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 4.45,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.18,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -7970,9 +8234,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 24.3,
+    "home": 24.7,
     "draw": 24.4,
-    "away": 51.2
+    "away": 50.9
    },
    "injury_effect": {
     "home": {
@@ -9421,12 +9685,12 @@
    ],
    "odds": {
     "home": {
-     "odd": 4.06,
-     "bookie": "Pinnacle",
+     "odd": 3.98,
+     "bookie": "1xBet",
      "books": {
       "William Hill": 3.7,
       "Bet365": 3.9,
-      "Betfair": 3.9
+      "Betfair": 3.8
      }
     },
     "draw": {
@@ -9435,16 +9699,16 @@
      "books": {
       "William Hill": 3.8,
       "Bet365": 3.75,
-      "Betfair": 3.9
+      "Betfair": 4.0
      }
     },
     "away": {
-     "odd": 1.91,
-     "bookie": "1xBet",
+     "odd": 1.92,
+     "bookie": "Pinnacle",
      "books": {
       "William Hill": 1.83,
       "Bet365": 1.83,
-      "Betfair": 1.8
+      "Betfair": 1.87
      }
     },
     "over25": {
@@ -9469,39 +9733,83 @@
      "books": {
       "William Hill": 1.53,
       "Bet365": 1.57,
-      "Betfair": 1.5
+      "Betfair": 1.53
      }
     },
     "btts_no": {
-     "odd": 2.4,
-     "bookie": "Betfair",
+     "odd": 2.38,
+     "bookie": "William Hill",
      "books": {
       "William Hill": 2.38,
       "Bet365": 2.25,
-      "Betfair": 2.4
+      "Betfair": 2.38
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 2.05,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.23,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 3.85,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.52,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.42,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.05,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.75,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.85,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.39,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 4.15,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.21,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -9520,9 +9828,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 37.1,
+    "home": 37.5,
     "draw": 25.5,
-    "away": 37.4
+    "away": 37.0
    },
    "injury_effect": {
     "home": {
@@ -11045,9 +11353,9 @@
      "odd": 2.62,
      "bookie": "Pinnacle",
      "books": {
-      "William Hill": 2.5,
+      "William Hill": 2.45,
       "Bet365": 2.5,
-      "Betfair": 2.5
+      "Betfair": 2.55
      }
     },
     "draw": {
@@ -11056,16 +11364,16 @@
      "books": {
       "William Hill": 3.6,
       "Bet365": 3.7,
-      "Betfair": 3.6
+      "Betfair": 3.7
      }
     },
     "away": {
      "odd": 2.65,
      "bookie": "Pinnacle",
      "books": {
-      "William Hill": 2.45,
+      "William Hill": 2.5,
       "Bet365": 2.5,
-      "Betfair": 2.5
+      "Betfair": 2.6
      }
     },
     "over25": {
@@ -11090,39 +11398,83 @@
      "books": {
       "William Hill": 1.5,
       "Bet365": 1.53,
-      "Betfair": 1.45
+      "Betfair": 1.44
      }
     },
     "btts_no": {
-     "odd": 2.55,
+     "odd": 2.63,
      "bookie": "Betfair",
      "books": {
       "William Hill": 2.5,
       "Bet365": 2.38,
-      "Betfair": 2.55
+      "Betfair": 2.63
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 2.05,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.23,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 3.85,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.52,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.42,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.05,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.75,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.85,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.39,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 4.15,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.21,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -11141,9 +11493,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 38.8,
-    "draw": 28.2,
-    "away": 33.0
+    "home": 39.5,
+    "draw": 28.3,
+    "away": 32.2
    },
    "injury_effect": {
     "home": {
@@ -12005,10 +12357,10 @@
        "as": 1,
        "ap": 9,
        "price": {
-        "odd": 3.25,
+        "odd": 3.4,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.25
+         "Bet365": 3.4
         }
        }
       },
@@ -12530,30 +12882,30 @@
    ],
    "odds": {
     "home": {
-     "odd": 2.49,
-     "bookie": "Pinnacle",
+     "odd": 2.45,
+     "bookie": "Dafabet",
      "books": {
       "William Hill": 2.3,
-      "Bet365": 2.45,
+      "Bet365": 2.4,
       "Betfair": 2.4
      }
     },
     "draw": {
-     "odd": 3.62,
+     "odd": 3.59,
      "bookie": "1xBet",
      "books": {
       "William Hill": 3.3,
       "Bet365": 3.3,
-      "Betfair": 3.25
+      "Betfair": 3.3
      }
     },
     "away": {
-     "odd": 3.02,
+     "odd": 3.15,
      "bookie": "Pinnacle",
      "books": {
-      "William Hill": 2.8,
-      "Bet365": 2.75,
-      "Betfair": 2.88
+      "William Hill": 2.9,
+      "Bet365": 2.8,
+      "Betfair": 3.0
      }
     },
     "over25": {
@@ -12561,56 +12913,100 @@
      "bookie": "SBO",
      "books": {
       "Bet365": 1.91,
-      "Betfair": 1.85
+      "Betfair": 1.91
      }
     },
     "under25": {
-     "odd": 1.97,
+     "odd": 1.93,
      "bookie": "1xBet",
      "books": {
       "Bet365": 1.91,
-      "Betfair": 1.85
+      "Betfair": 1.8
      }
     },
     "btts_yes": {
-     "odd": 1.7,
+     "odd": 1.75,
      "bookie": "Bet365",
      "books": {
       "William Hill": 1.67,
-      "Bet365": 1.7,
-      "Betfair": 1.6
+      "Bet365": 1.75,
+      "Betfair": 1.67
      }
     },
     "btts_no": {
-     "odd": 2.2,
+     "odd": 2.15,
      "bookie": "Betfair",
      "books": {
       "William Hill": 2.1,
-      "Bet365": 2.05,
-      "Betfair": 2.2
+      "Bet365": 2.0,
+      "Betfair": 2.15
      }
     },
-    "cards_over45": null,
+    "cards_over45": {
+     "odd": 1.88,
+     "bookie": "Betano",
+     "books": {}
+    },
     "cards": {
      "2.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.19,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 4.3,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "3.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.44,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 2.67,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "4.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 1.88,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.88,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "5.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 2.57,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.47,
+       "bookie": "Betano",
+       "books": {}
+      }
      },
      "6.5": {
-      "over": null,
-      "under": null
+      "over": {
+       "odd": 3.7,
+       "bookie": "Betano",
+       "books": {}
+      },
+      "under": {
+       "odd": 1.25,
+       "bookie": "Betano",
+       "books": {}
+      }
      }
     }
    }
@@ -12629,9 +13025,9 @@
    "call_reason": "",
    "low_data": false,
    "market": {
-    "home": 16.1,
-    "draw": 19.8,
-    "away": 64.1
+    "home": 16.4,
+    "draw": 20.2,
+    "away": 63.4
    },
    "injury_effect": {
     "home": {
@@ -13548,10 +13944,10 @@
        "as": 0,
        "ap": 11,
        "price": {
-        "odd": 4.33,
+        "odd": 4.0,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 4.33
+         "Bet365": 4.0
         }
        }
       }
@@ -13641,10 +14037,10 @@
        "as": 2,
        "ap": 5,
        "price": {
-        "odd": 2.88,
+        "odd": 3.1,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.88
+         "Bet365": 3.1
         }
        }
       }
@@ -14022,30 +14418,30 @@
    ],
    "odds": {
     "home": {
-     "odd": 6.52,
+     "odd": 6.11,
      "bookie": "1xBet",
      "books": {
       "William Hill": 5.5,
-      "Bet365": 6.25,
+      "Bet365": 6.0,
       "Betfair": 5.5
      }
     },
     "draw": {
-     "odd": 5.24,
+     "odd": 5.03,
      "bookie": "1xBet",
      "books": {
       "William Hill": 4.5,
       "Bet365": 4.5,
-      "Betfair": 5.0
+      "Betfair": 4.75
      }
     },
     "away": {
-     "odd": 1.49,
+     "odd": 1.53,
      "bookie": "1xBet",
      "books": {
       "William Hill": 1.44,
-      "Bet365": 1.44,
-      "Betfair": 1.44
+      "Bet365": 1.48,
+      "Betfair": 1.47
      }
     },
     "over25": {
@@ -14053,33 +14449,33 @@
      "bookie": "Betano",
      "books": {
       "Bet365": 1.44,
-      "Betfair": 1.36
+      "Betfair": 1.4
      }
     },
     "under25": {
-     "odd": 2.88,
-     "bookie": "Betfair",
+     "odd": 2.8,
+     "bookie": "Betano",
      "books": {
       "Bet365": 2.75,
-      "Betfair": 2.88
+      "Betfair": 2.75
      }
     },
     "btts_yes": {
-     "odd": 1.6,
-     "bookie": "Betano",
+     "odd": 1.57,
+     "bookie": "Bet365",
      "books": {
       "William Hill": 1.53,
       "Bet365": 1.57,
-      "Betfair": 1.57
+      "Betfair": 1.5
      }
     },
     "btts_no": {
-     "odd": 2.38,
-     "bookie": "William Hill",
+     "odd": 2.4,
+     "bookie": "Betfair",
      "books": {
       "William Hill": 2.38,
       "Bet365": 2.25,
-      "Betfair": 2.25
+      "Betfair": 2.4
      }
     },
     "cards_over45": null,
