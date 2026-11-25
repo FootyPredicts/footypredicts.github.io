@@ -1633,7 +1633,13 @@ def build():
 
     # front page: every league's upcoming matches
     sections = []
-    for d in leagues:
+    # Leagues playing soonest go first (by the day of their next match); on the same day, the most popular league goes first.
+    POPULAR = ["champions-league", "premier-league", "la-liga", "bundesliga", "serie-a", "ligue-1", "europa-league"]
+    def _front_key(d):
+        days = [kickoff(f)[2].date() for f in d["fixtures"]]
+        pop = POPULAR.index(d["league"]) if d["league"] in POPULAR else len(POPULAR) + (ALL_SLUGS.index(d["league"]) if d["league"] in ALL_SLUGS else 99)
+        return (min(days) if days else datetime.max.date(), pop)
+    for d in sorted(leagues, key=_front_key):
         rows = []
         for i, f in enumerate(d["fixtures"]):
             day, time_, _ = kickoff(f)
