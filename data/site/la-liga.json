@@ -3,7 +3,7 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-26T19:38:17.196347+00:00",
+ "updated": "2026-11-26T20:08:14.310823+00:00",
  "matches_used": 889,
  "fixtures": [
   {
@@ -1076,8 +1076,8 @@
    "goals": {
     "home": {
      "fh": 55.357226202001385,
-     "sh": 60.78192265234876,
-     "any": 82.49196244176392
+     "sh": 60.781922652348776,
+     "any": 82.49196244176393
     },
     "away": {
      "fh": 57.64608442813335,
@@ -1085,7 +1085,7 @@
      "any": 78.65023716179327
     },
     "match_fh": 81.09203727665626,
-    "match_sh": 80.23095057357645
+    "match_sh": 80.23095057357646
    },
    "players": {
     "home": {
@@ -6957,11 +6957,11 @@
      "any": 85.70040929636191
     },
     "away": {
-     "fh": 37.180979282300996,
+     "fh": 37.18097928230101,
      "sh": 50.81500784010714,
-     "any": 69.10246958507827
+     "any": 69.10246958507828
     },
-    "match_fh": 71.35918483731184,
+    "match_fh": 71.35918483731186,
     "match_sh": 84.57369190866558
    },
    "players": {
@@ -10720,23 +10720,28 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 6.9,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "Hugo González",
+      "Yoel Lago"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 4.7,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "Pau Navarro"
+     ]
     }
    },
-   "home_pct": 35.1,
-   "draw_pct": 28.3,
-   "away_pct": 36.6,
-   "xg_home": 1.29,
-   "xg_away": 1.33,
-   "over25": 48.6,
-   "btts": 54.3,
+   "home_pct": 34.3,
+   "draw_pct": 28.6,
+   "away_pct": 37.1,
+   "xg_home": 1.25,
+   "xg_away": 1.31,
+   "over25": 47.3,
+   "btts": 53.2,
    "cards5": 46.5,
    "cards": {
     "exp": 4.55,
@@ -11675,7 +11680,7 @@
    },
    "goals": {
     "home": {
-     "fh": 40.61049338742069,
+     "fh": 40.610493387420696,
      "sh": 54.829991227248186,
      "any": 73.17375465300391
     },
@@ -11723,21 +11728,21 @@
      ],
      "bookings": [
       {
-       "id": 329722,
-       "name": "Yoel Lago",
-       "p": 29.6,
-       "yc": 5,
-       "rc": 0,
-       "ap": 12,
-       "price": null
-      },
-      {
        "id": 2278,
        "name": "Marcos Alonso",
        "p": 22.3,
        "yc": 2,
        "rc": 1,
        "ap": 10,
+       "price": null
+      },
+      {
+       "id": 179955,
+       "name": "Javi Rueda",
+       "p": 17.2,
+       "yc": 3,
+       "rc": 0,
+       "ap": 13,
        "price": null
       }
      ],
@@ -11756,28 +11761,28 @@
        "inv": 28.9
       },
       {
-       "id": 333502,
-       "name": "Miguel Román",
-       "pos": "Midfielder",
-       "g": 9.8,
-       "a": 20.6,
-       "inv": 28.4
-      },
-      {
-       "id": 161875,
-       "name": "Hugo González",
-       "pos": "Midfielder",
-       "g": 13.8,
-       "a": 16.9,
-       "inv": 28.3
-      },
-      {
        "id": 122734,
        "name": "Ferran Jutglà",
        "pos": "Attacker",
        "g": 15.2,
        "a": 3.1,
        "inv": 17.8
+      },
+      {
+       "id": 329720,
+       "name": "Hugo Álvarez",
+       "pos": "Midfielder",
+       "g": 3.8,
+       "a": 14.3,
+       "inv": 17.5
+      },
+      {
+       "id": 47445,
+       "name": "Iago Aspas",
+       "pos": "Attacker",
+       "g": 10.3,
+       "a": 7.3,
+       "inv": 16.9
       }
      ]
     },
@@ -11816,27 +11821,27 @@
      ],
      "bookings": [
       {
-       "id": 166,
-       "name": "J. Foyth",
-       "p": 29.6,
-       "yc": 3,
+       "id": 336671,
+       "name": "Renato Veiga",
+       "p": 25.4,
+       "yc": 4,
        "rc": 0,
-       "ap": 6,
+       "ap": 12,
        "price": null
       },
       {
-       "id": 435552,
-       "name": "Pau Navarro",
-       "p": 26.9,
+       "id": 20696,
+       "name": "P. Gueye",
+       "p": 19.7,
        "yc": 2,
        "rc": 1,
-       "ap": 7,
+       "ap": 12,
        "price": null
       }
      ],
      "defender": {
-      "id": 311773,
-      "name": "S. Mouriño",
+      "id": 184420,
+      "name": "Carlos Romero",
       "sot": 2
      },
      "cap": [
@@ -11876,8 +11881,76 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 161875,
+      "name": "H. Gonzalez",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 47348,
+      "name": "B. Iglesias",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 329722,
+      "name": "Y. Lago",
+      "type": "Missing Fixture",
+      "reason": "Yellow Cards"
+     },
+     {
+      "id": 333502,
+      "name": "M. Roman",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 47988,
+      "name": "C. Starfelt",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 290740,
+      "name": "I. Akhomach",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 463280,
+      "name": "A. Diatta",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 166,
+      "name": "J. Foyth",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 435552,
+      "name": "P. Navarro",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 294824,
+      "name": "N. Saliba",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 1707,
+      "name": "G. Moreno",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -13272,7 +13345,7 @@
    "goals": {
     "home": {
      "fh": 54.51189388393081,
-     "sh": 57.8627280239859,
+     "sh": 57.86272802398591,
      "any": 80.83255300913402
     },
     "away": {

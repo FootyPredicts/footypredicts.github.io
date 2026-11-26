@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-26T19:38:24.034188+00:00",
+ "updated": "2026-11-26T20:08:20.872080+00:00",
  "matches_used": 880,
  "fixtures": [
   {
@@ -8690,23 +8690,23 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 0.1,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 0.6,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 81.5,
+   "home_pct": 81.6,
    "draw_pct": 11.9,
-   "away_pct": 6.6,
-   "xg_home": 3.19,
-   "xg_away": 0.89,
-   "over25": 77.2,
-   "btts": 56.7,
+   "away_pct": 6.5,
+   "xg_home": 3.18,
+   "xg_away": 0.88,
+   "over25": 77.1,
+   "btts": 56.5,
    "cards5": 31.8,
    "cards": {
     "exp": 3.72,
@@ -9773,8 +9773,52 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 782,
+      "name": "L. Pellegrini",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 162452,
+      "name": "D. Rensch",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 81012,
+      "name": "D. S. Vasquez Llach",
+      "type": "Missing Fixture",
+      "reason": "Inactive"
+     }
+    ],
+    "away": [
+     {
+      "id": 31532,
+      "name": "P. Ciurria",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
+      "id": 56851,
+      "name": "M. Folorunsho",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 436239,
+      "name": "Y. Maye",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 85,
+      "name": "C. Ngonge",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -13737,7 +13781,7 @@
      "any": 63.58743979384309
     },
     "away": {
-     "fh": 45.73745805649755,
+     "fh": 45.73745805649756,
      "sh": 60.59092589899945,
      "any": 78.61563463639862
     },

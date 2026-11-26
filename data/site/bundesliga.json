@@ -3,7 +3,7 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-26T19:38:20.638429+00:00",
+ "updated": "2026-11-26T20:08:17.578660+00:00",
  "matches_used": 706,
  "fixtures": [
   {
@@ -6829,7 +6829,7 @@
    },
    "goals": {
     "home": {
-     "fh": 35.747717732884254,
+     "fh": 35.74771773288427,
      "sh": 65.92037842931839,
      "any": 78.1030653528408
     },
@@ -8113,8 +8113,8 @@
    "goals": {
     "home": {
      "fh": 59.32128651858255,
-     "sh": 65.9385979539154,
-     "any": 86.14425985391958
+     "sh": 65.93859795391542,
+     "any": 86.14425985391959
     },
     "away": {
      "fh": 47.36091229464453,
@@ -8122,7 +8122,7 @@
      "any": 78.70888998130168
     },
     "match_fh": 78.58709633310642,
-    "match_sh": 86.22306939638466
+    "match_sh": 86.22306939638467
    },
    "players": {
     "home": {
@@ -10434,23 +10434,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 2.2,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "O. Kabak"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 2.3,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "C. Matsima"
+     ]
     }
    },
-   "home_pct": 51.3,
-   "draw_pct": 22.2,
+   "home_pct": 51.5,
+   "draw_pct": 22.0,
    "away_pct": 26.5,
-   "xg_home": 2.13,
-   "xg_away": 1.5,
-   "over25": 70.3,
-   "btts": 69.2,
+   "xg_home": 2.16,
+   "xg_away": 1.53,
+   "over25": 71.3,
+   "btts": 70.0,
    "cards5": 35.5,
    "cards": {
     "exp": 3.91,
@@ -11469,21 +11473,21 @@
      ],
      "bookings": [
       {
-       "id": 413065,
-       "name": "Noahkai Kai Daniel Banks",
-       "p": 28.5,
+       "id": 353143,
+       "name": "Hennes Behrens",
+       "p": 17.4,
        "yc": 2,
        "rc": 0,
-       "ap": 4,
+       "ap": 10,
        "price": null
       },
       {
-       "id": 163039,
-       "name": "C. Matsima",
-       "p": 18.6,
-       "yc": 2,
-       "rc": 0,
-       "ap": 9,
+       "id": 449509,
+       "name": "Abdulay Bah",
+       "p": 16.8,
+       "yc": 0,
+       "rc": 1,
+       "ap": 4,
        "price": null
       }
      ],
@@ -11529,8 +11533,70 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 453903,
+      "name": "N. De Cat",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 127631,
+      "name": "V. Gendrey",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 278453,
+      "name": "A. Hajdari",
+      "type": "Missing Fixture",
+      "reason": "Foot Injury"
+     },
+     {
+      "id": 162964,
+      "name": "R. Hranac",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 26300,
+      "name": "O. Kabak",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     }
+    ],
+    "away": [
+     {
+      "id": 413065,
+      "name": "N. Banks",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 25290,
+      "name": "J. Gouweleeuw",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 110,
+      "name": "H. Massengo",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 163039,
+      "name": "C. Matsima",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
+     },
+     {
+      "id": 3395,
+      "name": "S. Mounie",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -13178,8 +13244,52 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 864,
+      "name": "E. Can",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 478991,
+      "name": "S. Inacio",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 162410,
+      "name": "G. Konstantelias",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 465666,
+      "name": "J. Lerma",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 503467,
+      "name": "K. Eichhorn",
+      "type": "Missing Fixture",
+      "reason": "Illness"
+     },
+     {
+      "id": 663,
+      "name": "M. Terrier",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 757,
+      "name": "L. Vazquez",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
