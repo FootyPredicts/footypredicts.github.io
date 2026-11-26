@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-26T20:08:10.845369+00:00",
+ "updated": "2026-11-26T20:38:03.292321+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -9342,7 +9342,7 @@
    "ref_games": null,
    "pick": "Draw",
    "model_pick": "Home",
-   "call_reason": "bookmakers disagree",
+   "call_reason": "too close to call, bookmakers disagree",
    "low_data": false,
    "market": {
     "home": 26.3,
@@ -9351,23 +9351,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.5,
+     "goals_lost_pct": 12.0,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "B. Brobbey"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 5.1,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 36.2,
-   "draw_pct": 31.7,
-   "away_pct": 32.1,
-   "xg_home": 1.11,
-   "xg_away": 1.03,
-   "over25": 36.2,
-   "btts": 44.2,
+   "home_pct": 33.4,
+   "draw_pct": 33.4,
+   "away_pct": 33.2,
+   "xg_home": 0.98,
+   "xg_away": 0.98,
+   "over25": 31.3,
+   "btts": 40.1,
    "cards5": 44.8,
    "cards": {
     "exp": 4.44,
@@ -10262,21 +10264,6 @@
     "home": {
      "scorers": [
       {
-       "id": 38750,
-       "name": "B. Brobbey",
-       "p": 21.2,
-       "gl": 3,
-       "as": 0,
-       "ap": 8,
-       "price": {
-        "odd": 3.4,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.4
-        }
-       }
-      },
-      {
        "id": 20638,
        "name": "E. Le Fée",
        "p": 13.9,
@@ -10288,6 +10275,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 6.0
+        }
+       }
+      },
+      {
+       "id": 84087,
+       "name": "W. Isidor",
+       "p": 9.0,
+       "gl": 1,
+       "as": 0,
+       "ap": 9,
+       "price": {
+        "odd": 3.4,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.4
         }
        }
       }
@@ -10319,14 +10321,6 @@
      },
      "cap": [
       {
-       "id": 38750,
-       "name": "B. Brobbey",
-       "pos": "Attacker",
-       "g": 21.2,
-       "a": 3.4,
-       "inv": 23.9
-      },
-      {
        "id": 20638,
        "name": "E. Le Fée",
        "pos": "Midfielder",
@@ -10349,6 +10343,14 @@
        "g": 8.0,
        "a": 3.6,
        "inv": 11.2
+      },
+      {
+       "id": 84087,
+       "name": "W. Isidor",
+       "pos": "Attacker",
+       "g": 9.0,
+       "a": 2.3,
+       "inv": 11.1
       }
      ]
     },
@@ -10452,22 +10454,77 @@
       "id": 55904,
       "name": "D. Ballard",
       "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 38750,
+      "name": "B. Brobbey",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 25287,
+      "name": "K. Danso",
+      "type": "Missing Fixture",
+      "reason": "Loan agreement"
      },
      {
       "id": 327631,
       "name": "H. Diarra",
       "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Muscle Injury"
      },
      {
       "id": 284414,
       "name": "R. Mundle",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 1464,
+      "name": "G. Xhaka",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 19145,
+      "name": "T. Adarabioyo",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 63577,
+      "name": "M. Mudryk",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 336564,
+      "name": "W. Odobert",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 266657,
+      "name": "Savio",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 162016,
+      "name": "X. Simons",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 270510,
+      "name": "M. Tel",
+      "type": "Missing Fixture",
+      "reason": "Achilles Tendon Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -12411,23 +12468,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 2.8,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "O. Boscagli"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 1.1,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "L. Hall"
+     ]
     }
    },
-   "home_pct": 59.3,
-   "draw_pct": 22.2,
-   "away_pct": 18.5,
-   "xg_home": 2.08,
-   "xg_away": 1.09,
-   "over25": 61.3,
-   "btts": 58.8,
+   "home_pct": 58.7,
+   "draw_pct": 22.4,
+   "away_pct": 18.9,
+   "xg_home": 2.06,
+   "xg_away": 1.1,
+   "over25": 61.1,
+   "btts": 59.0,
    "cards5": 41.9,
    "cards": {
     "exp": 4.27,
@@ -13525,43 +13586,74 @@
    "injuries": {
     "home": [
      {
+      "id": 204037,
+      "name": "Costinha",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 129643,
+      "name": "E. Ferguson",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
       "id": 106835,
       "name": "K. Mitoma",
       "type": "Missing Fixture",
       "reason": "Hamstring Injury"
      },
      {
+      "id": 410125,
+      "name": "M. Yalcouye",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
       "id": 524411,
       "name": "Z. Yohanna",
       "type": "Missing Fixture",
-      "reason": "Wound"
+      "reason": "Injury"
      },
      {
-      "id": 64003,
-      "name": "P. Struijk",
-      "type": "Missing Fixture",
-      "reason": "Rest"
+      "id": 22160,
+      "name": "O. Boscagli",
+      "type": "Questionable",
+      "reason": "Illness"
      },
      {
-      "id": 282637,
-      "name": "O. Azeez",
-      "type": "Missing Fixture",
-      "reason": "Abdominal Strain"
-     },
-     {
-      "id": 129643,
-      "name": "E. Ferguson",
-      "type": "Missing Fixture",
-      "reason": "Sprained Ankle"
+      "id": 271539,
+      "name": "J. Hadjam",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
      },
      {
       "id": 343311,
       "name": "S. Tzimas",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "type": "Questionable",
+      "reason": "Knee Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 329640,
+      "name": "E. Jaouen",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 723,
+      "name": "Joelinton",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 284492,
+      "name": "L. Hall",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [

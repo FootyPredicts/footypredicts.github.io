@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-26T20:08:24.216332+00:00",
+ "updated": "2026-11-26T20:38:16.428196+00:00",
  "matches_used": 714,
  "fixtures": [
   {
@@ -10057,25 +10057,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 1.2,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "M. McKenzie"
+     ]
     },
     "away": {
-     "goals_lost_pct": 10.5,
+     "goals_lost_pct": 5.1,
      "defence_hit_pct": 0.0,
-     "key_out": [
-      "E. Lepaul"
-     ]
+     "key_out": []
     }
    },
-   "home_pct": 47.1,
-   "draw_pct": 24.5,
-   "away_pct": 28.4,
-   "xg_home": 1.82,
-   "xg_away": 1.38,
-   "over25": 62.1,
-   "btts": 63.6,
+   "home_pct": 44.2,
+   "draw_pct": 24.4,
+   "away_pct": 31.4,
+   "xg_home": 1.8,
+   "xg_away": 1.49,
+   "over25": 63.9,
+   "btts": 65.5,
    "cards5": 38.7,
    "cards": {
     "exp": 4.08,
@@ -11143,6 +11143,21 @@
     "away": {
      "scorers": [
       {
+       "id": 163004,
+       "name": "E. Lepaul",
+       "p": 37.5,
+       "gl": 7,
+       "as": 0,
+       "ap": 8,
+       "price": {
+        "odd": 2.4,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.4
+        }
+       }
+      },
+      {
        "id": 22015,
        "name": "B. Dia",
        "p": 22.9,
@@ -11156,33 +11171,9 @@
          "Bet365": 2.4
         }
        }
-      },
-      {
-       "id": 40403,
-       "name": "S. Szymański",
-       "p": 16.4,
-       "gl": 4,
-       "as": 1,
-       "ap": 9,
-       "price": {
-        "odd": 4.75,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.75
-        }
-       }
       }
      ],
      "bookings": [
-      {
-       "id": 22261,
-       "name": "A. Thomasson",
-       "p": 24.1,
-       "yc": 3,
-       "rc": 1,
-       "ap": 11,
-       "price": null
-      },
       {
        "id": 129681,
        "name": "A. Rouault",
@@ -11190,6 +11181,15 @@
        "yc": 2,
        "rc": 0,
        "ap": 7,
+       "price": null
+      },
+      {
+       "id": 3007,
+       "name": "P. Frankowski",
+       "p": 17.1,
+       "yc": 2,
+       "rc": 0,
+       "ap": 9,
        "price": null
       }
      ],
@@ -11199,6 +11199,14 @@
       "sot": 4
      },
      "cap": [
+      {
+       "id": 163004,
+       "name": "E. Lepaul",
+       "pos": "Attacker",
+       "g": 37.5,
+       "a": 3.6,
+       "inv": 39.8
+      },
       {
        "id": 22015,
        "name": "B. Dia",
@@ -11216,14 +11224,6 @@
        "inv": 23.5
       },
       {
-       "id": 22261,
-       "name": "A. Thomasson",
-       "pos": "Midfielder",
-       "g": 8.6,
-       "a": 11.9,
-       "inv": 19.5
-      },
-      {
        "id": 15286,
        "name": "Mousa Tamari",
        "pos": "Midfielder",
@@ -11235,13 +11235,38 @@
     }
    },
    "injuries": {
-    "home": [],
+    "home": [
+     {
+      "id": 334952,
+      "name": "R. Messali",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 50735,
+      "name": "M. McKenzie",
+      "type": "Questionable",
+      "reason": "Hamstring Injury"
+     }
+    ],
     "away": [
      {
-      "id": 163004,
-      "name": "E. Lepaul",
+      "id": 24147,
+      "name": "M. Camara",
       "type": "Missing Fixture",
-      "reason": "Sprained Ankle"
+      "reason": "Injury"
+     },
+     {
+      "id": 21102,
+      "name": "V. Rongier",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 22261,
+      "name": "A. Thomasson",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
      }
     ]
    },
