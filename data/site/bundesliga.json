@@ -3,7 +3,7 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-26T17:38:08.724328+00:00",
+ "updated": "2026-11-26T18:08:11.360184+00:00",
  "matches_used": 706,
  "fixtures": [
   {
@@ -1200,10 +1200,10 @@
       "reason": "Knee Injury"
      },
      {
-      "id": 38798,
-      "name": "S. Lynen",
+      "id": 177807,
+      "name": "J. Njinmah",
       "type": "Questionable",
-      "reason": "Illness"
+      "reason": "Muscle Injury"
      }
     ],
     "away": [
@@ -1739,8 +1739,8 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 5.5,
-     "defence_hit_pct": 6.0,
+     "goals_lost_pct": 6.6,
+     "defence_hit_pct": 8.0,
      "key_out": [
       "F. Uduokhai",
       "Livan Burcu",
@@ -1748,13 +1748,13 @@
      ]
     }
    },
-   "home_pct": 62.9,
-   "draw_pct": 21.3,
-   "away_pct": 15.8,
-   "xg_home": 2.15,
-   "xg_away": 1.0,
-   "over25": 60.8,
-   "btts": 56.4,
+   "home_pct": 64.0,
+   "draw_pct": 20.9,
+   "away_pct": 15.1,
+   "xg_home": 2.19,
+   "xg_away": 0.98,
+   "over25": 61.4,
+   "btts": 56.3,
    "cards5": 39.1,
    "cards": {
     "exp": 4.12,
@@ -2701,21 +2701,21 @@
      ],
      "bookings": [
       {
-       "id": 25406,
-       "name": "F. Uduokhai",
-       "p": 37.9,
-       "yc": 3,
-       "rc": 1,
-       "ap": 6,
-       "price": null
-      },
-      {
        "id": 26249,
        "name": "J. Haberer",
        "p": 22.4,
        "yc": 3,
        "rc": 0,
        "ap": 10,
+       "price": null
+      },
+      {
+       "id": 288206,
+       "name": "L. Querfeld",
+       "p": 19.6,
+       "yc": 1,
+       "rc": 0,
+       "ap": 4,
        "price": null
       }
      ],
@@ -2789,6 +2789,12 @@
       "reason": "Illness"
      },
      {
+      "id": 25300,
+      "name": "R. Khedira",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
       "id": 413294,
       "name": "A. Markgraf",
       "type": "Missing Fixture",
@@ -2807,22 +2813,16 @@
       "reason": "Injury"
      },
      {
+      "id": 25406,
+      "name": "F. Uduokhai",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
       "id": 303679,
       "name": "Z. Van Den Bosch",
       "type": "Missing Fixture",
       "reason": "Yellow Cards"
-     },
-     {
-      "id": 25300,
-      "name": "R. Khedira",
-      "type": "Questionable",
-      "reason": "Injury"
-     },
-     {
-      "id": 25406,
-      "name": "F. Uduokhai",
-      "type": "Questionable",
-      "reason": "Muscle Injury"
      }
     ]
    },
@@ -3268,12 +3268,10 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 12.8,
-     "defence_hit_pct": 10.0,
+     "goals_lost_pct": 11.5,
+     "defence_hit_pct": 4.0,
      "key_out": [
-      "J. Torunarigha",
       "M. Muheim",
-      "S. Nandja",
       "Y. Poulsen"
      ]
     },
@@ -3288,13 +3286,13 @@
      ]
     }
    },
-   "home_pct": 7.8,
-   "draw_pct": 13.6,
-   "away_pct": 78.7,
-   "xg_home": 0.89,
-   "xg_away": 2.97,
-   "over25": 74.2,
-   "btts": 56.5,
+   "home_pct": 8.9,
+   "draw_pct": 14.9,
+   "away_pct": 76.2,
+   "xg_home": 0.91,
+   "xg_away": 2.81,
+   "over25": 71.7,
+   "btts": 56.6,
    "cards5": 32.0,
    "cards": {
     "exp": 3.71,
@@ -4274,18 +4272,6 @@
       "name": "N. Remberg",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 25346,
-      "name": "J. Torunarigha",
-      "type": "Missing Fixture",
-      "reason": "Hip Injury"
-     },
-     {
-      "id": 480452,
-      "name": "S. Nandja",
-      "type": "Questionable",
-      "reason": "Pelvis Injury"
      }
     ],
     "away": [
@@ -4697,11 +4683,9 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 3.5,
+     "goals_lost_pct": 0.6,
      "defence_hit_pct": 0.0,
-     "key_out": [
-      "S. Marino"
-     ]
+     "key_out": []
     },
     "away": {
      "goals_lost_pct": 1.6,
@@ -4711,13 +4695,13 @@
      ]
     }
    },
-   "home_pct": 33.4,
-   "draw_pct": 45.7,
-   "away_pct": 20.9,
-   "xg_home": 0.64,
+   "home_pct": 34.3,
+   "draw_pct": 45.2,
+   "away_pct": 20.5,
+   "xg_home": 0.66,
    "xg_away": 0.45,
-   "over25": 9.6,
-   "btts": 17.7,
+   "over25": 10.0,
+   "btts": 18.1,
    "cards5": 34.8,
    "cards": {
     "exp": 3.87,
@@ -5748,10 +5732,10 @@
       "reason": "Muscle Injury"
      },
      {
-      "id": 328235,
-      "name": "S. Marino",
+      "id": 342268,
+      "name": "L. Ulrich",
       "type": "Questionable",
-      "reason": "Ankle Injury"
+      "reason": "Illness"
      }
     ],
     "away": [
@@ -7276,20 +7260,18 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 2.0,
+     "goals_lost_pct": 0.0,
      "defence_hit_pct": 0.0,
-     "key_out": [
-      "C. Uzun"
-     ]
+     "key_out": []
     }
    },
-   "home_pct": 61.6,
-   "draw_pct": 19.6,
-   "away_pct": 18.8,
+   "home_pct": 61.1,
+   "draw_pct": 19.7,
+   "away_pct": 19.2,
    "xg_home": 2.46,
-   "xg_away": 1.33,
-   "over25": 72.9,
-   "btts": 67.8,
+   "xg_away": 1.35,
+   "over25": 73.3,
+   "btts": 68.4,
    "cards5": 32.8,
    "cards": {
     "exp": 3.76,
@@ -8338,12 +8320,6 @@
       "name": "J. Ngankam",
       "type": "Missing Fixture",
       "reason": "Groin Injury"
-     },
-     {
-      "id": 339887,
-      "name": "C. Uzun",
-      "type": "Questionable",
-      "reason": "Illness"
      }
     ]
    },
@@ -8862,8 +8838,8 @@
    "referee": "",
    "ref_cards": null,
    "ref_games": null,
-   "pick": "Away",
-   "model_pick": "Away",
+   "pick": "Home",
+   "model_pick": "Home",
    "call_reason": "",
    "low_data": false,
    "market": {
@@ -8878,18 +8854,21 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 0.3,
+     "defence_hit_pct": 6.0,
+     "key_out": [
+      "C. Lukeba",
+      "M. Estève"
+     ]
     }
    },
-   "home_pct": 36.4,
-   "draw_pct": 24.1,
-   "away_pct": 39.5,
-   "xg_home": 1.67,
+   "home_pct": 38.8,
+   "draw_pct": 23.7,
+   "away_pct": 37.5,
+   "xg_home": 1.77,
    "xg_away": 1.74,
-   "over25": 66.3,
-   "btts": 67.8,
+   "over25": 68.1,
+   "btts": 69.2,
    "cards5": 28.6,
    "cards": {
     "exp": 3.52,
@@ -9967,7 +9946,32 @@
    },
    "injuries": {
     "home": [],
-    "away": []
+    "away": [
+     {
+      "id": 392270,
+      "name": "M. Guiu",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 162761,
+      "name": "C. Lukeba",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 380978,
+      "name": "A. Ouedraogo",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
+      "id": 179400,
+      "name": "M. Esteve",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [

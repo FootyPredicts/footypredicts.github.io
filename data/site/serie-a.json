@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-26T17:38:11.962610+00:00",
+ "updated": "2026-11-26T18:08:14.647381+00:00",
  "matches_used": 880,
  "fixtures": [
   {
@@ -7250,23 +7250,30 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.6,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 8.4,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "C. Volpato",
+      "F. Leysen",
+      "Vasilije Adžić"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 4.2,
+     "defence_hit_pct": 11.0,
+     "key_out": [
+      "A. Meret",
+      "G. Di Lorenzo"
+     ]
     }
    },
-   "home_pct": 17.9,
-   "draw_pct": 23.7,
-   "away_pct": 58.4,
-   "xg_home": 0.97,
+   "home_pct": 18.5,
+   "draw_pct": 23.8,
+   "away_pct": 57.7,
+   "xg_home": 0.99,
    "xg_away": 1.9,
-   "over25": 54.7,
-   "btts": 53.6,
+   "over25": 55.1,
+   "btts": 54.2,
    "cards5": 30.8,
    "cards": {
     "exp": 3.66,
@@ -8260,12 +8267,12 @@
        "inv": 20.4
       },
       {
-       "id": 339872,
-       "name": "Vasilije Adžić",
+       "id": 455245,
+       "name": "D. Bakola",
        "pos": "Midfielder",
-       "g": 12.5,
-       "a": 7.2,
-       "inv": 18.8
+       "g": 4.4,
+       "a": 13.4,
+       "inv": 17.2
       }
      ]
     },
@@ -8360,37 +8367,86 @@
    "injuries": {
     "home": [
      {
-      "id": 328046,
-      "name": "I. Koné",
+      "id": 339872,
+      "name": "V. Adzic",
       "type": "Missing Fixture",
-      "reason": "Broken Leg"
-     },
-     {
-      "id": 342055,
-      "name": "E. Pieragnolo",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
-     },
-     {
-      "id": 41371,
-      "name": "Fali Candé",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
      },
      {
       "id": 291780,
       "name": "D. Boloca",
       "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Muscle Injury"
      },
      {
-      "id": 59513,
-      "name": "Y. Paz",
+      "id": 328046,
+      "name": "I. Kone",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Broken Leg"
+     },
+     {
+      "id": 290546,
+      "name": "F. Leysen",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 342035,
+      "name": "C. Volpato",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 455245,
+      "name": "D. Bakola",
+      "type": "Questionable",
+      "reason": "Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 310943,
+      "name": "Alisson Santos",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 95,
+      "name": "B. Badiashile",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 31226,
+      "name": "A. Buongiorno",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 31042,
+      "name": "G. Di Lorenzo",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 47439,
+      "name": "S. Lobotka",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 312,
+      "name": "A. Meret",
+      "type": "Missing Fixture",
+      "reason": "Back Injury"
+     },
+     {
+      "id": 347395,
+      "name": "A. Vergara",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
