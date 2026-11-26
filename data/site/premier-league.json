@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-26T18:58:29.126758+00:00",
+ "updated": "2026-11-26T19:08:10.784812+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -6205,23 +6205,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 1.5,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "J. Tarkowski"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.2,
+     "goals_lost_pct": 8.2,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "Víctor Muñoz"
+     ]
     }
    },
-   "home_pct": 28.0,
-   "draw_pct": 28.1,
-   "away_pct": 43.9,
-   "xg_home": 1.12,
-   "xg_away": 1.45,
-   "over25": 47.4,
-   "btts": 52.5,
+   "home_pct": 28.7,
+   "draw_pct": 28.7,
+   "away_pct": 42.6,
+   "xg_home": 1.1,
+   "xg_away": 1.39,
+   "over25": 45.4,
+   "btts": 51.1,
    "cards5": 35.6,
    "cards": {
     "exp": 3.92,
@@ -7278,12 +7282,12 @@
        }
       },
       {
-       "id": 338751,
-       "name": "Víctor Muñoz",
-       "p": 16.5,
-       "gl": 3,
-       "as": 0,
-       "ap": 10,
+       "id": 1096,
+       "name": "D. Szoboszlai",
+       "p": 15.3,
+       "gl": 2,
+       "as": 1,
+       "ap": 9,
        "price": {
         "odd": 4.33,
         "bookie": "Bet365",
@@ -7344,42 +7348,67 @@
        "inv": 30.9
       },
       {
-       "id": 247,
-       "name": "C. Gakpo",
+       "id": 1096,
+       "name": "D. Szoboszlai",
        "pos": "Midfielder",
-       "g": 9.2,
-       "a": 21.1,
-       "inv": 28.3
+       "g": 15.3,
+       "a": 9.0,
+       "inv": 22.9
       }
      ]
     }
    },
    "injuries": {
-    "home": [],
+    "home": [
+     {
+      "id": 2936,
+      "name": "J. Tarkowski",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     }
+    ],
     "away": [
      {
-      "id": 407032,
-      "name": "A. Nallo",
+      "id": 180317,
+      "name": "C. Bradley",
       "type": "Missing Fixture",
-      "reason": "Leg Injury"
+      "reason": "Knee Injury"
      },
      {
-      "id": 152654,
-      "name": "J. Frimpong",
+      "id": 174565,
+      "name": "H. Ekitike",
       "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Achilles Tendon Injury"
+     },
+     {
+      "id": 247,
+      "name": "C. Gakpo",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 542,
+      "name": "R. Gravenberch",
+      "type": "Missing Fixture",
+      "reason": "Heel Injury"
      },
      {
       "id": 409047,
       "name": "G. Leoni",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
      },
      {
-      "id": 180317,
-      "name": "C. Bradley",
+      "id": 338751,
+      "name": "V. Munoz",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 407032,
+      "name": "A. Nallo",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
      }
     ]
    },
