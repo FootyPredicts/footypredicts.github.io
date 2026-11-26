@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-26T16:08:14.788765+00:00",
+ "updated": "2026-11-26T16:38:28.790139+00:00",
  "matches_used": 880,
  "fixtures": [
   {
@@ -5624,9 +5624,11 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.8,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "K. Davis"
+     ]
     },
     "away": {
      "goals_lost_pct": 0.0,
@@ -5634,13 +5636,13 @@
      "key_out": []
     }
    },
-   "home_pct": 35.0,
-   "draw_pct": 27.2,
-   "away_pct": 37.8,
-   "xg_home": 1.37,
+   "home_pct": 33.7,
+   "draw_pct": 27.4,
+   "away_pct": 38.8,
+   "xg_home": 1.32,
    "xg_away": 1.43,
-   "over25": 53.0,
-   "btts": 57.7,
+   "over25": 51.8,
+   "btts": 56.7,
    "cards5": 33.7,
    "cards": {
     "exp": 3.82,
@@ -6597,14 +6599,6 @@
        "inv": 41.2
       },
       {
-       "id": 19185,
-       "name": "K. Davis",
-       "pos": "Attacker",
-       "g": 19.5,
-       "a": 22.4,
-       "inv": 37.5
-      },
-      {
        "id": 22007,
        "name": "H. Kamara",
        "pos": "Midfielder",
@@ -6619,6 +6613,14 @@
        "g": 28.3,
        "a": 6.6,
        "inv": 33.0
+      },
+      {
+       "id": 48047,
+       "name": "J. Karlström",
+       "pos": "Midfielder",
+       "g": 12.5,
+       "a": 4.8,
+       "inv": 16.7
       }
      ]
     },
@@ -6717,15 +6719,27 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": [
+    "home": [
      {
-      "id": 31507,
-      "name": "R. Sottil",
+      "id": 315249,
+      "name": "N. Bertola",
       "type": "Missing Fixture",
-      "reason": "Back Injury"
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 19185,
+      "name": "K. Davis",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 434410,
+      "name": "I. Gueye",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
      }
-    ]
+    ],
+    "away": []
    },
    "lineup_confirmed": false,
    "previous": [
@@ -13680,7 +13694,7 @@
      "any": 63.58743979384309
     },
     "away": {
-     "fh": 45.73745805649756,
+     "fh": 45.73745805649755,
      "sh": 60.59092589899945,
      "any": 78.61563463639862
     },
