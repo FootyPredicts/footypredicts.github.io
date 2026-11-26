@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-25T21:38:24.561344+00:00",
+ "updated": "2026-11-26T02:26:41.255975+00:00",
  "matches_used": 714,
  "fixtures": [
   {
@@ -1517,21 +1517,20 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 8.0,
+     "goals_lost_pct": 5.0,
      "defence_hit_pct": 4.0,
      "key_out": [
-      "A. Sima",
-      "I. Ganiou"
+      "R. Aguilar"
      ]
     }
    },
-   "home_pct": 17.7,
-   "draw_pct": 25.9,
-   "away_pct": 56.4,
+   "home_pct": 17.1,
+   "draw_pct": 25.3,
+   "away_pct": 57.7,
    "xg_home": 0.84,
-   "xg_away": 1.68,
-   "over25": 46.3,
-   "btts": 47.3,
+   "xg_away": 1.74,
+   "over25": 47.6,
+   "btts": 47.8,
    "cards5": 29.7,
    "cards": {
     "exp": 3.61,
@@ -2464,17 +2463,17 @@
        }
       },
       {
-       "id": 202951,
-       "name": "F. Ivanović",
-       "p": 21.8,
-       "gl": 2,
-       "as": 0,
-       "ap": 7,
+       "id": 277191,
+       "name": "A. Sima",
+       "p": 24.2,
+       "gl": 1,
+       "as": 1,
+       "ap": 6,
        "price": {
-        "odd": 2.4,
+        "odd": 2.6,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 2.4
+         "Bet365": 2.6
         }
        }
       }
@@ -2500,9 +2499,9 @@
       }
      ],
      "defender": {
-      "id": 21568,
-      "name": "R. Aguilar",
-      "sot": 1
+      "id": 369500,
+      "name": "I. Ganiou",
+      "sot": 3
      },
      "cap": [
       {
@@ -2512,6 +2511,14 @@
        "g": 39.8,
        "a": 47.9,
        "inv": 68.6
+      },
+      {
+       "id": 277191,
+       "name": "A. Sima",
+       "pos": "Attacker",
+       "g": 24.2,
+       "a": 16.6,
+       "inv": 36.7
       },
       {
        "id": 20761,
@@ -2528,44 +2535,43 @@
        "g": 21.8,
        "a": 4.7,
        "inv": 25.5
-      },
-      {
-       "id": 20525,
-       "name": "M. Udol",
-       "pos": "Midfielder",
-       "g": 19.4,
-       "a": 4.6,
-       "inv": 23.1
       }
      ]
     }
    },
    "injuries": {
-    "home": [],
+    "home": [
+     {
+      "id": 655113,
+      "name": "B. Diatta",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     }
+    ],
     "away": [
      {
-      "id": 1135,
-      "name": "O. Édouard",
+      "id": 21568,
+      "name": "R. Aguilar",
       "type": "Missing Fixture",
-      "reason": "Groin Injury"
+      "reason": "Muscle Injury"
      },
      {
-      "id": 369500,
-      "name": "I. Ganiou",
+      "id": 25634,
+      "name": "M. Cuisance",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Illness"
+     },
+     {
+      "id": 1135,
+      "name": "O. Edouard",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
      },
      {
       "id": 178708,
       "name": "M. Nawrocki",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
-     },
-     {
-      "id": 277191,
-      "name": "A. Sima",
-      "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Knee Injury"
      }
     ]
    },
@@ -2968,23 +2974,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 0.1,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "Mohamed Abdelmonem"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 1.5,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 54.0,
+   "home_pct": 53.8,
    "draw_pct": 26.4,
-   "away_pct": 19.6,
+   "away_pct": 19.8,
    "xg_home": 1.65,
-   "xg_away": 0.9,
-   "over25": 46.9,
-   "btts": 49.0,
+   "xg_away": 0.91,
+   "over25": 47.0,
+   "btts": 49.1,
    "cards5": 34.7,
    "cards": {
     "exp": 3.87,
@@ -4034,10 +4042,47 @@
       "id": 20917,
       "name": "L. Abergel",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 407017,
+      "name": "M. Bombito",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
+     },
+     {
+      "id": 313937,
+      "name": "A. Mendy",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 196343,
+      "name": "M. Abdelmonem",
+      "type": "Questionable",
+      "reason": "Hamstring Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 859,
+      "name": "P. Gozzi",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 670620,
+      "name": "Y. Kone",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 275478,
+      "name": "M. Ifnaoui",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [],
@@ -4192,25 +4237,23 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 8.4,
-     "defence_hit_pct": 4.0,
-     "key_out": [
-      "Marquinhos"
-     ]
+     "goals_lost_pct": 6.0,
+     "defence_hit_pct": 0.0,
+     "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.6,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 63.2,
-   "draw_pct": 23.1,
-   "away_pct": 13.6,
-   "xg_home": 1.89,
-   "xg_away": 0.76,
-   "over25": 49.5,
-   "btts": 46.2,
+   "home_pct": 65.7,
+   "draw_pct": 22.2,
+   "away_pct": 12.0,
+   "xg_home": 1.94,
+   "xg_away": 0.71,
+   "over25": 49.4,
+   "btts": 44.2,
    "cards5": 25.9,
    "cards": {
     "exp": 3.41,
@@ -5023,12 +5066,12 @@
        "inv": 28.2
       },
       {
-       "id": 343027,
-       "name": "D. Doué",
+       "id": 153,
+       "name": "O. Dembélé",
        "pos": "Attacker",
-       "g": 15.5,
-       "a": 7.0,
-       "inv": 21.4
+       "g": 12.7,
+       "a": 17.4,
+       "inv": 27.9
       }
      ]
     },
@@ -5076,12 +5119,12 @@
        "price": null
       },
       {
-       "id": 195893,
-       "name": "S. Touré",
-       "p": 16.7,
-       "yc": 1,
+       "id": 214310,
+       "name": "N. Adjei",
+       "p": 16.3,
+       "yc": 2,
        "rc": 0,
-       "ap": 5,
+       "ap": 11,
        "price": null
       }
      ],
@@ -5108,20 +5151,20 @@
        "inv": 15.0
       },
       {
-       "id": 384112,
-       "name": "P. Katseris",
-       "pos": "Defender",
-       "g": 1.4,
-       "a": 13.7,
-       "inv": 14.9
-      },
-      {
        "id": 402386,
        "name": "K. Kouassi",
        "pos": "Midfielder",
        "g": 3.5,
        "a": 10.9,
        "inv": 14.0
+      },
+      {
+       "id": 274278,
+       "name": "I. Baldé",
+       "pos": "Attacker",
+       "g": 9.2,
+       "a": 2.8,
+       "inv": 11.8
       }
      ]
     }
@@ -5129,31 +5172,44 @@
    "injuries": {
     "home": [
      {
-      "id": 257,
-      "name": "Marquinhos",
+      "id": 343027,
+      "name": "D. Doue",
       "type": "Missing Fixture",
-      "reason": "Thigh Problems"
-     },
-     {
-      "id": 153,
-      "name": "O. Dembélé",
-      "type": "Missing Fixture",
-      "reason": "Thigh Problems"
-     },
-     {
-      "id": 263482,
-      "name": "Nuno Mendes",
-      "type": "Missing Fixture",
-      "reason": "Muscle Bruise"
+      "reason": "Knee Injury"
      },
      {
       "id": 483,
       "name": "K. Kvaratskhelia",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 606062,
+      "name": "A. Longoni",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 162018,
+      "name": "B. Fadiga",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 384112,
+      "name": "P. Katseris",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 195893,
+      "name": "I. Toure",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -5451,23 +5507,26 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 7.7,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 5.6,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "G. Reyna",
+      "Oso"
+     ]
     }
    },
-   "home_pct": 25.0,
-   "draw_pct": 24.3,
-   "away_pct": 50.6,
-   "xg_home": 1.26,
-   "xg_away": 1.86,
-   "over25": 60.2,
-   "btts": 61.2,
+   "home_pct": 25.4,
+   "draw_pct": 25.3,
+   "away_pct": 49.3,
+   "xg_home": 1.21,
+   "xg_away": 1.75,
+   "over25": 56.8,
+   "btts": 58.8,
    "cards5": 33.0,
    "cards": {
     "exp": 3.78,
@@ -6408,12 +6467,12 @@
        "inv": 36.7
       },
       {
-       "id": 508070,
-       "name": "S. Nakamura",
+       "id": 314231,
+       "name": "A. Richardson",
        "pos": "Attacker",
-       "g": 15.1,
-       "a": 12.7,
-       "inv": 25.9
+       "g": 15.6,
+       "a": 5.3,
+       "inv": 20.1
       }
      ]
     },
@@ -6471,9 +6530,9 @@
       }
      ],
      "defender": {
-      "id": 341453,
-      "name": "Oso",
-      "sot": 2
+      "id": 297583,
+      "name": "J. Mitchell",
+      "sot": 1
      },
      "cap": [
       {
@@ -6501,12 +6560,12 @@
        "inv": 31.9
       },
       {
-       "id": 341453,
-       "name": "Oso",
-       "pos": "Defender",
-       "g": 4.9,
-       "a": 21.6,
-       "inv": 25.4
+       "id": 308678,
+       "name": "Dário Essugo",
+       "pos": "Midfielder",
+       "g": 14.1,
+       "a": 12.2,
+       "inv": 24.5
       }
      ]
     }
@@ -6514,24 +6573,78 @@
    "injuries": {
     "home": [
      {
+      "id": 437349,
+      "name": "E. Koffi",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
       "id": 961,
       "name": "F. Mambimbi",
       "type": "Missing Fixture",
-      "reason": "Achilles Tendon Problems"
+      "reason": "Achilles Tendon Injury"
+     },
+     {
+      "id": 460805,
+      "name": "D. Mosengo",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 24012,
+      "name": "L. Mpasi-Nzau",
+      "type": "Missing Fixture",
+      "reason": "Achilles Tendon Injury"
+     },
+     {
+      "id": 508070,
+      "name": "S. Nakamura",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
+      "id": 128342,
+      "name": "R. Ndiaye",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 162067,
+      "name": "T. Pembele",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
      },
      {
       "id": 513415,
-      "name": "Stephan Zagadou",
+      "name": "S. Zagadou",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
      }
     ],
     "away": [
      {
+      "id": 380939,
+      "name": "F. Balde",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
+     },
+     {
+      "id": 341453,
+      "name": "Oso",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
       "id": 390742,
       "name": "J. Panichelli",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 161921,
+      "name": "G. Reyna",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
      }
     ]
    },
@@ -7009,26 +7122,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 6.4,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "A. Bourabaa"
+     ]
     },
     "away": {
-     "goals_lost_pct": 10.2,
+     "goals_lost_pct": 4.7,
      "defence_hit_pct": 4.0,
      "key_out": [
-      "A. Ueda",
       "Tiago Santos"
      ]
     }
    },
-   "home_pct": 29.0,
-   "draw_pct": 29.7,
-   "away_pct": 41.4,
-   "xg_home": 1.06,
-   "xg_away": 1.31,
-   "over25": 42.2,
-   "btts": 48.7,
+   "home_pct": 25.7,
+   "draw_pct": 29.1,
+   "away_pct": 45.2,
+   "xg_home": 0.99,
+   "xg_away": 1.39,
+   "over25": 42.6,
+   "btts": 48.2,
    "cards5": 38.6,
    "cards": {
     "exp": 4.08,
@@ -7902,17 +8016,17 @@
        }
       },
       {
-       "id": 608142,
-       "name": "A. Bourabaa",
-       "p": 17.5,
-       "gl": 3,
-       "as": 2,
-       "ap": 5,
+       "id": 4743,
+       "name": "D. Guèye",
+       "p": 10.9,
+       "gl": 1,
+       "as": 0,
+       "ap": 11,
        "price": {
-        "odd": 8.5,
+        "odd": 3.4,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 8.5
+         "Bet365": 3.4
         }
        }
       }
@@ -7928,12 +8042,12 @@
        "price": null
       },
       {
-       "id": 102,
-       "name": "D. Sidibé",
-       "p": 27.4,
-       "yc": 2,
-       "rc": 1,
-       "ap": 5,
+       "id": 483116,
+       "name": "N. Boissé",
+       "p": 20.0,
+       "yc": 3,
+       "rc": 0,
+       "ap": 10,
        "price": null
       }
      ],
@@ -7943,14 +8057,6 @@
       "sot": 5
      },
      "cap": [
-      {
-       "id": 608142,
-       "name": "A. Bourabaa",
-       "pos": "Midfielder",
-       "g": 17.5,
-       "a": 18.1,
-       "inv": 32.5
-      },
       {
        "id": 85558,
        "name": "L. Mafouta",
@@ -7974,11 +8080,34 @@
        "g": 10.9,
        "a": 2.4,
        "inv": 13.0
+      },
+      {
+       "id": 363226,
+       "name": "R. Bamba",
+       "pos": "Defender",
+       "g": 0.9,
+       "a": 11.4,
+       "inv": 12.2
       }
      ]
     },
     "away": {
      "scorers": [
+      {
+       "id": 72155,
+       "name": "A. Ueda",
+       "p": 30.3,
+       "gl": 2,
+       "as": 0,
+       "ap": 5,
+       "price": {
+        "odd": 2.5,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.5
+        }
+       }
+      },
       {
        "id": 487381,
        "name": "S. Diaoune",
@@ -7991,21 +8120,6 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 3.25
-        }
-       }
-      },
-      {
-       "id": 2295,
-       "name": "O. Giroud",
-       "p": 20.8,
-       "gl": 3,
-       "as": 2,
-       "ap": 10,
-       "price": {
-        "odd": 2.62,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.62
         }
        }
       }
@@ -8045,6 +8159,14 @@
        "inv": 40.5
       },
       {
+       "id": 72155,
+       "name": "A. Ueda",
+       "pos": "Attacker",
+       "g": 30.3,
+       "a": 5.6,
+       "inv": 34.2
+      },
+      {
        "id": 2295,
        "name": "O. Giroud",
        "pos": "Attacker",
@@ -8059,38 +8181,43 @@
        "g": 17.0,
        "a": 10.7,
        "inv": 25.9
-      },
-      {
-       "id": 386287,
-       "name": "E. Mbappé",
-       "pos": "Midfielder",
-       "g": 20.0,
-       "a": 3.8,
-       "inv": 23.1
       }
      ]
     }
    },
    "injuries": {
-    "home": [],
-    "away": [
+    "home": [
      {
-      "id": 72155,
-      "name": "A. Ueda",
+      "id": 608142,
+      "name": "A. Bourabaa",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     },
+     {
+      "id": 102,
+      "name": "D. Sidibe",
       "type": "Missing Fixture",
       "reason": "Foot Injury"
-     },
-     {
-      "id": 379329,
-      "name": "Tiago Santos",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
-     },
+     }
+    ],
+    "away": [
      {
       "id": 306979,
       "name": "H. Igamane",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 133110,
+      "name": "T. Nianzou",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
+     },
+     {
+      "id": 379329,
+      "name": "T. Santos",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
      }
     ]
    },

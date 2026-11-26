@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-25T21:38:21.223040+00:00",
+ "updated": "2026-11-26T02:26:37.840897+00:00",
  "matches_used": 880,
  "fixtures": [
   {
@@ -1393,23 +1393,28 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 11.4,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "A. Raimondo"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 7.4,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "D. Drobnic",
+      "D. Romero"
+     ]
     }
    },
-   "home_pct": 62.7,
-   "draw_pct": 20.6,
-   "away_pct": 16.6,
-   "xg_home": 2.26,
-   "xg_away": 1.1,
-   "over25": 65.2,
-   "btts": 60.4,
+   "home_pct": 61.0,
+   "draw_pct": 22.0,
+   "away_pct": 16.9,
+   "xg_home": 2.08,
+   "xg_away": 1.02,
+   "over25": 59.9,
+   "btts": 56.7,
    "cards5": 35.5,
    "cards": {
     "exp": 3.91,
@@ -2246,21 +2251,6 @@
     "home": {
      "scorers": [
       {
-       "id": 314254,
-       "name": "A. Raimondo",
-       "p": 44.6,
-       "gl": 8,
-       "as": 0,
-       "ap": 10,
-       "price": {
-        "odd": 1.83,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 1.83
-        }
-       }
-      },
-      {
        "id": 32011,
        "name": "G. Calò",
        "p": 31.7,
@@ -2272,6 +2262,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 3.0
+        }
+       }
+      },
+      {
+       "id": 334915,
+       "name": "F. Ghedjemis",
+       "p": 27.3,
+       "gl": 1,
+       "as": 4,
+       "ap": 10,
+       "price": {
+        "odd": 2.3,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 2.3
         }
        }
       }
@@ -2311,14 +2316,6 @@
        "inv": 50.8
       },
       {
-       "id": 314254,
-       "name": "A. Raimondo",
-       "pos": "Attacker",
-       "g": 44.6,
-       "a": 4.7,
-       "inv": 47.1
-      },
-      {
        "id": 311251,
        "name": "G. Kvernadze",
        "pos": "Midfielder",
@@ -2333,26 +2330,19 @@
        "g": 15.4,
        "a": 28.7,
        "inv": 39.7
+      },
+      {
+       "id": 32011,
+       "name": "G. Calò",
+       "pos": "Midfielder",
+       "g": 31.7,
+       "a": 11.1,
+       "inv": 39.2
       }
      ]
     },
     "away": {
      "scorers": [
-      {
-       "id": 194905,
-       "name": "D. Romero",
-       "p": 20.4,
-       "gl": 2,
-       "as": 0,
-       "ap": 9,
-       "price": {
-        "odd": 3.25,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.25
-        }
-       }
-      },
       {
        "id": 483670,
        "name": "S. Lontani",
@@ -2365,6 +2355,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 3.6
+        }
+       }
+      },
+      {
+       "id": 194750,
+       "name": "E. Touré",
+       "p": 12.7,
+       "gl": 0,
+       "as": 1,
+       "ap": 12,
+       "price": {
+        "odd": 4.0,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.0
         }
        }
       }
@@ -2396,14 +2401,6 @@
      },
      "cap": [
       {
-       "id": 194905,
-       "name": "D. Romero",
-       "pos": "Attacker",
-       "g": 20.4,
-       "a": 3.3,
-       "inv": 23.0
-      },
-      {
        "id": 194750,
        "name": "E. Touré",
        "pos": "Attacker",
@@ -2426,13 +2423,59 @@
        "g": 6.7,
        "a": 12.7,
        "inv": 18.5
+      },
+      {
+       "id": 483670,
+       "name": "S. Lontani",
+       "pos": "Attacker",
+       "g": 15.6,
+       "a": 2.8,
+       "inv": 17.9
       }
      ]
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 126892,
+      "name": "D. Birligea",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 719,
+      "name": "F. Grillitsch",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 314254,
+      "name": "A. Raimondo",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 576948,
+      "name": "D. Drobnic",
+      "type": "Missing Fixture",
+      "reason": "Foot Injury"
+     },
+     {
+      "id": 194905,
+      "name": "D. Romero",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
+      "id": 6221,
+      "name": "L. Valenti",
+      "type": "Missing Fixture",
+      "reason": "Coach's decision"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [],
@@ -2550,23 +2593,30 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 1.5,
+     "defence_hit_pct": 6.0,
+     "key_out": [
+      "A. Ismajli",
+      "R. Belghali"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 7.0,
+     "defence_hit_pct": 8.0,
+     "key_out": [
+      "J. Šutalo",
+      "M. Zaccagni",
+      "Nuno Tavares"
+     ]
     }
    },
-   "home_pct": 21.8,
-   "draw_pct": 26.4,
-   "away_pct": 51.8,
-   "xg_home": 0.99,
-   "xg_away": 1.64,
-   "over25": 49.0,
-   "btts": 51.6,
+   "home_pct": 23.7,
+   "draw_pct": 26.6,
+   "away_pct": 49.6,
+   "xg_home": 1.05,
+   "xg_away": 1.62,
+   "over25": 50.0,
+   "btts": 53.2,
    "cards5": 34.9,
    "cards": {
     "exp": 3.88,
@@ -3490,17 +3540,17 @@
        }
       },
       {
-       "id": 30937,
-       "name": "M. Zaccagni",
-       "p": 22.3,
-       "gl": 2,
-       "as": 5,
-       "ap": 10,
+       "id": 31173,
+       "name": "D. Frattesi",
+       "p": 19.9,
+       "gl": 5,
+       "as": 0,
+       "ap": 12,
        "price": {
-        "odd": 3.5,
+        "odd": 3.75,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.5
+         "Bet365": 3.75
         }
        }
       }
@@ -3516,29 +3566,21 @@
        "price": null
       },
       {
-       "id": 30937,
-       "name": "M. Zaccagni",
-       "p": 21.2,
-       "yc": 3,
+       "id": 37117,
+       "name": "D. Doekhi",
+       "p": 16.4,
+       "yc": 1,
        "rc": 0,
-       "ap": 10,
+       "ap": 5,
        "price": null
       }
      ],
      "defender": {
-      "id": 41577,
-      "name": "Nuno Tavares",
-      "sot": 3
+      "id": 342651,
+      "name": "R. Floriani Mussolini",
+      "sot": 2
      },
      "cap": [
-      {
-       "id": 30937,
-       "name": "M. Zaccagni",
-       "pos": "Attacker",
-       "g": 22.3,
-       "a": 29.1,
-       "inv": 45.0
-      },
       {
        "id": 133729,
        "name": "T. Noslin",
@@ -3562,6 +3604,14 @@
        "g": 19.9,
        "a": 2.7,
        "inv": 22.1
+      },
+      {
+       "id": 38749,
+       "name": "K. Taylor",
+       "pos": "Midfielder",
+       "g": 10.6,
+       "a": 12.6,
+       "inv": 21.9
       }
      ]
     }
@@ -3569,13 +3619,62 @@
    "injuries": {
     "home": [
      {
-      "id": 123,
-      "name": "P. Pellegri",
+      "id": 14329,
+      "name": "A. Ismajli",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 56266,
+      "name": "F. Israel",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
+      "id": 303362,
+      "name": "R. Belghali",
+      "type": "Questionable",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 437093,
+      "name": "N. Fortini",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
      }
     ],
-    "away": []
+    "away": [
+     {
+      "id": 63934,
+      "name": "A. Furlanetto",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 1844,
+      "name": "A. Marusic",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 14701,
+      "name": "J. Sutalo",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 41577,
+      "name": "N. Tavares",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 30937,
+      "name": "M. Zaccagni",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
@@ -4076,23 +4175,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 4.6,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "A. Bastoni"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 1.9,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 70.1,
-   "draw_pct": 18.5,
-   "away_pct": 11.5,
-   "xg_home": 2.39,
+   "home_pct": 68.1,
+   "draw_pct": 19.5,
+   "away_pct": 12.4,
+   "xg_home": 2.27,
    "xg_away": 0.88,
-   "over25": 63.4,
-   "btts": 53.8,
+   "over25": 61.1,
+   "btts": 53.3,
    "cards5": 32.2,
    "cards": {
     "exp": 3.74,
@@ -5116,13 +5217,38 @@
     }
    },
    "injuries": {
-    "home": [],
+    "home": [
+     {
+      "id": 275651,
+      "name": "A. Bonny",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 1640,
+      "name": "H. Calhanoglu",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 329,
+      "name": "P. Zielinski",
+      "type": "Missing Fixture",
+      "reason": "Foot Injury"
+     },
+     {
+      "id": 31009,
+      "name": "A. Bastoni",
+      "type": "Questionable",
+      "reason": "Injury"
+     }
+    ],
     "away": [
      {
-      "id": 452033,
-      "name": "L. Venturino",
+      "id": 263481,
+      "name": "L. Colombo",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
      }
     ]
    },
