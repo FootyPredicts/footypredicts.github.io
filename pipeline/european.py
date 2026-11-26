@@ -42,7 +42,10 @@ def load_history():
     """All matches as a DataFrame, plus {team: domestic league} from the latest season each club appeared in."""
     rows, team_league, seen = {}, {}, {}
     for path in sorted(glob.glob(os.path.join(DATA_DIR, "history", "*.json"))):
-        name, season = os.path.basename(path)[:-5].rsplit("_", 1)
+        base = os.path.basename(path)[:-5]
+        if base.startswith("events_"):
+            continue
+        name, season = base.rsplit("_", 1)
         with open(path, encoding="utf-8") as fh:
             data = json.load(fh)
         for x in data:
@@ -188,6 +191,11 @@ def main():
     for key, (prefix, name) in COMPETITIONS.items():
         up = df[(df["comp"] == prefix) & df["status"].isin(models.UPCOMING) &
                 (df["dt"] >= now - pd.Timedelta(hours=3)) & (df["dt"] <= now + pd.Timedelta(days=DAYS_AHEAD))]
+        if up.empty:  # quiet week: show the next matchday instead of leaving old matches on the page
+            nxt = df[(df["comp"] == prefix) & df["status"].isin(models.UPCOMING) & (df["dt"] > now) &
+                     (df["dt"] <= now + pd.Timedelta(days=60))].sort_values("dt")
+            if not nxt.empty:
+                up = nxt[nxt["dt"] <= nxt["dt"].iloc[0] + pd.Timedelta(days=3)]
         up = up.sort_values("dt").head(MAX_FIXTURES)
         fixtures = [build_fixture(f, em, res, p_rates) for _, f in up.iterrows()]
         result = {"league": key, "name": name, "country": "Europe", "season": current_season(),
