@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-26T19:08:10.784812+00:00",
+ "updated": "2026-11-26T19:38:13.741810+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -7936,23 +7936,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 4.3,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "Yeremy Pino"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 2.4,
      "defence_hit_pct": 0.0,
      "key_out": []
     }
    },
-   "home_pct": 25.9,
-   "draw_pct": 30.7,
+   "home_pct": 25.3,
+   "draw_pct": 31.2,
    "away_pct": 43.5,
-   "xg_home": 0.92,
-   "xg_away": 1.27,
-   "over25": 37.6,
-   "btts": 44.4,
+   "xg_home": 0.88,
+   "xg_away": 1.24,
+   "over25": 35.7,
+   "btts": 42.8,
    "cards5": 37.2,
    "cards": {
     "exp": 4.0,
@@ -8930,31 +8932,22 @@
        }
       },
       {
-       "id": 184226,
-       "name": "Yeremy Pino",
-       "p": 10.9,
-       "gl": 2,
-       "as": 1,
+       "id": 338735,
+       "name": "A. Khalaili",
+       "p": 9.6,
+       "gl": 1,
+       "as": 0,
        "ap": 11,
        "price": {
-        "odd": 4.0,
+        "odd": 4.5,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 4.0
+         "Bet365": 4.5
         }
        }
       }
      ],
      "bookings": [
-      {
-       "id": 184226,
-       "name": "Yeremy Pino",
-       "p": 29.7,
-       "yc": 5,
-       "rc": 0,
-       "ap": 11,
-       "price": null
-      },
       {
        "id": 2490,
        "name": "J. Lerma",
@@ -8962,6 +8955,15 @@
        "yc": 3,
        "rc": 0,
        "ap": 7,
+       "price": null
+      },
+      {
+       "id": 288102,
+       "name": "A. Wharton",
+       "p": 16.3,
+       "yc": 2,
+       "rc": 0,
+       "ap": 11,
        "price": null
       }
      ],
@@ -8988,20 +8990,20 @@
        "inv": 23.9
       },
       {
-       "id": 184226,
-       "name": "Yeremy Pino",
-       "pos": "Midfielder",
-       "g": 10.9,
-       "a": 7.1,
-       "inv": 17.3
-      },
-      {
        "id": 38747,
        "name": "Q. Timber",
        "pos": "Midfielder",
        "g": 5.0,
        "a": 9.6,
        "inv": 14.1
+      },
+      {
+       "id": 1468,
+       "name": "E. Nketiah",
+       "pos": "Attacker",
+       "g": 7.7,
+       "a": 5.4,
+       "inv": 12.7
       }
      ]
     },
@@ -9102,6 +9104,24 @@
    "injuries": {
     "home": [
      {
+      "id": 25927,
+      "name": "J. Mateta",
+      "type": "Missing Fixture",
+      "reason": "Red Card"
+     },
+     {
+      "id": 184226,
+      "name": "Y. Pino",
+      "type": "Missing Fixture",
+      "reason": "Yellow Cards"
+     },
+     {
+      "id": 278898,
+      "name": "C. Riad",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
       "id": 2218,
       "name": "I. Sarr",
       "type": "Missing Fixture",
@@ -9114,13 +9134,25 @@
       "reason": "Calf Injury"
      },
      {
-      "id": 278898,
-      "name": "C. Riad",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "id": 162712,
+      "name": "O. Mingueza",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
      }
     ],
     "away": [
+     {
+      "id": 380873,
+      "name": "I. Ansah",
+      "type": "Missing Fixture",
+      "reason": "Back Injury"
+     },
+     {
+      "id": 19569,
+      "name": "J. Gelhardt",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
      {
       "id": 331551,
       "name": "C. Hughes",
@@ -9128,10 +9160,28 @@
       "reason": "Groin Injury"
      },
      {
-      "id": 380873,
-      "name": "Ilyas  Ansah",
+      "id": 284500,
+      "name": "T. Iroegbunam",
       "type": "Missing Fixture",
-      "reason": "Back Injury"
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 162991,
+      "name": "E. Matazo",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 32960,
+      "name": "H. Morita",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 18941,
+      "name": "M. Targett",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
      }
     ]
    },
@@ -13990,11 +14040,9 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 6.9,
+     "goals_lost_pct": 0.0,
      "defence_hit_pct": 0.0,
-     "key_out": [
-      "B. Saka"
-     ]
+     "key_out": []
     },
     "away": {
      "goals_lost_pct": 3.3,
@@ -14002,13 +14050,13 @@
      "key_out": []
     }
    },
-   "home_pct": 47.8,
-   "draw_pct": 29.2,
-   "away_pct": 22.9,
-   "xg_home": 1.4,
+   "home_pct": 50.7,
+   "draw_pct": 28.0,
+   "away_pct": 21.3,
+   "xg_home": 1.51,
    "xg_away": 0.89,
-   "over25": 40.3,
-   "btts": 45.6,
+   "over25": 43.1,
+   "btts": 47.0,
    "cards5": 38.0,
    "cards": {
     "exp": 4.05,
@@ -14953,8 +15001,8 @@
     },
     "away": {
      "fh": 50.74247844530747,
-     "sh": 55.55024833179435,
-     "any": 78.1051539910263
+     "sh": 55.550248331794336,
+     "any": 78.10515399102628
     },
     "match_fh": 72.22631179945513,
     "match_sh": 81.68220688763593
@@ -14962,6 +15010,15 @@
    "players": {
     "home": {
      "scorers": [
+      {
+       "id": 1460,
+       "name": "B. Saka",
+       "p": 26.6,
+       "gl": 3,
+       "as": 0,
+       "ap": 7,
+       "price": null
+      },
       {
        "id": 978,
        "name": "K. Havertz",
@@ -14974,21 +15031,6 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 2.75
-        }
-       }
-      },
-      {
-       "id": 136723,
-       "name": "N. Madueke",
-       "p": 20.0,
-       "gl": 2,
-       "as": 0,
-       "ap": 8,
-       "price": {
-        "odd": 3.75,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 3.75
         }
        }
       }
@@ -15028,6 +15070,14 @@
        "inv": 34.3
       },
       {
+       "id": 1460,
+       "name": "B. Saka",
+       "pos": "Midfielder",
+       "g": 26.6,
+       "a": 4.5,
+       "inv": 30.0
+      },
+      {
        "id": 978,
        "name": "K. Havertz",
        "pos": "Attacker",
@@ -15042,14 +15092,6 @@
        "g": 1.4,
        "a": 24.1,
        "inv": 25.1
-      },
-      {
-       "id": 37127,
-       "name": "M. Ødegaard",
-       "pos": "Midfielder",
-       "g": 17.1,
-       "a": 9.4,
-       "inv": 24.9
       }
      ]
     },
@@ -15148,20 +15190,13 @@
     }
    },
    "injuries": {
-    "home": [
-     {
-      "id": 1460,
-      "name": "B. Saka",
-      "type": "Missing Fixture",
-      "reason": "Thigh Problems"
-     }
-    ],
+    "home": [],
     "away": [
      {
       "id": 19281,
       "name": "A. Semenyo",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
      }
     ]
    },
