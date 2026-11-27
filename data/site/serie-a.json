@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-27T19:38:18.112096+00:00",
+ "updated": "2026-11-27T20:08:17.105263+00:00",
  "matches_used": 880,
  "fixtures": [
   {
@@ -11808,23 +11808,25 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 4.7,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
     "away": {
      "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "defence_hit_pct": 7.0,
+     "key_out": [
+      "M. Carnesecchi"
+     ]
     }
    },
-   "home_pct": 17.6,
+   "home_pct": 18.0,
    "draw_pct": 25.3,
-   "away_pct": 57.1,
-   "xg_home": 0.87,
+   "away_pct": 56.7,
+   "xg_home": 0.88,
    "xg_away": 1.74,
-   "over25": 48.2,
-   "btts": 48.6,
+   "over25": 48.6,
+   "btts": 49.2,
    "cards5": 26.4,
    "cards": {
     "exp": 3.43,
@@ -12767,14 +12769,6 @@
        "inv": 30.1
       },
       {
-       "id": 46170,
-       "name": "I. Ilić",
-       "pos": "Midfielder",
-       "g": 5.3,
-       "a": 24.9,
-       "inv": 28.9
-      },
-      {
        "id": 120,
        "name": "W. Geubbels",
        "pos": "Attacker",
@@ -12789,6 +12783,14 @@
        "g": 19.2,
        "a": 3.9,
        "inv": 22.3
+      },
+      {
+       "id": 455316,
+       "name": "Tiago Gabriel",
+       "pos": "Defender",
+       "g": 11.9,
+       "a": 10.2,
+       "inv": 21.0
       }
      ]
     },
@@ -12887,8 +12889,46 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 46170,
+      "name": "I. Ilic",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 197779,
+      "name": "M. Kaba",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 6662,
+      "name": "S. Pierotti",
+      "type": "Missing Fixture",
+      "reason": "Ankle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 30417,
+      "name": "M. Carnesecchi",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 137976,
+      "name": "I. Hien",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 48119,
+      "name": "O. Kossounou",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
