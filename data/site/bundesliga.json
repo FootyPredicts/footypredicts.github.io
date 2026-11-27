@@ -3,7 +3,7 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-27T17:38:24.218697+00:00",
+ "updated": "2026-11-27T18:08:21.050091+00:00",
  "matches_used": 706,
  "fixtures": [
   {
@@ -1228,7 +1228,7 @@
       "id": 327646,
       "name": "L. Ullrich",
       "type": "Missing Fixture",
-      "reason": "Broken collarbone"
+      "reason": "Broken Collarbone"
      },
      {
       "id": 725,
@@ -1731,7 +1731,7 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 2.8,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
@@ -1745,13 +1745,13 @@
      ]
     }
    },
-   "home_pct": 64.0,
-   "draw_pct": 20.9,
-   "away_pct": 15.1,
-   "xg_home": 2.19,
+   "home_pct": 62.7,
+   "draw_pct": 21.5,
+   "away_pct": 15.8,
+   "xg_home": 2.12,
    "xg_away": 0.98,
-   "over25": 61.4,
-   "btts": 56.3,
+   "over25": 60.1,
+   "btts": 55.9,
    "cards5": 39.1,
    "cards": {
     "exp": 4.12,
@@ -2605,21 +2605,21 @@
      ],
      "bookings": [
       {
-       "id": 25915,
-       "name": "P. Mwene",
-       "p": 37.0,
-       "yc": 5,
-       "rc": 0,
-       "ap": 9,
-       "price": null
-      },
-      {
        "id": 711,
        "name": "S. Posch",
        "p": 34.3,
        "yc": 3,
        "rc": 1,
        "ap": 8,
+       "price": null
+      },
+      {
+       "id": 714,
+       "name": "N. Amiri",
+       "p": 18.5,
+       "yc": 2,
+       "rc": 0,
+       "ap": 10,
        "price": null
       }
      ],
@@ -2654,12 +2654,12 @@
        "inv": 46.4
       },
       {
-       "id": 25915,
-       "name": "P. Mwene",
+       "id": 2906,
+       "name": "Lee Jae-Sung",
        "pos": "Midfielder",
-       "g": 15.1,
-       "a": 15.9,
-       "inv": 28.6
+       "g": 14.5,
+       "a": 15.4,
+       "inv": 27.7
       }
      ]
     },
@@ -2766,10 +2766,16 @@
       "reason": "Foot Injury"
      },
      {
+      "id": 25915,
+      "name": "P. Mwene",
+      "type": "Missing Fixture",
+      "reason": "Injury"
+     },
+     {
       "id": 20617,
       "name": "Silas",
       "type": "Missing Fixture",
-      "reason": "Broken shinbone"
+      "reason": "Broken Shinbone"
      }
     ],
     "away": [
@@ -3279,7 +3285,7 @@
      ]
     },
     "away": {
-     "goals_lost_pct": 15.3,
+     "goals_lost_pct": 16.6,
      "defence_hit_pct": 11.0,
      "key_out": [
       "A. Davies",
@@ -3289,13 +3295,13 @@
      ]
     }
    },
-   "home_pct": 8.9,
-   "draw_pct": 14.9,
-   "away_pct": 76.2,
+   "home_pct": 9.1,
+   "draw_pct": 15.2,
+   "away_pct": 75.6,
    "xg_home": 0.91,
-   "xg_away": 2.81,
-   "over25": 71.7,
-   "btts": 56.6,
+   "xg_away": 2.77,
+   "over25": 71.0,
+   "btts": 56.4,
    "cards5": 32.0,
    "cards": {
     "exp": 3.71,
@@ -4295,6 +4301,12 @@
       "name": "H. Kane",
       "type": "Missing Fixture",
       "reason": "Ankle Injury"
+     },
+     {
+      "id": 181812,
+      "name": "J. Musiala",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
      },
      {
       "id": 497,
@@ -6852,7 +6864,7 @@
    },
    "goals": {
     "home": {
-     "fh": 35.747717732884254,
+     "fh": 35.74771773288427,
      "sh": 65.92037842931839,
      "any": 78.1030653528408
     },
@@ -8138,8 +8150,8 @@
    "goals": {
     "home": {
      "fh": 59.32128651858255,
-     "sh": 65.9385979539154,
-     "any": 86.14425985391958
+     "sh": 65.93859795391542,
+     "any": 86.14425985391959
     },
     "away": {
      "fh": 47.36091229464453,
@@ -8147,7 +8159,7 @@
      "any": 78.70888998130168
     },
     "match_fh": 78.58709633310642,
-    "match_sh": 86.22306939638466
+    "match_sh": 86.22306939638467
    },
    "players": {
     "home": {
