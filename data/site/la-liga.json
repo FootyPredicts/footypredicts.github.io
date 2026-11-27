@@ -3,7 +3,7 @@
  "name": "La Liga",
  "country": "Spain",
  "season": 2026,
- "updated": "2026-11-26T21:38:12.607230+00:00",
+ "updated": "2026-11-27T02:09:04.996014+00:00",
  "matches_used": 889,
  "fixtures": [
   {
@@ -5711,12 +5711,6 @@
       "name": "Y. Santiago",
       "type": "Missing Fixture",
       "reason": "Injury"
-     },
-     {
-      "id": 448243,
-      "name": "A. Houary",
-      "type": "Questionable",
-      "reason": "Ankle Injury"
      }
     ],
     "away": [
@@ -12371,23 +12365,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 5.5,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "J. Aramburu"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 3.8,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "Miguel Ángel"
+     ]
     }
    },
-   "home_pct": 52.1,
-   "draw_pct": 23.3,
-   "away_pct": 24.5,
-   "xg_home": 1.98,
+   "home_pct": 49.7,
+   "draw_pct": 24.2,
+   "away_pct": 26.2,
+   "xg_home": 1.87,
    "xg_away": 1.32,
-   "over25": 64.0,
-   "btts": 63.9,
+   "over25": 61.8,
+   "btts": 62.8,
    "cards5": 53.2,
    "cards": {
     "exp": 4.96,
@@ -13401,10 +13399,10 @@
        "price": null
       },
       {
-       "id": 2449,
-       "name": "Y. Herrera",
-       "p": 26.3,
-       "yc": 4,
+       "id": 47314,
+       "name": "Zubeldia",
+       "p": 22.8,
+       "yc": 3,
        "rc": 0,
        "ap": 9,
        "price": null
@@ -13425,14 +13423,6 @@
        "inv": 38.5
       },
       {
-       "id": 47317,
-       "name": "Barrenetxea",
-       "pos": "Attacker",
-       "g": 17.5,
-       "a": 15.7,
-       "inv": 30.4
-      },
-      {
        "id": 930,
        "name": "Carlos Soler",
        "pos": "Midfielder",
@@ -13447,6 +13437,14 @@
        "g": 26.5,
        "a": 3.8,
        "inv": 29.2
+      },
+      {
+       "id": 925,
+       "name": "Gonçalo Guedes",
+       "pos": "Attacker",
+       "g": 21.1,
+       "a": 9.2,
+       "inv": 28.3
       }
      ]
     },
@@ -13545,8 +13543,70 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 199044,
+      "name": "J. Aramburu",
+      "type": "Missing Fixture",
+      "reason": "Hip Injury"
+     },
+     {
+      "id": 445881,
+      "name": "L. Astiazaran",
+      "type": "Missing Fixture",
+      "reason": "Knock"
+     },
+     {
+      "id": 47317,
+      "name": "A. Barrenetxea",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 431160,
+      "name": "T. Folgado",
+      "type": "Missing Fixture",
+      "reason": "Inactive"
+     },
+     {
+      "id": 2449,
+      "name": "Y. Herrera",
+      "type": "Missing Fixture",
+      "reason": "Foot Injury"
+     },
+     {
+      "id": 737,
+      "name": "A. Odriozola",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 195923,
+      "name": "J. A. Carmona",
+      "type": "Missing Fixture",
+      "reason": "Broken Leg"
+     },
+     {
+      "id": 119213,
+      "name": "A. Gonzalez",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 433,
+      "name": "Marcao",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 438263,
+      "name": "M. Sierra",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [

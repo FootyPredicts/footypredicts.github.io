@@ -3,7 +3,7 @@
  "name": "Ligue 1",
  "country": "France",
  "season": 2026,
- "updated": "2026-11-26T21:38:23.869725+00:00",
+ "updated": "2026-11-27T02:09:14.737919+00:00",
  "matches_used": 714,
  "fixtures": [
   {
@@ -11760,27 +11760,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 8.1,
+     "goals_lost_pct": 4.3,
      "defence_hit_pct": 0.0,
-     "key_out": [
-      "L. Openda"
-     ]
+     "key_out": []
     },
     "away": {
-     "goals_lost_pct": 3.6,
+     "goals_lost_pct": 15.0,
      "defence_hit_pct": 0.0,
      "key_out": [
+      "E. Diop",
+      "Paris Josua  Brunner",
       "S. Idumbo-Muzambo"
      ]
     }
    },
-   "home_pct": 45.5,
-   "draw_pct": 27.7,
-   "away_pct": 26.8,
-   "xg_home": 1.5,
-   "xg_away": 1.1,
-   "over25": 48.1,
-   "btts": 52.8,
+   "home_pct": 50.2,
+   "draw_pct": 27.3,
+   "away_pct": 22.5,
+   "xg_home": 1.56,
+   "xg_away": 0.97,
+   "over25": 46.4,
+   "btts": 50.0,
    "cards5": 36.9,
    "cards": {
     "exp": 3.99,
@@ -12626,19 +12626,13 @@
        }
       },
       {
-       "id": 519,
-       "name": "C. Tolisso",
-       "p": 13.4,
-       "gl": 2,
-       "as": 3,
-       "ap": 11,
-       "price": {
-        "odd": 4.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.0
-        }
-       }
+       "id": 86,
+       "name": "L. Openda",
+       "p": 20.0,
+       "gl": 1,
+       "as": 1,
+       "ap": 5,
+       "price": null
       }
      ],
      "bookings": [
@@ -12652,12 +12646,12 @@
        "price": null
       },
       {
-       "id": 162590,
-       "name": "T. Morton",
-       "p": 13.7,
+       "id": 86,
+       "name": "L. Openda",
+       "p": 14.0,
        "yc": 1,
        "rc": 0,
-       "ap": 7,
+       "ap": 5,
        "price": null
       }
      ],
@@ -12676,6 +12670,14 @@
        "inv": 31.0
       },
       {
+       "id": 86,
+       "name": "L. Openda",
+       "pos": "Attacker",
+       "g": 20.0,
+       "a": 12.2,
+       "inv": 29.8
+      },
+      {
        "id": 519,
        "name": "C. Tolisso",
        "pos": "Midfielder",
@@ -12690,14 +12692,6 @@
        "g": 8.2,
        "a": 15.8,
        "inv": 22.7
-      },
-      {
-       "id": 7147,
-       "name": "F. Bacher",
-       "pos": "Defender",
-       "g": 6.0,
-       "a": 6.7,
-       "inv": 12.2
       }
      ]
     },
@@ -12736,18 +12730,18 @@
      ],
      "bookings": [
       {
-       "id": 109,
-       "name": "A. Golovin",
-       "p": 23.4,
-       "yc": 3,
-       "rc": 0,
-       "ap": 10,
-       "price": null
-      },
-      {
        "id": 374058,
        "name": "L. Camara",
        "p": 22.4,
+       "yc": 3,
+       "rc": 0,
+       "ap": 11,
+       "price": null
+      },
+      {
+       "id": 291649,
+       "name": "Vanderson",
+       "p": 22.1,
        "yc": 3,
        "rc": 0,
        "ap": 11,
@@ -12769,14 +12763,6 @@
        "inv": 21.5
       },
       {
-       "id": 109,
-       "name": "A. Golovin",
-       "pos": "Midfielder",
-       "g": 5.5,
-       "a": 14.9,
-       "inv": 19.5
-      },
-      {
        "id": 374361,
        "name": "E. Diop",
        "pos": "Midfielder",
@@ -12791,6 +12777,14 @@
        "g": 9.7,
        "a": 6.1,
        "inv": 15.2
+      },
+      {
+       "id": 291649,
+       "name": "Vanderson",
+       "pos": "Defender",
+       "g": 2.6,
+       "a": 9.1,
+       "inv": 11.5
       }
      ]
     }
@@ -12798,30 +12792,90 @@
    "injuries": {
     "home": [
      {
-      "id": 86,
-      "name": "L. Openda",
+      "id": 392671,
+      "name": "L. Diarra",
       "type": "Missing Fixture",
-      "reason": "Leg Injury"
+      "reason": "Injury"
+     },
+     {
+      "id": 162590,
+      "name": "T. Morton",
+      "type": "Missing Fixture",
+      "reason": "Groin Injury"
      },
      {
       "id": 412049,
-      "name": "M. Ouédraogo",
+      "name": "M. Ouedraogo",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
      },
      {
       "id": 66387,
-      "name": "P. Šulc",
+      "name": "P. Sulc",
       "type": "Missing Fixture",
-      "reason": "Jumpers Knee"
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 162189,
+      "name": "M. Bidstrup",
+      "type": "Questionable",
+      "reason": "Foot Injury"
+     },
+     {
+      "id": 68,
+      "name": "C. Mata",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
      }
     ],
     "away": [
      {
+      "id": 419035,
+      "name": "M. Coulibaly",
+      "type": "Missing Fixture",
+      "reason": "Suspended"
+     },
+     {
+      "id": 135775,
+      "name": "A. Fati",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 109,
+      "name": "A. Golovin",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
       "id": 340152,
-      "name": "S. Idumbo-Muzambo",
+      "name": "S. Idumbo",
       "type": "Missing Fixture",
       "reason": "Groin Injury"
+     },
+     {
+      "id": 7313,
+      "name": "P. Kohn",
+      "type": "Missing Fixture",
+      "reason": "Inactive"
+     },
+     {
+      "id": 386276,
+      "name": "P. Brunner",
+      "type": "Questionable",
+      "reason": "Injury"
+     },
+     {
+      "id": 47480,
+      "name": "M. Salisu",
+      "type": "Questionable",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 374361,
+      "name": "E. Diop",
+      "type": "Questionable",
+      "reason": "Injury"
      }
     ]
    },

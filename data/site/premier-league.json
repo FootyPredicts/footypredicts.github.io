@@ -3,7 +3,7 @@
  "name": "Premier League",
  "country": "England",
  "season": 2026,
- "updated": "2026-11-26T21:38:09.278744+00:00",
+ "updated": "2026-11-27T02:09:01.802145+00:00",
  "matches_used": 870,
  "fixtures": [
   {
@@ -10485,6 +10485,12 @@
       "name": "G. Xhaka",
       "type": "Missing Fixture",
       "reason": "Calf Injury"
+     },
+     {
+      "id": 6168,
+      "name": "O. Alderete",
+      "type": "Questionable",
+      "reason": "Injury"
      }
     ],
     "away": [
@@ -14151,9 +14157,12 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 6.9,
+     "defence_hit_pct": 7.0,
+     "key_out": [
+      "B. Saka",
+      "David Raya"
+     ]
     },
     "away": {
      "goals_lost_pct": 3.3,
@@ -14161,13 +14170,13 @@
      "key_out": []
     }
    },
-   "home_pct": 50.7,
-   "draw_pct": 28.0,
-   "away_pct": 21.3,
-   "xg_home": 1.51,
-   "xg_away": 0.89,
-   "over25": 43.1,
-   "btts": 47.0,
+   "home_pct": 46.3,
+   "draw_pct": 29.1,
+   "away_pct": 24.6,
+   "xg_home": 1.4,
+   "xg_away": 0.96,
+   "over25": 42.0,
+   "btts": 47.5,
    "cards5": 38.0,
    "cards": {
     "exp": 4.05,
@@ -15122,15 +15131,6 @@
     "home": {
      "scorers": [
       {
-       "id": 1460,
-       "name": "B. Saka",
-       "p": 26.6,
-       "gl": 3,
-       "as": 0,
-       "ap": 7,
-       "price": null
-      },
-      {
        "id": 978,
        "name": "K. Havertz",
        "p": 22.2,
@@ -15142,6 +15142,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 2.75
+        }
+       }
+      },
+      {
+       "id": 136723,
+       "name": "N. Madueke",
+       "p": 20.0,
+       "gl": 2,
+       "as": 0,
+       "ap": 8,
+       "price": {
+        "odd": 3.75,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.75
         }
        }
       }
@@ -15181,14 +15196,6 @@
        "inv": 34.3
       },
       {
-       "id": 1460,
-       "name": "B. Saka",
-       "pos": "Midfielder",
-       "g": 26.6,
-       "a": 4.5,
-       "inv": 30.0
-      },
-      {
        "id": 978,
        "name": "K. Havertz",
        "pos": "Attacker",
@@ -15203,6 +15210,14 @@
        "g": 1.4,
        "a": 24.1,
        "inv": 25.1
+      },
+      {
+       "id": 37127,
+       "name": "M. Ødegaard",
+       "pos": "Midfielder",
+       "g": 17.1,
+       "a": 9.4,
+       "inv": 24.9
       }
      ]
     },
@@ -15301,7 +15316,26 @@
     }
    },
    "injuries": {
-    "home": [],
+    "home": [
+     {
+      "id": 19465,
+      "name": "D. Raya",
+      "type": "Missing Fixture",
+      "reason": "Shoulder Injury"
+     },
+     {
+      "id": 1460,
+      "name": "B. Saka",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 47315,
+      "name": "M. Zubimendi",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ],
     "away": [
      {
       "id": 19281,

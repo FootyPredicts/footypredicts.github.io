@@ -3,7 +3,7 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-26T21:38:16.996422+00:00",
+ "updated": "2026-11-27T02:09:08.204212+00:00",
  "matches_used": 706,
  "fixtures": [
   {
@@ -33,22 +33,21 @@
      ]
     },
     "away": {
-     "goals_lost_pct": 6.1,
+     "goals_lost_pct": 1.0,
      "defence_hit_pct": 8.0,
      "key_out": [
       "D. Hashioka",
-      "H. Bolin",
       "L. Ullrich"
      ]
     }
    },
-   "home_pct": 56.9,
-   "draw_pct": 23.4,
-   "away_pct": 19.7,
+   "home_pct": 55.5,
+   "draw_pct": 23.5,
+   "away_pct": 21.0,
    "xg_home": 1.95,
-   "xg_away": 1.07,
-   "over25": 58.2,
-   "btts": 57.3,
+   "xg_away": 1.13,
+   "over25": 59.5,
+   "btts": 59.0,
    "cards5": 41.2,
    "cards": {
     "exp": 4.24,
@@ -1064,6 +1063,21 @@
     "away": {
      "scorers": [
       {
+       "id": 335095,
+       "name": "H. Bolin",
+       "p": 15.7,
+       "gl": 2,
+       "as": 0,
+       "ap": 7,
+       "price": {
+        "odd": 4.33,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 4.33
+        }
+       }
+      },
+      {
        "id": 106851,
        "name": "S. Machino",
        "p": 14.2,
@@ -1075,21 +1089,6 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 3.4
-        }
-       }
-      },
-      {
-       "id": 50852,
-       "name": "J. Scally",
-       "p": 12.7,
-       "gl": 3,
-       "as": 2,
-       "ap": 10,
-       "price": {
-        "odd": 7.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 7.5
         }
        }
       }
@@ -1137,20 +1136,20 @@
        "inv": 20.5
       },
       {
+       "id": 335095,
+       "name": "H. Bolin",
+       "pos": "Midfielder",
+       "g": 15.7,
+       "a": 3.7,
+       "inv": 18.8
+      },
+      {
        "id": 501906,
        "name": "W. Mohya",
        "pos": "Midfielder",
        "g": 11.0,
        "a": 7.6,
        "inv": 17.8
-      },
-      {
-       "id": 20784,
-       "name": "F. Honorat",
-       "pos": "Midfielder",
-       "g": 4.4,
-       "a": 13.6,
-       "inv": 17.4
       }
      ]
     }
@@ -1208,22 +1207,10 @@
     ],
     "away": [
      {
-      "id": 335095,
-      "name": "H. Bolin",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
       "id": 33095,
       "name": "D. Hashioka",
       "type": "Missing Fixture",
       "reason": "Injury"
-     },
-     {
-      "id": 26256,
-      "name": "T. Kleindienst",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
      },
      {
       "id": 178250,
@@ -4683,7 +4670,7 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.6,
+     "goals_lost_pct": 0.0,
      "defence_hit_pct": 0.0,
      "key_out": []
     },
@@ -4695,13 +4682,13 @@
      ]
     }
    },
-   "home_pct": 34.3,
-   "draw_pct": 45.2,
+   "home_pct": 34.4,
+   "draw_pct": 45.1,
    "away_pct": 20.5,
    "xg_home": 0.66,
    "xg_away": 0.45,
-   "over25": 10.0,
-   "btts": 18.1,
+   "over25": 10.1,
+   "btts": 18.2,
    "cards5": 34.8,
    "cards": {
     "exp": 3.87,
@@ -5730,12 +5717,6 @@
       "name": "M. Hoffmeier",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 342268,
-      "name": "L. Ulrich",
-      "type": "Questionable",
-      "reason": "Illness"
      }
     ],
     "away": [
@@ -5923,7 +5904,7 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 2.1,
+     "goals_lost_pct": 1.6,
      "defence_hit_pct": 3.5,
      "key_out": [
       "M. Schwäbe"
@@ -5935,13 +5916,13 @@
      "key_out": []
     }
    },
-   "home_pct": 36.9,
+   "home_pct": 37.1,
    "draw_pct": 24.7,
-   "away_pct": 38.4,
-   "xg_home": 1.62,
+   "away_pct": 38.2,
+   "xg_home": 1.63,
    "xg_away": 1.66,
-   "over25": 63.7,
-   "btts": 65.8,
+   "over25": 63.8,
+   "btts": 65.9,
    "cards5": 42.7,
    "cards": {
     "exp": 4.33,
@@ -6877,18 +6858,18 @@
      ],
      "bookings": [
       {
-       "id": 404656,
-       "name": "Jahmai Simpson-Pusey",
-       "p": 26.6,
-       "yc": 3,
+       "id": 7578,
+       "name": "G. Mensah",
+       "p": 31.6,
+       "yc": 2,
        "rc": 0,
-       "ap": 10,
+       "ap": 4,
        "price": null
       },
       {
-       "id": 1156,
-       "name": "T. Krauß",
-       "p": 25.9,
+       "id": 404656,
+       "name": "Jahmai Simpson-Pusey",
+       "p": 26.6,
        "yc": 3,
        "rc": 0,
        "ap": 10,
@@ -7048,12 +7029,6 @@
       "name": "T. Hubers",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 7578,
-      "name": "G. Mensah",
-      "type": "Missing Fixture",
-      "reason": "Injury"
      },
      {
       "id": 80497,
@@ -7260,18 +7235,20 @@
      "key_out": []
     },
     "away": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 2.0,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "C. Uzun"
+     ]
     }
    },
-   "home_pct": 61.1,
-   "draw_pct": 19.7,
-   "away_pct": 19.2,
+   "home_pct": 61.6,
+   "draw_pct": 19.6,
+   "away_pct": 18.8,
    "xg_home": 2.46,
-   "xg_away": 1.35,
-   "over25": 73.3,
-   "btts": 68.4,
+   "xg_away": 1.33,
+   "over25": 72.9,
+   "btts": 67.8,
    "cards5": 32.8,
    "cards": {
     "exp": 3.76,
@@ -8320,6 +8297,12 @@
       "name": "J. Ngankam",
       "type": "Missing Fixture",
       "reason": "Groin Injury"
+     },
+     {
+      "id": 339887,
+      "name": "C. Uzun",
+      "type": "Questionable",
+      "reason": "Illness"
      }
     ]
    },
@@ -10434,7 +10417,7 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 2.2,
+     "goals_lost_pct": 2.8,
      "defence_hit_pct": 4.0,
      "key_out": [
       "O. Kabak"
@@ -10448,13 +10431,13 @@
      ]
     }
    },
-   "home_pct": 51.5,
-   "draw_pct": 22.0,
-   "away_pct": 26.5,
-   "xg_home": 2.16,
+   "home_pct": 51.2,
+   "draw_pct": 22.1,
+   "away_pct": 26.7,
+   "xg_home": 2.15,
    "xg_away": 1.53,
-   "over25": 71.3,
-   "btts": 70.0,
+   "over25": 71.1,
+   "btts": 69.9,
    "cards5": 35.5,
    "cards": {
     "exp": 3.91,
@@ -11563,6 +11546,12 @@
       "name": "O. Kabak",
       "type": "Missing Fixture",
       "reason": "Red Card"
+     },
+     {
+      "id": 37153,
+      "name": "W. Burger",
+      "type": "Questionable",
+      "reason": "Injury"
      }
     ],
     "away": [

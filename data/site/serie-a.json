@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-26T21:38:20.474629+00:00",
+ "updated": "2026-11-27T02:09:11.424379+00:00",
  "matches_used": 880,
  "fixtures": [
   {
@@ -4169,17 +4169,19 @@
      ]
     },
     "away": {
-     "goals_lost_pct": 1.9,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 2.6,
+     "defence_hit_pct": 2.0,
+     "key_out": [
+      "L. Østigård"
+     ]
     }
    },
-   "home_pct": 68.1,
-   "draw_pct": 19.5,
-   "away_pct": 12.4,
-   "xg_home": 2.27,
+   "home_pct": 69.1,
+   "draw_pct": 19.1,
+   "away_pct": 11.9,
+   "xg_home": 2.32,
    "xg_away": 0.88,
-   "over25": 61.1,
+   "over25": 61.9,
    "btts": 53.3,
    "cards5": 32.2,
    "cards": {
@@ -5227,7 +5229,7 @@
       "id": 31009,
       "name": "A. Bastoni",
       "type": "Questionable",
-      "reason": "Injury"
+      "reason": "Muscle Injury"
      }
     ],
     "away": [
@@ -5236,6 +5238,12 @@
       "name": "L. Colombo",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
+     },
+     {
+      "id": 18967,
+      "name": "L. Ostigard",
+      "type": "Questionable",
+      "reason": "Illness"
      }
     ]
    },
@@ -10105,23 +10113,28 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 0.0,
+     "goals_lost_pct": 6.1,
      "defence_hit_pct": 0.0,
-     "key_out": []
+     "key_out": [
+      "Assane Diao"
+     ]
     },
     "away": {
-     "goals_lost_pct": 0.0,
-     "defence_hit_pct": 0.0,
-     "key_out": []
+     "goals_lost_pct": 4.3,
+     "defence_hit_pct": 4.0,
+     "key_out": [
+      "N. González",
+      "P. Kalulu"
+     ]
     }
    },
-   "home_pct": 41.2,
-   "draw_pct": 30.8,
-   "away_pct": 28.0,
-   "xg_home": 1.24,
-   "xg_away": 0.98,
-   "over25": 38.2,
-   "btts": 45.4,
+   "home_pct": 41.4,
+   "draw_pct": 31.3,
+   "away_pct": 27.3,
+   "xg_home": 1.21,
+   "xg_away": 0.93,
+   "over25": 36.3,
+   "btts": 43.7,
    "cards5": 31.4,
    "cards": {
     "exp": 3.69,
@@ -10929,35 +10942,35 @@
        "price": null
       },
       {
-       "id": 400948,
-       "name": "Assane Diao",
-       "p": 17.0,
-       "gl": 2,
-       "as": 1,
-       "ap": 6,
+       "id": 350037,
+       "name": "N. Paz",
+       "p": 16.7,
+       "gl": 3,
+       "as": 3,
+       "ap": 11,
        "price": {
-        "odd": 3.5,
+        "odd": 2.88,
         "bookie": "Bet365",
         "books": {
-         "Bet365": 3.5
+         "Bet365": 2.88
         }
        }
       }
      ],
      "bookings": [
       {
-       "id": 400948,
-       "name": "Assane Diao",
-       "p": 19.5,
-       "yc": 2,
-       "rc": 0,
-       "ap": 6,
-       "price": null
-      },
-      {
        "id": 197448,
        "name": "Yan Couto",
        "p": 16.0,
+       "yc": 2,
+       "rc": 0,
+       "ap": 11,
+       "price": null
+      },
+      {
+       "id": 295026,
+       "name": "M. Baturina",
+       "p": 13.9,
        "yc": 2,
        "rc": 0,
        "ap": 11,
@@ -10987,40 +11000,25 @@
        "inv": 26.0
       },
       {
-       "id": 400948,
-       "name": "Assane Diao",
-       "pos": "Attacker",
-       "g": 17.0,
-       "a": 10.1,
-       "inv": 25.4
-      },
-      {
        "id": 197448,
        "name": "Yan Couto",
        "pos": "Defender",
        "g": 3.0,
        "a": 18.8,
        "inv": 21.2
+      },
+      {
+       "id": 295026,
+       "name": "M. Baturina",
+       "pos": "Midfielder",
+       "g": 12.0,
+       "a": 6.2,
+       "inv": 17.5
       }
      ]
     },
     "away": {
      "scorers": [
-      {
-       "id": 26315,
-       "name": "N. González",
-       "p": 12.0,
-       "gl": 1,
-       "as": 0,
-       "ap": 6,
-       "price": {
-        "odd": 4.5,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.5
-        }
-       }
-      },
       {
        "id": 21104,
        "name": "R. Kolo Muani",
@@ -11033,6 +11031,21 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 3.5
+        }
+       }
+      },
+      {
+       "id": 48392,
+       "name": "E. Zhegrova",
+       "p": 11.3,
+       "gl": 2,
+       "as": 3,
+       "ap": 10,
+       "price": {
+        "odd": 3.75,
+        "bookie": "Bet365",
+        "books": {
+         "Bet365": 3.75
         }
        }
       }
@@ -11099,8 +11112,82 @@
     }
    },
    "injuries": {
-    "home": [],
-    "away": []
+    "home": [
+     {
+      "id": 354533,
+      "name": "J. Addai",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 659,
+      "name": "M. Caqueret",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 400948,
+      "name": "A. Diao",
+      "type": "Missing Fixture",
+      "reason": "Thigh Injury"
+     },
+     {
+      "id": 877,
+      "name": "M. Kean",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury"
+     },
+     {
+      "id": 443162,
+      "name": "J. Rodriguez",
+      "type": "Missing Fixture",
+      "reason": "Muscle Injury"
+     }
+    ],
+    "away": [
+     {
+      "id": 26315,
+      "name": "N. Gonzalez",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury"
+     },
+     {
+      "id": 15573,
+      "name": "K. Grabara",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 162188,
+      "name": "P. Kalulu",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury"
+     },
+     {
+      "id": 30533,
+      "name": "M. Locatelli",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 333,
+      "name": "A. Milik",
+      "type": "Missing Fixture",
+      "reason": "Inactive"
+     },
+     {
+      "id": 116,
+      "name": "K. Thuram",
+      "type": "Missing Fixture",
+      "reason": "Knee Injury"
+     },
+     {
+      "id": 339883,
+      "name": "K. Yildiz",
+      "type": "Missing Fixture",
+      "reason": "Foot Injury"
+     }
+    ]
    },
    "lineup_confirmed": false,
    "previous": [
