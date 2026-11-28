@@ -3,7 +3,7 @@
  "name": "Serie A",
  "country": "Italy",
  "season": 2026,
- "updated": "2026-11-28T09:38:24.180383+00:00",
+ "updated": "2026-11-28T10:08:20.625236+00:00",
  "matches_used": 881,
  "fixtures": [
   {
@@ -2902,20 +2902,21 @@
      ]
     },
     "away": {
-     "goals_lost_pct": 2.6,
-     "defence_hit_pct": 2.0,
+     "goals_lost_pct": 5.0,
+     "defence_hit_pct": 4.0,
      "key_out": [
-      "L. Østigård"
+      "L. Østigård",
+      "T. Baldanzi"
      ]
     }
    },
-   "home_pct": 69.4,
-   "draw_pct": 18.7,
-   "away_pct": 11.9,
-   "xg_home": 2.37,
-   "xg_away": 0.9,
-   "over25": 63.3,
-   "btts": 54.3,
+   "home_pct": 70.7,
+   "draw_pct": 18.1,
+   "away_pct": 11.1,
+   "xg_home": 2.41,
+   "xg_away": 0.87,
+   "over25": 63.8,
+   "btts": 53.7,
    "cards5": 42.4,
    "cards": {
     "exp": 4.29,
@@ -3888,19 +3889,19 @@
        "price": null
       },
       {
-       "id": 18967,
-       "name": "L. Østigård",
-       "p": 31.5,
-       "yc": 4,
+       "id": 31057,
+       "name": "H. Traorè",
+       "p": 27.3,
+       "yc": 2,
        "rc": 0,
-       "ap": 12,
+       "ap": 6,
        "price": null
       }
      ],
      "defender": {
-      "id": 18967,
-      "name": "L. Østigård",
-      "sot": 5
+      "id": 35544,
+      "name": "J. Vásquez",
+      "sot": 2
      },
      "cap": [
       {
@@ -3969,8 +3970,14 @@
      {
       "id": 18967,
       "name": "L. Ostigard",
-      "type": "Questionable",
+      "type": "Missing Fixture",
       "reason": "Illness"
+     },
+     {
+      "id": 288769,
+      "name": "T. Baldanzi",
+      "type": "Questionable",
+      "reason": "Inactive"
      }
     ]
    },
@@ -9098,28 +9105,27 @@
    },
    "injury_effect": {
     "home": {
-     "goals_lost_pct": 6.1,
+     "goals_lost_pct": 3.6,
      "defence_hit_pct": 0.0,
      "key_out": [
       "Assane Diao"
      ]
     },
     "away": {
-     "goals_lost_pct": 4.3,
-     "defence_hit_pct": 4.0,
+     "goals_lost_pct": 2.0,
+     "defence_hit_pct": 0.0,
      "key_out": [
-      "N. González",
-      "P. Kalulu"
+      "N. González"
      ]
     }
    },
-   "home_pct": 41.5,
-   "draw_pct": 31.2,
-   "away_pct": 27.3,
-   "xg_home": 1.22,
-   "xg_away": 0.94,
-   "over25": 36.4,
-   "btts": 43.8,
+   "home_pct": 40.5,
+   "draw_pct": 31.3,
+   "away_pct": 28.2,
+   "xg_home": 1.2,
+   "xg_away": 0.96,
+   "over25": 36.7,
+   "btts": 44.2,
    "cards5": 32.4,
    "cards": {
     "exp": 3.75,
@@ -9927,35 +9933,29 @@
        "price": null
       },
       {
-       "id": 350037,
-       "name": "N. Paz",
-       "p": 16.7,
-       "gl": 3,
-       "as": 3,
-       "ap": 11,
-       "price": {
-        "odd": 2.88,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 2.88
-        }
-       }
+       "id": 400948,
+       "name": "Assane Diao",
+       "p": 17.0,
+       "gl": 2,
+       "as": 1,
+       "ap": 6,
+       "price": null
       }
      ],
      "bookings": [
       {
-       "id": 197448,
-       "name": "Yan Couto",
-       "p": 16.3,
+       "id": 400948,
+       "name": "Assane Diao",
+       "p": 19.8,
        "yc": 2,
        "rc": 0,
-       "ap": 11,
+       "ap": 6,
        "price": null
       },
       {
-       "id": 295026,
-       "name": "M. Baturina",
-       "p": 14.1,
+       "id": 197448,
+       "name": "Yan Couto",
+       "p": 16.3,
        "yc": 2,
        "rc": 0,
        "ap": 11,
@@ -9985,25 +9985,34 @@
        "inv": 26.0
       },
       {
+       "id": 400948,
+       "name": "Assane Diao",
+       "pos": "Attacker",
+       "g": 17.0,
+       "a": 10.1,
+       "inv": 25.4
+      },
+      {
        "id": 197448,
        "name": "Yan Couto",
        "pos": "Defender",
        "g": 3.0,
        "a": 18.8,
        "inv": 21.2
-      },
-      {
-       "id": 295026,
-       "name": "M. Baturina",
-       "pos": "Midfielder",
-       "g": 12.0,
-       "a": 6.2,
-       "inv": 17.5
       }
      ]
     },
     "away": {
      "scorers": [
+      {
+       "id": 26315,
+       "name": "N. González",
+       "p": 12.0,
+       "gl": 1,
+       "as": 0,
+       "ap": 6,
+       "price": null
+      },
       {
        "id": 21104,
        "name": "R. Kolo Muani",
@@ -10016,21 +10025,6 @@
         "bookie": "Bet365",
         "books": {
          "Bet365": 3.75
-        }
-       }
-      },
-      {
-       "id": 48392,
-       "name": "E. Zhegrova",
-       "p": 11.3,
-       "gl": 2,
-       "as": 3,
-       "ap": 10,
-       "price": {
-        "odd": 4.0,
-        "bookie": "Bet365",
-        "books": {
-         "Bet365": 4.0
         }
        }
       }
@@ -10099,22 +10093,10 @@
    "injuries": {
     "home": [
      {
-      "id": 354533,
-      "name": "J. Addai",
-      "type": "Missing Fixture",
-      "reason": "Muscle Injury"
-     },
-     {
       "id": 659,
       "name": "M. Caqueret",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 400948,
-      "name": "A. Diao",
-      "type": "Missing Fixture",
-      "reason": "Thigh Injury"
      },
      {
       "id": 877,
@@ -10127,26 +10109,26 @@
       "name": "J. Rodriguez",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
+     },
+     {
+      "id": 354533,
+      "name": "J. Addai",
+      "type": "Questionable",
+      "reason": "Muscle Injury"
+     },
+     {
+      "id": 400948,
+      "name": "A. Diao",
+      "type": "Questionable",
+      "reason": "Thigh Injury"
      }
     ],
     "away": [
-     {
-      "id": 26315,
-      "name": "N. Gonzalez",
-      "type": "Missing Fixture",
-      "reason": "Calf Injury"
-     },
      {
       "id": 15573,
       "name": "K. Grabara",
       "type": "Missing Fixture",
       "reason": "Knee Injury"
-     },
-     {
-      "id": 162188,
-      "name": "P. Kalulu",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury"
      },
      {
       "id": 30533,
@@ -10171,6 +10153,12 @@
       "name": "K. Yildiz",
       "type": "Missing Fixture",
       "reason": "Foot Injury"
+     },
+     {
+      "id": 26315,
+      "name": "N. Gonzalez",
+      "type": "Questionable",
+      "reason": "Calf Injury"
      }
     ]
    },

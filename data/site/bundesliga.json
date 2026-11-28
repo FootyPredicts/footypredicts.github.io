@@ -3,7 +3,7 @@
  "name": "Bundesliga",
  "country": "Germany",
  "season": 2026,
- "updated": "2026-11-28T09:38:20.904996+00:00",
+ "updated": "2026-11-28T10:08:17.205195+00:00",
  "matches_used": 707,
  "fixtures": [
   {
@@ -4242,8 +4242,8 @@
    "referee": "S. Storks",
    "ref_cards": 4.89,
    "ref_games": 28,
-   "pick": "Home",
-   "model_pick": "Home",
+   "pick": "Away",
+   "model_pick": "Away",
    "call_reason": "",
    "low_data": true,
    "market": {
@@ -4254,28 +4254,24 @@
    "injury_effect": {
     "home": {
      "goals_lost_pct": 1.9,
-     "defence_hit_pct": 7.5,
+     "defence_hit_pct": 4.0,
      "key_out": [
-      "L. Lochoshvili",
-      "M. Schwäbe"
+      "L. Lochoshvili"
      ]
     },
     "away": {
-     "goals_lost_pct": 1.6,
-     "defence_hit_pct": 5.5,
-     "key_out": [
-      "L. Günther",
-      "N. Kristof"
-     ]
+     "goals_lost_pct": 0.7,
+     "defence_hit_pct": 0.0,
+     "key_out": []
     }
    },
-   "home_pct": 38.1,
-   "draw_pct": 24.2,
-   "away_pct": 37.7,
-   "xg_home": 1.7,
-   "xg_away": 1.69,
-   "over25": 65.9,
-   "btts": 67.5,
+   "home_pct": 36.8,
+   "draw_pct": 24.8,
+   "away_pct": 38.4,
+   "xg_home": 1.61,
+   "xg_away": 1.65,
+   "over25": 63.4,
+   "btts": 65.6,
    "cards5": 43.4,
    "cards": {
     "exp": 4.37,
@@ -5406,12 +5402,6 @@
       "name": "R. van den Berg",
       "type": "Missing Fixture",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 15871,
-      "name": "M. Schwabe",
-      "type": "Questionable",
-      "reason": "Back Injury"
      }
     ],
     "away": [
@@ -5432,18 +5422,6 @@
       "name": "N. Darvich",
       "type": "Questionable",
       "reason": "Muscle Injury"
-     },
-     {
-      "id": 162079,
-      "name": "L. Gunther",
-      "type": "Questionable",
-      "reason": "Illness"
-     },
-     {
-      "id": 178194,
-      "name": "N. Kristof",
-      "type": "Questionable",
-      "reason": "Illness"
      }
     ]
    },
